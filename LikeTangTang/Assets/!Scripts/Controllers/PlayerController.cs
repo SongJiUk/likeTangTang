@@ -21,6 +21,11 @@ public class PlayerController : CretureController
         Manager.GameM.OnMovePlayerDir += OnMoveDirChange;
     }
 
+    private void OnDestroy()
+    {
+        if(Manager.GameM != null)
+            Manager.GameM.OnMovePlayerDir -= OnMoveDirChange;
+    }
 
     void OnMoveDirChange(Vector2 _dir)
     {

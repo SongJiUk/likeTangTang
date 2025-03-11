@@ -15,6 +15,12 @@ public class Memo
         2. Define(enum으로 종류 관리)
     3. 매니저로 정리해서 관리하기
         1. 큰 틀의 매니저를 만들어서 그 매니저에서 모든걸 관리
+        
+        GameManager -> 인게임 정보
+        델리게이트를 사용하여 통신원활하게
+        
+    
+
     4. Addressable로 리소스 관리하기
         1. 로딩할때 한번에 불러올 리소스들 확인
     5. ObjectManager를 만들어서 오브젝트 관리하기

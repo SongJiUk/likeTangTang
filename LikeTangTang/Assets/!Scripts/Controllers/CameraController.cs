@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    [SerializeField]
+    GameObject go;
+    Vector3 camPos;
 
-    GameObject target;
-
-
+    private void Start()
+    {
+        camPos = transform.position;
+    }
     private void LateUpdate()
     {
-        if (target != null)
-            transform.position = target.transform.position;
+        transform.position = new Vector3(go.transform.position.x, go.transform.position.y, camPos.z);
     }
 }
