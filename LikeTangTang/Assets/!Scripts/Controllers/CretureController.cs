@@ -7,6 +7,7 @@ public class CretureController : BaseController
 
     public int MaxHP { get; set; }
     public float Hp { get; set; }
+    public float Speed { get; set; }
 
     public virtual void OnDamaged(BaseController _attacker, float _damage)
     {
@@ -21,6 +22,6 @@ public class CretureController : BaseController
 
     public void IsDead()
     {
-
+        
     }
 }

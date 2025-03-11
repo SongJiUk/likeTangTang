@@ -86,6 +86,7 @@ MonoBehaviour:
     m_LabelNames:
     - default
     - Prefabs
+    - PrevLoad
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 26f3654b216d245f6bc38fa5485054a9, type: 2}

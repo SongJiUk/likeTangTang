@@ -9,6 +9,8 @@ public class GameManager
 
 
     Vector2 playerMoveDir;
+
+
     public event Action<Vector2> OnMovePlayerDir;
 
     public Vector2 PlayerMoveDir
@@ -20,7 +22,4 @@ public class GameManager
             OnMovePlayerDir?.Invoke(playerMoveDir);
         }
     }
-
-
-
 }

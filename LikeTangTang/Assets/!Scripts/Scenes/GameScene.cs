@@ -1,0 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameScene : MonoBehaviour
+{
+
+    private void Start()
+    {
+        //Manager.ResourceM
+
+        
+    }
+    //TODO
+    /*
+     일단 여기서 불러오는 역할을 해야됨. ResourceManager에서 Addressable를 이용하여 모두 불러옴.
+     다 불러왔으면 로드
+
+
+    로드에선 데이터정보, Pooling, 조이스틱, 맵, 카메라등을 초기 설정해준다.
+     
+     */
+
+}
