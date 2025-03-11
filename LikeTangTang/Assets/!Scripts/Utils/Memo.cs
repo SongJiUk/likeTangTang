@@ -6,32 +6,32 @@ public class Memo
 {
     /*
 
+    1
+
+ ê·¸ë¦¬ë“œ ë°©ì‹( ì§ì ‘ ë§Œë“¤ê¸° vs Unityì—ì„œ ì œê³µí•˜ëŠ” Grid ì‚¬ìš©í•˜ê¸°)
 
 
- ±×¸®µå ¹æ½Ä( Á÷Á¢ ¸¸µé±â vs Unity¿¡¼­ Á¦°øÇÏ´Â Grid »ç¿ëÇÏ±â)
+WorldToCell -> ê·¸ë¦¬ë“œì— ë‚˜ì˜ ì›”ë“œì¢Œí‘œë¥¼ ê±´ë‚´ì£¼ë©´ ì…€ ë²ˆí˜¸ë¥¼ ëŒë ¤ì¤€ë‹¤.
 
-
- WorldToCell -> ±×¸®µå¿¡ ³ªÀÇ ¿ùµåÁÂÇ¥¸¦ °Ç³»ÁÖ¸é ¼¿ ¹øÈ£¸¦ µ¹·ÁÁØ´Ù.
-
- Add
- Remove
- Get
- ÇÑ¹æ¿¡ ºÒ·¯¿À´Â ÄÚµå(³» À§Ä¡, Range)
+Add
+Remove
+Get
+í•œë°©ì— ë¶ˆëŸ¬ì˜¤ëŠ” ì½”ë“œ(ë‚´ ìœ„ì¹˜, Range)
 
 
 
- ------------
+------------
 
- ½ºÅ³
+ìŠ¤í‚¬
 
- µ¥ÀÌÅÍ( ½ºÅ³ µ¥ÀÌÅÍ °ü¸®°¡ °¡Àå ¾î·Á¿ò)
- ÇÏ³ª¿¡ °¡µæ ³Ö¾î¹ö¸®¸é °ü¸®°¡ Èûµé¾îÁø´Ù.
+ë°ì´í„°( ìŠ¤í‚¬ ë°ì´í„° ê´€ë¦¬ê°€ ê°€ìž¥ ì–´ë ¤ì›€)
+í•˜ë‚˜ì— ê°€ë“ ë„£ì–´ë²„ë¦¬ë©´ ê´€ë¦¬ê°€ íž˜ë“¤ì–´ì§„ë‹¤.
 
- ½ºÅ©¸³Æ® ¿©·¯°³ »ý¼º vs ÇÏ³ª¿¡ ³Ö¾î¼­ »ý¼º
+ìŠ¤í¬ë¦½íŠ¸ ì—¬ëŸ¬ê°œ ìƒì„± vs í•˜ë‚˜ì— ë„£ì–´ì„œ ìƒì„±
 
- ÄÚ·çÆ¾»ç¿ëÇÒ¶§ isVaildÃ¼Å© ÇØ¾ß‰Î( null Ã¼Å©ÇÏ¸é ²¿ÀÏ¼öµµÀÖÀ½.)
- Utils ÂÊ¿¡ ¸¸µé°Å³ª ExtensionÀ» ÇÏ³ª ¸¸µé¾î¼­ activeSelf ¸¦ Ãß°¡ÇØ¼­ °Ë»çÇØÁÖ´Â°ÅÀÓ
- ±»ÀÌ ¾È¸¸µé¾î¼­ »ç¿ëÇØµµµÊ ( activeSelf¸¦ &&À¸·Î °Ë»çÇØÁÖ¸é µÇ´Ï±î) ±Ùµ¥ ¸¸µé¾îÁÖ¸é ÆíÇÔ.
+ì½”ë£¨í‹´ì‚¬ìš©í• ë•Œ isVaildì²´í¬ í•´ì•¼ëŒ( null ì²´í¬í•˜ë©´ ê¼¬ì¼ìˆ˜ë„ìžˆìŒ.)
+Utils ìª½ì— ë§Œë“¤ê±°ë‚˜ Extensionì„ í•˜ë‚˜ ë§Œë“¤ì–´ì„œ activeSelf ë¥¼ ì¶”ê°€í•´ì„œ ê²€ì‚¬í•´ì£¼ëŠ”ê±°ìž„
+êµ³ì´ ì•ˆë§Œë“¤ì–´ì„œ ì‚¬ìš©í•´ë„ë¨ ( activeSelfë¥¼ &&ìœ¼ë¡œ ê²€ì‚¬í•´ì£¼ë©´ ë˜ë‹ˆê¹Œ) ê·¼ë° ë§Œë“¤ì–´ì£¼ë©´ íŽ¸í•¨.
 
      */
 }
