@@ -7,8 +7,11 @@ public class GameScene : MonoBehaviour
 
     private void Start()
     {
-        //Manager.ResourceM
 
+        Manager.ResourceM.LoadAllAsync<GameObject>("PrevLoad", (key, loadCount, maxCount) =>
+        {
+            Debug.Log($"{loadCount} / {maxCount}");
+        });
         
     }
     //TODO
