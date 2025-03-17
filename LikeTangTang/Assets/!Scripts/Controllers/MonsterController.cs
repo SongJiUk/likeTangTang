@@ -8,11 +8,10 @@ public class MonsterController : CretureController
 
     public override bool Init()
     {
-        if (base.Init())
-            return false;
-
+       
         //TODO 초기화
         objType = Define.ObjectType.Monster;
+        Speed = 1f;
         return true;
     }
 
@@ -25,8 +24,8 @@ public class MonsterController : CretureController
         Vector3 dir = pc.transform.position - transform.position;
         Vector3 newPos = transform.position + dir.normalized * Time.deltaTime * Speed;
 
-        transform.position += newPos;
-        //GetComponent<Rigidbody2D>().MovePosition(newPos);
+        //transform.position += newPos;
+        GetComponent<Rigidbody2D>().MovePosition(newPos);
         GetComponent<SpriteRenderer>().flipX = dir.x > 0;
     }
 

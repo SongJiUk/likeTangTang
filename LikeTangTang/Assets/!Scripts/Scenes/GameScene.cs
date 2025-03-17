@@ -32,12 +32,26 @@ public class GameScene : MonoBehaviour
 
     void StartLoad()
     {
-        var player = Manager.ResourceM.Instantiate("Slime_01.prefab");
 
+        var player = Manager.ObjectM.Spawn<PlayerController>();
+
+        
+        
+        for(int i = 0; i< 10; i++)
+        {
+            int RandNum = Random.Range(0, 2);
+            var monster = Manager.ObjectM.Spawn<MonsterController>(RandNum);
+
+            monster.transform.position = new Vector2(Random.RandomRange(-10, 10), Random.RandomRange(-10, 10));
+            monster.name = $"!Monster{i}";
+        }
+
+
+        //Todo : UI매니저 만들면 바꾸자.
         var joyStick = Manager.ResourceM.Instantiate("UI_Joystick.prefab");
         joyStick.name = "@UI_Joystick";
 
-        Camera.main.GetComponent<CameraController>().Target = player;
+        Camera.main.GetComponent<CameraController>().Target = player.gameObject;
     }
 
 }

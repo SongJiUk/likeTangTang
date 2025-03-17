@@ -70,8 +70,9 @@ public class ResourceManager
     #endregion
 
 
-    public GameObject Instantiate(string _key)
+    public GameObject Instantiate(string _key, bool _pooing = false)
     {
+        //ToDo : 풀링시스템이 true라면 풀링에 넣어줘야함.
         if(resourceDic.TryGetValue(_key, out Object resource))
         {
             var obj = GameObject.Instantiate(resource);
@@ -79,6 +80,13 @@ public class ResourceManager
         }
 
         return null;
+
+
+        if(_pooing)
+        {
+            //ToDO : 풀링시스템
+        }
+
     }
 
 }

@@ -17,7 +17,7 @@ public class PlayerController : CretureController
 
     private void Start()
     {
-        Speed = 1f;
+        Speed = 2f;
         Manager.GameM.OnMovePlayerDir += OnMoveDirChange;
     }
 
@@ -40,7 +40,7 @@ public class PlayerController : CretureController
         mc?.OnDamaged(this, 10000);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Move();
     }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class ObjectManager
 {
     public PlayerController Player { get; private set; }
+    HashSet<MonsterController> mcSet = new HashSet<MonsterController>();
+    HashSet<ProjectileController> pjSet = new HashSet<ProjectileController>();
 
 
     /*TODO 오브젝트 생성, 스폰등 관리
@@ -13,17 +15,37 @@ public class ObjectManager
      * 디스폰
     */
 
-    //public T Spawn<T>(int _templateID) where T : BaseController
-    //{
-    //    System.Type type = typeof(T);
+    public T Spawn<T>(int _templateID = 0) where T : BaseController
+    {
+        System.Type type = typeof(T);
 
-    //    if(type == typeof(PlayerController))
-    //    {
-             //TODO : Data에서 값을 가져와서 생성.
-    //    }
+        if (type == typeof(PlayerController))
+        {
+            //TODO: Data에서 값을 가져와서 생성.
+            GameObject go = Manager.ResourceM.Instantiate("Slime_01.prefab");
+            go.name = "!Player";
 
-    //}
-    
+            PlayerController pc = go.GetComponent<PlayerController>();
+            Player = pc;
+            return pc as T;
+        }
+        else if(type == typeof(MonsterController))
+        {
+            string id = (_templateID == 0 ? "Goblin_01.prefab" : "Snake_01.prefab");
+
+            GameObject go = Manager.ResourceM.Instantiate(id);
+            MonsterController mc = go.AddComponent<MonsterController>();
+
+            return mc as T;
+
+        }
+        else if(type == typeof(ProjectileController))
+        {
+
+        }
+        return null;
+    }
+
     public void DeSpawn(GameObject _go)
     {
 
