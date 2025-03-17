@@ -27,54 +27,58 @@ public class ResourceManager
      */
 
     Dictionary<string, Object> resourceDic = new Dictionary<string, Object>();
-
+    public Dictionary<string, Object> ResourceDic { get; }
 
     #region 비동기 코드 로딩
+
     public void LoadAsync<T>(string _key, Action<T> cb = null) where T : Object
     {
 
-
-        //있으면 반환
-        if(resourceDic.TryGetValue(_key, out Object resource))
+        if (resourceDic.TryGetValue(_key, out Object resource))
         {
             cb?.Invoke(resource as T);
             return;
         }
 
 
-        //없으면 추가
         var asyncOperationHandle = Addressables.LoadAssetAsync<T>(_key);
-
-        asyncOperationHandle.Completed += (op) =>
+        asyncOperationHandle.Completed += (oper) =>
         {
-            resourceDic.Add(_key, op.Result);
-            cb?.Invoke(op.Result);
+            resourceDic.Add(_key, oper.Result);
+            cb?.Invoke(oper.Result);
         };
     }
-
 
     public void LoadAllAsync<T>(string _label, Action<string, int, int> cb = null) where T : Object
     {
-
         var asyncOperationHandle = Addressables.LoadResourceLocationsAsync(_label, typeof(T));
-
-        asyncOperationHandle.Completed += (op) =>
+        asyncOperationHandle.Completed += (oper) =>
         {
-            int loadCount = 0;
-            int maxCount = op.Result.Count;
+            int loadcount = 0;
+            int maxCount = oper.Result.Count;
 
-            foreach (var result in op.Result)
+            foreach (var result in oper.Result)
             {
-                LoadAsync<T>(result.PrimaryKey, (op) =>
+                LoadAsync<T>(result.PrimaryKey, (oper) =>
                 {
-                    loadCount++;
-                    cb?.Invoke(result.PrimaryKey, loadCount, maxCount);
+                    loadcount++;
+                    cb?.Invoke(result.PrimaryKey, loadcount, maxCount);
                 });
             }
         };
-        
     }
-
     #endregion
+
+
+    public GameObject Instantiate(string _key)
+    {
+        if(resourceDic.TryGetValue(_key, out Object resource))
+        {
+            var obj = GameObject.Instantiate(resource);
+            return obj as GameObject;
+        }
+
+        return null;
+    }
 
 }

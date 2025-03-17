@@ -34,7 +34,10 @@ public class PlayerController : CretureController
 
     public override void OnDamaged(BaseController _attacker, float _damage)
     {
+        base.OnDamaged(_attacker, _damage);
+        MonsterController mc = _attacker as MonsterController;
 
+        mc?.OnDamaged(this, 10000);
     }
 
     private void Update()

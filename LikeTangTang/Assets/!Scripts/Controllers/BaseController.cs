@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BaseController : MonoBehaviour
 {
-    
+    public Define.ObjectType objType { get; protected set; }
 
     private void Awake()
     {

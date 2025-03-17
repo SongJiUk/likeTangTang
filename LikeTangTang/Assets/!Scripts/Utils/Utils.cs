@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Utils
+public static class Utils
 {
     //Get을 해본다음 없으면 추가, 있으면 리턴
     public static T GetOrAddComponent<T>(GameObject go) where T : Component
