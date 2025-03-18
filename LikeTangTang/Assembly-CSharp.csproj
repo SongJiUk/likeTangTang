@@ -78,6 +78,7 @@
     <Compile Include="Assets\!Scripts\Manager\Manager.cs" />
     <Compile Include="Assets\!Scripts\Manager\System\SceneManager.cs" />
     <Compile Include="Assets\!Scripts\Manager\Contents\SpawnManager.cs" />
+    <Compile Include="Assets\!Scripts\Data\Data.Contents.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\!Resources\Temp\Dragon Warrior Files\Read Me.txt" />

@@ -23,9 +23,14 @@ public class GameScene : MonoBehaviour
 
         Manager.ResourceM.LoadAllAsync<GameObject>("PrevLoad", (key, loadCount, maxCount) =>
         {
-            Debug.Log($"{loadCount} / {maxCount}");
-
-            if (loadCount == maxCount) StartLoad();
+            if (loadCount == maxCount)
+            {
+                Manager.ResourceM.LoadAllAsync<TextAsset>("Data", (key, loadCount2, maxCount2) =>
+                {
+                    if (loadCount2 == maxCount2) StartLoad();
+                });
+            }
+                
         });
 
     }
@@ -53,6 +58,13 @@ public class GameScene : MonoBehaviour
         joyStick.name = "@UI_Joystick";
 
         Camera.main.GetComponent<CameraController>().Target = player.gameObject;
+
+
+        Manager.DataM.Init();
+        //foreach(var PlayerData in Manager.DataM.PlayerDic.Values)
+        //{
+        //    Debug.Log($"LV : {PlayerData.level}, Hp : {PlayerData.maxHp}");
+        //}
     }
 
 }
