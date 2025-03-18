@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
+[DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
 public class Manager : MonoBehaviour
 {
 
@@ -60,5 +62,10 @@ public class Manager : MonoBehaviour
             }
             return instance;
         }
+    }
+
+    private string GetDebuggerDisplay()
+    {
+        return ToString();
     }
 }

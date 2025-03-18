@@ -32,7 +32,7 @@ public class ResourceManager
 
    
     public T Load<T>(string _key) where T : Object
-    {
+    { 
         if(resourceDic.TryGetValue(_key, out Object resource))
         {
             return resource as T;
@@ -87,8 +87,17 @@ public class ResourceManager
             return;
         }
 
+        /*
+         * 이걸 해주는 이유는 AddressAble에서 이미지를 불러올때
+         * 위에는 texture2D이고 밑에있는게 Sprite임
+         */
+        string loadKey = _key;
+        if(_key.Contains(".sprite"))
+        {
+            loadKey = $"{_key}[{_key.Replace(".sprite", "")}]";
+        }
 
-        var asyncOperationHandle = Addressables.LoadAssetAsync<T>(_key);
+        var asyncOperationHandle = Addressables.LoadAssetAsync<T>(loadKey);
         asyncOperationHandle.Completed += (oper) =>
         {
             resourceDic.Add(_key, oper.Result);

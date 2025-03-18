@@ -11,12 +11,6 @@ public class ObjectManager
     public HashSet<GemController> gemSet = new HashSet<GemController>();
 
 
-    /* 오브젝트 생성, 스폰등 관리
-     *  
-     * 스폰(ID를 받아서 리턴해줌) - Generic
-     * 디스폰
-    */
-
     public T Spawn<T>(Vector3 _pos, int _templateID = 0) where T : BaseController
     {
         System.Type type = typeof(T);
@@ -42,7 +36,6 @@ public class ObjectManager
             go.transform.position = _pos;
 
             MonsterController mc = Utils.GetOrAddComponent<MonsterController>(go);
-
             mc.Init();
             return mc as T;
 
@@ -53,8 +46,17 @@ public class ObjectManager
             go.transform.position = _pos;
 
             GemController gc = Utils.GetOrAddComponent<GemController>(go);
-
             gc.Init();
+
+
+
+            //TODO : 프리팹 하나를 이미지파일을 돌려쓰는 코드( 지울예정) -> 이거 하려면 addressalbe받아온 오브젝트의 밑을 받아와야함
+            //이유는 처음받아온 오브젝트는 Texture2D, 밑엔 Sprite 두개는 다른거라 첫번째 오브젝트를 사용하면 null값이 반환된다.
+            //눌러보면 밑에 값이 뜸 (ex. Gem_01.sprite[Gem_01]) 이런식으로 바꿔서 받아줘야함
+            string key = Random.Range(0, 2) == 0 ? "Gem_01.sprite" : "Gem_02.sprite";
+            Sprite sprite = Manager.ResourceM.Load<Sprite>(key);
+            go.GetComponent<SpriteRenderer>().sprite = sprite;
+
             return gc as T;
 
 

@@ -65,21 +65,21 @@
     <Compile Include="Assets/!Scripts/Contents/Skills/SkillController.cs" />
     <Compile Include="Assets/!Scripts/Utils/Define.cs" />
     <Compile Include="Assets/!Scripts/Utils/Utils.cs" />
+    <Compile Include="Assets/!Scripts/Data/Data.Contents.cs" />
     <Compile Include="Assets/!Scripts/Contents/Skills/ProjectileController.cs" />
+    <Compile Include="Assets/!Scripts/Manager/Contents/SpawnManager.cs" />
     <Compile Include="Assets/!Scripts/Manager/System/DataManager.cs" />
     <Compile Include="Assets/!Scripts/Manager/System/SoundManager.cs" />
     <Compile Include="Assets/!Scripts/Controllers/MonsterController.cs" />
     <Compile Include="Assets/!Scripts/Controllers/PlayerController.cs" />
     <Compile Include="Assets/!Scripts/Utils/Memo.cs" />
+    <Compile Include="Assets/!Scripts/Controllers/GemController.cs" />
     <Compile Include="Assets/!Scripts/Manager/System/UIManager.cs" />
     <Compile Include="Assets/!Scripts/Manager/Contents/GameManager.cs" />
     <Compile Include="Assets/!Scripts/Controllers/CameraController.cs" />
     <Compile Include="Assets/!Scripts/Controllers/BaseController.cs" />
     <Compile Include="Assets/!Scripts/Manager/Manager.cs" />
     <Compile Include="Assets/!Scripts/Manager/System/SceneManager.cs" />
-    <Compile Include="Assets/!Scripts/Manager/Contents/SpawnManager.cs" />
-    <Compile Include="Assets/!Scripts/Data/Data.Contents.cs" />
-    <Compile Include="Assets/!Scripts/Controllers/GemController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/!Resources/Temp/Dragon Warrior Files/Read Me.txt" />
@@ -755,6 +755,9 @@
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Subsystem.Registration">
       <HintPath>Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
     </Reference>
@@ -820,9 +823,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

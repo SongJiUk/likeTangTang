@@ -23,6 +23,7 @@ public class GameScene : MonoBehaviour
 
         Manager.ResourceM.LoadAllAsync<Object>("PrevLoad", (key, loadCount, maxCount) =>
         {
+            Debug.Log($"{key}, {loadCount} / {maxCount}");
             if (loadCount == maxCount)
             {
                 StartLoad();
