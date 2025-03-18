@@ -20,8 +20,9 @@ public class SpawnManager : MonoBehaviour
         int monsterCount = Manager.ObjectM.mcSet.Count;
         if (monsterCount >= maxMonsterCount) return;
 
-        MonsterController mc = Manager.ObjectM.Spawn<MonsterController>(Random.Range(0, 2));
-        mc.transform.position = new Vector2(Random.RandomRange(-10, 10), Random.RandomRange(-10, 10));
+        Vector3 pos = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), 0);
+        MonsterController mc = Manager.ObjectM.Spawn<MonsterController>(pos, Random.Range(0, 2));
+        
 
     }
     IEnumerator UpdateSpawn()

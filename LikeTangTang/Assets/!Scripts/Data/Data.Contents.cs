@@ -9,7 +9,7 @@ namespace Data
     [Serializable]
     public class PlayerData
     {
-        public int level;
+        public int level; //key
         public int maxHp;
         public int attack;
         public int totalExp;
@@ -32,9 +32,35 @@ namespace Data
     }
     #endregion
 
-    /*TODO : 몬스터 데이터 생성하기.(Json 파일도 같이)
+    /*TODO : 드랍아이템 계층구조. 
      * 
-     * 
-     * 드랍 아이템도 정해줘야함
      */
+
+    #region Json MonsterData
+
+    [Serializable]
+    public class MonsterData
+    {
+        public string name; //key
+        public int maxHp;
+        public int attck;
+        public int giveExp;
+        public List<int> rare;
+    }
+
+    [Serializable]
+    public class MonsterDataLoader : ILoader<string, MonsterData>
+    {
+        public List<MonsterData> stats = new List<MonsterData>();
+
+        public Dictionary<string, MonsterData> MakeDict()
+        {
+            Dictionary<string, MonsterData> dic = new Dictionary<string, MonsterData>();
+            foreach (MonsterData stat in stats)
+                dic.Add(stat.name, stat);
+
+            return dic;
+        }
+    }
+    #endregion
 }

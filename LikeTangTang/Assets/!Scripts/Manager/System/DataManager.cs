@@ -13,14 +13,22 @@ public interface ILoader<key, value>
 public class DataManager
 {
     /*TODO : Json vs Xml (Json 코드 파악해보기)
-        난 Json
+        Json으로 하기
+        PlayerDic 딕셔너리에 PlayerData.json 파일에서 값들을 가져와 넣어준다.
      
      */
 
-    public Dictionary<int, Data.PlayerData> PlayerDic { get; private set; } = new Dictionary<int, Data.PlayerData>();
+    public Dictionary<int, Data.PlayerData> PlayerDic { get; private set; }
+        = new Dictionary<int, Data.PlayerData>();
+
+    public Dictionary<string, Data.MonsterData> MonsterDic { get; private set; }
+        = new Dictionary<string, Data.MonsterData>();
+
     public void Init()
     {
         PlayerDic = LoadJson<Data.PlayerDataLoader, int, Data.PlayerData>("PlayerData.json").MakeDict();
+        MonsterDic = LoadJson<Data.MonsterDataLoader, string, Data.MonsterData>("MonsterData.json").MakeDict();
+
     }
 
     Loader LoadJson<Loader, key, value>(string _path) where Loader : ILoader<key, value>

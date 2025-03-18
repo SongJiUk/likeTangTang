@@ -21,14 +21,11 @@ public class GameScene : MonoBehaviour
         //    Debug.Log($"{go.name}");
         //});
 
-        Manager.ResourceM.LoadAllAsync<GameObject>("PrevLoad", (key, loadCount, maxCount) =>
+        Manager.ResourceM.LoadAllAsync<Object>("PrevLoad", (key, loadCount, maxCount) =>
         {
             if (loadCount == maxCount)
             {
-                Manager.ResourceM.LoadAllAsync<TextAsset>("Data", (key, loadCount2, maxCount2) =>
-                {
-                    if (loadCount2 == maxCount2) StartLoad();
-                });
+                StartLoad();
             }
                 
         });
@@ -38,7 +35,7 @@ public class GameScene : MonoBehaviour
     void StartLoad()
     {
 
-        var player = Manager.ObjectM.Spawn<PlayerController>();
+        var player = Manager.ObjectM.Spawn<PlayerController>(Vector3.zero);
 
         spawnManager = gameObject.AddComponent<SpawnManager>();
 
@@ -65,6 +62,11 @@ public class GameScene : MonoBehaviour
         //{
         //    Debug.Log($"LV : {PlayerData.level}, Hp : {PlayerData.maxHp}");
         //}
+
+        foreach (var MonsterData in Manager.DataM.MonsterDic.Values)
+        {
+            Debug.Log($"name : {MonsterData.name}, DropData : {MonsterData.rare}");
+        }
     }
 
 }

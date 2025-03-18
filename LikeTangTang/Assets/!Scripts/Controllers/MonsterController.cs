@@ -9,6 +9,8 @@ public class MonsterController : CretureController
     float _hp;
     public override bool Init()
     {
+        base.Init();
+
         objType = Define.ObjectType.Monster;
         Speed = 1f;
         return true;
@@ -70,7 +72,9 @@ public class MonsterController : CretureController
     {
         base.OnDead();
 
-        Manager.ObjectM.DeSpawn(this.gameObject);
+        GemController gc = Manager.ObjectM.Spawn<GemController>(this.transform.position);
+
+        Manager.ObjectM.DeSpawn(this);
 
         if (coDotDamage != null) StopCoroutine(coDotDamage);
 

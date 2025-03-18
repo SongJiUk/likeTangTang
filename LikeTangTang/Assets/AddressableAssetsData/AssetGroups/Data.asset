@@ -21,7 +21,12 @@ MonoBehaviour:
     m_Address: PlayerData.json
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Data
+    - PrevLoad
+  - m_GUID: c9d2508163ae743a9ae69549f659294e
+    m_Address: MonsterData.json
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

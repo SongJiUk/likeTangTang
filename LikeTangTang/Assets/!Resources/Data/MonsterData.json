@@ -1,0 +1,30 @@
+{
+    "stats": [
+
+        {
+            "name": "Goblin_01",
+            "maxHp": "100",
+            "attack": "1",
+            "giveExp": "10",
+
+            "DropData": [
+                {
+                    "rare": "1"
+                }
+            ]
+
+        },
+        {
+            "name": "Snake_01",
+            "maxHp": "100",
+            "attack": "2",
+            "giveExp": "20",
+
+            "DropData": [
+                {
+                    "rare": "2"
+                }
+            ]
+        }
+    ]
+}
