@@ -9,6 +9,20 @@ class Pool
     GameObject prefab;
     IObjectPool<GameObject> pool;
 
+    Transform root;
+    Transform Root { 
+        get 
+        {
+            if(root == null)
+            {
+                GameObject go = new GameObject() { name = $"{prefab.name}Root" };
+                root = go.transform;
+            }
+
+            return root;
+        } 
+    }
+
 
     public Pool(GameObject _prefab)
     {
@@ -17,27 +31,39 @@ class Pool
     }
 
 
+    public GameObject Pop()
+    {
+        return pool.Get();
+    }
+    public void Push(GameObject _go)
+    {
+        pool.Release(_go);
+    }
 
-    //ToDO : Pop, Push 생성 
+    
 
     GameObject OnCreate()
     {
-        return null;
+        GameObject go = GameObject.Instantiate(prefab);
+        go.name = prefab.name;
+        go.transform.parent = Root;
+        return go;
+      
     }
 
     void OnGet(GameObject _go)
     {
-
+        _go.SetActive(true);
     }
 
     void OnRelease(GameObject _go)
     {
-
+        _go.SetActive(false);
     }
 
     void OnDestory(GameObject _go)
     {
-
+        GameObject.Destroy(_go);
     }
 
 }
@@ -45,9 +71,32 @@ class Pool
 
 public class PoolManager
 {
-    /* ToDo : 예전과는 다르게 유니티에서 공식적으로 지원해줌
-     *  Pop, Create, Push
+    /* ToDo : 프리팹.name으로 계속 사용할것인지 체크. 키값을 넘겨서 하는 방법 생각해보기
      */
 
+    Dictionary<string, Pool> pools = new Dictionary<string, Pool>();
+    public GameObject Pop(GameObject _prefab)
+    {
+        if(!pools.ContainsKey(_prefab.name)) 
+            CreatePool(_prefab);
+       
+
+        return pools[_prefab.name].Pop();
+    }
+
+    public bool Push(GameObject _prefab)
+    {
+        if (!pools.ContainsKey(_prefab.name))
+            return false;
+
+        pools[_prefab.name].Push(_prefab);
+        return true;
+
+    }
+    public void CreatePool(GameObject _prefab)
+    {
+        Pool pool = new Pool(_prefab);
+        pools.Add(_prefab.name, pool);
+    }
 
 }

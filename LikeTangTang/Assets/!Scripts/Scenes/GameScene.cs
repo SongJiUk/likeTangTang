@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class GameScene : MonoBehaviour
 {
-
-    //TODO
+    SpawnManager spawnManager;
+    //
     /*
      일단 여기서 불러오는 역할을 해야됨. ResourceManager에서 Addressable를 이용하여 모두 불러옴.
      다 불러왔으면 로드
@@ -35,16 +35,17 @@ public class GameScene : MonoBehaviour
 
         var player = Manager.ObjectM.Spawn<PlayerController>();
 
-        
-        
-        for(int i = 0; i< 10; i++)
-        {
-            int RandNum = Random.Range(0, 2);
-            var monster = Manager.ObjectM.Spawn<MonsterController>(RandNum);
+        spawnManager = gameObject.AddComponent<SpawnManager>();
 
-            monster.transform.position = new Vector2(Random.RandomRange(-10, 10), Random.RandomRange(-10, 10));
-            monster.name = $"!Monster{i}";
-        }
+        
+        //for(int i = 0; i< 10; i++)
+        //{
+        //    int RandNum = Random.Range(0, 2);
+        //    var monster = Manager.ObjectM.Spawn<MonsterController>(RandNum);
+
+        //    monster.transform.position = new Vector2(Random.RandomRange(-10, 10), Random.RandomRange(-10, 10));
+        //    monster.name = $"!Monster{i}";
+        //}
 
 
         //Todo : UI매니저 만들면 바꾸자.

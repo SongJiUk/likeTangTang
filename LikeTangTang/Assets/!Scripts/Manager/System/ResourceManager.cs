@@ -8,14 +8,15 @@ using Object = UnityEngine.Object;
 
 public class ResourceManager
 {
-    /* TODO
+    /* 
      * 로드(Instantiate로 필요할때마다 만들고 삭제하는 방식
      * 어차피 처음엔 만들어주긴해야됨(나중가면 pooling할거)
      * 
      * 
      * 
-     * 비동기 로
-     * 값을 받아서 Dic에 넣어서 보관해줄거임 <stirng , Object>
+     * 비동기 로드
+     * //TODO
+     * 키값을 받아서 Dic에 넣어서 보관해줄거임 <stirng , Object>
      * 
      * 키값을 넣어서 부르는 코드를 만들건데 제네릭 코드로 생성(비동기)
      * Dic을 체크해주고 없으면 Addressables의 함수 사용
@@ -29,8 +30,54 @@ public class ResourceManager
     Dictionary<string, Object> resourceDic = new Dictionary<string, Object>();
     public Dictionary<string, Object> ResourceDic { get; }
 
-    #region 비동기 코드 로딩
+   
+    public T Load<T>(string _key) where T : Object
+    {
+        if(resourceDic.TryGetValue(_key, out Object resource))
+        {
+            return resource as T;
+        }
+        return null;
+    }
 
+    public GameObject Instantiate(string _key, Transform _parent = null, bool _pooing = false)
+    {
+
+        //if(resourceDic.TryGetValue(_key, out Object resource))
+        //{
+        //    var obj = GameObject.Instantiate(resource);
+        //    return obj as GameObject;
+        //}
+        //return null;
+
+        GameObject prefab = Load<GameObject>(_key);
+
+        if (prefab == null)
+        {
+            Debug.LogError("키에 맞는 프리팹이 없음!!");
+            return null;
+        }
+
+        if (_pooing)
+            return Manager.PoolM.Pop(prefab);
+
+        GameObject go = GameObject.Instantiate(prefab, _parent);
+        go.name = prefab.name;
+
+        return go;
+    }
+
+    public void Destory(GameObject _go)
+    {
+        if (_go == null) return;
+
+        if (Manager.PoolM.Push(_go))
+            return;
+
+        Object.Destroy(_go);
+    }
+
+    #region 비동기 코드 로딩(Addressable)
     public void LoadAsync<T>(string _key, Action<T> cb = null) where T : Object
     {
 
@@ -68,25 +115,4 @@ public class ResourceManager
         };
     }
     #endregion
-
-
-    public GameObject Instantiate(string _key, bool _pooing = false)
-    {
-        //ToDo : 풀링시스템이 true라면 풀링에 넣어줘야함.
-        if(resourceDic.TryGetValue(_key, out Object resource))
-        {
-            var obj = GameObject.Instantiate(resource);
-            return obj as GameObject;
-        }
-
-        return null;
-
-
-        if(_pooing)
-        {
-            //ToDO : 풀링시스템
-        }
-
-    }
-
 }

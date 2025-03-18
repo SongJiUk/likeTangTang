@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ObjectManager
 {
     public PlayerController Player { get; private set; }
-    HashSet<MonsterController> mcSet = new HashSet<MonsterController>();
-    HashSet<ProjectileController> pjSet = new HashSet<ProjectileController>();
+    public HashSet<MonsterController> mcSet = new HashSet<MonsterController>();
+    public HashSet<ProjectileController> pjSet = new HashSet<ProjectileController>();
 
 
-    /*TODO 오브젝트 생성, 스폰등 관리
+    /* 오브젝트 생성, 스폰등 관리
      *  
      * 스폰(ID를 받아서 리턴해줌) - Generic
      * 디스폰
@@ -33,9 +34,8 @@ public class ObjectManager
         {
             string id = (_templateID == 0 ? "Goblin_01.prefab" : "Snake_01.prefab");
 
-            GameObject go = Manager.ResourceM.Instantiate(id);
-            MonsterController mc = go.AddComponent<MonsterController>();
-
+            GameObject go = Manager.ResourceM.Instantiate(id, null, true);
+            MonsterController mc = Utils.GetOrAddComponent<MonsterController>(go);
             return mc as T;
 
         }
@@ -48,6 +48,6 @@ public class ObjectManager
 
     public void DeSpawn(GameObject _go)
     {
-
+        Manager.PoolM.Push(_go);      
     }
 }

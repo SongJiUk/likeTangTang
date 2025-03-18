@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class MonsterController : CretureController
 {
-
+    [SerializeField]
+    float _hp;
     public override bool Init()
     {
-       
-        //TODO 초기화
         objType = Define.ObjectType.Monster;
         Speed = 1f;
         return true;
@@ -17,7 +16,6 @@ public class MonsterController : CretureController
 
     void FixedUpdate()
     {
-        //TODO 플레이어를 찾아서 움직이게
         PlayerController pc = Manager.ObjectM.Player;
         if (pc == null) return;
 
@@ -32,12 +30,24 @@ public class MonsterController : CretureController
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //TODO 충돌시 데미지
+        PlayerController target =  collision.gameObject.GetComponent<PlayerController>();
+
+        if (target == null) return;
+
+        if (coDotDamage == null)
+            StartCoroutine(CoStartDotDamage(target));
         
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        
+        PlayerController target = collision.gameObject.GetComponent<PlayerController>();
+        if (target == null) return;
+
+        if (coDotDamage != null) 
+            StopCoroutine(coDotDamage);
+
+        coDotDamage = null;
     }
 
     Coroutine coDotDamage;
@@ -59,6 +69,8 @@ public class MonsterController : CretureController
     public override void OnDead()
     {
         base.OnDead();
+
+        Manager.ObjectM.DeSpawn(this.gameObject);
 
         if (coDotDamage != null) StopCoroutine(coDotDamage);
 
