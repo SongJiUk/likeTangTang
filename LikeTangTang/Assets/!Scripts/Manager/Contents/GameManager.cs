@@ -6,10 +6,11 @@ using UnityEngine;
 public class GameManager
 {
     public PlayerController player { get { return Manager.ObjectM?.Player; } }
+    
 
+    #region 플레이어 움직임
 
     Vector2 playerMoveDir;
-
 
     public event Action<Vector2> OnMovePlayerDir;
 
@@ -22,4 +23,9 @@ public class GameManager
             OnMovePlayerDir?.Invoke(playerMoveDir);
         }
     }
+    #endregion
+
+    //TODO : Grid로 Gem관리해주기.
+    public int Gem { get; set; }
+    public int Gold { get; set; }
 }

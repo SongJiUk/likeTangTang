@@ -7,7 +7,7 @@ using UnityEngine;
 public static class Utils
 {
     //Get을 해본다음 없으면 추가, 있으면 리턴
-    public static T GetOrAddComponent<T>(GameObject go) where T : Component
+    public static T GetOrAddComponent<T>(this GameObject go) where T : Component
     {
         T component = go.GetComponent<T>();
         if (component == null)

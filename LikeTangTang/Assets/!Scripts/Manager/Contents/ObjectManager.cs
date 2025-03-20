@@ -6,10 +6,12 @@ using UnityEngine;
 public class ObjectManager
 {
     public PlayerController Player { get; private set; }
-    public HashSet<MonsterController> mcSet = new HashSet<MonsterController>();
-    public HashSet<ProjectileController> pjSet = new HashSet<ProjectileController>();
-    public HashSet<GemController> gemSet = new HashSet<GemController>();
+    public HashSet<MonsterController> mcSet { get; } = new HashSet<MonsterController>();
+    public HashSet<ProjectileController> pjSet { get; } = new HashSet<ProjectileController>();
+    public HashSet<GemController> gemSet { get; } = new HashSet<GemController>();
 
+
+    public GridController Grid {get; private set;}
 
     public T Spawn<T>(Vector3 _pos, int _templateID = 0) where T : BaseController
     {
@@ -36,6 +38,7 @@ public class ObjectManager
             go.transform.position = _pos;
 
             MonsterController mc = Utils.GetOrAddComponent<MonsterController>(go);
+            mcSet.Add(mc);
             mc.Init();
             return mc as T;
 
@@ -46,6 +49,7 @@ public class ObjectManager
             go.transform.position = _pos;
 
             GemController gc = Utils.GetOrAddComponent<GemController>(go);
+            gemSet.Add(gc);
             gc.Init();
 
 
@@ -57,9 +61,16 @@ public class ObjectManager
             Sprite sprite = Manager.ResourceM.Load<Sprite>(key);
             go.GetComponent<SpriteRenderer>().sprite = sprite;
 
+            Grid.AddCell(go);
+
             return gc as T;
 
 
+        }
+        else if(type == typeof(GridController))
+        {
+            Grid = GameObject.Find("!Grid").GetComponent<GridController>();
+            Grid.Init();
         }
         return null;
     }
@@ -85,6 +96,8 @@ public class ObjectManager
         {
             gemSet.Remove(_obj as GemController);
             Manager.ResourceM.Destory(_obj.gameObject);
+
+            Grid.RemoveCell(_obj.gameObject);
         }
 
     }

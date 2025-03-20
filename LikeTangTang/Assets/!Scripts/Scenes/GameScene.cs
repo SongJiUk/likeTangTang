@@ -36,6 +36,7 @@ public class GameScene : MonoBehaviour
     void StartLoad()
     {
 
+        Manager.ObjectM.Spawn<GridController>(Vector3.zero);
         var player = Manager.ObjectM.Spawn<PlayerController>(Vector3.zero);
 
         spawnManager = gameObject.AddComponent<SpawnManager>();
@@ -49,6 +50,7 @@ public class GameScene : MonoBehaviour
         //    monster.transform.position = new Vector2(Random.RandomRange(-10, 10), Random.RandomRange(-10, 10));
         //    monster.name = $"!Monster{i}";
         //}
+
 
 
         //Todo : UI매니저 만들면 바꾸자.
