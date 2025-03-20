@@ -70,8 +70,8 @@ public class PlayerController : CretureController
             }
         }
 
-        var FindGem = Manager.ObjectM.Grid.GetObjects(transform.position, GetEnvDist);
-        Debug.Log($"{FindGem.Count}  /  {gems.Count}");
+        // var FindGem = Manager.ObjectM.Grid.GetObjects(transform.position, GetEnvDist);
+        // Debug.Log($"{FindGem.Count}  /  {gems.Count}");
 
     }
 }

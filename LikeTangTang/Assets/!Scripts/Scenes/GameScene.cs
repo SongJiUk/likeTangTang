@@ -65,6 +65,10 @@ public class GameScene : MonoBehaviour
         //{
         //    Debug.Log($"LV : {PlayerData.level}, Hp : {PlayerData.maxHp}");
         //}
+        foreach(var SkillData in Manager.DataM.SkillDic.Values)
+        {
+            Debug.Log($"{SkillData.templateID} / {SkillData.name} / {SkillData.type} / {SkillData.prefab} / {SkillData.damage}");
+        }
 
         foreach (var MonsterData in Manager.DataM.MonsterDic.Values)
         {

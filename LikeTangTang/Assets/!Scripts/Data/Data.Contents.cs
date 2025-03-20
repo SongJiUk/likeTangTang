@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Data
@@ -59,6 +60,45 @@ namespace Data
             foreach (MonsterData stat in stats)
                 dic.Add(stat.name, stat);
 
+            return dic;
+        }
+    }
+    #endregion
+
+    #region SkillData
+
+    [Serializable]
+    public class SkillData
+    {
+        public int templateID;
+        public string name;
+        public string skillTypeStr;
+        public Define.SkillType type = Define.SkillType.None;
+        public string prefab;
+        public float damage;
+    }
+
+    [Serializable]
+    public class SkillDataLoader : ILoader<int, SkillData>
+    {
+        //키랑 동일해야함 
+        public List<SkillData> skillDatas = new List<SkillData>();
+
+        public Dictionary<int, SkillData> MakeDict()
+        {
+            Dictionary<int, SkillData> dic = new Dictionary<int, SkillData>();
+            foreach(SkillData stat in skillDatas)
+            {
+                if(stat.type == Define.SkillType.None)
+                {
+                    if(Enum.TryParse(stat.skillTypeStr, out Define.SkillType skillType))
+                        stat.type = skillType;
+                    else 
+                        Debug.LogError("SkillData Type Match Error!!");
+                }
+                dic.Add(stat.templateID, stat);
+            }
+            
             return dic;
         }
     }

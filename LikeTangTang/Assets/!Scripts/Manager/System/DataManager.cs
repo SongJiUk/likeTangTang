@@ -24,10 +24,14 @@ public class DataManager
     public Dictionary<string, Data.MonsterData> MonsterDic { get; private set; }
         = new Dictionary<string, Data.MonsterData>();
 
+    public Dictionary<int, Data.SkillData> SkillDic {get; private set;}
+        = new Dictionary<int, Data.SkillData>();
+
     public void Init()
     {
         PlayerDic = LoadJson<Data.PlayerDataLoader, int, Data.PlayerData>("PlayerData.json").MakeDict();
         MonsterDic = LoadJson<Data.MonsterDataLoader, string, Data.MonsterData>("MonsterData.json").MakeDict();
+        SkillDic = LoadJson<Data.SkillDataLoader, int, Data.SkillData>("SkillData.json").MakeDict();
 
     }
 

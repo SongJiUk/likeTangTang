@@ -1,0 +1,11 @@
+{
+  "skillDatas": [
+    {
+        "templateID" : "1",
+        "name" : "화염구",
+        "skillTypeStr": "Projectile",
+        "prefab": "FrieProjectile.prefab",
+        "damage": "1000"
+    }
+  ]
+}

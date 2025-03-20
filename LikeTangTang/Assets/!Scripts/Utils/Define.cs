@@ -27,4 +27,11 @@ public static class Define
         Env
     }
 
+    public enum SkillType
+    {
+        None,
+        Projectile,
+        Melee
+    }
+
 }
