@@ -76,7 +76,8 @@ public class PlayerController : CretureController
     void GetGem()
     {
         List<GemController> gems = Manager.ObjectM.gemSet.ToList();
-
+        var FindGem = Manager.ObjectM.Grid.GetObjects(transform.position, GetEnvDist);
+        
         var sqrtDist = GetEnvDist * GetEnvDist;
         foreach (var gem in gems)
         {
@@ -89,7 +90,7 @@ public class PlayerController : CretureController
             }
         }
 
-        // var FindGem = Manager.ObjectM.Grid.GetObjects(transform.position, GetEnvDist);
+        
         // Debug.Log($"{FindGem.Count}  /  {gems.Count}");
 
     }
