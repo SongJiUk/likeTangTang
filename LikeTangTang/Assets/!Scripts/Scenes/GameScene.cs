@@ -35,7 +35,8 @@ public class GameScene : MonoBehaviour
 
     void StartLoad()
     {
-
+        Manager.DataM.Init();
+        
         Manager.ObjectM.Spawn<GridController>(Vector3.zero);
         var player = Manager.ObjectM.Spawn<PlayerController>(Vector3.zero);
 
@@ -60,7 +61,7 @@ public class GameScene : MonoBehaviour
         Camera.main.GetComponent<CameraController>().Target = player.gameObject;
 
 
-        Manager.DataM.Init();
+        
         //foreach(var PlayerData in Manager.DataM.PlayerDic.Values)
         //{
         //    Debug.Log($"LV : {PlayerData.level}, Hp : {PlayerData.maxHp}");

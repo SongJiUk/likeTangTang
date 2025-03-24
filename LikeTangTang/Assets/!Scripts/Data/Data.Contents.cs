@@ -46,6 +46,7 @@ namespace Data
         public int maxHp;
         public int attck;
         public int giveExp;
+        public string prefab;
         public List<int> rare;
     }
 

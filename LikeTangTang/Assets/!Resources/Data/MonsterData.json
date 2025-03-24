@@ -6,6 +6,7 @@
             "maxHp": "100",
             "attack": "1",
             "giveExp": "10",
+            "prefab": "Goblin_01.prefab",
 
             "DropData": [
                 {
@@ -19,7 +20,7 @@
             "maxHp": "100",
             "attack": "2",
             "giveExp": "20",
-
+            "prefab": "Snake_01.prefab",
             "DropData": [
                 {
                     "rare": "2"

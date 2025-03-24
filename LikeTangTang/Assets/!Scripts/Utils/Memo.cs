@@ -74,5 +74,74 @@ Get
 Utils 쪽에 만들거나 Extension을 하나 만들어서 activeSelf 를 추가해서 검사해주는거임
 굳이 안만들어서 사용해도됨 ( activeSelf를 &&으로 검사해주면 되니까) 근데 만들어주면 편함.
 
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+NOTE : memoTree 설정 방법 
+     Setting.Json
+
+     "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]",
+        "NOTE",
+        "CHECKLIST",
+        "WARNING"
+    ],
+    "todo-tree.highlights.customHighlight": {
+        
+       "CHECKLIST": {
+      "background": "#20a904",
+      "foreground": "#ffffff",
+      "gutterIcon": true,
+      "icon": "check-circle-fill",
+      "iconColour": "#20a904",
+      "type": "text"
+    },
+    "NOTE": {
+      "background": "#ff0404",
+      "foreground": "#ffffff",
+      "gutterIcon": true,
+      "icon": "star-fill",
+      "iconColour": "#ffc404",
+      "type": "text"
+    },
+    "TODO": {
+      "background": "#b782f9",
+      "foreground": "#ffffff",
+      "gutterIcon": true,
+      "icon": "pin",
+      "iconColour": "#b782f9"
+    },
+    "WARNING": {
+      "background": "#ffc404",
+      "foreground": "#ffffff",
+      "gutterIcon": true,
+      "icon": "alert",
+      "iconColour": "#ff9f04"
+    },
+    "[ ]": {
+      "background": "#f87364",
+      "foreground": "#ffffff",
+      "gutterIcon": true,
+      "icon": "x",
+      "iconColour": "#f87364",
+      "type": "text"
+    },
+    "[x]": {
+      "background": "#20a904",
+      "foreground": "#ffffff",
+      "gutterIcon": true,
+      "icon": "check",
+      "iconColour": "#20a904",
+      "type": "text"
+    }
+  },
+  "todo-tree.regex.regex": "((\\*|//|#|<!--|;|/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\])", 추가
+
      */
 }

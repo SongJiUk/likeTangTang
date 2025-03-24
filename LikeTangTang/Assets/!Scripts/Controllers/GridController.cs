@@ -13,8 +13,8 @@ public class Cell
 
 public class GridController : BaseController
 {
-    /* TODO : Grid를 활용하여 Gem 최적화하기.
 
+    /* TODO : Grid를 활용하여 Gem 최적화하기.
     Gem을 획득하는건 Player에서 관리함
     연산을 사용할때 루트를 씌우면 부하가 심하다.기존의 값을 제곱해서 sqrMagnitude를 사용하면 됨.
 

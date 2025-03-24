@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Data;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -32,8 +35,9 @@ public class ObjectManager
         }
         else if (type == typeof(MonsterController))
         {
-            string id = (_templateID == 0 ? "Goblin_01.prefab" : "Snake_01.prefab");
 
+            string id = (_templateID == 0 ? "Goblin_01.prefab" : "Snake_01.prefab");
+            
             GameObject go = Manager.ResourceM.Instantiate(id, null, true);
             go.transform.position = _pos;
 
@@ -45,7 +49,7 @@ public class ObjectManager
         }
         else if (type == typeof(GemController))
         {
-            GameObject go = Manager.ResourceM.Instantiate("Gem.prefab", null, true);
+            GameObject go = Manager.ResourceM.Instantiate(Define.GEMNAME, null, true);
             go.transform.position = _pos;
 
             GemController gc = Utils.GetOrAddComponent<GemController>(go);
@@ -57,7 +61,7 @@ public class ObjectManager
             //TODO : 프리팹 하나를 이미지파일을 돌려쓰는 코드( 지울예정) -> 이거 하려면 addressalbe받아온 오브젝트의 밑을 받아와야함
             //이유는 처음받아온 오브젝트는 Texture2D, 밑엔 Sprite 두개는 다른거라 첫번째 오브젝트를 사용하면 null값이 반환된다.
             //눌러보면 밑에 값이 뜸 (ex. Gem_01.sprite[Gem_01]) 이런식으로 바꿔서 받아줘야함
-            string key = Random.Range(0, 2) == 0 ? "Gem_01.sprite" : "Gem_02.sprite";
+            string key = UnityEngine.Random.Range(0, 2) == 0 ? "Gem_01.sprite" : "Gem_02.sprite";
             Sprite sprite = Manager.ResourceM.Load<Sprite>(key);
             go.GetComponent<SpriteRenderer>().sprite = sprite;
 
@@ -70,16 +74,24 @@ public class ObjectManager
         }
         else if (type == typeof(GridController))
         {
-            Grid = GameObject.Find("!Grid").GetComponent<GridController>();
+            Grid = GameObject.Find(Define.GRIDNAME).GetComponent<GridController>();
             Grid.Init();
         }
-        else if (type == typeof(ProjectileController))
+        //CHECKLIST : 스킬 오브젝트가 LifeTime이 지나서 자동으로 소멸될때 타입이 맞지않아서 소멸이 안되는 문제가 있음
+        else if (type == typeof(ProjectileController)) //Explanation : 상속받는 코드들도 찾아줌
         {
+            // TemplateID 받아와서 생성
+            if(Manager.DataM.SkillDic.TryGetValue(_templateID, out var skilldata) == false) return null;
 
-        }
-        else if (typeof(T).IsSubclassOf(typeof(ProjectileController))) //Explanation : 이렇게도 사용 가능
-        {
+            string key = skilldata.prefab;
+            GameObject go = Manager.ResourceM.Instantiate(key, _pooing : true );
+            go.transform.position = _pos;
 
+            ProjectileController pc = go.GetOrAddComponent<ProjectileController>();
+            pjSet.Add(pc);
+            pc.Init();
+
+            return pc as T;
         }
             
         return null;
@@ -103,15 +115,25 @@ public class ObjectManager
         }
         else if(type == typeof(MonsterController))
         {
+            if(_obj.IsVaild() == false) return;
+
             mcSet.Remove(_obj as MonsterController);
             Manager.ResourceM.Destory(_obj.gameObject);
         }
         else if(type == typeof(GemController))
         {
+            if(_obj.IsVaild() == false) return;
+
             gemSet.Remove(_obj as GemController);
             Manager.ResourceM.Destory(_obj.gameObject);
 
             Grid.RemoveCell(_obj.gameObject);
+        }
+        else if(type == typeof(ProjectileController))
+        {
+            pjSet.Remove(_obj as ProjectileController);
+            Manager.ResourceM.Destory(_obj.gameObject);
+
         }
 
     }

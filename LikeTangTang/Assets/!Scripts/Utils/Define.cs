@@ -34,4 +34,6 @@ public static class Define
         Melee
     }
 
+    public static string GRIDNAME = "!Grid";
+    public static string GEMNAME = "Gem.prefab";
 }

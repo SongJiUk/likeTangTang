@@ -4,7 +4,7 @@
         "templateID" : "1",
         "name" : "화염구",
         "skillTypeStr": "Projectile",
-        "prefab": "FrieProjectile.prefab",
+        "prefab": "FireProjectile.prefab",
         "damage": "1000"
     }
   ]
