@@ -2,17 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileController : BaseController
+public class ProjectileController : SkillController
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   /*
+    * TODO : 투사체는 발사하는 객체가 있어야됌.
+    */
 }

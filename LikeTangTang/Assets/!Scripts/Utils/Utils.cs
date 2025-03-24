@@ -55,4 +55,14 @@ public static class Utils
 
         return null;
     }
+    
+    public static bool IsVaild(this GameObject _go)
+    {
+        return _go != null && _go.activeSelf;
+    }
+
+    public static bool IsVaild(this BaseController _bc)
+    {
+        return _bc != null && _bc.isActiveAndEnabled;
+    }
 }

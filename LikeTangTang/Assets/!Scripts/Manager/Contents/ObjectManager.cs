@@ -30,7 +30,7 @@ public class ObjectManager
 
             return pc as T;
         }
-        else if(type == typeof(MonsterController))
+        else if (type == typeof(MonsterController))
         {
             string id = (_templateID == 0 ? "Goblin_01.prefab" : "Snake_01.prefab");
 
@@ -43,7 +43,7 @@ public class ObjectManager
             return mc as T;
 
         }
-        else if(type == typeof(GemController))
+        else if (type == typeof(GemController))
         {
             GameObject go = Manager.ResourceM.Instantiate("Gem.prefab", null, true);
             go.transform.position = _pos;
@@ -61,22 +61,36 @@ public class ObjectManager
             Sprite sprite = Manager.ResourceM.Load<Sprite>(key);
             go.GetComponent<SpriteRenderer>().sprite = sprite;
 
+            //Explanation : AddGrid
             Grid.AddCell(go);
 
             return gc as T;
 
 
         }
-        else if(type == typeof(GridController))
+        else if (type == typeof(GridController))
         {
             Grid = GameObject.Find("!Grid").GetComponent<GridController>();
             Grid.Init();
         }
+        else if (type == typeof(ProjectileController))
+        {
+
+        }
+        else if (typeof(T).IsSubclassOf(typeof(ProjectileController))) //Explanation : 이렇게도 사용 가능
+        {
+
+        }
+            
         return null;
     }
 
     public void DeSpawn<T>(T _obj) where T : BaseController
     {
+
+        if (!_obj.IsVaild()) Debug.LogError("DeSpawn Error!!!");
+
+
         System.Type type = typeof(T);
 
         if(type == typeof(PlayerController))
