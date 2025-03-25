@@ -26,7 +26,7 @@ public class PlayerController : CretureController
     {
         if(base.Init() == false) return false;
 
-        Speed = 2f;
+        Speed = 10f;
         Manager.GameM.OnMovePlayerDir += OnMoveDirChange;
 
         //StartFireProjectile();

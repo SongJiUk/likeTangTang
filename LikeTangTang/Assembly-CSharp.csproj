@@ -85,6 +85,7 @@
     <Compile Include="Assets\!Scripts\Manager\System\SceneManager.cs" />
     <Compile Include="Assets\!Scripts\Contents\Skills\EgoSwordController.cs" />
     <Compile Include="Assets\!Scripts\Contents\Skills\EgoSwordChild.cs" />
+    <Compile Include="Assets\!Scripts\Controllers\MapTileController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\!Resources\Temp\Dragon Warrior Files\Read Me.txt" />
