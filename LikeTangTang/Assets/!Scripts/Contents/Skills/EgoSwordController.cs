@@ -32,9 +32,9 @@ public class EgoSwordController : SkillController
 
     public void FindChild()
     {
-        if (swingParticle.Length != 0) return;
-
         int childCount = transform.childCount;
+
+        if (swingParticle.Length == childCount) return;
 
         swingParticle = new ParticleSystem[childCount];
 

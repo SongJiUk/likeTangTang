@@ -33,7 +33,7 @@ namespace Data
     }
     #endregion
 
-    /*TODO : 드랍아이템 계층구조. 
+    /*TODO : 드랍아이템 계층구조 설정 해야됌.
      * 
      */
 

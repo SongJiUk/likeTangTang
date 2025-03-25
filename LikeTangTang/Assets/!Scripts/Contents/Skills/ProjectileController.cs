@@ -5,11 +5,6 @@ using UnityEngine;
 
 public class ProjectileController : SkillController
 {
-   /*
-    * TODO : 투사체는 발사하는 객체가 있어야됌.
-
-    */
-
     CretureController owner;
     Vector3 dir;
     float speed;

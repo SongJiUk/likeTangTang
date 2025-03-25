@@ -31,7 +31,6 @@ public class MonsterController : CretureController
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //TODO 충돌시 데미지
         PlayerController target =  collision.gameObject.GetComponent<PlayerController>();
 
         if (target == null) return;

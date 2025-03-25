@@ -22,7 +22,7 @@ public class ObjectManager
 
         if (type == typeof(PlayerController))
         {
-            //TODO: Data에서 값을 가져와서 생성.
+            //TODO: Data에서 값을 가져와서 생성하기.
             GameObject go = Manager.ResourceM.Instantiate("Slime_01.prefab");
             go.name = "!Player";
             go.transform.position = _pos;

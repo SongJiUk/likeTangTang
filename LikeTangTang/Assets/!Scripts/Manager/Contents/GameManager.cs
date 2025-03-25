@@ -25,7 +25,6 @@ public class GameManager
     }
     #endregion
 
-    //TODO : Grid로 Gem관리해주기.
     public int Gem { get; set; }
     public int Gold { get; set; }
 }

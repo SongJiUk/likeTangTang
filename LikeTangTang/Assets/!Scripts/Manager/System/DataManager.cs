@@ -12,12 +12,6 @@ public interface ILoader<key, value>
 
 public class DataManager
 {
-    /*TODO : Json vs Xml (Json 코드 파악해보기)
-        Json으로 하기
-        PlayerDic 딕셔너리에 PlayerData.json 파일에서 값들을 가져와 넣어준다.
-     
-     */
-
     public Dictionary<int, Data.PlayerData> PlayerDic { get; private set; }
         = new Dictionary<int, Data.PlayerData>();
 

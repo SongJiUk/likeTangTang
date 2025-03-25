@@ -96,7 +96,7 @@ public class PlayerController : CretureController
 
     }
 
-    //TODO : 스킬이 많아지면 따로 관리하는게 좋긴함. (별도의 클래스)
+    //TODO : 스킬이 많아지면 따로 관리하기.
     #region FireProjectile
     Coroutine coFireProjectile;
     
