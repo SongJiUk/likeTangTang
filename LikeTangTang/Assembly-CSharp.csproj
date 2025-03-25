@@ -93,7 +93,7 @@
     <Compile Include="Assets/!Scripts/UI/UI_Base.cs" />
     <Compile Include="Assets/!Scripts/UI/UI_GameScene.cs" />
     <Compile Include="Assets/!Scripts/UI/UI_SkillCardItem.cs" />
-    <Compile Include="Assets/!Scripts/UI/UI_SkillCardItem1.cs" />
+    <Compile Include="Assets/!Scripts/UI/UI_SkillSelectPopup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

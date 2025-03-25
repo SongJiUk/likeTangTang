@@ -17,10 +17,6 @@ public class GameScene : MonoBehaviour
      */
     private void Start()
     {
-        //Manager.ResourceM.LoadAsync<GameObject>("Goblin_01.prefab", (go) => {
-        //    Debug.Log($"{go.name}");
-        //});
-
         Manager.ResourceM.LoadAllAsync<Object>("PrevLoad", (key, loadCount, maxCount) =>
         {
             Debug.Log($"{key}, {loadCount} / {maxCount}");
@@ -48,8 +44,7 @@ public class GameScene : MonoBehaviour
         joyStick.name = "@UI_Joystick";
 
         Camera.main.GetComponent<CameraController>().Target = player.gameObject;
-
-
+        
         Manager.GameM.OnChangeGemCount += HandleOnChangeGemCount;
         Manager.GameM.OnChangeKillCount += HandleOnChangeKillCount;
 
@@ -62,7 +57,8 @@ public class GameScene : MonoBehaviour
     }
 
     void HandleOnChangeKillCount(int _count)
-    {
+    {   
+        
         Manager.UiM.GetSceneUI<UI_GameScene>().SetKillCount(_count);
     }
 
