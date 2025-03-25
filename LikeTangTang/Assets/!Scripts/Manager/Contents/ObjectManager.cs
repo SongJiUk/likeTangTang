@@ -37,7 +37,7 @@ public class ObjectManager
         {
 
             string id = (_templateID == 0 ? "Goblin_01.prefab" : "Snake_01.prefab");
-            
+
             GameObject go = Manager.ResourceM.Instantiate(id, null, true);
             go.transform.position = _pos;
 
@@ -81,10 +81,9 @@ public class ObjectManager
         else if (type == typeof(ProjectileController)) //Explanation : 상속받는 코드들도 찾아줌
         {
             // TemplateID 받아와서 생성
-            if(Manager.DataM.SkillDic.TryGetValue(_templateID, out var skilldata) == false) return null;
+            if (Manager.DataM.SkillDic.TryGetValue(_templateID, out var skilldata) == false) return null;
 
-            string key = skilldata.prefab;
-            GameObject go = Manager.ResourceM.Instantiate(key, _pooing : true );
+            GameObject go = Manager.ResourceM.Instantiate(skilldata.prefab, _pooing: true);
             go.transform.position = _pos;
 
             ProjectileController pc = go.GetOrAddComponent<ProjectileController>();
@@ -92,6 +91,18 @@ public class ObjectManager
             pc.Init();
 
             return pc as T;
+        }
+        else if (type == typeof(EgoSwordController))
+        {
+            if (Manager.DataM.SkillDic.TryGetValue(_templateID, out var skillData) == false) return null;
+
+            GameObject go = Manager.ResourceM.Instantiate(skillData.prefab, _pooing: false);
+            go.transform.position = _pos;
+
+            T t = go.GetOrAddComponent<T>();
+            t.Init();
+
+            return t;
         }
             
         return null;
@@ -133,6 +144,9 @@ public class ObjectManager
         {
             pjSet.Remove(_obj as ProjectileController);
             Manager.ResourceM.Destory(_obj.gameObject);
+        }
+        else if(type == typeof(EgoSwordController))
+        {
 
         }
 

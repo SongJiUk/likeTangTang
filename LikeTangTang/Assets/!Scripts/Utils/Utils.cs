@@ -1,4 +1,4 @@
-using System;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -64,5 +64,19 @@ public static class Utils
     public static bool IsVaild(this BaseController _bc)
     {
         return _bc != null && _bc.isActiveAndEnabled;
+    }
+
+    public static Vector2 CreateMonsterSpawnPoint(Vector2 _CharacterPos, float _minDist = 10.0f, float _maxDist = 20.0f)
+    {
+        //NOTE : 몬스터 스폰 포인트 지정해주는거 각도, 거리 계산해서 스폰포인트 랜덤으로 지정.
+        float angle = Random.Range(0, 360) * Mathf.Deg2Rad;
+        float dist = Random.Range(_minDist, _maxDist);
+
+        float xDist = Mathf.Cos(angle) * dist;
+        float yDist = Mathf.Sin(angle) * dist;
+
+        Vector2 spawnPos = _CharacterPos + new Vector2(xDist, yDist);
+
+        return spawnPos;
     }
 }

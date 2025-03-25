@@ -28,8 +28,9 @@ public class PlayerController : CretureController
 
         Speed = 2f;
         Manager.GameM.OnMovePlayerDir += OnMoveDirChange;
-        
-        StartFireProjectile();
+
+        //StartFireProjectile();
+        StartEgoSword();
         return true;
     }
 
@@ -119,7 +120,17 @@ public class PlayerController : CretureController
     }
     #endregion
 
-    #region  Melee
+    #region  EgoMelee
+    EgoSwordController egoSword;
+    void StartEgoSword()
+    {
+        if (egoSword.IsVaild()) return;
+
+        egoSword = Manager.ObjectM.Spawn<EgoSwordController>(standard.position, 10);
+        egoSword.transform.SetParent(standard);
+
+        egoSword.ActivateSkill();
+    }
     #endregion
 
     #region 장판
