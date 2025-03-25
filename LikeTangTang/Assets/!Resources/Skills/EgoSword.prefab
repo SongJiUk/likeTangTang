@@ -24501,7 +24501,7 @@ GameObject:
   - component: {fileID: 3879975523637581710}
   - component: {fileID: 4152181725643790294}
   - component: {fileID: 4275180597620909992}
-  - component: {fileID: 4398574352859442102}
+  - component: {fileID: 3553294850662151146}
   m_Layer: 8
   m_Name: EgoSword
   m_TagString: Weapon
@@ -24601,7 +24601,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4398574352859442102
+--- !u!114 &3553294850662151146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -24610,14 +24610,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4217842100069291762}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 505b9463f50ec0d4397db028718fb21e, type: 3}
+  m_Script: {fileID: 11500000, guid: 243b604ee62d5274ea001cc8d9c4b7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _swingParticles:
-  - {fileID: 1681808170223585276}
-  - {fileID: 6985662887103722227}
-  - {fileID: 2805518476969034538}
-  - {fileID: 7808535720102256075}
+  swingParticle: []
+  SkillLevel: 1
 --- !u!1 &6478390955051475138
 GameObject:
   m_ObjectHideFlags: 0
