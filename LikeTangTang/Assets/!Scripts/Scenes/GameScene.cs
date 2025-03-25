@@ -36,45 +36,42 @@ public class GameScene : MonoBehaviour
     void StartLoad()
     {
         Manager.DataM.Init();
+        Manager.UiM.ShowSceneUI<UI_GameScene>();
         
         Manager.ObjectM.Spawn<GridController>(Vector3.zero);
         var player = Manager.ObjectM.Spawn<PlayerController>(Vector3.zero);
 
         spawnManager = gameObject.AddComponent<SpawnManager>();
 
-        
-        //for(int i = 0; i< 10; i++)
-        //{
-        //    int RandNum = Random.Range(0, 2);
-        //    var monster = Manager.ObjectM.Spawn<MonsterController>(RandNum);
-
-        //    monster.transform.position = new Vector2(Random.RandomRange(-10, 10), Random.RandomRange(-10, 10));
-        //    monster.name = $"!Monster{i}";
-        //}
-
-
-
-        //Todo : UI매니저 만들면 바꾸자.
+        //TODO : UI매니저 만들면 바꾸자.
         var joyStick = Manager.ResourceM.Instantiate("UI_Joystick.prefab");
         joyStick.name = "@UI_Joystick";
 
         Camera.main.GetComponent<CameraController>().Target = player.gameObject;
 
 
-        
-        //foreach(var PlayerData in Manager.DataM.PlayerDic.Values)
-        //{
-        //    Debug.Log($"LV : {PlayerData.level}, Hp : {PlayerData.maxHp}");
-        //}
-        foreach(var SkillData in Manager.DataM.SkillDic.Values)
-        {
-            Debug.Log($"{SkillData.templateID} / {SkillData.name} / {SkillData.type} / {SkillData.prefab} / {SkillData.damage}");
-        }
+        Manager.GameM.OnChangeGemCount += HandleOnChangeGemCount;
+        Manager.GameM.OnChangeKillCount += HandleOnChangeKillCount;
 
-        foreach (var MonsterData in Manager.DataM.MonsterDic.Values)
-        {
-            Debug.Log($"name : {MonsterData.name}, DropData : {MonsterData.rare}");
-        }
     }
 
+    void HandleOnChangeGemCount(int _count)
+    {
+        //TODO : 젬카운트가 바뀌면 해줘야할것 (개수 파악 후 레벨업, 슬라이더 업데이트 )
+        Manager.UiM.GetSceneUI<UI_GameScene>().SetGemCountRatio((float)_count / 10);
+    }
+
+    void HandleOnChangeKillCount(int _count)
+    {
+        Manager.UiM.GetSceneUI<UI_GameScene>().SetKillCount(_count);
+    }
+
+    void OnDestroy()
+    {
+        if(Manager.GameM != null)
+        {
+            Manager.GameM.OnChangeGemCount -= HandleOnChangeGemCount;
+            Manager.GameM.OnChangeKillCount -= HandleOnChangeKillCount;
+        }
+    }
 }

@@ -27,7 +27,7 @@ public class PlayerController : CretureController
         if(base.Init() == false) return false;
 
         Speed = 10f;
-        Manager.GameM.OnMovePlayerDir += OnMoveDirChange;
+        Manager.GameM.OnMovePlayerDir += HandleOnMoveDirChange;
 
         //StartFireProjectile();
         StartEgoSword();
@@ -37,10 +37,10 @@ public class PlayerController : CretureController
     private void OnDestroy()
     {
         if(Manager.GameM != null)
-            Manager.GameM.OnMovePlayerDir -= OnMoveDirChange;
+            Manager.GameM.OnMovePlayerDir -= HandleOnMoveDirChange;
     }
 
-    void OnMoveDirChange(Vector2 _dir)
+    void HandleOnMoveDirChange(Vector2 _dir)
     {
         moveDir = _dir;
     }

@@ -90,6 +90,10 @@
     <Compile Include="Assets/!Scripts/Contents/Skills/EgoSwordController.cs" />
     <Compile Include="Assets/!Scripts/Controllers/MapTileController.cs" />
     <Compile Include="Assets/!Scripts/Contents/Skills/EgoSwordChild.cs" />
+    <Compile Include="Assets/!Scripts/UI/UI_Base.cs" />
+    <Compile Include="Assets/!Scripts/UI/UI_GameScene.cs" />
+    <Compile Include="Assets/!Scripts/UI/UI_SkillCardItem.cs" />
+    <Compile Include="Assets/!Scripts/UI/UI_SkillCardItem1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

@@ -74,7 +74,8 @@ public class MonsterController : CretureController
         GemController gc = Manager.ObjectM.Spawn<GemController>(this.transform.position);
 
         Manager.ObjectM.DeSpawn(this);
-
+        Manager.GameM.KillCount++;
+        
         if (coDotDamage != null) StopCoroutine(coDotDamage);
 
 

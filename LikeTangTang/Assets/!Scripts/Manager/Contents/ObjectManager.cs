@@ -83,7 +83,7 @@ public class ObjectManager
             // TemplateID 받아와서 생성
             if (Manager.DataM.SkillDic.TryGetValue(_templateID, out var skilldata) == false) return null;
 
-            GameObject go = Manager.ResourceM.Instantiate(skilldata.prefab, _pooing: true);
+            GameObject go = Manager.ResourceM.Instantiate(skilldata.prefab, _pooling: true);
             go.transform.position = _pos;
 
             ProjectileController pc = go.GetOrAddComponent<ProjectileController>();
@@ -96,7 +96,7 @@ public class ObjectManager
         {
             if (Manager.DataM.SkillDic.TryGetValue(_templateID, out var skillData) == false) return null;
 
-            GameObject go = Manager.ResourceM.Instantiate(skillData.prefab, _pooing: false);
+            GameObject go = Manager.ResourceM.Instantiate(skillData.prefab, _pooling: false);
             go.transform.position = _pos;
 
             T t = go.GetOrAddComponent<T>();

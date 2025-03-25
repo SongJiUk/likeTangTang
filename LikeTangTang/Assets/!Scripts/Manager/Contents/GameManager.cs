@@ -13,7 +13,6 @@ public class GameManager
     Vector2 playerMoveDir;
 
     public event Action<Vector2> OnMovePlayerDir;
-
     public Vector2 PlayerMoveDir
     {
         get { return playerMoveDir; }
@@ -25,6 +24,33 @@ public class GameManager
     }
     #endregion
 
-    public int Gem { get; set; }
+    #region 재화
     public int Gold { get; set; }
+    int gemCount;
+    public event Action<int> OnChangeGemCount;
+    public int Gem {
+        get {return gemCount;}
+        set
+        {
+            gemCount = value;
+            OnChangeGemCount?.Invoke(value);
+        }
+    }
+   
+    #endregion
+    
+    #region  전투
+    int killCount;
+    public event Action<int> OnChangeKillCount;
+    public int KillCount
+    {
+        get {return killCount;}
+        set
+        {
+            killCount = value;
+            OnChangeKillCount?.Invoke(killCount);
+        }
+    }
+
+    #endregion
 }

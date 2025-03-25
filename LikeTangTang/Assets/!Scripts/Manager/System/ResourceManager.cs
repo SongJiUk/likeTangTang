@@ -40,7 +40,7 @@ public class ResourceManager
         return null;
     }
 
-    public GameObject Instantiate(string _key, Transform _parent = null, bool _pooing = false)
+    public GameObject Instantiate(string _key, Transform _parent = null, bool _pooling = false)
     {
 
         //if(resourceDic.TryGetValue(_key, out Object resource))
@@ -58,7 +58,7 @@ public class ResourceManager
             return null;
         }
 
-        if (_pooing)
+        if (_pooling)
             return Manager.PoolM.Pop(prefab);
 
         GameObject go = GameObject.Instantiate(prefab, _parent);
