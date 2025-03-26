@@ -50,15 +50,25 @@ public class GameScene : MonoBehaviour
 
     }
 
+    int maxGemCount = 10;
     void HandleOnChangeGemCount(int _count)
     {
         //TODO : 젬카운트가 바뀌면 해줘야할것 (개수 파악 후 레벨업, 슬라이더 업데이트 )
-        Manager.UiM.GetSceneUI<UI_GameScene>().SetGemCountRatio((float)_count / 10);
+        Manager.UiM.GetSceneUI<UI_GameScene>().SetGemCountRatio((float)_count / maxGemCount);
+
+        if(_count == maxGemCount)
+        {
+            Manager.UiM.ShowPopup<UI_SkillSelectPopup>();
+            Manager.GameM.Gem = 0;
+            maxGemCount *= 2;
+
+            // TODO : 플레이어 레벨 관리.
+            Time.timeScale = 0;
+        }
     }
 
     void HandleOnChangeKillCount(int _count)
     {   
-        
         Manager.UiM.GetSceneUI<UI_GameScene>().SetKillCount(_count);
     }
 

@@ -8,6 +8,7 @@ public class GameManager
     public PlayerController player { get { return Manager.ObjectM?.Player; } }
     
 
+
     #region 플레이어 움직임
 
     Vector2 playerMoveDir;
@@ -53,4 +54,6 @@ public class GameManager
     }
 
     #endregion
+
+    //TODO : 플레이어의 레벨을 어디서 관리해줘야할까?
 }

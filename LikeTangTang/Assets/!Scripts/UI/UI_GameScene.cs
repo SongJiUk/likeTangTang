@@ -27,6 +27,13 @@ public class UI_GameScene : UI_Base
     [SerializeField]
     Slider gemSlider;
 
+    [SerializeField]
+    TextMeshProUGUI level;
+
+    public void SetPlayerLevel(int _level)
+    {
+        level.text = $"{_level}";
+    }
     public void SetGemCountRatio(float _ratio)
     {
         gemSlider.value = _ratio;

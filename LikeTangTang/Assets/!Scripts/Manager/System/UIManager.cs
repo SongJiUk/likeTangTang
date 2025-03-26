@@ -50,6 +50,7 @@ public class UIManager
 
         UI_Base ui = uiStack.Pop();
         Manager.ResourceM.Destory(ui.gameObject);
+        Time.timeScale = 1f;
 
     }
 
