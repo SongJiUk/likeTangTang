@@ -52,7 +52,6 @@ public class GameScene : MonoBehaviour
 
         Manager.ObjectM.Spawn<GridController>(Vector3.zero);
         var player = Manager.ObjectM.Spawn<PlayerController>(Vector3.zero);
-s
         spawnManager = gameObject.AddComponent<SpawnManager>();
 
         //[ ] : 이름 자동화(이건 데이터에서 쉽게 가져 올 수 있을듯)
