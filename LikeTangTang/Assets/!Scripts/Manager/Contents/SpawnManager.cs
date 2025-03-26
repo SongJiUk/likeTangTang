@@ -6,7 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     /* ToDo : 여기서 스폰 관리하기
     */
-    float spawnInterval = 1f;
+    float spawnInterval = 0.2f;
     int maxMonsterCount = 100;
     Coroutine coUpdateMonsterSpawn;
 
@@ -14,9 +14,12 @@ public class SpawnManager : MonoBehaviour
     {
         coUpdateMonsterSpawn =  StartCoroutine(UpdateSpawn());
     }
+    public bool isStop {get; set;} = false;
 
     void TrySpawn()
     {
+        if(isStop) return;
+
         int monsterCount = Manager.ObjectM.mcSet.Count;
         if (monsterCount >= maxMonsterCount) return;
 

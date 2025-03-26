@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CretureController : BaseController
+public class CreatureController : BaseController
 {
 
     public int MaxHP { get; set; }

@@ -34,6 +34,20 @@ public static class Define
         Melee
     }
 
+    public enum StageType
+    {
+        Normal,
+        Boss
+    }
+    
+    public enum CreatureState
+    {
+        Idle,
+        Moving,
+        Attack,
+        Dead
+    }
+
     public static string GRIDNAME = "!Grid";
     public static string GEMNAME = "Gem.prefab";
 }

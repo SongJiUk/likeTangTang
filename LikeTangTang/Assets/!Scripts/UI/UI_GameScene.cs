@@ -44,6 +44,12 @@ public class UI_GameScene : UI_Base
         killCount.text = $"{_killCount}";
     }
 
+    public void CreateJoyStick(string _key)
+    {
+        var joyStick = Manager.ResourceM.Instantiate(_key);
+        joyStick.name = "@UI_JoyStick";
+    }
+
     public void SetUI()
     {
         

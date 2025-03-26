@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class PlayerController : CretureController
+public class PlayerController : CreatureController
 {
 
     [SerializeField]
@@ -29,7 +29,7 @@ public class PlayerController : CretureController
         Speed = 10f;
         Manager.GameM.OnMovePlayerDir += HandleOnMoveDirChange;
 
-        //StartFireProjectile();
+        StartFireProjectile();
         StartEgoSword();
         return true;
     }
@@ -50,7 +50,8 @@ public class PlayerController : CretureController
         base.OnDamaged(_attacker, _damage);
         MonsterController mc = _attacker as MonsterController;
 
-        mc?.OnDamaged(this, 10000);
+        //TODO : 몸박 삭제하기
+        mc?.OnDamaged(this, 10);
     }
 
     private void FixedUpdate()

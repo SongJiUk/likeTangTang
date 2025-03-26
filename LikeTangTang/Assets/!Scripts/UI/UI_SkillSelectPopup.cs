@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class UI_SkillSelectPopup : UI_Base
 {
-    // [ ] 스킬 팝업 그리드를 찾아서, 프리팹을 만들어 채워줘야함(리스트에 하던지, 딕셔너리에 하던지 알아서)
+    // [x] 스킬 팝업 그리드를 찾아서, 프리팹을 만들어 채워줘야함
     [SerializeField]
     Transform _grid;
 
@@ -21,7 +21,7 @@ public class UI_SkillSelectPopup : UI_Base
         foreach(Transform tr in _grid.transform)
             Manager.ResourceM.Destory(tr.gameObject);
         
-        // [ ] 데이터에 따라서 바꿔줘야함.
+        // [ ] 데이터에 따라서 바꿔줘야함.(하드코딩말고 쉽게 찾을 수 있는 방법이 있나 확인해보기.)
         for(int i =0; i<3; i++)
         {
             var go = Manager.ResourceM.Instantiate("UI_SkillCardItem.prefab", _pooling: false);

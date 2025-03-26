@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ProjectileController : SkillController
 {
-    CretureController owner;
+    CreatureController owner;
     Vector3 dir;
     float speed;
     float lifeTime;
@@ -21,7 +21,7 @@ public class ProjectileController : SkillController
         return true;
     }
 
-    public void SetInfo(int _templateID, CretureController _owner, Vector3 _dir)
+    public void SetInfo(int _templateID, CreatureController _owner, Vector3 _dir)
     {
         if(Manager.DataM.SkillDic.TryGetValue(_templateID, out Data.SkillData skillData) == false)
         {

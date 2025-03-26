@@ -8,25 +8,6 @@ using Object = UnityEngine.Object;
 
 public class ResourceManager
 {
-    /* 
-     * 로드(Instantiate로 필요할때마다 만들고 삭제하는 방식
-     * 어차피 처음엔 만들어주긴해야됨(나중가면 pooling할거)
-     * 
-     * 
-     * 
-     * 비동기 로드
-     * //TODO
-     * 키값을 받아서 Dic에 넣어서 보관해줄거임 <stirng , Object>
-     * 
-     * 키값을 넣어서 부르는 코드를 만들건데 제네릭 코드로 생성(비동기)
-     * Dic을 체크해주고 없으면 Addressables의 함수 사용
-     * Callback 함수로 처리(키값으로 람다식을 받아서 처리할거임)
-     * 
-     * 코드 흐름 난잡해지지만 효율적이긴할거
-     * 
-     * 로드하는 함수 한번에 하기 vs 하나씩하기
-     */
-
     Dictionary<string, Object> resourceDic = new Dictionary<string, Object>();
     public Dictionary<string, Object> ResourceDic { get; }
 
@@ -87,10 +68,8 @@ public class ResourceManager
             return;
         }
 
-        /*
-         * 이걸 해주는 이유는 AddressAble에서 이미지를 불러올때
-         * 위에는 texture2D이고 밑에있는게 Sprite임
-         */
+        // NOTE : 이걸 해주는 이유는 AddressAble에서 이미지를 불러올때 위에는 texture2D이고 밑에있는게 Sprite임
+
         string loadKey = _key;
         if(_key.Contains(".sprite"))
         {

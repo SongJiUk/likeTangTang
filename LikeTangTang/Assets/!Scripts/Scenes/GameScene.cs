@@ -6,15 +6,30 @@ using UnityEngine;
 public class GameScene : MonoBehaviour
 {
     SpawnManager spawnManager;
-    //
-    /*
-     일단 여기서 불러오는 역할을 해야됨. ResourceManager에서 Addressable를 이용하여 모두 불러옴.
-     다 불러왔으면 로드
+    Define.StageType stageType;
+    public Define.StageType StageType
+    {
+        get { return stageType; }
+        set 
+        { 
+            stageType = value; 
+            if(spawnManager != null)
+            {
+                switch(stageType)
+                {
+                    case Define.StageType.Normal :
+                        spawnManager.isStop = false;
+                    break;
+
+                    case Define.StageType.Boss :
+                        spawnManager.isStop = true;
+                    break;
+                }
+            }
+        }
+    }
 
 
-    로드에선 데이터정보, Pooling, 조이스틱, 맵, 카메라등을 초기 설정해준다.
-     
-     */
     private void Start()
     {
         Manager.ResourceM.LoadAllAsync<Object>("PrevLoad", (key, loadCount, maxCount) =>
@@ -39,9 +54,11 @@ public class GameScene : MonoBehaviour
 
         spawnManager = gameObject.AddComponent<SpawnManager>();
 
-        //TODO : UI매니저 만들면 바꾸자.
-        var joyStick = Manager.ResourceM.Instantiate("UI_Joystick.prefab");
-        joyStick.name = "@UI_Joystick";
+        //[ ] : 이름 자동화(이건 데이터에서 쉽게 가져 올 수 있을듯)
+        Manager.UiM.GetSceneUI<UI_GameScene>().CreateJoyStick("UI_Joystick.prefab");
+
+        // var joyStick = Manager.ResourceM.Instantiate("UI_Joystick.prefab");
+        // joyStick.name = "@UI_Joystick";
 
         Camera.main.GetComponent<CameraController>().Target = player.gameObject;
         
@@ -53,7 +70,7 @@ public class GameScene : MonoBehaviour
     int maxGemCount = 10;
     void HandleOnChangeGemCount(int _count)
     {
-        //TODO : 젬카운트가 바뀌면 해줘야할것 (개수 파악 후 레벨업, 슬라이더 업데이트 )
+        // [ ] : 젬카운트가 바뀌면 해줘야할것 (개수 파악 후 레벨업, 슬라이더 업데이트 )
         Manager.UiM.GetSceneUI<UI_GameScene>().SetGemCountRatio((float)_count / maxGemCount);
 
         if(_count == maxGemCount)
@@ -62,7 +79,7 @@ public class GameScene : MonoBehaviour
             Manager.GameM.Gem = 0;
             maxGemCount *= 2;
 
-            // TODO : 플레이어 레벨 관리.
+            // [ ]: 플레이어 레벨 관리 (데이터)
             Time.timeScale = 0;
         }
     }
@@ -70,6 +87,16 @@ public class GameScene : MonoBehaviour
     void HandleOnChangeKillCount(int _count)
     {   
         Manager.UiM.GetSceneUI<UI_GameScene>().SetKillCount(_count);
+        //[ ] 데이터시트에서 가져와서 계속 수정
+        if(_count == 5)
+        {
+            StageType = Define.StageType.Boss;
+            Manager.ObjectM.DeSpawnAllMonster();
+
+            // 보스 소환
+            Vector2 pos = Utils.CreateMonsterSpawnPoint(Manager.GameM.player.transform.position, 10, 15);
+            Manager.ObjectM.Spawn<MonsterController>(pos, 3);
+        }
     }
 
     void OnDestroy()

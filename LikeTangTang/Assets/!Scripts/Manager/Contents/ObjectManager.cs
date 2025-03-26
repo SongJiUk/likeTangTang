@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Data;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -16,13 +17,23 @@ public class ObjectManager
 
     public GridController Grid {get; private set;}
 
+#region 미리 선언해서 사용  
+    Type playerType = typeof(PlayerController);
+    Type monsterType = typeof(MonsterController);
+    Type gemType = typeof(GemController);
+    Type gridType = typeof(GridController);
+    Type projectileType = typeof(ProjectileController);
+    Type egoSwordType = typeof(EgoSwordController);
+    Type skillType = typeof(SkillController);
+#endregion
+    
     public T Spawn<T>(Vector3 _pos, int _templateID = 0) where T : BaseController
     {
         System.Type type = typeof(T);
 
-        if (type == typeof(PlayerController))
+        if (type == playerType)
         {
-            //TODO: Data에서 값을 가져와서 생성하기.
+            //[ ]Data에서 값을 가져와서 생성하기.
             GameObject go = Manager.ResourceM.Instantiate("Slime_01.prefab");
             go.name = "!Player";
             go.transform.position = _pos;
@@ -33,10 +44,13 @@ public class ObjectManager
 
             return pc as T;
         }
-        else if (type == typeof(MonsterController))
+        else if (type == monsterType)
         {
-
+            
+            //[ ] DATA로 받아와서 처리하지.
             string id = (_templateID == 0 ? "Goblin_01.prefab" : "Snake_01.prefab");
+
+            if(_templateID == 3) id = "Boss.prefab";
 
             GameObject go = Manager.ResourceM.Instantiate(id, null, true);
             go.transform.position = _pos;
@@ -47,7 +61,7 @@ public class ObjectManager
             return mc as T;
 
         }
-        else if (type == typeof(GemController))
+        else if (type == gemType)
         {
             GameObject go = Manager.ResourceM.Instantiate(Define.GEMNAME, null, true);
             go.transform.position = _pos;
@@ -56,11 +70,7 @@ public class ObjectManager
             gemSet.Add(gc);
             gc.Init();
 
-
-
-            //TODO : 프리팹 하나를 이미지파일을 돌려쓰는 코드( 지울예정) -> 이거 하려면 addressalbe받아온 오브젝트의 밑을 받아와야함
-            //이유는 처음받아온 오브젝트는 Texture2D, 밑엔 Sprite 두개는 다른거라 첫번째 오브젝트를 사용하면 null값이 반환된다.
-            //눌러보면 밑에 값이 뜸 (ex. Gem_01.sprite[Gem_01]) 이런식으로 바꿔서 받아줘야함
+            // [ ] sprite이름도 DATA에서 불러와서 효과적으로 진행
             string key = UnityEngine.Random.Range(0, 2) == 0 ? "Gem_01.sprite" : "Gem_02.sprite";
             Sprite sprite = Manager.ResourceM.Load<Sprite>(key);
             go.GetComponent<SpriteRenderer>().sprite = sprite;
@@ -72,13 +82,12 @@ public class ObjectManager
 
 
         }
-        else if (type == typeof(GridController))
+        else if (type == gridType)
         {
             Grid = GameObject.Find(Define.GRIDNAME).GetComponent<GridController>();
             Grid.Init();
         }
-        //CHECKLIST : 스킬 오브젝트가 LifeTime이 지나서 자동으로 소멸될때 타입이 맞지않아서 소멸이 안되는 문제가 있음
-        else if (type == typeof(ProjectileController)) //Explanation : 상속받는 코드들도 찾아줌
+        else if (type == projectileType)
         {
             // TemplateID 받아와서 생성
             if (Manager.DataM.SkillDic.TryGetValue(_templateID, out var skilldata) == false) return null;
@@ -92,7 +101,7 @@ public class ObjectManager
 
             return pc as T;
         }
-        else if (type == typeof(EgoSwordController))
+        else if (type == egoSwordType)
         {
             if (Manager.DataM.SkillDic.TryGetValue(_templateID, out var skillData) == false) return null;
 
@@ -116,7 +125,7 @@ public class ObjectManager
 
         System.Type type = typeof(T);
 
-        if(type == typeof(PlayerController))
+        if(type == playerType)
         {
             /*TODO : 플레이어 죽으면 해야될것
              *  플레이어가 죽는다면 게임을 정지하고 UI화면 띄워야함
@@ -124,14 +133,21 @@ public class ObjectManager
              */
 
         }
-        else if(type == typeof(MonsterController))
+        else if(monsterType.IsAssignableFrom(type))
         {
             if(_obj.IsVaild() == false) return;
 
             mcSet.Remove(_obj as MonsterController);
             Manager.ResourceM.Destory(_obj.gameObject);
         }
-        else if(type == typeof(GemController))
+        else if(type == monsterType)
+        {
+            if(_obj.IsVaild() == false) return;
+
+            mcSet.Remove(_obj as MonsterController);
+            Manager.ResourceM.Destory(_obj.gameObject);
+        }
+        else if(type == gemType)
         {
             if(_obj.IsVaild() == false) return;
 
@@ -140,15 +156,21 @@ public class ObjectManager
 
             Grid.RemoveCell(_obj.gameObject);
         }
-        else if(type == typeof(ProjectileController))
+        //NOTE : IsAssignableFrom을 이용하면 해당 부모의 자식을 모두 찾을 수 있음.
+        else if(skillType.IsAssignableFrom(type))
         {
             pjSet.Remove(_obj as ProjectileController);
             Manager.ResourceM.Destory(_obj.gameObject);
         }
-        else if(type == typeof(EgoSwordController))
+    }
+
+    public void DeSpawnAllMonster()
+    {
+        var monsters = mcSet.ToList();
+
+        foreach(var monster in monsters)
         {
-
+            DeSpawn<MonsterController>(monster);
         }
-
     }
 }

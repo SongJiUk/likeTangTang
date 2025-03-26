@@ -3,21 +3,69 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class MonsterController : CretureController
+public class MonsterController : CreatureController
 {
-    [SerializeField]
-    float _hp;
+
+
+    #region State Pattern
+    Define.CreatureState creatureState = Define.CreatureState.Moving;
+    protected Animator animator;
+    public virtual Define.CreatureState CreatureState
+    {
+        get { return creatureState; }
+        set 
+        {
+            creatureState = value;
+            UpdateAnim();
+        }
+    }
+
+    public virtual void UpdateAnim() {}
+    
+    public override void UpdateController()
+    {
+        base.UpdateController();
+
+        switch(creatureState)
+        {
+            case Define.CreatureState.Moving:
+            UpdateMoving();
+                break;
+
+            case Define.CreatureState.Attack :
+            UpdateAttack();
+                break;
+
+            case Define.CreatureState.Dead :
+            UpdateDead();
+                break;
+        }
+    }
+
+    protected virtual void UpdateMoving() {}
+
+    protected virtual void UpdateAttack() {}
+
+    protected virtual void UpdateDead() {}
+    #endregion
+
+
     public override bool Init()
     {
         base.Init();
 
         objType = Define.ObjectType.Monster;
         Speed = 1f;
+        animator = GetComponent<Animator>();
+        creatureState = Define.CreatureState.Moving;
         return true;
     }
 
     void FixedUpdate()
     {
+
+        if(creatureState != Define.CreatureState.Moving) return;
+
         PlayerController pc = Manager.ObjectM.Player;
         if (pc == null) return;
 
@@ -70,14 +118,13 @@ public class MonsterController : CretureController
     public override void OnDead()
     {
         base.OnDead();
+        if (coDotDamage != null) StopCoroutine(coDotDamage);
 
-        GemController gc = Manager.ObjectM.Spawn<GemController>(this.transform.position);
+        Manager.ObjectM.Spawn<GemController>(this.transform.position);
 
         Manager.ObjectM.DeSpawn(this);
         Manager.GameM.KillCount++;
         
-        if (coDotDamage != null) StopCoroutine(coDotDamage);
-
-
+        
     }
 }

@@ -104,4 +104,7 @@ namespace Data
         }
     }
     #endregion
+
+    #region 조이스틱이나, 맵, 하드코딩되는것들 데이터로 정리해서 가져와서 사용하자.
+    #endregion
 }
