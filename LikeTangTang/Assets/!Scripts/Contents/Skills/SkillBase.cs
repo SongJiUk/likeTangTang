@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillController : BaseController
+public class SkillBase : BaseController
 {
+    public BaseController owner {get; set;}
     public Define.SkillType Skilltype { get; set; }
     public Data.SkillData SkillDatas { get; protected set; }
-
+    public float coolTime {get; set;}
     #region Destory
     Coroutine coDestroyInfo;
 

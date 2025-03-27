@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Data;
 using UnityEngine;
 
-public class ProjectileController : SkillController
+public class ProjectileController : SkillBase
 {
     CreatureController owner;
     Vector3 dir;

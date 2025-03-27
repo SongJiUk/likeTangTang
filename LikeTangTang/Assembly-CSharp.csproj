@@ -68,7 +68,7 @@
     <Compile Include="Assets/!Scripts/UI/JoyStick/UI_JoyStick.cs" />
     <Compile Include="Assets/!Scripts/Scenes/GameScene.cs" />
     <Compile Include="Assets/!Scripts/Manager/Contents/PoolManager.cs" />
-    <Compile Include="Assets/!Scripts/Contents/Skills/SkillController.cs" />
+    <Compile Include="Assets/!Scripts/Contents/Skills/SkillBase.cs" />
     <Compile Include="Assets/!Scripts/Utils/Define.cs" />
     <Compile Include="Assets/!Scripts/Utils/Utils.cs" />
     <Compile Include="Assets/!Scripts/Data/Data.Contents.cs" />
@@ -86,9 +86,8 @@
     <Compile Include="Assets/!Scripts/Controllers/BaseController.cs" />
     <Compile Include="Assets/!Scripts/Manager/Manager.cs" />
     <Compile Include="Assets/!Scripts/Manager/System/SceneManager.cs" />
-    <Compile Include="Assets/!Scripts/Contents/Skills/EgoSwordController.cs" />
+    <Compile Include="Assets/!Scripts/Contents/Skills/EgoSword.cs" />
     <Compile Include="Assets/!Scripts/Controllers/MapTileController.cs" />
-    <Compile Include="Assets/!Scripts/Contents/Skills/EgoSwordChild.cs" />
     <Compile Include="Assets/!Scripts/UI/UI_Base.cs" />
     <Compile Include="Assets/!Scripts/UI/UI_GameScene.cs" />
     <Compile Include="Assets/!Scripts/UI/UI_SkillCardItem.cs" />

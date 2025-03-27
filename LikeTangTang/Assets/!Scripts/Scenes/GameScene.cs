@@ -88,7 +88,7 @@ public class GameScene : MonoBehaviour
     {   
         Manager.UiM.GetSceneUI<UI_GameScene>().SetKillCount(_count);
         //[ ] 데이터시트에서 가져와서 계속 수정
-        if(_count == 5)
+        if(_count == 5000)
         {
             StageType = Define.StageType.Boss;
             Manager.ObjectM.DeSpawnAllMonster();

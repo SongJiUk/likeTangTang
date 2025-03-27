@@ -23,8 +23,8 @@ public class ObjectManager
     Type gemType = typeof(GemController);
     Type gridType = typeof(GridController);
     Type projectileType = typeof(ProjectileController);
-    Type egoSwordType = typeof(EgoSwordController);
-    Type skillType = typeof(SkillController);
+    Type egoSwordType = typeof(EgoSword);
+    Type skillType = typeof(SkillBase);
 #endregion
     
     public T Spawn<T>(Vector3 _pos, int _templateID = 0) where T : BaseController

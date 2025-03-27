@@ -122,12 +122,12 @@ public class PlayerController : CreatureController
     #endregion
 
     #region  EgoMelee
-    EgoSwordController egoSword;
+    EgoSword egoSword;
     void StartEgoSword()
     {
         if (egoSword.IsVaild()) return;
 
-        egoSword = Manager.ObjectM.Spawn<EgoSwordController>(standard.position, 10);
+        egoSword = Manager.ObjectM.Spawn<EgoSword>(standard.position, 10);
         egoSword.transform.SetParent(standard);
 
         egoSword.ActivateSkill();
