@@ -33,7 +33,7 @@ MonoBehaviour:
     m_SerializedLabels:
     - PrevLoad
   - m_GUID: 8d1423bbe53d13d4fa74d492091e28ac
-    m_Address: FireProjectile.prefab
+    m_Address: FireBall.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad

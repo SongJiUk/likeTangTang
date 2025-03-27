@@ -59,7 +59,7 @@
     <UnityVersion>2021.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="/Users/songjiuk/.vscode/extensions/visualstudiotoolsforunity.vstuc-1.1.0/Analyzers/Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="/Users/songjiuk/.vscode/extensions/visualstudiotoolsforunity.vstuc-1.1.1/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/!Scripts/Controllers/GridController.cs" />
@@ -72,7 +72,7 @@
     <Compile Include="Assets/!Scripts/Utils/Define.cs" />
     <Compile Include="Assets/!Scripts/Utils/Utils.cs" />
     <Compile Include="Assets/!Scripts/Data/Data.Contents.cs" />
-    <Compile Include="Assets/!Scripts/Contents/Skills/ProjectileController.cs" />
+    <Compile Include="Assets/!Scripts/Controllers/ProjectileController.cs" />
     <Compile Include="Assets/!Scripts/Manager/Contents/SpawnManager.cs" />
     <Compile Include="Assets/!Scripts/Manager/System/DataManager.cs" />
     <Compile Include="Assets/!Scripts/Manager/System/SoundManager.cs" />
@@ -86,7 +86,7 @@
     <Compile Include="Assets/!Scripts/Controllers/BaseController.cs" />
     <Compile Include="Assets/!Scripts/Manager/Manager.cs" />
     <Compile Include="Assets/!Scripts/Manager/System/SceneManager.cs" />
-    <Compile Include="Assets/!Scripts/Contents/Skills/EgoSword.cs" />
+    <Compile Include="Assets/!Scripts/Contents/Skills/Repeat/Melee/EgoSword.cs" />
     <Compile Include="Assets/!Scripts/Controllers/MapTileController.cs" />
     <Compile Include="Assets/!Scripts/UI/UI_Base.cs" />
     <Compile Include="Assets/!Scripts/UI/UI_GameScene.cs" />
@@ -94,6 +94,10 @@
     <Compile Include="Assets/!Scripts/UI/UI_SkillSelectPopup.cs" />
     <Compile Include="Assets/!Scripts/Controllers/BossController.cs" />
     <Compile Include="Assets/!Scripts/Controllers/CreatureController.cs" />
+    <Compile Include="Assets/!Scripts/Contents/Skills/Repeat/RepeatSkill.cs" />
+    <Compile Include="Assets/!Scripts/Contents/Skills/Sequence/SequenceSkill.cs" />
+    <Compile Include="Assets/!Scripts/Contents/Skills/Repeat/Projectile/FireBall.cs" />
+    <Compile Include="Assets/!Scripts/Contents/Skills/SkillComponent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

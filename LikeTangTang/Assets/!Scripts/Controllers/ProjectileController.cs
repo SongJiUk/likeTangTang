@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class ProjectileController : SkillBase
 {
-    CreatureController owner;
+    
     Vector3 dir;
     float speed;
     float lifeTime;
-
+    public ProjectileController() : base(Define.SkillType.None){}
 
     //초기화, 세팅
     public override bool Init()

@@ -1,17 +1,17 @@
 {
   "skillDatas": [
     {
-        "templateID" : "1",
-        "name" : "화염구",
-        "skillTypeStr": "Projectile",
-        "prefab": "FireProjectile.prefab",
-        "damage": "1000"
+      "templateID" : "1",
+      "name" : "소드",
+      "skillTypeStr": "Repeat",
+      "prefab": "EgoSword.prefab",
+      "damage": "1000"
     },
-{
-        "templateID" : "10",
-        "name" : "소드",
-        "skillTypeStr": "Melee",
-        "prefab": "EgoSword.prefab",
+    {
+        "templateID" : "2",
+        "name" : "화염구",
+        "skillTypeStr": "Repeat",
+        "prefab": "FireBall.prefab",
         "damage": "1000"
     }
   ]

@@ -6,11 +6,6 @@ public class BaseController : MonoBehaviour
 {
     public Define.ObjectType objType { get; protected set; }
 
-    private void Awake()
-    {
-        Init();
-
-    }
 
     bool isInit = false;
     public virtual bool Init()

@@ -2,62 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System.ComponentModel.Design;
+using Unity.VisualScripting;
 
 public class PlayerController : CreatureController
 {
 
+
+#region  스킬 정보
+
+    
     [SerializeField]
     Transform standard;
     [SerializeField]
     Transform firePos;
 
+    public Transform Standard {get { return standard;}}
+    public Vector3 FirePos {get { return firePos.transform.position;}}
+    public Vector3 ShootDir {get {return (firePos.position - standard.position).normalized;}}
+
+
+    public void AddSkill()
+    {
+        Debug.Log("PlayerController AddSkill");
+        Skills.AddSkill<EgoSword>(standard.position, gameObject.transform);
+        Skills.AddSkill<FireBall>(transform.position, gameObject.transform);
+
+    }
+
+    #endregion
+
+#region 이동관련
     Vector2 moveDir;
 
     public Vector2 MoveDir
     {
         get { return moveDir; }
         set { moveDir = value; }
-    }
-
-    public float GetEnvDist {get; set;} = 1f;
-
-
-    public override bool Init()
-    {
-        if(base.Init() == false) return false;
-
-        Speed = 10f;
-        Manager.GameM.OnMovePlayerDir += HandleOnMoveDirChange;
-
-        StartFireProjectile();
-        StartEgoSword();
-        return true;
-    }
-
-    private void OnDestroy()
-    {
-        if(Manager.GameM != null)
-            Manager.GameM.OnMovePlayerDir -= HandleOnMoveDirChange;
-    }
-
-    void HandleOnMoveDirChange(Vector2 _dir)
-    {
-        moveDir = _dir;
-    }
-
-    public override void OnDamaged(BaseController _attacker, float _damage)
-    {
-        base.OnDamaged(_attacker, _damage);
-        MonsterController mc = _attacker as MonsterController;
-
-        //TODO : 몸박 삭제하기
-        mc?.OnDamaged(this, 10);
-    }
-
-    private void FixedUpdate()
-    {
-        Move();
-        GetGem();
     }
 
     void Move()
@@ -74,6 +55,16 @@ public class PlayerController : CreatureController
 
         GetComponent<Rigidbody2D>().velocity = Vector3.zero;
     }
+
+    void HandleOnMoveDirChange(Vector2 _dir)
+    {
+        moveDir = _dir;
+    }
+
+#endregion
+
+#region 젬 관련
+    public float GetEnvDist {get; set;} = 1f;
 
     void GetGem()
     {
@@ -97,43 +88,38 @@ public class PlayerController : CreatureController
 
     }
 
-    //TODO : 스킬이 많아지면 따로 관리하기.
-    #region FireProjectile
-    Coroutine coFireProjectile;
-    
-    void StartFireProjectile()
-    {
-        if(coFireProjectile != null)
-            StopCoroutine(coFireProjectile);
+#endregion
 
-        coFireProjectile = StartCoroutine(CoStartFireProjectile());
+    public override bool Init()
+    {
+        if(base.Init() == false) return false;
+        Debug.Log("Init");
+        Speed = 10f;
+        Manager.GameM.OnMovePlayerDir += HandleOnMoveDirChange;
+
+        //TODO : 스킬 관리는 누가? - 스킬 컴포넌트를 하나 만들어서 사용
+        AddSkill();
+        return true;
     }
 
-    IEnumerator CoStartFireProjectile()
+    private void OnDestroy()
     {
-        while(true)
-        {
-            ProjectileController pc = Manager.ObjectM.Spawn<ProjectileController>(firePos.position, 1);
-            pc.SetInfo(1, this, (firePos.position - standard.position).normalized);
-
-            yield return new WaitForSeconds(0.5f);
-        }
+        if(Manager.GameM != null)
+            Manager.GameM.OnMovePlayerDir -= HandleOnMoveDirChange;
     }
-    #endregion
 
-    #region  EgoMelee
-    EgoSword egoSword;
-    void StartEgoSword()
+    public override void OnDamaged(BaseController _attacker, float _damage)
     {
-        if (egoSword.IsVaild()) return;
+        base.OnDamaged(_attacker, _damage);
+        MonsterController mc = _attacker as MonsterController;
 
-        egoSword = Manager.ObjectM.Spawn<EgoSword>(standard.position, 10);
-        egoSword.transform.SetParent(standard);
-
-        egoSword.ActivateSkill();
+        //TODO : 몸박 삭제하기
+        mc?.OnDamaged(this, 10);
     }
-    #endregion
 
-    #region 장판
-    #endregion
+    private void FixedUpdate()
+    {
+        Move();
+        GetGem();
+    }
 }

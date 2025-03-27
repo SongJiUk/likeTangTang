@@ -153,11 +153,14 @@ Uitls에 몬스터 생성 위치를 정해주는 함수를 하나 만들어서 �
 
 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-[ ] SkillController -> SkillBase(안에 스킬에 필요한것들 넣어놓기, owner, type, data, level, damage등)
-[ ] 스킬들 최적화해서 합치기(FireProjectile, EgoSword) => 스킬 통합
-[ ] EgoSword개선(물리 인의적응로 껏다 키는거 없앰, 파티클시스템을 이용.), 피직스 통합관리
-[ ] 반복스킬, 액티브스킬 나눠서 관리하기(Repeat, Sequence등)
+[x] SkillController -> SkillBase(안에 스킬에 필요한것들 넣어놓기, owner, type, data, level, damage등)
+[x] 스킬들 최적화해서 합치기(FireProjectile, EgoSword) => 스킬 통합
+[x] EgoSword개선(물리 인의적응로 껏다 키는거 없앰, 파티클시스템을 이용.), 피직스 통합관리
+[x] 반복스킬, 액티브스킬 나눠서 관리하기(Repeat, Sequence등)
+
+
 [ ] 보스몬스터 대쉬 추가, 다시보고 확인하기.
+[ ] UI 마무리
      */
 
 

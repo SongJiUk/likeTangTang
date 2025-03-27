@@ -101,6 +101,17 @@ public class ObjectManager
 
             return pc as T;
         }
+        else if(typeof(T).IsSubclassOf(typeof(SkillBase)))
+        {
+            if (Manager.DataM.SkillDic.TryGetValue(_templateID, out var skillData) == false) return null;
+            GameObject go = Manager.ResourceM.Instantiate(skillData.prefab, _pooling: false);
+            go.transform.position = _pos;
+
+            T t = go.GetOrAddComponent<T>();
+            t.Init();
+
+            return t;
+        }
         else if (type == egoSwordType)
         {
             if (Manager.DataM.SkillDic.TryGetValue(_templateID, out var skillData) == false) return null;

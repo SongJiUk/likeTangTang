@@ -30,8 +30,8 @@ public static class Define
     public enum SkillType
     {
         None,
-        Projectile,
-        Melee
+        Sequence,
+        Repeat
     }
 
     public enum StageType
@@ -39,7 +39,7 @@ public static class Define
         Normal,
         Boss
     }
-    
+
     public enum CreatureState
     {
         Idle,

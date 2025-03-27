@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Data;
 using UnityEngine;
 
-public class EgoSword : SkillBase
+public class EgoSword : RepeatSkill
 {
     [SerializeField]
     ParticleSystem[] swingParticle;
@@ -22,7 +22,7 @@ public class EgoSword : SkillBase
         FindChild();
         return true;
     }
-    public void SetInfo(BaseController _owner, SkillData _skillData = null)
+    public void SetInfo(CreatureController _owner, SkillData _skillData = null)
     {
         owner = _owner;
         coolTime = 2f;
@@ -40,13 +40,38 @@ public class EgoSword : SkillBase
         for (int i =0; i< childCount; i++)
             swingParticle[i] =  transform.GetChild(i).GetComponent<ParticleSystem>();
     }
-    public void ActivateSkill()
+    public override void ActivateSkill()
     {
-        StartCoroutine(coSwingSword());
+        StartCoroutine(coStartSkill());
+    }
+    void SetParticles(SwingType _swingType)
+    {
+        if(Manager.GameM.player == null) return;
+
+        //MEMO : 플레이어의 회전각도에 따라, 반지름을 구하고, 파티클의 시작 로테이션을 지정해준다.
+        float z = transform.parent.transform.eulerAngles.z;
+        float rad = (Mathf.PI / 180) * z * -1;
+
+        var main = swingParticle[(int)_swingType].main;
+        main.startRotation = rad;   
     }
 
-    
-    IEnumerator coSwingSword()
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        MonsterController mc = collision.transform.GetComponent<MonsterController>();
+
+        if (mc.IsVaild() == false) return;
+        // [ ] 데이터값으로 변경
+        mc.OnDamaged(owner, 1000);//SkillDatas.damage);
+
+    }
+
+
+    public override void DoSkill()
+    {
+        
+    }
+    protected override IEnumerator coStartSkill()
     {
         WaitForSeconds waitTime = new WaitForSeconds(coolTime);
         while(true)
@@ -76,28 +101,6 @@ public class EgoSword : SkillBase
 
             yield return waitTime;
         }
-    }
-
-    void SetParticles(SwingType _swingType)
-    {
-        if(Manager.GameM.player == null) return;
-
-        //MEMO : 플레이어의 회전각도에 따라, 반지름을 구하고, 파티클의 시작 로테이션을 지정해준다.
-        float z = transform.parent.transform.eulerAngles.z;
-        float rad = (Mathf.PI / 180) * z * -1;
-
-        var main = swingParticle[(int)_swingType].main;
-        main.startRotation = rad;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        MonsterController mc = collision.transform.GetComponent<MonsterController>();
-
-        if (mc.IsVaild() == false) return;
-        // [ ] 데이터값으로 변경
-        mc.OnDamaged(owner, 1000);//SkillDatas.damage);
-
     }
 
 }

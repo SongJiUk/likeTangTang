@@ -4,10 +4,28 @@ using UnityEngine;
 
 public class SkillBase : BaseController
 {
-    public BaseController owner {get; set;}
-    public Define.SkillType Skilltype { get; set; }
+    public CreatureController owner {get; set;}
+    public Define.SkillType Skilltype { get; set; } = Define.SkillType.Repeat;
     public Data.SkillData SkillDatas { get; protected set; }
-    public float coolTime {get; set;}
+    public int SkillLevel {get; set;} = 0;
+    public bool isLearnSkill
+    {
+        get { return SkillLevel > 0;}
+    }
+
+    public SkillBase(Define.SkillType _skillType)
+    {
+        Skilltype = _skillType;
+    }
+
+    public virtual void ActivateSkill() {}
+    protected virtual void GenerateProjectile(int _templateID, CreatureController _owner, Vector3 _startPos, Vector3 _dir)
+    {
+        
+    }
+
+
+    
     #region Destory
     Coroutine coDestroyInfo;
 
