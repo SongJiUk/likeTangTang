@@ -47,7 +47,7 @@ public class ObjectManager
         else if (type == monsterType)
         {
             
-            //[ ] DATA로 받아와서 처리하지.(스테이지 데이터에서 가져오는게 나을듯)
+            //[ ] DATA로 받아와서 처리하지.(스테이지 데이터를 생성하서, 그 스테이지에 맞는 몬스터들 가져오면 됌.)
 
             string id = (_templateID == 0 ? "Goblin_01.prefab" : "Snake_01.prefab");
 
