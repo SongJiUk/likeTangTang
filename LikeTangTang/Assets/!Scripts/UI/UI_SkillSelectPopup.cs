@@ -13,10 +13,10 @@ public class UI_SkillSelectPopup : UI_Base
 
     void Start()
     {
-        PopulateGird();
+        PopulateCardItem();
     }
 
-    void PopulateGird()
+    void PopulateCardItem()
     {
         foreach(Transform tr in _grid.transform)
             Manager.ResourceM.Destory(tr.gameObject);

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 
-public class UI_JoyStick : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IDragHandler
+public class UI_JoyStick : UI_Base
 {
 
     [SerializeField]
@@ -24,12 +24,12 @@ public class UI_JoyStick : MonoBehaviour, IPointerClickHandler, IPointerDownHand
     }
 
 
-    public void OnPointerClick(PointerEventData eventData)
+    public override void OnPointerClick(PointerEventData eventData)
     {
         
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public override void OnPointerDown(PointerEventData eventData)
     {
         TurnOnAndOff(true);
         backGround.transform.position = eventData.position;
@@ -37,7 +37,7 @@ public class UI_JoyStick : MonoBehaviour, IPointerClickHandler, IPointerDownHand
         touchPos = eventData.position;
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public override void OnPointerUp(PointerEventData eventData)
     {
         handler.transform.position = touchPos;
         moveDir = Vector2.zero;
@@ -47,7 +47,7 @@ public class UI_JoyStick : MonoBehaviour, IPointerClickHandler, IPointerDownHand
         TurnOnAndOff();
     }
 
-    public void OnDrag(PointerEventData eventData)
+    public override void OnDrag(PointerEventData eventData)
     {
         Vector2 touchDir = (eventData.position - touchPos);
 
