@@ -62,44 +62,45 @@
     <Analyzer Include="/Users/songjiuk/.vscode/extensions/visualstudiotoolsforunity.vstuc-1.1.1/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/!Scripts/Contents/Skills/SkillComponent.cs" />
-    <Compile Include="Assets/!Scripts/Controllers/GridController.cs" />
-    <Compile Include="Assets/!Scripts/Manager/Contents/ObjectManager.cs" />
-    <Compile Include="Assets/!Scripts/Contents/Skills/Repeat/RepeatSkill.cs" />
-    <Compile Include="Assets/!Scripts/Controllers/MapTileController.cs" />
-    <Compile Include="Assets/!Scripts/Manager/System/ResourceManager.cs" />
-    <Compile Include="Assets/!Scripts/UI/JoyStick/UI_JoyStick.cs" />
-    <Compile Include="Assets/!Scripts/UI/UI_Base.cs" />
-    <Compile Include="Assets/!Scripts/Scenes/GameScene.cs" />
-    <Compile Include="Assets/!Scripts/Manager/Contents/PoolManager.cs" />
-    <Compile Include="Assets/!Scripts/Contents/Skills/SkillBase.cs" />
-    <Compile Include="Assets/!Scripts/Contents/Skills/Repeat/Melee/EgoSword.cs" />
-    <Compile Include="Assets/!Scripts/Controllers/BossController.cs" />
-    <Compile Include="Assets/!Scripts/Utils/Define.cs" />
-    <Compile Include="Assets/!Scripts/Utils/Utils.cs" />
-    <Compile Include="Assets/!Scripts/Controllers/CreatureController.cs" />
-    <Compile Include="Assets/!Scripts/Data/Data.Contents.cs" />
-    <Compile Include="Assets/!Scripts/Contents/Skills/Sequence/SequenceSkill.cs" />
-    <Compile Include="Assets/!Scripts/Controllers/ProjectileController.cs" />
-    <Compile Include="Assets/!Scripts/UI/UI_GameScene.cs" />
-    <Compile Include="Assets/!Scripts/Manager/Contents/SpawnManager.cs" />
-    <Compile Include="Assets/!Scripts/Manager/System/DataManager.cs" />
-    <Compile Include="Assets/!Scripts/UI/UI_SkillCardItem.cs" />
-    <Compile Include="Assets/!Scripts/Manager/System/SoundManager.cs" />
-    <Compile Include="Assets/!Scripts/Controllers/MonsterController.cs" />
-    <Compile Include="Assets/!Scripts/Controllers/PlayerController.cs" />
-    <Compile Include="Assets/!Scripts/Utils/Memo.cs" />
-    <Compile Include="Assets/!Scripts/Controllers/GemController.cs" />
-    <Compile Include="Assets/!Scripts/Contents/Skills/Repeat/Projectile/FireBall.cs" />
-    <Compile Include="Assets/!Scripts/Manager/System/UIManager.cs" />
-    <Compile Include="Assets/!Scripts/Manager/Contents/GameManager.cs" />
-    <Compile Include="Assets/!Scripts/Controllers/CameraController.cs" />
-    <Compile Include="Assets/!Scripts/Controllers/BaseController.cs" />
-    <Compile Include="Assets/!Scripts/Manager/Manager.cs" />
-    <Compile Include="Assets/!Scripts/UI/UI_SkillSelectPopup.cs" />
-    <Compile Include="Assets/!Scripts/Manager/System/SceneManager.cs" />
-    <Compile Include="Assets/!Scripts/UI/UI_EventHandler.cs" />
-    <Compile Include="Assets/!Scripts/UI/UI_GameResultPopup.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/SkillComponent.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/GridController.cs" />
+    <Compile Include="Assets/@Scripts/Manager/Contents/ObjectManager.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/RepeatSkill.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/MapTileController.cs" />
+    <Compile Include="Assets/@Scripts/Manager/System/ResourceManager.cs" />
+    <Compile Include="Assets/@Scripts/UI/JoyStick/UI_JoyStick.cs" />
+    <Compile Include="Assets/@Scripts/UI/UI_Base.cs" />
+    <Compile Include="Assets/@Scripts/Scenes/GameScene.cs" />
+    <Compile Include="Assets/@Scripts/Manager/Contents/PoolManager.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/SkillBase.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/Melee/EgoSword.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/BossController.cs" />
+    <Compile Include="Assets/@Scripts/Utils/Define.cs" />
+    <Compile Include="Assets/@Scripts/Utils/Utils.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/CreatureController.cs" />
+    <Compile Include="Assets/@Scripts/Data/Data.Contents.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/Sequence/SequenceSkill.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/ProjectileController.cs" />
+    <Compile Include="Assets/@Scripts/UI/Scene/UI_GameScene.cs" />
+    <Compile Include="Assets/@Scripts/Manager/Contents/SpawnManager.cs" />
+    <Compile Include="Assets/@Scripts/Manager/System/DataManager.cs" />
+    <Compile Include="Assets/@Scripts/UI/UI_SkillCardItem.cs" />
+    <Compile Include="Assets/@Scripts/Manager/System/SoundManager.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/MonsterController.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/PlayerController.cs" />
+    <Compile Include="Assets/@Scripts/Utils/Memo.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/GemController.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/Projectile/FireBall.cs" />
+    <Compile Include="Assets/@Scripts/Manager/System/UIManager.cs" />
+    <Compile Include="Assets/@Scripts/Manager/Contents/GameManager.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/CameraController.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/BaseController.cs" />
+    <Compile Include="Assets/@Scripts/Manager/Manager.cs" />
+    <Compile Include="Assets/@Scripts/UI/Popup/UI_SkillSelectPopup.cs" />
+    <Compile Include="Assets/@Scripts/Manager/System/SceneManager.cs" />
+    <Compile Include="Assets/@Scripts/UI/UI_EventHandler.cs" />
+    <Compile Include="Assets/@Scripts/UI/Popup/UI_GameResultPopup.cs" />
+    <Compile Include="Assets/@Scripts/Data/DataTransformer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
@@ -108,8 +109,8 @@
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets/!Resources/Temp/Dragon Warrior Files/Read Me.txt" />
-    <None Include="Assets/!Resources/Temp/karsiori/Sprites/Pixel Art Gem Pack - Read Me.txt" />
+    <None Include="Assets/@Resources/Temp/Dragon Warrior Files/Read Me.txt" />
+    <None Include="Assets/@Resources/Temp/karsiori/Sprites/Pixel Art Gem Pack - Read Me.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" />
     <None Include="Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" />
@@ -457,6 +458,10 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json@3.2.1/Runtime/Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
