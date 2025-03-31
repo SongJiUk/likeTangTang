@@ -192,8 +192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94529e5e09c9b5049963dee20394a327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backGround: {fileID: 132764670126443534}
-  handler: {fileID: 132764671787203945}
+  backGround: {fileID: 0}
+  handler: {fileID: 0}
+  bg: {fileID: 0}
 --- !u!1 &132764670116118788
 GameObject:
   m_ObjectHideFlags: 0

@@ -131,7 +131,7 @@ public class ObjectManager
     public void DeSpawn<T>(T _obj) where T : BaseController
     {
 
-        if (!_obj.IsVaild()) Debug.LogError("DeSpawn Error!!!");
+        if (!_obj.IsVaild()) Debug.LogError("DeSpawn Error!!!, ObjectManager 134Line!");
 
 
         System.Type type = typeof(T);

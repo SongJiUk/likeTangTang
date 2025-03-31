@@ -95,7 +95,7 @@ namespace Data
                     if(Enum.TryParse(stat.skillTypeStr, out Define.SkillType skillType))
                         stat.type = skillType;
                     else 
-                        Debug.LogError("SkillData Type Match Error!!");
+                        Debug.LogError("SkillData Type Match Error!!, Data.Contents 98Line");
                 }
                 dic.Add(stat.templateID, stat);
             }

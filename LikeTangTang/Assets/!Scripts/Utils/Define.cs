@@ -48,6 +48,18 @@ public static class Define
         Dead
     }
 
+    public enum UIEvent
+    {
+        None,
+        Click,
+        Pressed,
+        PointerDown,
+        PointerUp,
+        Drag,
+        BeginDrag,
+        EndDrag
+    }
+
     public static string GRIDNAME = "!Grid";
     public static string GEMNAME = "Gem.prefab";
 }

@@ -25,7 +25,7 @@ public class ProjectileController : SkillBase
     {
         if(Manager.DataM.SkillDic.TryGetValue(_templateID, out Data.SkillData skillData) == false)
         {
-            Debug.LogError("Skill Data is Unknown");
+            Debug.LogError("Skill Data is Unknown, ProjectileController 28Line");
             return;
         }
 

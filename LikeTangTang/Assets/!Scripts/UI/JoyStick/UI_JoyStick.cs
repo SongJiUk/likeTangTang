@@ -8,36 +8,53 @@ using UnityEngine.EventSystems;
 public class UI_JoyStick : UI_Base
 {
 
-    [SerializeField]
-    Image backGround;
-    [SerializeField]
-    Image handler;
+    enum GameObjects
+    {
+        TouchBG,
+        BG,
+        Handler
+    }
+
+    GameObject touchBG;
+    GameObject handler;
+    GameObject handlerBG;
+
 
     float circleRadius;
     Vector2 touchPos;
     Vector2 moveDir;
-   
-    private void Start()
-    {
-        circleRadius = backGround.gameObject.GetComponent<RectTransform>().sizeDelta.y / 2;
-        TurnOnAndOff();
-    }
 
-
-    public override void OnPointerClick(PointerEventData eventData)
+    public override bool Init()
     {
+        Bind<GameObject>(typeof(GameObjects));
         
+        touchBG = GetObject(typeof(GameObjects), (int)GameObjects.TouchBG);
+        handlerBG = GetObject(typeof(GameObjects), (int)GameObjects.BG);
+        handler = GetObject(typeof(GameObjects), (int)GameObjects.Handler);
+
+        circleRadius = handlerBG.gameObject.GetComponent<RectTransform>().sizeDelta.y / 2;
+
+        
+        BindEvent(touchBG, OnPointerDown, _type: Define.UIEvent.PointerDown);
+        BindEvent(touchBG, OnPointerUp, _type: Define.UIEvent.PointerUp);
+        BindEvent(touchBG, _dragAction: OnDrag, _type: Define.UIEvent.Drag);
+        
+        TurnOnAndOff();
+
+        return true;
     }
 
-    public override void OnPointerDown(PointerEventData eventData)
+    //[x] 수정하기(UI_BASE사용해서 )
+    public void OnPointerDown()
     {
         TurnOnAndOff(true);
-        backGround.transform.position = eventData.position;
-        handler.transform.position = eventData.position;
-        touchPos = eventData.position;
+        Vector2 mousePos = Input.mousePosition;
+        handlerBG.transform.position = mousePos;
+        handler.transform.position = mousePos;
+        touchPos = mousePos;
     }
 
-    public override void OnPointerUp(PointerEventData eventData)
+    public void OnPointerUp()
     {
         handler.transform.position = touchPos;
         moveDir = Vector2.zero;
@@ -47,10 +64,13 @@ public class UI_JoyStick : UI_Base
         TurnOnAndOff();
     }
 
-    public override void OnDrag(PointerEventData eventData)
+    public void OnDrag(BaseEventData eventData)
     {
-        Vector2 touchDir = (eventData.position - touchPos);
+        PointerEventData pe = eventData as PointerEventData;
+        if(pe == null) return;
 
+        Vector2 touchDir = pe.position - touchPos;
+        
         float movedist = Mathf.Min(touchDir.magnitude, circleRadius);
         moveDir = touchDir.normalized;
 
@@ -60,9 +80,10 @@ public class UI_JoyStick : UI_Base
         Manager.GameM.PlayerMoveDir = moveDir;
     }
 
+
     public void TurnOnAndOff(bool isOn = false)
     {
-        backGround.gameObject.SetActive(isOn);
+        handlerBG.gameObject.SetActive(isOn);
         handler.gameObject.SetActive(isOn);
     }
 }
