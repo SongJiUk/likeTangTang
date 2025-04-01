@@ -102,6 +102,10 @@
     <Compile Include="Assets/@Scripts/Manager/Manager.cs" />
     <Compile Include="Assets/@Scripts/UI/Popup/UI_SkillSelectPopup.cs" />
     <Compile Include="Assets/@Scripts/Manager/System/CustomSceneManager.cs" />
+    <Compile Include="Assets/@Scripts/UI/Scene/UI_LobbyScene.cs" />
+    <Compile Include="Assets/@Scripts/UI/Popup/LobbyScene/UI_ShopPopup.cs" />
+    <Compile Include="Assets/@Scripts/UI/Popup/LobbyScene/UI_BattlePopup.cs" />
+    <Compile Include="Assets/@Scripts/UI/Popup/LobbyScene/UI_EquipmentPopup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

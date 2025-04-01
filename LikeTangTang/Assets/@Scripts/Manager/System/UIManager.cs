@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
+using System.Linq.Expressions;
 using UnityEngine;
 
 //TODO : 마무리 후 스프라이트 이쁜걸로 찾아서 수정하기.
@@ -32,10 +33,11 @@ public class UIManager
         ui_Base = ui;
 
         return ui;
+        
     }
 
     //NOTE : 설계적인 규칙임(UI는 겹쳐서 사용되는 경우가 많기 때문에, Stack으로 관리하면 편함)
-    public T ShowPopup<T>() where T : UI_Base
+    public T ShowPopup<T>(string _name = null) where T : UI_Base
     {
         string key = typeof(T).Name + ".prefab";
         T ui = Manager.ResourceM.Instantiate(key, _pooling:true).GetOrAddComponent<T>();
