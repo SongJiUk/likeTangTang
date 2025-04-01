@@ -4,5 +4,13 @@ using UnityEngine;
 
 public class UI_ShopPopup : UI_Base
 {
-    
+    public override bool Init()
+    {
+        return true;
+    }
+
+    protected override void SetUIInfo()
+    {
+        
+    }
 }

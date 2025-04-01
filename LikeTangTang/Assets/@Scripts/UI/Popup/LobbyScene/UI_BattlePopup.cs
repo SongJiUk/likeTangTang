@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class UI_BattlePopup : UI_Base
 {
-    // Start is called before the first frame update
-    void Start()
+    public override bool Init()
     {
-        
+        return true;
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void RefreshUI()
     {
         
     }
