@@ -28,13 +28,13 @@ public class Manager : MonoBehaviour
     #region System
     DataManager dataM = new DataManager();
     ResourceManager resourceM = new ResourceManager();
-    SceneManager sceneM = new SceneManager();
+    CustomSceneManager sceneM = new CustomSceneManager();
     SoundManager soundM = new SoundManager();
     UIManager uiM = new UIManager();
 
     public static DataManager DataM { get { return Instance?.dataM; } }
     public static ResourceManager ResourceM {get { return Instance?.resourceM; } }
-    public static SceneManager SceneM { get { return Instance?.sceneM; } }
+    public static CustomSceneManager SceneM { get { return Instance?.sceneM; } }
     public static SoundManager SoundM { get { return Instance?.soundM; } }
     public static UIManager UiM { get { return Instance?.uiM; } }
     #endregion

@@ -36,7 +36,7 @@ public class UI_GameResultPopup : UI_Base
     }
     public override bool Init()
     {
-        BindAll();
+        SetUIInfo();
 
         GetButton(typeof(Buttons) ,(int)Buttons.StatisticsButton).gameObject.BindEvent(OnClickStatisticsButton);
         GetButton(typeof(Buttons), (int)Buttons.ConfirmButton).gameObject.BindEvent(OnClickConfirmButton);
@@ -56,7 +56,8 @@ public class UI_GameResultPopup : UI_Base
         GetText(typeof(Texts), (int)Texts.ResultKillValueText).text = "1212434";
         GetText(typeof(Texts), (int)Texts.ConfirmButtonText).text = "OK123";
     }
-    void BindAll()
+
+    protected override void SetUIInfo()
     {
         Bind<GameObject>(typeof(GameObjects));
         Bind<TextMeshProUGUI>(typeof(Texts));

@@ -8,40 +8,43 @@ using Unity.VisualScripting;
 
 public class UI_GameScene : UI_Base
 {
-
-
-/*  TODO : 코드에서 불러와서 완전 자동화 하기  
     public enum Texts
     {
-
+        KillValueText,
+        CharacterLevelValueText
+        
     }
     public enum Sliders
     {
+        ExpSliderObject,
 
     }
-*/
+    public override bool Init()
+    {
+        SetUIInfo();
 
-    [SerializeField]
-    TextMeshProUGUI killCount;
-    
-    [SerializeField]
-    Slider gemSlider;
 
-    [SerializeField]
-    TextMeshProUGUI level;
+        return true;
+    }
+
+    protected override void SetUIInfo()
+    {
+        Bind<TextMeshProUGUI>(typeof(Texts));
+        Bind<Slider>(typeof(Sliders));
+    }
 
     public void SetPlayerLevel(int _level)
     {
-        level.text = $"{_level}";
+        GetText(typeof(Texts), (int)Texts.CharacterLevelValueText).text = $"{_level}";
     }
     public void SetGemCountRatio(float _ratio)
     {
-        gemSlider.value = _ratio;
+        GetSlider(typeof(Sliders), (int)Sliders.ExpSliderObject).value = _ratio;
     }
 
     public void SetKillCount(int _killCount)
     {
-        killCount.text = $"{_killCount}";
+        GetText(typeof(Texts), (int)Texts.KillValueText).text = $"{_killCount}";
     }
 
     public void CreateJoyStick(string _key)
@@ -50,15 +53,6 @@ public class UI_GameScene : UI_Base
         joyStick.name = "@UI_JoyStick";
     }
 
-    public void SetUI()
-    {
-        
-    }
-    
-    public void RefreshUI()
-    {
-
-    }
 
    
 }

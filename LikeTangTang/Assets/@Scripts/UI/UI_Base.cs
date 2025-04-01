@@ -25,9 +25,9 @@ public class UI_Base : MonoBehaviour
     }
     #endregion
 
-    protected virtual void SetInfo()
+    protected virtual void SetUIInfo()
     {
-        //RefreshUI();
+
     }
 
     protected virtual void RefreshUI()
@@ -60,6 +60,7 @@ public class UI_Base : MonoBehaviour
     protected void BindText(Type _type){Bind<Text>(_type);}
     protected void BindButton(Type _type){Bind<Button>(_type);}
     protected void BindToggle(Type _type){Bind<Toggle>(_type);}
+    protected void BindSlider(Type _type){Bind<Slider>(_type);}
     #endregion
 
     #region  Get
@@ -87,6 +88,7 @@ public class UI_Base : MonoBehaviour
     //protected TextMeshProUGUI GetText(int _index) {return Get<TextMeshProUGUI>(_index);}
     protected Button GetButton(Type _type, int _index) {return Get<Button>(_type, _index);}
     protected Toggle GetToggle(Type _type, int _index) {return Get<Toggle>(_type,_index);}
+    protected Slider GetSlider(Type _type,int _index) {return Get<Slider>(_type, _index);}
     #endregion
 
     #region 이벤트 바인딩

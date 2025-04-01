@@ -7,9 +7,12 @@ public static class Define
   
     public enum Scene
     {
-        UnKnown,
+        UnKnownScene,
         DevScene,
+        TitleScene,
+        LobbyScene,
         GameScene
+
     }
 
     public enum Sound

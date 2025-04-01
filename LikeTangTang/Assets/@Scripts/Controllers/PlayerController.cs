@@ -91,6 +91,14 @@ public class PlayerController : CreatureController
 
 #endregion
 
+#region 플레이어 레벨 관련
+    public int Level
+    {
+        get {return level;}
+        set {level = value;}
+    }
+    
+#endregion
     public override bool Init()
     {
         if(base.Init() == false) return false;

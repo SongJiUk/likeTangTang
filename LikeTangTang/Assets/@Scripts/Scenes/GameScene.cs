@@ -32,16 +32,8 @@ public class GameScene : MonoBehaviour
 
     private void Start()
     {
-        Manager.ResourceM.LoadAllAsync<Object>("PrevLoad", (key, loadCount, maxCount) =>
-        {
-            Debug.Log($"{key}, {loadCount} / {maxCount}");
-            if (loadCount == maxCount)
-            {
-                StartLoad();
-            }
-                
-        });
-
+        
+        StartLoad();
     }
 
     void StartLoad()
@@ -78,9 +70,11 @@ public class GameScene : MonoBehaviour
             Manager.UiM.ShowPopup<UI_SkillSelectPopup>();
             Manager.GameM.Gem = 0;
             maxGemCount *= 2;
-
+            Manager.GameM.player.Level++;
+            Manager.UiM.GetSceneUI<UI_GameScene>().SetPlayerLevel(Manager.GameM.player.Level);
             // [ ]: 플레이어 레벨 관리 (데이터)
             Time.timeScale = 0;
+
         }
     }
 
