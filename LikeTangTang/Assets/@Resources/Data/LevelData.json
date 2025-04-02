@@ -1,0 +1,400 @@
+{
+    "levelData": [
+    {
+        "Level": 1,
+        "TotalExp": 11.5
+    },
+    {
+        "Level": 2,
+        "TotalExp": 26.0
+    },
+    {
+        "Level": 3,
+        "TotalExp": 43.5
+    },
+    {
+        "Level": 4,
+        "TotalExp": 64.0
+    },
+    {
+        "Level": 5,
+        "TotalExp": 87.5
+    },
+    {
+        "Level": 6,
+        "TotalExp": 114.0
+    },
+    {
+        "Level": 7,
+        "TotalExp": 143.5
+    },
+    {
+        "Level": 8,
+        "TotalExp": 176.0
+    },
+    {
+        "Level": 9,
+        "TotalExp": 211.5
+    },
+    {
+        "Level": 10,
+        "TotalExp": 250.0
+    },
+    {
+        "Level": 11,
+        "TotalExp": 291.5
+    },
+    {
+        "Level": 12,
+        "TotalExp": 336.0
+    },
+    {
+        "Level": 13,
+        "TotalExp": 383.5
+    },
+    {
+        "Level": 14,
+        "TotalExp": 434.0
+    },
+    {
+        "Level": 15,
+        "TotalExp": 487.5
+    },
+    {
+        "Level": 16,
+        "TotalExp": 544.0
+    },
+    {
+        "Level": 17,
+        "TotalExp": 603.5
+    },
+    {
+        "Level": 18,
+        "TotalExp": 666.0
+    },
+    {
+        "Level": 19,
+        "TotalExp": 731.5
+    },
+    {
+        "Level": 20,
+        "TotalExp": 800.0
+    },
+    {
+        "Level": 21,
+        "TotalExp": 871.5
+    },
+    {
+        "Level": 22,
+        "TotalExp": 946.0
+    },
+    {
+        "Level": 23,
+        "TotalExp": 1023.5
+    },
+    {
+        "Level": 24,
+        "TotalExp": 1104.0
+    },
+    {
+        "Level": 25,
+        "TotalExp": 1187.5
+    },
+    {
+        "Level": 26,
+        "TotalExp": 1274.0
+    },
+    {
+        "Level": 27,
+        "TotalExp": 1363.5
+    },
+    {
+        "Level": 28,
+        "TotalExp": 1456.0
+    },
+    {
+        "Level": 29,
+        "TotalExp": 1551.5
+    },
+    {
+        "Level": 30,
+        "TotalExp": 1650.0
+    },
+    {
+        "Level": 31,
+        "TotalExp": 1751.5
+    },
+    {
+        "Level": 32,
+        "TotalExp": 1856.0
+    },
+    {
+        "Level": 33,
+        "TotalExp": 1963.5
+    },
+    {
+        "Level": 34,
+        "TotalExp": 2074.0
+    },
+    {
+        "Level": 35,
+        "TotalExp": 2187.5
+    },
+    {
+        "Level": 36,
+        "TotalExp": 2304.0
+    },
+    {
+        "Level": 37,
+        "TotalExp": 2423.5
+    },
+    {
+        "Level": 38,
+        "TotalExp": 2546.0
+    },
+    {
+        "Level": 39,
+        "TotalExp": 2671.5
+    },
+    {
+        "Level": 40,
+        "TotalExp": 2800.0
+    },
+    {
+        "Level": 41,
+        "TotalExp": 2931.5
+    },
+    {
+        "Level": 42,
+        "TotalExp": 3066.0
+    },
+    {
+        "Level": 43,
+        "TotalExp": 3203.5
+    },
+    {
+        "Level": 44,
+        "TotalExp": 3344.0
+    },
+    {
+        "Level": 45,
+        "TotalExp": 3487.5
+    },
+    {
+        "Level": 46,
+        "TotalExp": 3634.0
+    },
+    {
+        "Level": 47,
+        "TotalExp": 3783.5
+    },
+    {
+        "Level": 48,
+        "TotalExp": 3936.0
+    },
+    {
+        "Level": 49,
+        "TotalExp": 4091.5
+    },
+    {
+        "Level": 50,
+        "TotalExp": 4250.0
+    },
+    {
+        "Level": 51,
+        "TotalExp": 4411.5
+    },
+    {
+        "Level": 52,
+        "TotalExp": 4576.0
+    },
+    {
+        "Level": 53,
+        "TotalExp": 4743.5
+    },
+    {
+        "Level": 54,
+        "TotalExp": 4914.0
+    },
+    {
+        "Level": 55,
+        "TotalExp": 5087.5
+    },
+    {
+        "Level": 56,
+        "TotalExp": 5264.0
+    },
+    {
+        "Level": 57,
+        "TotalExp": 5443.5
+    },
+    {
+        "Level": 58,
+        "TotalExp": 5626.0
+    },
+    {
+        "Level": 59,
+        "TotalExp": 5811.5
+    },
+    {
+        "Level": 60,
+        "TotalExp": 6000.0
+    },
+    {
+        "Level": 61,
+        "TotalExp": 6191.5
+    },
+    {
+        "Level": 62,
+        "TotalExp": 6386.0
+    },
+    {
+        "Level": 63,
+        "TotalExp": 6583.5
+    },
+    {
+        "Level": 64,
+        "TotalExp": 6784.0
+    },
+    {
+        "Level": 65,
+        "TotalExp": 6987.5
+    },
+    {
+        "Level": 66,
+        "TotalExp": 7194.0
+    },
+    {
+        "Level": 67,
+        "TotalExp": 7403.5
+    },
+    {
+        "Level": 68,
+        "TotalExp": 7616.0
+    },
+    {
+        "Level": 69,
+        "TotalExp": 7831.5
+    },
+    {
+        "Level": 70,
+        "TotalExp": 8050.0
+    },
+    {
+        "Level": 71,
+        "TotalExp": 8271.5
+    },
+    {
+        "Level": 72,
+        "TotalExp": 8496.0
+    },
+    {
+        "Level": 73,
+        "TotalExp": 8723.5
+    },
+    {
+        "Level": 74,
+        "TotalExp": 8954.0
+    },
+    {
+        "Level": 75,
+        "TotalExp": 9187.5
+    },
+    {
+        "Level": 76,
+        "TotalExp": 9424.0
+    },
+    {
+        "Level": 77,
+        "TotalExp": 9663.5
+    },
+    {
+        "Level": 78,
+        "TotalExp": 9906.0
+    },
+    {
+        "Level": 79,
+        "TotalExp": 10151.5
+    },
+    {
+        "Level": 80,
+        "TotalExp": 10400.0
+    },
+    {
+        "Level": 81,
+        "TotalExp": 10651.5
+    },
+    {
+        "Level": 82,
+        "TotalExp": 10906.0
+    },
+    {
+        "Level": 83,
+        "TotalExp": 11163.5
+    },
+    {
+        "Level": 84,
+        "TotalExp": 11424.0
+    },
+    {
+        "Level": 85,
+        "TotalExp": 11687.5
+    },
+    {
+        "Level": 86,
+        "TotalExp": 11954.0
+    },
+    {
+        "Level": 87,
+        "TotalExp": 12223.5
+    },
+    {
+        "Level": 88,
+        "TotalExp": 12496.0
+    },
+    {
+        "Level": 89,
+        "TotalExp": 12771.5
+    },
+    {
+        "Level": 90,
+        "TotalExp": 13050.0
+    },
+    {
+        "Level": 91,
+        "TotalExp": 13331.5
+    },
+    {
+        "Level": 92,
+        "TotalExp": 13616.0
+    },
+    {
+        "Level": 93,
+        "TotalExp": 13903.5
+    },
+    {
+        "Level": 94,
+        "TotalExp": 14194.0
+    },
+    {
+        "Level": 95,
+        "TotalExp": 14487.5
+    },
+    {
+        "Level": 96,
+        "TotalExp": 14784.0
+    },
+    {
+        "Level": 97,
+        "TotalExp": 15083.5
+    },
+    {
+        "Level": 98,
+        "TotalExp": 15386.0
+    },
+    {
+        "Level": 99,
+        "TotalExp": 15691.5
+    }
+]
+}

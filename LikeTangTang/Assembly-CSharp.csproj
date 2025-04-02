@@ -72,6 +72,7 @@
     <Compile Include="Assets/@Scripts/UI/UI_Base.cs" />
     <Compile Include="Assets/@Scripts/Scenes/GameScene.cs" />
     <Compile Include="Assets/@Scripts/UI/Popup/UI_GameResultPopup.cs" />
+    <Compile Include="Assets/@Scripts/UI/Scene/UI_LobbyScene.cs" />
     <Compile Include="Assets/@Scripts/Manager/Contents/PoolManager.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/SkillBase.cs" />
     <Compile Include="Assets/@Scripts/UI/Scene/UI_TitleScene.cs" />
@@ -79,10 +80,12 @@
     <Compile Include="Assets/@Scripts/Controllers/BossController.cs" />
     <Compile Include="Assets/@Scripts/Utils/Define.cs" />
     <Compile Include="Assets/@Scripts/Utils/Utils.cs" />
+    <Compile Include="Assets/@Scripts/UI/Popup/LobbyScene/UI_EquipmentPopup.cs" />
     <Compile Include="Assets/@Scripts/Controllers/CreatureController.cs" />
     <Compile Include="Assets/@Scripts/UI/UI_EventHandler.cs" />
     <Compile Include="Assets/@Scripts/Data/Data.Contents.cs" />
     <Compile Include="Assets/@Scripts/Data/DataTransformer.cs" />
+    <Compile Include="Assets/@Scripts/UI/Popup/LobbyScene/UI_BattlePopup.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Sequence/SequenceSkill.cs" />
     <Compile Include="Assets/@Scripts/Controllers/ProjectileController.cs" />
     <Compile Include="Assets/@Scripts/UI/Scene/UI_GameScene.cs" />
@@ -95,6 +98,7 @@
     <Compile Include="Assets/@Scripts/Utils/Memo.cs" />
     <Compile Include="Assets/@Scripts/Controllers/GemController.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/Projectile/FireBall.cs" />
+    <Compile Include="Assets/@Scripts/UI/Popup/LobbyScene/UI_ShopPopup.cs" />
     <Compile Include="Assets/@Scripts/Manager/System/UIManager.cs" />
     <Compile Include="Assets/@Scripts/Manager/Contents/GameManager.cs" />
     <Compile Include="Assets/@Scripts/Controllers/CameraController.cs" />
@@ -102,10 +106,10 @@
     <Compile Include="Assets/@Scripts/Manager/Manager.cs" />
     <Compile Include="Assets/@Scripts/UI/Popup/UI_SkillSelectPopup.cs" />
     <Compile Include="Assets/@Scripts/Manager/System/CustomSceneManager.cs" />
-    <Compile Include="Assets/@Scripts/UI/Scene/UI_LobbyScene.cs" />
-    <Compile Include="Assets/@Scripts/UI/Popup/LobbyScene/UI_ShopPopup.cs" />
-    <Compile Include="Assets/@Scripts/UI/Popup/LobbyScene/UI_BattlePopup.cs" />
-    <Compile Include="Assets/@Scripts/UI/Popup/LobbyScene/UI_EquipmentPopup.cs" />
+    <Compile Include="Assets/_ExternalModule/Favorites/Common/Scripts/FG_GameObjectGUIDs.cs" />
+    <Compile Include="Assets/@Scripts/Scenes/TitleScene.cs" />
+    <Compile Include="Assets/@Scripts/Scenes/LobbyScene.cs" />
+    <Compile Include="Assets/@Scripts/Scenes/BaseScene.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
@@ -127,6 +131,7 @@
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets/_ExternalModule/Favorites/FavoritesTab/_readme.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />
     <None Include="Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" />

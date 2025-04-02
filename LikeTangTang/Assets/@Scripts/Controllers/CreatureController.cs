@@ -6,12 +6,21 @@ using UnityEngine;
 public class CreatureController : BaseController
 {
 
-    public int MaxHP { get; set; }
-    public float Hp { get; set; }
-    public float Speed { get; set; }
+    #region Info
+    public virtual int DataID {get ;set;}
+    public virtual float Hp {get; set;}
+    public virtual float MaxHp {get; set;}
+    public virtual float Attack {get; set;}
+    public virtual float AttackRate {get; set;} = 1;
+    public virtual float Def {get; set;}
+    public virtual float DefRate {get; set;} = 1;
+    public virtual float CriticalRate {get; set;}
+    public virtual float CriticalDamage {get; set;} = 1.5f;
 
-    public float Damage { get; set; }
-
+    public virtual float DamageReduction {get; set;}
+    public virtual float SpeedRate {get; set;} = 1;
+    public virtual float Speed {get ;set;}
+    #endregion
     public SkillComponent Skills {get; protected set;}
 
     public override bool Init()

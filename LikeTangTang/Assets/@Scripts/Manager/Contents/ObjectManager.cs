@@ -185,4 +185,9 @@ public class ObjectManager
             DeSpawn<MonsterController>(monster);
         }
     }
+
+    public void LoadMap(string _name)
+    {
+        Manager.ResourceM.Instantiate(_name);
+    }
 }

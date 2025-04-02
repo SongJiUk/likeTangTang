@@ -32,7 +32,7 @@ public class UI_GameScene : UI_Base
         Bind<TextMeshProUGUI>(typeof(Texts));
         Bind<Slider>(typeof(Sliders));
     }
-
+    //[ ] 이건 플레이어 쪽에서 관리할것임.
     public void SetPlayerLevel(int _level)
     {
         GetText(typeof(Texts), (int)Texts.CharacterLevelValueText).text = $"{_level}";
@@ -45,12 +45,6 @@ public class UI_GameScene : UI_Base
     public void SetKillCount(int _killCount)
     {
         GetText(typeof(Texts), (int)Texts.KillValueText).text = $"{_killCount}";
-    }
-
-    public void CreateJoyStick(string _key)
-    {
-        var joyStick = Manager.ResourceM.Instantiate(_key);
-        joyStick.name = "@UI_JoyStick";
     }
 
 

@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: 9d36c753e6a605f4d845a9d3d2090fbd
   m_SerializeEntries:
   - m_GUID: f678a7eb982a41d458d2097bbf79cffe
-    m_Address: UI_Joystick.prefab
+    m_Address: UI_JoyStick.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
@@ -34,6 +34,26 @@ MonoBehaviour:
     - PrevLoad
   - m_GUID: cdf16d0632ae6794894ec27860c3af21
     m_Address: UI_GameScene.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 3cd7aff866baa420baac92fc2e7d3b0d
+    m_Address: UI_EquipmentPopup.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 545a695a4f9ed40098896d4772f46c4b
+    m_Address: UI_BattlePopup.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 1b6783c779a4348fd9250d8007fd3927
+    m_Address: UI_LobbyScene.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: dbb78276004ed4b9c86444e784ca84a8
+    m_Address: UI_ShopPopup.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad

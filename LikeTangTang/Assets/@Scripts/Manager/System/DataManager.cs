@@ -13,20 +13,21 @@ public interface ILoader<key, value>
 
 public class DataManager
 {
-    public Dictionary<int, Data.PlayerData> PlayerDic { get; private set; }
-        = new Dictionary<int, Data.PlayerData>();
+    public Dictionary<int, Data.CreatureData> CreatureDic {get; private set;} = new Dictionary<int, Data.CreatureData>();
+    public Dictionary<int, Data.PlayerData> PlayerDic { get; private set; } = new Dictionary<int, Data.PlayerData>();
+    public Dictionary<string, Data.MonsterData> MonsterDic { get; private set; } = new Dictionary<string, Data.MonsterData>();
 
-    public Dictionary<string, Data.MonsterData> MonsterDic { get; private set; }
-        = new Dictionary<string, Data.MonsterData>();
-
-    public Dictionary<int, Data.SkillData> SkillDic {get; private set;}
-        = new Dictionary<int, Data.SkillData>();
+    public Dictionary<int, Data.SkillData> SkillDic {get; private set;} = new Dictionary<int, Data.SkillData>();
+    public Dictionary<int, Data.LevelData> LevelDic {get; private set; } = new Dictionary<int, Data.LevelData>();
 
     public void Init()
     {
+        CreatureDic = LoadJson<Data.CreatureDataLoader, int, Data.CreatureData>("CreatureData.json").MakeDict();
+
         PlayerDic = LoadJson<Data.PlayerDataLoader, int, Data.PlayerData>("PlayerData.json").MakeDict();
         MonsterDic = LoadJson<Data.MonsterDataLoader, string, Data.MonsterData>("MonsterData.json").MakeDict();
         SkillDic = LoadJson<Data.SkillDataLoader, int, Data.SkillData>("SkillData.json").MakeDict();
+        LevelDic = LoadJson<Data.LevelDataLoader, int, Data.LevelData>("LevelData.json").MakeDict();
     }
 
     Loader LoadJson<Loader, key, value>(string _path) where Loader : ILoader<key, value>

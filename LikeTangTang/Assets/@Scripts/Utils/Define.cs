@@ -5,7 +5,7 @@ using UnityEngine;
 public static class Define
 {
   
-    public enum Scene
+    public enum SceneType
     {
         UnKnownScene,
         DevScene,

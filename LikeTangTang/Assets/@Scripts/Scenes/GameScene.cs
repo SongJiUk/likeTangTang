@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class GameScene : MonoBehaviour
+public class GameScene : BaseScene
 {
     SpawnManager spawnManager;
+    PlayerController player;
+    UI_GameScene ui;
     Define.StageType stageType;
     public Define.StageType StageType
     {
@@ -29,33 +31,48 @@ public class GameScene : MonoBehaviour
         }
     }
 
-
-    private void Start()
+    public override void Init()
     {
+        base.Init();
+        SceneType = Define.SceneType.GameScene;
         
-        StartLoad();
-    }
+        Manager.UiM.ShowPopup<UI_JoyStick>();
+        player = Manager.ObjectM.Spawn<PlayerController>(Vector3.zero);
 
-    void StartLoad()
-    {
-        Manager.DataM.Init();
-        Manager.UiM.ShowSceneUI<UI_GameScene>();
-        Manager.ResourceM.Instantiate("Map.prefab");
-
-        Manager.ObjectM.Spawn<GridController>(Vector3.zero);
-        var player = Manager.ObjectM.Spawn<PlayerController>(Vector3.zero);
-        spawnManager = gameObject.AddComponent<SpawnManager>();
-
-        //[ ] : 이름 자동화(이건 데이터에서 쉽게 가져 올 수 있을듯)
-        Manager.UiM.GetSceneUI<UI_GameScene>().CreateJoyStick("UI_Joystick.prefab");
-
-        // var joyStick = Manager.ResourceM.Instantiate("UI_Joystick.prefab");
-        // joyStick.name = "@UI_Joystick";
-
+        StageLoad();
+        
         Camera.main.GetComponent<CameraController>().Target = player.gameObject;
+        
+
+        ui = Manager.UiM.ShowPopup<UI_GameScene>();
+
         
         Manager.GameM.OnChangeGemCount += HandleOnChangeGemCount;
         Manager.GameM.OnChangeKillCount += HandleOnChangeKillCount;
+    }
+    public override void Clear()
+    {
+        
+    }
+    void StageLoad()
+    {
+        spawnManager = gameObject.AddComponent<SpawnManager>();
+        Manager.ObjectM.LoadMap("@Map.prefab");
+        Manager.ObjectM.Spawn<GridController>(Vector3.zero);
+        
+
+    }
+    void StartLoad()
+    {
+    
+        //[ ] 데이터 불러오는 부분
+
+
+        Manager.UiM.ShowSceneUI<UI_GameScene>();
+
+
+
+        
 
     }
 

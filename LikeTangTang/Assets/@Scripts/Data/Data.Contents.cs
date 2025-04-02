@@ -6,7 +6,42 @@ using UnityEngine;
 
 namespace Data
 {
-    #region Json PlayerData
+    #region Creature Data
+    [Serializable]
+    public class CreatureData
+    {
+        public int DataID;
+        public string DescriptionID;
+        public string prefabName;
+        public float MaxHp;
+        public float Attack;
+        public float Def;
+        public float MoveSpeed;
+        public float HpRate;
+        public float AttackRate;
+        public float DefRate;
+        public float MoveSpeedRate;
+        public string IconName;
+        public List<int> SkillTypeList;
+
+
+    }
+
+    public class CreatureDataLoader : ILoader<int, CreatureData>
+    {
+        public List<CreatureData> creatureData = new List<CreatureData>();
+
+        public Dictionary<int, CreatureData> MakeDict()
+        {
+            Dictionary<int, CreatureData> dic = new Dictionary<int, CreatureData>();
+            foreach(CreatureData data in creatureData)
+                dic.Add(data.DataID, data);
+            
+            return dic;
+
+        }
+    }
+
     [Serializable]
     public class PlayerData
     {
@@ -105,6 +140,28 @@ namespace Data
     }
     #endregion
 
+    #region LevelData
+    [Serializable]
+    public class LevelData
+    {
+        public int level;
+        public float TotalExp;
+    }
+
+    public class LevelDataLoader : ILoader<int, LevelData>
+    {
+        public List<LevelData> levelData = new List<LevelData>();
+
+        public Dictionary<int, LevelData> MakeDict()
+        {
+            Dictionary<int, LevelData> dic = new Dictionary<int, LevelData>();
+            foreach(LevelData data in levelData)
+                dic.Add(data.level, data);
+            
+            return dic;
+        }
+    }
+    #endregion
     #region 조이스틱이나, 맵, 하드코딩되는것들 데이터로 정리해서 가져와서 사용하자.
     #endregion
 }

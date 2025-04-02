@@ -32,7 +32,7 @@ public class UI_TitleScene : UI_Base
         GetButton(typeof(Buttons), (int)Buttons.StartButton).gameObject.BindEvent(() => 
         {
             if(isLoadEnd) Debug.Log("Click Button");
-            Manager.SceneM.LoadScene(Define.Scene.LobbyScene);
+            Manager.SceneM.LoadScene(Define.SceneType.LobbyScene);
         });
 
         GetText(typeof(Texts), (int)Texts.StartText).gameObject.SetActive(false);

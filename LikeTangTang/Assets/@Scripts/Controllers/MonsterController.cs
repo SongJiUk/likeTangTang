@@ -90,6 +90,8 @@ public class MonsterController : CreatureController
 
         if (target == null) return;
 
+        if(target.IsVaild() == false) return;
+
         if (coDotDamage == null)
             StartCoroutine(CoStartDotDamage(target));
         
@@ -99,8 +101,10 @@ public class MonsterController : CreatureController
     {
         PlayerController target = collision.gameObject.GetComponent<PlayerController>();
         if (target == null) return;
-
-        if (coDotDamage != null) 
+        
+        if(target.IsVaild() == false) return;
+        
+        if (coDotDamage != null ) 
             StopCoroutine(coDotDamage);
 
         coDotDamage = null;
@@ -112,7 +116,7 @@ public class MonsterController : CreatureController
         while (true)
         {
             // 피해자에서 처리하는게 좋음
-            _target.OnDamaged(this, Damage);
+            _target.OnDamaged(this, Attack);
             yield return new WaitForSeconds(0.1f);
         }
     }
