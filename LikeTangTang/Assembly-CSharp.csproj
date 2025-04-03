@@ -110,6 +110,8 @@
     <Compile Include="Assets/@Scripts/Scenes/TitleScene.cs" />
     <Compile Include="Assets/@Scripts/Scenes/LobbyScene.cs" />
     <Compile Include="Assets/@Scripts/Scenes/BaseScene.cs" />
+    <Compile Include="Assets/@Scripts/Data/GameData.cs" />
+    <Compile Include="Assets/@Scripts/Data/ContinueData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

@@ -34,6 +34,7 @@ public class UI_TitleScene : UI_Base
             if(isLoadEnd) Debug.Log("Click Button");
             Manager.SceneM.LoadScene(Define.SceneType.LobbyScene);
         });
+        GetButton(typeof(Buttons), (int)Buttons.StartButton).gameObject.SetActive(false);
 
         GetText(typeof(Texts), (int)Texts.StartText).gameObject.SetActive(false);
 
@@ -57,8 +58,11 @@ public class UI_TitleScene : UI_Base
             if (loadCount == maxCount)
             {
                 isLoadEnd = true;
+                GetButton(typeof(Buttons), (int)Buttons.StartButton).gameObject.SetActive(true);
                 GetText(typeof(Texts), (int)Texts.StartText).gameObject.SetActive(true);
                 Manager.DataM.Init();
+                Manager.GameM.Init();
+                
                 StartAnim();
             }
                 

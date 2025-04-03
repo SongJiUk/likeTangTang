@@ -1,0 +1,48 @@
+{
+  "stages" : [
+
+    {
+      "StageIndex " : 1,
+      "StageName" : "1 스테이지",
+      "StageLevel" : 1,
+      "MapName" : "Map_01",
+      "StageKill" : 0,
+      "ClearReward" :[
+        {
+          "ClearGold" : 1000,
+          "ClearExp" : 5
+        }
+      ],
+      "StageImage" : "MapSprite_01.sprite",
+      "SpawnMonsterNum" : [
+        100,
+        101
+      ],
+      "WaveArray" : [
+        {
+          "StageIndex" : 1,
+          "WaveIndex" : 1,
+          "SpawnInterval" : 3,
+          "OnceSpawnCount" : 3,
+          "MonsterID" : [
+            100
+          ],
+          "EleteMonsterID" : [ ],
+          "BossMonsterID" : [ ],
+          "RemainsTime" : 60,
+          "WaveType" : 0,
+          "FirstMonsterSpawnRate" : 1.0,
+          "HpIncreaseRate" : 1.5,
+          "NonDropRate" : 0.25,
+          "SmallGemDropRate" : 0.0,
+          "GreenGemDropRate": 0.73,
+          "BlueGemDropRate": 0.27,
+          "YellowGemDropRate": 0.0,
+          "EliteDropItemId": []
+        }
+      ]
+    }
+  ]
+}
+
+

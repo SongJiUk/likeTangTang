@@ -7,7 +7,7 @@ public class GameManager
 {
     public PlayerController player { get { return Manager.ObjectM?.Player; } }
     
-
+    public GameData gameData = new GameData();
 
     #region 플레이어 움직임
 
@@ -55,5 +55,33 @@ public class GameManager
 
     #endregion
 
-    //TODO : 플레이어의 레벨을 어디서 관리해줘야할까?
+    public void Init()
+    {
+        /*TODO : 
+        1. 기존에 하던거 있으면 로드, 
+        2. 캐릭터 선택해서 불러오기(캐릭터 여러개 만들거면)
+        3. 스테이지 로드
+        4. 장비 확인
+        5. 초반 기본 아이템 설정
+
+        */
+    }
+
+    public void LoadGame()
+    {
+
+    }
+
+    public void SaveGame()
+    {
+
+    }
+
+    public void StageDataLoad()
+    {
+
+    }
+
+
 }
+
