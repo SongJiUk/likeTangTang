@@ -2,13 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Data;
 
 public class GameManager
 {
     public PlayerController player { get { return Manager.ObjectM?.Player; } }
     
     public GameData gameData = new GameData();
-
     #region 플레이어 움직임
 
     Vector2 playerMoveDir;

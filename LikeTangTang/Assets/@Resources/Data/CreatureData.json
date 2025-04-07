@@ -1,149 +1,159 @@
 {
     "creatureData": [
-      {
-        "DataID": 1,
-        "DescriptionID": "Beta",
-        "prefabName" : "Player",
-        "MaxHp" : 100.0,
-        "Attack" : 10.0,
-        "Def" : 1,
-        "MoveSpeed " : 1,
-        "HpRate" : 1,
-        "AttackRate" : 1,
-        "DefRate" : 1,
-        "MoveSpeedRate" : 1,
-        "Image_Name" : "asd",
-        "SkillTypeList": [
-            10001,
-            10002
-        ]
-        
-      },
-      {
-        "DataID": 2,
-        "DescriptionID": "Beta",
-        "prefabName" : "Player",
-        "MaxHp" : 100.0,
-        "Attack" : 10.0,
-        "Def" : 1,
-        "MoveSpeed " : 1,
-        "HpRate" : 1,
-        "AttackRate" : 1,
-        "DefRate" : 1,
-        "MoveSpeedRate" : 1,
-        "Image_Name" : "asd",
-        "SkillTypeList": [
-            10001,
-            10002
-        ]
-      },
-      {
-        "DataID": 3,
-        "DescriptionID": "Beta",
-        "prefabName" : "Player",
-        "MaxHp" : 100.0,
-        "Attack" : 10.0,
-        "Def" : 1,
-        "MoveSpeed " : 1,
-        "HpRate" : 1,
-        "AttackRate" : 1,
-        "DefRate" : 1,
-        "MoveSpeedRate" : 1,
-        "Image_Name" : "asd",
-        "SkillTypeList": [
-            10001,
-            10002
-        ]
-      },
-      {
-        "DataID": 4,
-        "DescriptionID": "Beta",
-        "prefabName" : "Player",
-        "MaxHp" : 100.0,
-        "Attack" : 10.0,
-        "Def" : 1,
-        "MoveSpeed " : 1,
-        "HpRate" : 1,
-        "AttackRate" : 1,
-        "DefRate" : 1,
-        "MoveSpeedRate" : 1,
-        "Image_Name" : "asd",
-        "SkillTypeList": [
-            10001,
-            10002
-        ]
-      },
-      {
-       "DataID": 5,
-        "DescriptionID": "Beta",
-        "prefabName" : "Player",
-        "MaxHp" : 100.0,
-        "Attack" : 10.0,
-        "Def" : 1,
-        "MoveSpeed " : 1,
-        "HpRate" : 1,
-        "AttackRate" : 1,
-        "DefRate" : 1,
-        "MoveSpeedRate" : 1,
-        "Image_Name" : "asd",
-        "SkillTypeList": [
-            10001,
-            10002
-        ]
-      },
-      {
-        "Id": 101,
-        "Name": "Green Slime",
-        "Type": "Normal",
-        "MaxHp": 30.0,
-        "MaxHpUpForIncreasStage" : 5.0,
-        "Attack": 5.0,
-        "AttackUpForIncreasStage" : 2.0,
-        "Def" : 0.0,
-        "Speed": 2.0,
-        "TotalExp": 200.0,
-        "HpRate": 1.0,
-        "AtkRate": 1.0,
-        "DefRate": 1.0,
-        "MoveSpeedRate": 1.0,
-        "IconLabel": "MonsterIcon_01.sprite",
-        "Skills": []
-      },
-      {
-        "Id": 101,
-        "Name": "Green Slime",
-        "Type": "Normal",
-        "MaxHp": 30.0,
-        "MaxHpUpForIncreasStage" : 5.0,
-        "Attack": 5.0,
-        "AttackUpForIncreasStage" : 2.0,
-        "Def" : 0.0,
-        "Speed": 2.0,
-        "TotalExp": 200.0,
-        "HpRate": 1.0,
-        "AtkRate": 1.0,
-        "DefRate": 1.0,
-        "MoveSpeedRate": 1.0,
-        "IconLabel": "MonsterIcon_01.sprite",
-        "Skills": []
-      },
-      {
-        "Id": 101,
-        "Name": "Green Slime",
-        "Type": "Normal",
-        "MaxHp": 30.0,
-        "MaxHpUpForIncreasStage" : 5.0,
-        "Attack": 5.0,
-        "AttackUpForIncreasStage" : 2.0,
-        "Def" : 0.0,
-        "Speed": 2.0,
-        "TotalExp": 200.0,
-        "HpRate": 1.0,
-        "AtkRate": 1.0,
-        "DefRate": 1.0,
-        "MoveSpeedRate": 1.0,
-        "IconLabel": "MonsterIcon_01.sprite",
-        "Skills": []
-      }
+        {
+            "DataID": 1,
+            "DescriptionID": "Beta",
+            "prefabName": "Player",
+            "MaxHp": 100.0,
+            "MaxHpUpForIncreasStage": 5.0,
+            "Attack": 10.0,
+            "AttackUpForIncreasStage": 2.0,
+            "Def": 1.0,
+            "` ": 1.0,
+            "HpRate": 1.0,
+            "AttackRate": 1.0,
+            "DefRate": 1.0,
+            "MoveSpeedRate": 1.0,
+            "Image_Name": "asd",
+            "SkillTypeList": [
+                10001,
+                10002
+            ]
+
+        },
+        {
+            "DataID": 2,
+            "DescriptionID": "Beta",
+            "prefabName": "Player",
+            "MaxHp": 100.0,
+            "MaxHpUpForIncreasStage": 5.0,
+            "Attack": 10.0,
+            "AttackUpForIncreasStage": 2.0,
+            "Def": 1.0,
+            "Speed ": 1.0,
+            "HpRate": 1.0,
+            "AttackRate": 1.0,
+            "DefRate": 1.0,
+            "MoveSpeedRate": 1.0,
+            "Image_Name": "asd",
+            "SkillTypeList": [
+                10001,
+                10002
+            ]
+        },
+        {
+            "DataID": 3,
+            "DescriptionID": "Beta",
+            "prefabName": "Player",
+            "MaxHp": 100.0,
+            "MaxHpUpForIncreasStage": 5.0,
+            "Attack": 10.0,
+            "AttackUpForIncreasStage": 2.0,
+            "Def": 1.0,
+            "Speed ": 1.0,
+            "HpRate": 1.0,
+            "AttackRate": 1.0,
+            "DefRate": 1.0,
+            "MoveSpeedRate": 1.0,
+            "Image_Name": "asd",
+            "SkillTypeList": [
+                10001,
+                10002
+            ]
+        },
+        {
+            "DataID": 4,
+            "DescriptionID": "Beta",
+            "prefabName": "Player",
+            "MaxHp": 100.0,
+            "MaxHpUpForIncreasStage": 5.0,
+            "Attack": 10.0,
+            "AttackUpForIncreasStage": 2.0,
+            "Def": 1.0,
+            "Speed ": 1.0,
+            "HpRate": 1.0,
+            "AttackRate": 1.0,
+            "DefRate": 1.0,
+            "MoveSpeedRate": 1.0,
+            "Image_Name": "asd",
+            "SkillTypeList": [
+                10001,
+                10002
+            ]
+        },
+        {
+            "DataID": 5,
+            "DescriptionID": "Beta",
+            "prefabName": "Player",
+            "MaxHp": 100.0,
+            "MaxHpUpForIncreasStage": 5.0,
+            "Attack": 10.0,
+            "AttackUpForIncreasStage": 2.0,
+            "Def": 1.0,
+            "Speed ": 1.0,
+            "HpRate": 1.0,
+            "AttackRate": 1.0,
+            "DefRate": 1.0,
+            "MoveSpeedRate": 1.0,
+            "Image_Name": "asd",
+            "SkillTypeList": [
+                10001,
+                10002
+            ]
+        },
+        {
+            "DataID": 101,
+            "DescriptionID": "Green Slime",
+            "prefabName": "Snake_01",
+            "MaxHp": 100.0,
+            "MaxHpUpForIncreasStage": 5.0,
+            "Attack": 10.0,
+            "AttackUpForIncreasStage": 2.0,
+            "Def": 1.0,
+            "Speed ": 1.0,
+            "HpRate": 1.0,
+            "AttackRate": 1.0,
+            "DefRate": 1.0,
+            "MoveSpeedRate": 1.0,
+            "Image_Name": "MonsterIcon_01.sprite",
+            "SkillTypeList": []
+        },
+        {
+            "DataID": 102,
+            "DescriptionID": "Green Slime",
+            "prefabName": "Goblin_01",
+            "MaxHp": 100.0,
+            "MaxHpUpForIncreasStage": 5.0,
+            "Attack": 10.0,
+            "AttackUpForIncreasStage": 2.0,
+            "Def": 1.0,
+            "Speed ": 1.0,
+            "HpRate": 1.0,
+            "AttackRate": 1.0,
+            "DefRate": 1.0,
+            "MoveSpeedRate": 1.0,
+            "Image_Name": "MonsterIcon_01.sprite",
+            "SkillTypeList": []
+        },
+        {
+            "DataID": 103,
+            "DescriptionID": "Green Slime",
+            "prefabName": "Boss",
+            "MaxHp": 100.0,
+            "MaxHpUpForIncreasStage": 5.0,
+            "Attack": 10.0,
+            "AttackUpForIncreasStage": 2.0,
+            "Def": 1.0,
+            "Speed ": 1.0,
+            "HpRate": 1.0,
+            "AttackRate": 1.0,
+            "DefRate": 1.0,
+            "MoveSpeedRate": 1.0,
+            "Image_Name": "MonsterIcon_01.sprite",
+            "SkillTypeList": [
+                10001,
+                10002
+            ]
+        }
     ] 
   }

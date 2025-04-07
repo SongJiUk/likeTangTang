@@ -148,16 +148,11 @@ public class PlayerController : CreatureController
     {
         if(base.Init() == false) return false;
         Debug.Log("Init");
-        Speed = 10f;
+       
         Manager.GameM.OnMovePlayerDir += HandleOnMoveDirChange;
 
         AddSkill();
-        Level = 1;
-        if(Manager.DataM.PlayerDic.TryGetValue(Level, out var data) != false)
-        {
-            Debug.Log($"Damage : {data.attack}, MaxHP : {data.maxHp}, Exp : {data.totalExp}");
-            
-        }
+      
         return true;
     }
 

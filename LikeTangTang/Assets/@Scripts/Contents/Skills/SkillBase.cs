@@ -5,7 +5,7 @@ using UnityEngine;
 public class SkillBase : BaseController
 {
     public CreatureController owner {get; set;}
-    public Define.SkillType Skilltype { get; set; } = Define.SkillType.Repeat;
+    public Define.SkillType Skilltype { get; set; } = Define.SkillType.None;
     public Data.SkillData SkillDatas { get; protected set; }
     public int SkillLevel {get; set;} = 0;
     public bool isLearnSkill

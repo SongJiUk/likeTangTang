@@ -57,7 +57,7 @@ public class GameScene : BaseScene
     void StageLoad()
     {
         spawnManager = gameObject.AddComponent<SpawnManager>();
-        Manager.ObjectM.LoadMap("@Map.prefab");
+        Manager.ObjectM.LoadMap("Map.prefab");
         Manager.ObjectM.Spawn<GridController>(Vector3.zero);
         
 

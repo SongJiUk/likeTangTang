@@ -57,7 +57,7 @@ public class UI_LobbyScene : UI_Base
     {
         AllOff();
         ui_BattlePopup.gameObject.SetActive(true);
-        Manager.GameM.player.DataID = 1;
+        //Manager.GameM.player.DataID = 1;
     }
 
     void OnClickShopToggle()

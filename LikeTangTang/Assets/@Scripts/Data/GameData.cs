@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Data;
 
 [Serializable]
 public class GameData
@@ -12,7 +13,7 @@ public class GameData
     public int dia = 0;
 
     // TODO : 모든 정보가 다 들어간다고 생각하면 됌. 
-    public ContinueData continueData= new ContinueData();
-
+    public ContinueData continueData = new ContinueData();
+    public StageData CurrentStage = new StageData();
 
 }

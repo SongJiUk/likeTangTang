@@ -17,8 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 93989ba2fac755e43819f64f25de4875
   m_SerializeEntries:
-  - m_GUID: eaf600384f2e9aa40845438fab7efcbd
-    m_Address: PlayerData.json
+  - m_GUID: ce1903913ce114d5fa70f0d0f823dd14
+    m_Address: LevelData.json
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
@@ -27,8 +27,23 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
+  - m_GUID: 754bdea94613940d991628086c7b4ef6
+    m_Address: CreatureData.json
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: eaf600384f2e9aa40845438fab7efcbd
+    m_Address: PlayerData.json
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   - m_GUID: e5b005fcd6f7449ab89d41f0ba47bd9e
     m_Address: SkillData.json
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: d61fa843814064423b8f3ead91c7c755
+    m_Address: StageData.json
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
