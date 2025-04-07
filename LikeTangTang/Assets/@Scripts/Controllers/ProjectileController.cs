@@ -48,7 +48,7 @@ public class ProjectileController : SkillBase
         if(mc.IsVaild() == false) return;
         if(this.IsVaild()==false) return;
 
-        mc.OnDamaged(owner, SkillDatas.damage);
+        mc.OnDamaged(owner, SkillDatas.DamageMultiplier);
         StopDestroy();
 
         Manager.ObjectM.DeSpawn(this);

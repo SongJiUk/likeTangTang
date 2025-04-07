@@ -73,7 +73,7 @@ public class DataTransformer : EditorWindow
 
             int i = 0;
             SkillData skillData = new SkillData();
-            skillData.damage = ConvertValue<int>(row[i++]);
+            skillData.DamageMultiplier = ConvertValue<int>(row[i++]);
             // skillData.Name = ConvertValue<string>(row[i++]);
             // skillData.Description = ConvertValue<string>(row[i++]);
             // skillData.PrefabLabel = ConvertValue<string>(row[i++]);
