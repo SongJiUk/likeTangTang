@@ -34,8 +34,8 @@ public class ObjectManager
         if (type == playerType)
         {
             //[ ]Data에서 값을 가져와서 생성하기.
-            GameObject go = Manager.ResourceM.Instantiate("Slime_01.prefab");
-            go.name = "!Player";
+            GameObject go = Manager.ResourceM.Instantiate($"{Manager.DataM.CreatureDic[Manager.GameM.gameData.userID].prefabName}");
+            go.name = $"{Manager.GameM.gameData.userName}";
             go.transform.position = _pos;
             PlayerController pc = go.GetComponent<PlayerController>();
             Player = pc;

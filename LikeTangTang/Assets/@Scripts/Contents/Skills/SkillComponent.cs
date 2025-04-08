@@ -11,6 +11,7 @@ public class SkillComponent : MonoBehaviour
 
     public List<SequenceSkill> SequenceSkills { get;} = new List<SequenceSkill>();
 
+    public Dictionary<Define.SkillType, int> SavedBattleSkill = new Dictionary<Define.SkillType, int>();
     public T AddSkill<T>(Vector3 _pos, Transform _parent = null ) where T : SkillBase
     {
         //[ ] 나중에 templateID로 바꾸기.

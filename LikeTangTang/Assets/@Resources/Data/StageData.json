@@ -2,10 +2,10 @@
   "stages" : [
 
     {
-      "StageIndex " : 1,
+      "StageIndex" : 1,
       "StageName" : "1 스테이지",
       "StageLevel" : 1,
-      "MapName" : "Map_01",
+      "MapName" : "Map_01.prefab",
       "StageKill" : 0,
       "ClearGold" : 1000,
       "ClearExp" : 5,

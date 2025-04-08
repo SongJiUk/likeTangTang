@@ -7,13 +7,15 @@ using Data;
 [Serializable]
 public class GameData
 {
+    public int userID = 0;
     public int userLevel = 1;
     public string userName = "Player";
     public int gold = 0;
     public int dia = 0;
 
     // TODO : 모든 정보가 다 들어간다고 생각하면 됌. 
-    public ContinueData continueData = new ContinueData();
-    public StageData CurrentStage = new StageData();
+    public ContinueData ContinueDatas = new ContinueData();
+    public StageData CurrentStageData = new StageData();
 
+    public Dictionary<int, StageClearInfoData> StageClearInfoDic = new Dictionary<int, StageClearInfoData>();
 }

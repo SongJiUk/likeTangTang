@@ -7,12 +7,15 @@ using UnityEngine;
 public class ContinueData
 {
     public bool isContinue;
+    public string PrefabName;
+    public string PlayerName;
     public int PlayerDataID;
+    public int CurrentWaveIndex;
     public float Hp;
-    public float MaxpHp;
+    public float MaxHp;
     public float MaxHpBonusRate = 1;
     public float HealBonusRate = 1;
-    public float Atk;
+    public float Attack;
     public float AttackRate = 1;
     public float Def;
     public float DefRate;
@@ -21,11 +24,41 @@ public class ContinueData
     public float TotalExp;
     public int Level = 1;
     public float Exp;
-    public float CriRate;
-    public float CriDamage = 1.5f;
+    public float CriticalRate;
+    public float CriticalDamage = 1.5f;
     public float DamageReduction;
     public float ExpBonusRate = 1;
     public float CollectDistBonus = 1;
     public int KillCount;
     public int SkillRefreshCount = 3;
+    public Dictionary<Define.SkillType, int> SavedBattleSkill = new Dictionary<Define.SkillType, int>();
+
+    public void Clear()
+    {
+        PlayerDataID = 0;
+        PrefabName = string.Empty;
+        PlayerName = string.Empty;
+        CurrentWaveIndex = 1;
+        Hp = 0;
+        MaxHp = 0;
+        MaxHpBonusRate = 1f;
+        HealBonusRate = 1f;
+        Attack = 0;
+        AttackRate = 1f;
+        Def = 0;
+        DefRate = 0;
+        MoveSpeed = 0;
+        MoveSpeedRate = 1f;
+        TotalExp = 0f;
+        Level = 1;
+        Exp = 0f;
+        CriticalRate = 0f;
+        CriticalDamage = 1.5f;
+        DamageReduction = 0f;
+        ExpBonusRate = 1f;
+        CollectDistBonus = 1f;
+        KillCount = 0;
+        SkillRefreshCount = 3;
+        SavedBattleSkill.Clear();
+    }
 }

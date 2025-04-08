@@ -7,6 +7,7 @@ public class CreatureController : BaseController
 {
 
     #region Info
+    protected SpriteRenderer CreatureSprite;
     public virtual int DataID {get ;set;}
     public virtual float Hp {get; set;}
     public virtual float MaxHp {get; set;}
@@ -28,6 +29,10 @@ public class CreatureController : BaseController
         base.Init();
         Skills = gameObject.GetOrAddComponent<SkillComponent>();
 
+        CreatureSprite = GetComponent<SpriteRenderer>();
+        if (CreatureSprite == null)
+            CreatureSprite = Utils.FindChild<SpriteRenderer>(gameObject);
+        
         return true;
     }
     public virtual void OnDamaged(BaseController _attacker, float _damage)

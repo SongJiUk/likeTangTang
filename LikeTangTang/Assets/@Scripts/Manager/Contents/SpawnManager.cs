@@ -1,39 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
     /* ToDo : 여기서 스폰 관리하기
     */
-    float spawnInterval = 0.2f;
-    int maxMonsterCount = 100;
     Coroutine coUpdateMonsterSpawn;
 
-    private void Start()
-    {
-        coUpdateMonsterSpawn =  StartCoroutine(UpdateSpawn());
-    }
     public bool isStop {get; set;} = false;
 
-    void TrySpawn()
+    public void StartSpawn()
     {
-        if(isStop) return;
-
-        int monsterCount = Manager.ObjectM.mcSet.Count;
-        if (monsterCount >= maxMonsterCount) return;
-
-        Vector3 pos = Utils.CreateMonsterSpawnPoint(Manager.GameM.player.transform.position);
-        MonsterController mc = Manager.ObjectM.Spawn<MonsterController>(pos, Random.Range(0, 2));
-        
-
+        if(coUpdateMonsterSpawn == null)
+        {
+            coUpdateMonsterSpawn = StartCoroutine(UpdateSpawn());
+        }
     }
     IEnumerator UpdateSpawn()
     {
         while(true)
         {
-            TrySpawn();
-            yield return new WaitForSeconds(spawnInterval);
+            if(Manager.GameM.CurrentWaveData.MonsterID.Count == 1)
+            {
+                //ID가 하나면 하나만 소환.
+                for(int i =0; i<Manager.GameM.CurrentWaveData.OnceSpawnCount; i++)
+                {
+                    Vector2 pos = Utils.CreateMonsterSpawnPoint(Manager.GameM.player.transform.position);
+                    Manager.ObjectM.Spawn<MonsterController>(pos, Manager.GameM.CurrentWaveData.MonsterID[0]);
+                }
+                yield return new WaitForSeconds(Manager.GameM.CurrentWaveData.SpawnInterval);
+            }
+            else
+            {
+                for(int i =0; i<Manager.GameM.CurrentWaveData.OnceSpawnCount; i++)
+                {
+                    Vector2 pos = Utils.CreateMonsterSpawnPoint(Manager.GameM.player.transform.position);
+                    if(Random.value <= Manager.GameM.CurrentWaveData.FirstMonsterSpawnRate) 
+                    {
+                        Manager.ObjectM.Spawn<MonsterController>(pos, Manager.GameM.CurrentWaveData.MonsterID[0]);
+                    }
+                    else
+                    {
+                        int randIndex = Random.Range(1, Manager.GameM.CurrentWaveData.MonsterID.Count);
+                        Manager.ObjectM.Spawn<MonsterController>(pos, Manager.GameM.CurrentWaveData.MonsterID[randIndex]);
+                    }
+                }
+                yield return new WaitForSeconds(Manager.GameM.CurrentWaveData.SpawnInterval);
+            }
         }
         
     }

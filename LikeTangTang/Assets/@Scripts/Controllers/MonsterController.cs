@@ -134,7 +134,7 @@ public class MonsterController : CreatureController
         Manager.ObjectM.Spawn<GemController>(this.transform.position);
 
         Manager.ObjectM.DeSpawn(this);
-        Manager.GameM.KillCount++;
+        Manager.GameM.player.KillCount++;
         
         
     }

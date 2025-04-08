@@ -5,7 +5,22 @@ using UnityEngine;
 public static class Define
 {
   
-
+    #region 보석 경험치
+    public const int SMALL_GEM_EXP = 1;
+    public const int GREEN_GEM_EXP = 2;
+    public const int BLUE_GEM_EXP = 5;
+    public const int YELLOW_GEM_EXP = 10;
+    #endregion
+    public const int DEFAULT_PLAYER_ID = 1;
+    public enum ItemType
+    {
+        None,
+        Gem,
+        Bomb,
+        Magnet,
+        HP,
+        Gold
+    }
     public enum SkillType
     {
         None,

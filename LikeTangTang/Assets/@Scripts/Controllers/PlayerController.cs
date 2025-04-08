@@ -4,9 +4,16 @@ using UnityEngine;
 using System.Linq;
 using System.ComponentModel.Design;
 using Unity.VisualScripting;
+using Data;
+using System;
 
 public class PlayerController : CreatureController
 {
+
+    #region Action
+    public Action OnPlayerDataUpdated;
+    public Action OnPlayerLevelUp;
+    #endregion
     #region 플레이어 정보
     public override int DataID
     {
@@ -26,42 +33,143 @@ public class PlayerController : CreatureController
         set {MaxHp = value;}
     }
 
-    public override float Attack { get {return Attack; } set {Attack = value;}}
-    public override float AttackRate { get {return AttackRate;} set {AttackRate = value;} }
+    public override float Attack 
+    { 
+        get {return Manager.GameM.ContinueDatas.Attack; } 
+        set {Manager.GameM.ContinueDatas.Attack = value;}
+    }
+    public override float AttackRate 
+    { 
+        get {return Manager.GameM.ContinueDatas.AttackRate;} 
+        set {Manager.GameM.ContinueDatas.AttackRate = value;} 
+    }
     public override float Def 
     { 
-        get { return Def;}
-        set {Def = value;}
+        get { return Manager.GameM.ContinueDatas.Def;}
+        set { Manager.GameM.ContinueDatas.Def= value;}
     }
-    public override float DefRate { get {return DefRate;} set {DefRate =value;}}
-    public override float CriticalRate { get {return CriticalRate;} set {CriticalRate = value;}}
-    public override float CriticalDamage { get {return CriticalDamage;} set {CriticalDamage = value;}}
-    public override float DamageReduction { get {return DamageReduction;} set {DamageReduction = value;}}
-    public override float SpeedRate { get {return SpeedRate;} set {SpeedRate = value;}}
-    public override float Speed { get {return Speed;} set {Speed = value;} }
+    public override float DefRate 
+    { 
+        get {return Manager.GameM.ContinueDatas.DefRate;} 
+        set { Manager.GameM.ContinueDatas.DefRate = value;}
+    }
+    public override float CriticalRate 
+    { 
+        get {return Manager.GameM.ContinueDatas.CriticalRate;} 
+        set {Manager.GameM.ContinueDatas.CriticalRate = value;}
+    }
+    public override float CriticalDamage 
+    { 
+        get {return Manager.GameM.ContinueDatas.CriticalDamage;} 
+        set {Manager.GameM.ContinueDatas.CriticalDamage = value;}
+    }
+    public override float DamageReduction 
+    { 
+        get {return Manager.GameM.ContinueDatas.DamageReduction;} 
+        set {Manager.GameM.ContinueDatas.DamageReduction = value;}
+    }
+    public override float SpeedRate 
+    { 
+        get {return Manager.GameM.ContinueDatas.MoveSpeedRate;} 
+        set {Manager.GameM.ContinueDatas.MoveSpeedRate= value;}
+    }
+    public override float Speed 
+    { 
+        get {return Manager.GameM.ContinueDatas.MoveSpeed;} 
+        set {Manager.GameM.ContinueDatas.MoveSpeed = value;} 
+    }
 
     public int Level
     {
-        get {return Level;}
-        set {Level = value;}
+        get {return Manager.GameM.ContinueDatas.Level;}
+        set {Manager.GameM.ContinueDatas.Level = value;}
     }
 
+    public float TotalExp
+    {
+        get {return Manager.GameM.ContinueDatas.TotalExp;}
+        set {Manager.GameM.ContinueDatas.TotalExp = value;}
+    }
     public float Exp
     {
-        get {return Exp;}
+        get {return Manager.GameM.ContinueDatas.Exp;}
         set
         {
-            Exp = value;
+            Manager.GameM.ContinueDatas.Exp = value;
             
             int level = Level;
 
-            //TODO : 여기서 경험치 획득 및 레벨업  
+            //TODO : 여기서 경험치 획득 및 레벨업
+            while(true)
+            {
+                if(Manager.DataM.LevelDic.TryGetValue(level + 1, out LevelData nextlevel) == false) break;
+                if(Manager.DataM.LevelDic.TryGetValue(level, out LevelData currentLevel) == false) break;
+                
+                if(Manager.GameM.ContinueDatas.Exp < currentLevel.TotalExp) break;
+                else level++;
+            }
+
+            if(level != Level)
+            {
+                Level =level;
+                if(Manager.DataM.LevelDic.TryGetValue(Level, out LevelData currentLevel))
+                {
+                    TotalExp = currentLevel.TotalExp;
+                    LevelUp();
+                }
+            }
         }
     }
 
-    public void LevelUp()
+
+    public float ExpRatio
+    {
+        get 
+        {
+            LevelData currentLevelData;
+            if(Manager.DataM.LevelDic.TryGetValue(Level, out currentLevelData))
+            {
+                float prevLevelExp = 0;
+                LevelData prevLevelData;
+
+                if(Manager.DataM.LevelDic.TryGetValue(Level -1, out prevLevelData))
+                {
+                    prevLevelExp = prevLevelData.TotalExp;
+                }
+                float currentLevelExp = currentLevelData.TotalExp;
+
+                return (Exp - prevLevelExp) / (currentLevelExp - prevLevelExp);
+            }
+
+            return 0f;
+        }
+    }
+
+    public int KillCount
+    {
+        get {return Manager.GameM.ContinueDatas.KillCount;}
+        set
+        {
+            Manager.GameM.ContinueDatas.KillCount = value;
+            OnPlayerDataUpdated?.Invoke();
+        }
+    }
+
+    public float ExpBounsRate
+    {
+        get { return Manager.GameM.ContinueDatas.ExpBonusRate;}
+        set { Manager.GameM.ContinueDatas.ExpBonusRate = value;}
+    }
+
+
+
+    public void LevelUp(int _level = 0)
     {
         //TODO : 여기서 레벨업하고, 
+        if(_level > 1) 
+            OnPlayerLevelUp?.Invoke();
+        
+        //[ ] 스킬 업그레이드
     }
 #endregion
 #region  스킬 정보
@@ -77,6 +185,7 @@ public class PlayerController : CreatureController
     public Vector3 ShootDir {get {return (firePos.position - standard.position).normalized;}}
 
 
+    //NOTE : 여기임 여기 !! 여기서 스킬 추가하든 없애든 해야됌.
     public void AddSkill()
     {
         Debug.Log("PlayerController AddSkill");
@@ -109,11 +218,20 @@ public class PlayerController : CreatureController
         }
 
         GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+
+        Debug.Log(dir);
+        Debug.Log(Speed);
     }
 
     void HandleOnMoveDirChange(Vector2 _dir)
     {
         moveDir = _dir;
+    }
+
+    public void UpdatePlayerDir()
+    {
+        if(moveDir.x < 0) CreatureSprite.flipX = false;
+        else CreatureSprite.flipX = true;
     }
 
 #endregion
@@ -133,7 +251,6 @@ public class PlayerController : CreatureController
 
             if(dir.sqrMagnitude <= sqrtDist)
             {
-                Manager.GameM.Gem += 1;
                 Manager.ObjectM.DeSpawn(gem);
             }
         }
@@ -151,7 +268,7 @@ public class PlayerController : CreatureController
        
         Manager.GameM.OnMovePlayerDir += HandleOnMoveDirChange;
 
-        AddSkill();
+        //AddSkill();
       
         return true;
     }
@@ -173,6 +290,7 @@ public class PlayerController : CreatureController
 
     private void FixedUpdate()
     {
+        UpdatePlayerDir();
         Move();
         GetGem();
     }

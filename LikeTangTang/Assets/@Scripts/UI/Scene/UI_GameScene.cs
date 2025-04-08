@@ -23,7 +23,8 @@ public class UI_GameScene : UI_Base
     {
         SetUIInfo();
 
-
+        Manager.GameM.player.OnPlayerDataUpdated = OnPlayerDataUpdated;
+        Manager.GameM.player.OnPlayerLevelUp = OnPlayerLevelUp;
         return true;
     }
 
@@ -33,20 +34,14 @@ public class UI_GameScene : UI_Base
         Bind<Slider>(typeof(Sliders));
     }
     //[ ] 이건 플레이어 쪽에서 관리할것임.
-    public void SetPlayerLevel(int _level)
+    public void OnPlayerDataUpdated()
     {
-        GetText(typeof(Texts), (int)Texts.CharacterLevelValueText).text = $"{_level}";
+        GetSlider(typeof(Sliders), (int)Sliders.ExpSliderObject).value = Manager.GameM.player.ExpRatio;
+        GetText(typeof(Texts), (int)Texts.KillValueText).text = $"{Manager.GameM.player.KillCount}";
     }
-    public void SetGemCountRatio(float _ratio)
-    {
-        GetSlider(typeof(Sliders), (int)Sliders.ExpSliderObject).value = _ratio;
-    }
-
-    public void SetKillCount(int _killCount)
-    {
-        GetText(typeof(Texts), (int)Texts.KillValueText).text = $"{_killCount}";
-    }
-
-
    
+    public void OnPlayerLevelUp()
+    {
+        GetText(typeof(Texts), (int)Texts.CharacterLevelValueText).text = $"{Manager.GameM.ContinueDatas.Level}";
+    }
 }
