@@ -40,12 +40,11 @@ public class GameScene : BaseScene
         
         if(Manager.GameM.ContinueDatas.isContinue)
         {
-            Manager.GameM.gameData.userID = Manager.DataM.CreatureDic[Manager.GameM.ContinueDatas.PlayerDataID].DataID;
             player = Manager.ObjectM.Spawn<PlayerController>(Vector3.zero, Manager.GameM.ContinueDatas.PlayerDataID);
         }
         else
         {
-            Manager.GameM.gameData.userID = Manager.DataM.CreatureDic[Define.DEFAULT_PLAYER_ID].DataID;
+            //
             player = Manager.ObjectM.Spawn<PlayerController>(Vector3.zero, Define.DEFAULT_PLAYER_ID);
         }
         

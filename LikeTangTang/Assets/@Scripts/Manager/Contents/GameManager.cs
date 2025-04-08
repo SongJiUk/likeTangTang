@@ -12,7 +12,7 @@ public class GameManager
     public CameraController Camera {get; set;}
     public GameData gameData = new GameData();
 
-    
+
     public int UserLevel
     {
         get { return gameData.userLevel;}
@@ -106,9 +106,11 @@ public class GameManager
         
         if(LoadGame()) return;
 
+        
+        
+       
 
         gameData.CurrentStageData = Manager.DataM.Stagedic[1];
-
         foreach(Data.StageData stage in Manager.DataM.Stagedic.Values)
         {
             StageClearInfoData info = new StageClearInfoData

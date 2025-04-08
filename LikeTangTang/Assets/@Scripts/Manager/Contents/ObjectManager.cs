@@ -34,13 +34,14 @@ public class ObjectManager
         if (type == playerType)
         {
             //[ ]Data에서 값을 가져와서 생성하기.
-            GameObject go = Manager.ResourceM.Instantiate($"{Manager.DataM.CreatureDic[Manager.GameM.gameData.userID].prefabName}");
+            GameObject go = Manager.ResourceM.Instantiate($"{Manager.DataM.CreatureDic[_templateID].prefabName}");
             go.name = $"{Manager.GameM.gameData.userName}";
             go.transform.position = _pos;
             PlayerController pc = go.GetComponent<PlayerController>();
+
+            pc.SetInfo(_templateID);            
             Player = pc;
 
-            pc.Init();
 
             return pc as T;
         }

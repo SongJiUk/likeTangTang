@@ -24,6 +24,10 @@ public class CreatureController : BaseController
     #endregion
     public SkillComponent Skills {get; protected set;}
 
+    void Awake()
+    {
+        Init();
+    }
     public override bool Init()
     {
         base.Init();
@@ -49,5 +53,10 @@ public class CreatureController : BaseController
     public virtual void OnDead()
     {
         
+    }
+
+    public void SetInfo(int _dataID)
+    {
+        //TODO : 여기서 초기화 해주기.
     }
 }

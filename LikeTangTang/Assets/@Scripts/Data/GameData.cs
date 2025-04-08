@@ -7,7 +7,7 @@ using Data;
 [Serializable]
 public class GameData
 {
-    public int userID = 0;
+    public int userID = Define.DEFAULT_PLAYER_ID;
     public int userLevel = 1;
     public string userName = "Player";
     public int gold = 0;
