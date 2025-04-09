@@ -49,9 +49,8 @@ public class GemController : DropItemController
 
     public override bool Init()
     {  
-        itemType = Define.ItemType.Gem; 
-        base.Init();
-
+        itemType = Define.ItemType.Gem;
+        if (!base.Init()) return false;
 
         return true;
     }

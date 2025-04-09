@@ -8,6 +8,11 @@ public class CreatureController : BaseController
 
     #region Info
     protected SpriteRenderer CreatureSprite;
+    Data.CreatureData creatureData;
+    public Rigidbody2D Rigid { get; set; }
+    
+
+    protected bool isStartDamageAnim = false;
     public virtual int DataID {get ;set;}
     public virtual float Hp {get; set;}
     public virtual float MaxHp {get; set;}
@@ -24,14 +29,12 @@ public class CreatureController : BaseController
     #endregion
     public SkillComponent Skills {get; protected set;}
 
-    void Awake()
-    {
-        Init();
-    }
+   
     public override bool Init()
     {
-        base.Init();
+        if (!base.Init()) return false;
         Skills = gameObject.GetOrAddComponent<SkillComponent>();
+        Rigid = GetComponent<Rigidbody2D>();
 
         CreatureSprite = GetComponent<SpriteRenderer>();
         if (CreatureSprite == null)
@@ -39,24 +42,78 @@ public class CreatureController : BaseController
         
         return true;
     }
-    public virtual void OnDamaged(BaseController _attacker, float _damage)
+    public virtual void OnDamaged(BaseController _attacker, SkillBase _skill = null, float _damage = 0)
     {
-        Hp -= _damage;
-        if (Hp <= 0)
+        bool isCritical = false;
+        PlayerController player = _attacker as PlayerController;
+        if(player != null)
         {
-            Hp = 0;
-            OnDead();
+            if(Random.value <= player.CriticalRate)
+            {
+                _damage = _damage * player.CriticalDamage;
+                isCritical = true;
+            }
         }
 
+        if (_skill)
+            _skill.TotalDamage += _damage;
+
+        Hp -= _damage;
+        Manager.ObjectM.ShowFont(transform.position,_damage, 0, transform, isCritical);
+        
+        if (this.IsVaild()) 
+            StartCoroutine(StartDamageAnim());
+;    }
+    IEnumerator StartDamageAnim()
+    {
+        if(!isStartDamageAnim)
+        {
+            //데미지 피격
+            isStartDamageAnim = true;
+            yield return new WaitForSeconds(0.1f);
+
+            if(Hp <= 0)
+            {
+                Hp = 0;
+                transform.localScale = Vector3.one;
+
+                switch(objType)
+                {
+                    case Define.ObjectType.Player:
+                        break;
+
+                    case Define.ObjectType.Monster:
+                        OnDead();
+                        break;
+                }
+            }
+        }
+    }
+    public virtual void InitStat()
+    {
+        var waveRate = Manager.GameM.CurrentWaveData.HpIncreaseRate;
+        var stageLevel = Manager.GameM.CurretnStageData.StageLevel;
+
+        MaxHp = (creatureData.MaxHp + (creatureData.MaxHpUpForIncreasStage * stageLevel)) * (creatureData.HpRate + waveRate);
+        Attack = (creatureData.Attack + (creatureData.AttackUpForIncreasStage * stageLevel)) * creatureData.AttackRate;
+        Hp = MaxHp;
+        Speed = creatureData.Speed * creatureData.MoveSpeedRate;
     }
 
     public virtual void OnDead()
     {
-        
+        this.GetComponent<Rigidbody2D>().simulated = false;
+        transform.localScale = Vector3.one;
     }
 
+    
     public void SetInfo(int _dataID)
     {
-        //TODO : 여기서 초기화 해주기.
+        DataID = _dataID;
+        creatureData = Manager.DataM.CreatureDic[_dataID];
+        InitStat();
+        CreatureSprite.sprite = Manager.ResourceM.Load<Sprite>(creatureData.Image_Name);
     }
+
+   
 }

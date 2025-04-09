@@ -192,8 +192,8 @@ namespace Data
         public float SkillDuration; //스킬 지속시간
         public string CastingSoundLabel; //발동 사운드
         public string HitSoundLabel; //맞을때 사운드
-        public int CastingEffectID; //캐스팅 이펙트
-        public int HitEffectID; // 맞을때 이펙트
+        public string CastingEffectID; //캐스팅 이펙트
+        public string HitEffectID; // 맞을때 이펙트
         public float RoatateSpeed; //회전 속도
         public float ScaleMultiplier; //크기배율
         public float AttackInterval; //공격간격

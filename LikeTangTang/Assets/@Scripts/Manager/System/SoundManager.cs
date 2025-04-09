@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class SoundManager
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Play(Define.Sound _sound, string _label)
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

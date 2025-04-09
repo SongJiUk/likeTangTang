@@ -62,7 +62,7 @@ public class EgoSword : RepeatSkill
 
         if (mc.IsVaild() == false) return;
         // [ ] 데이터값으로 변경
-        mc.OnDamaged(owner, 1000);//SkillDatas.damage);
+        //mc.OnDamaged(owner, 1000);//SkillDatas.damage);
 
     }
 

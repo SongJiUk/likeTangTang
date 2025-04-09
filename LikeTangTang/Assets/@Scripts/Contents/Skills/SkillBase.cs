@@ -8,6 +8,7 @@ public class SkillBase : BaseController
     public Define.SkillType Skilltype { get; set; } = Define.SkillType.None;
     public Data.SkillData SkillDatas { get; protected set; }
     public int SkillLevel {get; set;} = 0;
+    public float TotalDamage { get; set; } = 0;
     public bool isLearnSkill
     {
         get { return SkillLevel > 0;}

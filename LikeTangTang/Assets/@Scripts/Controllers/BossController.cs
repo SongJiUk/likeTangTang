@@ -11,7 +11,7 @@ public class BossController : MonsterController
     float range = 2.0f;
     public override bool Init()
     {
-        base.Init();
+        if (!base.Init()) return false;
         Hp = 10000;
         CreatureState = Define.CreatureState.Moving;
 
@@ -59,9 +59,9 @@ public class BossController : MonsterController
         this.GetOrAddComponent<Rigidbody2D>().simulated = false;
     }
 
-    public override void OnDamaged(BaseController _attacker, float _damage)
+    public override void OnDamaged(BaseController _attacker, SkillBase _skill = null, float _damage = 0)
     {
-        base.OnDamaged(_attacker, _damage);
+        base.OnDamaged(_attacker, _skill, _damage);
     }
 
 

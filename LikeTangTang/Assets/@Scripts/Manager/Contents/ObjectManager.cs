@@ -20,6 +20,8 @@ public class ObjectManager
 #region 미리 선언해서 사용  
     Type playerType = typeof(PlayerController);
     Type monsterType = typeof(MonsterController);
+    Type eliteMonsterType = typeof(EliteMonsterController);
+    Type bossMonsterType = typeof(BossController);
     Type gemType = typeof(GemController);
     Type gridType = typeof(GridController);
     Type projectileType = typeof(ProjectileController);
@@ -33,49 +35,74 @@ public class ObjectManager
 
         if (type == playerType)
         {
-            //[ ]Data에서 값을 가져와서 생성하기.
+            //[x]Data에서 값을 가져와서 생성하기.
             GameObject go = Manager.ResourceM.Instantiate($"{Manager.DataM.CreatureDic[_templateID].prefabName}");
             go.name = $"{Manager.GameM.gameData.userName}";
             go.transform.position = _pos;
             PlayerController pc = go.GetComponent<PlayerController>();
-
-            pc.SetInfo(_templateID);            
+            pc.Init();
+            pc.SetInfo(_templateID);    
+            
             Player = pc;
-
-
             return pc as T;
         }
         else if (type == monsterType)
         {
-            
-            //[ ] DATA로 받아와서 처리하지.(스테이지 데이터를 생성하서, 그 스테이지에 맞는 몬스터들 가져오면 됌.)
 
-            string id = (_templateID == 0 ? "Goblin_01.prefab" : "Snake_01.prefab");
+            //[x] DATA로 받아와서 처리하지.(스테이지 데이터를 생성하서, 그 스테이지에 맞는 몬스터들 가져오면 됌.)
+            CreatureData cd = Manager.DataM.CreatureDic[_templateID];
 
-            if(_templateID == 3) id = "Boss.prefab";
-
-            GameObject go = Manager.ResourceM.Instantiate(id, null, true);
-            go.transform.position = _pos;
-
+            GameObject go = Manager.ResourceM.Instantiate(cd.prefabName, _pooling: true);
             MonsterController mc = Utils.GetOrAddComponent<MonsterController>(go);
-            mcSet.Add(mc);
+            go.transform.position = _pos;
             mc.Init();
+            mc.SetInfo(_templateID);
+            mc.name = cd.prefabName;
+            mcSet.Add(mc);
+            
             return mc as T;
+
+        }
+        else if(type == eliteMonsterType)
+        {
+            CreatureData cd = Manager.DataM.CreatureDic[_templateID];
+           
+            GameObject go = Manager.ResourceM.Instantiate(cd.prefabName, _pooling: true);
+            EliteMonsterController emc = go.GetOrAddComponent<EliteMonsterController>();
+            emc.transform.position = _pos;
+            emc.Init();
+            emc.SetInfo(_templateID);
+            emc.name = cd.prefabName;
+            mcSet.Add(emc);
+
+            return emc as T;
+        }
+        else if(type == bossMonsterType)
+        {
+            CreatureData cd = Manager.DataM.CreatureDic[_templateID];
+
+            GameObject go = Manager.ResourceM.Instantiate(cd.prefabName);
+            BossController bc = go.GetOrAddComponent<BossController>();
+            go.transform.position = _pos;
+            bc.Init();
+            bc.SetInfo(_templateID);
+            go.name = cd.prefabName;
+            mcSet.Add(bc);
+
+            return bc as T;
 
         }
         else if (type == gemType)
         {
             GameObject go = Manager.ResourceM.Instantiate(Define.GEMNAME, null, true);
-            go.transform.position = _pos;
-
             GemController gc = Utils.GetOrAddComponent<GemController>(go);
+            go.transform.position = _pos;
             gemSet.Add(gc);
-            gc.Init();
 
             // [ ] sprite이름도 DATA에서 불러와서 효과적으로 진행
-            string key = UnityEngine.Random.Range(0, 2) == 0 ? "Gem_01.sprite" : "Gem_02.sprite";
-            Sprite sprite = Manager.ResourceM.Load<Sprite>(key);
-            go.GetComponent<SpriteRenderer>().sprite = sprite;
+            //string key = UnityEngine.Random.Range(0, 2) == 0 ? "Gem_01.sprite" : "Gem_02.sprite";
+            //Sprite sprite = Manager.ResourceM.Load<Sprite>(key);
+            //go.GetComponent<SpriteRenderer>().sprite = sprite;
 
             //Explanation : AddGrid
             Grid.AddCell(go);
@@ -177,18 +204,32 @@ public class ObjectManager
         }
     }
 
-    public void DeSpawnAllMonster()
-    {
-        var monsters = mcSet.ToList();
+    //public void DeSpawnAllMonster()
+    //{
+    //    var monsters = mcSet.ToList();
 
-        foreach(var monster in monsters)
-        {
-            DeSpawn<MonsterController>(monster);
-        }
-    }
+    //    foreach(var monster in monsters)
+    //    {
+    //        DeSpawn<MonsterController>(monster);
+    //    }
+    //}
 
     public void LoadMap(string _name)
     {
         Manager.ResourceM.Instantiate(_name);
     }
+
+    public void ShowFont(Vector2 _pos, float _damage, float _heal, Transform _parent, bool _isCritical = false)
+    {
+        string prefabName;
+        if (_isCritical)
+            prefabName = "ciri"; // TODO : 프리팹 생성 후 이름 변경.
+        else
+            prefabName = "nociri";
+
+        GameObject go = Manager.ResourceM.Instantiate(prefabName, _pooling: true);
+        DamageFont damageFont = go.GetOrAddComponent<DamageFont>();
+        damageFont.SetInfo(_pos, _damage, _heal, _parent, _isCritical);
+    }
+
 }

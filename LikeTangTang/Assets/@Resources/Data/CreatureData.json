@@ -2,8 +2,8 @@
     "creatureData": [
         {
             "DataID": 1,
-            "DescriptionID": "Player",
-            "prefabName": "Slime_01.prefab",
+            "DescriptionID": "Alpha",
+            "prefabName": "Player_Alpha",
             "MaxHp": 100.0,
             "MaxHpUpForIncreasStage": 5.0,
             "Attack": 10.0,
@@ -14,7 +14,7 @@
             "AttackRate": 1.0,
             "DefRate": 1.0,
             "MoveSpeedRate": 1.0,
-            "Image_Name": "asd",
+            "Image_Name": "",
             "SkillTypeList": [
                 10001,
                 10002
@@ -24,7 +24,7 @@
         {
             "DataID": 2,
             "DescriptionID": "Beta",
-            "prefabName": "Player",
+            "prefabName": "Player_Beta",
             "MaxHp": 100.0,
             "MaxHpUpForIncreasStage": 5.0,
             "Attack": 10.0,
@@ -35,7 +35,7 @@
             "AttackRate": 1.0,
             "DefRate": 1.0,
             "MoveSpeedRate": 1.0,
-            "Image_Name": "asd",
+            "Image_Name": "",
             "SkillTypeList": [
                 10001,
                 10002
@@ -43,8 +43,8 @@
         },
         {
             "DataID": 3,
-            "DescriptionID": "Beta",
-            "prefabName": "Player",
+            "DescriptionID": "Gamma",
+            "prefabName": "Player_Gama",
             "MaxHp": 100.0,
             "MaxHpUpForIncreasStage": 5.0,
             "Attack": 10.0,
@@ -55,7 +55,7 @@
             "AttackRate": 1.0,
             "DefRate": 1.0,
             "MoveSpeedRate": 1.0,
-            "Image_Name": "asd",
+            "Image_Name": "",
             "SkillTypeList": [
                 10001,
                 10002
@@ -63,8 +63,8 @@
         },
         {
             "DataID": 4,
-            "DescriptionID": "Beta",
-            "prefabName": "Player",
+            "DescriptionID": "Delta",
+            "prefabName": "Player_Delta",
             "MaxHp": 100.0,
             "MaxHpUpForIncreasStage": 5.0,
             "Attack": 10.0,
@@ -75,7 +75,7 @@
             "AttackRate": 1.0,
             "DefRate": 1.0,
             "MoveSpeedRate": 1.0,
-            "Image_Name": "asd",
+            "Image_Name": "",
             "SkillTypeList": [
                 10001,
                 10002
@@ -83,8 +83,8 @@
         },
         {
             "DataID": 5,
-            "DescriptionID": "Beta",
-            "prefabName": "Player",
+            "DescriptionID": "Epsilon",
+            "prefabName": "Player_Epsilon",
             "MaxHp": 100.0,
             "MaxHpUpForIncreasStage": 5.0,
             "Attack": 10.0,
@@ -95,7 +95,7 @@
             "AttackRate": 1.0,
             "DefRate": 1.0,
             "MoveSpeedRate": 1.0,
-            "Image_Name": "asd",
+            "Image_Name": "",
             "SkillTypeList": [
                 10001,
                 10002
@@ -104,7 +104,7 @@
         {
             "DataID": 101,
             "DescriptionID": "Green Slime",
-            "prefabName": "Snake_01",
+            "prefabName": "Monster",
             "MaxHp": 100.0,
             "MaxHpUpForIncreasStage": 5.0,
             "Attack": 10.0,

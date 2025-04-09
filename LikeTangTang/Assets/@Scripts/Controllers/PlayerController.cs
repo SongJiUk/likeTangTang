@@ -172,7 +172,7 @@ public class PlayerController : CreatureController
         //[ ] 스킬 업그레이드
     }
 #endregion
-#region  스킬 정보
+    #region  스킬 정보
 
     
     [SerializeField]
@@ -196,7 +196,7 @@ public class PlayerController : CreatureController
 
     #endregion
 
-#region 이동관련
+    #region 이동관련
     Vector2 moveDir;
 
     public Vector2 MoveDir
@@ -236,35 +236,34 @@ public class PlayerController : CreatureController
 
 #endregion
 
-#region 젬 관련
-    public float GetEnvDist {get; set;} = 1f;
+    #region 젬 관련
+        public float GetEnvDist {get; set;} = 1f;
 
-    void GetGem()
-    {
-        List<GemController> gems = Manager.ObjectM.gemSet.ToList();
-        var FindGem = Manager.ObjectM.Grid.GetObjects(transform.position, GetEnvDist);
-        
-        var sqrtDist = GetEnvDist * GetEnvDist;
-        foreach (var gem in gems)
+        void GetGem()
         {
-            Vector3 dir = gem.transform.position - transform.position;
-
-            if(dir.sqrMagnitude <= sqrtDist)
+            List<GemController> gems = Manager.ObjectM.gemSet.ToList();
+            var FindGem = Manager.ObjectM.Grid.GetObjects(transform.position, GetEnvDist);
+        
+            var sqrtDist = GetEnvDist * GetEnvDist;
+            foreach (var gem in gems)
             {
-                Manager.ObjectM.DeSpawn(gem);
+                Vector3 dir = gem.transform.position - transform.position;
+
+                if(dir.sqrMagnitude <= sqrtDist)
+                {
+                    Manager.ObjectM.DeSpawn(gem);
+                }
             }
+
+        
+            // Debug.Log($"{FindGem.Count}  /  {gems.Count}");
+
         }
 
-        
-        // Debug.Log($"{FindGem.Count}  /  {gems.Count}");
-
-    }
-
-#endregion
+    #endregion
     public override bool Init()
     {
-        if(base.Init() == false) return false;
-        Debug.Log("Init");
+        base.Init();
        
         Manager.GameM.OnMovePlayerDir += HandleOnMoveDirChange;
 
@@ -279,13 +278,13 @@ public class PlayerController : CreatureController
             Manager.GameM.OnMovePlayerDir -= HandleOnMoveDirChange;
     }
 
-    public override void OnDamaged(BaseController _attacker, float _damage)
+    public override void OnDamaged(BaseController _attacker, SkillBase _skill, float _damage = 0)
     {
-        base.OnDamaged(_attacker, _damage);
+        base.OnDamaged(_attacker);
         MonsterController mc = _attacker as MonsterController;
 
         //TODO : 몸박 삭제하기
-        mc?.OnDamaged(this, 10);
+        mc?.OnDamaged(this);
     }
 
     private void FixedUpdate()

@@ -68,9 +68,9 @@ public class GameManager
         get { return gameData.CurrentStageData.WaveArray[CurrentWaveIndex];}
     }
 
+  
 
-
-    //public Map CurrentMap {get; set;}
+    public Map CurrentMap {get; set;}
 
     #region Action
     public event Action OnResourcesChanged;
@@ -172,6 +172,28 @@ public class GameManager
         gameData.ContinueDatas.Clear();
         CurrentWaveIndex = 0;
         SaveGame();
+    }
+
+    public GemInfo GetGemInfo()
+    {
+        float randNum = UnityEngine.Random.value;
+        (GemInfo.GemType type, float chace, Vector3 scale)[] gems = new (GemInfo.GemType type, float chace, Vector3 scale)[]
+        {
+            (GemInfo.GemType.Small, CurrentWaveData.SmallGemDropRate, new Vector3(0.5f, 0.5f, 0.5f)),
+            (GemInfo.GemType.Green, CurrentWaveData.GreenGemDropRate, Vector3.one),
+            (GemInfo.GemType.Blue, CurrentWaveData.BlueGemDropRate, Vector3.one),
+            (GemInfo.GemType.Yellow, CurrentWaveData.YellowGemDropRate, Vector3.one)
+        };
+
+        float cumulative = 0f;
+        foreach(var gem in gems)
+        {
+            cumulative += gem.chace;
+            if (randNum < cumulative)
+                return new GemInfo(gem.type, gem.scale);
+        }
+
+        return null;
     }
 
 
