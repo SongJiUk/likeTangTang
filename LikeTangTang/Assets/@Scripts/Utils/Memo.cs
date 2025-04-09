@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Memo
 {
+    //엑셀 시트 : https://docs.google.com/spreadsheets/d/1qX5oXVMt6zDoZ80utA2UV7ER1VUK6TwFLMijfeCHiT8/edit?usp=sharing
     /*
 
 
@@ -169,8 +170,8 @@ Uitls에 몬스터 생성 위치를 정해주는 함수를 하나 만들어서 �
 팝업 : 씬에 맞는 팝업
 데이터 : 데이터 정보(굳이 다 안하고 기본적인것만 하자.)
 
-     */ 
+     */
 
 
-     
+
 }
