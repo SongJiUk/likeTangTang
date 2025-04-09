@@ -19,10 +19,8 @@ public class UI_GameResultPopup : UI_Base
     enum Texts
     {
         GameResultPopupTitleText,
-
         ResultStageValueText,
         ResultSurvivalTimeText,
-
         ResultSurvivalTimeValueText,
         ResultGoldValueText,
         ResultKillValueText,
@@ -36,12 +34,13 @@ public class UI_GameResultPopup : UI_Base
     }
     public override bool Init()
     {
+        if (base.Init() == false) return false;
+            
         SetUIInfo();
 
         GetButton(typeof(Buttons) ,(int)Buttons.StatisticsButton).gameObject.BindEvent(OnClickStatisticsButton);
         GetButton(typeof(Buttons), (int)Buttons.ConfirmButton).gameObject.BindEvent(OnClickConfirmButton);
 
-        RefreshUI();
         return true;
     }
 
@@ -64,6 +63,11 @@ public class UI_GameResultPopup : UI_Base
         Bind<Button>(typeof(Buttons));
     }
 
+    public void SetInfo()
+    {
+        RefreshUI();
+    }
+
     // [ ] : 씬이동, 랭킹
     public void OnClickStatisticsButton()
     {
@@ -73,5 +77,7 @@ public class UI_GameResultPopup : UI_Base
     public void OnClickConfirmButton()
     {
         Debug.Log("Click Confirm Button");
+        Time.timeScale = 1f;
+        Manager.UiM.ClosePopup();
     }
 }

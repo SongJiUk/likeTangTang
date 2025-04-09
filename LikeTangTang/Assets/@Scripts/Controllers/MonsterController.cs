@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
 using static Define;
 public class MonsterController : CreatureController
 {
-
-
+    #region Action
+    public Action<MonsterController> MonsterInfoUpdate;
+    #endregion
     #region State Pattern
     CreatureState creatureState = CreatureState.Moving;
     protected Animator animator;
@@ -49,18 +51,20 @@ public class MonsterController : CreatureController
     protected virtual void UpdateDead() {}
     #endregion
     Coroutine coDotDamage;
+    private void OnEnable()
+    {
+        if (DataID != 0) SetInfo(DataID);
 
+    }
     public override bool Init()
     {
         if (!base.Init()) return false;
 
         string name = gameObject.name;
-
         objType = ObjectType.Monster;
-        Speed = 1f;
         animator = GetComponent<Animator>();
         creatureState = CreatureState.Moving;
-        DefualtVelocity = Rigid.velocity;
+        //DefualtVelocity = Rigid.velocity;
 
         return true;
     }
@@ -72,15 +76,15 @@ public class MonsterController : CreatureController
         
         if (creatureState != CreatureState.Moving) return;
 
-        Rigid.velocity = DefualtVelocity;
-        PlayerController pc = Manager.ObjectM.Player;
-        if (pc == null) return;
+        //Rigid.velocity = DefualtVelocity;
+        
+        if (Manager.GameM.player == null) return;
 
-        moveDir = pc.transform.position - transform.position;
+        moveDir = Manager.GameM.player.transform.position - transform.position;
         Vector3 newPos = transform.position + moveDir.normalized * Time.deltaTime * Speed;
 
         Rigid.MovePosition(newPos);
-        CreatureSprite.flipX = moveDir.x > 0;
+        CreatureSprite.flipX = moveDir.x < 0;
     }
 
     public virtual void OnCollisionEnter2D(Collision2D collision)
@@ -139,7 +143,6 @@ public class MonsterController : CreatureController
         if(Random.value >= Manager.GameM.CurrentWaveData.NonDropRate)
         {
             GemController gem = Manager.ObjectM.Spawn<GemController>(this.transform.position);
-            gem.Init();
             gem.SetInfo(Manager.GameM.GetGemInfo());
         }
 

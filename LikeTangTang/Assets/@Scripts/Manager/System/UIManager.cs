@@ -15,7 +15,20 @@ UI는 Set, Refresh두 함수를 이용하는게 관리하기 용이함.
 public class UIManager
 {
     UI_Base ui_Base;
-    Stack<UI_Base> uiStack = new Stack<UI_Base>();
+    Stack<UI_Base> popupStack = new Stack<UI_Base>();
+
+    public GameObject Root
+    {
+        get
+        {
+            GameObject root = GameObject.Find("@UI_Root");
+            if (root == null)
+                root = new GameObject { name = "@UI_Root" };
+
+            return root;
+        }
+    }
+
 
     //NOTE : 해당 씬의 스크립트를 호출해서 사용할 수 있게 해줌. ex) Manager.UiM.GetSceneUI<UI_GameScene>().RefreshUI();
     public T GetSceneUI<T>() where T : UI_Base
@@ -28,7 +41,7 @@ public class UIManager
     {
         if(ui_Base != null) return GetSceneUI<T>();
 
-        string key = typeof(T).Name + ".prefab";
+        string key = typeof(T).Name;
         T ui = Manager.ResourceM.Instantiate(key, _pooling:true).GetOrAddComponent<T>();
         ui_Base = ui;
 
@@ -39,19 +52,23 @@ public class UIManager
     //NOTE : 설계적인 규칙임(UI는 겹쳐서 사용되는 경우가 많기 때문에, Stack으로 관리하면 편함)
     public T ShowPopup<T>(string _name = null) where T : UI_Base
     {
-        string key = typeof(T).Name + ".prefab";
-        T ui = Manager.ResourceM.Instantiate(key, _pooling:true).GetOrAddComponent<T>();
-        uiStack.Push(ui);
-        return ui;
+        if (string.IsNullOrEmpty(_name)) 
+            _name = typeof(T).Name;
+
+        GameObject go = Manager.ResourceM.Instantiate($"{_name}");
+        T popup = go.GetOrAddComponent<T>();
+        popupStack.Push(popup);
+        go.transform.SetParent(Root.transform);
+
+        return popup;
     }
 
     public void ClosePopup()
     {
-        if(uiStack.Count == 0) return;
+        if(popupStack.Count == 0) return;
 
-        UI_Base ui = uiStack.Pop();
+        UI_Base ui = popupStack.Pop();
         Manager.ResourceM.Destory(ui.gameObject);
-        Time.timeScale = 1f;
 
     }
 

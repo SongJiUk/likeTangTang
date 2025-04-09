@@ -11,8 +11,8 @@ public class UI_GameScene : UI_Base
     public enum Texts
     {
         KillValueText,
-        CharacterLevelValueText
-        
+        CharacterLevelValueText,
+        WaveValueText
     }
     public enum Sliders
     {
@@ -33,6 +33,12 @@ public class UI_GameScene : UI_Base
         Bind<TextMeshProUGUI>(typeof(Texts));
         Bind<Slider>(typeof(Sliders));
     }
+
+    public void OnWaveStart(int _currentStageIndex)
+    {
+        GetText(typeof(Texts), (int)(Texts.WaveValueText)).text = _currentStageIndex.ToString();
+    }
+
     //[ ] 이건 플레이어 쪽에서 관리할것임.
     public void OnPlayerDataUpdated()
     {
@@ -43,5 +49,10 @@ public class UI_GameScene : UI_Base
     public void OnPlayerLevelUp()
     {
         GetText(typeof(Texts), (int)Texts.CharacterLevelValueText).text = $"{Manager.GameM.ContinueDatas.Level}";
+    }
+
+    public void MonsterInfoUpdate(MonsterController _mc)
+    {
+
     }
 }

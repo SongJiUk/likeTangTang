@@ -62,6 +62,7 @@ public class GemController : DropItemController
 
     public void SetInfo(GemInfo _gemInfo)
     {
+        Init();
         gemInfo = _gemInfo;
         var sr = Manager.ResourceM.Load<Sprite>($"{_gemInfo.SpriteName}");
         GetComponent<SpriteRenderer>().sprite = sr;

@@ -10,7 +10,6 @@
             "Range": 5.0,
             "ProjectileCount": 1,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "PhotonStrike_Start",
@@ -36,7 +35,6 @@
             "Range": 5.5,
             "ProjectileCount": 1,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "PhotonStrike_Start",
@@ -62,7 +60,6 @@
             "Range": 6.0,
             "ProjectileCount": 1,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "PhotonStrike_Start",
@@ -88,7 +85,6 @@
             "Range": 6.5,
             "ProjectileCount": 2,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "PhotonStrike_Start",
@@ -140,7 +136,6 @@
             "Range": 10.0,
             "ProjectileCount": 4,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "PhotonStrike_Start",
@@ -166,7 +161,6 @@
             "Range": 2.5,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "EnergyRing_Start",
@@ -192,7 +186,6 @@
             "Range": 3.0,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "EnergyRing_Start",
@@ -218,7 +211,6 @@
             "Range": 3.5,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "EnergyRing_Start",
@@ -244,7 +236,6 @@
             "Range": 4.0,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "EnergyRing_Start",
@@ -296,7 +287,6 @@
             "Range": 5.0,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "ThunderRing_Start",
@@ -322,7 +312,6 @@
             "Range": 2.5,
             "ProjectileCount": 1,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 5.0,
             "CastingSound": "AutoTurretDrone_Start",
@@ -348,7 +337,6 @@
             "Range": 2.5,
             "ProjectileCount": 1,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 6.0,
             "CastingSound": "AutoTurretDrone_Start",
@@ -374,7 +362,6 @@
             "Range": 2.5,
             "ProjectileCount": 2,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 7.0,
             "CastingSound": "AutoTurretDrone_Start",
@@ -400,7 +387,6 @@
             "Range": 2.5,
             "ProjectileCount": 2,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 8.0,
             "CastingSound": "AutoTurretDrone_Start",
@@ -452,7 +438,6 @@
             "Range": 3.0,
             "ProjectileCount": 5,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 10.0,
             "CastingSound": "AssaultDrone_Start",
@@ -478,7 +463,6 @@
             "Range": 2.5,
             "ProjectileCount": 1,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 5.0,
             "CastingSound": "SelfDestructDrone_Start",
@@ -504,7 +488,6 @@
             "Range": 2.7,
             "ProjectileCount": 1,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 5.0,
             "CastingSound": "SelfDestructDrone_Start",
@@ -530,7 +513,6 @@
             "Range": 3.0,
             "ProjectileCount": 2,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 5.0,
             "CastingSound": "SelfDestructDrone_Start",
@@ -556,7 +538,6 @@
             "Range": 3.2,
             "ProjectileCount": 2,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 5.0,
             "CastingSound": "SelfDestructDrone_Start",
@@ -608,7 +589,6 @@
             "Range": 4.0,
             "ProjectileCount": 5,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 6.0,
             "CastingSound": "ClusterDrone_Start",
@@ -634,7 +614,6 @@
             "Range": 2.5,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "ElectricShock_Start",
@@ -660,7 +639,6 @@
             "Range": 2.7,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "ElectricShock_Start",
@@ -686,7 +664,6 @@
             "Range": 3.0,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "ElectricShock_Start",
@@ -712,7 +689,6 @@
             "Range": 3.5,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "ElectricShock_Start",
@@ -764,7 +740,6 @@
             "Range": 5.0,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "SuddenStorm_Start",
@@ -790,7 +765,6 @@
             "Range": 2.5,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 4.0,
             "CastingSound": "GravityBomb_Start",
@@ -816,7 +790,6 @@
             "Range": 2.8,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 4.5,
             "CastingSound": "GravityBomb_Start",
@@ -842,7 +815,6 @@
             "Range": 3.1,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 5.0,
             "CastingSound": "GravityBomb_Start",
@@ -868,7 +840,6 @@
             "Range": 3.4,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 5.0,
             "CastingSound": "GravityBomb_Start",
@@ -920,7 +891,6 @@
             "Range": 5.0,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 6.0,
             "CastingSound": "GravityCollapse_Start",
@@ -946,7 +916,6 @@
             "Range": 2.5,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 4.0,
             "CastingSound": "TimeStopBomb_Start",
@@ -972,7 +941,6 @@
             "Range": 2.8,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 4.5,
             "CastingSound": "TimeStopBomb_Start",
@@ -998,7 +966,6 @@
             "Range": 3.1,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 5.0,
             "CastingSound": "TimeStopBomb_Start",
@@ -1024,7 +991,6 @@
             "Range": 3.4,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 5.5,
             "CastingSound": "TimeStopBomb_Start",
@@ -1076,7 +1042,6 @@
             "Range": 5.0,
             "ProjectileCount": 0,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 8.0,
             "CastingSound": "TimeLockField_Start",
@@ -1102,7 +1067,6 @@
             "Range": 2.5,
             "ProjectileCount": 1,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "OrbitalBlade_Start",
@@ -1128,7 +1092,6 @@
             "Range": 2.7,
             "ProjectileCount": 1,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "OrbitalBlade_Start",
@@ -1154,7 +1117,6 @@
             "Range": 3.0,
             "ProjectileCount": 2,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "OrbitalBlade_Start",
@@ -1180,7 +1142,6 @@
             "Range": 3.2,
             "ProjectileCount": 2,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSoundLabel": "OrbitalBlade_Start",
@@ -1232,7 +1193,6 @@
             "Range": 4.0,
             "ProjectileCount": 5,
             "CanEvolve": false,
-            
             "EvolvedSkillName": "",
             "SkillDuration": 0,
             "CastingSound": "OrbitBarrage_Start",

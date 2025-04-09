@@ -86,4 +86,16 @@ public static class Utils
     {
         UI_Base.BindEvent(_go, _action, _dragAction, _type);
     }
+
+    public static Vector2 CreateObjectAroundPlayer(Vector3 _pos)
+    {
+        float angle = UnityEngine.Random.Range(0f, 360f);
+        float radius = angle * Mathf.Deg2Rad;
+
+        Vector2 spawnPos = new Vector2(Mathf.Cos(radius), Mathf.Sin(radius)) * UnityEngine.Random.Range(0, radius);
+        Vector3 pos = _pos + new Vector3(spawnPos.x, spawnPos.y, 0f);
+
+        return pos;
+
+    }
 }

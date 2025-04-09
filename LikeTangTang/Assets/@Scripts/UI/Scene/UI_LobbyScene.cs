@@ -32,7 +32,7 @@ public class UI_LobbyScene : UI_Base
         ui_EquipmentPopup = Manager.UiM.ShowPopup<UI_EquipmentPopup>();
         
         AllOff();
-
+            
         return true;
     }
 

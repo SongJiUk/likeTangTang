@@ -92,7 +92,8 @@ public class GameManager
     #endregion
 
     string path;
-    bool isLoaded = false;
+    public bool isLoaded = false;
+    public bool isGameEnd = false;
     public void Init()
     {
         /*TODO : 
@@ -194,6 +195,14 @@ public class GameManager
         }
 
         return null;
+    }
+
+    public GemInfo GetGemInfo(GemInfo.GemType _type)
+    {
+        if (_type == GemInfo.GemType.Small)
+            return new GemInfo(GemInfo.GemType.Small, new Vector3(0.5f, 0.5f, 0.5f));
+
+        return new GemInfo(_type, Vector3.one);
     }
 
 

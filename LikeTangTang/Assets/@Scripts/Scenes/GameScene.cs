@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 
 public class GameScene : BaseScene
@@ -9,6 +10,11 @@ public class GameScene : BaseScene
     PlayerController player;
     UI_GameScene ui;
     Define.StageType stageType;
+
+    #region Action
+    public Action<int> OnWaveStart;
+    
+    #endregion
     public Define.StageType StageType
     {
         get { return stageType; }
@@ -50,11 +56,15 @@ public class GameScene : BaseScene
         
 
         StageLoad();
+
+        player.OnPlayerDead = OnPlayerDead;
         Manager.GameM.Camera = FindObjectOfType<CameraController>();
         Manager.GameM.Camera.Target = player.gameObject;
         
 
         ui = Manager.UiM.ShowPopup<UI_GameScene>();
+
+        OnWaveStart = ui.OnWaveStart;
         //[ ] : UI 업데이트.
 
     }
@@ -70,18 +80,79 @@ public class GameScene : BaseScene
         Manager.ObjectM.Spawn<GridController>(Vector3.zero);
         
         StopAllCoroutines();
-        StartCoroutine(StartWave());
+        StartCoroutine(StartWave(Manager.GameM.CurrentWaveData));
     }
 
-    IEnumerator StartWave()
+    IEnumerator StartWave(Data.WaveData _wave)
     {
         yield return new WaitForEndOfFrame();
         //웨이브 시작.
+        /*
+         * [ ]웨이브 시작 이벤트 Invoke
+         * [ ] 웨이브가 1단계면 랜덤으로 몇개 생성,
+         * [ ] 포션, 자석, 폭탄도 랜덤으로 하나 생성
+         * [ ]웨이브 시간으로 할지, 그냥 00 : 00 에서 계속 올릴지 생각해보자.
+         * [ ]자기장오게 vs 안오게 고민해보기
+         * [ ]몬스터 생성
+         */
+        OnWaveStart?.Invoke(_wave.WaveIndex);
 
-        
+        if(_wave.WaveIndex == 1)
+        {
+            CreateRandomExp();
+        }
+        spawnManager.StartSpawn();
+        Manager.GameM.SaveGame();
+
+        EliteMonsterController eliteMonster;
+        Vector2 spawnPos = Utils.CreateMonsterSpawnPoint(Manager.GameM.player.Standard.position);
+        for (int i =0; i<Manager.GameM.CurrentWaveData.EleteMonsterID.Count; i++)
+        {
+            eliteMonster = Manager.ObjectM.Spawn<EliteMonsterController>(spawnPos, Manager.GameM.CurrentWaveData.EleteMonsterID[i]);
+            eliteMonster.MonsterInfoUpdate -= ui.MonsterInfoUpdate;
+            eliteMonster.MonsterInfoUpdate += ui.MonsterInfoUpdate;
+        }
+
+        yield break;
     }
 
+    public void CreateRandomExp()
+    {
+        int[] randBox = new int[] { 1, 2, 5, 10 };
+        List<GemInfo.GemType> gems = new List<GemInfo.GemType>();
 
+        int remainValue = 30;
+        while(remainValue > 0)
+        {
+            int randindex = UnityEngine.Random.Range(0, randBox.Length);
+            int randBoxValue = randBox[randindex];
+
+            if(remainValue >= randBoxValue)
+            {
+                GemInfo.GemType gemType = (GemInfo.GemType)randBoxValue;
+                gems.Add(gemType);
+                remainValue -= randBoxValue;
+            }
+        }
+
+        foreach(GemInfo.GemType type in gems)
+        {
+            GemController gem = Manager.ObjectM.Spawn<GemController>(player.transform.position);
+            gem.SetInfo(Manager.GameM.GetGemInfo(type));
+           
+        }
+    }
+
+    public void OnPlayerDead()
+    {
+        if(!Manager.GameM.isGameEnd)
+        {
+            //[ ] : GameContinuePopup생성해서 수정
+            UI_GameResultPopup rp = Manager.UiM.ShowPopup<UI_GameResultPopup>();
+            rp.Init();
+            rp.SetInfo();
+        }
+    }
 
 
 #region  전에 쓰던 잼, 킬 코드
@@ -114,7 +185,7 @@ public class GameScene : BaseScene
     //         Manager.ObjectM.DeSpawnAllMonster();
 
     //         // 보스 소환
-    //         Vector2 pos = Utils.CreateMonsterSpawnPoint(Manager.GameM.player.transform.position, 10, 15);
+    //        Vector2 pos = Utils.CreateMonsterSpawnPoint(Manager.GameM.player.transform.position, 10, 15);
     //         Manager.ObjectM.Spawn<MonsterController>(pos, 3);
     //     }
     // }

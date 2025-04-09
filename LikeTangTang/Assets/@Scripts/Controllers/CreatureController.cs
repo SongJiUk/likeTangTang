@@ -59,7 +59,7 @@ public class CreatureController : BaseController
             _skill.TotalDamage += _damage;
 
         Hp -= _damage;
-        Manager.ObjectM.ShowFont(transform.position,_damage, 0, transform, isCritical);
+        //Manager.ObjectM.ShowFont(transform.position,_damage, 0, transform, isCritical);
         
         if (this.IsVaild()) 
             StartCoroutine(StartDamageAnim());
@@ -80,6 +80,9 @@ public class CreatureController : BaseController
                 switch(objType)
                 {
                     case Define.ObjectType.Player:
+                        //TODO : 부활? OR 다이
+
+                        OnDead();
                         break;
 
                     case Define.ObjectType.Monster:
@@ -87,6 +90,7 @@ public class CreatureController : BaseController
                         break;
                 }
             }
+            isStartDamageAnim = false;
         }
     }
     public virtual void InitStat()

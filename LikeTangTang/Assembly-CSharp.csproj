@@ -68,6 +68,7 @@
     <Compile Include="Assets\@Scripts\UI\UI_Base.cs" />
     <Compile Include="Assets\@Scripts\Scenes\GameScene.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_GameResultPopup.cs" />
+    <Compile Include="Assets\@Scripts\Controllers\EliteMonsterController.cs" />
     <Compile Include="Assets\@Scripts\UI\Scene\UI_LobbyScene.cs" />
     <Compile Include="Assets\@Scripts\Manager\Contents\PoolManager.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\SkillBase.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Assets\@Scripts\Data\StageClearInfoData.cs" />
     <Compile Include="Assets\@Scripts\Data\DataTransformer.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_BattlePopup.cs" />
+    <Compile Include="Assets\@Scripts\DamageFont.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\Sequence\SequenceSkill.cs" />
     <Compile Include="Assets\@Scripts\Controllers\ProjectileController.cs" />
     <Compile Include="Assets\@Scripts\UI\Scene\UI_GameScene.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="Assets\@Scripts\UI\UI_SkillCardItem.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\SoundManager.cs" />
     <Compile Include="Assets\@Scripts\Controllers\MonsterController.cs" />
+    <Compile Include="Assets\@Scripts\Map.cs" />
     <Compile Include="Assets\@Scripts\Controllers\PlayerController.cs" />
     <Compile Include="Assets\@Scripts\Scenes\LobbyScene.cs" />
     <Compile Include="Assets\@Scripts\Utils\Memo.cs" />
@@ -110,9 +113,6 @@
     <Compile Include="Assets\@Scripts\Manager\Manager.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_SkillSelectPopup.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\CustomSceneManager.cs" />
-    <Compile Include="Assets\@Scripts\DamageFont.cs" />
-    <Compile Include="Assets\@Scripts\Controllers\EliteMonsterController.cs" />
-    <Compile Include="Assets\@Scripts\Map.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

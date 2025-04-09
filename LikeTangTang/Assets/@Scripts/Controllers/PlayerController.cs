@@ -13,24 +13,25 @@ public class PlayerController : CreatureController
     #region Action
     public Action OnPlayerDataUpdated;
     public Action OnPlayerLevelUp;
+    public Action OnPlayerDead;
     #endregion
     #region 플레이어 정보
     public override int DataID
     {
-        get {return DataID;}
-        set {DataID = value;}
+        get {return Manager.GameM.ContinueDatas.PlayerDataID;}
+        set { Manager.GameM.ContinueDatas.PlayerDataID = value;}
     }
 
     public override float Hp 
     { 
-        get {return Hp;}
-        set {Hp = value;}
+        get {return Manager.GameM.ContinueDatas.Hp;}
+        set { Manager.GameM.ContinueDatas.Hp = value;}
     }
 
     public override float MaxHp
     {
-        get {return MaxHp;}
-        set {MaxHp = value;}
+        get { return Manager.GameM.ContinueDatas.MaxHp;}
+        set { Manager.GameM.ContinueDatas.MaxHp = value;}
     }
 
     public override float Attack 
@@ -219,8 +220,6 @@ public class PlayerController : CreatureController
 
         GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
-        Debug.Log(dir);
-        Debug.Log(Speed);
     }
 
     void HandleOnMoveDirChange(Vector2 _dir)
@@ -267,7 +266,7 @@ public class PlayerController : CreatureController
        
         Manager.GameM.OnMovePlayerDir += HandleOnMoveDirChange;
 
-        //AddSkill();
+        AddSkill();
       
         return true;
     }
@@ -280,17 +279,37 @@ public class PlayerController : CreatureController
 
     public override void OnDamaged(BaseController _attacker, SkillBase _skill, float _damage = 0)
     {
-        base.OnDamaged(_attacker);
-        MonsterController mc = _attacker as MonsterController;
+        float totalDamage = 0;
+        CreatureController cc = _attacker as CreatureController;
+        if (cc != null)
+        {
+            if (_skill == null)
+                totalDamage = cc.Attack;
+            else
+                totalDamage = cc.Attack + (cc.Attack * _skill.SkillDatas.DamageMultiplier);
+        }
+        else
+        {
 
-        //TODO : 몸박 삭제하기
-        mc?.OnDamaged(this);
+        }
+        totalDamage *= 1 - DamageReduction;
+        //TODO : 카메라 충격 넣을것인지?
+
+
+        base.OnDamaged(_attacker, null, totalDamage);
+    }
+
+    public override void OnDead()
+    {
+        Time.timeScale = 0f;
+        OnPlayerDead?.Invoke();
     }
 
     private void FixedUpdate()
     {
         UpdatePlayerDir();
         Move();
-        GetGem();
+        //GetGem();
     }
 }
+ 
