@@ -140,7 +140,7 @@ public class MonsterController : CreatureController
 
         Manager.GameM.player.KillCount++;
 
-        if(Random.value >= Manager.GameM.CurrentWaveData.NonDropRate)
+        if(UnityEngine.Random.value >= Manager.GameM.CurrentWaveData.NonDropRate)
         {
             GemController gem = Manager.ObjectM.Spawn<GemController>(this.transform.position);
             gem.SetInfo(Manager.GameM.GetGemInfo());

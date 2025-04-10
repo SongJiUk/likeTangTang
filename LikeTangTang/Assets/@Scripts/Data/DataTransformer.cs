@@ -33,7 +33,7 @@ public class DataTransformer : EditorWindow
     [MenuItem("Tools/ParseExcel %#K")]
     public static void ParseExcel()
     {
-        ParseSkillData("Skill");
+        ParseSkillData("SkillData");
         // ParseStageData("Stage");
         // ParseCreatureData("Creature");
         // ParseLevelData("Level");
@@ -61,7 +61,8 @@ public class DataTransformer : EditorWindow
         SkillDataLoader loader = new SkillDataLoader();
 
         #region ExcelData
-        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/Excel/{filename}Data.csv").Split("\n");
+        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/CSV/{filename}.csv").Split("\n");
+
 
         for (int y = 1; y < lines.Length; y++)
         {
@@ -73,43 +74,41 @@ public class DataTransformer : EditorWindow
 
             int i = 0;
             SkillData skillData = new SkillData();
-            skillData.DamageMultiplier = ConvertValue<int>(row[i++]);
-            // skillData.Name = ConvertValue<string>(row[i++]);
-            // skillData.Description = ConvertValue<string>(row[i++]);
-            // skillData.PrefabLabel = ConvertValue<string>(row[i++]);
-            // skillData.IconLabel = ConvertValue<string>(row[i++]);
-            // skillData.SoundLabel = ConvertValue<string>(row[i++]);
-            // skillData.Category = ConvertValue<string>(row[i++]);
-            // skillData.CoolTime = ConvertValue<float>(row[i++]);
-            // skillData.DamageMultiplier = ConvertValue<float>(row[i++]);
-            // skillData.ProjectileSpacing = ConvertValue<float>(row[i++]);
-            // skillData.Duration = ConvertValue<float>(row[i++]);
-            // skillData.RecognitionRange = ConvertValue<float>(row[i++]);
-            // skillData.NumProjectiles = ConvertValue<int>(row[i++]);
-            // skillData.CastingSound = ConvertValue<string>(row[i++]);
-            // skillData.AngleBetweenProj = ConvertValue<float>(row[i++]);
-            // skillData.AttackInterval = ConvertValue<float>(row[i++]);
-            // skillData.NumBounce = ConvertValue<int>(row[i++]);
-            // skillData.BounceSpeed = ConvertValue<float>(row[i++]);
-            // skillData.BounceDist = ConvertValue<float>(row[i++]);
-            // skillData.NumPenerations = ConvertValue<int>(row[i++]);
-            // skillData.CastingEffect = ConvertValue<int>(row[i++]);
-            // skillData.HitSoundLabel = ConvertValue<string>(row[i++]);
-            // skillData.ProbCastingEffect = ConvertValue<float>(row[i++]);
-            // skillData.HitEffect = ConvertValue<int>(row[i++]);
-            // skillData.ProbHitEffect = ConvertValue<float>(row[i++]);
-            // skillData.ProjRange = ConvertValue<float>(row[i++]);
-            // skillData.MinCoverage = ConvertValue<float>(row[i++]);
-            // skillData.MaxCoverage = ConvertValue<float>(row[i++]);
-            // skillData.RoatateSpeed = ConvertValue<float>(row[i++]);
-            // skillData.ProjSpeed = ConvertValue<float>(row[i++]);
-            // skillData.ScaleMultiplier = ConvertValue<float>(row[i++]);
+            skillData.DataID = ConvertValue<int>(row[i++]);
+            skillData.SkillName = ConvertValue<string>(row[i++]);
+            skillData.SkillNameE = ConvertValue<string>(row[i++]);
+            skillData.SkillDescription = ConvertValue<string>(row[i++]);
+            skillData.SkillIcon = ConvertValue<string>(row[i++]);
+            skillData.DamageMultiplier = ConvertValue<float>(row[i++]);
+            skillData.ScaleMultiplier = ConvertValue<float>(row[i++]);
+            skillData.CoolTime = ConvertValue<float>(row[i++]);
+            skillData.Range = ConvertValue<float>(row[i++]);
+            skillData.Duration = ConvertValue<float>(row[i++]);
+            skillData.ProjectileCount = ConvertValue<float>(row[i++]);
+            skillData.RoatateSpeed = ConvertValue<float>(row[i++]);
+            skillData.AttackInterval = ConvertValue<float>(row[i++]);
+            skillData.NumBounce = ConvertValue<int>(row[i++]);
+            skillData.BounceSpeed = ConvertValue<float>(row[i++]);
+            skillData.NumPenerations = ConvertValue<int>(row[i++]);
+            skillData.Speed = ConvertValue<float>(row[i++]);
+            skillData.NumberOfAttacks = ConvertValue<int>(row[i++]);
+            skillData.CastingSoundLabel = ConvertValue<string>(row[i++]);
+            skillData.HitSoundLabel = ConvertValue<string>(row[i++]);
+            skillData.CastingEffectID = ConvertValue<string>(row[i++]);
+            skillData.HitEffectID = ConvertValue<string>(row[i++]);
+            skillData.CastingEffect = ConvertValue<int>(row[i++]);
+            skillData.HitEffect = ConvertValue<int>(row[i++]);
+            skillData.SkillTypeStr = ConvertValue<string>(row[i++]);
+            skillData.CanEvolve = ConvertValue<bool>(row[i++]);
+            skillData.RequiredItemID = ConvertValue<int>(row[i++]);
+            skillData.EvolvedSkillName = ConvertValue<string>(row[i++]);
+            skillData.PrefabName = ConvertValue<string>(row[i++]);
             loader.skillDatas.Add(skillData);
         }
         #endregion
 
         string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
-        File.WriteAllText($"{Application.dataPath}/@Resources/Data/JsonData/{filename}Data.json", jsonStr);
+        File.WriteAllText($"{Application.dataPath}/@Resources/Data/Json/{filename}.json", jsonStr);
         AssetDatabase.Refresh();
     }
 
@@ -852,6 +851,16 @@ public class DataTransformer : EditorWindow
         if (string.IsNullOrEmpty(value))
             return default(T);
 
+        if(typeof(T) == typeof(bool))
+        {
+            value = value.ToLower().Trim();
+            if (value == "true")
+                return (T)(object)true;
+            if (value == "false")
+                return (T)(object)false;
+
+            return (T)(object)false;
+        }
         TypeConverter converter = TypeDescriptor.GetConverter(typeof(T));
         return (T)converter.ConvertFromString(value);
     }

@@ -175,32 +175,39 @@ namespace Data
     [Serializable]
     public class SkillData
     {
+  
         public int DataID;
         public string SkillName; //이름
+        public string SkillNameE;
         public string SkillDescription; // 설명
-        public string SkillIconChannel; //경로
-        public string SkillTypeStr; //타입
-        public Define.SkillType Type = Define.SkillType.None; //타입
-        public string PrefabName; //프리팹 이름
+        public string SkillIcon; //경로
         public float DamageMultiplier; // 데미지 배율
+        public float ScaleMultiplier; //크기배율
         public float CoolTime; //쿨타임
         public float Range; // 범위
+        public float Duration; //스킬 지속시간
         public float ProjectileCount; // 발사체 숫자
-        public bool CanEvolve; //진화가능 유무
-        public int RequiredItemID; //
-        public string EvolvedSkillName; //진화스킬 이름
-        public float SkillDuration; //스킬 지속시간
+        public float RoatateSpeed; //회전 속도
+        public float AttackInterval; //공격간격
+        public int NumBounce; //바운스 횟수
+        public float BounceSpeed; //바운스 스피드 
+        public int NumPenerations; // 관통 횟수
+        public float Speed;
+        public int NumberOfAttacks; // 공격횟수
         public string CastingSoundLabel; //발동 사운드
         public string HitSoundLabel; //맞을때 사운드
         public string CastingEffectID; //캐스팅 이펙트
         public string HitEffectID; // 맞을때 이펙트
-        public float RoatateSpeed; //회전 속도
-        public float ScaleMultiplier; //크기배율
-        public float AttackInterval; //공격간격
-        public int NumBounce; //바운스 횟수
-        public int NumPenerations; // 관통 횟수
-        public float Speed;
-        public int NumberOfAttacks; // 공격횟수
+        public int CastingEffect;
+        public int HitEffect;
+        public string SkillTypeStr; //타입
+        public Define.SkillType Type = Define.SkillType.None; //타입
+        public bool CanEvolve;
+        public int RequiredItemID; //
+        public string EvolvedSkillName; //진화스킬 이름
+        public string PrefabName; //프리팹 이름
+
+        
     }
 
     [Serializable]
