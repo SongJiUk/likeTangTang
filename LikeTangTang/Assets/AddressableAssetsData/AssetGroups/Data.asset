@@ -37,13 +37,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: e5b005fcd6f7449ab89d41f0ba47bd9e
-    m_Address: SkillData.json
+  - m_GUID: d61fa843814064423b8f3ead91c7c755
+    m_Address: StageData.json
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: d61fa843814064423b8f3ead91c7c755
-    m_Address: StageData.json
+  - m_GUID: e5b005fcd6f7449ab89d41f0ba47bd9e
+    m_Address: SkillData.json
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
