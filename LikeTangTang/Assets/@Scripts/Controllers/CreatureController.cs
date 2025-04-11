@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Data;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -59,6 +60,8 @@ public class CreatureController : BaseController
             _skill.TotalDamage += _damage;
 
         Hp -= _damage;
+
+        Debug.Log($"HP : {Hp} , Damage : {_damage}");
         //Manager.ObjectM.ShowFont(transform.position,_damage, 0, transform, isCritical);
         
         if (this.IsVaild()) 
@@ -113,11 +116,34 @@ public class CreatureController : BaseController
     
     public void SetInfo(int _dataID)
     {
+        Init();
+
         DataID = _dataID;
         creatureData = Manager.DataM.CreatureDic[_dataID];
         InitStat();
         CreatureSprite.sprite = Manager.ResourceM.Load<Sprite>(creatureData.Image_Name);
+        InitSkill();
     }
 
+
+    public virtual void InitSkill()
+    {
+        foreach(int skillID in creatureData.SkillTypeList)
+        {
+            Define.SkillType type = Utils.GetSkillTypeFromInt(skillID);
+            if(type != Define.SkillType.None) Skills.AddSkill(type, skillID);
+        }
+    }
+
+    public bool IsMonster()
+    {
+        switch(objType)
+        {
+            case Define.ObjectType.Monster:
+                return true;
+            default :
+                return false;
+        }
+    }
    
 }

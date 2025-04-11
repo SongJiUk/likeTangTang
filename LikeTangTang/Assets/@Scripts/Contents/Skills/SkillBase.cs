@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Data;
 using UnityEngine;
 
 public class SkillBase : BaseController
@@ -19,7 +20,7 @@ public class SkillBase : BaseController
         Skilltype = _skillType;
     }
 
-    public virtual void ActivateSkill() {}
+    public virtual void ActivateSkill() { UpdateSkillData(); }
     protected virtual void GenerateProjectile(int _templateID, CreatureController _owner, Vector3 _startPos, Vector3 _dir)
     {
         
@@ -56,6 +57,32 @@ public class SkillBase : BaseController
         }
     }
     #endregion
+    public virtual void OnChangedSkillData() {}
 
+    public virtual void OnSkillLevelup()
+    {
+        if(SkillLevel == 0) ActivateSkill();
+
+        SkillLevel++;
+        UpdateSkillData();
+    }
+
+    public Data.SkillData UpdateSkillData(int _skillID = 0)
+    {
+        int id = 0;
+        if(_skillID ==0)
+            id = SkillLevel < 2 ? (int)Skilltype : (int)Skilltype + SkillLevel - 1;
+        else
+            id = _skillID;
+
+        SkillData skillData = new SkillData();
+
+        if(Manager.DataM.SkillDic.TryGetValue(id, out skillData) == false) return SkillDatas;
+        
+        SkillDatas = skillData;
+        OnChangedSkillData();
+        return SkillDatas;
+
+    }
     
 }

@@ -25,7 +25,6 @@ public class EgoSword : RepeatSkill
     public void SetInfo(CreatureController _owner, SkillData _skillData = null)
     {
         owner = _owner;
-        coolTime = 2f;
         if(_skillData != null) SkillDatas = _skillData;
     }
 
@@ -73,7 +72,7 @@ public class EgoSword : RepeatSkill
     }
     protected override IEnumerator coStartSkill()
     {
-        WaitForSeconds waitTime = new WaitForSeconds(coolTime);
+        WaitForSeconds waitTime = new WaitForSeconds(2f);
         while(true)
         {
             // [ ] 레벨별로 나눠서 1레벨이면 한번만 스윙하게끔( continue 사용하면 될듯)

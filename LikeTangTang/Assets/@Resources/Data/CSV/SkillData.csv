@@ -5,12 +5,12 @@ DataID,SkillName,SkillNameE,SkillDescription,SkillIcon,DamageMultiplier,ScaleMul
 2003,플라즈마샷,PlasmaShot,강력한 관통력을 가진 플라즈마 탄환 두 개를 동시에 발사합니다.,PlasmaShot,2,1.5,1,6.5,3,2,0,0,0,0,4,30,0,PhotonStrike_Start,PhotonStrike_Hit,0,0,20000,20000,PlasmaShot,FALSE,0,,PlasmaShot
 2004,플라즈마샷,PlasmaShot,더블샷으로 최대 플라즈마 에너지를 방출하며 진화가 가능합니다.,PlasmaShot,2.5,1.7,0.8,7,3,2,0,0,0,0,4,30,0,PhotonStrike_Start,PhotonStrike_Hit,0,0,20000,20000,PlasmaShot,TRUE,0,PlasmaCannon,PlasmaShot
 2100,플라즈마 캐논,PlasmaCannon,모든 방향으로 관통이 무제한인 강력한 플라즈마 폭발을 방출합니다. ,PlasmaShot,5,2,1.2,10,3,4,0,0,0,0,999,40,0,PhotonStrike_Start,PhotonStrike_Hit,0,0,20001,20001,PlasmaShot,FALSE,0,,PlasmaShot
-2010,에너지 링,EnergyRing,플레이어 주변에 작은 에너지 링을 1개 생성합니다.,EnergyRing,0.5,1,2,2.5,4,1,40,0,0,0,0,0,0,EnergyRing_Start,EnergyRing_Hit,0,0,20010,20010,EnergyRing,FALSE,0,,EnergyRing
-2011,에너지 링,EnergyRing,에너지 링의 크기와 공격력이 증가하고 1개 더 생성합니다.,EnergyRing,0.7,1.2,2,3,5,2,40,0,0,0,0,0,0,EnergyRing_Start,EnergyRing_Hit,0,0,20010,20010,EnergyRing,FALSE,0,,EnergyRing
-2012,에너지 링,EnergyRing,에너지 링이 더 빨리 회전하며   1개 더 생성됩니다.,EnergyRing,0.9,1.2,1,3.5,6,3,60,0,0,0,0,0,0,EnergyRing_Start,EnergyRing_Hit,0,0,20010,20010,EnergyRing,FALSE,0,,EnergyRing
-2013,에너지 링,EnergyRing,에너지 링을 1개 더 생성합니다.,EnergyRing,1.2,1.2,1,4,7,4,80,0,0,0,0,0,0,EnergyRing_Start,EnergyRing_Hit,0,0,20010,20010,EnergyRing,FALSE,0,,EnergyRing
-2014,에너지 링,EnergyRing,에너지 링의 회전속도/크기/개수가 증가하며 진화가 가능합니다.,EnergyRing,1.5,1.3,1,4.5,8,5,100,0,0,0,0,0,0,EnergyRing_Start,EnergyRing_Hit,0,0,20010,20010,EnergyRing,TRUE,0,Thundering,EnergyRing
-2110,썬더링,Thundering,에너지 링의 본래의 크기를 되찾습니다.,EnergyRing,2,1.5,1,5,9,5,100,0,0,0,0,0,0,ThunderRing_Start,ThunderRing_Hit,0,0,20011,20011,EnergyRing,FALSE,0,,EnergyRing
+2010,에너지 링,EnergyRing,플레이어 주변에 작은 에너지 링을 1개 생성합니다.,EnergyRing,0.5,1,2,2.5,4,1,160,0,0,0,0,0,0,EnergyRing_Start,EnergyRing_Hit,0,0,20010,20010,EnergyRing,FALSE,0,,EnergyRing
+2011,에너지 링,EnergyRing,에너지 링의 크기와 공격력이 증가하고 1개 더 생성합니다.,EnergyRing,0.7,1.2,2,3,5,2,160,0,0,0,0,0,0,EnergyRing_Start,EnergyRing_Hit,0,0,20010,20010,EnergyRing,FALSE,0,,EnergyRing
+2012,에너지 링,EnergyRing,에너지 링이 더 빨리 회전하며   1개 더 생성됩니다.,EnergyRing,0.9,1.2,1,3.5,6,3,180,0,0,0,0,0,0,EnergyRing_Start,EnergyRing_Hit,0,0,20010,20010,EnergyRing,FALSE,0,,EnergyRing
+2013,에너지 링,EnergyRing,에너지 링을 1개 더 생성합니다.,EnergyRing,1.2,1.2,1,4,7,4,180,0,0,0,0,0,0,EnergyRing_Start,EnergyRing_Hit,0,0,20010,20010,EnergyRing,FALSE,0,,EnergyRing
+2014,에너지 링,EnergyRing,에너지 링의 회전속도/크기/개수가 증가하며 진화가 가능합니다.,EnergyRing,1.5,1.3,1,4.5,8,5,210,0,0,0,0,0,0,EnergyRing_Start,EnergyRing_Hit,0,0,20010,20010,EnergyRing,TRUE,0,Thundering,EnergyRing
+2110,썬더링,Thundering,에너지 링의 본래의 크기를 되찾습니다.,EnergyRing,2,1.5,1,5,9,5,210,0,0,0,0,0,0,ThunderRing_Start,ThunderRing_Hit,0,0,20011,20011,EnergyRing,FALSE,0,,EnergyRing
 2020,플라즈마 부메랑,PlasmaBoomerang,주변의 적에게 튕기는 부메랑을 발사합니다.,PlasmaSpinner,0.5,1,2,2.5,5,2,0,0,3,20,0,20,1,AutoTurretDrone_Start,AutoTurretDrone_Hit,0,0,20020,20021,PlasmaBoomerang,FALSE,0,,PlasmaBoomerang
 2021,플라즈마 부메랑,PlasmaBoomerang,피해량이 증가하고. 부메랑의 개수가 증가합니다.,PlasmaSpinner,0.6,1.1,1.8,2.5,5,3,0,0,3,20,0,20,1,AutoTurretDrone_Start,AutoTurretDrone_Hit,0,0,20020,20021,PlasmaBoomerang,FALSE,0,,PlasmaBoomerang
 2022,플라즈마 부메랑,PlasmaBoomerang,크기가 커지며 부메랑의 개수가 증가합니다.,PlasmaSpinner,0.7,1.2,1.6,2.5,5,4,0,0,3,20,0,20,1,AutoTurretDrone_Start,AutoTurretDrone_Hit,0,0,20020,20021,PlasmaBoomerang,FALSE,0,,PlasmaBoomerang

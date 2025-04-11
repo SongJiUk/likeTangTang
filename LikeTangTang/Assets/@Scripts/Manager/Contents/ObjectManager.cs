@@ -40,7 +40,6 @@ public class ObjectManager
             go.name = $"{Manager.GameM.gameData.userName}";
             go.transform.position = _pos;
             PlayerController pc = go.GetComponent<PlayerController>();
-            pc.Init();
             pc.SetInfo(_templateID);    
             
             Player = pc;

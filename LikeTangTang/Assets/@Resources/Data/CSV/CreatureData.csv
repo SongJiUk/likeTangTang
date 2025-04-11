@@ -1,0 +1,9 @@
+DataID,DescriptionID,prefabName,MaxHp,MaxHpUpForIncreasStage,Attack,AttackUpForIncreasStage,Def,Speed,HpRate,AttackRate,DefRate,MoveSpeedRate,Image_Name,SkillTypeList
+1,Alpha,Player_Alpha,100,5,10,2,1,2,1,1,1,1,Alpha.sprite,2000/2010/2020/2030/2040/2050/2060/2070
+2,Beta,Player_Beta,100,5,11,3,2,3,2,2,2,2,Beta.sprite,2000/2010/2020/2030/2040/2050/2060/2070
+3,Gamma,Player_Gama,100,5,13,4,3,4,3,3,3,3,Gamma.sprite,2000/2010/2020/2030/2040/2050/2060/2070
+4,Delta,Player_Delta,100,5,15,5,4,4,4,4,4,4,Delta.sprite,2000/2010/2020/2030/2040/2050/2060/2070
+5,Epsilon,Player_Epsilon,100,5,20,6,5,5,5,5,5,5,Epsilon.sprite,2000/2010/2020/2030/2040/2050/2060/2070
+100,Green Slime,Monster,100,5,10,2,1,2,1,1,1,1,MonsterIcon_01.sprite,
+102,Green Slime,Goblin_01,100,5,10,2,1,1,1,1,1,1,MonsterIcon_01.sprite,
+103,Green Slime,Boss,100,5,10,2,1,1,1,1,1,1,MonsterIcon_01.sprite,10001/10002

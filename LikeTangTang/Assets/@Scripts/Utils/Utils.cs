@@ -96,6 +96,22 @@ public static class Utils
         Vector3 pos = _pos + new Vector3(spawnPos.x, spawnPos.y, 0f);
 
         return pos;
+    }
 
+    //NOTE : SKillType 통일 시키려고
+    public static Define.SkillType GetSkillTypeFromInt(int _value)
+    {
+        foreach(Define.SkillType type in Enum.GetValues(typeof(Define.SkillType)))
+        {
+            int minValue = (int)type;
+            int maxValue = minValue+5;
+
+            if(_value >= minValue && _value <= maxValue)
+            {
+                return type;
+            }
+        }
+
+        return Define.SkillType.None;
     }
 }

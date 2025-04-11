@@ -5,7 +5,6 @@ using UnityEngine;
 
 public abstract class RepeatSkill : SkillBase
 {
-    public float coolTime {get; set;}
     public RepeatSkill() : base(Define.SkillType.None) {}
 
 
@@ -14,6 +13,8 @@ public abstract class RepeatSkill : SkillBase
 
     public override void ActivateSkill()
     {
+        base.ActivateSkill();
+
         if(_coSkill != null) StopCoroutine(_coSkill);
 
         _coSkill = StartCoroutine(coStartSkill());
@@ -22,8 +23,9 @@ public abstract class RepeatSkill : SkillBase
     public abstract void DoSkill();
     protected virtual IEnumerator coStartSkill()
     {
-        WaitForSeconds waitTime = new WaitForSeconds(coolTime);
+        WaitForSeconds waitTime = new WaitForSeconds(SkillDatas.CoolTime);
 
+        yield return waitTime;
         while(true)
         {
             DoSkill();
@@ -32,4 +34,6 @@ public abstract class RepeatSkill : SkillBase
         }
     }
     #endregion
+
+    
 }

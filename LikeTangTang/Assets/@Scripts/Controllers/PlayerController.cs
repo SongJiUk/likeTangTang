@@ -187,11 +187,16 @@ public class PlayerController : CreatureController
 
 
     //NOTE : 여기임 여기 !! 여기서 스킬 추가하든 없애든 해야됌.
-    public void AddSkill()
+    public override void InitSkill()
     {
-        Debug.Log("PlayerController AddSkill");
-        Skills.AddSkill<EgoSword>(standard.position, gameObject.transform);
-        Skills.AddSkill<FireBall>(transform.position, gameObject.transform);
+        base.InitSkill();
+
+
+        // NOTE : Temp Code
+        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.EnergyRing);
+        Skills.LevelUpSkill(skillType);
+
+        //Skills.AddSkill<FireBall>(transform.position, gameObject.transform);
 
     }
 
@@ -265,8 +270,6 @@ public class PlayerController : CreatureController
         base.Init();
        
         Manager.GameM.OnMovePlayerDir += HandleOnMoveDirChange;
-
-        AddSkill();
       
         return true;
     }
@@ -293,6 +296,9 @@ public class PlayerController : CreatureController
 
         }
         totalDamage *= 1 - DamageReduction;
+
+        // NOTE : Temp Code
+        totalDamage = 0;
         //TODO : 카메라 충격 넣을것인지?
 
 

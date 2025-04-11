@@ -6,7 +6,7 @@ using UnityEngine;
 //NOTE : 스킬 관련된 모든 코드들 여기서 사용할것임(플레이어에 최소한의 코드만 들어가게.), 스킬매니저임 쉽게 말해서
 public class SkillComponent : MonoBehaviour
 {
-    public List<SkillBase> skills { get; }= new List<SkillBase>();
+    public List<SkillBase> skillList { get; }= new List<SkillBase>();
     public List<SkillBase> RepeatSkills { get;} = new List<SkillBase>{ };
 
     public List<SequenceSkill> SequenceSkills { get;} = new List<SequenceSkill>();
@@ -23,7 +23,7 @@ public class SkillComponent : MonoBehaviour
             egoSword.transform.SetParent(_parent);
             egoSword.ActivateSkill(); // [ ] 레벨이 0이라면 따로 함수 처리.
 
-            skills.Add(egoSword);
+            skillList.Add(egoSword);
             RepeatSkills.Add(egoSword);
 
             return egoSword as T;
@@ -33,10 +33,10 @@ public class SkillComponent : MonoBehaviour
         {
             var fireBall = Manager.ObjectM.Spawn<FireBall>(_pos, 2);
             fireBall.transform.SetParent(_parent);
-            fireBall.coolTime = 2f;
+            //fireBall.coolTime = 2f;
             fireBall.ActivateSkill();
 
-            skills.Add(fireBall);
+            skillList.Add(fireBall);
             RepeatSkills.Add(fireBall);
 
             return fireBall as T;
@@ -47,6 +47,28 @@ public class SkillComponent : MonoBehaviour
         }
 
         return null;
+    }
 
+    public void AddSkill(Define.SkillType _type,  int _skillID = 0)
+    {
+        string name = _type.ToString();
+        if(_type == Define.SkillType.EnergyRing)
+        {
+            GameObject go = Manager.ResourceM.Instantiate(name, gameObject.transform);
+            if(go != null)
+            {
+                SkillBase skill = go.GetOrAddComponent<SkillBase>();
+                skillList.Add(skill);
+                
+            }
+        }
+    }
+
+    public void LevelUpSkill(Define.SkillType _type)
+    {
+        for(int i =0; i< skillList.Count; i++)
+        {
+            skillList[i].OnSkillLevelup();
+        }
     }
 }
