@@ -59,7 +59,7 @@ public class EgoSword : RepeatSkill
     {
         MonsterController mc = collision.transform.GetComponent<MonsterController>();
 
-        if (mc.IsVaild() == false) return;
+        if (mc.IsValid() == false) return;
         // [ ] 데이터값으로 변경
         //mc.OnDamaged(owner, 1000);//SkillDatas.damage);
 

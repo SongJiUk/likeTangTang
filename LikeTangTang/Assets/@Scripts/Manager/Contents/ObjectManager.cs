@@ -29,7 +29,7 @@ public class ObjectManager
     Type skillType = typeof(SkillBase);
 #endregion
     
-    public T Spawn<T>(Vector3 _pos, int _templateID = 0) where T : BaseController
+    public T Spawn<T>(Vector3 _pos, int _templateID = 0, string _prefabName = "") where T : BaseController
     {
         System.Type type = typeof(T);
 
@@ -118,12 +118,11 @@ public class ObjectManager
         else if (type == projectileType)
         {
             // TemplateID 받아와서 생성
-            if (Manager.DataM.SkillDic.TryGetValue(_templateID, out var skilldata) == false) return null;
+            //if (Manager.DataM.SkillDic.TryGetValue(_templateID, out var skilldata) == false) return null;
 
-            GameObject go = Manager.ResourceM.Instantiate(skilldata.PrefabName, _pooling: true);
-            go.transform.position = _pos;
-
+            GameObject go = Manager.ResourceM.Instantiate(_prefabName, _pooling: true);
             ProjectileController pc = go.GetOrAddComponent<ProjectileController>();
+            go.transform.position = _pos;
             pjSet.Add(pc);
             pc.Init();
 
@@ -159,7 +158,7 @@ public class ObjectManager
     public void DeSpawn<T>(T _obj) where T : BaseController
     {
 
-        if (!_obj.IsVaild()) Debug.LogError("DeSpawn Error!!!, ObjectManager 134Line!");
+        if (!_obj.IsValid()) Debug.LogError("DeSpawn Error!!!, ObjectManager 134Line!");
 
 
         System.Type type = typeof(T);
@@ -174,21 +173,21 @@ public class ObjectManager
         }
         else if(monsterType.IsAssignableFrom(type))
         {
-            if(_obj.IsVaild() == false) return;
+            if(_obj.IsValid() == false) return;
 
             mcSet.Remove(_obj as MonsterController);
             Manager.ResourceM.Destory(_obj.gameObject);
         }
         else if(type == monsterType)
         {
-            if(_obj.IsVaild() == false) return;
+            if(_obj.IsValid() == false) return;
 
             mcSet.Remove(_obj as MonsterController);
             Manager.ResourceM.Destory(_obj.gameObject);
         }
         else if(type == gemType)
         {
-            if(_obj.IsVaild() == false) return;
+            if(_obj.IsValid() == false) return;
 
             gemSet.Remove(_obj as GemController);
             Manager.ResourceM.Destory(_obj.gameObject);
@@ -229,6 +228,25 @@ public class ObjectManager
         GameObject go = Manager.ResourceM.Instantiate(prefabName, _pooling: true);
         DamageFont damageFont = go.GetOrAddComponent<DamageFont>();
         damageFont.SetInfo(_pos, _damage, _heal, _parent, _isCritical);
+    }
+
+    public List<MonsterController> GetNearMonsters(int _count = 1, int distanceThreshold = 0)
+    {
+        List<MonsterController> monsterList = mcSet.OrderBy(monster => (Player.transform.position - monster.transform.position).sqrMagnitude).ToList();
+        
+
+        if(distanceThreshold > 0)
+            monsterList = monsterList.Where(monster => (Player.transform.position - monster.transform.position).sqrMagnitude > distanceThreshold * distanceThreshold).ToList();
+
+        int min = Mathf.Min(_count, monsterList.Count);
+        List<MonsterController> nearsMonsters = monsterList.Take(min).ToList();
+
+        if(nearsMonsters.Count == 0) return null;
+
+        while(nearsMonsters.Count < _count)
+            nearsMonsters.Add(nearsMonsters.Last());
+         
+        return nearsMonsters;
     }
 
 }

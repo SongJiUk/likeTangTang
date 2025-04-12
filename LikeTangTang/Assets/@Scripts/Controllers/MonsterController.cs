@@ -74,11 +74,11 @@ public class MonsterController : CreatureController
     void FixedUpdate()
     {
         
-        if (creatureState != CreatureState.Moving) return;
+        
 
         //Rigid.velocity = DefualtVelocity;
-        
-        if (Manager.GameM.player == null) return;
+        PlayerController pc = Manager.GameM.player;
+        if(pc.IsValid() == false) return;
 
         moveDir = Manager.GameM.player.transform.position - transform.position;
         Vector3 newPos = transform.position + moveDir.normalized * Time.deltaTime * Speed;
@@ -92,7 +92,7 @@ public class MonsterController : CreatureController
         PlayerController target =  collision.gameObject.GetComponent<PlayerController>();
 
         if (target == null) return;
-        if(target.IsVaild() == false) return;
+        if(target.IsValid() == false) return;
 
 
         if (coDotDamage != null)
@@ -106,7 +106,7 @@ public class MonsterController : CreatureController
     {
         PlayerController target = collision.gameObject.GetComponent<PlayerController>();
         if (target == null) return;
-        if(target.IsVaild() == false) return;
+        if(target.IsValid() == false) return;
         
         if (coDotDamage != null ) 
             StopCoroutine(coDotDamage);

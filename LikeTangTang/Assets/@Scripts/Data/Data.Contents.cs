@@ -73,6 +73,7 @@ namespace Data
     }
     #endregion
 
+    
     #region Creature Data
     [Serializable]
     public class CreatureData
@@ -186,7 +187,7 @@ namespace Data
         public float CoolTime; //쿨타임
         public float Range; // 범위
         public float Duration; //스킬 지속시간
-        public float ProjectileCount; // 발사체 숫자
+        public int ProjectileCount; // 발사체 숫자
         public float RoatateSpeed; //회전 속도
         public float AttackInterval; //공격간격
         public int NumBounce; //바운스 횟수

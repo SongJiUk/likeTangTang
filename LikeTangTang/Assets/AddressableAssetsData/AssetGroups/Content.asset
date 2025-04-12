@@ -27,6 +27,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
+  - m_GUID: 317c6ded4b29c488b89c419af6b3176a
+    m_Address: PlasmaSpinner
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

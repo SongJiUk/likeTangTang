@@ -21,9 +21,10 @@ public class SkillBase : BaseController
     }
 
     public virtual void ActivateSkill() { UpdateSkillData(); }
-    protected virtual void GenerateProjectile(int _templateID, CreatureController _owner, Vector3 _startPos, Vector3 _dir)
+    protected virtual void GenerateProjectile(CreatureController _owner, string _prefabName,Vector3 _startPos, Vector3 _dir, Vector3 _targetPos, SkillBase _skill)
     {
-        
+        ProjectileController pc = Manager.ObjectM.Spawn<ProjectileController>(_startPos, _prefabName: _prefabName);
+        pc.SetInfo(_owner,_startPos, _dir, _targetPos, _skill);
     }
 
 
@@ -31,7 +32,7 @@ public class SkillBase : BaseController
     #region Destory
     Coroutine coDestroyInfo;
 
-    public void StartDestory(float _time)
+    public void StartDestory(float _time = 0)
     {
         StopDestroy();
         coDestroyInfo = StartCoroutine(CoDestroy(_time));
@@ -47,11 +48,11 @@ public class SkillBase : BaseController
 
     }
 
-    IEnumerator CoDestroy(float _time)
+    public IEnumerator CoDestroy(float _time)
     {
         yield return new WaitForSeconds(_time);
 
-        if(this.IsVaild())
+        if(this.IsValid())
         {
             Manager.ObjectM.DeSpawn(this);
         }

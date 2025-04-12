@@ -13,12 +13,11 @@ public class FireBall : RepeatSkill
         Vector3 spawnPos = Manager.GameM.player.FirePos;
         Vector3 dir = Manager.GameM.player.ShootDir;
 
-        GenerateProjectile(2, owner, spawnPos, dir);
+        //GenerateProjectile(2, owner, spawnPos, dir);
     }
 
-    protected override void GenerateProjectile(int _templateID, CreatureController _owner, Vector3 _startPos, Vector3 _dir)
+    protected override void GenerateProjectile(CreatureController _owner, string _prefabName, Vector3 _startPos, Vector3 _dir, Vector3 _targetPos, SkillBase _skill)
     {
-        ProjectileController pc = Manager.ObjectM.Spawn<ProjectileController>(_startPos, _templateID);
-        pc.SetInfo(_templateID, _owner, _dir);
+        base.GenerateProjectile(_owner, _prefabName, _startPos, _dir, _targetPos, _skill);
     }
 }

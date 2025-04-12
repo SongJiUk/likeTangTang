@@ -84,7 +84,7 @@ public class DataTransformer : EditorWindow
             skillData.CoolTime = ConvertValue<float>(row[i++]);
             skillData.Range = ConvertValue<float>(row[i++]);
             skillData.Duration = ConvertValue<float>(row[i++]);
-            skillData.ProjectileCount = ConvertValue<float>(row[i++]);
+            skillData.ProjectileCount = ConvertValue<int>(row[i++]);
             skillData.RoatateSpeed = ConvertValue<float>(row[i++]);
             skillData.AttackInterval = ConvertValue<float>(row[i++]);
             skillData.NumBounce = ConvertValue<int>(row[i++]);

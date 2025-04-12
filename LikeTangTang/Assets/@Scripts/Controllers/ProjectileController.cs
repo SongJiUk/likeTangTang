@@ -1,13 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using Data;
 using UnityEngine;
 
 public class ProjectileController : SkillBase
 {
     
+    Vector3 spawnPos;
+    Vector3 targetPos;
     Vector3 dir;
+    Rigidbody2D rigid;
+    Define.SkillType skillType;
+    SkillBase skill;
+    
+    float duration;
+    int numBounce;
+    float bounceSpeed;
     float speed;
+    float sclaeMul;
     float lifeTime;
     public ProjectileController() : base(Define.SkillType.None){}
 
@@ -15,43 +26,79 @@ public class ProjectileController : SkillBase
     public override bool Init()
     {
         base.Init();
-        speed = 10f;
-        lifeTime = 5f;
-        StartDestory(lifeTime);
         return true;
     }
 
-    public void SetInfo(int _templateID, CreatureController _owner, Vector3 _dir)
+    public void SetInfo(CreatureController _owner, Vector3 _pos, Vector3 _dir, Vector3 _targetPos, SkillBase _skill)
     {
-        if(Manager.DataM.SkillDic.TryGetValue(_templateID, out Data.SkillData skillData) == false)
+
+        owner = _owner;
+        spawnPos = _pos;
+        dir = _dir;
+        targetPos = _targetPos;
+        skill = _skill;
+        rigid = GetComponent<Rigidbody2D>();
+        duration = skill.SkillDatas.Duration;
+        numBounce = skill.SkillDatas.NumBounce;
+        bounceSpeed = skill.SkillDatas.BounceSpeed;
+        speed = skill.SkillDatas.Speed;
+        sclaeMul = skill.SkillDatas.ScaleMultiplier;
+        skillType = skill.Skilltype;
+
+        transform.localScale = Vector3.one * skill.SkillDatas.ScaleMultiplier;
+        switch(skillType)
         {
-            Debug.LogError("Skill Data is Unknown, ProjectileController 28Line");
-            return;
+            case Define.SkillType.PlasmaSpinner :
+                rigid.velocity = dir * speed;
+                break;
         }
 
-        SkillDatas = skillData;
-        owner = _owner;
-        dir = _dir;
+
+        if(gameObject.activeInHierarchy)
+            StartCoroutine(CoDestroy(duration));
     }
+    
 
 
     public override void UpdateController()
     {
         base.UpdateController();
 
-        transform.position += dir * speed * Time.deltaTime;
+        //transform.position += dir * speed * Time.deltaTime;
+    }
+    
+    void HandlePlasmaSpinner(CreatureController _cc)
+    {
+
+        numBounce--;
+        rigid.velocity = -rigid.velocity.normalized * bounceSpeed;
+        if(numBounce < 0)
+        {
+            rigid.velocity = Vector2.zero;
+            StartDestory();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        MonsterController mc = collision.gameObject.GetComponent<MonsterController>();
-        if(mc.IsVaild() == false) return;
-        if(this.IsVaild()==false) return;
+        CreatureController cc = collision.gameObject.GetComponent<MonsterController>();
+        if(cc == null) return;
+        if(cc.IsValid() == false) return;
+        if(this.IsValid()==false) return;
+
+
+        //NOTE : 이렇게되면, 보스가 쏘는 투사체는 여기 통과를 못함(만들떄 생각해보고 수정하기)
+        if(cc.objType != Define.ObjectType.Monster) return;
+
+        switch(skillType)
+        {
+            case Define.SkillType.PlasmaSpinner :
+                HandlePlasmaSpinner(cc);
+                break;
+        }
 
         //mc.OnDamaged(owner, SkillDatas.DamageMultiplier);
-        StopDestroy();
-
-        Manager.ObjectM.DeSpawn(this);
+        
     }
 
 }

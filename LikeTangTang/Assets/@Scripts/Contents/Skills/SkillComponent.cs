@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -62,13 +63,30 @@ public class SkillComponent : MonoBehaviour
                 
             }
         }
+        else if(_type == Define.SkillType.PlasmaSpinner)
+        {   
+            SequenceSkill skill = gameObject.AddComponent(Type.GetType(name)) as SequenceSkill;
+            if(skill != null)
+            {
+
+            }
+            else
+            {
+                RepeatSkill skillbase = gameObject.GetComponent(Type.GetType(name)) as RepeatSkill;
+                skillList.Add(skillbase);
+            }
+        }
     }
 
     public void LevelUpSkill(Define.SkillType _type)
-    {
+    {   
         for(int i =0; i< skillList.Count; i++)
         {
-            skillList[i].OnSkillLevelup();
+            if(skillList[i].Skilltype == _type)
+            {
+                if(skillList[i].SkillLevel > 6) continue;
+                skillList[i].OnSkillLevelup();
+            }
         }
     }
 }

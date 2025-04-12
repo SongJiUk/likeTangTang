@@ -77,7 +77,7 @@ public class PoolManager
     Dictionary<string, Pool> pools = new Dictionary<string, Pool>();
     public GameObject Pop(GameObject _prefab)
     {
-        if(_prefab.IsVaild()== false) return null;
+        if(_prefab.IsValid()== false) return null;
 
         if(!pools.ContainsKey(_prefab.name)) 
             CreatePool(_prefab);
@@ -89,7 +89,7 @@ public class PoolManager
     public bool Push(GameObject _prefab)
     {
 
-        if(_prefab.IsVaild()== false) return false;
+        if(_prefab.IsValid()== false) return false;
 
         if (!pools.ContainsKey(_prefab.name))
             return false;

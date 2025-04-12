@@ -11,6 +11,7 @@ public class EnergyRing : RepeatSkill
         Skilltype = Define.SkillType.EnergyRing;
         gameObject.SetActive(false);
         SetActiveSpinner(false);
+        Debug.Log("Awake들옴");
     }
 
     public override void ActivateSkill()
@@ -18,23 +19,23 @@ public class EnergyRing : RepeatSkill
         gameObject.SetActive(true);
         if(SkillDatas == null) base.ActivateSkill();
         SetActiveSpinner(true);
-        ActiveSpinner();
+        DoSkill();
+        Debug.Log("ActivateSkill");
     }
 
 
-    public override void DoSkill()
-    {
-
-    }
+   
 
     public override void OnChangedSkillData()
     {
         SetActiveSpinner(true);
         SetEnergyRing();
+        Debug.Log("OnChangedSkillData");
     }
 
     public void SetActiveSpinner(bool _isActive)
     {
+        Debug.Log("SetActiveSpinner");
         if(SkillLevel == 6)
         {
 
@@ -50,6 +51,7 @@ public class EnergyRing : RepeatSkill
 
     public void SetEnergyRing()
     {
+        Debug.Log("SetEnergyRing");
         transform.localPosition = Vector3.zero;
 
         for(int i =0; i<spinner.Length; i++)
@@ -83,7 +85,7 @@ public class EnergyRing : RepeatSkill
         }
     }
 
-    public void ActiveSpinner()
+    public override void DoSkill()
     {
         SetEnergyRing();
 
@@ -98,22 +100,14 @@ public class EnergyRing : RepeatSkill
         Tween scaleDown = transform.DOScale(0f, 1f);
         Tween rotateEnd = transform.DORotate(new Vector3(0, 0, totalRotaion), 1f, RotateMode.FastBeyond360).SetEase(Ease.Linear);
 
-        // enableSequence.Append(scaleUp).Join(rotateMain)
-        //           .Append(scaleDown).Join(rotateEnd)
-        //           .InsertCallback(SkillDatas.Duration, () => 
-        //           {  
-        //               BackEnergyRing();
-        //               gameObject.SetActive(false);
-        //           })
-        //           .AppendInterval(SkillDatas.CoolTime- 1f)
-        //           .AppendCallback(() => ActiveSpinner());
 
-             enableSequence.Append(scaleUp).Join(rotateMain)
-            .Append(scaleDown).Join(rotateEnd)
-            .AppendCallback(() => BackEnergyRing())
-            .InsertCallback(0.5f, () => gameObject.SetActive(false))
-            .AppendInterval(SkillDatas.CoolTime - 0.5f)
-            .AppendCallback(() => ActiveSpinner());
+        enableSequence.Append(scaleUp).Join(rotateMain)
+        .Append(scaleDown).Join(rotateEnd)
+        .AppendCallback(() => BackEnergyRing())
+        .AppendInterval(0.5f)
+        .AppendCallback(() => gameObject.SetActive(false))
+        .AppendInterval(SkillDatas.CoolTime - 0.5f)
+        .AppendCallback(() => DoSkill());
 
     }
 
@@ -121,7 +115,7 @@ public class EnergyRing : RepeatSkill
     {
         CreatureController cc = collision.transform.GetComponent<CreatureController>();
 
-        if(cc.IsVaild() == false) return;
+        if(cc.IsValid() == false) return;
         if(cc.IsMonster()) cc.OnDamaged(Manager.GameM.player, this);    
     }
 }

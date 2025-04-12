@@ -38,7 +38,7 @@ public class BossController : MonsterController
     protected override void UpdateMoving()
     {
         PlayerController pc = Manager.GameM.player;
-        if(pc.IsVaild() == false) return;
+        if(pc.IsValid() == false) return;
 
         Vector3 dir = pc.transform.position - transform.position;
 

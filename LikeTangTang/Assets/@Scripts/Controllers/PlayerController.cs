@@ -193,10 +193,8 @@ public class PlayerController : CreatureController
 
 
         // NOTE : Temp Code
-        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.EnergyRing);
+        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.PlasmaSpinner);
         Skills.LevelUpSkill(skillType);
-
-        //Skills.AddSkill<FireBall>(transform.position, gameObject.transform);
 
     }
 
@@ -315,6 +313,14 @@ public class PlayerController : CreatureController
     {
         UpdatePlayerDir();
         Move();
+
+
+        // NOTE : Temp Code
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.PlasmaSpinner);
+            Skills.LevelUpSkill(skillType);
+        }
         //GetGem();
     }
 }

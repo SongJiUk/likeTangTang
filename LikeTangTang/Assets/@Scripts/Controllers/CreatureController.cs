@@ -61,10 +61,10 @@ public class CreatureController : BaseController
 
         Hp -= _damage;
 
-        Debug.Log($"HP : {Hp} , Damage : {_damage}");
+        Debug.Log($"HP : {Hp} , Damage : {_damage}, pos : {transform.position}");
         //Manager.ObjectM.ShowFont(transform.position,_damage, 0, transform, isCritical);
         
-        if (this.IsVaild()) 
+        if (this.IsValid()) 
             StartCoroutine(StartDamageAnim());
 ;    }
     IEnumerator StartDamageAnim()
@@ -117,12 +117,14 @@ public class CreatureController : BaseController
     public void SetInfo(int _dataID)
     {
         Init();
-
+        Rigid.simulated = true;
+        
         DataID = _dataID;
         creatureData = Manager.DataM.CreatureDic[_dataID];
         InitStat();
         CreatureSprite.sprite = Manager.ResourceM.Load<Sprite>(creatureData.Image_Name);
         InitSkill();
+        
     }
 
 
