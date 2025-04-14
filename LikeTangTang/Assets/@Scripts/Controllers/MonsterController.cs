@@ -73,12 +73,8 @@ public class MonsterController : CreatureController
     Vector2 DefualtVelocity;
     void FixedUpdate()
     {
-        
-        
-
-        //Rigid.velocity = DefualtVelocity;
-        PlayerController pc = Manager.GameM.player;
-        if(pc.IsValid() == false) return;
+        if(Manager.GameM.player.IsValid() == false) return;
+        if(isKnockBack) return;
 
         moveDir = Manager.GameM.player.transform.position - transform.position;
         Vector3 newPos = transform.position + moveDir.normalized * Time.deltaTime * Speed;
@@ -185,11 +181,11 @@ public class MonsterController : CreatureController
         yield return new WaitForSeconds(KNOCKBACK_TIME);
         if (Rigid != null)
             Rigid.velocity = Vector2.zero;
-
-        yield return new WaitForSeconds(KNOCKBACK_COOLTIME);
         isKnockBack = false;
-        coKnockBackCoroutine = null;
         CreatureState = CreatureState.Moving;
+        yield return new WaitForSeconds(KNOCKBACK_COOLTIME);
+        coKnockBackCoroutine = null;
+        
     }
 
 

@@ -97,7 +97,7 @@ public class ProjectileController : SkillBase
                 break;
         }
 
-        //mc.OnDamaged(owner, SkillDatas.DamageMultiplier);
+        cc.OnDamaged(owner, skill);
         
     }
 

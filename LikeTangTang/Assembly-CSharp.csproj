@@ -119,6 +119,7 @@
     <Compile Include="Assets/@Scripts/Manager/Manager.cs" />
     <Compile Include="Assets/@Scripts/UI/Popup/UI_SkillSelectPopup.cs" />
     <Compile Include="Assets/@Scripts/Manager/System/CustomSceneManager.cs" />
+    <Compile Include="Assets/@Scripts/Test/UI_Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
