@@ -193,10 +193,8 @@ public class PlayerController : CreatureController
 
 
         // NOTE : Temp Code
-        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.PlasmaSpinner);
+        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.PlasmaShot);
         Skills.LevelUpSkill(skillType);
-        // Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.EnergyRing);
-        // Skills.LevelUpSkill(skillType);
 
     }
 

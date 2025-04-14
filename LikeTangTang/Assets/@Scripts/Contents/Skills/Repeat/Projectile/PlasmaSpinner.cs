@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PlasmaSpinner : RepeatSkill
 {
-    float duration;
-    float coolTime;
-    int projectileCount;
+    Coroutine coStartPlasmaSpinner;
+
     void Awake()
     {
         Skilltype = Define.SkillType.PlasmaSpinner;
@@ -39,7 +38,7 @@ public class PlasmaSpinner : RepeatSkill
 
 
     }
-    Coroutine coStartPlasmaSpinner;
+    
     public override void DoSkill()
     {
         if(coStartPlasmaSpinner ==null) coStartPlasmaSpinner = StartCoroutine(CoStartPlasmaSpinner());

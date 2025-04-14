@@ -120,6 +120,13 @@
     <Compile Include="Assets/@Scripts/UI/Popup/UI_SkillSelectPopup.cs" />
     <Compile Include="Assets/@Scripts/Manager/System/CustomSceneManager.cs" />
     <Compile Include="Assets/@Scripts/Test/UI_Test.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/PlasmaShot.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/SuicideDrone.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/ElectricShock.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/GravityBomb.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/TimeStopBomb.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/OrbitalBlades.cs" />
+    <Compile Include="Assets/@Scripts/Test/Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

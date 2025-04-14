@@ -14,10 +14,7 @@ public class ProjectileController : SkillBase
     Define.SkillType skillType;
     SkillBase skill;
     
-    float duration;
-    int numBounce;
-    float bounceSpeed;
-    float speed;
+  
     float sclaeMul;
     float lifeTime;
     public ProjectileController() : base(Define.SkillType.None){}
@@ -44,11 +41,16 @@ public class ProjectileController : SkillBase
         speed = skill.SkillDatas.Speed;
         sclaeMul = skill.SkillDatas.ScaleMultiplier;
         skillType = skill.Skilltype;
+        numPenerations = skill.SkillDatas.NumPenerations;
 
         transform.localScale = Vector3.one * skill.SkillDatas.ScaleMultiplier;
         switch(skillType)
         {
             case Define.SkillType.PlasmaSpinner :
+                rigid.velocity = dir * speed;
+                break;
+
+            case Define.SkillType.PlasmaShot :
                 rigid.velocity = dir * speed;
                 break;
         }
@@ -79,6 +81,16 @@ public class ProjectileController : SkillBase
         }
     }
 
+    void HandlePlasmaShot(CreatureController _cc)
+    {  
+        numPenerations--;
+        if(numPenerations < 0)
+        {
+            rigid.velocity = Vector2.zero;
+            StartDestory();
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         CreatureController cc = collision.gameObject.GetComponent<MonsterController>();
@@ -95,6 +107,11 @@ public class ProjectileController : SkillBase
             case Define.SkillType.PlasmaSpinner :
                 HandlePlasmaSpinner(cc);
                 break;
+
+            case Define.SkillType.PlasmaShot :
+                HandlePlasmaShot(cc);
+                break;
+
         }
 
         cc.OnDamaged(owner, skill);

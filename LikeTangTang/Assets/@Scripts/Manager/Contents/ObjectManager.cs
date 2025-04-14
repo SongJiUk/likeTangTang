@@ -40,9 +40,9 @@ public class ObjectManager
             go.name = $"{Manager.GameM.gameData.userName}";
             go.transform.position = _pos;
             PlayerController pc = go.GetComponent<PlayerController>();
-            pc.SetInfo(_templateID);    
-            
             Player = pc;
+            pc.SetInfo(_templateID);
+            
             return pc as T;
         }
         else if (type == monsterType)

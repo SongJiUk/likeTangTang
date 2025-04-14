@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class RepeatSkill : SkillBase
 {
     public RepeatSkill() : base(Define.SkillType.None) {}
-
+    
 
 #region  스킬 코루틴
     Coroutine _coSkill;

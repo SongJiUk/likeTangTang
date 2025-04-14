@@ -76,6 +76,20 @@ public class SkillComponent : MonoBehaviour
                 skillList.Add(skillbase);
             }
         }
+        else
+        {
+            SequenceSkill skill = gameObject.AddComponent(Type.GetType(name)) as SequenceSkill;
+            if(skill != null)
+            {
+
+            }
+            else
+            {
+                RepeatSkill skillbase = gameObject.GetComponent(Type.GetType(name)) as RepeatSkill;
+                
+                if(skillbase != null) skillList.Add(skillbase);
+            }
+        }
     }
 
     public void LevelUpSkill(Define.SkillType _type)
