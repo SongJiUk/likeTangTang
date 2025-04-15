@@ -104,6 +104,7 @@ public class DataTransformer : EditorWindow
             skillData.EvolvedSkillName = ConvertValue<string>(row[i++]);
             skillData.PrefabName = ConvertValue<string>(row[i++]);
             skillData.BoundDist = ConvertValue<int>(row[i++]);
+            skillData.ExplosionName = ConvertValue<string>(row[i++]);
             loader.skillDatas.Add(skillData);
         }
         #endregion

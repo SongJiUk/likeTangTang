@@ -4,6 +4,7 @@ using System.Globalization;
 using Data;
 using Unity.VisualScripting;
 using UnityEngine;
+using DG.Tweening;
 
 public class ProjectileController : SkillBase
 {
@@ -28,6 +29,7 @@ public class ProjectileController : SkillBase
         return true;
     }
     HashSet<MonsterController> sharedTarget = new();
+    MonsterController target;
     public void SetInfo(CreatureController _owner, Vector3 _pos, Vector3 _dir, Vector3 _targetPos, SkillBase _skill, HashSet<MonsterController> _sharedTarget = null)
     {
 
@@ -44,6 +46,7 @@ public class ProjectileController : SkillBase
         sclaeMul = skill.SkillDatas.ScaleMultiplier;
         skillType = skill.Skilltype;
         numPenerations = skill.SkillDatas.NumPenerations;
+        range = skill.SkillDatas.Range;
         if(_sharedTarget != null) sharedTarget = _sharedTarget;
 
         transform.localScale = Vector3.one * skill.SkillDatas.ScaleMultiplier;
@@ -58,9 +61,19 @@ public class ProjectileController : SkillBase
                 break;
 
             case Define.SkillType.ElectricShock :
-                MonsterController target = Utils.FindClosestMonster(targetPos);
+                target = Utils.FindClosestMonster(targetPos);
                 if(target != null)
                     StartCoroutine(CoElectricShock(spawnPos, targetPos, target));
+                break;
+            case Define.SkillType.SuicideDrone :
+                //TODO : Range안에 있는 적들을 찾아서 랜덤으로 돌격후 자살
+
+                StartCoroutine(CoStartSuicideDrone());
+
+                break;
+
+                case Define.SkillType.TimeStopBomb :
+                //TODO : 설정
                 break;
         }
 
@@ -100,7 +113,64 @@ public class ProjectileController : SkillBase
         }
     }
     
+  
+    void HandleTimeStopBomb()
+    {
+        //TODO : 범위안에 있는 몬스터들 디버프
+    }
+
+    #region SuicideDrone
+    IEnumerator CoStartSuicideDrone()
+    {
+        yield return new WaitForSeconds(0.5f);
+        target = Utils.FindClosestMonster(transform.position);
+        if(target != null)
+        {
+            dir = (target.transform.position - spawnPos).normalized;
+            rigid.velocity = dir * speed;
+        }
+        else
+        {
+            yield return new WaitForSeconds(1f);
+            HandleSuicideDrone();
+        }   
+
+
+
+        yield break;
+    }
+
+    void HandleSuicideDrone()
+    {
+        //TODO : 폭발 하면서 주변 몬스터 함께 데미지
+        ExplosionDrone();
+        StartDestory();
+        
+
+    }
     
+
+    void ExplosionDrone()
+    {   
+        //TODO : 자폭할때는 굳이 필요할까 굳이 raycast를 안해줘도 될거같음.
+        string explosionName = SkillDatas.ExplosionName;
+        GameObject go = Manager.ResourceM.Instantiate(explosionName, _pooling : true);
+        go.transform.position = transform.position;
+
+        if(target == null) return;
+
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, range, Vector2.zero);
+        foreach(var target in hits)
+        {
+            CreatureController cc = target.collider.GetComponent<MonsterController>();
+            if(cc?.IsMonster() == true)
+                cc.OnDamaged(owner, skill);
+        }
+    }
+
+    #endregion
+    
+    #region  ElectricShock
     IEnumerator CoElectricShock(Vector3 _startPos, Vector3 _endPos, MonsterController _target)
     {
 
@@ -151,6 +221,8 @@ public class ProjectileController : SkillBase
         }
     }
 
+    #endregion
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         CreatureController cc = collision.gameObject.GetComponent<MonsterController>();
@@ -171,7 +243,14 @@ public class ProjectileController : SkillBase
             case Define.SkillType.PlasmaShot :
                 HandlePlasmaShot(cc);
                 break;
+            case Define.SkillType.SuicideDrone :
+                HandleSuicideDrone();
 
+                break;
+
+            case Define.SkillType.TimeStopBomb :
+                HandleTimeStopBomb();
+                break;
         }
 
         cc.OnDamaged(owner, skill);

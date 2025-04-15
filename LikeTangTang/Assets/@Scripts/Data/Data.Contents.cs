@@ -208,6 +208,7 @@ namespace Data
         public string EvolvedSkillName; //진화스킬 이름
         public string PrefabName; //프리팹 이름
         public int BoundDist;
+        public string ExplosionName;
 
         
     }

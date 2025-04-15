@@ -30,8 +30,6 @@ public class PlasmaShot : RepeatSkill
 
     public void SetPlasmaShot()
     {
-        duration = SkillDatas.Duration;
-        coolTime = SkillDatas.CoolTime;
         projectileCount = SkillDatas.ProjectileCount;
     }
 
@@ -46,7 +44,8 @@ public class PlasmaShot : RepeatSkill
                 Vector3 dir = Quaternion.Euler(0f,0f, randRange) * Vector3.right;
                 GenerateProjectile(Manager.GameM.player, SkillDatas.PrefabName, pos, dir, _skill:this);
             }
-            yield return new WaitForSeconds(duration + coolTime);
+
+            yield break;
         }
     
 }

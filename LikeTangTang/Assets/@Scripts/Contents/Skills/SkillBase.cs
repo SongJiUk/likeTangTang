@@ -10,6 +10,7 @@ public class SkillBase : BaseController
     public Data.SkillData SkillDatas { get; protected set; }
     public int SkillLevel {get; set;} = 0;
     public float TotalDamage { get; set; } = 0;
+    public string prefabName;
     public float duration;
     public float coolTime;
     public int projectileCount; //투사체 개수 
@@ -18,7 +19,7 @@ public class SkillBase : BaseController
     public float bounceSpeed;
     public float speed;
     public float numPenerations; //관통 개수
-    
+    public float range;
     public bool isLearnSkill
     {
         get { return SkillLevel > 0;}
@@ -30,7 +31,7 @@ public class SkillBase : BaseController
     }
 
     public virtual void ActivateSkill() { UpdateSkillData(); }
-    protected virtual void GenerateProjectile(CreatureController _owner, string _prefabName,Vector3 _startPos, Vector3 _dir, Vector3 _targetPos = default, SkillBase _skill = null, HashSet<MonsterController> _sharedTarget = null)
+    protected virtual void GenerateProjectile(CreatureController _owner, string _prefabName,Vector3 _startPos = default, Vector3 _dir= default, Vector3 _targetPos = default, SkillBase _skill = null, HashSet<MonsterController> _sharedTarget = null)
     {
         ProjectileController pc = Manager.ObjectM.Spawn<ProjectileController>(_startPos, _prefabName: _prefabName);
         pc.SetInfo(_owner,_startPos, _dir, _targetPos, _skill, _sharedTarget);
