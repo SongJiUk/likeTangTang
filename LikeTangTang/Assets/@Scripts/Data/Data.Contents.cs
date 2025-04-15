@@ -207,6 +207,7 @@ namespace Data
         public int RequiredItemID; //
         public string EvolvedSkillName; //진화스킬 이름
         public string PrefabName; //프리팹 이름
+        public int BoundDist;
 
         
     }

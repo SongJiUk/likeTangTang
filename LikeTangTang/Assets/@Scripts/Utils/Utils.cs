@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -113,5 +114,27 @@ public static class Utils
         }
 
         return Define.SkillType.None;
+    }
+
+    public static MonsterController FindClosestMonster(Vector3 _origin, HashSet<MonsterController> _prevTargets = null)
+    {
+        float closestDist = Mathf.Infinity;
+        MonsterController closestMC = null;
+
+        foreach(MonsterController monster in Manager.ObjectM.mcSet)
+        {
+            if(!monster.IsValid()) continue;
+            
+            if(_prevTargets!= null && _prevTargets.Contains(monster)) continue;
+
+            float dist = Vector3.Distance(_origin, monster.transform.position);
+            if(dist < closestDist)
+            {
+                closestDist = dist;
+                closestMC = monster;
+            }
+        }
+
+        return closestMC;
     }
 }

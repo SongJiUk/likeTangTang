@@ -11,7 +11,6 @@ public class EnergyRing : RepeatSkill
         Skilltype = Define.SkillType.EnergyRing;
         gameObject.SetActive(false);
         SetActiveSpinner(false);
-        Debug.Log("Awake들옴");
     }
 
     public override void ActivateSkill()
@@ -20,7 +19,6 @@ public class EnergyRing : RepeatSkill
         if(SkillDatas == null) base.ActivateSkill();
         SetActiveSpinner(true);
         DoSkill();
-        Debug.Log("ActivateSkill");
     }
 
 
@@ -30,12 +28,10 @@ public class EnergyRing : RepeatSkill
     {
         SetActiveSpinner(true);
         SetEnergyRing();
-        Debug.Log("OnChangedSkillData");
     }
 
     public void SetActiveSpinner(bool _isActive)
     {
-        Debug.Log("SetActiveSpinner");
         if(SkillLevel == 6)
         {
 
@@ -51,7 +47,6 @@ public class EnergyRing : RepeatSkill
 
     public void SetEnergyRing()
     {
-        Debug.Log("SetEnergyRing");
         transform.localPosition = Vector3.zero;
 
         for(int i =0; i<spinner.Length; i++)

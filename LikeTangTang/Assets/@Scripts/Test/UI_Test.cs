@@ -18,7 +18,7 @@ public class UI_Test : UI_Base
 
         GetToggle(typeof(Toggles), (int)Toggles.SkillLevelUpToggle).gameObject.BindEvent(() =>
         {
-            Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.PlasmaShot);
+            Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.ElectricShock);
             Manager.GameM.player.Skills.LevelUpSkill(skillType);
         });
         return true;

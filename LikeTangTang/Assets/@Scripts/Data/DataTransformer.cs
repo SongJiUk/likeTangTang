@@ -103,6 +103,7 @@ public class DataTransformer : EditorWindow
             skillData.RequiredItemID = ConvertValue<int>(row[i++]);
             skillData.EvolvedSkillName = ConvertValue<string>(row[i++]);
             skillData.PrefabName = ConvertValue<string>(row[i++]);
+            skillData.BoundDist = ConvertValue<int>(row[i++]);
             loader.skillDatas.Add(skillData);
         }
         #endregion

@@ -15,7 +15,6 @@ public class PlasmaSpinner : RepeatSkill
     {
         base.ActivateSkill();
         OnChangedSkillData();
-        DoSkill();
     }
 
     public override void OnChangedSkillData()
@@ -41,15 +40,14 @@ public class PlasmaSpinner : RepeatSkill
     
     public override void DoSkill()
     {
-        if(coStartPlasmaSpinner ==null) coStartPlasmaSpinner = StartCoroutine(CoStartPlasmaSpinner());
+        StartCoroutine(CoStartPlasmaSpinner());
     }
 
     IEnumerator CoStartPlasmaSpinner()
     {
-        while(true)
-        {
+       
             List<MonsterController> targets = Manager.ObjectM.GetNearMonsters(projectileCount);
-        if(targets == null) yield break;
+            if(targets == null) yield break;
 
 
         for(int i =0; i< targets.Count; i++)
@@ -64,7 +62,7 @@ public class PlasmaSpinner : RepeatSkill
             }
         }
         yield return new WaitForSeconds(duration + coolTime);
-        }
+        
         
     }
 

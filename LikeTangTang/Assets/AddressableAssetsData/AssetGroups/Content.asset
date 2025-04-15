@@ -16,27 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 94163b93d7bb24f928019105ae174de0
-  m_SerializeEntries:
-  - m_GUID: 264abf4a1305aef4fb32eb121dbf3d77
-    m_Address: Slime_01.sprite
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: ce7b3baa5bac4c5f908f345eea062c67
-    m_Address: Alpha.sprite
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: 317c6ded4b29c488b89c419af6b3176a
-    m_Address: PlasmaSpinner
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: 5e21d42c31c0340649a4c6f9b18854c0
-    m_Address: PlasmaShot
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

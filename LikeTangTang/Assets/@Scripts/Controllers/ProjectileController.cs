@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using Data;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ProjectileController : SkillBase
@@ -13,7 +14,8 @@ public class ProjectileController : SkillBase
     Rigidbody2D rigid;
     Define.SkillType skillType;
     SkillBase skill;
-    
+    [SerializeField]
+    public float rotationOffset;
   
     float sclaeMul;
     float lifeTime;
@@ -25,8 +27,8 @@ public class ProjectileController : SkillBase
         base.Init();
         return true;
     }
-
-    public void SetInfo(CreatureController _owner, Vector3 _pos, Vector3 _dir, Vector3 _targetPos, SkillBase _skill)
+    HashSet<MonsterController> sharedTarget = new();
+    public void SetInfo(CreatureController _owner, Vector3 _pos, Vector3 _dir, Vector3 _targetPos, SkillBase _skill, HashSet<MonsterController> _sharedTarget = null)
     {
 
         owner = _owner;
@@ -42,6 +44,7 @@ public class ProjectileController : SkillBase
         sclaeMul = skill.SkillDatas.ScaleMultiplier;
         skillType = skill.Skilltype;
         numPenerations = skill.SkillDatas.NumPenerations;
+        if(_sharedTarget != null) sharedTarget = _sharedTarget;
 
         transform.localScale = Vector3.one * skill.SkillDatas.ScaleMultiplier;
         switch(skillType)
@@ -52,6 +55,12 @@ public class ProjectileController : SkillBase
 
             case Define.SkillType.PlasmaShot :
                 rigid.velocity = dir * speed;
+                break;
+
+            case Define.SkillType.ElectricShock :
+                MonsterController target = Utils.FindClosestMonster(targetPos);
+                if(target != null)
+                    StartCoroutine(CoElectricShock(spawnPos, targetPos, target));
                 break;
         }
 
@@ -88,6 +97,57 @@ public class ProjectileController : SkillBase
         {
             rigid.velocity = Vector2.zero;
             StartDestory();
+        }
+    }
+    
+    
+    IEnumerator CoElectricShock(Vector3 _startPos, Vector3 _endPos, MonsterController _target)
+    {
+
+
+        MonsterController currentTarget = _target;
+        Vector3 currentPos = _startPos;
+
+        for(int i =0; i< numBounce; i++)
+        {
+            if(currentTarget == null || !currentTarget.IsValid()) break;
+
+            sharedTarget.Add(currentTarget);
+            
+            Vector3 nextPos = currentTarget.transform.position;
+            HandleElectricShock(currentPos, nextPos, currentTarget);
+            
+            yield return new WaitForSeconds(0.1f);
+
+            currentPos = nextPos;
+            currentTarget = Utils.FindClosestMonster(currentPos, sharedTarget);
+        }
+
+        StartDestory();
+    }
+   
+    void HandleElectricShock(Vector3 _startPos, Vector3 _endPos, MonsterController _target)
+    {
+        ParticleSystem particle = GetComponent<ParticleSystem>();
+        particle.Clear();
+        var main = particle.main;
+        main.startRotation = 0f;
+        // Scale
+        transform.position = _startPos;
+        float dist = Vector3.Distance(_startPos, _endPos);
+        main.startSizeX = dist;
+        main.startSizeY = 8;
+        
+        // rotatate
+        Vector3 dir = (_endPos - _startPos).normalized;
+        float angle = Mathf.Atan2(dir.y, dir.x);
+        main.startRotation = angle * -1f;
+        
+        particle.Play();
+
+        if(_target != null && _target.IsValid())
+        {
+            _target.OnDamaged(owner,skill);
         }
     }
 

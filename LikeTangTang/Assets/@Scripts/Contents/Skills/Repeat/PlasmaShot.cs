@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlasmaShot : RepeatSkill
 {
 
-    Coroutine coStartPlasmaShot;
     void Awake()
     {
         Skilltype = Define.SkillType.PlasmaShot;
@@ -26,7 +25,7 @@ public class PlasmaShot : RepeatSkill
 
     public override void DoSkill()
     {
-        if(coStartPlasmaShot == null) coStartPlasmaShot = StartCoroutine(CoStartPlasmaShot());
+        StartCoroutine(CoStartPlasmaShot());
     }
 
     public void SetPlasmaShot()
@@ -38,8 +37,7 @@ public class PlasmaShot : RepeatSkill
 
     IEnumerator CoStartPlasmaShot()
     {
-        while(true)
-        {   
+       
             Vector3 pos = Manager.GameM.player.transform.position;
             for(int i =0; i< projectileCount; i++)
             {
@@ -50,5 +48,5 @@ public class PlasmaShot : RepeatSkill
             }
             yield return new WaitForSeconds(duration + coolTime);
         }
-    }
+    
 }

@@ -16,12 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 9e6765ee94839a448886698ed1cf218e
-  m_SerializeEntries:
-  - m_GUID: 8d1423bbe53d13d4fa74d492091e28ac
-    m_Address: EnergyRing
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

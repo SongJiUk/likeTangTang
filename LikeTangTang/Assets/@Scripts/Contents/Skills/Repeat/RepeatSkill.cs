@@ -29,7 +29,6 @@ public abstract class RepeatSkill : SkillBase
         while(true)
         {
             DoSkill();
-
             yield return waitTime;
         }
     }

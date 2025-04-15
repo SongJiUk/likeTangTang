@@ -60,8 +60,6 @@ public class CreatureController : BaseController
             _skill.TotalDamage += _damage;
 
         Hp -= _damage;
-
-        Debug.Log($"HP : {Hp} , Damage : {_damage}, pos : {transform.position}");
         //Manager.ObjectM.ShowFont(transform.position,_damage, 0, transform, isCritical);
         
         if (this.IsValid()) 

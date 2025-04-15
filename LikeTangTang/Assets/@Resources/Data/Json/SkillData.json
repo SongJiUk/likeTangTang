@@ -30,7 +30,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "PlasmaShot"
+      "PrefabName": "PlasmaShot",
+      "BoundDist": 0
     },
     {
       "DataID": 2001,
@@ -62,7 +63,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "PlasmaShot"
+      "PrefabName": "PlasmaShot",
+      "BoundDist": 0
     },
     {
       "DataID": 2002,
@@ -94,7 +96,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "PlasmaShot"
+      "PrefabName": "PlasmaShot",
+      "BoundDist": 0
     },
     {
       "DataID": 2003,
@@ -126,7 +129,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "PlasmaShot"
+      "PrefabName": "PlasmaShot",
+      "BoundDist": 0
     },
     {
       "DataID": 2004,
@@ -158,7 +162,8 @@
       "CanEvolve": true,
       "RequiredItemID": 0,
       "EvolvedSkillName": "PlasmaCannon",
-      "PrefabName": "PlasmaShot"
+      "PrefabName": "PlasmaShot",
+      "BoundDist": 0
     },
     {
       "DataID": 2100,
@@ -190,7 +195,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "PlasmaShot"
+      "PrefabName": "PlasmaShot",
+      "BoundDist": 0
     },
     {
       "DataID": 2010,
@@ -222,7 +228,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "EnergyRing"
+      "PrefabName": "EnergyRing",
+      "BoundDist": 0
     },
     {
       "DataID": 2011,
@@ -254,7 +261,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "EnergyRing"
+      "PrefabName": "EnergyRing",
+      "BoundDist": 0
     },
     {
       "DataID": 2012,
@@ -286,7 +294,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "EnergyRing"
+      "PrefabName": "EnergyRing",
+      "BoundDist": 0
     },
     {
       "DataID": 2013,
@@ -318,7 +327,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "EnergyRing"
+      "PrefabName": "EnergyRing",
+      "BoundDist": 0
     },
     {
       "DataID": 2014,
@@ -350,7 +360,8 @@
       "CanEvolve": true,
       "RequiredItemID": 0,
       "EvolvedSkillName": "Thundering",
-      "PrefabName": "EnergyRing"
+      "PrefabName": "EnergyRing",
+      "BoundDist": 0
     },
     {
       "DataID": 2110,
@@ -382,7 +393,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "EnergyRing"
+      "PrefabName": "EnergyRing",
+      "BoundDist": 0
     },
     {
       "DataID": 2020,
@@ -414,7 +426,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "PlasmaSpinner"
+      "PrefabName": "PlasmaSpinner",
+      "BoundDist": 0
     },
     {
       "DataID": 2021,
@@ -446,7 +459,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "PlasmaSpinner"
+      "PrefabName": "PlasmaSpinner",
+      "BoundDist": 0
     },
     {
       "DataID": 2022,
@@ -478,7 +492,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "PlasmaSpinner"
+      "PrefabName": "PlasmaSpinner",
+      "BoundDist": 0
     },
     {
       "DataID": 2023,
@@ -510,7 +525,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "PlasmaSpinner"
+      "PrefabName": "PlasmaSpinner",
+      "BoundDist": 0
     },
     {
       "DataID": 2024,
@@ -542,7 +558,8 @@
       "CanEvolve": true,
       "RequiredItemID": 0,
       "EvolvedSkillName": "OmegaBoomerang",
-      "PrefabName": "PlasmaSpinner"
+      "PrefabName": "PlasmaSpinner",
+      "BoundDist": 0
     },
     {
       "DataID": 2120,
@@ -574,7 +591,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "PlasmaSpinner"
+      "PrefabName": "PlasmaSpinner",
+      "BoundDist": 0
     },
     {
       "DataID": 2030,
@@ -606,7 +624,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "SuicideDrone"
+      "PrefabName": "SuicideDrone",
+      "BoundDist": 0
     },
     {
       "DataID": 2031,
@@ -638,7 +657,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "SuicideDrone"
+      "PrefabName": "SuicideDrone",
+      "BoundDist": 0
     },
     {
       "DataID": 2032,
@@ -670,7 +690,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "SuicideDrone"
+      "PrefabName": "SuicideDrone",
+      "BoundDist": 0
     },
     {
       "DataID": 2033,
@@ -702,7 +723,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "SuicideDrone"
+      "PrefabName": "SuicideDrone",
+      "BoundDist": 0
     },
     {
       "DataID": 2034,
@@ -734,7 +756,8 @@
       "CanEvolve": true,
       "RequiredItemID": 0,
       "EvolvedSkillName": "ClusterDrone",
-      "PrefabName": "SuicideDrone"
+      "PrefabName": "SuicideDrone",
+      "BoundDist": 0
     },
     {
       "DataID": 2130,
@@ -766,7 +789,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "SuicideDrone"
+      "PrefabName": "SuicideDrone",
+      "BoundDist": 0
     },
     {
       "DataID": 2040,
@@ -798,7 +822,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "ElectricShock"
+      "PrefabName": "ElectricShock",
+      "BoundDist": 4
     },
     {
       "DataID": 2041,
@@ -830,7 +855,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "ElectricShock"
+      "PrefabName": "ElectricShock",
+      "BoundDist": 4
     },
     {
       "DataID": 2042,
@@ -862,7 +888,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "ElectricShock"
+      "PrefabName": "ElectricShock",
+      "BoundDist": 4
     },
     {
       "DataID": 2043,
@@ -894,7 +921,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "ElectricShock"
+      "PrefabName": "ElectricShock",
+      "BoundDist": 4
     },
     {
       "DataID": 2044,
@@ -907,7 +935,7 @@
       "CoolTime": 2.0,
       "Range": 6.0,
       "Duration": 5.0,
-      "ProjectileCount": 1,
+      "ProjectileCount": 2,
       "RoatateSpeed": 0.0,
       "AttackInterval": 0.0,
       "NumBounce": 6,
@@ -926,7 +954,8 @@
       "CanEvolve": true,
       "RequiredItemID": 0,
       "EvolvedSkillName": "SuddenStorm",
-      "PrefabName": "ElectricShock"
+      "PrefabName": "ElectricShock",
+      "BoundDist": 4
     },
     {
       "DataID": 2140,
@@ -958,7 +987,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "ElectricShock"
+      "PrefabName": "ElectricShock",
+      "BoundDist": 4
     },
     {
       "DataID": 2050,
@@ -990,7 +1020,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "GravityBomb"
+      "PrefabName": "GravityBomb",
+      "BoundDist": 0
     },
     {
       "DataID": 2051,
@@ -1022,7 +1053,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "GravityBomb"
+      "PrefabName": "GravityBomb",
+      "BoundDist": 0
     },
     {
       "DataID": 2052,
@@ -1054,7 +1086,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "GravityBomb"
+      "PrefabName": "GravityBomb",
+      "BoundDist": 0
     },
     {
       "DataID": 2053,
@@ -1086,7 +1119,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "GravityBomb"
+      "PrefabName": "GravityBomb",
+      "BoundDist": 0
     },
     {
       "DataID": 2054,
@@ -1118,7 +1152,8 @@
       "CanEvolve": true,
       "RequiredItemID": 0,
       "EvolvedSkillName": "GravitationalCollapse",
-      "PrefabName": "GravityBomb"
+      "PrefabName": "GravityBomb",
+      "BoundDist": 0
     },
     {
       "DataID": 2150,
@@ -1150,7 +1185,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "GravityBomb"
+      "PrefabName": "GravityBomb",
+      "BoundDist": 0
     },
     {
       "DataID": 2060,
@@ -1182,7 +1218,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "TimeStopBomb"
+      "PrefabName": "TimeStopBomb",
+      "BoundDist": 0
     },
     {
       "DataID": 2061,
@@ -1214,7 +1251,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "TimeStopBomb"
+      "PrefabName": "TimeStopBomb",
+      "BoundDist": 0
     },
     {
       "DataID": 2062,
@@ -1246,7 +1284,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "TimeStopBomb"
+      "PrefabName": "TimeStopBomb",
+      "BoundDist": 0
     },
     {
       "DataID": 2063,
@@ -1278,7 +1317,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "TimeStopBomb"
+      "PrefabName": "TimeStopBomb",
+      "BoundDist": 0
     },
     {
       "DataID": 2064,
@@ -1310,7 +1350,8 @@
       "CanEvolve": true,
       "RequiredItemID": 0,
       "EvolvedSkillName": "timeFixedField",
-      "PrefabName": "TimeStopBomb"
+      "PrefabName": "TimeStopBomb",
+      "BoundDist": 0
     },
     {
       "DataID": 2160,
@@ -1342,7 +1383,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "TimeStopBomb"
+      "PrefabName": "TimeStopBomb",
+      "BoundDist": 0
     },
     {
       "DataID": 2070,
@@ -1374,7 +1416,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "OrbitalBlades"
+      "PrefabName": "OrbitalBlades",
+      "BoundDist": 0
     },
     {
       "DataID": 2071,
@@ -1406,7 +1449,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "OrbitalBlades"
+      "PrefabName": "OrbitalBlades",
+      "BoundDist": 0
     },
     {
       "DataID": 2072,
@@ -1438,7 +1482,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "OrbitalBlades"
+      "PrefabName": "OrbitalBlades",
+      "BoundDist": 0
     },
     {
       "DataID": 2073,
@@ -1470,7 +1515,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "OrbitalBlades"
+      "PrefabName": "OrbitalBlades",
+      "BoundDist": 0
     },
     {
       "DataID": 2074,
@@ -1502,7 +1548,8 @@
       "CanEvolve": true,
       "RequiredItemID": 0,
       "EvolvedSkillName": "OrbitBarrage",
-      "PrefabName": "OrbitalBlades"
+      "PrefabName": "OrbitalBlades",
+      "BoundDist": 0
     },
     {
       "DataID": 2170,
@@ -1534,7 +1581,8 @@
       "CanEvolve": false,
       "RequiredItemID": 0,
       "EvolvedSkillName": null,
-      "PrefabName": "OrbitalBlades"
+      "PrefabName": "OrbitalBlades",
+      "BoundDist": 0
     }
   ]
 }
