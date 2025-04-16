@@ -109,6 +109,7 @@ public class ProjectileController : SkillBase
         if(numPenerations < 0)
         {
             rigid.velocity = Vector2.zero;
+            
             StartDestory();
         }
     }
@@ -120,18 +121,22 @@ public class ProjectileController : SkillBase
     }
 
     #region SuicideDrone
+    bool isBoom = false;
     IEnumerator CoStartSuicideDrone()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         target = Utils.FindClosestMonster(transform.position);
         if(target != null)
         {
             dir = (target.transform.position - spawnPos).normalized;
             rigid.velocity = dir * speed;
+            isBoom = true;
         }
         else
-        {
+        {   
+            //없으면 제자리 폭발.
             yield return new WaitForSeconds(1f);
+            isBoom = true;
             HandleSuicideDrone();
         }   
 
@@ -143,17 +148,22 @@ public class ProjectileController : SkillBase
     void HandleSuicideDrone()
     {
         //TODO : 폭발 하면서 주변 몬스터 함께 데미지
-        ExplosionDrone();
-        StartDestory();
-        
 
+        if(isBoom)
+        {
+            ExplosionDrone();
+            StartDestory();
+            isBoom = false;
+        }
     }
+
+
     
 
     void ExplosionDrone()
     {   
         //TODO : 자폭할때는 굳이 필요할까 굳이 raycast를 안해줘도 될거같음.
-        string explosionName = SkillDatas.ExplosionName;
+        string explosionName = skill.SkillDatas.ExplosionName;
         GameObject go = Manager.ResourceM.Instantiate(explosionName, _pooling : true);
         go.transform.position = transform.position;
 
@@ -238,10 +248,12 @@ public class ProjectileController : SkillBase
         {
             case Define.SkillType.PlasmaSpinner :
                 HandlePlasmaSpinner(cc);
+                cc.OnDamaged(owner, skill);
                 break;
 
             case Define.SkillType.PlasmaShot :
                 HandlePlasmaShot(cc);
+                cc.OnDamaged(owner, skill);
                 break;
             case Define.SkillType.SuicideDrone :
                 HandleSuicideDrone();
@@ -253,7 +265,7 @@ public class ProjectileController : SkillBase
                 break;
         }
 
-        cc.OnDamaged(owner, skill);
+        
         
     }
 
