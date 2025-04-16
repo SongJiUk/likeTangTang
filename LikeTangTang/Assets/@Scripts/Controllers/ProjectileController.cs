@@ -17,7 +17,10 @@ public class ProjectileController : SkillBase
     SkillBase skill;
     [SerializeField]
     public float rotationOffset;
-  
+    
+    public float EffectScaleMultiplier;
+    public float SlowRatio;
+    public float pullForce;
     float sclaeMul;
     float lifeTime;
     public ProjectileController() : base(Define.SkillType.None){}
@@ -47,6 +50,11 @@ public class ProjectileController : SkillBase
         skillType = skill.Skilltype;
         numPenerations = skill.SkillDatas.NumPenerations;
         range = skill.SkillDatas.Range;
+        effectRange = skill.SkillDatas.EffectRange;
+        EffectScaleMultiplier = skill.SkillDatas.EffectScaleMultiplier;
+        SlowRatio = skill.SkillDatas.SlowRatio;
+        pullForce = skill.SkillDatas.PullForce;
+
         if(_sharedTarget != null) sharedTarget = _sharedTarget;
 
         transform.localScale = Vector3.one * skill.SkillDatas.ScaleMultiplier;
@@ -74,6 +82,9 @@ public class ProjectileController : SkillBase
 
                 case Define.SkillType.TimeStopBomb :
                 //TODO : 설정
+                rigid.velocity = dir * speed;
+                StartCoroutine(CoExplosionTimeStopBomb());
+
                 break;
         }
 
@@ -115,10 +126,37 @@ public class ProjectileController : SkillBase
     }
     
   
-    void HandleTimeStopBomb()
+   
+    #region TimeStopBomb
+    IEnumerator CoExplosionTimeStopBomb()
     {
-        //TODO : 범위안에 있는 몬스터들 디버프
+        while(true)
+        {
+            if(Vector3.Distance(targetPos, transform.position) < 0.1f)
+            {
+                ExplosionTimeStopBomb();
+                StartDestory();
+                break;
+            }
+            yield return null;
+        }
     }
+
+    void ExplosionTimeStopBomb()
+    {
+        
+        //TODO : effectRange, SlowRatio, EffectScaleMultiplie사용, 
+        // 폭탄이 터지면, 디버프를 생성(근데 새로운 이펙트 생성)
+        string explosionName = skill.SkillDatas.ExplosionName;
+        GameObject go = Manager.ResourceM.Instantiate(explosionName, _pooling : true);
+        go.transform.position = transform.position;
+        go.GetComponent<TimeStopBombZone>().SetInfo(owner, skill);
+        
+    }
+    #endregion
+
+    #region GravityBomb
+    #endregion
 
     #region SuicideDrone
     bool isBoom = false;
@@ -157,9 +195,6 @@ public class ProjectileController : SkillBase
         }
     }
 
-
-    
-
     void ExplosionDrone()
     {   
         //TODO : 자폭할때는 굳이 필요할까 굳이 raycast를 안해줘도 될거같음.
@@ -169,7 +204,7 @@ public class ProjectileController : SkillBase
 
         if(target == null) return;
 
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, range, Vector2.zero);
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, effectRange, Vector2.zero);
         foreach(var target in hits)
         {
             CreatureController cc = target.collider.GetComponent<MonsterController>();
@@ -242,7 +277,7 @@ public class ProjectileController : SkillBase
 
 
         //NOTE : 이렇게되면, 보스가 쏘는 투사체는 여기 통과를 못함(만들떄 생각해보고 수정하기)
-        if(cc.objType != Define.ObjectType.Monster) return;
+        if(!cc.IsMonster())return;
 
         switch(skillType)
         {
@@ -257,11 +292,6 @@ public class ProjectileController : SkillBase
                 break;
             case Define.SkillType.SuicideDrone :
                 HandleSuicideDrone();
-
-                break;
-
-            case Define.SkillType.TimeStopBomb :
-                HandleTimeStopBomb();
                 break;
         }
 

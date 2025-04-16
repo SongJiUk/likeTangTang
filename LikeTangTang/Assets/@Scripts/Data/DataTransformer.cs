@@ -105,6 +105,10 @@ public class DataTransformer : EditorWindow
             skillData.PrefabName = ConvertValue<string>(row[i++]);
             skillData.BoundDist = ConvertValue<int>(row[i++]);
             skillData.ExplosionName = ConvertValue<string>(row[i++]);
+            skillData.EffectRange = ConvertValue<float>(row[i++]);
+            skillData.EffectScaleMultiplier = ConvertValue<float>(row[i++]);
+            skillData.SlowRatio = ConvertValue<float>(row[i++]);
+            skillData.PullForce = ConvertValue<float>(row[i++]);
             loader.skillDatas.Add(skillData);
         }
         #endregion

@@ -193,7 +193,7 @@ public class PlayerController : CreatureController
 
 
         // NOTE : Temp Code
-        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.SuicideDrone);
+        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.TimeStopBomb);
         Skills.LevelUpSkill(skillType);
 
     }

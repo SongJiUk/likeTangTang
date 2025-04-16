@@ -32,7 +32,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "PlasmaShot",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2001,
@@ -66,7 +70,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "PlasmaShot",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2002,
@@ -100,7 +108,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "PlasmaShot",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2003,
@@ -134,7 +146,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "PlasmaShot",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2004,
@@ -168,7 +184,11 @@
       "EvolvedSkillName": "PlasmaCannon",
       "PrefabName": "PlasmaShot",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2100,
@@ -202,7 +222,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "PlasmaShot",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2010,
@@ -236,7 +260,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "EnergyRing",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2011,
@@ -270,7 +298,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "EnergyRing",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2012,
@@ -304,7 +336,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "EnergyRing",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2013,
@@ -338,7 +374,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "EnergyRing",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2014,
@@ -372,7 +412,11 @@
       "EvolvedSkillName": "Thundering",
       "PrefabName": "EnergyRing",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2110,
@@ -406,7 +450,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "EnergyRing",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2020,
@@ -440,7 +488,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "PlasmaSpinner",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2021,
@@ -474,7 +526,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "PlasmaSpinner",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2022,
@@ -508,7 +564,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "PlasmaSpinner",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2023,
@@ -542,7 +602,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "PlasmaSpinner",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2024,
@@ -576,7 +640,11 @@
       "EvolvedSkillName": "OmegaBoomerang",
       "PrefabName": "PlasmaSpinner",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2120,
@@ -610,7 +678,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "PlasmaSpinner",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2030,
@@ -621,7 +693,7 @@
       "DamageMultiplier": 1.3,
       "ScaleMultiplier": 1.0,
       "CoolTime": 4.0,
-      "Range": 2.5,
+      "Range": 5.0,
       "Duration": 5.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
@@ -644,7 +716,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "SuicideDrone",
       "BoundDist": 0,
-      "ExplosionName": "ExplosionEffect"
+      "ExplosionName": "ExplosionEffect",
+      "EffectRange": 2.5,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2031,
@@ -655,7 +731,7 @@
       "DamageMultiplier": 1.6,
       "ScaleMultiplier": 1.2,
       "CoolTime": 3.6,
-      "Range": 2.7,
+      "Range": 5.0,
       "Duration": 5.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
@@ -678,7 +754,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "SuicideDrone",
       "BoundDist": 0,
-      "ExplosionName": "ExplosionEffect"
+      "ExplosionName": "ExplosionEffect",
+      "EffectRange": 2.7,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2032,
@@ -689,7 +769,7 @@
       "DamageMultiplier": 1.8,
       "ScaleMultiplier": 1.4,
       "CoolTime": 3.3,
-      "Range": 3.0,
+      "Range": 5.0,
       "Duration": 5.0,
       "ProjectileCount": 2,
       "RoatateSpeed": 0.0,
@@ -712,7 +792,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "SuicideDrone",
       "BoundDist": 0,
-      "ExplosionName": "ExplosionEffect"
+      "ExplosionName": "ExplosionEffect",
+      "EffectRange": 3.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2033,
@@ -723,7 +807,7 @@
       "DamageMultiplier": 2.0,
       "ScaleMultiplier": 1.5,
       "CoolTime": 3.1,
-      "Range": 3.2,
+      "Range": 5.0,
       "Duration": 5.0,
       "ProjectileCount": 2,
       "RoatateSpeed": 0.0,
@@ -746,7 +830,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "SuicideDrone",
       "BoundDist": 0,
-      "ExplosionName": "ExplosionEffect"
+      "ExplosionName": "ExplosionEffect",
+      "EffectRange": 3.2,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2034,
@@ -757,7 +845,7 @@
       "DamageMultiplier": 2.4,
       "ScaleMultiplier": 1.6,
       "CoolTime": 2.8,
-      "Range": 3.5,
+      "Range": 5.0,
       "Duration": 5.0,
       "ProjectileCount": 3,
       "RoatateSpeed": 0.0,
@@ -780,7 +868,11 @@
       "EvolvedSkillName": "ClusterDrone",
       "PrefabName": "SuicideDrone",
       "BoundDist": 0,
-      "ExplosionName": "ExplosionEffect"
+      "ExplosionName": "ExplosionEffect",
+      "EffectRange": 3.5,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2130,
@@ -791,7 +883,7 @@
       "DamageMultiplier": 4.0,
       "ScaleMultiplier": 2.0,
       "CoolTime": 2.5,
-      "Range": 4.0,
+      "Range": 5.0,
       "Duration": 5.0,
       "ProjectileCount": 5,
       "RoatateSpeed": 0.0,
@@ -814,7 +906,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "SuicideDrone",
       "BoundDist": 0,
-      "ExplosionName": "ExplosionEffect"
+      "ExplosionName": "ExplosionEffect",
+      "EffectRange": 4.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2040,
@@ -848,7 +944,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "ElectricShock",
       "BoundDist": 4,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2041,
@@ -882,7 +982,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "ElectricShock",
       "BoundDist": 4,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2042,
@@ -916,7 +1020,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "ElectricShock",
       "BoundDist": 4,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2043,
@@ -950,7 +1058,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "ElectricShock",
       "BoundDist": 4,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2044,
@@ -984,7 +1096,11 @@
       "EvolvedSkillName": "SuddenStorm",
       "PrefabName": "ElectricShock",
       "BoundDist": 4,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2140,
@@ -1018,7 +1134,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "ElectricShock",
       "BoundDist": 4,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2050,
@@ -1029,7 +1149,7 @@
       "DamageMultiplier": 0.5,
       "ScaleMultiplier": 1.0,
       "CoolTime": 5.0,
-      "Range": 2.5,
+      "Range": 5.0,
       "Duration": 3.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
@@ -1052,7 +1172,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "GravityBomb",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": "GravityBombZone",
+      "EffectRange": 2.5,
+      "EffectScaleMultiplier": 0.7,
+      "SlowRatio": 0.0,
+      "PullForce": 0.4
     },
     {
       "DataID": 2051,
@@ -1063,7 +1187,7 @@
       "DamageMultiplier": 0.8,
       "ScaleMultiplier": 1.1,
       "CoolTime": 4.5,
-      "Range": 2.8,
+      "Range": 5.0,
       "Duration": 3.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
@@ -1086,7 +1210,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "GravityBomb",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": "GravityBombZone",
+      "EffectRange": 2.8,
+      "EffectScaleMultiplier": 1.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.6
     },
     {
       "DataID": 2052,
@@ -1097,7 +1225,7 @@
       "DamageMultiplier": 0.8,
       "ScaleMultiplier": 1.2,
       "CoolTime": 4.0,
-      "Range": 3.1,
+      "Range": 5.0,
       "Duration": 3.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
@@ -1120,7 +1248,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "GravityBomb",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": "GravityBombZone",
+      "EffectRange": 3.1,
+      "EffectScaleMultiplier": 1.1,
+      "SlowRatio": 0.0,
+      "PullForce": 0.8
     },
     {
       "DataID": 2053,
@@ -1131,7 +1263,7 @@
       "DamageMultiplier": 0.9,
       "ScaleMultiplier": 1.4,
       "CoolTime": 3.5,
-      "Range": 3.4,
+      "Range": 5.0,
       "Duration": 3.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
@@ -1154,7 +1286,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "GravityBomb",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": "GravityBombZone",
+      "EffectRange": 3.4,
+      "EffectScaleMultiplier": 1.4,
+      "SlowRatio": 0.0,
+      "PullForce": 1.0
     },
     {
       "DataID": 2054,
@@ -1165,7 +1301,7 @@
       "DamageMultiplier": 1.1,
       "ScaleMultiplier": 1.6,
       "CoolTime": 3.0,
-      "Range": 3.7,
+      "Range": 5.0,
       "Duration": 3.0,
       "ProjectileCount": 2,
       "RoatateSpeed": 0.0,
@@ -1188,13 +1324,17 @@
       "EvolvedSkillName": "GravitationalCollapse",
       "PrefabName": "GravityBomb",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": "GravityBombZone",
+      "EffectRange": 3.7,
+      "EffectScaleMultiplier": 1.7,
+      "SlowRatio": 0.0,
+      "PullForce": 1.2
     },
     {
       "DataID": 2150,
       "SkillName": "중력 붕괴",
       "SkillNameE": "GravitationalCollapse",
-      "SkillDescription": "거대한 중력 붕괴를 일으켜 주변 모든 적을 끌어당기고 폭발시키는 스킬입니다.",
+      "SkillDescription": "거대한 중력 붕괴를 일으켜 주변 모든 적을 끌어당깁니다.",
       "SkillIcon": "GravityBomb",
       "DamageMultiplier": 1.5,
       "ScaleMultiplier": 1.8,
@@ -1222,7 +1362,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "GravityBomb",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": "GravityBombZone",
+      "EffectRange": 5.0,
+      "EffectScaleMultiplier": 2.0,
+      "SlowRatio": 0.0,
+      "PullForce": 1.4
     },
     {
       "DataID": 2060,
@@ -1232,9 +1376,9 @@
       "SkillIcon": "TimeStopBomb",
       "DamageMultiplier": 0.8,
       "ScaleMultiplier": 1.0,
-      "CoolTime": 0.0,
-      "Range": 2.5,
-      "Duration": 3.0,
+      "CoolTime": 5.0,
+      "Range": 5.0,
+      "Duration": 2.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
       "AttackInterval": 0.0,
@@ -1256,7 +1400,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "TimeStopBomb",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": "TimeStopBombZone",
+      "EffectRange": 2.5,
+      "EffectScaleMultiplier": 1.0,
+      "SlowRatio": 0.5,
+      "PullForce": 0.0
     },
     {
       "DataID": 2061,
@@ -1266,8 +1414,8 @@
       "SkillIcon": "TimeStopBomb",
       "DamageMultiplier": 0.9,
       "ScaleMultiplier": 1.0,
-      "CoolTime": 0.0,
-      "Range": 2.8,
+      "CoolTime": 4.5,
+      "Range": 5.0,
       "Duration": 3.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
@@ -1290,7 +1438,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "TimeStopBomb",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": "TimeStopBombZone",
+      "EffectRange": 2.8,
+      "EffectScaleMultiplier": 1.2,
+      "SlowRatio": 0.5,
+      "PullForce": 0.0
     },
     {
       "DataID": 2062,
@@ -1300,8 +1452,8 @@
       "SkillIcon": "TimeStopBomb",
       "DamageMultiplier": 1.1,
       "ScaleMultiplier": 1.0,
-      "CoolTime": 0.0,
-      "Range": 3.1,
+      "CoolTime": 4.0,
+      "Range": 5.0,
       "Duration": 3.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
@@ -1324,7 +1476,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "TimeStopBomb",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": "TimeStopBombZone",
+      "EffectRange": 3.1,
+      "EffectScaleMultiplier": 1.2,
+      "SlowRatio": 0.7,
+      "PullForce": 0.0
     },
     {
       "DataID": 2063,
@@ -1334,9 +1490,9 @@
       "SkillIcon": "TimeStopBomb",
       "DamageMultiplier": 1.2,
       "ScaleMultiplier": 1.0,
-      "CoolTime": 0.0,
-      "Range": 3.4,
-      "Duration": 3.0,
+      "CoolTime": 3.5,
+      "Range": 5.0,
+      "Duration": 4.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
       "AttackInterval": 0.0,
@@ -1358,7 +1514,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "TimeStopBomb",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": "TimeStopBombZone",
+      "EffectRange": 3.4,
+      "EffectScaleMultiplier": 1.4,
+      "SlowRatio": 0.7,
+      "PullForce": 0.0
     },
     {
       "DataID": 2064,
@@ -1368,9 +1528,9 @@
       "SkillIcon": "TimeStopBomb",
       "DamageMultiplier": 1.4,
       "ScaleMultiplier": 1.0,
-      "CoolTime": 0.0,
-      "Range": 3.7,
-      "Duration": 3.0,
+      "CoolTime": 3.0,
+      "Range": 5.0,
+      "Duration": 4.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
       "AttackInterval": 0.0,
@@ -1392,7 +1552,11 @@
       "EvolvedSkillName": "timeFixedField",
       "PrefabName": "TimeStopBomb",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": "TimeStopBombZone",
+      "EffectRange": 3.7,
+      "EffectScaleMultiplier": 1.5,
+      "SlowRatio": 0.9,
+      "PullForce": 0.0
     },
     {
       "DataID": 2160,
@@ -1402,9 +1566,9 @@
       "SkillIcon": "TimeStopBomb",
       "DamageMultiplier": 1.5,
       "ScaleMultiplier": 1.0,
-      "CoolTime": 0.0,
+      "CoolTime": 3.0,
       "Range": 5.0,
-      "Duration": 3.0,
+      "Duration": 5.0,
       "ProjectileCount": 2,
       "RoatateSpeed": 0.0,
       "AttackInterval": 0.0,
@@ -1426,7 +1590,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "TimeStopBomb",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": "TimeStopBombZone",
+      "EffectRange": 5.0,
+      "EffectScaleMultiplier": 2.0,
+      "SlowRatio": 1.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2070,
@@ -1460,7 +1628,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "OrbitalBlades",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2071,
@@ -1494,7 +1666,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "OrbitalBlades",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2072,
@@ -1528,7 +1704,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "OrbitalBlades",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2073,
@@ -1562,7 +1742,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "OrbitalBlades",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2074,
@@ -1596,7 +1780,11 @@
       "EvolvedSkillName": "OrbitBarrage",
       "PrefabName": "OrbitalBlades",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     },
     {
       "DataID": 2170,
@@ -1630,7 +1818,11 @@
       "EvolvedSkillName": null,
       "PrefabName": "OrbitalBlades",
       "BoundDist": 0,
-      "ExplosionName": null
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     }
   ]
 }

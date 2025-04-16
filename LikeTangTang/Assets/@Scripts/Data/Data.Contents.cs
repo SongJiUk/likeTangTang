@@ -209,6 +209,10 @@ namespace Data
         public string PrefabName; //프리팹 이름
         public int BoundDist;
         public string ExplosionName;
+        public float EffectRange;
+        public float EffectScaleMultiplier;
+        public float SlowRatio;
+        public float PullForce;
 
         
     }

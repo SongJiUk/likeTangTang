@@ -127,6 +127,7 @@
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/TimeStopBomb.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/OrbitalBlades.cs" />
     <Compile Include="Assets/@Scripts/Test/Test.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/TimeStopBombZone.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

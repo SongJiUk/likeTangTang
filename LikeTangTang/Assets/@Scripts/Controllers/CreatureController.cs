@@ -29,8 +29,7 @@ public class CreatureController : BaseController
     public virtual float Speed {get ;set;}
     #endregion
     public SkillComponent Skills {get; protected set;}
-
-   
+    public Define.SkillType skillType;
     public override bool Init()
     {
         if (!base.Init()) return false;
@@ -46,6 +45,9 @@ public class CreatureController : BaseController
     public virtual void OnDamaged(BaseController _attacker, SkillBase _skill = null, float _damage = 0)
     {
         bool isCritical = false;
+
+        if(_skill != null) skillType = _skill.Skilltype;
+
         PlayerController player = _attacker as PlayerController;
         if(player != null)
         {
@@ -60,6 +62,7 @@ public class CreatureController : BaseController
             _skill.TotalDamage += _damage;
 
         Hp -= _damage;
+        Debug.Log($"Attack for {_attacker}");
         //Manager.ObjectM.ShowFont(transform.position,_damage, 0, transform, isCritical);
         
         if (this.IsValid()) 

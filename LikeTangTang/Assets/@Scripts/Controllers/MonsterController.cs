@@ -6,6 +6,7 @@ using System;
 using static Define;
 public class MonsterController : CreatureController
 {
+    
     #region Action
     public Action<MonsterController> MonsterInfoUpdate;
     #endregion
@@ -78,7 +79,7 @@ public class MonsterController : CreatureController
 
         moveDir = Manager.GameM.player.transform.position - transform.position;
         Vector3 newPos = transform.position + moveDir.normalized * Time.deltaTime * Speed;
-
+        Debug.Log(Speed);
         Rigid.MovePosition(newPos);
         CreatureSprite.flipX = moveDir.x < 0;
     }
@@ -161,6 +162,7 @@ public class MonsterController : CreatureController
     Coroutine coKnockBackCoroutine;
     public void KnockBack()
     {
+        if(skillType == SkillType.TimeStopBomb || skillType == SkillType.GravityBomb) return;
         if (isKnockBack) return;
         if (coKnockBackCoroutine != null)
         {
