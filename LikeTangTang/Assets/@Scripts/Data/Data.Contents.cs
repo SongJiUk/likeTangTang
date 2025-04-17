@@ -213,7 +213,6 @@ namespace Data
         public float EffectScaleMultiplier;
         public float SlowRatio;
         public float PullForce;
-        public float EffectattackInterval;
 
         
     }

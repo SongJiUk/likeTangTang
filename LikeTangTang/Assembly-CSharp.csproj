@@ -130,6 +130,7 @@
     <Compile Include="Assets/@Scripts/Manager/System/CustomSceneManager.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/GravityBombZone.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/SkillZone.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/ElectronicField.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

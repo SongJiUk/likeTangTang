@@ -241,9 +241,12 @@ public class MonsterController : CreatureController
         if(GravityTarget == _target) GravityTarget = null;
     }
     
-    public void StartSKillZone(CreatureController _owner, SkillBase _skill, SkillZone _zone)
+    public void StartSKillZone(CreatureController _owner, SkillBase _skill, SkillZone _zone = null)
     {
-        coStartSkillZone = StartCoroutine(CoStartSkillZone(_owner, _skill, _zone));
+        if(_zone != null)
+            coStartSkillZone = StartCoroutine(CoStartSkillZone(_owner, _skill, _zone));
+        else
+            coStartSkillZone = StartCoroutine(CoStartSkillZone(_owner, _skill));
     }
 
     public void StopSkillZone(SkillBase _skill)
@@ -267,7 +270,7 @@ public class MonsterController : CreatureController
 
         
     }
-    IEnumerator CoStartSkillZone(CreatureController _owner,SkillBase _skill, SkillZone _zone)
+    IEnumerator CoStartSkillZone(CreatureController _owner,SkillBase _skill, SkillZone _zone = null)
     {
         SkillType skillType = _skill.Skilltype;
         
@@ -281,12 +284,16 @@ public class MonsterController : CreatureController
                 pullForce = _skill.SkillDatas.PullForce;
                 SetGravityTarget(_zone);
             break;
+
+            case SkillType.EletronicField :
+                
+            break;
         }
 
         while(true)
         {
             OnDamaged(_owner, _skill);
-            yield return new WaitForSeconds(_skill.SkillDatas.EffectattackInterval);
+            yield return new WaitForSeconds(_skill.SkillDatas.AttackInterval);
         }
 
         yield break;
