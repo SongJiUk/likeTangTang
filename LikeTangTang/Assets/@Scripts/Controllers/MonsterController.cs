@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using System;
 using static Define;
+
 public class MonsterController : CreatureController
 {
     
@@ -52,6 +53,16 @@ public class MonsterController : CreatureController
     protected virtual void UpdateDead() {}
     #endregion
     Coroutine coDotDamage;
+
+    #region GravityBomb Info
+    public SkillZone GravityTarget {get; set;}
+    public bool isInGravityZone => GravityTarget != null;
+
+    Coroutine coStartSkillZone;
+#endregion
+
+    #region SKill
+    #endregion
     private void OnEnable()
     {
         if (DataID != 0) SetInfo(DataID);
@@ -72,18 +83,31 @@ public class MonsterController : CreatureController
 
     Vector3 moveDir;
     Vector2 DefualtVelocity;
+    float pullForce = 0;
     void FixedUpdate()
     {
         if(Manager.GameM.player.IsValid() == false) return;
         if(isKnockBack) return;
 
-        moveDir = Manager.GameM.player.transform.position - transform.position;
-        Vector3 newPos = transform.position + moveDir.normalized * Time.deltaTime * Speed;
+    
+        Vector3 newPos;
+        if(isInGravityZone)
+        {
+            moveDir = GravityTarget.transform.position - transform.position;
+            newPos = transform.position + moveDir.normalized * Time.deltaTime * pullForce;
+        }
+        else
+        {
+            moveDir = Manager.GameM.player.transform.position - transform.position;
+            newPos = transform.position + moveDir.normalized * Time.deltaTime * Speed;
+        }
+
         Debug.Log(Speed);
+
         Rigid.MovePosition(newPos);
         CreatureSprite.flipX = moveDir.x < 0;
     }
-
+    
     public virtual void OnCollisionEnter2D(Collision2D collision)
     {
         PlayerController target =  collision.gameObject.GetComponent<PlayerController>();
@@ -115,7 +139,6 @@ public class MonsterController : CreatureController
     {
         while (true)
         {
-            // 피해자에서 처리하는게 좋음
             _target.OnDamaged(this, null, Attack);
             yield return new WaitForSeconds(0.1f);
         }
@@ -125,10 +148,16 @@ public class MonsterController : CreatureController
     {
         if (_skill != null)
             Manager.SoundM.Play(Sound.Effect, _skill.SkillDatas.HitEffectID);
+            
 
         float totalDamage = Manager.GameM.player.Attack * _skill.SkillDatas.DamageMultiplier;
         base.OnDamaged(_attacker, _skill, totalDamage);
-        if(objType == ObjectType.Monster) KnockBack();
+
+        if(objType == ObjectType.Monster)
+        {
+            if(_skill != null) KnockBack(_skill);
+            else KnockBack();
+        }
     }
 
     public override void OnDead()
@@ -160,9 +189,16 @@ public class MonsterController : CreatureController
     bool isKnockBack = false;
 
     Coroutine coKnockBackCoroutine;
-    public void KnockBack()
+    public void KnockBack(SkillBase _skill = null)
     {
-        if(skillType == SkillType.TimeStopBomb || skillType == SkillType.GravityBomb) return;
+        if(_skill != null)
+        {
+            if(_skill.Skilltype == SkillType.TimeStopBomb || _skill.Skilltype == SkillType.GravityBomb)
+            {
+                return;
+            }
+        }
+
         if (isKnockBack) return;
         if (coKnockBackCoroutine != null)
         {
@@ -190,5 +226,71 @@ public class MonsterController : CreatureController
         
     }
 
+#region  Set SkillZone Info
+    
+    public void SetGravityTarget(SkillZone _target)
+    {
+        if(_target == null) return;
+        GravityTarget = _target;
+    }
+
+    public void ClearGravityTarget(SkillZone _target)
+    {
+        if(_target == null) return;
+
+        if(GravityTarget == _target) GravityTarget = null;
+    }
+    
+    public void StartSKillZone(CreatureController _owner, SkillBase _skill, SkillZone _zone)
+    {
+        coStartSkillZone = StartCoroutine(CoStartSkillZone(_owner, _skill, _zone));
+    }
+
+    public void StopSkillZone(SkillBase _skill)
+    {
+        switch(_skill.Skilltype)
+        {
+            case SkillType.TimeStopBomb :
+                Speed /= _skill.SkillDatas.SlowRatio;
+                break;
+
+            case SkillType.GravityBomb :
+                ClearGravityTarget(GravityTarget);
+                break;
+        }
+
+        if(coStartSkillZone != null) 
+        {
+            StopCoroutine(coStartSkillZone);
+            coStartSkillZone = null;
+        }
+
+        
+    }
+    IEnumerator CoStartSkillZone(CreatureController _owner,SkillBase _skill, SkillZone _zone)
+    {
+        SkillType skillType = _skill.Skilltype;
+        
+        switch(skillType)
+        {
+            case SkillType.TimeStopBomb :
+                Speed *= _skill.SkillDatas.SlowRatio;
+                break;
+
+            case SkillType.GravityBomb :
+                pullForce = _skill.SkillDatas.PullForce;
+                SetGravityTarget(_zone);
+            break;
+        }
+
+        while(true)
+        {
+            OnDamaged(_owner, _skill);
+            yield return new WaitForSeconds(_skill.SkillDatas.EffectattackInterval);
+        }
+
+        yield break;
+    }
+#endregion
 
 }

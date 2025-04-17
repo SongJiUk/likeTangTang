@@ -65,7 +65,9 @@
     <Compile Include="Assets/@Scripts/Contents/Skills/SkillComponent.cs" />
     <Compile Include="Assets/@Scripts/Controllers/GridController.cs" />
     <Compile Include="Assets/@Scripts/Manager/Contents/ObjectManager.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/TimeStopBombZone.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/RepeatSkill.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/SuicideDrone.cs" />
     <Compile Include="Assets/@Scripts/Controllers/MapTileController.cs" />
     <Compile Include="Assets/@Scripts/Manager/System/ResourceManager.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/Projectile/PlasmaSpinner.cs" />
@@ -94,7 +96,9 @@
     <Compile Include="Assets/@Scripts/DamageFont.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Sequence/SequenceSkill.cs" />
     <Compile Include="Assets/@Scripts/Controllers/ProjectileController.cs" />
+    <Compile Include="Assets/@Scripts/Test/Test.cs" />
     <Compile Include="Assets/@Scripts/UI/Scene/UI_GameScene.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/TimeStopBomb.cs" />
     <Compile Include="Assets/@Scripts/Manager/Contents/SpawnManager.cs" />
     <Compile Include="Assets/@Scripts/Manager/System/DataManager.cs" />
     <Compile Include="Assets/@Scripts/UI/UI_SkillCardItem.cs" />
@@ -107,6 +111,7 @@
     <Compile Include="Assets/@Scripts/Scenes/TitleScene.cs" />
     <Compile Include="Assets/@Scripts/Controllers/GemController.cs" />
     <Compile Include="Assets/@Scripts/Scenes/BaseScene.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/PlasmaShot.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/Projectile/FireBall.cs" />
     <Compile Include="Assets/@Scripts/UI/Popup/LobbyScene/UI_ShopPopup.cs" />
     <Compile Include="Assets/_ExternalModule/Favorites/Common/Scripts/FG_GameObjectGUIDs.cs" />
@@ -115,19 +120,16 @@
     <Compile Include="Assets/@Scripts/Manager/Contents/GameManager.cs" />
     <Compile Include="Assets/@Scripts/Controllers/CameraController.cs" />
     <Compile Include="Assets/@Scripts/Controllers/DropItemController.cs" />
-    <Compile Include="Assets/@Scripts/Controllers/BaseController.cs" />
-    <Compile Include="Assets/@Scripts/Manager/Manager.cs" />
-    <Compile Include="Assets/@Scripts/UI/Popup/UI_SkillSelectPopup.cs" />
-    <Compile Include="Assets/@Scripts/Manager/System/CustomSceneManager.cs" />
-    <Compile Include="Assets/@Scripts/Test/UI_Test.cs" />
-    <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/PlasmaShot.cs" />
-    <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/SuicideDrone.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/ElectricShock.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/GravityBomb.cs" />
-    <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/TimeStopBomb.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/BaseController.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/OrbitalBlades.cs" />
-    <Compile Include="Assets/@Scripts/Test/Test.cs" />
-    <Compile Include="Assets/@Scripts/Contents/Skills/TimeStopBombZone.cs" />
+    <Compile Include="Assets/@Scripts/Manager/Manager.cs" />
+    <Compile Include="Assets/@Scripts/UI/Popup/UI_SkillSelectPopup.cs" />
+    <Compile Include="Assets/@Scripts/Test/UI_Test.cs" />
+    <Compile Include="Assets/@Scripts/Manager/System/CustomSceneManager.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/GravityBombZone.cs" />
+    <Compile Include="Assets/@Scripts/Contents/Skills/SkillZone.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

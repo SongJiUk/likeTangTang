@@ -36,7 +36,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2001,
@@ -74,7 +75,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2002,
@@ -112,7 +114,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2003,
@@ -150,7 +153,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2004,
@@ -188,7 +192,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2100,
@@ -226,7 +231,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2010,
@@ -264,7 +270,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2011,
@@ -302,7 +309,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2012,
@@ -340,7 +348,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2013,
@@ -378,7 +387,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2014,
@@ -416,7 +426,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2110,
@@ -454,7 +465,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2020,
@@ -492,7 +504,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2021,
@@ -530,7 +543,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2022,
@@ -568,7 +582,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2023,
@@ -606,7 +621,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2024,
@@ -644,7 +660,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2120,
@@ -682,7 +699,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2030,
@@ -720,7 +738,8 @@
       "EffectRange": 2.5,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2031,
@@ -758,7 +777,8 @@
       "EffectRange": 2.7,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2032,
@@ -796,7 +816,8 @@
       "EffectRange": 3.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2033,
@@ -834,7 +855,8 @@
       "EffectRange": 3.2,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2034,
@@ -872,7 +894,8 @@
       "EffectRange": 3.5,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2130,
@@ -910,7 +933,8 @@
       "EffectRange": 4.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2040,
@@ -948,7 +972,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2041,
@@ -986,7 +1011,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2042,
@@ -1024,7 +1050,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2043,
@@ -1062,7 +1089,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2044,
@@ -1100,7 +1128,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2140,
@@ -1138,7 +1167,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2050,
@@ -1176,7 +1206,8 @@
       "EffectRange": 2.5,
       "EffectScaleMultiplier": 0.7,
       "SlowRatio": 0.0,
-      "PullForce": 0.4
+      "PullForce": 0.4,
+      "EffectattackInterval": 1.5
     },
     {
       "DataID": 2051,
@@ -1214,7 +1245,8 @@
       "EffectRange": 2.8,
       "EffectScaleMultiplier": 1.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.6
+      "PullForce": 0.6,
+      "EffectattackInterval": 1.3
     },
     {
       "DataID": 2052,
@@ -1252,7 +1284,8 @@
       "EffectRange": 3.1,
       "EffectScaleMultiplier": 1.1,
       "SlowRatio": 0.0,
-      "PullForce": 0.8
+      "PullForce": 0.8,
+      "EffectattackInterval": 1.1
     },
     {
       "DataID": 2053,
@@ -1290,7 +1323,8 @@
       "EffectRange": 3.4,
       "EffectScaleMultiplier": 1.4,
       "SlowRatio": 0.0,
-      "PullForce": 1.0
+      "PullForce": 1.0,
+      "EffectattackInterval": 1.0
     },
     {
       "DataID": 2054,
@@ -1328,7 +1362,8 @@
       "EffectRange": 3.7,
       "EffectScaleMultiplier": 1.7,
       "SlowRatio": 0.0,
-      "PullForce": 1.2
+      "PullForce": 1.2,
+      "EffectattackInterval": 0.4
     },
     {
       "DataID": 2150,
@@ -1366,7 +1401,8 @@
       "EffectRange": 5.0,
       "EffectScaleMultiplier": 2.0,
       "SlowRatio": 0.0,
-      "PullForce": 1.4
+      "PullForce": 1.4,
+      "EffectattackInterval": 0.2
     },
     {
       "DataID": 2060,
@@ -1403,8 +1439,9 @@
       "ExplosionName": "TimeStopBombZone",
       "EffectRange": 2.5,
       "EffectScaleMultiplier": 1.0,
-      "SlowRatio": 0.5,
-      "PullForce": 0.0
+      "SlowRatio": 0.9,
+      "PullForce": 0.0,
+      "EffectattackInterval": 1.0
     },
     {
       "DataID": 2061,
@@ -1441,8 +1478,9 @@
       "ExplosionName": "TimeStopBombZone",
       "EffectRange": 2.8,
       "EffectScaleMultiplier": 1.2,
-      "SlowRatio": 0.5,
-      "PullForce": 0.0
+      "SlowRatio": 0.7,
+      "PullForce": 0.0,
+      "EffectattackInterval": 1.0
     },
     {
       "DataID": 2062,
@@ -1479,8 +1517,9 @@
       "ExplosionName": "TimeStopBombZone",
       "EffectRange": 3.1,
       "EffectScaleMultiplier": 1.2,
-      "SlowRatio": 0.7,
-      "PullForce": 0.0
+      "SlowRatio": 0.6,
+      "PullForce": 0.0,
+      "EffectattackInterval": 1.0
     },
     {
       "DataID": 2063,
@@ -1517,8 +1556,9 @@
       "ExplosionName": "TimeStopBombZone",
       "EffectRange": 3.4,
       "EffectScaleMultiplier": 1.4,
-      "SlowRatio": 0.7,
-      "PullForce": 0.0
+      "SlowRatio": 0.4,
+      "PullForce": 0.0,
+      "EffectattackInterval": 1.0
     },
     {
       "DataID": 2064,
@@ -1555,8 +1595,9 @@
       "ExplosionName": "TimeStopBombZone",
       "EffectRange": 3.7,
       "EffectScaleMultiplier": 1.5,
-      "SlowRatio": 0.9,
-      "PullForce": 0.0
+      "SlowRatio": 0.3,
+      "PullForce": 0.0,
+      "EffectattackInterval": 1.0
     },
     {
       "DataID": 2160,
@@ -1593,8 +1634,9 @@
       "ExplosionName": "TimeStopBombZone",
       "EffectRange": 5.0,
       "EffectScaleMultiplier": 2.0,
-      "SlowRatio": 1.0,
-      "PullForce": 0.0
+      "SlowRatio": 0.0,
+      "PullForce": 0.0,
+      "EffectattackInterval": 1.0
     },
     {
       "DataID": 2070,
@@ -1632,7 +1674,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2071,
@@ -1670,7 +1713,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2072,
@@ -1708,7 +1752,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2073,
@@ -1746,7 +1791,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2074,
@@ -1784,7 +1830,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     },
     {
       "DataID": 2170,
@@ -1822,7 +1869,8 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0
+      "PullForce": 0.0,
+      "EffectattackInterval": 0.0
     }
   ]
 }

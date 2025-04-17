@@ -86,6 +86,12 @@ public class ProjectileController : SkillBase
                 StartCoroutine(CoExplosionTimeStopBomb());
 
                 break;
+
+                case Define.SkillType.GravityBomb:
+                rigid.velocity = dir * speed;
+                StartCoroutine(CoExplosionGravityBomb());
+                break;
+                
         }
 
 
@@ -125,7 +131,29 @@ public class ProjectileController : SkillBase
         }
     }
     
-  
+  #region  GravityBomb
+    IEnumerator CoExplosionGravityBomb()
+    {
+        while(true)
+        {
+            if(Vector3.Distance(targetPos, transform.position) < 0.1f)
+            {
+                ExplosionGravityBomb();
+                StartDestory();
+                break;
+            }
+            yield return null;
+        }
+    }
+
+    void ExplosionGravityBomb()
+    {
+        string explosionName = skill.SkillDatas.ExplosionName;
+        GameObject go = Manager.ResourceM.Instantiate(explosionName, _pooling : true);
+        go.transform.position = transform.position;
+        go.GetComponent<GravityBombZone>().SetInfo(owner, skill);
+    }
+  #endregion
    
     #region TimeStopBomb
     IEnumerator CoExplosionTimeStopBomb()

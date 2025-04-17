@@ -29,7 +29,6 @@ public class CreatureController : BaseController
     public virtual float Speed {get ;set;}
     #endregion
     public SkillComponent Skills {get; protected set;}
-    public Define.SkillType skillType;
     public override bool Init()
     {
         if (!base.Init()) return false;
@@ -46,7 +45,6 @@ public class CreatureController : BaseController
     {
         bool isCritical = false;
 
-        if(_skill != null) skillType = _skill.Skilltype;
 
         PlayerController player = _attacker as PlayerController;
         if(player != null)

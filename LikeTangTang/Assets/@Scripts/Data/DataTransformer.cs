@@ -109,6 +109,7 @@ public class DataTransformer : EditorWindow
             skillData.EffectScaleMultiplier = ConvertValue<float>(row[i++]);
             skillData.SlowRatio = ConvertValue<float>(row[i++]);
             skillData.PullForce = ConvertValue<float>(row[i++]);
+            skillData.EffectattackInterval = ConvertValue<float>(row[i++]);
             loader.skillDatas.Add(skillData);
         }
         #endregion
