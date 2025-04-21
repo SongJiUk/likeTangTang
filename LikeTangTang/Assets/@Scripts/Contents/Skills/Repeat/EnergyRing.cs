@@ -3,20 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using Data;
-public class EnergyRing : RepeatSkill
+using UnityEngine.UIElements;
+public class EnergyRing : RepeatSkill, ITickable
 {
     public GameObject[] spinner;
+    bool isPlaying = false;
     void Awake()
     {
         Skilltype = Define.SkillType.EnergyRing;
         gameObject.SetActive(false);
         SetActiveSpinner(false);
+        coolTime = 0f;
+        
     }
 
+    private void OnEnable() 
+    {
+        if(Manager.UpdateM != null) Manager.UpdateM.Register(this);
+    }
+
+    // void OnDisable()
+    // {
+    //     if(Manager.UpdateM != null) Manager.UpdateM.Unregister(this);
+    // }
     public override void ActivateSkill()
     {
-        gameObject.SetActive(true);
         if(SkillDatas == null) base.ActivateSkill();
+        gameObject.SetActive(true);
         SetActiveSpinner(true);
         DoSkill();
     }
@@ -44,7 +57,17 @@ public class EnergyRing : RepeatSkill
             }
         }
     }
+    public void Tick(float _deltaTime)
+    {
+        if(isPlaying) return;
 
+        coolTime -= _deltaTime;
+        if(coolTime <= 0f)
+        {
+            DoSkill();
+            coolTime = SkillDatas.CoolTime;
+        }
+    }
     public void SetEnergyRing()
     {
         transform.localPosition = Vector3.zero;
@@ -82,10 +105,12 @@ public class EnergyRing : RepeatSkill
 
     public override void DoSkill()
     {
+        if(isPlaying) return;
+        isPlaying = true;
+
         SetEnergyRing();
 
         Sequence enableSequence = DOTween.Sequence();
-        gameObject.SetActive(true);
         transform.rotation = Quaternion.identity;
 
         float totalRotaion = SkillDatas.RoatateSpeed * SkillDatas.Duration;
@@ -99,11 +124,7 @@ public class EnergyRing : RepeatSkill
         enableSequence.Append(scaleUp).Join(rotateMain)
         .Append(scaleDown).Join(rotateEnd)
         .AppendCallback(() => BackEnergyRing())
-        .AppendInterval(0.5f)
-        .AppendCallback(() => gameObject.SetActive(false))
-        .AppendInterval(SkillDatas.CoolTime - 0.5f)
-        .AppendCallback(() => DoSkill());
-
+        .AppendCallback(() => isPlaying = false);
     }
 
     void OnTriggerEnter2D(Collider2D collision)

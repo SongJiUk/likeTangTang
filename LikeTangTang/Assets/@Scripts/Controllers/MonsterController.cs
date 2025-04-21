@@ -5,7 +5,7 @@ using DG.Tweening;
 using System;
 using static Define;
 
-public class MonsterController : CreatureController
+public class MonsterController : CreatureController, ITickable
 {
     
     #region Action
@@ -63,7 +63,6 @@ public class MonsterController : CreatureController
 
     #region SKill
     #endregion
-    private bool isDead;
     private PlayerController contactPlayer;
     private bool isInContactWithPlayer;
     private float knockBackEndTime;
@@ -74,6 +73,7 @@ public class MonsterController : CreatureController
     private SkillBase activeSkillInZone;
     private CreatureController zoneOwner;
     float skillZoneTickTime;
+    
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -81,6 +81,8 @@ public class MonsterController : CreatureController
     private void OnEnable()
     {
         if (DataID != 0) SetInfo(DataID);
+        
+        Manager.UpdateM.Register(this);
         isDead = false;
         creatureState = CreatureState.Moving;
         isKnockBack = false;
@@ -88,6 +90,10 @@ public class MonsterController : CreatureController
         isInContactWithPlayer = false;
         originalSpeed = Speed;
 
+    }
+    void OnDisable()
+    {
+        Manager.UpdateM.Unregister(this);
     }
     public override bool Init()
     {
@@ -105,9 +111,12 @@ public class MonsterController : CreatureController
     Vector2 DefualtVelocity;
     float pullForce = 0;
 
-    private void Update()
+
+    public override void Tick(float _deltaTime)
     {
-        if (!Manager.GameM.player.IsValid() || isDead) return;
+        base.Tick(_deltaTime);
+
+        if (isDead || !Manager.GameM.player.IsValid()) return;
         
         if(isKnockBack)
         {
@@ -127,14 +136,15 @@ public class MonsterController : CreatureController
         if (isInGravityZone)
         {
             moveDir = GravityTarget.transform.position - transform.position;
-            newPos = transform.position + moveDir.normalized * Time.deltaTime * pullForce;
+            newPos = transform.position + moveDir.normalized * _deltaTime * pullForce;
         }
         else
         {
             moveDir = Manager.GameM.player.transform.position - transform.position;
-            newPos = transform.position + moveDir.normalized * Time.deltaTime * Speed;
+            newPos = transform.position + moveDir.normalized * _deltaTime * Speed;
         }
         Rigid.MovePosition(newPos);
+        Debug.DrawLine(transform.position, transform.position + moveDir.normalized * 2f, Color.red);
         CreatureSprite.flipX = moveDir.x < 0;
 
         if (isInContactWithPlayer && Time.time >= nextDotDamageTime && contactPlayer != null)
@@ -227,7 +237,7 @@ public class MonsterController : CreatureController
     Coroutine coKnockBackCoroutine;
     public void KnockBack(SkillBase _skill = null)
     {
-        if (_skill != null || _skill.Skilltype == SkillType.TimeStopBomb || _skill.Skilltype == SkillType.GravityBomb)
+        if (_skill == null || _skill.Skilltype == SkillType.TimeStopBomb || _skill.Skilltype == SkillType.GravityBomb)
             return;
 
         if (isKnockBack) return;
@@ -295,7 +305,7 @@ public class MonsterController : CreatureController
         switch(_skill.Skilltype)
         {
             case SkillType.TimeStopBomb :
-                Speed /= _skill.SkillDatas.SlowRatio;
+                Speed = originalSpeed;
                 break;
 
             case SkillType.GravityBomb :
@@ -331,6 +341,6 @@ public class MonsterController : CreatureController
 
         yield break;
     }
-#endregion
+    #endregion
 
 }

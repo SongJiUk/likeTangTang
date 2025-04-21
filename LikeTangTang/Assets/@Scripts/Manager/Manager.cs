@@ -31,12 +31,15 @@ public class Manager : MonoBehaviour
     CustomSceneManager sceneM = new CustomSceneManager();
     SoundManager soundM = new SoundManager();
     UIManager uiM = new UIManager();
+    
+    UpdateManager updateM;
 
     public static DataManager DataM { get { return Instance?.dataM; } }
     public static ResourceManager ResourceM {get { return Instance?.resourceM; } }
     public static CustomSceneManager SceneM { get { return Instance?.sceneM; } }
     public static SoundManager SoundM { get { return Instance?.soundM; } }
     public static UIManager UiM { get { return Instance?.uiM; } }
+    public static UpdateManager UpdateM {get {return Instance?.updateM;}}
     #endregion
 
 
@@ -58,6 +61,7 @@ public class Manager : MonoBehaviour
                 }
                 DontDestroyOnLoad(obj);
                 instance = obj.GetComponent<Manager>();
+                instance.updateM = obj.AddComponent<UpdateManager>();
 
             }
             return instance;

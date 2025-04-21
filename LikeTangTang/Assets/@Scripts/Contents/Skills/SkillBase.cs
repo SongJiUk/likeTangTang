@@ -21,6 +21,7 @@ public class SkillBase : BaseController
     public float numPenerations; //관통 개수
     public float range;
     public float effectRange;
+    public float attackInterval;
 
     public bool isLearnSkill
     {

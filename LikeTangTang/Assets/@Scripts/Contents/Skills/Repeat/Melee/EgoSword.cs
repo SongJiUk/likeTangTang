@@ -41,7 +41,7 @@ public class EgoSword : RepeatSkill
     }
     public override void ActivateSkill()
     {
-        StartCoroutine(coStartSkill());
+        //StartCoroutine(coStartSkill());
     }
     void SetParticles(SwingType _swingType)
     {
@@ -70,36 +70,36 @@ public class EgoSword : RepeatSkill
     {
         
     }
-    protected override IEnumerator coStartSkill()
-    {
-        WaitForSeconds waitTime = new WaitForSeconds(2f);
-        while(true)
-        {
-            // [ ] 레벨별로 나눠서 1레벨이면 한번만 스윙하게끔( continue 사용하면 될듯)
-            SetParticles(SwingType.First);
-            swingParticle[(int)SwingType.First].gameObject.SetActive(true);
-            yield return new WaitForSeconds(swingParticle[(int)SwingType.First].main.duration);
+    // protected override IEnumerator coStartSkill()
+    // {
+    //     WaitForSeconds waitTime = new WaitForSeconds(2f);
+    //     while(true)
+    //     {
+    //         // [ ] 레벨별로 나눠서 1레벨이면 한번만 스윙하게끔( continue 사용하면 될듯)
+    //         SetParticles(SwingType.First);
+    //         swingParticle[(int)SwingType.First].gameObject.SetActive(true);
+    //         yield return new WaitForSeconds(swingParticle[(int)SwingType.First].main.duration);
 
-            //if (SkillLevel <= 1) continue;
+    //         //if (SkillLevel <= 1) continue;
 
-            SetParticles(SwingType.Second);
-            swingParticle[(int)SwingType.Second].gameObject.SetActive(true);
-            yield return new WaitForSeconds(swingParticle[(int)SwingType.Second].main.duration);
+    //         SetParticles(SwingType.Second);
+    //         swingParticle[(int)SwingType.Second].gameObject.SetActive(true);
+    //         yield return new WaitForSeconds(swingParticle[(int)SwingType.Second].main.duration);
 
-            //if (SkillLevel <= 2) continue;
+    //         //if (SkillLevel <= 2) continue;
 
-            SetParticles(SwingType.Third);
-            swingParticle[(int)SwingType.Third].gameObject.SetActive(true);
-            yield return new WaitForSeconds(swingParticle[(int)SwingType.Third].main.duration);
+    //         SetParticles(SwingType.Third);
+    //         swingParticle[(int)SwingType.Third].gameObject.SetActive(true);
+    //         yield return new WaitForSeconds(swingParticle[(int)SwingType.Third].main.duration);
 
-            //if (SkillLevel <= 3) continue;
+    //         //if (SkillLevel <= 3) continue;
 
-            SetParticles(SwingType.Fourth);
-            swingParticle[(int)SwingType.Fourth].gameObject.SetActive(true);
-            yield return new WaitForSeconds(swingParticle[(int)SwingType.Fourth].main.duration);
+    //         SetParticles(SwingType.Fourth);
+    //         swingParticle[(int)SwingType.Fourth].gameObject.SetActive(true);
+    //         yield return new WaitForSeconds(swingParticle[(int)SwingType.Fourth].main.duration);
 
-            yield return waitTime;
-        }
-    }
+    //         yield return waitTime;
+    //     }
+    // }
 
 }

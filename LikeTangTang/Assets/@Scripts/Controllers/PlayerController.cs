@@ -6,8 +6,9 @@ using System.ComponentModel.Design;
 using Unity.VisualScripting;
 using Data;
 using System;
+using UnityEngine.AI;
 
-public class PlayerController : CreatureController
+public class PlayerController : CreatureController, ITickable
 {
 
     #region Action
@@ -193,7 +194,7 @@ public class PlayerController : CreatureController
 
 
         // NOTE : Temp Code
-        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.EnergyRing);
+        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.SuicideDrone);
         Skills.LevelUpSkill(skillType);
 
     }
@@ -221,7 +222,7 @@ public class PlayerController : CreatureController
             standard.eulerAngles = new Vector3(0,0, Mathf.Atan2(-dir.x, dir.y) * 180 / Mathf.PI);
         }
 
-        GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        Rigid.velocity = Vector3.zero;
 
     }
 
@@ -263,6 +264,17 @@ public class PlayerController : CreatureController
         }
 
     #endregion
+     public void OnEnable()
+    {
+        if(Manager.UpdateM != null)
+            Manager.UpdateM.Register(this);
+    }
+
+    public void OnDisable()
+    {
+        if(Manager.UpdateM != null)
+            Manager.UpdateM.Unregister(this);
+    }
     public override bool Init()
     {
         base.Init();
@@ -272,6 +284,7 @@ public class PlayerController : CreatureController
         return true;
     }
 
+   
     private void OnDestroy()
     {
         if(Manager.GameM != null)
@@ -282,6 +295,7 @@ public class PlayerController : CreatureController
     {
         float totalDamage = 0;
         CreatureController cc = _attacker as CreatureController;
+
         if (cc != null)
         {
             if (_skill == null)
@@ -291,8 +305,9 @@ public class PlayerController : CreatureController
         }
         else
         {
-
+            Debug.Log("No Enemy");
         }
+
         totalDamage *= 1 - DamageReduction;
 
         // NOTE : Temp Code
@@ -305,15 +320,19 @@ public class PlayerController : CreatureController
 
     public override void OnDead()
     {
+        base.OnDead();
         Time.timeScale = 0f;
         OnPlayerDead?.Invoke();
     }
 
-    private void FixedUpdate()
+    public override void Tick(float _deltaTime)
     {
+        base.Tick(_deltaTime);
+        if(isDead) return;
+
         UpdatePlayerDir();
         Move();
-        //GetGem();
+
     }
 }
  

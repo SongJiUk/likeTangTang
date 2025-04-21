@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GravityBomb : RepeatSkill
+public class GravityBomb : RepeatSkill, ITickable
 {
     void Awake()
     {
         Skilltype = Define.SkillType.GravityBomb;
+        coolTime = 0f;
+    }
+
+    void OnEnable()
+    {
+        Manager.UpdateM.Register(this);
     }
     public override void DoSkill()
     {
-        StartCoroutine(CoStartGravityBomb());
+        SpawnGravityBomb();
     }
 
     public override void ActivateSkill()
@@ -28,10 +34,12 @@ public class GravityBomb : RepeatSkill
     {
         projectileCount = SkillDatas.ProjectileCount;
         prefabName = SkillDatas.PrefabName;;
+        range = SkillDatas.Range;
     }
-
-    IEnumerator CoStartGravityBomb()
+    void SpawnGravityBomb()
     {
+        if(projectileCount <= 0 || range <=0) return;
+
         Vector3 pos = Manager.GameM.player.transform.position;
         for(int i =0; i<  projectileCount; i++)
         {
@@ -42,7 +50,14 @@ public class GravityBomb : RepeatSkill
             Vector3 endPos = pos + dir.normalized * randRange;
             GenerateProjectile(Manager.GameM.player, prefabName, pos, dir, endPos, _skill:this);
         }
-
-        yield break;
+    }
+    public void Tick(float _deltaTime)
+    {
+        coolTime -= _deltaTime;
+        if(coolTime <= 0)
+        {
+            DoSkill();
+            coolTime = SkillDatas.CoolTime;
+        }
     }
 }

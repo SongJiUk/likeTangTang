@@ -5,13 +5,11 @@ using UnityEngine.Assertions.Must;
 
 public class ElectricShock : RepeatSkill
 {
-    MonsterController targetMonster;
+    private readonly HashSet<MonsterController> sharedTarget = new();
     void Awake()
     {
         Skilltype = Define.SkillType.ElectricShock;
-
     }
-    
 
     public override void ActivateSkill()
     {
@@ -37,15 +35,15 @@ public class ElectricShock : RepeatSkill
         boundDist = SkillDatas.BoundDist;
     }
 
-    HashSet<MonsterController> sharedTarget = new();
+    
     IEnumerator CoStartElectricShock()
     {
-        
-        string prefabName = SkillDatas.PrefabName;
         var player = Manager.GameM.player;
-        if(player == null) yield break;
-
+        if(player == null) yield break;        
+        
         sharedTarget.Clear();
+        string prefabName = SkillDatas.PrefabName;
+
         
         for(int i =0; i<projectileCount; i++)
         {
@@ -62,6 +60,7 @@ public class ElectricShock : RepeatSkill
             foreach(var target in targets)
             {
                 if(target == null || !target.IsValid()) continue;
+
                 Vector3 dir = (target.transform.position - startPos).normalized;
                 GenerateProjectile(player, prefabName, startPos, dir, target.transform.position, this, sharedTarget);
                 startPos = target.transform.position;
@@ -80,8 +79,10 @@ public class ElectricShock : RepeatSkill
 
         if(nearMonster == null || nearMonster.Count == 0) return Monsters;
         
-        int index = Mathf.Min(_index, nearMonster.Count -1);
-        Monsters.Add(nearMonster[index]);
+        int index = Mathf.Clamp(_index, 0, nearMonster.Count -1);
+        var first = nearMonster[index];
+        if(first == null || !first.IsValid())   return Monsters;
+        Monsters.Add(first);
 
         for(int i =1; i<_numTarget; i++)
         {
@@ -99,20 +100,18 @@ public class ElectricShock : RepeatSkill
     {
 
         var hits = Physics2D.OverlapCircleAll(_origin, _maxDist, LayerMask.GetMask("Monster", "Boss"));
-
         MonsterController target = null;
+        float nearTargetDist = Mathf.Infinity;
+
         foreach(var hit in hits)
         {
             var mc = hit.GetComponent<MonsterController>();
 
-            if(mc== null || _igonerMonsters.Contains(mc)) continue;
+            if(mc== null || _igonerMonsters.Contains(mc) || !mc.IsValid()) continue;
 
             float dist = Vector3.Distance(_origin, mc.transform.position);
             if(dist < _minDist || dist > _maxDist) continue;
-
-            float angle = Vector3.Angle((mc.transform.position - _origin).normalized, Vector3.up);
-
-            float nearTargetDist = Mathf.Infinity;
+            
             if(dist < nearTargetDist)
             {
                 nearTargetDist = dist;

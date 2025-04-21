@@ -6,33 +6,13 @@ using UnityEngine;
 public abstract class RepeatSkill : SkillBase
 {
     public RepeatSkill() : base(Define.SkillType.None) {}
-    
-
-#region  스킬 코루틴
-    Coroutine _coSkill;
 
     public override void ActivateSkill()
     {
         base.ActivateSkill();
-
-        if(_coSkill != null) StopCoroutine(_coSkill);
-
-        _coSkill = StartCoroutine(coStartSkill());
     }
 
     public abstract void DoSkill();
-    protected virtual IEnumerator coStartSkill()
-    {
-        WaitForSeconds waitTime = new WaitForSeconds(SkillDatas.CoolTime);
-
-        yield return waitTime;
-        while(true)
-        {
-            DoSkill();
-            yield return waitTime;
-        }
-    }
-    #endregion
 
     
 }

@@ -5,6 +5,7 @@ using Data;
 using Unity.VisualScripting;
 using UnityEngine;
 using DG.Tweening;
+using System.Threading;
 
 public class ProjectileController : SkillBase
 {
@@ -24,14 +25,15 @@ public class ProjectileController : SkillBase
     float sclaeMul;
     float lifeTime;
     public ProjectileController() : base(Define.SkillType.None){}
-
+    private ParticleSystem electricEffect;
     //초기화, 세팅
     public override bool Init()
     {
         base.Init();
+        electricEffect = GetComponent<ParticleSystem>();
         return true;
     }
-    HashSet<MonsterController> sharedTarget = new();
+    
     MonsterController target;
     public void SetInfo(CreatureController _owner, Vector3 _pos, Vector3 _dir, Vector3 _targetPos, SkillBase _skill, HashSet<MonsterController> _sharedTarget = null)
     {
@@ -55,7 +57,6 @@ public class ProjectileController : SkillBase
         SlowRatio = skill.SkillDatas.SlowRatio;
         pullForce = skill.SkillDatas.PullForce;
 
-        if(_sharedTarget != null) sharedTarget = _sharedTarget;
 
         transform.localScale = Vector3.one * skill.SkillDatas.ScaleMultiplier;
         switch(skillType)
@@ -134,16 +135,17 @@ public class ProjectileController : SkillBase
   #region  GravityBomb
     IEnumerator CoExplosionGravityBomb()
     {
-        while(true)
+        float timeOut =2f;
+        float timer =0f;
+        while(Vector3.Distance(targetPos, transform.position) > 0.1f)
         {
-            if(Vector3.Distance(targetPos, transform.position) < 0.1f)
-            {
-                ExplosionGravityBomb();
-                StartDestory();
-                break;
-            }
+            if(timer > timeOut) break;
+            timer += Time.deltaTime;
+
             yield return null;
         }
+        ExplosionGravityBomb();
+        StartDestory();
     }
 
     void ExplosionGravityBomb()
@@ -158,16 +160,16 @@ public class ProjectileController : SkillBase
     #region TimeStopBomb
     IEnumerator CoExplosionTimeStopBomb()
     {
-        while(true)
+        float timeOut = 2f;
+        float timer = 0f;
+        while(Vector3.Distance(targetPos, transform.position) > 0.1f)
         {
-            if(Vector3.Distance(targetPos, transform.position) < 0.1f)
-            {
-                ExplosionTimeStopBomb();
-                StartDestory();
-                break;
-            }
+            if(timer > timeOut) break;
+            timer += Time.deltaTime;
             yield return null;
         }
+        ExplosionTimeStopBomb();
+        StartDestory();
     }
 
     void ExplosionTimeStopBomb()
@@ -183,44 +185,38 @@ public class ProjectileController : SkillBase
     }
     #endregion
 
-    #region GravityBomb
-    #endregion
-
     #region SuicideDrone
     bool isBoom = false;
     IEnumerator CoStartSuicideDrone()
     {
         yield return new WaitForSeconds(1f);
+
+        if(!this.IsValid()) yield break;
+
         target = Utils.FindClosestMonster(transform.position);
-        if(target != null)
+        if(target != null && target.IsValid())
         {
-            dir = (target.transform.position - spawnPos).normalized;
+            dir = (target.transform.position - transform.position).normalized;
             rigid.velocity = dir * speed;
-            isBoom = true;
-        }
-        else
-        {   
-            //없으면 제자리 폭발.
+
             yield return new WaitForSeconds(1f);
-            isBoom = true;
-            HandleSuicideDrone();
-        }   
-
-
-
-        yield break;
+            if(!this.IsValid()) yield break;
+            if(!target.IsValid()) target = null;
+        }
+        //없으면 제자리 폭발.
+        isBoom = true;
+        HandleSuicideDrone();
+        
     }
 
     void HandleSuicideDrone()
     {
         //TODO : 폭발 하면서 주변 몬스터 함께 데미지
+        if(!isBoom) return;
 
-        if(isBoom)
-        {
-            ExplosionDrone();
-            StartDestory();
-            isBoom = false;
-        }
+        ExplosionDrone();
+        StartDestory();
+        isBoom = false;
     }
 
     void ExplosionDrone()
@@ -236,7 +232,7 @@ public class ProjectileController : SkillBase
         foreach(var target in hits)
         {
             CreatureController cc = target.collider.GetComponent<MonsterController>();
-            if(cc?.IsMonster() == true)
+            if(cc?.IsMonster() == true && cc.IsValid())
                 cc.OnDamaged(owner, skill);
         }
     }
@@ -247,7 +243,7 @@ public class ProjectileController : SkillBase
     IEnumerator CoElectricShock(Vector3 _startPos, Vector3 _endPos, MonsterController _target)
     {
 
-
+        HashSet<MonsterController> sharedTarget = new();
         MonsterController currentTarget = _target;
         Vector3 currentPos = _startPos;
 
@@ -271,10 +267,11 @@ public class ProjectileController : SkillBase
    
     void HandleElectricShock(Vector3 _startPos, Vector3 _endPos, MonsterController _target)
     {
-        ParticleSystem particle = GetComponent<ParticleSystem>();
-        particle.Clear();
-        var main = particle.main;
-        main.startRotation = 0f;
+        if(electricEffect == null) electricEffect = GetComponent<ParticleSystem>();
+
+        electricEffect.Clear();
+        var main = electricEffect.main;
+
         // Scale
         transform.position = _startPos;
         float dist = Vector3.Distance(_startPos, _endPos);
@@ -286,7 +283,7 @@ public class ProjectileController : SkillBase
         float angle = Mathf.Atan2(dir.y, dir.x);
         main.startRotation = angle * -1f;
         
-        particle.Play();
+        electricEffect.Play();
 
         if(_target != null && _target.IsValid())
         {
@@ -299,13 +296,10 @@ public class ProjectileController : SkillBase
     void OnTriggerEnter2D(Collider2D collision)
     {
         CreatureController cc = collision.gameObject.GetComponent<MonsterController>();
-        if(cc == null) return;
-        if(cc.IsValid() == false) return;
-        if(this.IsValid()==false) return;
-
+        if(cc == null || !cc.IsValid() || !this.IsValid() || !cc.IsMonster()) return;
 
         //NOTE : 이렇게되면, 보스가 쏘는 투사체는 여기 통과를 못함(만들떄 생각해보고 수정하기)
-        if(!cc.IsMonster())return;
+        //if(!cc.IsMonster())return;
 
         switch(skillType)
         {

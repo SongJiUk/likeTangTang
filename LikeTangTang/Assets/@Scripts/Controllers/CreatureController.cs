@@ -4,7 +4,7 @@ using Data;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CreatureController : BaseController
+public class CreatureController : BaseController, ITickable
 {
 
     #region Info
@@ -27,6 +27,8 @@ public class CreatureController : BaseController
     public virtual float DamageReduction {get; set;}
     public virtual float SpeedRate {get; set;} = 1;
     public virtual float Speed {get ;set;}
+    protected bool isDead;
+    protected float damageAnimEndTime = -1f;
     #endregion
     public SkillComponent Skills {get; protected set;}
     public override bool Init()
@@ -66,23 +68,19 @@ public class CreatureController : BaseController
             _skill.TotalDamage += _damage;
 
         Hp -= _damage;
+        
         //Manager.ObjectM.ShowFont(transform.position,_damage, 0, transform, isCritical);
         
-        if (this.IsValid()) 
-            StartCoroutine(StartDamageAnim());
-;    }
-    IEnumerator StartDamageAnim()
-    {
-        if(!isStartDamageAnim)
-        {
-            //데미지 피격
-            isStartDamageAnim = true;
-            yield return new WaitForSeconds(0.1f);
+        if(this.IsValid()) damageAnimEndTime = Time.time + 0.1f;
+    }
 
-            if(Hp <= 0)
-            {
-                Hp = 0;
-                transform.localScale = Vector3.one;
+    public virtual void Tick(float _deltaTime)
+    {
+        if(!isDead && Time.time >= damageAnimEndTime && Hp <=0)
+        {
+            Hp = 0;
+            isDead = true;
+            transform.localScale = Vector3.one;
 
                 switch(objType)
                 {
@@ -96,10 +94,24 @@ public class CreatureController : BaseController
                         OnDead();
                         break;
                 }
-            }
-            isStartDamageAnim = false;
         }
     }
+    // IEnumerator StartDamageAnim()
+    // {
+    //     if(!isStartDamageAnim)
+    //     {
+    //         //데미지 피격
+    //         isStartDamageAnim = true;
+    //         yield return new WaitForSeconds(0.1f);
+
+    //         if(Hp <= 0)
+    //         {
+    //             Hp = 0;
+                
+    //         }
+    //         isStartDamageAnim = false;
+    //     }
+    // }
     public virtual void InitStat()
     {
         var waveRate = Manager.GameM.CurrentWaveData.HpIncreaseRate;
