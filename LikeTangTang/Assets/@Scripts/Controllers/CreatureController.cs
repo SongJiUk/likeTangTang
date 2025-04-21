@@ -49,7 +49,13 @@ public class CreatureController : BaseController
         PlayerController player = _attacker as PlayerController;
         if(player != null)
         {
-            if(Random.value <= player.CriticalRate)
+            bool isSpectralSlashEvolution = _skill.Skilltype == Define.SkillType.SpectralSlash && _skill.SkillLevel == 6;
+            if (isSpectralSlashEvolution)
+            {
+                _damage = _damage * player.CriticalDamage;
+                isCritical = true;
+            }
+            else if(Random.value <= player.CriticalRate)
             {
                 _damage = _damage * player.CriticalDamage;
                 isCritical = true;

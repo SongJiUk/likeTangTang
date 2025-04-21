@@ -36,8 +36,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2001,
@@ -75,8 +74,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2002,
@@ -114,8 +112,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2003,
@@ -153,8 +150,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2004,
@@ -192,8 +188,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2100,
@@ -231,8 +226,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2010,
@@ -270,8 +264,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2011,
@@ -309,8 +302,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2012,
@@ -348,8 +340,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2013,
@@ -387,8 +378,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2014,
@@ -426,8 +416,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2110,
@@ -465,8 +454,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2020,
@@ -504,8 +492,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2021,
@@ -543,8 +530,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2022,
@@ -582,8 +568,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2023,
@@ -621,8 +606,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2024,
@@ -660,8 +644,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2120,
@@ -699,8 +682,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2030,
@@ -738,8 +720,7 @@
       "EffectRange": 2.5,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2031,
@@ -777,8 +758,7 @@
       "EffectRange": 2.7,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2032,
@@ -816,8 +796,7 @@
       "EffectRange": 3.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2033,
@@ -855,8 +834,7 @@
       "EffectRange": 3.2,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2034,
@@ -894,8 +872,7 @@
       "EffectRange": 3.5,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2130,
@@ -933,8 +910,7 @@
       "EffectRange": 4.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2040,
@@ -972,8 +948,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2041,
@@ -1011,8 +986,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2042,
@@ -1050,8 +1024,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2043,
@@ -1089,8 +1062,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2044,
@@ -1128,8 +1100,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2140,
@@ -1167,8 +1138,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2050,
@@ -1183,7 +1153,7 @@
       "Duration": 3.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
-      "AttackInterval": 0.0,
+      "AttackInterval": 1.5,
       "NumBounce": 0,
       "BounceSpeed": 0.0,
       "NumPenerations": 0,
@@ -1206,8 +1176,7 @@
       "EffectRange": 2.5,
       "EffectScaleMultiplier": 0.7,
       "SlowRatio": 0.0,
-      "PullForce": 0.4,
-      "EffectattackInterval": 1.5
+      "PullForce": 1.2
     },
     {
       "DataID": 2051,
@@ -1222,7 +1191,7 @@
       "Duration": 3.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
-      "AttackInterval": 0.0,
+      "AttackInterval": 1.3,
       "NumBounce": 0,
       "BounceSpeed": 0.0,
       "NumPenerations": 0,
@@ -1245,8 +1214,7 @@
       "EffectRange": 2.8,
       "EffectScaleMultiplier": 1.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.6,
-      "EffectattackInterval": 1.3
+      "PullForce": 1.3
     },
     {
       "DataID": 2052,
@@ -1261,7 +1229,7 @@
       "Duration": 3.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
-      "AttackInterval": 0.0,
+      "AttackInterval": 1.1,
       "NumBounce": 0,
       "BounceSpeed": 0.0,
       "NumPenerations": 0,
@@ -1284,8 +1252,7 @@
       "EffectRange": 3.1,
       "EffectScaleMultiplier": 1.1,
       "SlowRatio": 0.0,
-      "PullForce": 0.8,
-      "EffectattackInterval": 1.1
+      "PullForce": 1.4
     },
     {
       "DataID": 2053,
@@ -1300,7 +1267,7 @@
       "Duration": 3.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
-      "AttackInterval": 0.0,
+      "AttackInterval": 1.0,
       "NumBounce": 0,
       "BounceSpeed": 0.0,
       "NumPenerations": 0,
@@ -1323,8 +1290,7 @@
       "EffectRange": 3.4,
       "EffectScaleMultiplier": 1.4,
       "SlowRatio": 0.0,
-      "PullForce": 1.0,
-      "EffectattackInterval": 1.0
+      "PullForce": 1.5
     },
     {
       "DataID": 2054,
@@ -1339,7 +1305,7 @@
       "Duration": 3.0,
       "ProjectileCount": 2,
       "RoatateSpeed": 0.0,
-      "AttackInterval": 0.0,
+      "AttackInterval": 0.4,
       "NumBounce": 0,
       "BounceSpeed": 0.0,
       "NumPenerations": 0,
@@ -1362,8 +1328,7 @@
       "EffectRange": 3.7,
       "EffectScaleMultiplier": 1.7,
       "SlowRatio": 0.0,
-      "PullForce": 1.2,
-      "EffectattackInterval": 0.4
+      "PullForce": 1.7
     },
     {
       "DataID": 2150,
@@ -1378,7 +1343,7 @@
       "Duration": 3.0,
       "ProjectileCount": 2,
       "RoatateSpeed": 0.0,
-      "AttackInterval": 0.0,
+      "AttackInterval": 0.2,
       "NumBounce": 0,
       "BounceSpeed": 0.0,
       "NumPenerations": 0,
@@ -1401,8 +1366,7 @@
       "EffectRange": 5.0,
       "EffectScaleMultiplier": 2.0,
       "SlowRatio": 0.0,
-      "PullForce": 1.4,
-      "EffectattackInterval": 0.2
+      "PullForce": 2.0
     },
     {
       "DataID": 2060,
@@ -1417,7 +1381,7 @@
       "Duration": 2.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
-      "AttackInterval": 0.0,
+      "AttackInterval": 1.0,
       "NumBounce": 0,
       "BounceSpeed": 0.0,
       "NumPenerations": 0,
@@ -1440,8 +1404,7 @@
       "EffectRange": 2.5,
       "EffectScaleMultiplier": 1.0,
       "SlowRatio": 0.9,
-      "PullForce": 0.0,
-      "EffectattackInterval": 1.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2061,
@@ -1456,7 +1419,7 @@
       "Duration": 3.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
-      "AttackInterval": 0.0,
+      "AttackInterval": 1.0,
       "NumBounce": 0,
       "BounceSpeed": 0.0,
       "NumPenerations": 0,
@@ -1479,8 +1442,7 @@
       "EffectRange": 2.8,
       "EffectScaleMultiplier": 1.2,
       "SlowRatio": 0.7,
-      "PullForce": 0.0,
-      "EffectattackInterval": 1.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2062,
@@ -1495,7 +1457,7 @@
       "Duration": 3.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
-      "AttackInterval": 0.0,
+      "AttackInterval": 1.0,
       "NumBounce": 0,
       "BounceSpeed": 0.0,
       "NumPenerations": 0,
@@ -1518,8 +1480,7 @@
       "EffectRange": 3.1,
       "EffectScaleMultiplier": 1.2,
       "SlowRatio": 0.6,
-      "PullForce": 0.0,
-      "EffectattackInterval": 1.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2063,
@@ -1534,7 +1495,7 @@
       "Duration": 4.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
-      "AttackInterval": 0.0,
+      "AttackInterval": 1.0,
       "NumBounce": 0,
       "BounceSpeed": 0.0,
       "NumPenerations": 0,
@@ -1557,8 +1518,7 @@
       "EffectRange": 3.4,
       "EffectScaleMultiplier": 1.4,
       "SlowRatio": 0.4,
-      "PullForce": 0.0,
-      "EffectattackInterval": 1.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2064,
@@ -1573,7 +1533,7 @@
       "Duration": 4.0,
       "ProjectileCount": 1,
       "RoatateSpeed": 0.0,
-      "AttackInterval": 0.0,
+      "AttackInterval": 1.0,
       "NumBounce": 0,
       "BounceSpeed": 0.0,
       "NumPenerations": 0,
@@ -1596,8 +1556,7 @@
       "EffectRange": 3.7,
       "EffectScaleMultiplier": 1.5,
       "SlowRatio": 0.3,
-      "PullForce": 0.0,
-      "EffectattackInterval": 1.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2160,
@@ -1612,7 +1571,7 @@
       "Duration": 5.0,
       "ProjectileCount": 2,
       "RoatateSpeed": 0.0,
-      "AttackInterval": 0.0,
+      "AttackInterval": 1.0,
       "NumBounce": 0,
       "BounceSpeed": 0.0,
       "NumPenerations": 0,
@@ -1635,8 +1594,7 @@
       "EffectRange": 5.0,
       "EffectScaleMultiplier": 2.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 1.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2070,
@@ -1674,8 +1632,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2071,
@@ -1713,8 +1670,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2072,
@@ -1752,8 +1708,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2073,
@@ -1791,8 +1746,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2074,
@@ -1830,8 +1784,7 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
     },
     {
       "DataID": 2170,
@@ -1869,8 +1822,463 @@
       "EffectRange": 0.0,
       "EffectScaleMultiplier": 0.0,
       "SlowRatio": 0.0,
-      "PullForce": 0.0,
-      "EffectattackInterval": 0.0
+      "PullForce": 0.0
+    },
+    {
+      "DataID": 2080,
+      "SkillName": "일렉트로닉 필드",
+      "SkillNameE": "ElectronicField",
+      "SkillDescription": "바닥에 작은 전기장을 생성해 범위 내 적에게 일정 간격으로 약한 전기 피해를 입힙니다.",
+      "SkillIcon": "ElectronicField",
+      "DamageMultiplier": 0.41,
+      "ScaleMultiplier": 1.0,
+      "CoolTime": 0.0,
+      "Range": 0.0,
+      "Duration": 0.0,
+      "ProjectileCount": 0,
+      "RoatateSpeed": 0.0,
+      "AttackInterval": 1.0,
+      "NumBounce": 0,
+      "BounceSpeed": 0.0,
+      "NumPenerations": 0,
+      "Speed": 0.0,
+      "NumberOfAttacks": 0,
+      "CastingSoundLabel": "ElectronicField_Start",
+      "HitSoundLabel": "ElectronicField_Hit",
+      "CastingEffectID": "0",
+      "HitEffectID": "0",
+      "CastingEffect": 20080,
+      "HitEffect": 20081,
+      "SkillTypeStr": "ElectronicField",
+      "Type": 0,
+      "CanEvolve": false,
+      "RequiredItemID": 0,
+      "EvolvedSkillName": null,
+      "PrefabName": "ElectronicField",
+      "BoundDist": 0,
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
+    },
+    {
+      "DataID": 2081,
+      "SkillName": "일렉트로닉 필드",
+      "SkillNameE": "ElectronicField",
+      "SkillDescription": "범위가 증가하고 전기 데미지가 소폭 상승합니다.",
+      "SkillIcon": "ElectronicField",
+      "DamageMultiplier": 0.39,
+      "ScaleMultiplier": 1.3,
+      "CoolTime": 0.0,
+      "Range": 0.0,
+      "Duration": 0.0,
+      "ProjectileCount": 0,
+      "RoatateSpeed": 0.0,
+      "AttackInterval": 0.9,
+      "NumBounce": 0,
+      "BounceSpeed": 0.0,
+      "NumPenerations": 0,
+      "Speed": 0.0,
+      "NumberOfAttacks": 0,
+      "CastingSoundLabel": "ElectronicField_Start",
+      "HitSoundLabel": "ElectronicField_Hit",
+      "CastingEffectID": "0",
+      "HitEffectID": "0",
+      "CastingEffect": 20080,
+      "HitEffect": 20081,
+      "SkillTypeStr": "ElectronicField",
+      "Type": 0,
+      "CanEvolve": false,
+      "RequiredItemID": 0,
+      "EvolvedSkillName": null,
+      "PrefabName": "ElectronicField",
+      "BoundDist": 0,
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
+    },
+    {
+      "DataID": 2082,
+      "SkillName": "일렉트로닉 필드",
+      "SkillNameE": "ElectronicField",
+      "SkillDescription": "범위가 증가하고 전기 데미지가 소폭 상승합니다.",
+      "SkillIcon": "ElectronicField",
+      "DamageMultiplier": 0.46,
+      "ScaleMultiplier": 1.6,
+      "CoolTime": 0.0,
+      "Range": 0.0,
+      "Duration": 0.0,
+      "ProjectileCount": 0,
+      "RoatateSpeed": 0.0,
+      "AttackInterval": 0.8,
+      "NumBounce": 0,
+      "BounceSpeed": 0.0,
+      "NumPenerations": 0,
+      "Speed": 0.0,
+      "NumberOfAttacks": 0,
+      "CastingSoundLabel": "ElectronicField_Start",
+      "HitSoundLabel": "ElectronicField_Hit",
+      "CastingEffectID": "0",
+      "HitEffectID": "0",
+      "CastingEffect": 20080,
+      "HitEffect": 20081,
+      "SkillTypeStr": "ElectronicField",
+      "Type": 0,
+      "CanEvolve": false,
+      "RequiredItemID": 0,
+      "EvolvedSkillName": null,
+      "PrefabName": "ElectronicField",
+      "BoundDist": 0,
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
+    },
+    {
+      "DataID": 2083,
+      "SkillName": "일렉트로닉 필드",
+      "SkillNameE": "ElectronicField",
+      "SkillDescription": "범위가 증가하고 전기 데미지가 소폭 상승합니다.",
+      "SkillIcon": "ElectronicField",
+      "DamageMultiplier": 0.55,
+      "ScaleMultiplier": 2.0,
+      "CoolTime": 0.0,
+      "Range": 0.0,
+      "Duration": 0.0,
+      "ProjectileCount": 0,
+      "RoatateSpeed": 0.0,
+      "AttackInterval": 0.7,
+      "NumBounce": 0,
+      "BounceSpeed": 0.0,
+      "NumPenerations": 0,
+      "Speed": 0.0,
+      "NumberOfAttacks": 0,
+      "CastingSoundLabel": "ElectronicField_Start",
+      "HitSoundLabel": "ElectronicField_Hit",
+      "CastingEffectID": "0",
+      "HitEffectID": "0",
+      "CastingEffect": 20080,
+      "HitEffect": 20081,
+      "SkillTypeStr": "ElectronicField",
+      "Type": 0,
+      "CanEvolve": false,
+      "RequiredItemID": 0,
+      "EvolvedSkillName": null,
+      "PrefabName": "ElectronicField",
+      "BoundDist": 0,
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
+    },
+    {
+      "DataID": 2084,
+      "SkillName": "일렉트로닉 필드",
+      "SkillNameE": "ElectronicField",
+      "SkillDescription": "범위가 증가하고 전기 데미지가 소폭 상승합니다. 진화가 가능합니다.",
+      "SkillIcon": "ElectronicField",
+      "DamageMultiplier": 0.67,
+      "ScaleMultiplier": 2.3,
+      "CoolTime": 0.0,
+      "Range": 0.0,
+      "Duration": 0.0,
+      "ProjectileCount": 0,
+      "RoatateSpeed": 0.0,
+      "AttackInterval": 0.6,
+      "NumBounce": 0,
+      "BounceSpeed": 0.0,
+      "NumPenerations": 0,
+      "Speed": 0.0,
+      "NumberOfAttacks": 0,
+      "CastingSoundLabel": "ElectronicField_Start",
+      "HitSoundLabel": "ElectronicField_Hit",
+      "CastingEffectID": "0",
+      "HitEffectID": "0",
+      "CastingEffect": 20080,
+      "HitEffect": 20081,
+      "SkillTypeStr": "ElectronicField",
+      "Type": 0,
+      "CanEvolve": true,
+      "RequiredItemID": 0,
+      "EvolvedSkillName": null,
+      "PrefabName": "ElectronicField",
+      "BoundDist": 0,
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
+    },
+    {
+      "DataID": 2180,
+      "SkillName": "하이볼티지 필드",
+      "SkillNameE": "HighVoltageField",
+      "SkillDescription": "범위와 피해량이 모두 극대화됩니다.",
+      "SkillIcon": "ElectronicField",
+      "DamageMultiplier": 0.81,
+      "ScaleMultiplier": 2.7,
+      "CoolTime": 0.0,
+      "Range": 0.0,
+      "Duration": 0.0,
+      "ProjectileCount": 0,
+      "RoatateSpeed": 0.0,
+      "AttackInterval": 0.5,
+      "NumBounce": 0,
+      "BounceSpeed": 0.0,
+      "NumPenerations": 0,
+      "Speed": 0.0,
+      "NumberOfAttacks": 0,
+      "CastingSoundLabel": "ElectronicField_Start",
+      "HitSoundLabel": "ElectronicField_Hit",
+      "CastingEffectID": "0",
+      "HitEffectID": "0",
+      "CastingEffect": 20082,
+      "HitEffect": 20083,
+      "SkillTypeStr": "ElectronicField",
+      "Type": 0,
+      "CanEvolve": false,
+      "RequiredItemID": 0,
+      "EvolvedSkillName": "HighVoltageField",
+      "PrefabName": "ElectronicField",
+      "BoundDist": 0,
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
+    },
+    {
+      "DataID": 2090,
+      "SkillName": "스펙트럴 슬래쉬",
+      "SkillNameE": "SpectralSlash",
+      "SkillDescription": "한 번 베며 기본 피해를 줍니다. 빠르고 쿨타임이 깁니다.",
+      "SkillIcon": "SpectralSlash",
+      "DamageMultiplier": 0.75,
+      "ScaleMultiplier": 1.0,
+      "CoolTime": 2.7,
+      "Range": 0.0,
+      "Duration": 1.0,
+      "ProjectileCount": 1,
+      "RoatateSpeed": 0.0,
+      "AttackInterval": 0.1,
+      "NumBounce": 0,
+      "BounceSpeed": 0.0,
+      "NumPenerations": 0,
+      "Speed": 0.0,
+      "NumberOfAttacks": 0,
+      "CastingSoundLabel": "SpectralSlash_Start",
+      "HitSoundLabel": "SpectralSlash_Hit",
+      "CastingEffectID": "0",
+      "HitEffectID": "0",
+      "CastingEffect": 20090,
+      "HitEffect": 20091,
+      "SkillTypeStr": "SpectralSlash",
+      "Type": 0,
+      "CanEvolve": false,
+      "RequiredItemID": 0,
+      "EvolvedSkillName": null,
+      "PrefabName": "SpectralSlash",
+      "BoundDist": 0,
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
+    },
+    {
+      "DataID": 2091,
+      "SkillName": "스펙트럴 슬래쉬",
+      "SkillNameE": "SpectralSlash",
+      "SkillDescription": "2연속 베기로 강화되어 공격력이 증가합니다.",
+      "SkillIcon": "SpectralSlash",
+      "DamageMultiplier": 0.9,
+      "ScaleMultiplier": 1.0,
+      "CoolTime": 2.4,
+      "Range": 0.0,
+      "Duration": 1.0,
+      "ProjectileCount": 2,
+      "RoatateSpeed": 0.0,
+      "AttackInterval": 0.1,
+      "NumBounce": 0,
+      "BounceSpeed": 0.0,
+      "NumPenerations": 0,
+      "Speed": 0.0,
+      "NumberOfAttacks": 0,
+      "CastingSoundLabel": "SpectralSlash_Start",
+      "HitSoundLabel": "SpectralSlash_Hit",
+      "CastingEffectID": "0",
+      "HitEffectID": "0",
+      "CastingEffect": 20090,
+      "HitEffect": 20091,
+      "SkillTypeStr": "SpectralSlash",
+      "Type": 0,
+      "CanEvolve": false,
+      "RequiredItemID": 0,
+      "EvolvedSkillName": null,
+      "PrefabName": "SpectralSlash",
+      "BoundDist": 0,
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
+    },
+    {
+      "DataID": 2092,
+      "SkillName": "스펙트럴 슬래쉬",
+      "SkillNameE": "SpectralSlash",
+      "SkillDescription": "3연속 베기로 강화되어 공격력이 증가합니다.",
+      "SkillIcon": "SpectralSlash",
+      "DamageMultiplier": 1.0,
+      "ScaleMultiplier": 1.0,
+      "CoolTime": 3.2,
+      "Range": 0.0,
+      "Duration": 1.0,
+      "ProjectileCount": 3,
+      "RoatateSpeed": 0.0,
+      "AttackInterval": 0.1,
+      "NumBounce": 0,
+      "BounceSpeed": 0.0,
+      "NumPenerations": 0,
+      "Speed": 0.0,
+      "NumberOfAttacks": 0,
+      "CastingSoundLabel": "SpectralSlash_Start",
+      "HitSoundLabel": "SpectralSlash_Hit",
+      "CastingEffectID": "0",
+      "HitEffectID": "0",
+      "CastingEffect": 20090,
+      "HitEffect": 20091,
+      "SkillTypeStr": "SpectralSlash",
+      "Type": 0,
+      "CanEvolve": false,
+      "RequiredItemID": 0,
+      "EvolvedSkillName": null,
+      "PrefabName": "SpectralSlash",
+      "BoundDist": 0,
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
+    },
+    {
+      "DataID": 2093,
+      "SkillName": "스펙트럴 슬래쉬",
+      "SkillNameE": "SpectralSlash",
+      "SkillDescription": "공격 범위가 증가합니다.",
+      "SkillIcon": "SpectralSlash",
+      "DamageMultiplier": 1.1,
+      "ScaleMultiplier": 1.3,
+      "CoolTime": 1.9,
+      "Range": 0.0,
+      "Duration": 1.0,
+      "ProjectileCount": 3,
+      "RoatateSpeed": 0.0,
+      "AttackInterval": 0.1,
+      "NumBounce": 0,
+      "BounceSpeed": 0.0,
+      "NumPenerations": 0,
+      "Speed": 0.0,
+      "NumberOfAttacks": 0,
+      "CastingSoundLabel": "SpectralSlash_Start",
+      "HitSoundLabel": "SpectralSlash_Hit",
+      "CastingEffectID": "0",
+      "HitEffectID": "0",
+      "CastingEffect": 20090,
+      "HitEffect": 20091,
+      "SkillTypeStr": "SpectralSlash",
+      "Type": 0,
+      "CanEvolve": false,
+      "RequiredItemID": 0,
+      "EvolvedSkillName": null,
+      "PrefabName": "SpectralSlash",
+      "BoundDist": 0,
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
+    },
+    {
+      "DataID": 2094,
+      "SkillName": "스펙트럴 슬래쉬",
+      "SkillNameE": "SpectralSlash",
+      "SkillDescription": "4연속 베기로 강화되어 공격력이 증가합니다.",
+      "SkillIcon": "SpectralSlash",
+      "DamageMultiplier": 1.2,
+      "ScaleMultiplier": 1.3,
+      "CoolTime": 1.7,
+      "Range": 0.0,
+      "Duration": 1.0,
+      "ProjectileCount": 4,
+      "RoatateSpeed": 0.0,
+      "AttackInterval": 0.1,
+      "NumBounce": 0,
+      "BounceSpeed": 0.0,
+      "NumPenerations": 0,
+      "Speed": 0.0,
+      "NumberOfAttacks": 0,
+      "CastingSoundLabel": "SpectralSlash_Start",
+      "HitSoundLabel": "SpectralSlash_Hit",
+      "CastingEffectID": "0",
+      "HitEffectID": "0",
+      "CastingEffect": 20090,
+      "HitEffect": 20091,
+      "SkillTypeStr": "SpectralSlash",
+      "Type": 0,
+      "CanEvolve": true,
+      "RequiredItemID": 0,
+      "EvolvedSkillName": null,
+      "PrefabName": "SpectralSlash",
+      "BoundDist": 0,
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
+    },
+    {
+      "DataID": 2190,
+      "SkillName": "스펙트럴 팬텀",
+      "SkillNameE": "Spectral Phantom",
+      "SkillDescription": "모든 공격이 크리티컬공격이됩니다.",
+      "SkillIcon": "SpectralSlash",
+      "DamageMultiplier": 1.4,
+      "ScaleMultiplier": 1.4,
+      "CoolTime": 1.5,
+      "Range": 0.0,
+      "Duration": 1.0,
+      "ProjectileCount": 4,
+      "RoatateSpeed": 0.0,
+      "AttackInterval": 0.1,
+      "NumBounce": 0,
+      "BounceSpeed": 0.0,
+      "NumPenerations": 0,
+      "Speed": 0.0,
+      "NumberOfAttacks": 0,
+      "CastingSoundLabel": "SpectralSlash_Start",
+      "HitSoundLabel": "SpectralSlash_Hit",
+      "CastingEffectID": "0",
+      "HitEffectID": "0",
+      "CastingEffect": 20092,
+      "HitEffect": 20093,
+      "SkillTypeStr": "SpectralSlash",
+      "Type": 0,
+      "CanEvolve": false,
+      "RequiredItemID": 0,
+      "EvolvedSkillName": "Spectral Phantom",
+      "PrefabName": "SpectralSlash",
+      "BoundDist": 0,
+      "ExplosionName": null,
+      "EffectRange": 0.0,
+      "EffectScaleMultiplier": 0.0,
+      "SlowRatio": 0.0,
+      "PullForce": 0.0
     }
   ]
 }

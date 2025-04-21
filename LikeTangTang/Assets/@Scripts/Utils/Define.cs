@@ -38,7 +38,7 @@ public static class Define
         TimeStopBomb = 2060, // 주변 몬스터 이동속도 50% 감소하는 필드 생성
         OrbitalBlades = 2070,// 캐릭터 주변을 회전한다.
         EletronicField = 2080,
-        MeleeAttack = 2090
+        SpectralSlash = 2090
 
     }
     public enum SceneType
