@@ -191,6 +191,8 @@ namespace Data
         public float RoatateSpeed; //회전 속도
         public float AttackInterval; //공격간격
         public int NumBounce; //바운스 횟수
+        public float KnockBackPower;
+        public float KnockBackInterval;
         public float BounceSpeed; //바운스 스피드 
         public int NumPenerations; // 관통 횟수
         public float Speed;

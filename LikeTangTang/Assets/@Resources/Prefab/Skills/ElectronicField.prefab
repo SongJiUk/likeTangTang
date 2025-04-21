@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3065793596165881382}
   - component: {fileID: 4704529584350634419}
   m_Layer: 8
-  m_Name: EletronicField
+  m_Name: ElectronicField
   m_TagString: MagicField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

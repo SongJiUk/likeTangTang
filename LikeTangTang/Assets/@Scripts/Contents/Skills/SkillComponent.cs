@@ -53,7 +53,7 @@ public class SkillComponent : MonoBehaviour
     public void AddSkill(Define.SkillType _type,  int _skillID = 0)
     {
         string name = _type.ToString();
-        if(_type == Define.SkillType.EnergyRing)
+        if(_type == Define.SkillType.EnergyRing || _type == Define.SkillType.ElectronicField)
         {
             GameObject go = Manager.ResourceM.Instantiate(name, gameObject.transform);
             if(go != null)

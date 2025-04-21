@@ -88,6 +88,8 @@ public class DataTransformer : EditorWindow
             skillData.RoatateSpeed = ConvertValue<float>(row[i++]);
             skillData.AttackInterval = ConvertValue<float>(row[i++]);
             skillData.NumBounce = ConvertValue<int>(row[i++]);
+            skillData.KnockBackPower = ConvertValue<float>(row[i++]);
+            skillData.KnockBackInterval = ConvertValue<float>(row[i++]);
             skillData.BounceSpeed = ConvertValue<float>(row[i++]);
             skillData.NumPenerations = ConvertValue<int>(row[i++]);
             skillData.Speed = ConvertValue<float>(row[i++]);

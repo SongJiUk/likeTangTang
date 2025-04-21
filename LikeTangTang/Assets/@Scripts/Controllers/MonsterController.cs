@@ -59,13 +59,34 @@ public class MonsterController : CreatureController
     public bool isInGravityZone => GravityTarget != null;
 
     Coroutine coStartSkillZone;
-#endregion
+    #endregion
 
     #region SKill
     #endregion
+    private bool isDead;
+    private PlayerController contactPlayer;
+    private bool isInContactWithPlayer;
+    private float knockBackEndTime;
+    private float knockBackCooldownEndTime;
+    private float nextDotDamageTime;
+    float originalSpeed;
+    bool isKnockBack; 
+    private SkillBase activeSkillInZone;
+    private CreatureController zoneOwner;
+    float skillZoneTickTime;
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     private void OnEnable()
     {
         if (DataID != 0) SetInfo(DataID);
+        isDead = false;
+        creatureState = CreatureState.Moving;
+        isKnockBack = false;
+        contactPlayer = null;
+        isInContactWithPlayer = false;
+        originalSpeed = Speed;
 
     }
     public override bool Init()
@@ -74,8 +95,7 @@ public class MonsterController : CreatureController
 
         string name = gameObject.name;
         objType = ObjectType.Monster;
-        animator = GetComponent<Animator>();
-        creatureState = CreatureState.Moving;
+        
         //DefualtVelocity = Rigid.velocity;
 
         return true;
@@ -84,14 +104,27 @@ public class MonsterController : CreatureController
     Vector3 moveDir;
     Vector2 DefualtVelocity;
     float pullForce = 0;
-    void FixedUpdate()
-    {
-        if(Manager.GameM.player.IsValid() == false) return;
-        if(isKnockBack) return;
 
-    
+    private void Update()
+    {
+        if (!Manager.GameM.player.IsValid() || isDead) return;
+        
+        if(isKnockBack)
+        {
+            if (Time.time >= knockBackEndTime)
+            {
+                Rigid.velocity = Vector2.zero;
+                isKnockBack = false;
+                creatureState = CreatureState.Moving;
+                knockBackCooldownEndTime = Time.time + KNOCKBACK_COOLTIME;
+            }
+            return;
+        }
+
+        if (Time.time < knockBackCooldownEndTime) return;
         Vector3 newPos;
-        if(isInGravityZone)
+
+        if (isInGravityZone)
         {
             moveDir = GravityTarget.transform.position - transform.position;
             newPos = transform.position + moveDir.normalized * Time.deltaTime * pullForce;
@@ -101,37 +134,42 @@ public class MonsterController : CreatureController
             moveDir = Manager.GameM.player.transform.position - transform.position;
             newPos = transform.position + moveDir.normalized * Time.deltaTime * Speed;
         }
-
-        Debug.Log(Speed);
-
         Rigid.MovePosition(newPos);
         CreatureSprite.flipX = moveDir.x < 0;
+
+        if (isInContactWithPlayer && Time.time >= nextDotDamageTime && contactPlayer != null)
+        {
+            contactPlayer.OnDamaged(this, null, Attack);
+            nextDotDamageTime = Time.time + 0.1f; // dot interval
+        }
     }
     
     public virtual void OnCollisionEnter2D(Collision2D collision)
     {
-        PlayerController target =  collision.gameObject.GetComponent<PlayerController>();
+        PlayerController player =  collision.gameObject.GetComponent<PlayerController>();
 
-        if (target == null) return;
-        if(target.IsValid() == false) return;
+        if (player == null) return;
+        if(player.IsValid() == false) return;
 
+        contactPlayer = player;
+        isInContactWithPlayer = true;
+        nextDotDamageTime = Time.time;
 
-        if (coDotDamage != null)
-            StopCoroutine(coDotDamage);
-        coDotDamage = StartCoroutine(CoStartDotDamage(target));
 
 
     }
 
     public virtual void OnCollisionExit2D(Collision2D collision)
     {
-        PlayerController target = collision.gameObject.GetComponent<PlayerController>();
-        if (target == null) return;
-        if(target.IsValid() == false) return;
-        
-        if (coDotDamage != null ) 
-            StopCoroutine(coDotDamage);
-        coDotDamage = null;
+        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+        if (player == null) return;
+        if(player.IsValid() == false) return;
+         
+        if(contactPlayer == player)
+        {
+            isInContactWithPlayer = false;
+            contactPlayer = null;
+        }
     }
 
     
@@ -147,11 +185,15 @@ public class MonsterController : CreatureController
     public override void OnDamaged(BaseController _attacker, SkillBase _skill = null, float _damage = 0)
     {
         if (_skill != null)
+        {
             Manager.SoundM.Play(Sound.Effect, _skill.SkillDatas.HitEffectID);
-            
-
-        float totalDamage = Manager.GameM.player.Attack * _skill.SkillDatas.DamageMultiplier;
-        base.OnDamaged(_attacker, _skill, totalDamage);
+            float totalDamage = Manager.GameM.player.Attack * _skill.SkillDatas.DamageMultiplier;
+            base.OnDamaged(_attacker, _skill, totalDamage);
+        }
+        else
+        {
+            base.OnDamaged(_attacker, _skill, _damage);
+        }
 
         if(objType == ObjectType.Monster)
         {
@@ -163,8 +205,9 @@ public class MonsterController : CreatureController
     public override void OnDead()
     {
         base.OnDead();
-
+        isDead = true;
         Manager.GameM.player.KillCount++;
+
 
         if(UnityEngine.Random.value >= Manager.GameM.CurrentWaveData.NonDropRate)
         {
@@ -172,59 +215,43 @@ public class MonsterController : CreatureController
             gem.SetInfo(Manager.GameM.GetGemInfo());
         }
 
-        Sequence sq = DOTween.Sequence();
-        sq.Append(transform.DOScale(0f, 0.2f).SetEase(Ease.InOutBounce)).OnComplete(() =>
-        {
-            StopAllCoroutines();
-
-
-            Manager.ObjectM.DeSpawn(this);
-        });
-
-
-        if (coDotDamage != null) StopCoroutine(coDotDamage);
-
+         DOTween.Sequence().
+            Append(transform.DOScale(0f, 0.2f).SetEase(Ease.InOutBounce))
+            .OnComplete(() =>
+            {
+                Manager.ObjectM.DeSpawn(this);
+            });
     }
     
-    bool isKnockBack = false;
 
     Coroutine coKnockBackCoroutine;
     public void KnockBack(SkillBase _skill = null)
     {
-        if(_skill != null)
-        {
-            if(_skill.Skilltype == SkillType.TimeStopBomb || _skill.Skilltype == SkillType.GravityBomb)
-            {
-                return;
-            }
-        }
+        if (_skill != null || _skill.Skilltype == SkillType.TimeStopBomb || _skill.Skilltype == SkillType.GravityBomb)
+            return;
 
         if (isKnockBack) return;
-        if (coKnockBackCoroutine != null)
-        {
-            StopCoroutine(coKnockBackCoroutine);
-            coKnockBackCoroutine = null;
-        }
-
         isKnockBack = true;
         CreatureState = CreatureState.OnDamaged;
+
+        float power = _skill.SkillDatas.KnockBackPower;
         Vector2 dir = -moveDir.normalized;
-        Rigid.AddForce(dir * KNOCKBACK_POWER, ForceMode2D.Impulse);
+        Rigid.AddForce(dir * KNOCKBACK_POWER * power, ForceMode2D.Impulse);
 
-        coKnockBackCoroutine = StartCoroutine(CoKnockBackCoolTime());
+        knockBackEndTime = Time.time + KNOCKBACK_TIME;
     }
 
-    IEnumerator CoKnockBackCoolTime()
-    {
-        yield return new WaitForSeconds(KNOCKBACK_TIME);
-        if (Rigid != null)
-            Rigid.velocity = Vector2.zero;
-        isKnockBack = false;
-        CreatureState = CreatureState.Moving;
-        yield return new WaitForSeconds(KNOCKBACK_COOLTIME);
-        coKnockBackCoroutine = null;
+    //IEnumerator CoKnockBackCoolTime(SkillBase _skill = null)
+    //{
+    //    yield return new WaitForSeconds(KNOCKBACK_TIME);
+    //    if (Rigid != null)
+    //        Rigid.velocity = Vector2.zero;
+    //    isKnockBack = false;
+    //    CreatureState = CreatureState.Moving;
+    //    yield return new WaitForSeconds(_skill.SkillDatas.KnockBackInterval);
+    //    coKnockBackCoroutine = null;
         
-    }
+    //}
 
 #region  Set SkillZone Info
     
@@ -243,10 +270,24 @@ public class MonsterController : CreatureController
     
     public void StartSKillZone(CreatureController _owner, SkillBase _skill, SkillZone _zone = null)
     {
-        if(_zone != null)
-            coStartSkillZone = StartCoroutine(CoStartSkillZone(_owner, _skill, _zone));
-        else
-            coStartSkillZone = StartCoroutine(CoStartSkillZone(_owner, _skill));
+
+        zoneOwner = _owner;
+        activeSkillInZone = _skill;
+
+        switch(_skill.Skilltype)
+        {
+            case SkillType.TimeStopBomb:
+                originalSpeed = Speed;
+                Speed *= _skill.SkillDatas.SlowRatio;
+                break;
+
+            case SkillType.GravityBomb:
+                pullForce = _skill.SkillDatas.PullForce;
+                SetGravityTarget(_zone);
+                break;
+                
+        }
+        skillZoneTickTime = Time.time + _skill.SkillDatas.AttackInterval;
     }
 
     public void StopSkillZone(SkillBase _skill)
@@ -261,12 +302,8 @@ public class MonsterController : CreatureController
                 ClearGravityTarget(GravityTarget);
                 break;
         }
-
-        if(coStartSkillZone != null) 
-        {
-            StopCoroutine(coStartSkillZone);
-            coStartSkillZone = null;
-        }
+        activeSkillInZone = null;
+        zoneOwner = null;
 
         
     }
@@ -283,10 +320,6 @@ public class MonsterController : CreatureController
             case SkillType.GravityBomb :
                 pullForce = _skill.SkillDatas.PullForce;
                 SetGravityTarget(_zone);
-            break;
-
-            case SkillType.EletronicField :
-                
             break;
         }
 

@@ -16,7 +16,52 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 9e6765ee94839a448886698ed1cf218e
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 54ca42f653b65a34c9a5fc40bb9d2c78
+    m_Address: SuicideDrone
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: d51d297148b2ce84ab2b7a9be55de48e
+    m_Address: TimeStopBombZone
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 95882028e0c868b4f8a0528a02f24fa6
+    m_Address: TimeStopBomb
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 37653322751364dfbba9dd024dded5d6
+    m_Address: GravityBomb
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: e2f2966bd49df4de181c8d05ae886ee7
+    m_Address: GravityBombZone
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: aa762a0eb272442bd89f41d0dd10f2f9
+    m_Address: ElectronicField_Evolutoin
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: be65551eecc7ea64589c7932ed258169
+    m_Address: SpectralSlash
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: fb3a1b5a6208147c18045e94c97e7768
+    m_Address: ElectronicField
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 7ebb60f20785f44bc8103853935620dc
+    m_Address: ElectronicField_Normal
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

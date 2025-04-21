@@ -37,7 +37,7 @@ public static class Define
         GravityBomb = 2050, // 	중력 자기장 폭탄(몬스터들을 끌어들이는 폭탄)
         TimeStopBomb = 2060, // 주변 몬스터 이동속도 50% 감소하는 필드 생성
         OrbitalBlades = 2070,// 캐릭터 주변을 회전한다.
-        EletronicField = 2080,
+        ElectronicField = 2080,
         SpectralSlash = 2090
 
     }

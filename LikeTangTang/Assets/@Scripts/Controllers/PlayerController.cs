@@ -193,11 +193,7 @@ public class PlayerController : CreatureController
 
 
         // NOTE : Temp Code
-        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.GravityBomb);
-        Skills.LevelUpSkill(skillType);
-
-
-        skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.TimeStopBomb);
+        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.EnergyRing);
         Skills.LevelUpSkill(skillType);
 
     }
