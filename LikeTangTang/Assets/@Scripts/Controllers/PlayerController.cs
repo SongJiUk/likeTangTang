@@ -194,7 +194,7 @@ public class PlayerController : CreatureController, ITickable
 
 
         // NOTE : Temp Code
-        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.SuicideDrone);
+        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.SpectralSlash);
         Skills.LevelUpSkill(skillType);
 
     }

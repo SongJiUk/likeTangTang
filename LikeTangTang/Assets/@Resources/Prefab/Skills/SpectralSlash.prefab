@@ -24547,8 +24547,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 243b604ee62d5274ea001cc8d9c4b7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swingParticle: []
-  SkillLevel: 1
+  prefabName: 
+  duration: 0
+  coolTime: 0
+  projectileCount: 0
+  boundDist: 0
+  numBounce: 0
+  bounceSpeed: 0
+  speed: 0
+  numPenerations: 0
+  range: 0
+  effectRange: 0
+  attackInterval: 0
+  swingParticle:
+  - {fileID: 1681808170223585276}
+  - {fileID: 6985662887103722227}
+  - {fileID: 2805518476969034538}
+  - {fileID: 7808535720102256075}
 --- !u!1 &6478390955051475138
 GameObject:
   m_ObjectHideFlags: 0
