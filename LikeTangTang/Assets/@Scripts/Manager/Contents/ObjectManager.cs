@@ -5,6 +5,7 @@ using System.Linq;
 using Data;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 
 public class ObjectManager
@@ -214,7 +215,14 @@ public class ObjectManager
 
     public void LoadMap(string _name)
     {
-        Manager.ResourceM.Instantiate(_name);
+        var obj = Manager.ResourceM.Instantiate(_name);
+
+        //NOTE : 이거 해주는 이유는 타일맵은 중심잡기가 생각보다힘듬, 그래서 찾아서 값을 더해주는것
+        Tilemap baseTileMap = obj.GetComponentInChildren<Tilemap>();
+        Vector3Int centercell = new Vector3Int((int)baseTileMap.cellBounds.center.x, (int)baseTileMap.cellBounds.center.y ,(int)baseTileMap.cellBounds.center.z);
+        Vector3 centerWorldPos = baseTileMap.CellToWorld(centercell);
+        centerWorldPos.x *= -1;
+        obj.transform.position += centerWorldPos;
     }
 
     public void ShowFont(Vector2 _pos, float _damage, float _heal, Transform _parent, bool _isCritical = false)

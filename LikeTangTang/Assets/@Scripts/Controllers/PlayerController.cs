@@ -102,13 +102,11 @@ public class PlayerController : CreatureController, ITickable
             int level = Level;
 
             //TODO : 여기서 경험치 획득 및 레벨업
-            while(true)
+            while(Manager.DataM.LevelDic.TryGetValue(level + 1, out var nextLevel) &&
+            Manager.DataM.LevelDic.TryGetValue(level, out var currentLevel) &&
+            Exp >= currentLevel.TotalExp)
             {
-                if(Manager.DataM.LevelDic.TryGetValue(level + 1, out LevelData nextlevel) == false) break;
-                if(Manager.DataM.LevelDic.TryGetValue(level, out LevelData currentLevel) == false) break;
-                
-                if(Manager.GameM.ContinueDatas.Exp < currentLevel.TotalExp) break;
-                else level++;
+               level++;
             }
 
             if(level != Level)
@@ -212,17 +210,16 @@ public class PlayerController : CreatureController, ITickable
 
     void Move()
     {
-        Vector3 dir = moveDir * Speed * Time.deltaTime;
-        transform.position += dir;
-
-
-        //
-        if(moveDir != Vector2.zero)
+        if(moveDir == Vector2.zero)
         {
-            standard.eulerAngles = new Vector3(0,0, Mathf.Atan2(-dir.x, dir.y) * 180 / Mathf.PI);
+            if(Rigid.velocity != Vector2.zero) Rigid.velocity = Vector2.zero;
+            return;
         }
 
-        Rigid.velocity = Vector3.zero;
+        Rigid.velocity = moveDir.normalized * Speed;
+        float angle = Mathf.Atan2(-moveDir.x, moveDir.y) * Mathf.Rad2Deg;
+        standard.eulerAngles = new Vector3(0, 0, angle);
+
 
     }
 
@@ -264,17 +261,9 @@ public class PlayerController : CreatureController, ITickable
         }
 
     #endregion
-     public void OnEnable()
-    {
-        if(Manager.UpdateM != null)
-            Manager.UpdateM.Register(this);
-    }
-
-    public void OnDisable()
-    {
-        if(Manager.UpdateM != null)
-            Manager.UpdateM.Unregister(this);
-    }
+    public void OnEnable() => Manager.UpdateM?.Register(this);
+    public void OnDisable() => Manager.UpdateM.Unregister(this);
+    
     public override bool Init()
     {
         base.Init();

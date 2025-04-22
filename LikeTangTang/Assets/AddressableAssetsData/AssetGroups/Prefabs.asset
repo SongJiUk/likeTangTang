@@ -32,11 +32,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: c429e5c56afc5cb48ab7d751f1cf7b1c
-    m_Address: Map_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
   - m_GUID: a8517281985073a49901c62cfd290fa5
     m_Address: Player_Alpha
     m_ReadOnly: 0

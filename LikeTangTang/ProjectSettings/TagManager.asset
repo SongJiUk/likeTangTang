@@ -5,16 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - Weapon
+  - MagicField
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Monster
   - Boss
-  - 
+  - Object
   - 
   - 
   - 

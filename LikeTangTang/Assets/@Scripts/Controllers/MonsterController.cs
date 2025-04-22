@@ -107,7 +107,7 @@ public class MonsterController : CreatureController, ITickable
         return true;
     }
 
-    Vector3 moveDir;
+    Vector2 moveDir;
     Vector2 DefualtVelocity;
     float pullForce = 0;
 
@@ -131,26 +131,19 @@ public class MonsterController : CreatureController, ITickable
         }
 
         if (Time.time < knockBackCooldownEndTime) return;
-        Vector3 newPos;
 
-        if (isInGravityZone)
-        {
-            moveDir = GravityTarget.transform.position - transform.position;
-            newPos = transform.position + moveDir.normalized * _deltaTime * pullForce;
-        }
-        else
-        {
-            moveDir = Manager.GameM.player.transform.position - transform.position;
-            newPos = transform.position + moveDir.normalized * _deltaTime * Speed;
-        }
-        Rigid.MovePosition(newPos);
-        Debug.DrawLine(transform.position, transform.position + moveDir.normalized * 2f, Color.red);
+        moveDir = isInGravityZone ? 
+        (GravityTarget.transform.position - transform.position).normalized 
+        : (Manager.GameM.player.transform.position - transform.position).normalized;
+
+        Rigid.velocity = isInGravityZone ? moveDir * pullForce : moveDir * Speed;
+        
         CreatureSprite.flipX = moveDir.x < 0;
 
         if (isInContactWithPlayer && Time.time >= nextDotDamageTime && contactPlayer != null)
         {
             contactPlayer.OnDamaged(this, null, Attack);
-            nextDotDamageTime = Time.time + 0.1f; // dot interval
+            nextDotDamageTime = Time.time + 0.1f;
         }
     }
     
@@ -237,16 +230,16 @@ public class MonsterController : CreatureController, ITickable
     Coroutine coKnockBackCoroutine;
     public void KnockBack(SkillBase _skill = null)
     {
-        if (_skill == null || _skill.Skilltype == SkillType.TimeStopBomb || _skill.Skilltype == SkillType.GravityBomb)
-            return;
-
+        if (_skill == null || _skill.Skilltype == SkillType.TimeStopBomb || _skill.Skilltype == SkillType.GravityBomb) return;
         if (isKnockBack) return;
+
         isKnockBack = true;
         CreatureState = CreatureState.OnDamaged;
 
+        Vector2 Knockdir = -moveDir.normalized;
         float power = _skill.SkillDatas.KnockBackPower;
-        Vector2 dir = -moveDir.normalized;
-        Rigid.AddForce(dir * KNOCKBACK_POWER * power, ForceMode2D.Impulse);
+        
+        Rigid.AddForce(Knockdir * KNOCKBACK_POWER * power, ForceMode2D.Impulse);
 
         knockBackEndTime = Time.time + KNOCKBACK_TIME;
     }
