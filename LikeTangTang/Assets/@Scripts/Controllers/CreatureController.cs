@@ -151,6 +151,13 @@ public class CreatureController : BaseController, ITickable
             Define.SkillType type = Utils.GetSkillTypeFromInt(skillID);
             if(type != Define.SkillType.None) Skills.AddSkill(type, skillID);
         }
+        
+        //TODO : 진화스킬
+        //foreach(int evolutionSkillID in creatureData.EvolutionTypeList)
+        //{
+        //    Define.EvoloutionType type = Utils.GetEvolutionSkillTypeFromInt(evolutionSkillID);
+        //    if(type != Define.EvoloutionType.None) Skills.
+        //}
     }
 
     public bool IsMonster()

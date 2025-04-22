@@ -28,7 +28,6 @@ public static class Define
     public enum SkillType
     {
         None,
-
         PlasmaShot = 2000, //일정 시간마다 전방에 플라즈마 탄환 발사 (짧은 관통 효과 있음)
         EnergyRing = 2010, // 플레이어 주변에 에너지 고리 생성, 닿으면 몬스터 데미지
         PlasmaSpinner = 2020, //주변의 적에게 튕기는 부메랑을 발사합니다.
@@ -39,8 +38,23 @@ public static class Define
         OrbitalBlades = 2070,// 캐릭터 주변을 회전한다.
         ElectronicField = 2080,
         SpectralSlash = 2090
-
     }
+
+    public enum EvoloutionType
+    {
+        None,
+        PlasmaCannon = 2100, //플라즈마샷 진화
+        Thundering = 2110,
+        OmegaBoomerang = 2120,
+        ClusterDrone = 2130,
+        SuddenStorm = 2140,
+        GravitationalCollapse = 2150,
+        timeFixedField = 2160,
+        OrbitBarrage = 2170,
+        HighVoltageField = 2180,
+        SpectralPhantom = 2190
+    }
+
     public enum SceneType
     {
         UnKnownScene,

@@ -2363,7 +2363,7 @@
     {
       "DataID": 2190,
       "SkillName": "스펙트럴 팬텀",
-      "SkillNameE": "Spectral Phantom",
+      "SkillNameE": "SpectralPhantom",
       "SkillDescription": "모든 공격이 크리티컬공격이됩니다.",
       "SkillIcon": "SpectralSlash",
       "DamageMultiplier": 1.4,

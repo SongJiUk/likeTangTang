@@ -306,6 +306,7 @@ public class DataTransformer : EditorWindow
             cd.MoveSpeedRate = ConvertValue<float>(row[i++]);
             cd.Image_Name = ConvertValue<string>(row[i++]);
             cd.SkillTypeList = ConvertList<int>(row[i++]);
+            cd.EvolutionTypeList = ConvertList<int>(row[i++]);
             loader.creatureData.Add(cd);
         }
 

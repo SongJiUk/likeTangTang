@@ -116,6 +116,16 @@ public static class Utils
         return Define.SkillType.None;
     }
 
+    public static Define.EvoloutionType GetEvolutionSkillTypeFromInt(int _value)
+    {
+        foreach (Define.EvoloutionType type in Enum.GetValues(typeof(Define.EvoloutionType)))
+        {
+            return type;
+        }
+
+        return Define.EvoloutionType.None;
+    }
+
     public static MonsterController FindClosestMonster(Vector3 _origin, HashSet<MonsterController> _prevTargets = null)
     {
         float closestDist = Mathf.Infinity;

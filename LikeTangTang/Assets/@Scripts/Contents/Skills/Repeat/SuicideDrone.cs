@@ -11,11 +11,6 @@ public class SuicideDrone : RepeatSkill, ITickable
         Skilltype = Define.SkillType.SuicideDrone;
         coolTime = 0f;
     }
-
-    private void OnEnable() 
-    {
-        Manager.UpdateM.Register(this);   
-    }
     public override void DoSkill()
     {
         SpawnDrones();
@@ -25,6 +20,7 @@ public class SuicideDrone : RepeatSkill, ITickable
     {
         base.ActivateSkill();
         OnChangedSkillData();
+        Manager.UpdateM.Register(this);
     }
 
     public override void OnChangedSkillData()

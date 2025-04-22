@@ -93,7 +93,7 @@ namespace Data
         public float MoveSpeedRate;
         public string Image_Name;
         public List<int> SkillTypeList;
-
+        public List<int> EvolutionTypeList;
 
     }
 

@@ -14,16 +14,14 @@ public class TimeStopBomb : RepeatSkill, ITickable
         SpawnTimeStopBomb();
     }
 
-    void OnEnable()
-    {
-        Manager.UpdateM.Register(this);
-    }
+    
 
 
     public override void ActivateSkill()
     {
         base.ActivateSkill();
         OnChangedSkillData();
+        Manager.UpdateM.Register(this);
     }
 
     public override void OnChangedSkillData()

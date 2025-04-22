@@ -25,7 +25,9 @@
         2060,
         2070,
         2080,
-        2090,
+        2090
+      ],
+      "EvolutionTypeList": [
         2100,
         2110,
         2120,
@@ -63,7 +65,9 @@
         2060,
         2070,
         2080,
-        2090,
+        2090
+      ],
+      "EvolutionTypeList": [
         2100,
         2110,
         2120,
@@ -101,7 +105,9 @@
         2060,
         2070,
         2080,
-        2090,
+        2090
+      ],
+      "EvolutionTypeList": [
         2100,
         2110,
         2120,
@@ -139,7 +145,9 @@
         2060,
         2070,
         2080,
-        2090,
+        2090
+      ],
+      "EvolutionTypeList": [
         2100,
         2110,
         2120,
@@ -177,7 +185,9 @@
         2060,
         2070,
         2080,
-        2090,
+        2090
+      ],
+      "EvolutionTypeList": [
         2100,
         2110,
         2120,
@@ -205,7 +215,12 @@
       "DefRate": 1.0,
       "MoveSpeedRate": 1.0,
       "Image_Name": "MonsterIcon_01.sprite",
-      "SkillTypeList": []
+      "SkillTypeList": [
+        0
+      ],
+      "EvolutionTypeList": [
+        0
+      ]
     },
     {
       "DataID": 102,
@@ -222,7 +237,12 @@
       "DefRate": 1.0,
       "MoveSpeedRate": 1.0,
       "Image_Name": "MonsterIcon_01.sprite",
-      "SkillTypeList": []
+      "SkillTypeList": [
+        0
+      ],
+      "EvolutionTypeList": [
+        0
+      ]
     },
     {
       "DataID": 103,
@@ -242,6 +262,9 @@
       "SkillTypeList": [
         10001,
         10002
+      ],
+      "EvolutionTypeList": [
+        0
       ]
     }
   ]

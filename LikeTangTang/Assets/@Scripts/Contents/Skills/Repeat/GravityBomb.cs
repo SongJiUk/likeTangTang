@@ -10,10 +10,7 @@ public class GravityBomb : RepeatSkill, ITickable
         coolTime = 0f;
     }
 
-    void OnEnable()
-    {
-        Manager.UpdateM.Register(this);
-    }
+   
     public override void DoSkill()
     {
         SpawnGravityBomb();
@@ -23,6 +20,7 @@ public class GravityBomb : RepeatSkill, ITickable
     {
         base.ActivateSkill();
         OnChangedSkillData();
+        Manager.UpdateM.Register(this);
     }
 
     public override void OnChangedSkillData()
