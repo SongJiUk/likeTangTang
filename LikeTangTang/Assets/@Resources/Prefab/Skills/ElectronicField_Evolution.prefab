@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1751422707498797002}
   - component: {fileID: 1751422707498797001}
   m_Layer: 0
-  m_Name: ElectronicField_Evolutoin
+  m_Name: ElectronicField_Evolution
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

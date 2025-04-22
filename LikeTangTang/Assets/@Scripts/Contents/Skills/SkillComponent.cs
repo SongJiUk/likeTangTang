@@ -55,7 +55,8 @@ public class SkillComponent : MonoBehaviour
         string name = _type.ToString();
         if(_type == Define.SkillType.EnergyRing || _type == Define.SkillType.ElectronicField || _type == Define.SkillType.SpectralSlash)
         {
-            GameObject go = Manager.ResourceM.Instantiate(name, gameObject.transform);
+
+            GameObject go = Manager.ResourceM.Instantiate(name, Utils.FindChild(gameObject, Define.STANDARDNAME).transform);
             if(go != null)
             {
                 SkillBase skill = go.GetOrAddComponent<SkillBase>();

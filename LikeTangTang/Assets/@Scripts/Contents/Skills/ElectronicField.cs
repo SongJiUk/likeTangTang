@@ -129,6 +129,7 @@ public class ElectronicField : RepeatSkill, ITickable
     {
         base.OnSkillLevelup();
         attackInterval = SkillDatas.AttackInterval;
+        transform.localScale = Vector3.one * SkillDatas.ScaleMultiplier;
 
     }
     public void Tick(float _deltaTime)

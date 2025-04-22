@@ -75,14 +75,10 @@ public class ProjectileController : SkillBase
                     StartCoroutine(CoElectricShock(spawnPos, targetPos, target));
                 break;
             case Define.SkillType.SuicideDrone :
-                //TODO : Range안에 있는 적들을 찾아서 랜덤으로 돌격후 자살
-
                 StartCoroutine(CoStartSuicideDrone());
-
                 break;
 
                 case Define.SkillType.TimeStopBomb :
-                //TODO : 설정
                 rigid.velocity = dir * speed;
                 StartCoroutine(CoExplosionTimeStopBomb());
 
@@ -91,6 +87,10 @@ public class ProjectileController : SkillBase
                 case Define.SkillType.GravityBomb:
                 rigid.velocity = dir * speed;
                 StartCoroutine(CoExplosionGravityBomb());
+                break;
+
+                case Define.SkillType.OrbitalBlades:
+                rigid.velocity = dir * speed;
                 break;
                 
         }
@@ -132,6 +132,10 @@ public class ProjectileController : SkillBase
         }
     }
     
+    void HandleOrbitalBlades(CreatureController _cc)
+    {
+        //TODO : 몬스터 부딪히면 어떻게할지?
+    }
   #region  GravityBomb
     IEnumerator CoExplosionGravityBomb()
     {
@@ -290,7 +294,7 @@ public class ProjectileController : SkillBase
             _target.OnDamaged(owner,skill);
         }
     }
-
+    
     #endregion
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -314,6 +318,11 @@ public class ProjectileController : SkillBase
                 break;
             case Define.SkillType.SuicideDrone :
                 HandleSuicideDrone();
+                break;
+
+            case Define.SkillType.OrbitalBlades :
+                HandleOrbitalBlades(cc);
+                cc.OnDamaged(owner, skill);
                 break;
         }
 

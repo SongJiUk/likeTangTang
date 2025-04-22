@@ -35,13 +35,16 @@ public class SkillBase : BaseController
 
     public virtual void ActivateSkill() { UpdateSkillData(); }
     
-    protected virtual void GenerateProjectile(CreatureController _owner, string _prefabName,
+    protected virtual ProjectileController GenerateProjectile(CreatureController _owner, string _prefabName,
     Vector3 _startPos = default, Vector3 _dir= default, Vector3 _targetPos = default, SkillBase _skill = null, 
     HashSet<MonsterController> _sharedTarget = null)
     {
         ProjectileController pc = Manager.ObjectM.Spawn<ProjectileController>(_startPos, _prefabName: _prefabName);
         pc.SetInfo(_owner,_startPos, _dir, _targetPos, _skill, _sharedTarget);
+
+        return pc;
     }
+
 
 
     

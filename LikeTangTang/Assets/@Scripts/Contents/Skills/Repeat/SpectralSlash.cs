@@ -21,11 +21,7 @@ public class SpectralSlash : RepeatSkill
         gameObject.SetActive(false);
 
     }
-    public override void DoSkill()
-    {
-        
-
-    }
+    public override void DoSkill(){ }
     public override void ActivateSkill()
     {
         gameObject.SetActive(true);
@@ -36,24 +32,19 @@ public class SpectralSlash : RepeatSkill
 
     public override void OnChangedSkillData()
     {
-        SetSpectralSlash();
-    }
-    public void SetSpectralSlash()
-    {
         projectileCount = SkillDatas.ProjectileCount;
-
     }
 
 
-     void SetParticles(SwingType _swingType)
+    void SetParticleRotation(ParticleSystem _particle)
     {
-        if(Manager.GameM.player == null) return;
+        if(Manager.GameM.player == null || transform.parent == null) return;
 
         //MEMO : 플레이어의 회전각도에 따라, 반지름을 구하고, 파티클의 시작 로테이션을 지정해준다.
         float z = transform.parent.transform.eulerAngles.z;
-        float rad = (Mathf.PI / 180) * z * -1;
+        float rad = Mathf.Deg2Rad * z * -1;
 
-        var main = swingParticle[(int)_swingType].main;
+        var main = _particle.main;
         main.startRotation = rad;   
     }
     IEnumerator CoStartSpectralSlash()
@@ -61,29 +52,38 @@ public class SpectralSlash : RepeatSkill
         var waitTime = new WaitForSeconds(SkillDatas.CoolTime);
         while(true)
         {
-            for(int i = 0; i< projectileCount; i++)
-            {
-                SetParticles((SwingType)i);
-                swingParticle[i].gameObject.SetActive(true);
-                yield return new WaitForSeconds(swingParticle[i].main.duration);
+            int swingCount = Mathf.Min(projectileCount, swingParticle.Length);
+            for(int i = 0; i< swingCount; i++)
+            {   
+                var particle = swingParticle[i];
+                if(particle == null) continue;
+
+                SetParticleRotation(particle);
+                particle.gameObject.SetActive(true);
+
+                yield return new WaitForSeconds(particle.main.duration);
             }
+
             yield return waitTime;    
         }
         
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        MonsterController mc = collision.transform.GetComponent<MonsterController>();
-        if(!mc.IsValid()) return;
-        mc.OnDamaged(Manager.GameM.player, this);
+        
+
+        if(collision.TryGetComponent<MonsterController>(out MonsterController mc) && mc.IsValid())
+        {
+            mc.OnDamaged(Manager.GameM.player, this);
+        }
 
     }
 
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        MonsterController mc = collision.transform.GetComponent<MonsterController>();
-        if(!mc.IsValid()) return;
+    // void OnTriggerExit2D(Collider2D collision)
+    // {
+    //     MonsterController mc = collision.transform.GetComponent<MonsterController>();
+    //     if(!mc.IsValid()) return;
 
         
-    }
+    // }
 }

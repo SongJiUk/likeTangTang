@@ -110,4 +110,5 @@ public static class Define
 
     public static string GRIDNAME = "@Grid";
     public static string GEMNAME = "Gem";
+    public static string STANDARDNAME = "Standard";
 }
