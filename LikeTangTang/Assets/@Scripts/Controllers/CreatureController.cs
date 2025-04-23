@@ -68,7 +68,7 @@ public class CreatureController : BaseController, ITickable
             _skill.TotalDamage += _damage;
 
         Hp -= _damage;
-        
+
         //Manager.ObjectM.ShowFont(transform.position,_damage, 0, transform, isCritical);
         
         if(this.IsValid()) damageAnimEndTime = Time.time + 0.1f;

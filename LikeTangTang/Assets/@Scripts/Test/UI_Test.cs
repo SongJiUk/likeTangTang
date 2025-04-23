@@ -18,8 +18,26 @@ public class UI_Test : UI_Base
 
         GetToggle(typeof(Toggles), (int)Toggles.SkillLevelUpToggle).gameObject.BindEvent(() =>
         {
-            Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.OrbitalBlades);
+            Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.ElectricShock);
             Manager.GameM.player.Skills.LevelUpSkill(skillType);
+            //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.ElectronicField);
+            //Manager.GameM.player.Skills.LevelUpSkill(skillType);
+            //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.EnergyRing);
+            //Manager.GameM.player.Skills.LevelUpSkill(skillType);
+            //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.GravityBomb);
+            //Manager.GameM.player.Skills.LevelUpSkill(skillType);
+            //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.OrbitalBlades);
+            //Manager.GameM.player.Skills.LevelUpSkill(skillType);
+            //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.PlasmaShot);
+            //Manager.GameM.player.Skills.LevelUpSkill(skillType);
+            //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.PlasmaSpinner);
+            //Manager.GameM.player.Skills.LevelUpSkill(skillType);
+            //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.SpectralSlash);
+            //Manager.GameM.player.Skills.LevelUpSkill(skillType);
+            //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.SuicideDrone);
+            //Manager.GameM.player.Skills.LevelUpSkill(skillType);
+            //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.TimeStopBomb);
+            //Manager.GameM.player.Skills.LevelUpSkill(skillType);
         });
         return true;
     }

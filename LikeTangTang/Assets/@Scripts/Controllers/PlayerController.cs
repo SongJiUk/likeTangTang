@@ -192,8 +192,26 @@ public class PlayerController : CreatureController, ITickable
 
 
         // NOTE : Temp Code
-        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.SpectralSlash);
+        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.ElectricShock);
         Skills.LevelUpSkill(skillType);
+        //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.ElectronicField);
+        //Skills.LevelUpSkill(skillType);
+        //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.EnergyRing);
+        //Skills.LevelUpSkill(skillType);
+        //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.GravityBomb);
+        //Skills.LevelUpSkill(skillType);
+        //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.OrbitalBlades);
+        //Skills.LevelUpSkill(skillType);
+        //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.PlasmaShot);
+        //Skills.LevelUpSkill(skillType);
+        //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.PlasmaSpinner);
+        //Skills.LevelUpSkill(skillType);
+        //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.SpectralSlash);
+        //Skills.LevelUpSkill(skillType);
+        //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.SuicideDrone);
+        //Skills.LevelUpSkill(skillType);
+        //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.TimeStopBomb);
+        //Skills.LevelUpSkill(skillType);
 
     }
 

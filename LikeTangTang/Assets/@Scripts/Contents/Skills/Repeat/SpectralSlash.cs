@@ -36,16 +36,17 @@ public class SpectralSlash : RepeatSkill
     }
 
 
-    void SetParticleRotation(ParticleSystem _particle)
+    void SetParticleRotationAndPosition(ParticleSystem _particle)
     {
         if(Manager.GameM.player == null || transform.parent == null) return;
 
         //MEMO : 플레이어의 회전각도에 따라, 반지름을 구하고, 파티클의 시작 로테이션을 지정해준다.
-        float z = transform.parent.transform.eulerAngles.z;
+        float z = transform.parent.eulerAngles.z;
         float rad = Mathf.Deg2Rad * z * -1;
 
         var main = _particle.main;
-        main.startRotation = rad;   
+        main.startRotation = rad;
+        _particle.transform.position = Manager.GameM.player.Standard.position;
     }
     IEnumerator CoStartSpectralSlash()
     {
@@ -58,7 +59,7 @@ public class SpectralSlash : RepeatSkill
                 var particle = swingParticle[i];
                 if(particle == null) continue;
 
-                SetParticleRotation(particle);
+                SetParticleRotationAndPosition(particle);
                 particle.gameObject.SetActive(true);
 
                 yield return new WaitForSeconds(particle.main.duration);
@@ -78,12 +79,4 @@ public class SpectralSlash : RepeatSkill
         }
 
     }
-
-    // void OnTriggerExit2D(Collider2D collision)
-    // {
-    //     MonsterController mc = collision.transform.GetComponent<MonsterController>();
-    //     if(!mc.IsValid()) return;
-
-        
-    // }
 }

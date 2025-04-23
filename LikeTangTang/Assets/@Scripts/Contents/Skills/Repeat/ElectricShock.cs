@@ -3,49 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 
-public class ElectricShock : RepeatSkill
+public class ElectricShock : RepeatSkill, ITickable
 {
     private readonly HashSet<MonsterController> sharedTarget = new();
     void Awake()
     {
         Skilltype = Define.SkillType.ElectricShock;
+        coolTime = 0f;
     }
 
     public override void ActivateSkill()
     {
         base.ActivateSkill();
-        SetElectricShock();
+        Manager.UpdateM.Register(this);
+        OnChangedSkillData();
     }
 
     public override void OnChangedSkillData()
     {
-        SetElectricShock();
-    }
-
-    public override void DoSkill()
-    {
-        StartCoroutine(CoStartElectricShock());
-    }
-
-    public void SetElectricShock()
-    {
-        duration =SkillDatas.Duration;
+        duration = SkillDatas.Duration;
         coolTime = SkillDatas.CoolTime;
         projectileCount = SkillDatas.ProjectileCount;
         boundDist = SkillDatas.BoundDist;
     }
 
-    
-    IEnumerator CoStartElectricShock()
+    public override void DoSkill()
     {
         var player = Manager.GameM.player;
-        if(player == null) yield break;        
-        
+        if (player == null) return;
+
         sharedTarget.Clear();
         string prefabName = SkillDatas.PrefabName;
 
-        
-        for(int i =0; i<projectileCount; i++)
+
+        for (int i = 0; i < projectileCount; i++)
         {
             List<MonsterController> targets = GetElectricShockTargets(
                 numBounce,
@@ -53,13 +44,13 @@ public class ElectricShock : RepeatSkill
                 boundDist + 1,
                 i
             );
-            if(targets == null || targets.Count == 0 ) continue;
+            if (targets == null || targets.Count == 0) continue;
 
             Vector3 startPos = player.transform.position;
 
-            foreach(var target in targets)
+            foreach (var target in targets)
             {
-                if(target == null || !target.IsValid()) continue;
+                if (target == null || !target.IsValid()) continue;
 
                 Vector3 dir = (target.transform.position - startPos).normalized;
                 GenerateProjectile(player, prefabName, startPos, dir, target.transform.position, this, sharedTarget);
@@ -68,8 +59,16 @@ public class ElectricShock : RepeatSkill
             }
         }
 
-        yield return null;
-        
+    }
+
+    public void Tick(float _deltaTime)
+    {
+        coolTime -= _deltaTime;
+        if (coolTime <= 0)
+        {
+            DoSkill();
+            coolTime = SkillDatas.CoolTime;
+        }
     }
 
     public List<MonsterController> GetElectricShockTargets(int _numTarget, float _minDist, float _maxDist, int _index = 0)

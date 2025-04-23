@@ -5,23 +5,23 @@ using UnityEngine;
 
 public class SkillBase : BaseController
 {
-    public CreatureController owner {get; set;}
+    public CreatureController owner { get; set; }
     public Define.SkillType Skilltype { get; set; } = Define.SkillType.None;
     public Data.SkillData SkillDatas { get; protected set; }
-    public int SkillLevel {get; set;} = 0;
+    public int SkillLevel { get; set; } = 0;
     public float TotalDamage { get; set; } = 0;
-    public string prefabName;
-    public float duration;
-    public float coolTime;
-    public int projectileCount; //투사체 개수 
-    public int boundDist;
-    public int numBounce;
-    public float bounceSpeed;
-    public float speed;
-    public float numPenerations; //관통 개수
-    public float range;
-    public float effectRange;
-    public float attackInterval;
+    public string prefabName { get; set; }
+    public float duration { get; set; }
+    public float coolTime { get; set; }
+    public int projectileCount {get; set;}//투사체 개수 
+    public int boundDist { get; set; }
+    public int numBounce { get; set; }
+    public float bounceSpeed { get; set; }
+    public float speed { get; set; }
+    public float numPenerations { get; set; } //관통 개수
+    public float range { get; set; }
+    public float effectRange { get; set; }
+    public float attackInterval { get; set; }
 
     public bool isLearnSkill
     {
