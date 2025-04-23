@@ -57,6 +57,201 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
+  - m_GUID: aea530adaf5d36449963b1699a695045
+    m_Address: MonsterIcon_05.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: afd793b1787964e44aa4ce39e16e5bcf
+    m_Address: MonsterIcon_01.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 008c7049d2cb4c646a7d43c12494e372
+    m_Address: MonsterIcon_25.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 1003842c4fde28746827be698d197ca2
+    m_Address: MonsterIcon_12.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 20806bcda2342d0458201b5f5a78e183
+    m_Address: MonsterIcon_06.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: b0d1c95a7430d6e4fac32178f0a5baeb
+    m_Address: MonsterIcon_37.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 014de57d3ba2dde47a22122df3dc64eb
+    m_Address: MonsterIcon_31.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 113acccba3571d740b68a997c5c85387
+    m_Address: MonsterIcon_07.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 219a6446f0382274c992f82b527bd817
+    m_Address: MonsterIcon_15.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 81af6409d9daa6644ad4aa5ce6439f88
+    m_Address: MonsterIcon_24.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: e1db9ad041d59394088c3929c216809a
+    m_Address: MonsterIcon_10.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 923c215c9d0b9c740aeea9a9368852f2
+    m_Address: MonsterIcon_28.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 03f87ce11af60a345b3c65eeb9507da2
+    m_Address: MonsterIcon_34.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: b3711a59445527c44a76c2a709a21534
+    m_Address: MonsterIcon_21.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 351e7d7f08d54b447b1df750b87c4cde
+    m_Address: MonsterIcon_19.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: a527ad10d22088a45801657567c7031d
+    m_Address: MonsterIcon_23.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: e551a3826321a524985292199cf410b3
+    m_Address: MonsterIcon_13.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 56c6aa6bae3260e44986dc7cb56597d8
+    m_Address: MonsterIcon_08.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 8630fb6c32723c64692197cd4b5140d4
+    m_Address: MonsterIcon_29.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 9708b311a04d148449fab616988e716d
+    m_Address: MonsterIcon_36.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 9891b7cecef70924890814f079a4b8fc
+    m_Address: MonsterIcon_03.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 49458707f34ee69468a2e6c6f976c902
+    m_Address: MonsterIcon_27.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 890d78a829af55a47875e274def960d4
+    m_Address: MonsterIcon_16.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 99771e5652adc2c46a718ca3ce3204f2
+    m_Address: MonsterIcon_39.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 4ab191383f18a71418a2ba906a585e51
+    m_Address: MonsterIcon_17.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: aa2fdb0c334a1dc41ac11dd0d137ab2d
+    m_Address: MonsterIcon_04.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 1b863f5e680066348b933661c288e811
+    m_Address: MonsterIcon_38.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 4b7c33038949f5b46b4ae43d30c793ad
+    m_Address: MonsterIcon_11.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 5b091dfa2bab8bb4cb8b7b867d7b95b5
+    m_Address: MonsterIcon_18.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: fbb312522124d8043a34b46a8ddf1148
+    m_Address: MonsterIcon_14.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 1c856a67ba3477842ba5c768a51a1cb4
+    m_Address: MonsterIcon_02.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 9cf01d9f38f4ee942b8d209ba4a428ed
+    m_Address: MonsterIcon_33.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: bcceb871c32043c4da9858f8dc8c05c2
+    m_Address: MonsterIcon_35.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: ed76499c23d166d45b82e0c7fe6f644d
+    m_Address: MonsterIcon_26.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 0e00cd01aeebb3a46980ecba6074d2bb
+    m_Address: MonsterIcon_09.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 7e84ad18ee0ba6f408407c60460e5e4d
+    m_Address: MonsterIcon_30.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 1f8cd5e783f635e43a7f06f09440808f
+    m_Address: MonsterIcon_20.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 9feafaac3a586584387c1b5f59a8263a
+    m_Address: MonsterIcon_22.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: af763f647fa6c4748a0dcc80869dd15c
+    m_Address: MonsterIcon_32.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:
