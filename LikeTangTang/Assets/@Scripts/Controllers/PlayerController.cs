@@ -192,7 +192,7 @@ public class PlayerController : CreatureController, ITickable
 
 
         // NOTE : Temp Code
-        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.ElectricShock);
+        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.TimeStopBomb);
         Skills.LevelUpSkill(skillType);
         //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.ElectronicField);
         //Skills.LevelUpSkill(skillType);
@@ -248,14 +248,25 @@ public class PlayerController : CreatureController, ITickable
 
     public void UpdatePlayerDir()
     {
-        if(moveDir.x < 0) CreatureSprite.flipX = false;
-        else CreatureSprite.flipX = true;
+        //if (moveDir.x < 0) CreatureSprite.flipX = false;
+        //else CreatureSprite.flipX = true;
+
+
+        Vector3 scale = transform.localScale;
+
+        if (moveDir.x < 0) scale.x = Mathf.Abs(scale.x);
+        else scale.x = -Mathf.Abs(scale.x);
+
+
+        transform.localScale = scale;
+
+
     }
 
-#endregion
+    #endregion
 
     #region 젬 관련
-        public float GetEnvDist {get; set;} = 1f;
+    public float GetEnvDist {get; set;} = 1f;
 
         void GetGem()
         {
@@ -291,7 +302,14 @@ public class PlayerController : CreatureController, ITickable
         return true;
     }
 
-   
+    public override void SetInfo(int _dataID)
+    {
+        base.SetInfo(_dataID);
+
+        if (CreatureAnim != null) 
+            CreatureAnim.runtimeAnimatorController = Manager.ResourceM.Load<RuntimeAnimatorController>($"Player_Alpha_Anim");
+    }
+
     private void OnDestroy()
     {
         if(Manager.GameM != null)

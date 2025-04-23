@@ -9,6 +9,7 @@ public class CreatureController : BaseController, ITickable
 
     #region Info
     protected SpriteRenderer CreatureSprite;
+    protected Animator CreatureAnim;
     Data.CreatureData creatureData;
     public Rigidbody2D Rigid { get; set; }
     
@@ -40,7 +41,11 @@ public class CreatureController : BaseController, ITickable
         CreatureSprite = GetComponent<SpriteRenderer>();
         if (CreatureSprite == null)
             CreatureSprite = Utils.FindChild<SpriteRenderer>(gameObject);
-        
+
+
+        CreatureAnim = GetComponent<Animator>();
+        if (CreatureAnim == null)
+            CreatureAnim = Utils.FindChild<Animator>(gameObject);
         return true;
     }
     public virtual void OnDamaged(BaseController _attacker, SkillBase _skill = null, float _damage = 0)
@@ -130,7 +135,7 @@ public class CreatureController : BaseController, ITickable
     }
 
     
-    public void SetInfo(int _dataID)
+    public virtual void SetInfo(int _dataID)
     {
         Init();
         Rigid.simulated = true;
@@ -140,6 +145,7 @@ public class CreatureController : BaseController, ITickable
         InitStat();
         CreatureSprite.sprite = Manager.ResourceM.Load<Sprite>(creatureData.Image_Name);
         InitSkill();
+
         
     }
 
