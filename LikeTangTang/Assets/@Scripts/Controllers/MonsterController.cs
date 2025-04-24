@@ -11,47 +11,7 @@ public class MonsterController : CreatureController, ITickable
     #region Action
     public Action<MonsterController> MonsterInfoUpdate;
     #endregion
-    #region State Pattern
-    CreatureState creatureState = CreatureState.Moving;
-    protected Animator animator;
-    public virtual CreatureState CreatureState
-    {
-        get { return creatureState; }
-        set 
-        {
-            creatureState = value;
-            UpdateAnim();
-        }
-    }
-
-    public virtual void UpdateAnim() {}
     
-    public override void UpdateController()
-    {
-        base.UpdateController();
-
-        switch(creatureState)
-        {
-            case CreatureState.Moving:
-            UpdateMoving();
-                break;
-
-            case CreatureState.Attack :
-            UpdateAttack();
-                break;
-
-            case CreatureState.Dead :
-            UpdateDead();
-                break;
-        }
-    }
-
-    protected virtual void UpdateMoving() {}
-
-    protected virtual void UpdateAttack() {}
-
-    protected virtual void UpdateDead() {}
-    #endregion
     Coroutine coDotDamage;
 
     #region GravityBomb Info
@@ -76,7 +36,6 @@ public class MonsterController : CreatureController, ITickable
     
     private void Awake()
     {
-        animator = GetComponent<Animator>();
     }
     private void OnEnable()
     {
@@ -84,7 +43,7 @@ public class MonsterController : CreatureController, ITickable
         
         Manager.UpdateM.Register(this);
         isDead = false;
-        creatureState = CreatureState.Moving;
+        CreatureState = CreatureState.Moving;
         isKnockBack = false;
         contactPlayer = null;
         isInContactWithPlayer = false;
@@ -124,7 +83,7 @@ public class MonsterController : CreatureController, ITickable
             {
                 Rigid.velocity = Vector2.zero;
                 isKnockBack = false;
-                creatureState = CreatureState.Moving;
+                CreatureState = CreatureState.Moving;
                 knockBackCooldownEndTime = Time.time + KNOCKBACK_COOLTIME;
             }
             return;

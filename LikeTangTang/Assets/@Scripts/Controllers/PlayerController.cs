@@ -11,10 +11,11 @@ using UnityEngine.AI;
 public class PlayerController : CreatureController, ITickable
 {
 
+    Dictionary<string, Transform> EquipmentDic = new();
     #region Action
     public Action OnPlayerDataUpdated;
     public Action OnPlayerLevelUp;
-    public Action OnPlayerDead;
+    public Action OnPlayerDead; //GameScene UI랑 연결
     #endregion
     #region 플레이어 정보
     public override int DataID
@@ -180,6 +181,9 @@ public class PlayerController : CreatureController, ITickable
     [SerializeField]
     Transform firePos;
 
+    [SerializeField]
+    Transform WeaponHolder;
+
     public Transform Standard {get { return standard;}}
     public Vector3 FirePos {get { return firePos.transform.position;}}
     public Vector3 ShootDir {get {return (firePos.position - standard.position).normalized;}}
@@ -231,13 +235,14 @@ public class PlayerController : CreatureController, ITickable
         if(moveDir == Vector2.zero)
         {
             if(Rigid.velocity != Vector2.zero) Rigid.velocity = Vector2.zero;
+            CreatureState = Define.CreatureState.Idle;
             return;
         }
 
         Rigid.velocity = moveDir.normalized * Speed;
         float angle = Mathf.Atan2(-moveDir.x, moveDir.y) * Mathf.Rad2Deg;
         standard.eulerAngles = new Vector3(0, 0, angle);
-
+        CreatureState = Define.CreatureState.Moving;
 
     }
 
@@ -246,8 +251,10 @@ public class PlayerController : CreatureController, ITickable
         moveDir = _dir;
     }
 
-    public void UpdatePlayerDir()
+        public void UpdatePlayerDir()
     {
+
+        // TODO : filp코드
         //if (moveDir.x < 0) CreatureSprite.flipX = false;
         //else CreatureSprite.flipX = true;
 
@@ -298,6 +305,7 @@ public class PlayerController : CreatureController, ITickable
         base.Init();
        
         Manager.GameM.OnMovePlayerDir += HandleOnMoveDirChange;
+        FindEquipment();
       
         return true;
     }
@@ -359,5 +367,55 @@ public class PlayerController : CreatureController, ITickable
         Move();
 
     }
+
+    public void FindEquipment()
+    {
+        if(WeaponHolder == null) WeaponHolder = transform.Find("Weapon");
+
+        if(WeaponHolder != null)
+        {
+            foreach(Transform weapon in WeaponHolder)
+            {
+                EquipmentDic.Add(weapon.name, weapon);
+                weapon.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    #region 플레이어 애니메이션 수정
+
+    public override void UpdateAnim()
+    {
+        switch(CreatureState)
+        {
+            case Define.CreatureState.Idle :
+            UpdateIdle();
+            break;
+
+            case Define.CreatureState.Moving :
+            UpdateMoving();
+            break;
+
+            case Define.CreatureState.Dead :
+            UpdateDead();
+            break;
+
+        }
+    }
+    protected override void UpdateIdle()
+    {
+        CreatureAnim.Play("Idle");
+    }
+
+    protected override void UpdateMoving()
+    {
+        CreatureAnim.Play("Moving");
+    }
+
+    protected override void UpdateDead()
+    {
+        CreatureAnim.Play("Dead");
+    }
+    #endregion
 }
  

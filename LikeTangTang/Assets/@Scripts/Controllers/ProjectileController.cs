@@ -100,14 +100,6 @@ public class ProjectileController : SkillBase
             StartCoroutine(CoDestroy(duration));
     }
     
-
-
-    public override void UpdateController()
-    {
-        base.UpdateController();
-
-        //transform.position += dir * speed * Time.deltaTime;
-    }
     
     void HandlePlasmaSpinner(CreatureController _cc)
     {

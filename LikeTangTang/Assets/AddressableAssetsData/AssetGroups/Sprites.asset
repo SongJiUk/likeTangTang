@@ -32,11 +32,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: 264abf4a1305aef4fb32eb121dbf3d77
-    m_Address: Slime_01.sprite
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
   - m_GUID: ce7b3baa5bac4c5f908f345eea062c67
     m_Address: Alpha.sprite
     m_ReadOnly: 0

@@ -13,16 +13,11 @@ public class BaseController : MonoBehaviour
 
         if (isInit) return false;
 
+
         isInit = true;
         return true;
     }
 
-    void Update()
-    {
-        UpdateController();
-    }
-    public virtual void UpdateController()
-    {
 
-    }
+    public virtual void UpdateController() { }
 }

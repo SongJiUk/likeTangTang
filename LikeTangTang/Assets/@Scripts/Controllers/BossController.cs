@@ -24,13 +24,13 @@ public class BossController : MonsterController
         switch(CreatureState)
         {
             case Define.CreatureState.Moving:
-                animator.Play("Moving");
+                CreatureAnim.Play("Moving");
                 break;
             case Define.CreatureState.Attack :
-                animator.Play("Attack");
+                CreatureAnim.Play("Attack");
                 break;
             case Define.CreatureState.Dead :
-                animator.Play("Dead");
+                CreatureAnim.Play("Dead");
                 break;
         }
     }

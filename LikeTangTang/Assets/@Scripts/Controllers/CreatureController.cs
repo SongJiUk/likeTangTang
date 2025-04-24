@@ -3,10 +3,32 @@ using System.Collections.Generic;
 using Data;
 using Unity.VisualScripting;
 using UnityEngine;
+using static Define;
 
 public class CreatureController : BaseController, ITickable
 {
 
+    #region State Pattern
+    CreatureState creatureState = CreatureState.Moving;
+    public virtual CreatureState CreatureState
+    {
+        get { return creatureState; }
+        set 
+        {
+            creatureState = value;
+            UpdateAnim();
+        }
+    }
+
+    public virtual void UpdateAnim() {}
+    
+    protected virtual void UpdateIdle() {}
+    protected virtual void UpdateMoving() {}
+
+    protected virtual void UpdateAttack() {}
+
+    protected virtual void UpdateDead() {}
+    #endregion
     #region Info
     protected SpriteRenderer CreatureSprite;
     protected Animator CreatureAnim;
@@ -46,6 +68,7 @@ public class CreatureController : BaseController, ITickable
         CreatureAnim = GetComponent<Animator>();
         if (CreatureAnim == null)
             CreatureAnim = Utils.FindChild<Animator>(gameObject);
+
         return true;
     }
     public virtual void OnDamaged(BaseController _attacker, SkillBase _skill = null, float _damage = 0)
@@ -100,6 +123,8 @@ public class CreatureController : BaseController, ITickable
                         break;
                 }
         }
+
+        //UpdateController();
     }
     // IEnumerator StartDamageAnim()
     // {
@@ -130,8 +155,10 @@ public class CreatureController : BaseController, ITickable
 
     public virtual void OnDead()
     {
+        CreatureState = CreatureState.Dead;
         this.GetComponent<Rigidbody2D>().simulated = false;
         transform.localScale = Vector3.one;
+        
     }
 
     
