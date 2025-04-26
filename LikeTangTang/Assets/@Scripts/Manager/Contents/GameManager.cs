@@ -180,10 +180,10 @@ public class GameManager
         float randNum = UnityEngine.Random.value;
         (GemInfo.GemType type, float chace, Vector3 scale)[] gems = new (GemInfo.GemType type, float chace, Vector3 scale)[]
         {
-            (GemInfo.GemType.Small, CurrentWaveData.SmallGemDropRate, new Vector3(0.5f, 0.5f, 0.5f)),
+            (GemInfo.GemType.Red, CurrentWaveData.SmallGemDropRate, new Vector3(0.5f, 0.5f, 0.5f)),
             (GemInfo.GemType.Green, CurrentWaveData.GreenGemDropRate, Vector3.one),
             (GemInfo.GemType.Blue, CurrentWaveData.BlueGemDropRate, Vector3.one),
-            (GemInfo.GemType.Yellow, CurrentWaveData.YellowGemDropRate, Vector3.one)
+            (GemInfo.GemType.Gold, CurrentWaveData.YellowGemDropRate, Vector3.one)
         };
 
         float cumulative = 0f;
@@ -199,8 +199,8 @@ public class GameManager
 
     public GemInfo GetGemInfo(GemInfo.GemType _type)
     {
-        if (_type == GemInfo.GemType.Small)
-            return new GemInfo(GemInfo.GemType.Small, new Vector3(0.5f, 0.5f, 0.5f));
+        if (_type == GemInfo.GemType.Red)
+            return new GemInfo(GemInfo.GemType.Red, new Vector3(0.5f, 0.5f, 0.5f));
 
         return new GemInfo(_type, Vector3.one);
     }

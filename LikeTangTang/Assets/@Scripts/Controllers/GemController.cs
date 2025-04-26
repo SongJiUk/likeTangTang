@@ -8,10 +8,10 @@ public class GemInfo
 
     public enum GemType
     {
-        Small,
-        Green,
-        Blue,
-        Yellow
+        Red = 1,
+        Green = 2,
+        Blue = 5,
+        Gold = 10
     }
 
     public GemType gemType;
@@ -26,7 +26,7 @@ public class GemInfo
         GemScale = _gemScale;
         switch(_gemType)
         {
-            case GemType.Small :
+            case GemType.Red :
                 ExpAmount = Define.SMALL_GEM_EXP;
             break;
             case GemType.Green :
@@ -35,7 +35,7 @@ public class GemInfo
             case GemType.Blue :
                 ExpAmount = Define.BLUE_GEM_EXP;
             break;
-            case GemType.Yellow :
+            case GemType.Gold :
                 ExpAmount = Define.YELLOW_GEM_EXP;
             break;
         }

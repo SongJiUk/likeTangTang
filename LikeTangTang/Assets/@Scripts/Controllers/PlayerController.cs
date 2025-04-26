@@ -172,6 +172,8 @@ public class PlayerController : CreatureController, ITickable
         
         //[ ] 스킬 업그레이드
     }
+
+    Vector3 scale;
 #endregion
     #region  스킬 정보
 
@@ -251,7 +253,8 @@ public class PlayerController : CreatureController, ITickable
         moveDir = _dir;
     }
 
-        public void UpdatePlayerDir()
+    
+    public void UpdatePlayerDir()
     {
 
         // TODO : filp코드
@@ -259,10 +262,11 @@ public class PlayerController : CreatureController, ITickable
         //else CreatureSprite.flipX = true;
 
 
-        Vector3 scale = transform.localScale;
+        
 
         if (moveDir.x < 0) scale.x = Mathf.Abs(scale.x);
-        else scale.x = -Mathf.Abs(scale.x);
+        else if(moveDir.x > 0)scale.x = -Mathf.Abs(scale.x);
+        else return;
 
 
         transform.localScale = scale;
@@ -305,6 +309,7 @@ public class PlayerController : CreatureController, ITickable
         base.Init();
        
         Manager.GameM.OnMovePlayerDir += HandleOnMoveDirChange;
+        scale = transform.localScale;
         FindEquipment();
       
         return true;

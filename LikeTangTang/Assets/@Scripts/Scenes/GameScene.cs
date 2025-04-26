@@ -137,7 +137,7 @@ public class GameScene : BaseScene
 
         foreach(GemInfo.GemType type in gems)
         {
-            GemController gem = Manager.ObjectM.Spawn<GemController>(player.transform.position);
+            GemController gem = Manager.ObjectM.Spawn<GemController>(Utils.CreateObjectAroundPlayer(Manager.GameM.player.transform.position));
             gem.SetInfo(Manager.GameM.GetGemInfo(type));
            
         }

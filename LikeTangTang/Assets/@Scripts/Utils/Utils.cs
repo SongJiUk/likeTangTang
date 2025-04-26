@@ -92,8 +92,13 @@ public static class Utils
     {
         float angle = UnityEngine.Random.Range(0f, 360f);
         float radius = angle * Mathf.Deg2Rad;
+        
+        float minDist = 2.0f;
+        float maxDist = 5.0f;
+        float dist = UnityEngine.Random.Range(minDist, maxDist);
 
-        Vector2 spawnPos = new Vector2(Mathf.Cos(radius), Mathf.Sin(radius)) * UnityEngine.Random.Range(0, radius);
+
+        Vector2 spawnPos = new Vector2(Mathf.Cos(radius), Mathf.Sin(radius)) * dist;
         Vector3 pos = _pos + new Vector3(spawnPos.x, spawnPos.y, 0f);
 
         return pos;

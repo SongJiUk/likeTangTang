@@ -17,23 +17,28 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 5067a4048b1be47fd9b69bc9d01a8fbc
   m_SerializeEntries:
-  - m_GUID: 1b0b3cf758b17614c977d9c05bf17deb
-    m_Address: Gem_01.sprite
+  - m_GUID: 433f82f8db3a1ca4386a0308fc38f5f2
+    m_Address: RedGem.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
   - m_GUID: 861a22b271a47e745aeb059a81c6ee5a
-    m_Address: Gem_02.sprite
+    m_Address: GreenGem.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: 433f82f8db3a1ca4386a0308fc38f5f2
-    m_Address: Gem_03.sprite
+  - m_GUID: 1b0b3cf758b17614c977d9c05bf17deb
+    m_Address: BlueGem.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
   - m_GUID: ce7b3baa5bac4c5f908f345eea062c67
     m_Address: Alpha.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 5a848155335e1204fbe4d04b433b0a86
+    m_Address: GoldGem.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
