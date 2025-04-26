@@ -40,6 +40,13 @@ public static class Define
         SpectralSlash = 2090
     }
 
+    public enum DropItem
+    {
+        Potion,
+        Magnet,
+        Bomb
+    }
+
     public enum EvoloutionType
     {
         None,
@@ -111,4 +118,9 @@ public static class Define
     public static string GRIDNAME = "@Grid";
     public static string GEMNAME = "Gem";
     public static string STANDARDNAME = "Standard";
+
+    public static int WAVE_REWARD_TIME = 30;
+    public static int POTION_ID = 3100;
+    public static int MAGNET_ID = 3101;
+    public static int BOMB_ID = 3102;
 }

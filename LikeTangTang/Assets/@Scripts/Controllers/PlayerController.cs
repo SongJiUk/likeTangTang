@@ -277,28 +277,7 @@ public class PlayerController : CreatureController, ITickable
     #endregion
 
     #region 젬 관련
-    public float GetEnvDist {get; set;} = 1f;
-
-        void GetGem()
-        {
-            List<GemController> gems = Manager.ObjectM.gemSet.ToList();
-            var FindGem = Manager.ObjectM.Grid.GetObjects(transform.position, GetEnvDist);
-        
-            var sqrtDist = GetEnvDist * GetEnvDist;
-            foreach (var gem in gems)
-            {
-                Vector3 dir = gem.transform.position - transform.position;
-
-                if(dir.sqrMagnitude <= sqrtDist)
-                {
-                    Manager.ObjectM.DeSpawn(gem);
-                }
-            }
-
-        
-            // Debug.Log($"{FindGem.Count}  /  {gems.Count}");
-
-        }
+    
 
     #endregion
     public void OnEnable() => Manager.UpdateM?.Register(this);

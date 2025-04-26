@@ -7,6 +7,8 @@ using UnityEngine.UIElements;
 
 public class BossController : MonsterController
 {
+    public Action<BossController> BossMonsterInfoUpdate;
+    public Action OnBossDead;
     // [ ] DATA LOAD
     float range = 2.0f;
     public override bool Init()

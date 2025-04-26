@@ -31,6 +31,7 @@ public class Manager : MonoBehaviour
     CustomSceneManager sceneM = new CustomSceneManager();
     SoundManager soundM = new SoundManager();
     UIManager uiM = new UIManager();
+    TimeManager timeM = new TimeManager();
     
     UpdateManager updateM;
 
@@ -40,6 +41,9 @@ public class Manager : MonoBehaviour
     public static SoundManager SoundM { get { return Instance?.soundM; } }
     public static UIManager UiM { get { return Instance?.uiM; } }
     public static UpdateManager UpdateM {get {return Instance?.updateM;}}
+
+    public static TimeManager TimeM {get {return Instance?.timeM;}}
+
     #endregion
 
 

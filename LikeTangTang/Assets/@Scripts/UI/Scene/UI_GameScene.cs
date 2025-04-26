@@ -39,6 +39,16 @@ public class UI_GameScene : UI_Base
         GetText(typeof(Texts), (int)(Texts.WaveValueText)).text = _currentStageIndex.ToString();
     }
 
+    public void OnWaveEnd()
+    {
+
+    }
+
+    public void OnChangeSecond(int _second)
+    {
+
+    }
+
     //[ ] 이건 플레이어 쪽에서 관리할것임.
     public void OnPlayerDataUpdated()
     {
@@ -52,6 +62,11 @@ public class UI_GameScene : UI_Base
     }
 
     public void MonsterInfoUpdate(MonsterController _mc)
+    {
+
+    }
+
+    public void BossMonsterInfoUpdate(BossController _bc)
     {
 
     }

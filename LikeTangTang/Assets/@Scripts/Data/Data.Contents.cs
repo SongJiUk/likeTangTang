@@ -269,4 +269,24 @@ namespace Data
     #endregion
     #region 조이스틱이나, 맵, 하드코딩되는것들 데이터로 정리해서 가져와서 사용하자.
     #endregion
+
+    [Serializable]
+    public class DropItemData
+    {
+        public int DataID;
+    }
+
+    public class DropItmeLoader : ILoader<int, DropItemData>
+    {
+        public List<DropItemData> dropData = new List<DropItemData>();
+
+        public Dictionary<int, DropItemData> MakeDict()
+        {
+            Dictionary<int, DropItemData> dic = new Dictionary<int, DropItemData>();
+            foreach(DropItemData data in dropData)
+                dic.Add(data.DataID, data);
+
+            return dic;
+        }
+    }
 }

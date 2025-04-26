@@ -14,6 +14,7 @@ public class ObjectManager
     public HashSet<MonsterController> mcSet { get; } = new HashSet<MonsterController>();
     public HashSet<ProjectileController> pjSet { get; } = new HashSet<ProjectileController>();
     public HashSet<GemController> gemSet { get; } = new HashSet<GemController>();
+    public HashSet<DropItemController> dropItemSet {get;} = new HashSet<DropItemController>();
 
 
     public GridController Grid {get; private set;}
@@ -24,6 +25,7 @@ public class ObjectManager
     Type eliteMonsterType = typeof(EliteMonsterController);
     Type bossMonsterType = typeof(BossController);
     Type gemType = typeof(GemController);
+    Type dropItemType = typeof(DropItemController);
     Type gridType = typeof(GridController);
     Type projectileType = typeof(ProjectileController);
     Type egoSwordType = typeof(EgoSword);
@@ -92,23 +94,35 @@ public class ObjectManager
             return bc as T;
 
         }
-        else if (type == gemType)
+        // else if (type == gemType)
+        // {
+        //     GameObject go = Manager.ResourceM.Instantiate(Define.GEMNAME, null, true);
+        //     GemController gc = Utils.GetOrAddComponent<GemController>(go);
+        //     go.transform.position = _pos;
+        //     gemSet.Add(gc);
+
+        //     // [ ] sprite이름도 DATA에서 불러와서 효과적으로 진행
+        //     //string key = UnityEngine.Random.Range(0, 2) == 0 ? "Gem_01.sprite" : "Gem_02.sprite";
+        //     //Sprite sprite = Manager.ResourceM.Load<Sprite>(key);
+        //     //go.GetComponent<SpriteRenderer>().sprite = sprite;
+
+        //     //Explanation : AddGrid
+        //     Grid.AddCell(go);
+
+        //     return gc as T;
+
+
+        // }
+        else if( type == dropItemType)
         {
-            GameObject go = Manager.ResourceM.Instantiate(Define.GEMNAME, null, true);
-            GemController gc = Utils.GetOrAddComponent<GemController>(go);
+            GameObject go = Manager.ResourceM.Instantiate(_prefabName, null, true);
+            DropItemController dc = Utils.GetOrAddComponent<DropItemController>(go);
             go.transform.position = _pos;
-            gemSet.Add(gc);
+            dropItemSet.Add(dc);
 
-            // [ ] sprite이름도 DATA에서 불러와서 효과적으로 진행
-            //string key = UnityEngine.Random.Range(0, 2) == 0 ? "Gem_01.sprite" : "Gem_02.sprite";
-            //Sprite sprite = Manager.ResourceM.Load<Sprite>(key);
-            //go.GetComponent<SpriteRenderer>().sprite = sprite;
-
-            //Explanation : AddGrid
             Grid.AddCell(go);
 
-            return gc as T;
-
+            return dc as T;
 
         }
         else if (type == gridType)

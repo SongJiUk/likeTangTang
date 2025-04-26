@@ -111,8 +111,8 @@ public class GameManager
         
        
 
-        gameData.CurrentStageData = Manager.DataM.Stagedic[1];
-        foreach(Data.StageData stage in Manager.DataM.Stagedic.Values)
+        gameData.CurrentStageData = Manager.DataM.StageDic[1];
+        foreach(Data.StageData stage in Manager.DataM.StageDic.Values)
         {
             StageClearInfoData info = new StageClearInfoData
             {
@@ -165,7 +165,7 @@ public class GameManager
 
     public void SetNextStage()
     {
-        CurretnStageData = Manager.DataM.Stagedic[CurretnStageData.StageIndex + 1];
+        CurretnStageData = Manager.DataM.StageDic[CurretnStageData.StageIndex + 1];
     }
 
     public void ClearContinueData()

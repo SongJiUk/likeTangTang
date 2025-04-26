@@ -114,7 +114,7 @@
     <Compile Include="Assets/@Scripts/Scenes/LobbyScene.cs" />
     <Compile Include="Assets/@Scripts/Utils/Memo.cs" />
     <Compile Include="Assets/@Scripts/Scenes/TitleScene.cs" />
-    <Compile Include="Assets/@Scripts/Controllers/GemController.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/DropItem/GemController.cs" />
     <Compile Include="Assets/@Scripts/Scenes/BaseScene.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/PlasmaShot.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/Projectile/FireBall.cs" />
@@ -124,7 +124,7 @@
     <Compile Include="Assets/@Scripts/Data/GameData.cs" />
     <Compile Include="Assets/@Scripts/Manager/Contents/GameManager.cs" />
     <Compile Include="Assets/@Scripts/Controllers/CameraController.cs" />
-    <Compile Include="Assets/@Scripts/Controllers/DropItemController.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/DropItem/DropItemController.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/ElectricShock.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/GravityBomb.cs" />
     <Compile Include="Assets/@Scripts/Controllers/BaseController.cs" />
@@ -133,6 +133,10 @@
     <Compile Include="Assets/@Scripts/UI/Popup/UI_SkillSelectPopup.cs" />
     <Compile Include="Assets/@Scripts/Test/UI_Test.cs" />
     <Compile Include="Assets/@Scripts/Manager/System/CustomSceneManager.cs" />
+    <Compile Include="Assets/@Scripts/Manager/System/TimeManager.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/DropItem/PotionController.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/DropItem/MagnetController.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/DropItem/BombController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

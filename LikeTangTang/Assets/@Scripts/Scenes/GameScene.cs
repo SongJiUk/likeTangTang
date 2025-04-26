@@ -2,20 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
+using static Define;
 
 
-public class GameScene : BaseScene
+public class GameScene : BaseScene, ITickable
 {
+    GameManager gm;
+    TimeManager tm;
     SpawnManager spawnManager;
     PlayerController player;
     UI_GameScene ui;
     Define.StageType stageType;
+    BossController bossMonster;
 
     #region Action
     public Action<int> OnWaveStart;
+    public Action<int> OnChangeSecond;
+    public Action OnWaveEnd;
     
     #endregion
-    public Define.StageType StageType
+    public StageType StageType
     {
         get { return stageType; }
         set 
@@ -25,11 +32,11 @@ public class GameScene : BaseScene
             {
                 switch(stageType)
                 {
-                    case Define.StageType.Normal :
+                    case StageType.Normal :
                         spawnManager.isStop = false;
                     break;
 
-                    case Define.StageType.Boss :
+                    case StageType.Boss :
                         spawnManager.isStop = true;
                     break;
                 }
@@ -37,11 +44,14 @@ public class GameScene : BaseScene
         }
     }
 
+    bool isGameEnd = false;
+
     public override void Init()
     {
         base.Init();
-        SceneType = Define.SceneType.GameScene;
-        
+        SceneType = SceneType.GameScene;
+        gm = Manager.GameM;
+        Manager.UpdateM.Register(this);
         Manager.UiM.ShowPopup<UI_JoyStick>();
         
         if(Manager.GameM.ContinueDatas.isContinue)
@@ -65,6 +75,8 @@ public class GameScene : BaseScene
         ui = Manager.UiM.ShowPopup<UI_GameScene>();
 
         OnWaveStart = ui.OnWaveStart;
+        OnWaveEnd = ui.OnWaveEnd;
+        OnChangeSecond = ui.OnChangeSecond;
         //[ ] : UI 업데이트.
 
     }
@@ -116,6 +128,61 @@ public class GameScene : BaseScene
         yield break;
     }
 
+    void WaveEnd()
+    {
+        OnWaveEnd?.Invoke();
+
+        if(gm.CurrentWaveIndex < gm.CurretnStageData.WaveArray.Count - 1)
+        {
+            gm.CurrentWaveIndex++;
+            StopAllCoroutines();
+
+            StartCoroutine(StartWave(gm.CurretnStageData.WaveArray[gm.CurrentWaveIndex]));
+        }
+        else // BOSS
+        {
+            Vector2 spawnPos = Utils.CreateMonsterSpawnPoint(gm.player.transform.position);
+
+            for(int i =0; i<gm.CurrentWaveData.BossMonsterID.Count; i++)
+            {
+                bossMonster = Manager.ObjectM.Spawn<BossController>(spawnPos, gm.CurrentWaveData.BossMonsterID[i]);
+                bossMonster.BossMonsterInfoUpdate -= ui.BossMonsterInfoUpdate;
+                bossMonster.BossMonsterInfoUpdate += ui.BossMonsterInfoUpdate;
+                bossMonster.OnBossDead -= OnBossDead;
+                bossMonster.OnBossDead += OnBossDead;
+
+            }
+        }
+    }
+    void OnBossDead()
+    {
+        //TODO : 보스가 죽으면, 게임을 끝내고, 게임 결과창을 띄움
+    }
+    float lastSecond = Define.WAVE_REWARD_TIME;
+    public void Tick(float _deltaTime)
+    {
+        if(isGameEnd || gm.CurrentWaveData == null) return;
+
+        if(bossMonster == null) tm.TimeRemaining -= _deltaTime;
+        else tm.TimeRemaining = 0f;
+
+
+        int currentSecond = (int)tm.TimeRemaining;
+
+        if(currentSecond != lastSecond)
+        {
+            //TOOD : 시간초 UI변경
+            OnChangeSecond?.Invoke(currentSecond);
+
+            if(currentSecond == WAVE_REWARD_TIME) SpawnReward();
+
+        }
+
+        if(tm.TimeRemaining < 0) WaveEnd();
+
+        lastSecond = currentSecond;
+    }
+
     public void CreateRandomExp()
     {
         int[] randBox = new int[] { 1, 2, 5, 10 };
@@ -154,8 +221,30 @@ public class GameScene : BaseScene
         }
     }
 
+    public void SpawnReward()
+    {
+        DropItem dropItemType = (DropItem)UnityEngine.Random.Range(0,3);
 
-#region  전에 쓰던 잼, 킬 코드
+        Vector3 spawnPos = Utils.CreateObjectAroundPlayer(gm.player.transform.position);
+        Data.DropItemData dropItem;
+
+        // switch(dropItemType)
+        // {
+        //     case DropItem.Potion :
+        //         if(Manager.DataM.DropItemDic.TryGetValue(POTION_ID, out dropItem))
+                    
+
+        //     break;
+
+        //     case DropItem.Magnet :
+        //     break;
+
+        //     case DropItem.Bomb :
+        //     break;
+        // }
+    }
+
+    #region  전에 쓰던 잼, 킬 코드
     // int maxGemCount = 10;
     // void HandleOnChangeGemCount(int _count)
     // {
@@ -199,4 +288,9 @@ public class GameScene : BaseScene
     //     }
     // }
     #endregion
+
+    void OnDestroy()
+    {
+        Manager.UpdateM.Unregister(this);
+    }
 }

@@ -10,6 +10,7 @@ public class MonsterController : CreatureController, ITickable
     
     #region Action
     public Action<MonsterController> MonsterInfoUpdate;
+    
     #endregion
     
     Coroutine coDotDamage;

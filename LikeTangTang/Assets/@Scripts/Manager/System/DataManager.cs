@@ -20,7 +20,8 @@ public class DataManager
     public Dictionary<int, Data.SkillData> SkillDic {get; private set;} = new Dictionary<int, Data.SkillData>();
     public Dictionary<int, Data.LevelData> LevelDic {get; private set; } = new Dictionary<int, Data.LevelData>();
 
-    public Dictionary<int, Data.StageData> Stagedic {get; private set;} = new Dictionary<int, Data.StageData>();
+    public Dictionary<int, Data.StageData> StageDic {get; private set;} = new Dictionary<int, Data.StageData>();
+    public Dictionary<int, Data.DropItemData> DropItemDic {get; private set;} = new Dictionary<int, Data.DropItemData>();
 
     public void Init()
     {
@@ -29,8 +30,9 @@ public class DataManager
         PlayerDic = LoadJson<Data.PlayerDataLoader, int, Data.PlayerData>("PlayerData.json").MakeDict();
         MonsterDic = LoadJson<Data.MonsterDataLoader, string, Data.MonsterData>("MonsterData.json").MakeDict();
         SkillDic = LoadJson<Data.SkillDataLoader, int, Data.SkillData>("SkillData.json").MakeDict();
-        Stagedic = LoadJson<Data.StageDataLoader, int, Data.StageData>("StageData.json").MakeDict();
+        StageDic = LoadJson<Data.StageDataLoader, int, Data.StageData>("StageData.json").MakeDict();
         LevelDic = LoadJson<Data.LevelDataLoader, int, Data.LevelData>("LevelData.json").MakeDict();
+        DropItemDic = LoadJson<Data.DropItmeLoader, int, Data.DropItemData>("DropItemData.json").MakeDict();
 
     }
 
