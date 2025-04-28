@@ -43,57 +43,89 @@ public class ObjectManager
             go.name = $"{Manager.GameM.gameData.userName}";
             go.transform.position = _pos;
             PlayerController pc = go.GetComponent<PlayerController>();
-            Player = pc;
+          
             pc.SetInfo(_templateID);
-            
+
+            Player = pc;
             return pc as T;
         }
-        else if (type == monsterType)
+        if(monsterType.IsAssignableFrom(type))
         {
-
-            //[x] DATA로 받아와서 처리하지.(스테이지 데이터를 생성하서, 그 스테이지에 맞는 몬스터들 가져오면 됌.)
             CreatureData cd = Manager.DataM.CreatureDic[_templateID];
-
             GameObject go = Manager.ResourceM.Instantiate(cd.prefabName, _pooling: true);
-            MonsterController mc = Utils.GetOrAddComponent<MonsterController>(go);
+            T mc = go.GetOrAddComponent<T>();
             go.transform.position = _pos;
             mc.Init();
-            mc.SetInfo(_templateID);
-            mc.name = cd.prefabName;
-            mcSet.Add(mc);
-            
+            if(mc is MonsterController monster)
+            {
+                monster.SetInfo(_templateID);
+                mc.name = cd.prefabName;
+                mcSet.Add(monster);
+            }
+               
+
             return mc as T;
-
         }
-        else if(type == eliteMonsterType)
-        {
-            CreatureData cd = Manager.DataM.CreatureDic[_templateID];
+
+        //if (type == monsterType)
+        //{
+
+        //    //[x] DATA로 받아와서 처리하지.(스테이지 데이터를 생성하서, 그 스테이지에 맞는 몬스터들 가져오면 됌.)
+        //    CreatureData cd = Manager.DataM.CreatureDic[_templateID];
+
+        //    GameObject go = Manager.ResourceM.Instantiate(cd.prefabName, _pooling: true);
+        //    MonsterController mc = Utils.GetOrAddComponent<MonsterController>(go);
+        //    go.transform.position = _pos;
+        //    mc.Init();
+        //    mc.SetInfo(_templateID);
+        //    mc.name = cd.prefabName;
+        //    mcSet.Add(mc);
+            
+        //    return mc as T;
+
+        //}
+        //else if(type == eliteMonsterType)
+        //{
+        //    CreatureData cd = Manager.DataM.CreatureDic[_templateID];
            
-            GameObject go = Manager.ResourceM.Instantiate(cd.prefabName, _pooling: true);
-            EliteMonsterController emc = go.GetOrAddComponent<EliteMonsterController>();
-            emc.transform.position = _pos;
-            emc.Init();
-            emc.SetInfo(_templateID);
-            emc.name = cd.prefabName;
-            mcSet.Add(emc);
+        //    GameObject go = Manager.ResourceM.Instantiate(cd.prefabName, _pooling: true);
+        //    EliteMonsterController emc = go.GetOrAddComponent<EliteMonsterController>();
+        //    emc.transform.position = _pos;
+        //    emc.Init();
+        //    emc.SetInfo(_templateID);
+        //    emc.name = cd.prefabName;
+        //    mcSet.Add(emc);
 
-            return emc as T;
-        }
-        else if(type == bossMonsterType)
+        //    return emc as T;
+        //}
+        //else if(type == bossMonsterType)
+        //{
+        //    CreatureData cd = Manager.DataM.CreatureDic[_templateID];
+
+        //    GameObject go = Manager.ResourceM.Instantiate(cd.prefabName);
+        //    BossController bc = go.GetOrAddComponent<BossController>();
+        //    go.transform.position = _pos;
+        //    bc.Init();
+        //    bc.SetInfo(_templateID);
+        //    go.name = cd.prefabName;
+        //    mcSet.Add(bc);
+
+        //    return bc as T;
+        //}
+
+        if(dropItemType.IsAssignableFrom(type))
         {
-            CreatureData cd = Manager.DataM.CreatureDic[_templateID];
+            GameObject go = Manager.ResourceM.Instantiate(_prefabName, null, true);
+            T dropItem = go.GetOrAddComponent<T>();
+            dropItem.transform.position = _pos;
 
-            GameObject go = Manager.ResourceM.Instantiate(cd.prefabName);
-            BossController bc = go.GetOrAddComponent<BossController>();
-            go.transform.position = _pos;
-            bc.Init();
-            bc.SetInfo(_templateID);
-            go.name = cd.prefabName;
-            mcSet.Add(bc);
+            dropItemSet.Add(dropItem as DropItemController);
+            Grid.AddCell(go);
 
-            return bc as T;
+            return dropItem;
         }
-        else if(typeof(T).IsSubclassOf(typeof(DropItemController)))
+
+        if (typeof(T).IsSubclassOf(typeof(DropItemController)))
         {
             GameObject go = Manager.ResourceM.Instantiate(_prefabName, null, true);
             T obj = Utils.GetOrAddComponent<T>(go);
@@ -139,8 +171,21 @@ public class ObjectManager
         {
             Grid = GameObject.Find(Define.GRIDNAME).GetComponent<GridController>();
             Grid.Init();
+            return Grid as T;
         }
-        else if (type == projectileType)
+        if(projectileType.IsAssignableFrom(type))
+        {
+            var go = Manager.ResourceM.Instantiate(_prefabName, _pooling: true);
+            var proj = go.GetOrAddComponent<ProjectileController>();
+            proj.transform.position = _pos;
+            proj.Init();
+
+            pjSet.Add(proj);
+
+            return proj as T;
+        }
+
+        if (type == projectileType)
         {
             // TemplateID 받아와서 생성
             //if (Manager.DataM.SkillDic.TryGetValue(_templateID, out var skilldata) == false) return null;
@@ -153,16 +198,18 @@ public class ObjectManager
 
             return pc as T;
         }
-        else if(typeof(T).IsSubclassOf(typeof(SkillBase)))
+
+        if(skillType.IsAssignableFrom(type))
         {
-            if (Manager.DataM.SkillDic.TryGetValue(_templateID, out var skillData) == false) return null;
-            GameObject go = Manager.ResourceM.Instantiate(skillData.PrefabName, _pooling: false);
+            if (!Manager.DataM.SkillDic.TryGetValue(_templateID, out var skillData)) return null;
+
+            GameObject go = Manager.ResourceM.Instantiate(skillData.PrefabName);
             go.transform.position = _pos;
 
-            T t = go.GetOrAddComponent<T>();
-            t.Init();
+            T skill = go.GetOrAddComponent<T>();
+            skill.Init();
 
-            return t;
+            return skill;
         }
         else if (type == egoSwordType)
         {
