@@ -19,14 +19,17 @@ public class DropItemController : BaseController
     {
         
     }
+    
     public virtual void OnDisable()
     {
         
     }
+
     public virtual void GetItem()
     {
 
     }
+
     void GetGem()
     {
         //List<DropItemController> dropItems = Manager.ObjectM.dropItemSet.ToList();
@@ -42,8 +45,6 @@ public class DropItemController : BaseController
                 Manager.ObjectM.DeSpawn(gem);
             }
         }
-
-
         // Debug.Log($"{FindGem.Count}  /  {gems.Count}");
 
     }

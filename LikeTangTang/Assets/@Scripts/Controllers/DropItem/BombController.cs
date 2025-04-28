@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BombController : DropItemController
-{
+{  
+    
     public override bool Init()
     {
         base.Init();
@@ -18,6 +19,6 @@ public class BombController : DropItemController
 
     public void SetInfo(Data.DropItemData _data)
     {
-        
+
     }
 }

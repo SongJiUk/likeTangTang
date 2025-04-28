@@ -8,7 +8,8 @@ public class UI_Test : UI_Base
 
     public enum Toggles
     {
-        SkillLevelUpToggle
+        SkillLevelUpToggle,
+        WaveEndToggle
     }
     public override bool Init()
     {
@@ -38,6 +39,11 @@ public class UI_Test : UI_Base
             //Manager.GameM.player.Skills.LevelUpSkill(skillType);
             //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.TimeStopBomb);
             //Manager.GameM.player.Skills.LevelUpSkill(skillType);
+        });
+
+        GetToggle(typeof(Toggles), (int)Toggles.WaveEndToggle).gameObject.BindEvent(() => {
+            GameScene gameScene = GameObject.Find("@GameScene").GetComponent<GameScene>();
+            gameScene.WaveEnd();
         });
         return true;
     }

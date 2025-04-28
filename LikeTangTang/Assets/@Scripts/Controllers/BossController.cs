@@ -8,14 +8,16 @@ using UnityEngine.UIElements;
 public class BossController : MonsterController
 {
     public Action<BossController> BossMonsterInfoUpdate;
-    public Action OnBossDead;
     // [ ] DATA LOAD
     float range = 2.0f;
     public override bool Init()
     {
         if (!base.Init()) return false;
         Hp = 10000;
+        transform.localScale = new Vector3(2f,2f,2f);
+        objType = Define.ObjectType.Boss;
         CreatureState = Define.CreatureState.Moving;
+        InvokeMonsterData();
 
         return true;
     }
@@ -23,6 +25,8 @@ public class BossController : MonsterController
     
     public override void UpdateAnim()
     {
+        if(CreatureAnim == null) return;
+
         switch(CreatureState)
         {
             case Define.CreatureState.Moving:
@@ -58,7 +62,7 @@ public class BossController : MonsterController
     protected override void UpdateDead()
     {
         // TODO : 떨구는 아이템, simulated 끄기,
-        this.GetOrAddComponent<Rigidbody2D>().simulated = false;
+
     }
 
     public override void OnDamaged(BaseController _attacker, SkillBase _skill = null, float _damage = 0)
@@ -66,15 +70,19 @@ public class BossController : MonsterController
         base.OnDamaged(_attacker, _skill, _damage);
     }
 
-
     public override void OnDead()
     {
-        CreatureState = Define.CreatureState.Dead;
+        base.OnDead();
+    }
+    public override void InitStat()
+    {
+        var stageLevel = Manager.GameM.CurrentStageData.StageLevel;
 
-        //WaitTime(2.0f);
-        //Manager.ObjectM.DeSpawn(this);
+        MaxHp = (creatureData.MaxHp + (creatureData.MaxHpUpForIncreasStage * stageLevel)) * creatureData.HpRate;
+        Attack = (creatureData.Attack + (creatureData.AttackUpForIncreasStage * stageLevel)) * creatureData.AttackRate;
 
-        StartCoroutine(coWaitAndDo(2.0f, () => Manager.ObjectM.DeSpawn(this)));
+        Hp = MaxHp;
+        Speed = creatureData.Speed * creatureData.MoveSpeedRate;
     }
 
 

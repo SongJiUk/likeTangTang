@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MagnetController : MonoBehaviour
+public class MagnetController : DropItemController
 {
     // Start is called before the first frame update
     void Start()

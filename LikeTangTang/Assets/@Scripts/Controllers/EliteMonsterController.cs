@@ -10,7 +10,7 @@ public class EliteMonsterController : MonsterController
         CreatureState = Define.CreatureState.Moving;
 
         Rigid.simulated = true;
-        transform.localScale = new Vector3(2f, 2f, 2f);
+        transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
 
         objType = Define.ObjectType.Monster;
 

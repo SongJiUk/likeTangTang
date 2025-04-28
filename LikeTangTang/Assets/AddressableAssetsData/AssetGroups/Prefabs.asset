@@ -17,11 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: ac1d535233f80d043ad3b60ce04f3a48
   m_SerializeEntries:
-  - m_GUID: 3a55544e4764ba24095ef689d3371d71
-    m_Address: Monster
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
   - m_GUID: 205293b6573a44f5b81e6506c8aa0a67
     m_Address: Gem
     m_ReadOnly: 0

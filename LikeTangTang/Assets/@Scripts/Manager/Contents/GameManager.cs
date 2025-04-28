@@ -94,6 +94,9 @@ public class GameManager
     string path;
     public bool isLoaded = false;
     public bool isGameEnd = false;
+
+    public int minute;
+    public int second;
     public void Init()
     {
         /*TODO : 

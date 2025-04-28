@@ -10,6 +10,7 @@ public class MonsterController : CreatureController, ITickable
     
     #region Action
     public Action<MonsterController> MonsterInfoUpdate;
+    public Action OnBossDead;
     
     #endregion
     
@@ -61,8 +62,7 @@ public class MonsterController : CreatureController, ITickable
 
         string name = gameObject.name;
         objType = ObjectType.Monster;
-        
-        //DefualtVelocity = Rigid.velocity;
+    
 
         return true;
     }
@@ -168,7 +168,8 @@ public class MonsterController : CreatureController, ITickable
     public override void OnDead()
     {
         base.OnDead();
-        isDead = true;
+        InvokeMonsterData();
+        
         Manager.GameM.player.KillCount++;
 
 
@@ -182,6 +183,9 @@ public class MonsterController : CreatureController, ITickable
             Append(transform.DOScale(0f, 0.2f).SetEase(Ease.InOutBounce))
             .OnComplete(() =>
             {
+                StopAllCoroutines();
+                Rigid.velocity = Vector2.zero;
+                OnBossDead?.Invoke();
                 Manager.ObjectM.DeSpawn(this);
             });
     }

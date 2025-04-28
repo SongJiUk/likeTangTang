@@ -47,13 +47,13 @@ public class UI_GameResultPopup : UI_Base
     protected override void RefreshUI()
     {
         //[ ] : 데이터 가져와서 데이터로 해결
-        GetText(typeof(Texts), (int)Texts.GameResultPopupTitleText).text = "Game Result123123123";
-        GetText(typeof(Texts), (int)Texts.ResultStageValueText).text = "4 Stage123";
-        GetText(typeof(Texts), (int)Texts.ResultSurvivalTimeText).text = "Survival123 Time";
-        GetText(typeof(Texts), (int)Texts.ResultSurvivalTimeValueText).text = "11244 : 23";
-        GetText(typeof(Texts), (int)Texts.ResultGoldValueText).text = "9999123";
-        GetText(typeof(Texts), (int)Texts.ResultKillValueText).text = "1212434";
-        GetText(typeof(Texts), (int)Texts.ConfirmButtonText).text = "OK123";
+        GetText(typeof(Texts), (int)Texts.ResultStageValueText).text = $"{Manager.GameM.CurrentStageData.StageIndex} Stage";
+        GetText(typeof(Texts), (int)Texts.ResultSurvivalTimeValueText).text = $"{Manager.GameM.minute:D2} : {Manager.GameM.second:D2}";
+        GetText(typeof(Texts), (int)Texts.ResultGoldValueText).text = $"{Manager.GameM.CurrentStageData.ClearGold}";
+        GetText(typeof(Texts), (int)Texts.ResultKillValueText).text = $"{Manager.GameM.player.KillCount}";
+
+        Manager.GameM.Gold += Manager.GameM.CurrentStageData.ClearGold;
+        
     }
 
     protected override void SetUIInfo()

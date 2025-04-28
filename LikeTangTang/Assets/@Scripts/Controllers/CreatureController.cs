@@ -32,7 +32,7 @@ public class CreatureController : BaseController, ITickable
     #region Info
     protected SpriteRenderer CreatureSprite;
     protected Animator CreatureAnim;
-    Data.CreatureData creatureData;
+    public Data.CreatureData creatureData;
     public Rigidbody2D Rigid { get; set; }
     
 
@@ -57,17 +57,15 @@ public class CreatureController : BaseController, ITickable
     public override bool Init()
     {
         if (!base.Init()) return false;
+        
         Skills = gameObject.GetOrAddComponent<SkillComponent>();
         Rigid = GetComponent<Rigidbody2D>();
 
-        CreatureSprite = GetComponent<SpriteRenderer>();
-        if (CreatureSprite == null)
-            CreatureSprite = Utils.FindChild<SpriteRenderer>(gameObject);
+        CreatureSprite = Utils.FindChild<SpriteRenderer>(gameObject, recursive: true);
 
-
-        CreatureAnim = GetComponent<Animator>();
-        if (CreatureAnim == null)
-            CreatureAnim = Utils.FindChild<Animator>(gameObject);
+        CreatureAnim = gameObject.GetComponent<Animator>();
+        if(CreatureAnim == null)
+            CreatureAnim = Utils.FindChild<Animator>(gameObject, recursive: true);
 
         return true;
     }
@@ -119,6 +117,8 @@ public class CreatureController : BaseController, ITickable
                         break;
 
                     case Define.ObjectType.Monster:
+                    case Define.ObjectType.EliteMonster :
+                    case Define.ObjectType.Boss:
                         OnDead();
                         break;
                 }
@@ -149,6 +149,9 @@ public class CreatureController : BaseController, ITickable
 
         MaxHp = (creatureData.MaxHp + (creatureData.MaxHpUpForIncreasStage * stageLevel)) * (creatureData.HpRate + waveRate);
         Attack = (creatureData.Attack + (creatureData.AttackUpForIncreasStage * stageLevel)) * creatureData.AttackRate;
+
+        //TEMP
+        Attack = 10000f;
         Hp = MaxHp;
         Speed = creatureData.Speed * creatureData.MoveSpeedRate;
     }
@@ -157,8 +160,6 @@ public class CreatureController : BaseController, ITickable
     {
         CreatureState = CreatureState.Dead;
         this.GetComponent<Rigidbody2D>().simulated = false;
-        transform.localScale = Vector3.one;
-        
     }
 
     

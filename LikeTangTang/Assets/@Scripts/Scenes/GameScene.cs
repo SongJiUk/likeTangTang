@@ -118,19 +118,22 @@ public class GameScene : BaseScene, ITickable
         spawnManager.StartSpawn();
         Manager.GameM.SaveGame();
 
-        EliteMonsterController eliteMonster;
-        Vector2 spawnPos = Utils.CreateMonsterSpawnPoint(Manager.GameM.player.Standard.position);
-        for (int i =0; i<Manager.GameM.CurrentWaveData.EleteMonsterID.Count; i++)
+        if(Manager.GameM.CurrentWaveData.EleteMonsterID.Count > 0)
         {
-            eliteMonster = Manager.ObjectM.Spawn<EliteMonsterController>(spawnPos, Manager.GameM.CurrentWaveData.EleteMonsterID[i]);
-            eliteMonster.MonsterInfoUpdate -= ui.MonsterInfoUpdate;
-            eliteMonster.MonsterInfoUpdate += ui.MonsterInfoUpdate;
+            EliteMonsterController eliteMonster;
+            Vector2 spawnPos = Utils.CreateMonsterSpawnPoint(Manager.GameM.player.Standard.position);
+            for (int i =0; i<Manager.GameM.CurrentWaveData.EleteMonsterID.Count; i++)
+            {
+                eliteMonster = Manager.ObjectM.Spawn<EliteMonsterController>(spawnPos, Manager.GameM.CurrentWaveData.EleteMonsterID[i]);
+                eliteMonster.MonsterInfoUpdate -= ui.MonsterInfoUpdate;
+                eliteMonster.MonsterInfoUpdate += ui.MonsterInfoUpdate;
+            }
         }
 
         yield break;
     }
 
-    void WaveEnd()
+    public void WaveEnd()
     {
         OnWaveEnd?.Invoke();
 
@@ -141,7 +144,7 @@ public class GameScene : BaseScene, ITickable
 
             StartCoroutine(StartWave(gm.CurrentStageData.WaveArray[gm.CurrentWaveIndex]));
         }
-        else // BOSS
+        else
         {
             Vector2 spawnPos = Utils.CreateMonsterSpawnPoint(gm.player.transform.position);
 
@@ -158,6 +161,16 @@ public class GameScene : BaseScene, ITickable
     void OnBossDead()
     {
         //TODO : 보스가 죽으면, 게임을 끝내고, 게임 결과창을 띄움
+        StartCoroutine(CoGameEnd());
+    }
+
+    IEnumerator CoGameEnd()
+    {
+        yield return new WaitForSeconds(1f);
+        isGameEnd = true;
+        Manager.GameM.isGameEnd = true;
+        UI_GameResultPopup rp = Manager.UiM.ShowPopup<UI_GameResultPopup>();
+        rp.SetInfo();
     }
     float lastSecond =- 1f;
     float lastMinute = 0;
@@ -165,10 +178,6 @@ public class GameScene : BaseScene, ITickable
     int totalSeconds = 0;
     public void Tick(float _deltaTime)
     {
-        if (Input.GetKeyDown(KeyCode.F10))
-        {
-            WaveEnd();
-        }
 
         if (isGameEnd || gm.CurrentWaveData == null) return;
 
@@ -178,6 +187,8 @@ public class GameScene : BaseScene, ITickable
         if(currentSecond != lastSecond)
         {
             OnChangeSecond?.Invoke(currentMinute, currentSecond);
+            Manager.GameM.minute = currentMinute;
+            Manager.GameM.second = currentSecond;
 
             if (currentSecond == WAVE_REWARD_TIME) SpawnReward();
 
