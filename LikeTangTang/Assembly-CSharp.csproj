@@ -137,6 +137,7 @@
     <Compile Include="Assets/@Scripts/Controllers/DropItem/PotionController.cs" />
     <Compile Include="Assets/@Scripts/Controllers/DropItem/MagnetController.cs" />
     <Compile Include="Assets/@Scripts/Controllers/DropItem/BombController.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/DropItem/DropBoxController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

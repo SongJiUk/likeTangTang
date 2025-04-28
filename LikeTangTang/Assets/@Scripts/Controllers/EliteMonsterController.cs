@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EliteMonsterController : MonsterController
@@ -29,6 +32,34 @@ public class EliteMonsterController : MonsterController
 
     void DropItem()
     {
+        var dropList = Manager.GameM.CurrentWaveData.EliteDropItemId;
 
+        if(dropList.Count == 0) return;
+        
+        int randIndex = UnityEngine.Random.Range(0, dropList.Count);
+        int randomDropId = dropList[randIndex];
+        
+        //TEMP  
+        randomDropId = dropList[1];
+
+        if(Manager.DataM.DropItemDic.TryGetValue(randomDropId, out Data.DropItemData dropItem))
+        {
+            Vector3 dropPos = transform.position;
+
+            switch(dropItem.DropItemType)
+            {
+                case Define.DropItemType.Potion :
+                Manager.ObjectM.Spawn<PotionController>(dropPos, _prefabName:dropItem.DropItemTypeStr).SetInfo(dropItem);
+                break;
+
+                case Define.DropItemType.DropBox :
+                Manager.ObjectM.Spawn<DropBoxController>(dropPos, _prefabName:dropItem.DropItemTypeStr).SetInfo(dropItem);
+                break;
+
+                default :
+                Debug.LogWarning($"[DropItem] 미등록 타입 발견 : {dropItem.DropItemType}");
+                break;
+            }
+        }
     }
 }

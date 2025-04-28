@@ -488,6 +488,7 @@ public class DataTransformer : EditorWindow
             dropItem.NameTextID = ConvertValue<string>(row[i++]);
             dropItem.ItemDescription = ConvertValue<string>(row[i++]);
             dropItem.SpriteName = ConvertValue<string>(row[i++]);
+            dropItem.AnimName = ConvertValue<string>(row[i++]);
 
             loader.dropData.Add(dropItem);
         }

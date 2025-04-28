@@ -23,7 +23,8 @@ public static class Define
         Bomb,
         Magnet,
         HP,
-        Gold
+        Gold,
+        Potion
     }
     public enum SkillType
     {

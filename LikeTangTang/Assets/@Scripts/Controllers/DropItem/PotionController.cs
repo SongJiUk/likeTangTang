@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using Data;
 using UnityEngine;
 
 public class PotionController : DropItemController
 {
-    // Start is called before the first frame update
-    void Start()
+    Animator anim;
+
+    public override bool Init()
     {
-        
+        base.Init();
+        itemType = Define.ItemType.Potion;
+        anim = GetComponent<Animator>();
+
+        return true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void GetItem()
     {
-        
+        base.GetItem();
+
+    }
+
+    public override void SetInfo(DropItemData _dropItem)
+    {
+        anim.runtimeAnimatorController = Manager.ResourceM.Load<RuntimeAnimatorController>($"{_dropItem.AnimName}");
     }
 }

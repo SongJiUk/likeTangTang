@@ -65,7 +65,7 @@ public class GameManager
     
     public WaveData CurrentWaveData
     {
-        get { return gameData.CurrentStageData.WaveArray[CurrentWaveIndex];}
+        get { return CurrentStageData.WaveArray[CurrentWaveIndex];}
     }
 
   

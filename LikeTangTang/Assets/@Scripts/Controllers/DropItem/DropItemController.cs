@@ -30,6 +30,11 @@ public class DropItemController : BaseController
 
     }
 
+    public virtual void SetInfo(Data.DropItemData _dropItem)
+    {
+        
+    }
+
     void GetGem()
     {
         //List<DropItemController> dropItems = Manager.ObjectM.dropItemSet.ToList();

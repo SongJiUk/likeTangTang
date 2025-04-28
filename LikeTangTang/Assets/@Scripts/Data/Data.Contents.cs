@@ -250,6 +250,7 @@ namespace Data
         public string NameTextID;
         public string ItemDescription;
         public string SpriteName;
+        public string AnimName;
     }
 
     public class DropItemDataLoader : ILoader<int, DropItemData>
