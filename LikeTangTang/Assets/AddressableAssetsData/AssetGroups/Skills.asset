@@ -62,6 +62,31 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
+  - m_GUID: 317c6ded4b29c488b89c419af6b3176a
+    m_Address: PlasmaSpinner
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 5e21d42c31c0340649a4c6f9b18854c0
+    m_Address: PlasmaShot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 75c6808dce3064e91868bec5111e9d2c
+    m_Address: ElectricShock
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 8d1423bbe53d13d4fa74d492091e28ac
+    m_Address: EnergyRing
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 31e04113d6d25449abb60a66f6db0e24
+    m_Address: ExplosionEffect
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

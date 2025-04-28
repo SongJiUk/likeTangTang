@@ -33,7 +33,32 @@ MonoBehaviour:
     m_SerializedLabels:
     - PrevLoad
   - m_GUID: a8517281985073a49901c62cfd290fa5
-    m_Address: Player_Alpha
+    m_Address: Player
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: c70bdf2fe2aa04319b6620bc96849e00
+    m_Address: Map_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 67c97c05dc52b4114a302af4438a8013
+    m_Address: Map_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 3088bf7d2ecb04b8e91b98f844a58d28
+    m_Address: Map_03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 9021aa33122994ec09710ccce2e31179
+    m_Address: Map_04
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: bd4f29db6c6fb493395e60802560b642
+    m_Address: Map_05
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad

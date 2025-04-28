@@ -30,16 +30,16 @@ DataID,DescriptionID,prefabName,MaxHp,MaxHpUpForIncreasStage,Attack,AttackUpForI
 1023,Tiger shark Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_24.sprite,,0,0
 1024,Water Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_25.sprite,,0,0
 1025,Darkness Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_26.sprite,,0,0
-1026,Fire Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_27.sprite,,0,0
-1027,Light Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_28.sprite,,0,0
-1028,Lightning Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_29.sprite,,0,0
-1029,Magic Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_30.sprite,,0,0
-1030,Cthulhu Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_31.sprite,,0,0
-1031,Demon Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_32.sprite,,0,0
-1032,Electron Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_33.sprite,,0,0
-1033,King Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_34.sprite,,0,0
-1034,Sky Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_35.sprite,,0,0
-1035,Assassin Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_36.sprite,,0,0
-1036,Black Hole Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_37.sprite,,0,0
-1037,Ice King Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_38.sprite,,0,0
-1038,Mud King Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_39.sprite,,0,0
+1100,Fire Slime,Monster,200,8,20,3,2,2,2,2,2,2,MonsterIcon_27.sprite,,0,0
+1101,Light Slime,Monster,200,8,20,3,2,2,2,2,2,2,MonsterIcon_28.sprite,,0,0
+1102,Lightning Slime,Monster,200,8,20,3,2,2,2,2,2,2,MonsterIcon_29.sprite,,0,0
+1103,Magic Slime,Monster,200,8,20,3,2,2,2,2,2,2,MonsterIcon_30.sprite,,0,0
+1104,Cthulhu Slime,Monster,200,8,20,3,2,2,2,2,2,2,MonsterIcon_31.sprite,,0,0
+1105,Demon Slime,Monster,200,8,20,3,2,2,2,2,2,2,MonsterIcon_32.sprite,,0,0
+1106,Electron Slime,Monster,200,8,20,3,2,2,2,2,2,2,MonsterIcon_33.sprite,,0,0
+1107,King Slime,Monster,200,8,20,3,2,2,2,2,2,2,MonsterIcon_34.sprite,,0,0
+1200,Sky Slime,Boss,300,8,20,3,2,2,2,2,2,2,MonsterIcon_35.sprite,,0,0
+1201,Assassin Slime,Boss,300,8,20,3,2,2,2,2,2,2,MonsterIcon_36.sprite,,0,0
+1202,Black Hole Slime,Boss,300,8,20,3,2,2,2,2,2,2,MonsterIcon_37.sprite,,0,0
+1203,Ice King Slime,Boss,300,8,20,3,2,2,2,2,2,2,MonsterIcon_38.sprite,,0,0
+1204,Mud King Slime,Boss,300,8,20,3,2,2,2,2,2,2,MonsterIcon_39.sprite,,0,0

@@ -296,4 +296,13 @@ public class MonsterController : CreatureController, ITickable
     }
     #endregion
 
+
+    public void InvokeMonsterData()
+    {
+        if(this.IsValid() && gameObject.IsValid() && objType != ObjectType.Monster)
+        {
+            MonsterInfoUpdate?.Invoke(this);
+        }
+    }
+
 }

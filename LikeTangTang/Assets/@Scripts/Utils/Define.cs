@@ -85,7 +85,14 @@ public static class Define
     {
         Player,
         Monster,
+        EliteMonster,
+        Boss,
         Projectile,
+        Gem,
+        Potion,
+        DropBox,
+        Magnet,
+        Bomb,
         Env
     }
 
