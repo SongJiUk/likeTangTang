@@ -1,0 +1,68 @@
+{
+  "dropData": [
+    {
+      "DataID": 3100,
+      "DropItemTypeStr": "Potion",
+      "DropItemType": 0,
+      "NameTextID": "일반 포션",
+      "ItemDescription": "Normal Potion",
+      "SpriteName": "Normal_Potion.sprite"
+    },
+    {
+      "DataID": 3101,
+      "DropItemTypeStr": "Potion",
+      "DropItemType": 0,
+      "NameTextID": "좋은 포션",
+      "ItemDescription": "Good Potion",
+      "SpriteName": "Good_Potion.sprite"
+    },
+    {
+      "DataID": 3102,
+      "DropItemTypeStr": "Potion",
+      "DropItemType": 0,
+      "NameTextID": "최고의 포션",
+      "ItemDescription": "Best Potion",
+      "SpriteName": "Best_Potion.sprite"
+    },
+    {
+      "DataID": 3103,
+      "DropItemTypeStr": "Magnet",
+      "DropItemType": 0,
+      "NameTextID": "자석",
+      "ItemDescription": "Magnet",
+      "SpriteName": "Magnet.sprite"
+    },
+    {
+      "DataID": 3104,
+      "DropItemTypeStr": "Bomb",
+      "DropItemType": 0,
+      "NameTextID": "폭탄",
+      "ItemDescription": "Bomb",
+      "SpriteName": "Bomb.sprite"
+    },
+    {
+      "DataID": 3105,
+      "DropItemTypeStr": "DropBox",
+      "DropItemType": 0,
+      "NameTextID": "노말 상자",
+      "ItemDescription": "Normal Box",
+      "SpriteName": "Normal_Box.sprite"
+    },
+    {
+      "DataID": 3106,
+      "DropItemTypeStr": "DropBox",
+      "DropItemType": 0,
+      "NameTextID": "레어 상자",
+      "ItemDescription": "Rare BOx",
+      "SpriteName": "Rare_Box.sprite"
+    },
+    {
+      "DataID": 3107,
+      "DropItemTypeStr": "DropBox",
+      "DropItemType": 0,
+      "NameTextID": "유니크 상자",
+      "ItemDescription": "Unique Box",
+      "SpriteName": "Unique_Box.sprite"
+    }
+  ]
+}

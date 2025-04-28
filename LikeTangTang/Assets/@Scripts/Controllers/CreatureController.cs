@@ -145,7 +145,7 @@ public class CreatureController : BaseController, ITickable
     public virtual void InitStat()
     {
         var waveRate = Manager.GameM.CurrentWaveData.HpIncreaseRate;
-        var stageLevel = Manager.GameM.CurretnStageData.StageLevel;
+        var stageLevel = Manager.GameM.CurrentStageData.StageLevel;
 
         MaxHp = (creatureData.MaxHp + (creatureData.MaxHpUpForIncreasStage * stageLevel)) * (creatureData.HpRate + waveRate);
         Attack = (creatureData.Attack + (creatureData.AttackUpForIncreasStage * stageLevel)) * creatureData.AttackRate;

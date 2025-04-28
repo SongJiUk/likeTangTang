@@ -66,6 +66,7 @@ public class Manager : MonoBehaviour
                 DontDestroyOnLoad(obj);
                 instance = obj.GetComponent<Manager>();
                 instance.updateM = obj.AddComponent<UpdateManager>();
+                instance.timeM = obj.AddComponent<TimeManager>();
 
             }
             return instance;

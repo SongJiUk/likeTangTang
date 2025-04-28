@@ -52,7 +52,7 @@ public class GameManager
         get { return gameData.ContinueDatas;}
         set { gameData.ContinueDatas = value;}
     }
-    public StageData CurretnStageData
+    public StageData CurrentStageData
     {
         get { return gameData.CurrentStageData;}
         set { gameData.CurrentStageData = value;}
@@ -111,7 +111,7 @@ public class GameManager
         
        
 
-        gameData.CurrentStageData = Manager.DataM.StageDic[1];
+        CurrentStageData = Manager.DataM.StageDic[1];
         foreach(Data.StageData stage in Manager.DataM.StageDic.Values)
         {
             StageClearInfoData info = new StageClearInfoData
@@ -165,7 +165,7 @@ public class GameManager
 
     public void SetNextStage()
     {
-        CurretnStageData = Manager.DataM.StageDic[CurretnStageData.StageIndex + 1];
+        CurrentStageData = Manager.DataM.StageDic[CurrentStageData.StageIndex + 1];
     }
 
     public void ClearContinueData()

@@ -1,0 +1,9 @@
+DataID,DropItemTypeStr,NameTextID,ItemDescription,SpriteName
+3100,Potion,일반 포션,Normal Potion,Normal_Potion.sprite
+3101,Potion,좋은 포션,Good Potion,Good_Potion.sprite
+3102,Potion,최고의 포션,Best Potion,Best_Potion.sprite
+3103,Magnet,자석,Magnet,Magnet.sprite
+3104,Bomb,폭탄,Bomb,Bomb.sprite
+3105,DropBox,노말 상자,Normal Box,Normal_Box.sprite
+3106,DropBox,레어 상자,Rare BOx,Rare_Box.sprite
+3107,DropBox,유니크 상자,Unique Box,Unique_Box.sprite

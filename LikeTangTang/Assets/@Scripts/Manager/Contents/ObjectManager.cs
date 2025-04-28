@@ -92,39 +92,49 @@ public class ObjectManager
             mcSet.Add(bc);
 
             return bc as T;
-
         }
-        // else if (type == gemType)
-        // {
-        //     GameObject go = Manager.ResourceM.Instantiate(Define.GEMNAME, null, true);
-        //     GemController gc = Utils.GetOrAddComponent<GemController>(go);
-        //     go.transform.position = _pos;
-        //     gemSet.Add(gc);
-
-        //     // [ ] sprite이름도 DATA에서 불러와서 효과적으로 진행
-        //     //string key = UnityEngine.Random.Range(0, 2) == 0 ? "Gem_01.sprite" : "Gem_02.sprite";
-        //     //Sprite sprite = Manager.ResourceM.Load<Sprite>(key);
-        //     //go.GetComponent<SpriteRenderer>().sprite = sprite;
-
-        //     //Explanation : AddGrid
-        //     Grid.AddCell(go);
-
-        //     return gc as T;
-
-
-        // }
-        else if( type == dropItemType)
+        else if(typeof(T).IsSubclassOf(typeof(DropItemController)))
         {
             GameObject go = Manager.ResourceM.Instantiate(_prefabName, null, true);
-            DropItemController dc = Utils.GetOrAddComponent<DropItemController>(go);
+            T obj = Utils.GetOrAddComponent<T>(go);
             go.transform.position = _pos;
-            dropItemSet.Add(dc);
+            dropItemSet.Add(obj as DropItemController);
 
             Grid.AddCell(go);
 
-            return dc as T;
-
+            return obj;
         }
+        //else if (type == gemType)
+        //{
+        //    GameObject go = Manager.ResourceM.Instantiate(Define.GEMNAME, null, true);
+        //    GemController gc = Utils.GetOrAddComponent<GemController>(go);
+        //    go.transform.position = _pos;
+        //    gemSet.Add(gc);
+
+        //    // [ ] sprite이름도 DATA에서 불러와서 효과적으로 진행
+        //    //string key = UnityEngine.Random.Range(0, 2) == 0 ? "Gem_01.sprite" : "Gem_02.sprite";
+        //    //Sprite sprite = Manager.ResourceM.Load<Sprite>(key);
+        //    //go.GetComponent<SpriteRenderer>().sprite = sprite;
+
+        //    //Explanation : AddGrid
+        //    Grid.AddCell(go);
+
+        //    return gc as T;
+
+
+        //}
+        //else if( type == dropItemType)
+        //{
+        //    GameObject go = Manager.ResourceM.Instantiate(_prefabName, null, true);
+        //    T dc = Utils.GetOrAddComponent<T>(go);
+        //    go.transform.position = _pos;
+        //    dropItemSet.Add(dc as DropItemController);
+
+        //    Grid.AddCell(go);
+
+        //    return dc as T;
+
+        //}
         else if (type == gridType)
         {
             Grid = GameObject.Find(Define.GRIDNAME).GetComponent<GridController>();

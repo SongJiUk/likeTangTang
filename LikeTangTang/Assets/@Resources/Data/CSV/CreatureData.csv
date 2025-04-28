@@ -1,9 +1,45 @@
-DataID,DescriptionID,prefabName,MaxHp,MaxHpUpForIncreasStage,Attack,AttackUpForIncreasStage,Def,Speed,HpRate,AttackRate,DefRate,MoveSpeedRate,Image_Name,SkillTypeList,EvolutionTypeList
-1,Alpha,Player_Alpha,100,5,10,2,1,2,1,1,1,1,Alpha.sprite,2000/2010/2020/2030/2040/2050/2060/2070/2080/2090,2100/2110/2120/2130/2140/2150/2160/2170/2180/2190
-2,Beta,Player_Beta,100,5,11,3,2,3,2,2,2,2,Beta.sprite,2000/2010/2020/2030/2040/2050/2060/2070/2080/2090,2100/2110/2120/2130/2140/2150/2160/2170/2180/2190
-3,Gamma,Player_Gama,100,5,13,4,3,4,3,3,3,3,Gamma.sprite,2000/2010/2020/2030/2040/2050/2060/2070/2080/2090,2100/2110/2120/2130/2140/2150/2160/2170/2180/2190
-4,Delta,Player_Delta,100,5,15,5,4,4,4,4,4,4,Delta.sprite,2000/2010/2020/2030/2040/2050/2060/2070/2080/2090,2100/2110/2120/2130/2140/2150/2160/2170/2180/2190
-5,Epsilon,Player_Epsilon,100,5,20,6,5,5,5,5,5,5,Epsilon.sprite,2000/2010/2020/2030/2040/2050/2060/2070/2080/2090,2100/2110/2120/2130/2140/2150/2160/2170/2180/2190
-100,Green Slime,Monster,100,5,10,2,1,2,1,1,1,1,MonsterIcon_01.sprite,0,0
-102,Green Slime,Goblin_01,100,5,10,2,1,1,1,1,1,1,MonsterIcon_01.sprite,0,0
-103,Green Slime,Boss,100,5,10,2,1,1,1,1,1,1,MonsterIcon_01.sprite,10001/10002,0
+DataID,DescriptionID,prefabName,MaxHp,MaxHpUpForIncreasStage,Attack,AttackUpForIncreasStage,Def,Speed,HpRate,AttackRate,DefRate,MoveSpeedRate,Image_Name,CreatureAnimName,SkillTypeList,EvolutionTypeList
+1,Alpha,Player,100,5,10,2,1,2,1,1,1,1,Alpha.sprite,Player_Alpha_Anim,2000/2010/2020/2030/2040/2050/2060/2070/2080/2090,2100/2110/2120/2130/2140/2150/2160/2170/2180/2190
+2,Beta,Player,100,5,11,3,2,3,2,2,2,2,Beta.sprite,Player_Beta_Anim,2000/2010/2020/2030/2040/2050/2060/2070/2080/2090,2100/2110/2120/2130/2140/2150/2160/2170/2180/2190
+3,Gamma,Player,100,5,13,4,3,4,3,3,3,3,Gamma.sprite,Player_Gamma_Anim,2000/2010/2020/2030/2040/2050/2060/2070/2080/2090,2100/2110/2120/2130/2140/2150/2160/2170/2180/2190
+4,Delta,Player,100,5,15,5,4,4,4,4,4,4,Delta.sprite,Player_Delta_Anim,2000/2010/2020/2030/2040/2050/2060/2070/2080/2090,2100/2110/2120/2130/2140/2150/2160/2170/2180/2190
+5,Epsilon,Player,100,5,20,6,5,5,5,5,5,5,Epsilon.sprite,Player_Epsilon_Anim,2000/2010/2020/2030/2040/2050/2060/2070/2080/2090,2100/2110/2120/2130/2140/2150/2160/2170/2180/2190
+1000,Blue Slime,Monster,100,5,10,2,1,2,1,1,1,1,MonsterIcon_01.sprite,,0,0
+1001,Green Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_02.sprite,,0,0
+1002,Red Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_03.sprite,,0,0
+1003,Yellow Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_04.sprite,,0,0
+1004,Black Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_05.sprite,,0,0
+1005,Flower Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_06.sprite,,0,0
+1006,Mushroom Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_07.sprite,,0,0
+1007,Tree Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_08.sprite,,0,0
+1008,Vine Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_09.sprite,,0,0
+1009,Wildman Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_10.sprite,,0,0
+1010,Diamond Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_11.sprite,,0,0
+1011,Gold Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_12.sprite,,0,0
+1012,Obsidian Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_13.sprite,,0,0
+1013,Skeleton Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_14.sprite,,0,0
+1014,Stone Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_15.sprite,,0,0
+1015,Cactus Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_16.sprite,,0,0
+1016,Ice Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_17.sprite,,0,0
+1017,Mummy Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_18.sprite,,0,0
+1018,Sand Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_19.sprite,,0,0
+1019,Snow Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_20.sprite,,0,0
+1020,Coral Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_21.sprite,,0,0
+1021,Crab Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_22.sprite,,0,0
+1022,Lanternfish Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_23.sprite,,0,0
+1023,Tiger shark Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_24.sprite,,0,0
+1024,Water Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_25.sprite,,0,0
+1025,Darkness Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_26.sprite,,0,0
+1026,Fire Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_27.sprite,,0,0
+1027,Light Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_28.sprite,,0,0
+1028,Lightning Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_29.sprite,,0,0
+1029,Magic Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_30.sprite,,0,0
+1030,Cthulhu Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_31.sprite,,0,0
+1031,Demon Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_32.sprite,,0,0
+1032,Electron Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_33.sprite,,0,0
+1033,King Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_34.sprite,,0,0
+1034,Sky Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_35.sprite,,0,0
+1035,Assassin Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_36.sprite,,0,0
+1036,Black Hole Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_37.sprite,,0,0
+1037,Ice King Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_38.sprite,,0,0
+1038,Mud King Slime,Monster,100,5,10,2,1,1,1,1,1,1,MonsterIcon_39.sprite,,0,0

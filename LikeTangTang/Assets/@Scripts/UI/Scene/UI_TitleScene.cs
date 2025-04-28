@@ -62,6 +62,7 @@ public class UI_TitleScene : UI_Base
                 GetText(typeof(Texts), (int)Texts.StartText).gameObject.SetActive(true);
                 Manager.DataM.Init();
                 Manager.GameM.Init();
+                Manager.TimeM.Init();
                 
                 StartAnim();
             }

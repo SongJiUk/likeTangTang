@@ -92,6 +92,7 @@ namespace Data
         public float DefRate;
         public float MoveSpeedRate;
         public string Image_Name;
+        public string CreatureAnimName;
         public List<int> SkillTypeList;
         public List<int> EvolutionTypeList;
 
@@ -111,36 +112,7 @@ namespace Data
 
         }
     }
-
-    [Serializable]
-    public class PlayerData
-    {
-        public int level; //key
-        public int maxHp;
-        public int attack;
-        public int totalExp;
-    }
-
-    [Serializable]
-    public class PlayerDataLoader : ILoader<int, PlayerData>
-    {
-        
-        public List<PlayerData> stats = new List<PlayerData>();
-
-        public Dictionary<int, PlayerData> MakeDict()
-        {
-            Dictionary<int, PlayerData> dic = new Dictionary<int, PlayerData>();
-            foreach (PlayerData stat in stats)
-                dic.Add(stat.level, stat);
-
-            return dic;
-        }
-    }
     #endregion
-
-    /*TODO : 드랍아이템 계층구조 설정 해야됌.
-     * 
-     */
 
     #region Json MonsterData
 
@@ -267,16 +239,20 @@ namespace Data
         }
     }
     #endregion
-    #region 조이스틱이나, 맵, 하드코딩되는것들 데이터로 정리해서 가져와서 사용하자.
-    #endregion
 
+    #region DropItemDatas
     [Serializable]
     public class DropItemData
     {
         public int DataID;
+        public string DropItemTypeStr;
+        public Define.DropItemType DropItemType;
+        public string NameTextID;
+        public string ItemDescription;
+        public string SpriteName;
     }
 
-    public class DropItmeLoader : ILoader<int, DropItemData>
+    public class DropItemDataLoader : ILoader<int, DropItemData>
     {
         public List<DropItemData> dropData = new List<DropItemData>();
 
@@ -284,9 +260,25 @@ namespace Data
         {
             Dictionary<int, DropItemData> dic = new Dictionary<int, DropItemData>();
             foreach(DropItemData data in dropData)
+            {
+                if(data.DropItemType == Define.DropItemType.None)
+                {
+                    if(Enum.TryParse(data.DropItemTypeStr, out Define.DropItemType dropitemType))
+                    {
+                        data.DropItemType = dropitemType;
+                    }
+                    else
+                    {
+                        Debug.LogError("DropItemData Type Match Error!!, DropItemDataLoader MakeDict()!!");
+                    }
+                }
+
                 dic.Add(data.DataID, data);
+            }
+             
 
             return dic;
         }
     }
+    #endregion
 }

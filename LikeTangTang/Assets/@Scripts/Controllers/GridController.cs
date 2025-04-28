@@ -52,14 +52,17 @@ public class GridController : BaseController
         Cell cell = GetCell(pos);
 
         if(cell == null) return;
-        cell.obj.Remove(_go);
+        if (cell.obj.Count == 0)
+            cells.Remove(pos);
+
+            cell.obj.Remove(_go);
     }
 
 
 
-    public List<GameObject> GetObjects(Vector3 _pos, float _range)
+    public List<DropItemController> GetObjects(Vector3 _pos, float _range)
     {
-        List<GameObject> objs = new List<GameObject>();
+        List<DropItemController> objs = new List<DropItemController>();
 
         Vector3Int left = grid.WorldToCell(_pos + new Vector3(-_range,0));
         Vector3Int right = grid.WorldToCell(_pos + new Vector3(_range,0));

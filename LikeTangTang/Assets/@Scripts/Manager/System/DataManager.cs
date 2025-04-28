@@ -14,8 +14,6 @@ public interface ILoader<key, value>
 public class DataManager
 {
     public Dictionary<int, Data.CreatureData> CreatureDic {get; private set;} = new Dictionary<int, Data.CreatureData>();
-    public Dictionary<int, Data.PlayerData> PlayerDic { get; private set; } = new Dictionary<int, Data.PlayerData>();
-    public Dictionary<string, Data.MonsterData> MonsterDic { get; private set; } = new Dictionary<string, Data.MonsterData>();
 
     public Dictionary<int, Data.SkillData> SkillDic {get; private set;} = new Dictionary<int, Data.SkillData>();
     public Dictionary<int, Data.LevelData> LevelDic {get; private set; } = new Dictionary<int, Data.LevelData>();
@@ -26,13 +24,10 @@ public class DataManager
     public void Init()
     {
         CreatureDic = LoadJson<Data.CreatureDataLoader, int, Data.CreatureData>("CreatureData.json").MakeDict();
-
-        PlayerDic = LoadJson<Data.PlayerDataLoader, int, Data.PlayerData>("PlayerData.json").MakeDict();
-        MonsterDic = LoadJson<Data.MonsterDataLoader, string, Data.MonsterData>("MonsterData.json").MakeDict();
         SkillDic = LoadJson<Data.SkillDataLoader, int, Data.SkillData>("SkillData.json").MakeDict();
         StageDic = LoadJson<Data.StageDataLoader, int, Data.StageData>("StageData.json").MakeDict();
         LevelDic = LoadJson<Data.LevelDataLoader, int, Data.LevelData>("LevelData.json").MakeDict();
-        DropItemDic = LoadJson<Data.DropItmeLoader, int, Data.DropItemData>("DropItemData.json").MakeDict();
+        DropItemDic = LoadJson<Data.DropItemDataLoader, int, Data.DropItemData>("DropItemData.json").MakeDict();
 
     }
 

@@ -174,7 +174,7 @@ public class MonsterController : CreatureController, ITickable
 
         if(UnityEngine.Random.value >= Manager.GameM.CurrentWaveData.NonDropRate)
         {
-            GemController gem = Manager.ObjectM.Spawn<GemController>(this.transform.position);
+            GemController gem = Manager.ObjectM.Spawn<GemController>(this.transform.position, _prefabName : Define.GEMNAME);
             gem.SetInfo(Manager.GameM.GetGemInfo());
         }
 

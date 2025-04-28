@@ -12,7 +12,8 @@ public class UI_GameScene : UI_Base
     {
         KillValueText,
         CharacterLevelValueText,
-        WaveValueText
+        WaveValueText,
+        TimeLimitValueText
     }
     public enum Sliders
     {
@@ -44,8 +45,22 @@ public class UI_GameScene : UI_Base
 
     }
 
-    public void OnChangeSecond(int _second)
+    public void OnChangeSecond(int _minute, int _second)
     {
+        if (_second == 3 && Manager.GameM.CurrentWaveIndex < 9)
+        {
+            //TOOD : 알람
+        }
+
+        if(Manager.GameM.CurrentWaveData.BossMonsterID.Count > 0)
+        {
+           // TODO : 알람
+        }
+
+        GetText(typeof(Texts), (int)Texts.TimeLimitValueText).text = $"{_minute:D2} : {_second:D2}";
+
+        if (_second == 60)
+            GetText(typeof(Texts), (int)Texts.TimeLimitValueText).text = "";
 
     }
 

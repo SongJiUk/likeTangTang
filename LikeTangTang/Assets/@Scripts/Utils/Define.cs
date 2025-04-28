@@ -40,11 +40,13 @@ public static class Define
         SpectralSlash = 2090
     }
 
-    public enum DropItem
+    public enum DropItemType
     {
+        None,
         Potion,
         Magnet,
-        Bomb
+        Bomb,
+        DropBox
     }
 
     public enum EvoloutionType

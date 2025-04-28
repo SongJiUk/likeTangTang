@@ -27,24 +27,24 @@ public class DropItemController : BaseController
     {
 
     }
-        void GetGem()
+    void GetGem()
+    {
+        //List<DropItemController> dropItems = Manager.ObjectM.dropItemSet.ToList();
+        var FindDropItem = Manager.ObjectM.Grid.GetObjects(transform.position, GetEnvDist);
+
+        var sqrtDist = GetEnvDist * GetEnvDist;
+        foreach (var gem in FindDropItem)
         {
-            List<DropItemController> dropItems = Manager.ObjectM.gemSet.ToList();
-            var FindGem = Manager.ObjectM.Grid.GetObjects(transform.position, GetEnvDist);
-        
-            var sqrtDist = GetEnvDist * GetEnvDist;
-            foreach (var gem in gems)
+            Vector3 dir = gem.transform.position - transform.position;
+
+            if (dir.sqrMagnitude <= sqrtDist)
             {
-                Vector3 dir = gem.transform.position - transform.position;
-
-                if(dir.sqrMagnitude <= sqrtDist)
-                {
-                    Manager.ObjectM.DeSpawn(gem);
-                }
+                Manager.ObjectM.DeSpawn(gem);
             }
-
-        
-            // Debug.Log($"{FindGem.Count}  /  {gems.Count}");
-
         }
+
+
+        // Debug.Log($"{FindGem.Count}  /  {gems.Count}");
+
+    }
 }

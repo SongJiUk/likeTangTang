@@ -22,18 +22,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: c9d2508163ae743a9ae69549f659294e
-    m_Address: MonsterData.json
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
   - m_GUID: 754bdea94613940d991628086c7b4ef6
     m_Address: CreatureData.json
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: eaf600384f2e9aa40845438fab7efcbd
-    m_Address: PlayerData.json
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
@@ -44,6 +34,11 @@ MonoBehaviour:
     - PrevLoad
   - m_GUID: e5b005fcd6f7449ab89d41f0ba47bd9e
     m_Address: SkillData.json
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: c24f0c7178c61c1449aec7973a39dfaf
+    m_Address: DropItemData.json
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad

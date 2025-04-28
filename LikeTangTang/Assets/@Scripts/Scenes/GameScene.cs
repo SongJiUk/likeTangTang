@@ -18,7 +18,7 @@ public class GameScene : BaseScene, ITickable
 
     #region Action
     public Action<int> OnWaveStart;
-    public Action<int> OnChangeSecond;
+    public Action<int, int> OnChangeSecond;
     public Action OnWaveEnd;
     
     #endregion
@@ -51,6 +51,7 @@ public class GameScene : BaseScene, ITickable
         base.Init();
         SceneType = SceneType.GameScene;
         gm = Manager.GameM;
+        tm = Manager.TimeM;
         Manager.UpdateM.Register(this);
         Manager.UiM.ShowPopup<UI_JoyStick>();
         
@@ -88,9 +89,11 @@ public class GameScene : BaseScene, ITickable
     {
         if(spawnManager == null) 
             spawnManager = gameObject.AddComponent<SpawnManager>();
-        Manager.ObjectM.LoadMap(Manager.GameM.CurretnStageData.MapName);
+        Manager.ObjectM.LoadMap(Manager.GameM.CurrentStageData.MapName);
         Manager.ObjectM.Spawn<GridController>(Vector3.zero);
-        
+
+        tm.TimeReset();
+
         StopAllCoroutines();
         StartCoroutine(StartWave(Manager.GameM.CurrentWaveData));
     }
@@ -108,7 +111,6 @@ public class GameScene : BaseScene, ITickable
          * [ ]몬스터 생성
          */
         OnWaveStart?.Invoke(_wave.WaveIndex);
-
         if(_wave.WaveIndex == 1)
         {
             CreateRandomExp();
@@ -132,12 +134,12 @@ public class GameScene : BaseScene, ITickable
     {
         OnWaveEnd?.Invoke();
 
-        if(gm.CurrentWaveIndex < gm.CurretnStageData.WaveArray.Count - 1)
+        if(gm.CurrentWaveIndex < gm.CurrentStageData.WaveArray.Count - 1)
         {
             gm.CurrentWaveIndex++;
             StopAllCoroutines();
 
-            StartCoroutine(StartWave(gm.CurretnStageData.WaveArray[gm.CurrentWaveIndex]));
+            StartCoroutine(StartWave(gm.CurrentStageData.WaveArray[gm.CurrentWaveIndex]));
         }
         else // BOSS
         {
@@ -150,7 +152,6 @@ public class GameScene : BaseScene, ITickable
                 bossMonster.BossMonsterInfoUpdate += ui.BossMonsterInfoUpdate;
                 bossMonster.OnBossDead -= OnBossDead;
                 bossMonster.OnBossDead += OnBossDead;
-
             }
         }
     }
@@ -158,29 +159,53 @@ public class GameScene : BaseScene, ITickable
     {
         //TODO : 보스가 죽으면, 게임을 끝내고, 게임 결과창을 띄움
     }
-    float lastSecond = Define.WAVE_REWARD_TIME;
+    float lastSecond =- 1f;
+    float lastMinute = 0;
+    float elapsedTIme = 0f;
+    int totalSeconds = 0;
     public void Tick(float _deltaTime)
     {
-        if(isGameEnd || gm.CurrentWaveData == null) return;
+        if (Input.GetKeyDown(KeyCode.F10))
+        {
+            WaveEnd();
+        }
 
-        if(bossMonster == null) tm.TimeRemaining -= _deltaTime;
-        else tm.TimeRemaining = 0f;
+        if (isGameEnd || gm.CurrentWaveData == null) return;
 
-
-        int currentSecond = (int)tm.TimeRemaining;
+        int currentMinute = tm.GetCurrentMinute();
+        int currentSecond = tm.GetCurrentSecond();
 
         if(currentSecond != lastSecond)
         {
-            //TOOD : 시간초 UI변경
-            OnChangeSecond?.Invoke(currentSecond);
+            OnChangeSecond?.Invoke(currentMinute, currentSecond);
 
-            if(currentSecond == WAVE_REWARD_TIME) SpawnReward();
+            if (currentSecond == WAVE_REWARD_TIME) SpawnReward();
 
+            if (currentMinute != lastMinute) WaveEnd();
         }
 
-        if(tm.TimeRemaining < 0) WaveEnd();
-
         lastSecond = currentSecond;
+        lastMinute = currentMinute;
+
+
+        //elapsedTIme += _deltaTime;
+
+
+        //while(elapsedTIme >= 1f)
+        //{
+        //    elapsedTIme -= 1f;
+        //    totalSeconds++;
+
+        //    int minutes = totalSeconds / 60;
+        //    int seconds = totalSeconds % 60;
+        //    OnChangeSecond?.Invoke(minutes, seconds);
+
+        //    if (seconds == WAVE_REWARD_TIME) SpawnReward();
+
+        //    if (totalSeconds > 60) WaveEnd();
+        //}
+
+
     }
 
     public void CreateRandomExp()
@@ -204,7 +229,7 @@ public class GameScene : BaseScene, ITickable
 
         foreach(GemInfo.GemType type in gems)
         {
-            GemController gem = Manager.ObjectM.Spawn<GemController>(Utils.CreateObjectAroundPlayer(Manager.GameM.player.transform.position));
+            GemController gem = Manager.ObjectM.Spawn<GemController>(Utils.CreateObjectAroundPlayer(Manager.GameM.player.transform.position), _prefabName : Define.GEMNAME);
             gem.SetInfo(Manager.GameM.GetGemInfo(type));
            
         }
@@ -223,7 +248,7 @@ public class GameScene : BaseScene, ITickable
 
     public void SpawnReward()
     {
-        DropItem dropItemType = (DropItem)UnityEngine.Random.Range(0,3);
+        DropItemType dropItemType = (DropItemType)UnityEngine.Random.Range(0,3);
 
         Vector3 spawnPos = Utils.CreateObjectAroundPlayer(gm.player.transform.position);
         Data.DropItemData dropItem;
