@@ -199,6 +199,8 @@ public class CreatureController : BaseController, ITickable
         switch(objType)
         {
             case Define.ObjectType.Monster:
+            case Define.ObjectType.EliteMonster:
+            case Define.ObjectType.Boss:
                 return true;
             default :
                 return false;

@@ -291,8 +291,9 @@ public class ProjectileController : SkillBase
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        CreatureController cc = collision.gameObject.GetComponent<MonsterController>();
-        if(cc == null || !cc.IsValid() || !this.IsValid() || !cc.IsMonster()) return;
+        CreatureController cc = collision.gameObject.GetComponent<CreatureController>();
+       
+        if (cc == null || !cc.IsValid() || !this.IsValid() || !cc.IsMonster()) return;
 
         //NOTE : 이렇게되면, 보스가 쏘는 투사체는 여기 통과를 못함(만들떄 생각해보고 수정하기)
         //if(!cc.IsMonster())return;

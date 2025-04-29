@@ -32,6 +32,8 @@ public class UI_GameResultPopup : UI_Base
         StatisticsButton,
         ConfirmButton
     }
+  
+
     public override bool Init()
     {
         if (base.Init() == false) return false;
