@@ -198,7 +198,7 @@ public class PlayerController : CreatureController, ITickable
 
 
         // NOTE : Temp Code
-        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.TimeStopBomb);
+        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.OrbitalBlades);
         Skills.LevelUpSkill(skillType);
         //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.ElectronicField);
         //Skills.LevelUpSkill(skillType);
@@ -299,7 +299,8 @@ public class PlayerController : CreatureController, ITickable
         base.SetInfo(_dataID);
 
         if (CreatureAnim != null) 
-            CreatureAnim.runtimeAnimatorController = Manager.ResourceM.Load<RuntimeAnimatorController>($"Player_Alpha_Anim");
+            CreatureAnim.runtimeAnimatorController = 
+                Manager.ResourceM.Load<RuntimeAnimatorController>(creatureData.CreatureAnimName);
     }
 
     private void OnDestroy()

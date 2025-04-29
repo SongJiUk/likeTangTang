@@ -7,11 +7,12 @@ public class DropItemController : BaseController
 {
     public Define.ItemType itemType = Define.ItemType.None;
     public float GetEnvDist {get; set;} = 1f;
-
+    public SpriteRenderer ItemSprite;
 
     public override bool Init()
     {
         base.Init();
+        ItemSprite = GetComponent<SpriteRenderer>();
         return true;
     }
 

@@ -16,32 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 94163b93d7bb24f928019105ae174de0
-  m_SerializeEntries:
-  - m_GUID: 861449f41d0423046b195ecb85ec0042
-    m_Address: OrbitalBlades_Evolution
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: 432cb5b4d3dbe2043a519ab012338719
-    m_Address: OrbitalBlades
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: fd3e0eaaba8c6fb4c9593fd41062f34b
-    m_Address: Player_Alpha_Anim
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: 9b2ce8bd705814402b9818ccf82edd94
-    m_Address: Monster
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: 1c11469bf0b694d64987008f1bf68819
-    m_Address: Potion
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

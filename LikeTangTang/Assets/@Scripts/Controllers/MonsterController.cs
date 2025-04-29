@@ -60,7 +60,7 @@ public class MonsterController : CreatureController, ITickable
     {
         if (!base.Init()) return false;
 
-        string name = gameObject.name;
+        string name = gameObject .name;
         objType = ObjectType.Monster;
     
 
@@ -173,10 +173,14 @@ public class MonsterController : CreatureController, ITickable
         Manager.GameM.player.KillCount++;
 
 
-        if(UnityEngine.Random.value >= Manager.GameM.CurrentWaveData.NonDropRate)
+        
+        if(objType == ObjectType.Monster)
         {
-            GemController gem = Manager.ObjectM.Spawn<GemController>(this.transform.position, _prefabName : Define.GEMNAME);
-            gem.SetInfo(Manager.GameM.GetGemInfo());
+            if (UnityEngine.Random.value >= Manager.GameM.CurrentWaveData.NonDropRate)
+            {
+                GemController gem = Manager.ObjectM.Spawn<GemController>(this.transform.position, _prefabName: Define.GEMNAME);
+                gem.SetInfo(Manager.GameM.GetGemInfo());
+            }
         }
 
          DOTween.Sequence().

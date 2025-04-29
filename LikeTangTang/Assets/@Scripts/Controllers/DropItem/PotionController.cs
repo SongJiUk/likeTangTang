@@ -24,6 +24,8 @@ public class PotionController : DropItemController
 
     public override void SetInfo(DropItemData _dropItem)
     {
-        anim.runtimeAnimatorController = Manager.ResourceM.Load<RuntimeAnimatorController>($"{_dropItem.AnimName}");
+        RuntimeAnimatorController anims = Manager.ResourceM.Load<RuntimeAnimatorController>($"{_dropItem.AnimName}");
+        anim.runtimeAnimatorController = anims;
+        //anim.runtimeAnimatorController = Manager.ResourceM.Load<RuntimeAnimatorController>($"{_dropItem.AnimName}");
     }
 }

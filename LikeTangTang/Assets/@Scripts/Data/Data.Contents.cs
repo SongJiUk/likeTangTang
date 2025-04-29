@@ -247,10 +247,12 @@ namespace Data
         public int DataID;
         public string DropItemTypeStr;
         public Define.DropItemType DropItemType;
+        public string Grade;
         public string NameTextID;
         public string ItemDescription;
         public string SpriteName;
         public string AnimName;
+        public string EffectName;
     }
 
     public class DropItemDataLoader : ILoader<int, DropItemData>

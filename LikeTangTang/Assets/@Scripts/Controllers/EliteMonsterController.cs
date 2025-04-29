@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class EliteMonsterController : MonsterController
 {
+    List<int> dropList;
     public override bool Init()
     {
         if (!base.Init()) return false;
@@ -15,9 +16,10 @@ public class EliteMonsterController : MonsterController
         Rigid.simulated = true;
         transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
 
-        objType = Define.ObjectType.Monster;
+        objType = Define.ObjectType.EliteMonster;
 
         InvokeMonsterData();
+        dropList = Manager.GameM.CurrentWaveData.EliteDropItemId;
         return true;
     }
     public override void OnDead()
@@ -29,18 +31,17 @@ public class EliteMonsterController : MonsterController
 
         DropItem();
     }
-
+    
     void DropItem()
     {
-        var dropList = Manager.GameM.CurrentWaveData.EliteDropItemId;
+        //dropList = Manager.GameM.CurrentWaveData.EliteDropItemId;
+        
 
         if(dropList.Count == 0) return;
         
         int randIndex = UnityEngine.Random.Range(0, dropList.Count);
         int randomDropId = dropList[randIndex];
-        
-        //TEMP  
-        randomDropId = dropList[1];
+       
 
         if(Manager.DataM.DropItemDic.TryGetValue(randomDropId, out Data.DropItemData dropItem))
         {
@@ -49,11 +50,15 @@ public class EliteMonsterController : MonsterController
             switch(dropItem.DropItemType)
             {
                 case Define.DropItemType.Potion :
-                Manager.ObjectM.Spawn<PotionController>(dropPos, _prefabName:dropItem.DropItemTypeStr).SetInfo(dropItem);
+                    PotionController potion = Manager.ObjectM.Spawn<PotionController>(dropPos, _prefabName: dropItem.DropItemTypeStr);
+                    potion.Init();
+                    potion.SetInfo(dropItem);
                 break;
 
                 case Define.DropItemType.DropBox :
-                Manager.ObjectM.Spawn<DropBoxController>(dropPos, _prefabName:dropItem.DropItemTypeStr).SetInfo(dropItem);
+                    DropBoxController dropBox = Manager.ObjectM.Spawn<DropBoxController>(dropPos, _prefabName: dropItem.DropItemTypeStr);
+                    dropBox.Init();
+                    dropBox.SetInfo(dropItem);
                 break;
 
                 default :

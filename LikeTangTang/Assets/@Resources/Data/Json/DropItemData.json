@@ -4,73 +4,89 @@
       "DataID": 3100,
       "DropItemTypeStr": "Potion",
       "DropItemType": 0,
+      "Grade": null,
       "NameTextID": "일반 포션",
       "ItemDescription": "Normal Potion",
       "SpriteName": "Normal_Potion.sprite",
-      "AnimName": "Normal_Potion"
+      "AnimName": "Normal_Potion_Anim",
+      "EffectName": null
     },
     {
       "DataID": 3101,
       "DropItemTypeStr": "Potion",
       "DropItemType": 0,
+      "Grade": null,
       "NameTextID": "좋은 포션",
       "ItemDescription": "Good Potion",
       "SpriteName": "Good_Potion.sprite",
-      "AnimName": "Good_Potion"
+      "AnimName": "Good_Potion_Anim",
+      "EffectName": null
     },
     {
       "DataID": 3102,
       "DropItemTypeStr": "Potion",
       "DropItemType": 0,
+      "Grade": null,
       "NameTextID": "최고의 포션",
       "ItemDescription": "Best Potion",
       "SpriteName": "Best_Potion.sprite",
-      "AnimName": "Best_Potion"
+      "AnimName": "Best_Potion_Anim",
+      "EffectName": null
     },
     {
       "DataID": 3103,
       "DropItemTypeStr": "Magnet",
       "DropItemType": 0,
+      "Grade": null,
       "NameTextID": "자석",
       "ItemDescription": "Magnet",
       "SpriteName": "Magnet.sprite",
-      "AnimName": null
+      "AnimName": null,
+      "EffectName": null
     },
     {
       "DataID": 3104,
       "DropItemTypeStr": "Bomb",
       "DropItemType": 0,
+      "Grade": null,
       "NameTextID": "폭탄",
       "ItemDescription": "Bomb",
       "SpriteName": "Bomb.sprite",
-      "AnimName": null
+      "AnimName": null,
+      "EffectName": null
     },
     {
       "DataID": 3105,
       "DropItemTypeStr": "DropBox",
       "DropItemType": 0,
+      "Grade": "Normal",
       "NameTextID": "노말 상자",
       "ItemDescription": "Normal Box",
       "SpriteName": "Normal_Box.sprite",
-      "AnimName": "Normal_Box"
+      "AnimName": "Normal_Box_Anim",
+      "EffectName": "DropBox_Effect_Normal"
     },
     {
       "DataID": 3106,
       "DropItemTypeStr": "DropBox",
       "DropItemType": 0,
+      "Grade": "Rare",
       "NameTextID": "레어 상자",
       "ItemDescription": "Rare BOx",
       "SpriteName": "Rare_Box.sprite",
-      "AnimName": "Rare_Box"
+      "AnimName": "Rare_Box_Anim",
+      "EffectName": "DropBox_Effect_Rare"
     },
     {
       "DataID": 3107,
       "DropItemTypeStr": "DropBox",
       "DropItemType": 0,
+      "Grade": "Unique",
       "NameTextID": "유니크 상자",
       "ItemDescription": "Unique Box",
       "SpriteName": "Unique_Box.sprite",
-      "AnimName": "Unique_Box"
+      "AnimName": "Unique_Box_Anim",
+      "EffectName": "DropBox_Effect_Unique"
     }
   ]
 }

@@ -485,10 +485,12 @@ public class DataTransformer : EditorWindow
             DropItemData dropItem = new DropItemData();
             dropItem.DataID = ConvertValue<int>(row[i++]);
             dropItem.DropItemTypeStr = ConvertValue<string>(row[i++]);
+            dropItem.Grade = ConvertValue<string>(row[i++]);
             dropItem.NameTextID = ConvertValue<string>(row[i++]);
             dropItem.ItemDescription = ConvertValue<string>(row[i++]);
             dropItem.SpriteName = ConvertValue<string>(row[i++]);
             dropItem.AnimName = ConvertValue<string>(row[i++]);
+            dropItem.EffectName = ConvertValue<string>(row[i++]);
 
             loader.dropData.Add(dropItem);
         }
