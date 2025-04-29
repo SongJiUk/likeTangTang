@@ -89,8 +89,9 @@ public class GameScene : BaseScene, ITickable
     {
         if(spawnManager == null) 
             spawnManager = gameObject.AddComponent<SpawnManager>();
+
         Manager.ObjectM.LoadMap(Manager.GameM.CurrentStageData.MapName);
-        Manager.ObjectM.Spawn<GridController>(Vector3.zero);
+        
 
         tm.TimeReset();
 
@@ -241,7 +242,7 @@ public class GameScene : BaseScene, ITickable
 
         foreach(GemInfo.GemType type in gems)
         {
-            GemController gem = Manager.ObjectM.Spawn<GemController>(Utils.CreateObjectAroundPlayer(Manager.GameM.player.transform.position), _prefabName : Define.GEMNAME);
+            GemController gem = Manager.ObjectM.Spawn<GemController>(Utils.CreateObjectAroundPlayer(Manager.GameM.player.transform.position), _prefabName : Define.DROPITEMNAME);
             gem.SetInfo(Manager.GameM.GetGemInfo(type));
            
         }

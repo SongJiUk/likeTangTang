@@ -276,8 +276,39 @@ public class PlayerController : CreatureController, ITickable
 
     #endregion
 
-    #region 젬 관련
-    
+    #region 드랍 아이템
+    float GetDropItemDist = 4f;
+    void CollectDropItem()
+    {
+        var FindDropItem = Manager.GameM.CurrentMap.Grid.GetObjects(transform.position, GetDropItemDist);
+
+        var sqrtDist = GetDropItemDist * GetDropItemDist;
+        foreach (DropItemController dropItem in FindDropItem)
+        {
+            Vector3 dir = dropItem.transform.position - transform.position;
+            switch (dropItem.itemType)
+            {
+                case Define.ItemType.Gem:
+                    float dist = dropItem.CollectDist * Manager.GameM.ContinueDatas.CollectDistBonus;
+                    if (dir.sqrMagnitude <= dist * dist)
+                    {
+                        dropItem.GetItem();
+                    }
+                    break;
+
+                case Define.ItemType.Bomb:
+                case Define.ItemType.Magnet:
+                case Define.ItemType.Potion:
+                case Define.ItemType.DropBox:
+
+                    if (dir.sqrMagnitude <= sqrtDist)
+                    {
+                        dropItem.GetItem();
+                    }
+                    break;
+            }
+        }
+    }
 
     #endregion
     public void OnEnable() => Manager.UpdateM?.Register(this);
@@ -350,6 +381,7 @@ public class PlayerController : CreatureController, ITickable
 
         UpdatePlayerDir();
         Move();
+        CollectDropItem();
 
     }
 
@@ -367,6 +399,22 @@ public class PlayerController : CreatureController, ITickable
         }
     }
 
+
+    public void Healing(float _amount, bool _isEffect = true)
+    {
+        if (_amount == 0) return;
+
+        float res = (MaxHp * _amount);
+
+        if (res == 0) return;
+
+        Hp += res;
+
+        //TDOO
+        //Manager.ObjectM.ShowFont(transform.position, 0, res, transform);
+
+        //if (_isEffect) Manager.ResourceM.Instantiate("HealEffect", transform);
+    }
     #region 플레이어 애니메이션 수정
 
     public override void UpdateAnim()

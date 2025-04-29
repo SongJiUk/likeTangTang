@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Utils;
-
+using DG.Tweening;
 public class GemInfo
 {   
 
@@ -45,7 +45,7 @@ public class GemInfo
 public class GemController : DropItemController
 {
     GemInfo gemInfo;
-    
+    Coroutine coMoveToPlayer;
 
     public override bool Init()
     {  
@@ -58,6 +58,12 @@ public class GemController : DropItemController
     public override void OnDisable()
     {
         base.OnDisable();
+
+        if(coMoveToPlayer != null)
+        {
+            StopCoroutine(coMoveToPlayer);
+            coMoveToPlayer = null;
+        }
     }
 
     public void SetInfo(GemInfo _gemInfo)
@@ -66,12 +72,44 @@ public class GemController : DropItemController
         gemInfo = _gemInfo;
         var sr = Manager.ResourceM.Load<Sprite>($"{_gemInfo.SpriteName}");
         GetComponent<SpriteRenderer>().sprite = sr;
+        if (anim != null) anim.runtimeAnimatorController = null;
+
         transform.localScale = _gemInfo.GemScale;
     }
 
     public override void GetItem()
     {
         base.GetItem();
-        // TODO : 아이템 획득( 애니메이션 넣을건가?    
+        if (coMoveToPlayer == null & this.IsValid())
+        {
+            Vector3 dir = (transform.position - Manager.GameM.player.transform.position).normalized;
+            Vector3 target = transform.position + dir;
+            DOTween.Sequence().Append(transform.DOMove(target, 0.3f)
+                .SetEase(Ease.Linear))
+                .OnComplete(() =>
+                {
+                    coMoveToPlayer = StartCoroutine(CoMoveToPlayer());
+                });
+         }
+    }
+
+    IEnumerator CoMoveToPlayer()
+    {
+        while(this.IsValid())
+        {
+            float dist = Vector3.Distance(transform.position, Manager.GameM.player.transform.position);
+
+            transform.position = Vector3.MoveTowards(transform.position, Manager.GameM.player.transform.position, Time.deltaTime);
+
+            if(dist < 0.4f)
+            {
+                //TODO : 사운드
+                Manager.GameM.player.Exp += gemInfo.ExpAmount * Manager.GameM.player.ExpBounsRate;
+                Manager.ObjectM.DeSpawn(this);
+                yield break;
+            }
+
+            yield return new WaitForFixedUpdate();
+        }
     }
 }

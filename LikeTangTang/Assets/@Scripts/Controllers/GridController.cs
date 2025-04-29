@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class Cell
 {
-    public HashSet<GameObject> obj = new HashSet<GameObject>();
+    public HashSet<DropItemController> obj = new HashSet<DropItemController>();
 }
 
 public class GridController : BaseController
@@ -36,26 +36,26 @@ public class GridController : BaseController
         return cell;
     }
 
-    public void AddCell(GameObject _go)
+    public void AddCell(DropItemController _dropItem)
     {
-        Vector3Int pos = grid.WorldToCell(_go.transform.position);
+        Vector3Int pos = grid.WorldToCell(_dropItem.transform.position);
         Cell cell = GetCell(pos);
 
         if(cell == null) return;
 
-        cell.obj.Add(_go);
+        cell.obj.Add(_dropItem);
     }
 
-    public void RemoveCell(GameObject _go)
+    public void RemoveCell(DropItemController _dropItemo)
     {
-        Vector3Int pos = grid.WorldToCell(_go.transform.position);
+        Vector3Int pos = grid.WorldToCell(_dropItemo.transform.position);
         Cell cell = GetCell(pos);
 
         if(cell == null) return;
         if (cell.obj.Count == 0)
             cells.Remove(pos);
 
-            cell.obj.Remove(_go);
+            cell.obj.Remove(_dropItemo);
     }
 
 

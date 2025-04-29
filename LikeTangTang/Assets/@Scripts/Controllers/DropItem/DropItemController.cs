@@ -6,13 +6,17 @@ using System.Linq;
 public class DropItemController : BaseController
 {
     public Define.ItemType itemType = Define.ItemType.None;
-    public float GetEnvDist {get; set;} = 1f;
+    public Data.DropItemData dropItem;
+    public Animator anim;
+    public float CollectDist { get; set; } = 4;
     public SpriteRenderer ItemSprite;
-
+    public Coroutine coGetItem;
     public override bool Init()
     {
         base.Init();
         ItemSprite = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+
         return true;
     }
 
@@ -23,12 +27,16 @@ public class DropItemController : BaseController
     
     public virtual void OnDisable()
     {
-        
+        if(coGetItem != null)
+        {
+            StopCoroutine(coGetItem);
+            coGetItem = null;
+        }
     }
 
     public virtual void GetItem()
     {
-
+        Manager.GameM.CurrentMap.Grid.RemoveCell(this);
     }
 
     public virtual void SetInfo(Data.DropItemData _dropItem)
@@ -36,22 +44,25 @@ public class DropItemController : BaseController
         
     }
 
-    void GetGem()
+    public virtual void CompleteGetItem()
     {
-        //List<DropItemController> dropItems = Manager.ObjectM.dropItemSet.ToList();
-        var FindDropItem = Manager.ObjectM.Grid.GetObjects(transform.position, GetEnvDist);
 
-        var sqrtDist = GetEnvDist * GetEnvDist;
-        foreach (var gem in FindDropItem)
+    }
+    public IEnumerator CoCheckDist()
+    {
+        while(this.IsValid())
         {
-            Vector3 dir = gem.transform.position - transform.position;
+            float dist = Vector3.Distance(transform.position, Manager.GameM.player.transform.position);
 
-            if (dir.sqrMagnitude <= sqrtDist)
+            transform.position = Vector3.MoveTowards(transform.position, Manager.GameM.player.transform.position, Time.deltaTime);
+
+            if(dist < 1f)
             {
-                Manager.ObjectM.DeSpawn(gem);
+                CompleteGetItem();
+                yield break;
             }
-        }
-        // Debug.Log($"{FindGem.Count}  /  {gems.Count}");
 
+            yield return new WaitForFixedUpdate();
+        }
     }
 }

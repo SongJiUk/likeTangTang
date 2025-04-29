@@ -17,8 +17,6 @@ public class ObjectManager
     public HashSet<DropItemController> dropItemSet {get;} = new HashSet<DropItemController>();
 
 
-    public GridController Grid {get; private set;}
-
 #region 미리 선언해서 사용  
     Type playerType = typeof(PlayerController);
     Type monsterType = typeof(MonsterController);
@@ -74,18 +72,12 @@ public class ObjectManager
             GameObject go = Manager.ResourceM.Instantiate(_prefabName, null, true);
             T dropItem = go.GetOrAddComponent<T>();
             dropItem.transform.position = _pos;
+            var dropItemCotnroller = dropItem as DropItemController;
 
-            dropItemSet.Add(dropItem as DropItemController);
-            Grid.AddCell(go);
+            dropItemSet.Add(dropItemCotnroller);
+            Manager.GameM.CurrentMap.Grid.AddCell(dropItemCotnroller);
 
             return dropItem;
-        }
-
-        if (type == gridType)
-        {
-            Grid = GameObject.Find(Define.GRIDNAME).GetComponent<GridController>();
-            Grid.Init();
-            return Grid as T;
         }
 
         if(projectileType.IsAssignableFrom(type))
@@ -139,11 +131,12 @@ public class ObjectManager
             mcSet.Remove(_obj as MonsterController);
             Manager.ResourceM.Destory(_obj.gameObject);
         }
-        else if(gemType.IsAssignableFrom(type))
+        else if(dropItemType.IsAssignableFrom(type))
         {
-            gemSet.Remove(_obj as GemController);
+            var drop = _obj as DropItemController;
+
+            dropItemSet.Remove(drop);
             Manager.ResourceM.Destory(_obj.gameObject);
-            Grid.RemoveCell(_obj.gameObject);
         }
         else if(projectileType.IsAssignableFrom(type))
         {
@@ -169,6 +162,7 @@ public class ObjectManager
     public void LoadMap(string _name)
     {
         var obj = Manager.ResourceM.Instantiate(_name);
+        obj.GetComponent<Map>().init();
 
         //NOTE : 이거 해주는 이유는 타일맵은 중심잡기가 생각보다힘듬, 그래서 찾아서 값을 더해주는것
         Tilemap baseTileMap = obj.GetComponentInChildren<Tilemap>();
@@ -176,6 +170,7 @@ public class ObjectManager
         Vector3 centerWorldPos = baseTileMap.CellToWorld(centercell);
         centerWorldPos.x *= -1;
         obj.transform.position += centerWorldPos;
+
     }
 
     public void ShowFont(Vector2 _pos, float _damage, float _heal, Transform _parent, bool _isCritical = false)

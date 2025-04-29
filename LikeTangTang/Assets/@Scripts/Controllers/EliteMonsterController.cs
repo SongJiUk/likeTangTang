@@ -50,13 +50,13 @@ public class EliteMonsterController : MonsterController
             switch(dropItem.DropItemType)
             {
                 case Define.DropItemType.Potion :
-                    PotionController potion = Manager.ObjectM.Spawn<PotionController>(dropPos, _prefabName: dropItem.DropItemTypeStr);
+                    PotionController potion = Manager.ObjectM.Spawn<PotionController>(dropPos, _prefabName: Define.DROPITEMNAME);
                     potion.Init();
                     potion.SetInfo(dropItem);
                 break;
 
                 case Define.DropItemType.DropBox :
-                    DropBoxController dropBox = Manager.ObjectM.Spawn<DropBoxController>(dropPos, _prefabName: dropItem.DropItemTypeStr);
+                    DropBoxController dropBox = Manager.ObjectM.Spawn<DropBoxController>(dropPos, _prefabName: Define.DROPITEMNAME);
                     dropBox.Init();
                     dropBox.SetInfo(dropItem);
                 break;

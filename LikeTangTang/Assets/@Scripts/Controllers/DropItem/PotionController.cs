@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class PotionController : DropItemController
 {
-    Animator anim;
+    
+    
 
     public override bool Init()
     {
         base.Init();
         itemType = Define.ItemType.Potion;
-        anim = GetComponent<Animator>();
 
         return true;
     }
@@ -19,13 +19,29 @@ public class PotionController : DropItemController
     public override void GetItem()
     {
         base.GetItem();
+        if(coGetItem == null && this.IsValid())
+        {
+            coGetItem = StartCoroutine(CoCheckDist());
+        }
 
     }
 
     public override void SetInfo(DropItemData _dropItem)
     {
-        RuntimeAnimatorController anims = Manager.ResourceM.Load<RuntimeAnimatorController>($"{_dropItem.AnimName}");
-        anim.runtimeAnimatorController = anims;
-        //anim.runtimeAnimatorController = Manager.ResourceM.Load<RuntimeAnimatorController>($"{_dropItem.AnimName}");
+        dropItem = _dropItem;
+        if( anim != null) anim.runtimeAnimatorController = Manager.ResourceM.Load<RuntimeAnimatorController>($"{_dropItem.AnimName}");
+    }
+
+    public override void CompleteGetItem()
+    {
+
+        float healAmount;
+
+        if(Define.POTION_AMOUNT.TryGetValue(dropItem.DataID , out healAmount))
+        {
+            Manager.GameM.player.Healing(healAmount);
+        }
+
+        Manager.ObjectM.DeSpawn(this);
     }
 }

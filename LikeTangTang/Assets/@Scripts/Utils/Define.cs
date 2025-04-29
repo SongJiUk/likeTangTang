@@ -16,6 +16,12 @@ public static class Define
     public const float KNOCKBACK_POWER = 10f;
     public const float KNOCKBACK_COOLTIME = 0.5f;
     public const float KNOCKBACK_TIME = 0.1f;
+    public static readonly Dictionary<int, float> POTION_AMOUNT = new Dictionary<int, float>
+    {
+        { 3100, 0.3f},
+        { 3101, 0.6f},
+        { 3102, 1f}
+    };
     public enum ItemType
     {
         None,
@@ -24,7 +30,8 @@ public static class Define
         Magnet,
         HP,
         Gold,
-        Potion
+        Potion,
+        DropBox
     }
     public enum SkillType
     {
@@ -126,7 +133,7 @@ public static class Define
     }
 
     public static string GRIDNAME = "@Grid";
-    public static string GEMNAME = "Gem";
+    public static string DROPITEMNAME = "DropItem";
     public static string STANDARDNAME = "Standard";
 
     public static int WAVE_REWARD_TIME = 30;

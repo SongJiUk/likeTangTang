@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Map : MonoBehaviour
-{   
+{
+    public GridController Grid;
+    public GameObject MagneticField;
 
     public void init()
     {
         Manager.GameM.CurrentMap = this;
+        Grid.Init();
     }
 
     public void MagneticFieldReduction()

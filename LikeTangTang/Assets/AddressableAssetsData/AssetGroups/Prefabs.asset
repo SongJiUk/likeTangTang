@@ -17,11 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: ac1d535233f80d043ad3b60ce04f3a48
   m_SerializeEntries:
-  - m_GUID: 205293b6573a44f5b81e6506c8aa0a67
-    m_Address: Gem
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
   - m_GUID: 57705f93f21ac44c49130d2993d140d1
     m_Address: Boss
     m_ReadOnly: 0
@@ -62,16 +57,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: 1c11469bf0b694d64987008f1bf68819
-    m_Address: Potion
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: 63bc0aa6579a13f4a9b53595c712f80a
-    m_Address: DropBox
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
   - m_GUID: 15e4b43b54d2fcd45b126ed2a75619c8
     m_Address: DropBox_Effect_Unique
     m_ReadOnly: 0
@@ -84,6 +69,11 @@ MonoBehaviour:
     - PrevLoad
   - m_GUID: ec6b063d902582d47a439041f5d4370f
     m_Address: DropBox_Effect_Rare
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 1c11469bf0b694d64987008f1bf68819
+    m_Address: DropItem
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
