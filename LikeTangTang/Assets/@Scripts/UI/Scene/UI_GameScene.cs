@@ -73,6 +73,12 @@ public class UI_GameScene : UI_Base
    
     public void OnPlayerLevelUp()
     {
+        if(Manager.GameM.isGameEnd) return;
+
+        List<SkillBase> list = Manager.GameM.player.Skills.RecommendSkills();
+        if(list.Count > 0) Manager.UiM.ShowPopup<UI_SkillSelectPopup>();
+
+        GetSlider(typeof(Sliders), (int)Sliders.ExpSliderObject).value = Manager.GameM.player.ExpRatio;
         GetText(typeof(Texts), (int)Texts.CharacterLevelValueText).text = $"{Manager.GameM.ContinueDatas.Level}";
     }
 

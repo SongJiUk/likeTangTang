@@ -29,6 +29,7 @@ public class PotionController : DropItemController
     public override void SetInfo(DropItemData _dropItem)
     {
         dropItem = _dropItem;
+        transform.localScale = new Vector3(2f, 2f, 2f);
         if( anim != null) anim.runtimeAnimatorController = Manager.ResourceM.Load<RuntimeAnimatorController>($"{_dropItem.AnimName}");
     }
 

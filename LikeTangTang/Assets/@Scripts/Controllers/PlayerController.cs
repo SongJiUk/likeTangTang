@@ -100,25 +100,17 @@ public class PlayerController : CreatureController, ITickable
         {
             Manager.GameM.ContinueDatas.Exp = value;
             
-            int level = Level;
-
             //TODO : 여기서 경험치 획득 및 레벨업
-            while(Manager.DataM.LevelDic.TryGetValue(level + 1, out var nextLevel) &&
-            Manager.DataM.LevelDic.TryGetValue(level, out var currentLevel) &&
+            while(Manager.DataM.LevelDic.TryGetValue(Level + 1, out var nextLevel) &&
+            Manager.DataM.LevelDic.TryGetValue(Level, out var currentLevel) &&
             Exp >= currentLevel.TotalExp)
             {
-               level++;
+               Level++;
+               TotalExp = nextLevel.TotalExp;
+               LevelUp(Level);
             }
 
-            if(level != Level)
-            {
-                Level =level;
-                if(Manager.DataM.LevelDic.TryGetValue(Level, out LevelData currentLevel))
-                {
-                    TotalExp = currentLevel.TotalExp;
-                    LevelUp();
-                }
-            }
+            OnPlayerDataUpdated();
         }
     }
 
@@ -171,6 +163,7 @@ public class PlayerController : CreatureController, ITickable
             OnPlayerLevelUp?.Invoke();
         
         //[ ] 스킬 업그레이드
+        
     }
 
     Vector3 scale;

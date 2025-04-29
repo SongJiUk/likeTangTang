@@ -83,7 +83,7 @@ public class GemController : DropItemController
         if (coMoveToPlayer == null & this.IsValid())
         {
             Vector3 dir = (transform.position - Manager.GameM.player.transform.position).normalized;
-            Vector3 target = transform.position + dir;
+            Vector3 target = transform.position + dir * 1.5f;
             DOTween.Sequence().Append(transform.DOMove(target, 0.3f)
                 .SetEase(Ease.Linear))
                 .OnComplete(() =>
@@ -99,7 +99,7 @@ public class GemController : DropItemController
         {
             float dist = Vector3.Distance(transform.position, Manager.GameM.player.transform.position);
 
-            transform.position = Vector3.MoveTowards(transform.position, Manager.GameM.player.transform.position, Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, Manager.GameM.player.transform.position, Time.deltaTime * 30.0f);
 
             if(dist < 0.4f)
             {

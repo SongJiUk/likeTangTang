@@ -8,7 +8,7 @@ public class DropItemController : BaseController
     public Define.ItemType itemType = Define.ItemType.None;
     public Data.DropItemData dropItem;
     public Animator anim;
-    public float CollectDist { get; set; } = 4;
+    public float CollectDist { get; set; } = 2f;
     public SpriteRenderer ItemSprite;
     public Coroutine coGetItem;
     public override bool Init()

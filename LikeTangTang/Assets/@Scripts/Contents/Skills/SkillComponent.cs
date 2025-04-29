@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -103,5 +104,13 @@ public class SkillComponent : MonoBehaviour
                 skillList[i].OnSkillLevelup();
             }
         }
+    }
+
+    public List<SkillBase> RecommendSkills()
+    {
+        //TODO : 배운 스킬 및 맥스 스킬 개수 비교 
+        List<SkillBase> skillList = Manager.GameM.player.Skills.skillList.ToList();
+
+        return skillList;
     }
 }

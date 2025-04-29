@@ -24,7 +24,7 @@ public class DropBoxController : DropItemController
             ItemSprite.sprite = Manager.ResourceM.Load<Sprite>(_dropItem.SpriteName);
 
         if (anim != null) anim.runtimeAnimatorController = null;
-
+        transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
         SpawnEffect(_dropItem);
     }
 
