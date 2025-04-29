@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class UI_LobbyScene : UI_Base
+public class UI_LobbyScene : UI_Scene
 {
     #region Enum
     public enum Toggles

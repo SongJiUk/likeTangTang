@@ -6,7 +6,7 @@ using TMPro;
 using Unity.VisualScripting;
 using DG.Tweening;
 
-public class UI_TitleScene : UI_Base
+public class UI_TitleScene : UI_Scene
 {
     public enum Buttons
     {

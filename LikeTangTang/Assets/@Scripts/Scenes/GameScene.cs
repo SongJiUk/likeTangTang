@@ -116,6 +116,7 @@ public class GameScene : BaseScene, ITickable
         {
             CreateRandomExp();
         }
+        SpawnWaveReward();
         spawnManager.StartSpawn();
         Manager.GameM.SaveGame();
 
@@ -159,6 +160,52 @@ public class GameScene : BaseScene, ITickable
             }
         }
     }
+
+    void SpawnWaveReward()
+    {
+        DropItemType dropitemType = (DropItemType)UnityEngine.Random.Range(1,4);
+
+        Vector3 spawnPos = Utils.CreateObjectAroundPlayer(Manager.GameM.player.transform.position);
+
+        Data.DropItemData dropItem;
+        
+        
+        //temp
+        dropitemType = DropItemType.Bomb;
+        switch(dropitemType)
+        {
+            case DropItemType.Potion :
+            if(Manager.DataM.DropItemDic.TryGetValue(POTION_ID, out dropItem))
+            {
+                var obj = Manager.ObjectM.Spawn<PotionController>(spawnPos, _prefabName: Define.DROPITEMNAME);
+                obj.Init();
+                obj.SetInfo(dropItem);
+            }
+
+            break;
+
+            case DropItemType.Magnet :
+            if(Manager.DataM.DropItemDic.TryGetValue(MAGNET_ID, out dropItem))
+            {
+                var obj = Manager.ObjectM.Spawn<MagnetController>(spawnPos, _prefabName: Define.DROPITEMNAME);
+                obj.Init();
+                obj.SetInfo(dropItem);
+            }
+            break;
+
+            case DropItemType.Bomb :
+            if(Manager.DataM.DropItemDic.TryGetValue(BOMB_ID, out dropItem))
+            {
+                var obj = Manager.ObjectM.Spawn<BombController>(spawnPos,_prefabName: Define.DROPITEMNAME);
+                obj.Init();
+                obj.SetInfo(dropItem);
+            }
+            break;
+
+        }
+
+    }
+
     void OnBossDead()
     {
         //TODO : 보스가 죽으면, 게임을 끝내고, 게임 결과창을 띄움

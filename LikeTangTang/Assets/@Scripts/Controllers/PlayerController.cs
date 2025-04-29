@@ -163,7 +163,7 @@ public class PlayerController : CreatureController, ITickable
             OnPlayerLevelUp?.Invoke();
         
         //[ ] 스킬 업그레이드
-        
+
     }
 
     Vector3 scale;
@@ -270,7 +270,7 @@ public class PlayerController : CreatureController, ITickable
     #endregion
 
     #region 드랍 아이템
-    float GetDropItemDist = 4f;
+    float GetDropItemDist = 2f;
     void CollectDropItem()
     {
         var FindDropItem = Manager.GameM.CurrentMap.Grid.GetObjects(transform.position, GetDropItemDist);

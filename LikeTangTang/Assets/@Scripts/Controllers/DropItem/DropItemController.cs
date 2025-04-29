@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using DG.Tweening;
 
 public class DropItemController : BaseController
 {
@@ -14,8 +15,8 @@ public class DropItemController : BaseController
     public override bool Init()
     {
         base.Init();
-        ItemSprite = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
+        if(ItemSprite == null) ItemSprite = GetComponent<SpriteRenderer>();
+        if(anim == null) anim = GetComponent<Animator>();
 
         return true;
     }
@@ -46,7 +47,15 @@ public class DropItemController : BaseController
 
     public virtual void CompleteGetItem()
     {
+        if(coGetItem != null)
+        {
+            StopCoroutine(coGetItem);
+            coGetItem = null;
+        }
 
+        DOTween.Kill(gameObject);
+        
+        transform.localScale = Vector3.one;
     }
     public IEnumerator CoCheckDist()
     {
@@ -54,7 +63,7 @@ public class DropItemController : BaseController
         {
             float dist = Vector3.Distance(transform.position, Manager.GameM.player.transform.position);
 
-            transform.position = Vector3.MoveTowards(transform.position, Manager.GameM.player.transform.position, Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, Manager.GameM.player.transform.position, Time.deltaTime * 30.0f);
 
             if(dist < 1f)
             {
@@ -63,6 +72,6 @@ public class DropItemController : BaseController
             }
 
             yield return new WaitForFixedUpdate();
-        }
+        }   
     }
 }

@@ -231,5 +231,25 @@ public class ObjectManager
         return nearsMonsters;
     }
 
+    public void KillAllMonsters()
+    {
+        UI_GameScene scene = Manager.UiM.SceneUI as UI_GameScene;
+
+        //if(scene != null) scene.WhiteFlash();
+
+        foreach(MonsterController monster in mcSet.ToList())
+        {
+            if(monster.objType == Define.ObjectType.Monster)
+                monster.OnDead();
+        }
+    }
+
+    public void ColletAllItem()
+    {
+        foreach(GemController dropItem in dropItemSet.ToList())
+        {
+            dropItem.GetItem();
+        }
+    }
 
 }

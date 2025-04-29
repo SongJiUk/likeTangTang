@@ -4,9 +4,10 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Unity.VisualScripting;
+using DG.Tweening;
 
 
-public class UI_GameScene : UI_Base
+public class UI_GameScene : UI_Scene
 {
     public enum Texts
     {
@@ -75,8 +76,9 @@ public class UI_GameScene : UI_Base
     {
         if(Manager.GameM.isGameEnd) return;
 
-        List<SkillBase> list = Manager.GameM.player.Skills.RecommendSkills();
-        if(list.Count > 0) Manager.UiM.ShowPopup<UI_SkillSelectPopup>();
+        //TODO : 스킬 개수 가져와서 팝업 띄우기
+        //List<SkillBase> list = Manager.GameM.player.Skills.RecommendSkills();
+        //if(list.Count > 0) Manager.UiM.ShowPopup<UI_SkillSelectPopup>();
 
         GetSlider(typeof(Sliders), (int)Sliders.ExpSliderObject).value = Manager.GameM.player.ExpRatio;
         GetText(typeof(Texts), (int)Texts.CharacterLevelValueText).text = $"{Manager.GameM.ContinueDatas.Level}";
@@ -90,5 +92,18 @@ public class UI_GameScene : UI_Base
     public void BossMonsterInfoUpdate(BossController _bc)
     {
 
+    }
+
+    public void WhiteFlash()
+    {
+        StartCoroutine(CoWhiteFlash());
+    }
+
+    IEnumerator CoWhiteFlash()
+    {
+        Color color = Color.white;
+        yield return null;
+
+        //DOTween.Sequence().Append(GetObject(int)gameObjects.WhiteFlash)
     }
 }

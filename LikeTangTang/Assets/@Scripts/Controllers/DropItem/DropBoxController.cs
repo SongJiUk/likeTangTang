@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class DropBoxController : DropItemController
 {
-
+    GameObject effect;
     public override bool Init()
     {
         base.Init();
@@ -30,7 +30,7 @@ public class DropBoxController : DropItemController
 
     public void SpawnEffect(DropItemData _dropItem)
     {
-        Manager.ResourceM.Instantiate(_dropItem.EffectName, transform);
+        effect = Manager.ResourceM.Instantiate(_dropItem.EffectName, transform);
     }
 
 
@@ -46,7 +46,8 @@ public class DropBoxController : DropItemController
     public override void CompleteGetItem()
     {
         //TODO : UI레벨업 Popup
-
+        base.CompleteGetItem();
+        Manager.ResourceM.Destory(effect);
         Manager.ObjectM.DeSpawn(this);
     }
 }

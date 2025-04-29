@@ -1,6 +1,7 @@
 using Data;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class MagnetController : DropItemController
@@ -25,10 +26,15 @@ public class MagnetController : DropItemController
     public override void SetInfo(DropItemData _dropItem)
     {
         dropItem = _dropItem;
+         if(ItemSprite != null) 
+            ItemSprite.sprite = Manager.ResourceM.Load<Sprite>(dropItem.SpriteName);
+
+        transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     }
 
     public override void CompleteGetItem()
     {
-        
+        Manager.ObjectM.ColletAllItem();
+        Manager.ObjectM.DeSpawn(this);
     }
 }

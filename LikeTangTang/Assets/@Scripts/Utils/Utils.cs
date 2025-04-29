@@ -88,14 +88,12 @@ public static class Utils
         UI_Base.BindEvent(_go, _action, _dragAction, _type);
     }
 
-    public static Vector2 CreateObjectAroundPlayer(Vector3 _pos)
+    public static Vector2 CreateObjectAroundPlayer(Vector3 _pos, float _minDist = 6f, float _maxDist = 10f)
     {
         float angle = UnityEngine.Random.Range(0f, 360f);
         float radius = angle * Mathf.Deg2Rad;
         
-        float minDist = 2.0f;
-        float maxDist = 5.0f;
-        float dist = UnityEngine.Random.Range(minDist, maxDist);
+        float dist = UnityEngine.Random.Range(_minDist, _maxDist);
 
 
         Vector2 spawnPos = new Vector2(Mathf.Cos(radius), Mathf.Sin(radius)) * dist;

@@ -138,6 +138,6 @@ public static class Define
 
     public static int WAVE_REWARD_TIME = 30;
     public static int POTION_ID = 3100;
-    public static int MAGNET_ID = 3101;
-    public static int BOMB_ID = 3102;
+    public static int MAGNET_ID = 3103;
+    public static int BOMB_ID = 3104;
 }

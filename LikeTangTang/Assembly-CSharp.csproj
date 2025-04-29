@@ -68,11 +68,13 @@
     <Compile Include="Assets/@Scripts/Manager/Contents/ObjectManager.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/TimeStopBombZone.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/RepeatSkill.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/DropItem/MagnetController.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/SuicideDrone.cs" />
     <Compile Include="Assets/@Scripts/Controllers/MapTileController.cs" />
     <Compile Include="Assets/@Scripts/Manager/System/ResourceManager.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/Projectile/PlasmaSpinner.cs" />
     <Compile Include="Assets/@Scripts/UI/JoyStick/UI_JoyStick.cs" />
+    <Compile Include="Assets/@Scripts/UI/Popup/UI_Popup.cs" />
     <Compile Include="Assets/@Scripts/UI/UI_Base.cs" />
     <Compile Include="Assets/@Scripts/Scenes/GameScene.cs" />
     <Compile Include="Assets/@Scripts/UI/Popup/UI_GameResultPopup.cs" />
@@ -101,18 +103,22 @@
     <Compile Include="Assets/@Scripts/Contents/Skills/Sequence/SequenceSkill.cs" />
     <Compile Include="Assets/@Scripts/Controllers/ProjectileController.cs" />
     <Compile Include="Assets/@Scripts/Test/Test.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/DropItem/BombController.cs" />
     <Compile Include="Assets/@Scripts/UI/Scene/UI_GameScene.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/TimeStopBomb.cs" />
     <Compile Include="Assets/@Scripts/Manager/Contents/SpawnManager.cs" />
     <Compile Include="Assets/@Scripts/Manager/System/DataManager.cs" />
     <Compile Include="Assets/@Scripts/UI/UI_SkillCardItem.cs" />
+    <Compile Include="Assets/@Scripts/Manager/System/TimeManager.cs" />
     <Compile Include="Assets/@Scripts/Manager/System/SoundManager.cs" />
     <Compile Include="Assets/@Scripts/Manager/System/UpdateManager.cs" />
     <Compile Include="Assets/@Scripts/Controllers/MonsterController.cs" />
     <Compile Include="Assets/@Scripts/Map.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/DropItem/DropBoxController.cs" />
     <Compile Include="Assets/@Scripts/Controllers/PlayerController.cs" />
     <Compile Include="Assets/@Scripts/Scenes/LobbyScene.cs" />
     <Compile Include="Assets/@Scripts/Utils/Memo.cs" />
+    <Compile Include="Assets/@Scripts/UI/Scene/UI_Scene.cs" />
     <Compile Include="Assets/@Scripts/Scenes/TitleScene.cs" />
     <Compile Include="Assets/@Scripts/Controllers/DropItem/GemController.cs" />
     <Compile Include="Assets/@Scripts/Scenes/BaseScene.cs" />
@@ -128,16 +134,12 @@
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/ElectricShock.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/GravityBomb.cs" />
     <Compile Include="Assets/@Scripts/Controllers/BaseController.cs" />
+    <Compile Include="Assets/@Scripts/Controllers/DropItem/PotionController.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Repeat/OrbitalBlades.cs" />
     <Compile Include="Assets/@Scripts/Manager/Manager.cs" />
     <Compile Include="Assets/@Scripts/UI/Popup/UI_SkillSelectPopup.cs" />
     <Compile Include="Assets/@Scripts/Test/UI_Test.cs" />
     <Compile Include="Assets/@Scripts/Manager/System/CustomSceneManager.cs" />
-    <Compile Include="Assets/@Scripts/Manager/System/TimeManager.cs" />
-    <Compile Include="Assets/@Scripts/Controllers/DropItem/PotionController.cs" />
-    <Compile Include="Assets/@Scripts/Controllers/DropItem/MagnetController.cs" />
-    <Compile Include="Assets/@Scripts/Controllers/DropItem/BombController.cs" />
-    <Compile Include="Assets/@Scripts/Controllers/DropItem/DropBoxController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

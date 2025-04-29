@@ -70,8 +70,8 @@ public class GemController : DropItemController
     {
         Init();
         gemInfo = _gemInfo;
-        var sr = Manager.ResourceM.Load<Sprite>($"{_gemInfo.SpriteName}");
-        GetComponent<SpriteRenderer>().sprite = sr;
+        if(ItemSprite != null) 
+            ItemSprite.sprite = Manager.ResourceM.Load<Sprite>(gemInfo.SpriteName);
         if (anim != null) anim.runtimeAnimatorController = null;
 
         transform.localScale = _gemInfo.GemScale;
