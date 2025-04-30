@@ -233,6 +233,8 @@ public class ObjectManager
 
     public void KillAllMonsters()
     {
+
+        //TODO : 화면 밝게 빛나게
         UI_GameScene scene = Manager.UiM.SceneUI as UI_GameScene;
 
         //if(scene != null) scene.WhiteFlash();

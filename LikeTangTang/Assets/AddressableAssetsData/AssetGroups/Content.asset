@@ -16,12 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 94163b93d7bb24f928019105ae174de0
-  m_SerializeEntries:
-  - m_GUID: 30ee0808c5ed498193fa08a5c0e7302a
-    m_Address: Bomb.sprite
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:
