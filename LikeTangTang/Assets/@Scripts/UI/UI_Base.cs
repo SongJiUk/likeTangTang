@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine.EventSystems;
 using System;
 using Unity.VisualScripting;
+using DG.Tweening;
 
 public class UI_Base : MonoBehaviour
 {
@@ -41,7 +42,6 @@ public class UI_Base : MonoBehaviour
     {
         string[] names = Enum.GetNames(_type);
         UnityEngine.Object[] objs = new UnityEngine.Object[names.Length];
-
         objs_Dic.Add(_type, objs);
 
         for(int i =0 ; i<names.Length; i++)
@@ -57,7 +57,7 @@ public class UI_Base : MonoBehaviour
 
     protected void BindObject(Type _type) {Bind<GameObject>(_type);}
     protected void BindImage(Type _type){Bind<Image>(_type);}
-    protected void BindText(Type _type){Bind<Text>(_type);}
+    protected void BindText(Type _type){Bind<TextMeshProUGUI>(_type);}
     protected void BindButton(Type _type){Bind<Button>(_type);}
     protected void BindToggle(Type _type){Bind<Toggle>(_type);}
     protected void BindSlider(Type _type){Bind<Slider>(_type);}
@@ -140,4 +140,10 @@ public class UI_Base : MonoBehaviour
 
     #endregion
 
+
+    public void PopupOpenAnim(GameObject _obj)
+    {
+        _obj.transform.localScale = new Vector3(0.8f, 0.8f, 1f);
+        _obj.transform.DOScale(1f, 0.1f).SetEase(Ease.InOutBack).SetUpdate(true);
+    }
 }

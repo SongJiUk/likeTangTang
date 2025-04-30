@@ -1,18 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UI_HP_Bar : MonoBehaviour
+public class UI_HP_Bar : UI_Base, ITickable
 {
-    // Start is called before the first frame update
-    void Start()
+
+    Slider slider;
+    enum GameObjects
     {
-        
+        HPBar
+    }
+    
+    //TDOO : Init어디서 해줄지 생각.
+    public override bool Init()
+    {
+        if(!base.Init()) return false;
+        Bind<GameObject>(typeof(GameObjects));
+
+        slider = GetObject(typeof(GameObjects), (int)GameObjects.HPBar).GetComponent<Slider>();
+        return true;
+    }
+    public void Tick(float _deltatime)
+    {
+        transform.rotation = Camera.main.transform.rotation;
+
+        float ratio = Manager.GameM.player.Hp / Manager.GameM.player.MaxHp;
+
+        SetHpBar(ratio);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetHpBar(float _ratio)
     {
-        
+        slider.value = _ratio;
     }
 }

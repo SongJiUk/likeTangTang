@@ -77,8 +77,8 @@ public class UI_GameScene : UI_Scene
         if(Manager.GameM.isGameEnd) return;
 
         //TODO : 스킬 개수 가져와서 팝업 띄우기
-        //List<SkillBase> list = Manager.GameM.player.Skills.RecommendSkills();
-        //if(list.Count > 0) Manager.UiM.ShowPopup<UI_SkillSelectPopup>();
+        List<SkillBase> list = Manager.GameM.player.Skills.RecommendSkills();
+        if(list.Count > 0) Manager.UiM.ShowPopup<UI_SkillSelectPopup>();
 
         GetSlider(typeof(Sliders), (int)Sliders.ExpSliderObject).value = Manager.GameM.player.ExpRatio;
         GetText(typeof(Texts), (int)Texts.CharacterLevelValueText).text = $"{Manager.GameM.ContinueDatas.Level}";

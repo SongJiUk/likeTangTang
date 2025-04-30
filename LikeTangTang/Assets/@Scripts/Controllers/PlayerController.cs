@@ -154,6 +154,11 @@ public class PlayerController : CreatureController, ITickable
         set { Manager.GameM.ContinueDatas.ExpBonusRate = value;}
     }
 
+    public int SkillRefreshCount
+    {
+        get {return Manager.GameM.ContinueDatas.SkillRefreshCount;}
+        set { Manager.GameM.ContinueDatas.SkillRefreshCount = value; }
+    }
 
 
     public void LevelUp(int _level = 0)

@@ -16,6 +16,8 @@ public static class Define
     public const float KNOCKBACK_POWER = 10f;
     public const float KNOCKBACK_COOLTIME = 0.5f;
     public const float KNOCKBACK_TIME = 0.1f;
+    public const int MAX_SKILL_COUNT = 6;
+    public const int MAX_SKILL_LEVEL = 5;
     public static readonly Dictionary<int, float> POTION_AMOUNT = new Dictionary<int, float>
     {
         { 3100, 0.3f},

@@ -32,14 +32,9 @@ public class UI_SkillCardItem : UI_Base
     {
 
     }
-    public void SetInfo(int _templateID)
-    {
-        templateID = _templateID;
-
-        Manager.DataM.SkillDic.TryGetValue(_templateID, out var _skillData);
-
-        skillData = _skillData;
-
+    public void SetInfo(SkillBase _skill)
+    {   
+        //TODO : 스킬 아이템 세팅 
     }
 
     public void OnClickItem()

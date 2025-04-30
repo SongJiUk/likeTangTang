@@ -110,7 +110,22 @@ public class SkillComponent : MonoBehaviour
     {
         //TODO : 배운 스킬 및 맥스 스킬 개수 비교 
         List<SkillBase> skillList = Manager.GameM.player.Skills.skillList.ToList();
+        List<SkillBase> activeSkills = skillList.FindAll(skill => skill.isLearnSkill);
 
-        return skillList;
+        if(activeSkills.Count == Define.MAX_SKILL_COUNT)
+        {
+            List<SkillBase> recommendSKills = activeSkills.FindAll(s => s.SkillLevel < Define.MAX_SKILL_LEVEL);
+            //TODO : 셔플 파악해서 짜주기
+            //recommendSKills.Shuffle();
+
+            return recommendSKills.Take(3).ToList();
+        }
+        else
+        {
+            List<SkillBase> recommendSkills = skillList.FindAll(s => s.SkillLevel < Define.MAX_SKILL_LEVEL);
+            //recommendSkills.Shuffle();
+
+            return recommendSkills.Take(3).ToList();
+        }
     }
 }

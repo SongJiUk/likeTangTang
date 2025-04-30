@@ -32,6 +32,16 @@ public class UIManager
         }
     }
 
+    public T MakeSubItem<T>(Transform _parent = null, string _name = null, bool _pooling = true) where T : UI_Base
+    {
+        if(string.IsNullOrEmpty(_name)) _name = typeof(T).Name;
+
+        GameObject go = Manager.ResourceM.Instantiate($"{_name}",_parent, _pooling);
+        go.transform.SetParent(_parent);
+        
+        return Utils.GetOrAddComponent<T>(go);
+    }
+
 
     //NOTE : 해당 씬의 스크립트를 호출해서 사용할 수 있게 해줌. ex) Manager.UiM.GetSceneUI<UI_GameScene>().RefreshUI();
     public T GetSceneUI<T>() where T : UI_Base

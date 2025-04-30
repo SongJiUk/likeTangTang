@@ -151,4 +151,19 @@ public static class Utils
         return closestMC;
     }
 
+    public static void DestoryChilds(this GameObject _go)
+    {
+        Transform[] children = new Transform[_go.transform.childCount];
+
+        for(int i =0; i<_go.transform.childCount; i++)
+        {
+            children[i] = _go.transform.GetChild(i);
+        }
+
+        foreach(Transform child in children)
+        {
+            Manager.ResourceM.Destory(child.gameObject);
+        }
+    }
+
 }
