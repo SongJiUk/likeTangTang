@@ -76,6 +76,7 @@ public class UI_SkillSelectPopup : UI_Popup
     public override bool Init()
     {
         if(!base.Init()) return false;
+
         gm = Manager.GameM;
         BindObject(typeof(GameObjects));
         BindButton(typeof(Buttons));
@@ -83,15 +84,8 @@ public class UI_SkillSelectPopup : UI_Popup
         BindSlider(typeof(Sliders));
         BindImage(typeof(Images));
         
-        // Bind<GameObject>(typeof(GameObjects));
-        // Bind<Button>(typeof(Buttons));
-        // Bind<TextMeshProUGUI>(typeof(Texts));
-        // Bind<Slider>(typeof(Sliders));
-        // Bind<Image>(typeof(Images));
-        
 
-        var a = GetButton(typeof(Buttons), (int)Buttons.ADRefreshButton);
-        a.gameObject.BindEvent(OnClickAdRefreshButton);
+        GetButton(typeof(Buttons), (int)Buttons.ADRefreshButton).gameObject.BindEvent(OnClickAdRefreshButton);
         GetButton(typeof(Buttons), (int)Buttons.CardRefreshButton).gameObject.BindEvent(OnClickCardRefreshButton);
 
         GetObject(typeof(GameObjects), (int)GameObjects.ADRefreshDisabledObject).gameObject.SetActive(false);
@@ -143,23 +137,12 @@ public class UI_SkillSelectPopup : UI_Popup
         foreach(SkillBase skill in skillList)
         {
             UI_SkillCardItem item = Manager.UiM.MakeSubItem<UI_SkillCardItem>(cont.transform);
-            item.GetComponent<UI_SkillCardItem>().SetInfo(skill);
+            item = item.GetComponent<UI_SkillCardItem>();
+            item.Init();
+            item.SetInfo(skill);
         }
 
-
-        // foreach(Transform tr in _grid.transform)
-        //     Manager.ResourceM.Destory(tr.gameObject);
-        
-        // // [ ] 데이터에 따라서 바꿔줘야함.(하드코딩말고 쉽게 찾을 수 있는 방법이 있나 확인해보기.)
-        // for(int i =0; i<3; i++)
-        // {
-        //     var go = Manager.ResourceM.Instantiate("UI_SkillCardItem.prefab", _pooling: false);
-        //     UI_SkillCardItem item = go.GetOrAddComponent<UI_SkillCardItem>();
-
-        //     item.transform.SetParent(_grid);
-
-        //     _items.Add(item);
-        // }
+        Manager.TimeM.TimeStop();
     } 
 
     void SetCurrentSkill(int _index, SkillBase _skill)

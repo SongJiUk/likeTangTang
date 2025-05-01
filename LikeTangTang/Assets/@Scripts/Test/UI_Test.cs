@@ -9,7 +9,8 @@ public class UI_Test : UI_Base
     public enum Toggles
     {
         SkillLevelUpToggle,
-        WaveEndToggle
+        WaveEndToggle,
+        ExpToggle
     }
     public override bool Init()
     {
@@ -17,9 +18,15 @@ public class UI_Test : UI_Base
 
         SetUIInfo();
 
+        GetToggle(typeof(Toggles), (int)Toggles.ExpToggle).gameObject.BindEvent(() =>
+        {
+            Manager.GameM.player.Exp += 10;
+        });
+
         GetToggle(typeof(Toggles), (int)Toggles.SkillLevelUpToggle).gameObject.BindEvent(() =>
         {
-            Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.ElectricShock);
+
+            Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.SuicideDrone);
             Manager.GameM.player.Skills.LevelUpSkill(skillType);
             //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.ElectronicField);
             //Manager.GameM.player.Skills.LevelUpSkill(skillType);

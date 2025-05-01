@@ -410,8 +410,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Card Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4e400e34c53bf49989da41cdd072db36, type: 2}
+  m_sharedMaterial: {fileID: 5207820940069087074, guid: 4e400e34c53bf49989da41cdd072db36, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -897,8 +897,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4e400e34c53bf49989da41cdd072db36, type: 2}
+  m_sharedMaterial: {fileID: 5207820940069087074, guid: 4e400e34c53bf49989da41cdd072db36, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1109,8 +1109,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Evo : '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4e400e34c53bf49989da41cdd072db36, type: 2}
+  m_sharedMaterial: {fileID: 5207820940069087074, guid: 4e400e34c53bf49989da41cdd072db36, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1391,12 +1391,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   templateID: 0
   skillData:
-    templateID: 0
-    name: 
-    skillTypeStr: 
-    type: 0
-    prefab: 
-    damage: 0
+    DataID: 0
+    SkillName: 
+    SkillNameE: 
+    SkillDescription: 
+    SkillIcon: 
+    DamageMultiplier: 0
+    ScaleMultiplier: 0
+    CoolTime: 0
+    Range: 0
+    Duration: 0
+    ProjectileCount: 0
+    RoatateSpeed: 0
+    AttackInterval: 0
+    NumBounce: 0
+    KnockBackPower: 0
+    KnockBackInterval: 0
+    BounceSpeed: 0
+    NumPenerations: 0
+    Speed: 0
+    NumberOfAttacks: 0
+    CastingSoundLabel: 
+    HitSoundLabel: 
+    CastingEffectID: 
+    HitEffectID: 
+    CastingEffect: 0
+    HitEffect: 0
+    SkillTypeStr: 
+    Type: 0
+    CanEvolve: 0
+    RequiredItemID: 0
+    EvolvedSkillName: 
+    EvoloutionItemName: 
+    PrefabName: 
+    BoundDist: 0
+    ExplosionName: 
+    EffectRange: 0
+    EffectScaleMultiplier: 0
+    SlowRatio: 0
+    PullForce: 0
 --- !u!1 &947600313509060748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,8 +1536,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Skill Description
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4e400e34c53bf49989da41cdd072db36, type: 2}
+  m_sharedMaterial: {fileID: 5207820940069087074, guid: 4e400e34c53bf49989da41cdd072db36, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1811,7 +1844,7 @@ GameObject:
   - component: {fileID: 947600313725292183}
   - component: {fileID: 947600313725292180}
   m_Layer: 5
-  m_Name: EvoSkillImage
+  m_Name: EvoSkillINeedITemImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

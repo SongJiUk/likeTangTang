@@ -137,8 +137,8 @@ public static class Utils
         foreach(MonsterController monster in Manager.ObjectM.mcSet)
         {
             if(!monster.IsValid()) continue;
-            
             if(_prevTargets!= null && _prevTargets.Contains(monster)) continue;
+
 
             float dist = Vector3.Distance(_origin, monster.transform.position);
             if(dist < closestDist)
@@ -166,4 +166,20 @@ public static class Utils
         }
     }
 
+
+
+    //List를 섞어준다.
+    public static void Shuffle<T>(this List<T> _list)
+    {
+        int count = _list.Count;
+
+        while(count > 1)
+        {
+            count--;
+            int randNum = UnityEngine.Random.Range(0, count+1);
+            T value = _list[randNum];
+            _list[randNum] = _list[count];
+            _list[count] = value;
+        }
+    }
 }

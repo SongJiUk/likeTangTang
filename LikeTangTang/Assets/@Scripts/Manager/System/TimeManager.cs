@@ -14,7 +14,7 @@ public class TimeManager : MonoBehaviour
         TimeStart();
     }
 
-    public void TimeStart()
+    void TimeStart()
     {
         StartCoroutine(CoStartTimer());
     }
@@ -48,5 +48,15 @@ public class TimeManager : MonoBehaviour
     public int GetCurrentSecond()
     {
         return (int)second;
+    }
+
+    public void TimeStop()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void TimeReStart()
+    {
+        Time.timeScale = 1f;
     }
 }

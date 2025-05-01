@@ -262,6 +262,56 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
+  - m_GUID: 4ded96409165f49a8a2a7ed307c2ba61
+    m_Address: IMG_PlasmaSpinner.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: d0086119c85c44ca7af6bcf75e64ceaf
+    m_Address: IMG_SpectralSlash.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 7681bfceb2a914442af9a472ccdda0ef
+    m_Address: IMG_PlasmaShot.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: a3191a231e73d4e83925a9ed974d0ca2
+    m_Address: IMG_SuicideDrone.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 95d0115f969e94fbb919c644a1730bdd
+    m_Address: IMG_TimeStopBomb.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 3f6dd85c1bbf9405abff982178b980d8
+    m_Address: IMG_GravityBomb.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 51dcf44af14a340999414f82999f77c5
+    m_Address: IMG_ElectronicField.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 1e40e44fa1c31478886490e924d7548f
+    m_Address: IMG_EnergyRing.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: ac75c01417bbb9e4daa2b630f3bac34d
+    m_Address: IMG_ElectricShock.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: d19db9aba08a3934ca7753bf41028060
+    m_Address: IMG_OrbitalBlades.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

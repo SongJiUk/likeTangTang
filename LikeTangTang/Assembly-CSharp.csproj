@@ -102,6 +102,7 @@
     <Compile Include="Assets/@Scripts/DamageFont.cs" />
     <Compile Include="Assets/@Scripts/Contents/Skills/Sequence/SequenceSkill.cs" />
     <Compile Include="Assets/@Scripts/Controllers/ProjectileController.cs" />
+    <Compile Include="Assets/@Scripts/UI/UI_HP_Bar.cs" />
     <Compile Include="Assets/@Scripts/Test/Test.cs" />
     <Compile Include="Assets/@Scripts/Controllers/DropItem/BombController.cs" />
     <Compile Include="Assets/@Scripts/UI/Scene/UI_GameScene.cs" />
@@ -140,7 +141,6 @@
     <Compile Include="Assets/@Scripts/UI/Popup/UI_SkillSelectPopup.cs" />
     <Compile Include="Assets/@Scripts/Test/UI_Test.cs" />
     <Compile Include="Assets/@Scripts/Manager/System/CustomSceneManager.cs" />
-    <Compile Include="Assets/@Scripts/UI/UI_HP_Bar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

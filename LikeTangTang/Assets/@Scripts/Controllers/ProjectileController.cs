@@ -186,19 +186,34 @@ public class ProjectileController : SkillBase
     IEnumerator CoStartSuicideDrone()
     {
         yield return new WaitForSeconds(1f);
-
         if(!this.IsValid()) yield break;
 
-        target = Utils.FindClosestMonster(transform.position);
-        if(target != null && target.IsValid())
-        {
-            dir = (target.transform.position - transform.position).normalized;
-            rigid.velocity = dir * speed;
-
-            yield return new WaitForSeconds(1f);
+        float chaseTime = 1f;
+        float elapsedTIme = 0f;
+        while(elapsedTIme < chaseTime)
+        {   
             if(!this.IsValid()) yield break;
-            if(!target.IsValid()) target = null;
+            target = Utils.FindClosestMonster(transform.position);
+            
+            float dist = Vector2.Distance(target.transform.position, transform.position);
+
+            if(dist < 0.1f && target != null) break;
+        
+
+            if(target != null && target.IsValid())
+            {
+                dir = (target.transform.position - transform.position).normalized;
+                rigid.velocity = dir * speed;
+            }
+            else
+            {
+                rigid.velocity = Vector2.zero;
+            }
+
+            elapsedTIme += Time.deltaTime;
+            yield return null;
         }
+
         //없으면 제자리 폭발.
         isBoom = true;
         HandleSuicideDrone();

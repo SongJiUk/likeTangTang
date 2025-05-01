@@ -35,6 +35,8 @@ public class MonsterController : CreatureController, ITickable
     private SkillBase activeSkillInZone;
     private CreatureController zoneOwner;
     float skillZoneTickTime;
+
+
     
     private void Awake()
     {
@@ -50,6 +52,7 @@ public class MonsterController : CreatureController, ITickable
         contactPlayer = null;
         isInContactWithPlayer = false;
         originalSpeed = Speed;
+        transform.localScale = Vector3.one;
 
     }
     void OnDisable()

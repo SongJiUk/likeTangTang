@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 //NOTE : 스킬 관련된 모든 코드들 여기서 사용할것임(플레이어에 최소한의 코드만 들어가게.), 스킬매니저임 쉽게 말해서
@@ -54,44 +55,50 @@ public class SkillComponent : MonoBehaviour
     public void AddSkill(Define.SkillType _type,  int _skillID = 0)
     {
         string name = _type.ToString();
+        SkillBase skill = null;
         if(_type == Define.SkillType.EnergyRing || _type == Define.SkillType.ElectronicField || _type == Define.SkillType.SpectralSlash)
         {
-
             GameObject go = Manager.ResourceM.Instantiate(name, Utils.FindChild(gameObject, Define.STANDARDNAME).transform);
             if(go != null)
             {
-                SkillBase skill = go.GetOrAddComponent<SkillBase>();
-                skillList.Add(skill);
-                
-            }
-        }
-        else if(_type == Define.SkillType.PlasmaSpinner)
-        {   
-            SequenceSkill skill = gameObject.AddComponent(Type.GetType(name)) as SequenceSkill;
-            if(skill != null)
-            {
-
-            }
-            else
-            {
-                RepeatSkill skillbase = gameObject.GetComponent(Type.GetType(name)) as RepeatSkill;
-                skillList.Add(skillbase);
+                skill = go.GetOrAddComponent<SkillBase>();
             }
         }
         else
         {
-            SequenceSkill skill = gameObject.AddComponent(Type.GetType(name)) as SequenceSkill;
-            if(skill != null)
-            {
-
-            }
-            else
-            {
-                RepeatSkill skillbase = gameObject.GetComponent(Type.GetType(name)) as RepeatSkill;
-                
-                if(skillbase != null) skillList.Add(skillbase);
-            }
+            Type skillType = Type.GetType(name);
+            skill = gameObject.AddComponent(skillType) as SkillBase;
         }
+
+        skill.UpdateSkillData();
+
+        if(skill != null) skillList.Add(skill);
+        
+        // if(_type == Define.SkillType.EnergyRing || _type == Define.SkillType.ElectronicField || _type == Define.SkillType.SpectralSlash)
+        // {
+
+        //     GameObject go = Manager.ResourceM.Instantiate(name, Utils.FindChild(gameObject, Define.STANDARDNAME).transform);
+        //     if(go != null)
+        //     {
+        //         SkillBase skill = go.GetOrAddComponent<SkillBase>();
+        //         skillList.Add(skill);
+        //     }
+        // }
+        // else
+        // {
+        //     Type skillType = Type.GetType(name);
+        //     SequenceSkill skill = gameObject.AddComponent(skillType) as SequenceSkill;
+        //     if(skill != null)
+        //     {
+                
+        //     }
+        //     else
+        //     {
+        //         RepeatSkill skillbase = gameObject.GetComponent(skillType) as RepeatSkill;
+        //         if(skillbase != null) skillList.Add(skillbase);
+        //     }
+        // }
+
     }
 
     public void LevelUpSkill(Define.SkillType _type)
@@ -115,15 +122,14 @@ public class SkillComponent : MonoBehaviour
         if(activeSkills.Count == Define.MAX_SKILL_COUNT)
         {
             List<SkillBase> recommendSKills = activeSkills.FindAll(s => s.SkillLevel < Define.MAX_SKILL_LEVEL);
-            //TODO : 셔플 파악해서 짜주기
-            //recommendSKills.Shuffle();
+            recommendSKills.Shuffle();
 
             return recommendSKills.Take(3).ToList();
         }
         else
         {
             List<SkillBase> recommendSkills = skillList.FindAll(s => s.SkillLevel < Define.MAX_SKILL_LEVEL);
-            //recommendSkills.Shuffle();
+            recommendSkills.Shuffle();
 
             return recommendSkills.Take(3).ToList();
         }

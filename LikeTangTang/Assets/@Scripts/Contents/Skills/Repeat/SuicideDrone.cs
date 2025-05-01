@@ -42,7 +42,8 @@ public class SuicideDrone : RepeatSkill, ITickable
         for(int i =0; i<projectileCount; i++)
         {
             float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
-            float radius = Random.Range(2f, range);
+            float t = Mathf.Sqrt(Random.Range(0f, 1f));
+            float radius = Mathf.Lerp(2f, range, t);
 
             Vector3 offset = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f) * radius;
             Vector3 spawnPos = Manager.GameM.player.transform.position + offset;
