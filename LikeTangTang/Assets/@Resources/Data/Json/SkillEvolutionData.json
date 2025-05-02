@@ -1,0 +1,114 @@
+{
+  "skillEvolutionDatas": [
+    {
+      "EvolutionItemID": 2300,
+      "EvolutionItemName": "플라즈마 코어",
+      "EvolutionItemNameE": "Plasma Core",
+      "EvolutionItemDescription": "플라즈마샷을 진화시킵니다. 선택하는 즉시 진화됩니다.",
+      "EvolutionSkillID": 2100,
+      "SkillName": "플라즈마 캐논",
+      "BeforeSKillName": "PlasmaShot",
+      "Type": 0,
+      "EvolutionItemIcon": "PlasmaCore.sprite"
+    },
+    {
+      "EvolutionItemID": 2310,
+      "EvolutionItemName": "에너지 앰플리파이어",
+      "EvolutionItemNameE": "Energy Amplifier",
+      "EvolutionItemDescription": "에너지링을 진화시킵니다. 선택하는 즉시 진화됩니다.",
+      "EvolutionSkillID": 2110,
+      "SkillName": "썬더링",
+      "BeforeSKillName": "EnergyRing",
+      "Type": 0,
+      "EvolutionItemIcon": "Energy_Amplifier.sprite"
+    },
+    {
+      "EvolutionItemID": 2320,
+      "EvolutionItemName": "반응 안정화기",
+      "EvolutionItemNameE": "Reactive Stabilizer",
+      "EvolutionItemDescription": "플라즈마 부메랑을 진화시킵니다. 선택하는 즉시 진화됩니다.",
+      "EvolutionSkillID": 2120,
+      "SkillName": "오메가 부메랑",
+      "BeforeSKillName": "PlasmaSpinner",
+      "Type": 0,
+      "EvolutionItemIcon": "Reactive_Stabilizer.sprite"
+    },
+    {
+      "EvolutionItemID": 2330,
+      "EvolutionItemName": "드론 AI 칩셋",
+      "EvolutionItemNameE": "Drone AI Chipset",
+      "EvolutionItemDescription": "자폭 드론을 진화시킵니다. 선택하는 즉시 진화됩니다.",
+      "EvolutionSkillID": 2130,
+      "SkillName": "클러스터 드론",
+      "BeforeSKillName": "SuicideDrone",
+      "Type": 0,
+      "EvolutionItemIcon": "Drone_AI_Chipset.sprite"
+    },
+    {
+      "EvolutionItemID": 2340,
+      "EvolutionItemName": "초전도 코일",
+      "EvolutionItemNameE": "Superconducting Coil",
+      "EvolutionItemDescription": "전기충격공격을 진화시킵니다. 선택하는 즉시 진화됩니다.",
+      "EvolutionSkillID": 2140,
+      "SkillName": "서든 스톰",
+      "BeforeSKillName": "ElectricShock",
+      "Type": 0,
+      "EvolutionItemIcon": "Superconducting_Coil.sprite"
+    },
+    {
+      "EvolutionItemID": 2350,
+      "EvolutionItemName": "중력 제어 모듈",
+      "EvolutionItemNameE": "Gravity Control Module",
+      "EvolutionItemDescription": "중력 폭탄을 진화시킵니다. 선택하는 즉시 진화됩니다.",
+      "EvolutionSkillID": 2150,
+      "SkillName": "중력 붕괴",
+      "BeforeSKillName": "GravityBomb",
+      "Type": 0,
+      "EvolutionItemIcon": "Gravity_Control_Module.sprite"
+    },
+    {
+      "EvolutionItemID": 2360,
+      "EvolutionItemName": "크로노 스톤",
+      "EvolutionItemNameE": "Chrono Stone",
+      "EvolutionItemDescription": "시간 정지 폭탄을 진화시킵니다. 선택하는 즉시 진화됩니다.",
+      "EvolutionSkillID": 2160,
+      "SkillName": "시간 고정 필드",
+      "BeforeSKillName": "TimeStopBomb",
+      "Type": 0,
+      "EvolutionItemIcon": "Chrono_Stone.sprite"
+    },
+    {
+      "EvolutionItemID": 2370,
+      "EvolutionItemName": "궤도 추적 센서",
+      "EvolutionItemNameE": "Orbital Tracking Sensor",
+      "EvolutionItemDescription": "오비탈 블레이드를 진화시킵니다. 선택하는 즉시 진화됩니다.",
+      "EvolutionSkillID": 2170,
+      "SkillName": "오빗 배러지",
+      "BeforeSKillName": "OrbitalBlades",
+      "Type": 0,
+      "EvolutionItemIcon": "Orbital_Tracking_Sensor.sprite"
+    },
+    {
+      "EvolutionItemID": 2380,
+      "EvolutionItemName": "전자기 변환기",
+      "EvolutionItemNameE": "Electromagnetic Converter",
+      "EvolutionItemDescription": "일렉트로닉필드를 진화시킵니다. 선택하는 즉시 진화됩니다.",
+      "EvolutionSkillID": 2180,
+      "SkillName": "하이볼티지 필드",
+      "BeforeSKillName": "ElectronicField",
+      "Type": 0,
+      "EvolutionItemIcon": "Electromagnetic_Converter.sprite"
+    },
+    {
+      "EvolutionItemID": 2390,
+      "EvolutionItemName": "스펙트럴 크리스탈",
+      "EvolutionItemNameE": "Spectral Crystal",
+      "EvolutionItemDescription": "스펙트럴슬래쉬를 진화시킵니다. 선택하는 즉시 진화됩니다.",
+      "EvolutionSkillID": 2190,
+      "SkillName": "스펙트럴 팬텀",
+      "BeforeSKillName": "SpectralSlash",
+      "Type": 0,
+      "EvolutionItemIcon": "Spectral_Crystal.sprite"
+    }
+  ]
+}

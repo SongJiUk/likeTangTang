@@ -1,0 +1,11 @@
+EvolutionItemID,EvolutionItemName,EvolutionItemNameE,EvolutionItemDescription,EvolutionSkillID,SkillName,BeforeSKillName,EvolutionItemIcon
+2300,플라즈마 코어,Plasma Core,플라즈마샷을 진화시킵니다. 선택하는 즉시 진화됩니다.,2100,플라즈마 캐논,PlasmaShot,PlasmaCore.sprite
+2310,에너지 앰플리파이어,Energy Amplifier,에너지링을 진화시킵니다. 선택하는 즉시 진화됩니다.,2110,썬더링,EnergyRing,Energy_Amplifier.sprite
+2320,반응 안정화기,Reactive Stabilizer,플라즈마 부메랑을 진화시킵니다. 선택하는 즉시 진화됩니다.,2120,오메가 부메랑,PlasmaSpinner,Reactive_Stabilizer.sprite
+2330,드론 AI 칩셋,Drone AI Chipset,자폭 드론을 진화시킵니다. 선택하는 즉시 진화됩니다.,2130,클러스터 드론,SuicideDrone,Drone_AI_Chipset.sprite
+2340,초전도 코일,Superconducting Coil,전기충격공격을 진화시킵니다. 선택하는 즉시 진화됩니다.,2140,서든 스톰,ElectricShock,Superconducting_Coil.sprite
+2350,중력 제어 모듈,Gravity Control Module,중력 폭탄을 진화시킵니다. 선택하는 즉시 진화됩니다.,2150,중력 붕괴,GravityBomb,Gravity_Control_Module.sprite
+2360,크로노 스톤,Chrono Stone,시간 정지 폭탄을 진화시킵니다. 선택하는 즉시 진화됩니다.,2160,시간 고정 필드,TimeStopBomb,Chrono_Stone.sprite
+2370,궤도 추적 센서,Orbital Tracking Sensor,오비탈 블레이드를 진화시킵니다. 선택하는 즉시 진화됩니다.,2170,오빗 배러지,OrbitalBlades,Orbital_Tracking_Sensor.sprite
+2380,전자기 변환기,Electromagnetic Converter,일렉트로닉필드를 진화시킵니다. 선택하는 즉시 진화됩니다.,2180,하이볼티지 필드,ElectronicField,Electromagnetic_Converter.sprite
+2390,스펙트럴 크리스탈,Spectral Crystal,스펙트럴슬래쉬를 진화시킵니다. 선택하는 즉시 진화됩니다.,2190,스펙트럴 팬텀,SpectralSlash,Spectral_Crystal.sprite

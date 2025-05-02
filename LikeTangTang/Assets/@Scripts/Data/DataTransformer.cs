@@ -34,6 +34,7 @@ public class DataTransformer : EditorWindow
     public static void ParseExcel()
     {
         ParseSkillData("SkillData");
+        ParseSkillEvolutionData("SkillEvolutionData");
         ParseStageData("StageData");
         ParseCreatureData("CreatureData");
         // ParseLevelData("Level");
@@ -102,9 +103,8 @@ public class DataTransformer : EditorWindow
             skillData.HitEffect = ConvertValue<int>(row[i++]);
             skillData.SkillTypeStr = ConvertValue<string>(row[i++]);
             skillData.CanEvolve = ConvertValue<bool>(row[i++]);
-            skillData.RequiredItemID = ConvertValue<int>(row[i++]);
+            skillData.EvolutionItemID = ConvertValue<int>(row[i++]);
             skillData.EvolvedSkillName = ConvertValue<string>(row[i++]);
-            skillData.EvoloutionItemName = ConvertValue<string>(row[i++]);
             skillData.PrefabName = ConvertValue<string>(row[i++]);
             skillData.BoundDist = ConvertValue<int>(row[i++]);
             skillData.ExplosionName = ConvertValue<string>(row[i++]);
@@ -115,6 +115,39 @@ public class DataTransformer : EditorWindow
             loader.skillDatas.Add(skillData);
         }
         #endregion
+
+        string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
+        File.WriteAllText($"{Application.dataPath}/@Resources/Data/Json/{filename}.json", jsonStr);
+        AssetDatabase.Refresh();
+    }
+
+    static void ParseSkillEvolutionData(string filename)
+    {
+        SkillEvolutionDataLoader loader = new SkillEvolutionDataLoader();
+        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/CSV/{filename}.csv").Split("\n");
+
+        for (int y = 1; y < lines.Length; y++)
+        {
+            string[] row = lines[y].Replace("\r", "").Split(',');
+            if (row.Length == 0)
+                continue;
+            if (string.IsNullOrEmpty(row[0]))
+                continue;
+
+            int i = 0;
+            SkillEvolutionData skillEvolutionData = new SkillEvolutionData();
+            skillEvolutionData.EvolutionItemID = ConvertValue<int>(row[i++]);
+            skillEvolutionData.EvolutionItemName = ConvertValue<string>(row[i++]);
+            skillEvolutionData.EvolutionItemNameE = ConvertValue<string>(row[i++]);
+            skillEvolutionData.EvolutionItemDescription = ConvertValue<string>(row[i++]);
+            skillEvolutionData.EvolutionSkillID = ConvertValue<int>(row[i++]);
+            skillEvolutionData.SkillName = ConvertValue<string>(row[i++]);
+            skillEvolutionData.BeforeSKillName = ConvertValue<string>(row[i++]);
+            skillEvolutionData.EvolutionItemIcon = ConvertValue<string>(row[i++]);
+            
+
+            loader.skillEvolutionDatas.Add(skillEvolutionData);
+        }
 
         string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
         File.WriteAllText($"{Application.dataPath}/@Resources/Data/Json/{filename}.json", jsonStr);

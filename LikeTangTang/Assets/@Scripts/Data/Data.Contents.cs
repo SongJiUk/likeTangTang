@@ -9,8 +9,8 @@ using UnityEngine;
 몬스터 (엘리트)	1100 ~ 1199	강화 몬스터, 엘리트 몬스터
 몬스터 (보스)	1200 ~ 1299	스테이지 보스 몬스터
 스킬 (플레이어)	2000 ~ 2099	플레이어 전용 스킬
-진화스킬	2100 ~ 2199	진화스킬
 스킬(몬스터용) 2200 ~ 2299 몬스터가 사용하는 스킬
+진화에 필요한 아이템 2300~2399
 아이템 (장비)	3000 ~ 3099	무기, 방어구
 아이템 (소모품)	3100 ~ 3199	포션, 버프템
 스테이지	4000 ~ 4099	스테이지 기본 정보
@@ -178,9 +178,8 @@ namespace Data
         public string SkillTypeStr; //타입
         public Define.SkillType Type = Define.SkillType.None; //타입
         public bool CanEvolve;
-        public int RequiredItemID; //
+        public int EvolutionItemID;
         public string EvolvedSkillName; //진화스킬 이름
-        public string EvoloutionItemName;
         public string PrefabName; //프리팹 이름
         public int BoundDist;
         public string ExplosionName;
@@ -218,6 +217,48 @@ namespace Data
     }
     #endregion
 
+    #region SkillEvolutionData
+    [Serializable]
+    public class SkillEvolutionData
+    {
+        public int EvolutionItemID;
+        public string EvolutionItemName;
+        public string EvolutionItemNameE;
+        public string EvolutionItemDescription;
+        public int EvolutionSkillID;
+        public string SkillName;
+        public string BeforeSKillName;
+        public Define.SkillType Type;
+        public string EvolutionItemIcon;
+    }
+
+    [Serializable]
+    public class SkillEvolutionDataLoader : ILoader<int, SkillEvolutionData>
+    {
+        public List<SkillEvolutionData> skillEvolutionDatas = new List<SkillEvolutionData>();
+
+        public Dictionary<int, SkillEvolutionData> MakeDict()
+         {
+            Dictionary<int, SkillEvolutionData> dic = new Dictionary<int, SkillEvolutionData>();
+            foreach(SkillEvolutionData data in skillEvolutionDatas)
+            {
+                if(data.Type == Define.SkillType.None)
+                {
+                    if (Enum.TryParse(data.BeforeSKillName, out Define.SkillType skillType))
+                    {
+                        data.Type = skillType;
+                    }
+                    else
+                        Debug.LogError("SKillData 틀림");
+                }
+                dic.Add(data.EvolutionItemID, data);
+            }
+
+            return dic;
+        }
+    }
+
+    #endregion
     #region LevelData
     [Serializable]
     public class LevelData

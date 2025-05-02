@@ -28,6 +28,11 @@ public class SkillBase : BaseController
         get { return SkillLevel > 0;}
     }
 
+    public bool isCanEvolve()
+    {
+        return SkillDatas.CanEvolve;
+    }
+
     public SkillBase(Define.SkillType _skillType)
     {
         Skilltype = _skillType;
@@ -85,6 +90,13 @@ public class SkillBase : BaseController
 
         SkillLevel++;
         UpdateSkillData();
+    }
+
+    public void Evolution()
+    {
+        OnSkillLevelup();
+
+        //TODO : 스킬 외형 변환.
     }
 
     public Data.SkillData UpdateSkillData(int _skillID = 0)

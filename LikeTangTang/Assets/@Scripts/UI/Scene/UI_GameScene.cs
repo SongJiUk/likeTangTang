@@ -65,7 +65,6 @@ public class UI_GameScene : UI_Scene
 
     }
 
-    //[ ] 이건 플레이어 쪽에서 관리할것임.
     public void OnPlayerDataUpdated()
     {
         GetSlider(typeof(Sliders), (int)Sliders.ExpSliderObject).value = Manager.GameM.player.ExpRatio;
@@ -77,7 +76,8 @@ public class UI_GameScene : UI_Scene
         if(Manager.GameM.isGameEnd) return;
 
         //TODO : 스킬 개수 가져와서 팝업 띄우기
-        List<SkillBase> list = Manager.GameM.player.Skills.RecommendSkills();
+        //List<SkillBase> list = Manager.GameM.player.Skills.RecommendSkills();
+        List<object> list = Manager.GameM.player.Skills.Test();
         if(list.Count > 0) Manager.UiM.ShowPopup<UI_SkillSelectPopup>();
 
         GetSlider(typeof(Sliders), (int)Sliders.ExpSliderObject).value = Manager.GameM.player.ExpRatio;

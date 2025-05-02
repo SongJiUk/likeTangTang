@@ -190,12 +190,13 @@ public class ProjectileController : SkillBase
 
         float chaseTime = 1f;
         float elapsedTIme = 0f;
-        while(elapsedTIme < chaseTime)
+        float dist = 0f;
+        while (elapsedTIme < chaseTime)
         {   
             if(!this.IsValid()) yield break;
             target = Utils.FindClosestMonster(transform.position);
             
-            float dist = Vector2.Distance(target.transform.position, transform.position);
+            if(target != null && target.IsValid()) dist = Vector2.Distance(target.transform.position, transform.position);
 
             if(dist < 0.1f && target != null) break;
         

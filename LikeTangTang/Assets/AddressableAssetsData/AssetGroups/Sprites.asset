@@ -312,6 +312,56 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
+  - m_GUID: 60f7302158c303f4a9744e76fb927a1e
+    m_Address: Chrono_Stone.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 4f1e277d69e031a40ba82a16e37b5ba0
+    m_Address: Gravity_Control_Module.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: f31448d78c4a2224c952c973fb9f47a9
+    m_Address: Energy_Amplifier.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: be40ab4f883891542962451cf4cee222
+    m_Address: Reactive_Stabilizer.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: fc03c9ac7e5476f40ab92c39fb880552
+    m_Address: Orbital_Tracking_Sensor.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: e5504fa297204164bb7b5234f987ef91
+    m_Address: Spectral_Crystal.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: eec45e528662663419f714276080cc39
+    m_Address: Electromagnetic_Converter.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 575600b3b50c5f84182a9c289c85bfe4
+    m_Address: PlasmaCore.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 1c84e693bdedcc441bf2358850bc53d0
+    m_Address: Superconducting_Coil.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 40b557b965e9f1a40abff24e2e7685a2
+    m_Address: Drone_AI_Chipset.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

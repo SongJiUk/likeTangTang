@@ -10,9 +10,11 @@ using UnityEngine;
 public class SkillComponent : MonoBehaviour
 {
     public List<SkillBase> skillList { get; }= new List<SkillBase>();
+    public List<int> evolutionItemList { get; } = new List<int>();
     public List<SkillBase> RepeatSkills { get;} = new List<SkillBase>{ };
 
     public List<SequenceSkill> SequenceSkills { get;} = new List<SequenceSkill>();
+
 
     public Dictionary<Define.SkillType, int> SavedBattleSkill = new Dictionary<Define.SkillType, int>();
     public T AddSkill<T>(Vector3 _pos, Transform _parent = null ) where T : SkillBase
@@ -116,22 +118,73 @@ public class SkillComponent : MonoBehaviour
     public List<SkillBase> RecommendSkills()
     {
         //TODO : 배운 스킬 및 맥스 스킬 개수 비교 
+        
         List<SkillBase> skillList = Manager.GameM.player.Skills.skillList.ToList();
         List<SkillBase> activeSkills = skillList.FindAll(skill => skill.isLearnSkill);
 
+        List<SkillBase> recommendSkills;
         if(activeSkills.Count == Define.MAX_SKILL_COUNT)
         {
-            List<SkillBase> recommendSKills = activeSkills.FindAll(s => s.SkillLevel < Define.MAX_SKILL_LEVEL);
-            recommendSKills.Shuffle();
-
-            return recommendSKills.Take(3).ToList();
+            recommendSkills = activeSkills.FindAll(s => s.SkillLevel < Define.MAX_SKILL_LEVEL);
         }
         else
         {
-            List<SkillBase> recommendSkills = skillList.FindAll(s => s.SkillLevel < Define.MAX_SKILL_LEVEL);
-            recommendSkills.Shuffle();
+            recommendSkills = skillList.FindAll(s => s.SkillLevel < Define.MAX_SKILL_LEVEL);
+            
+        }
+        recommendSkills.Shuffle();
+        return recommendSkills.Take(3).ToList();
+    }
 
-            return recommendSkills.Take(3).ToList();
+    public List<int> GetAvailableEvolutionItems()
+    {
+        List<int> evoItems = new List<int>();
+
+        foreach (var skill in skillList)
+        {
+            if (!skill.isLearnSkill) continue;
+            if (skill.SkillLevel != 5) continue;
+            if (!skill.isCanEvolve()) continue;
+            if (skill.SkillDatas.EvolutionItemID == 0) continue;
+
+            if (skill.SkillDatas.EvolutionItemID != 0)
+                evoItems.Add(skill.SkillDatas.EvolutionItemID);
+        }
+
+        return evoItems;
+    }
+
+
+    public List<object> Test()
+    {
+        List<SkillBase> baseSkillCandidates = RecommendSkills();
+        List<int> evoItemCandidates = GetAvailableEvolutionItems();
+
+        List<object> finalCandidates = new List<object>();
+
+        if(baseSkillCandidates != null) finalCandidates.AddRange(baseSkillCandidates);
+        if(evoItemCandidates.Count > 0) finalCandidates.AddRange(evoItemCandidates);
+        
+        finalCandidates.Shuffle();
+
+        return finalCandidates.Take(3).ToList();
+    }
+
+   
+    public void TryEvolveSkill(int _evolutionItemID)
+    {
+        foreach(var skill in skillList)
+        {
+            if (!skill.isLearnSkill) continue;
+            if (!skill.isCanEvolve()) continue;
+
+            if(skill.SkillDatas.EvolutionItemID == _evolutionItemID)
+            {
+                evolutionItemList.Add(_evolutionItemID);
+                skill.Evolution();
+                break;
+            }
         }
     }
+
 }

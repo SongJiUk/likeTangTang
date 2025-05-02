@@ -109,7 +109,8 @@ public class ElectricShock : RepeatSkill, ITickable
             if(mc== null || _igonerMonsters.Contains(mc) || !mc.IsValid()) continue;
 
             float dist = Vector3.Distance(_origin, mc.transform.position);
-            if(dist < _minDist || dist > _maxDist) continue;
+            float limitDist = Mathf.Min(_maxDist, 5f);
+            if(dist < _minDist || dist > limitDist) continue;
             
             if(dist < nearTargetDist)
             {

@@ -78,18 +78,24 @@ public class UI_SkillSelectPopup : UI_Popup
         if(!base.Init()) return false;
 
         gm = Manager.GameM;
-        BindObject(typeof(GameObjects));
-        BindButton(typeof(Buttons));
-        BindText(typeof(Texts));
-        BindSlider(typeof(Sliders));
-        BindImage(typeof(Images));
+        gameObjectsType = typeof(GameObjects);
+        ButtonsType = typeof(Buttons);
+        TextsType = typeof(Texts);
+        SlidersType = typeof(Sliders);
+        ImagesType = typeof(Images);
+
+        BindObject(gameObjectsType);
+        BindButton(ButtonsType);
+        BindText(TextsType);
+        BindSlider(SlidersType);
+        BindImage(ImagesType);
         
 
-        GetButton(typeof(Buttons), (int)Buttons.ADRefreshButton).gameObject.BindEvent(OnClickAdRefreshButton);
-        GetButton(typeof(Buttons), (int)Buttons.CardRefreshButton).gameObject.BindEvent(OnClickCardRefreshButton);
+        GetButton(ButtonsType, (int)Buttons.ADRefreshButton).gameObject.BindEvent(OnClickAdRefreshButton);
+        GetButton(ButtonsType, (int)Buttons.CardRefreshButton).gameObject.BindEvent(OnClickCardRefreshButton);
 
-        GetObject(typeof(GameObjects), (int)GameObjects.ADRefreshDisabledObject).gameObject.SetActive(false);
-        GetObject(typeof(GameObjects), (int)GameObjects.CardRefreshDisabledObject).gameObject.SetActive(false);
+        GetObject(gameObjectsType, (int)GameObjects.ADRefreshDisabledObject).gameObject.SetActive(false);
+        GetObject(gameObjectsType, (int)GameObjects.CardRefreshDisabledObject).gameObject.SetActive(false);
 
 
         RefreshUI();
@@ -97,10 +103,17 @@ public class UI_SkillSelectPopup : UI_Popup
         PopulateCardItem();
         List<SkillBase> activeSkills = gm.player.Skills.skillList.Where(skill => skill.isLearnSkill).ToList();
 
-        for(int i = 0; i<activeSkills.Count; i++)
+        for (int i = 0; i < activeSkills.Count; i++)
         {
             SetCurrentSkill(i, activeSkills[i]);
         }
+
+        List<int> GetEvoloutionItems = gm.player.Skills.evolutionItemList.ToList();
+        for(int i =0; i<GetEvoloutionItems.Count; i++)
+        {
+            SetEvolutionItem(i, GetEvoloutionItems[i]);
+        }
+
 
         //TODO : Sound
         return true;
@@ -110,21 +123,21 @@ public class UI_SkillSelectPopup : UI_Popup
 
     protected override void RefreshUI()
     {   
-        GetText(typeof(Texts), (int)Texts.CharacterLevelValueText).text = $"{gm.player.Level}";
-        GetText(typeof(Texts), (int)Texts.BeforeLevelValueText).text = $"LV. {gm.player.Level - 1}";
-        GetText(typeof(Texts), (int)Texts.AfterLevelValueText).text = $"LV. {gm.player.Level}";
+        GetText(TextsType, (int)Texts.CharacterLevelValueText).text = $"{gm.player.Level}";
+        GetText(TextsType, (int)Texts.BeforeLevelValueText).text = $"LV. {gm.player.Level - 1}";
+        GetText(TextsType, (int)Texts.AfterLevelValueText).text = $"LV. {gm.player.Level}";
 
         if(gm.player.SkillRefreshCount > 0 )
         {
-            GetText(typeof(Texts), (int)Texts.CardRefreshText).text = $"<color=white>새로고침</color>";
-            GetText(typeof(Texts), (int)Texts.CardRefreshCountValueText).text = $"{gm.player.SkillRefreshCount} / 3";
+            GetText(TextsType, (int)Texts.CardRefreshText).text = $"<color=white>새로고침</color>";
+            GetText(TextsType, (int)Texts.CardRefreshCountValueText).text = $"<color=white>{gm.player.SkillRefreshCount} / 3</color>";
         }
        
         else
         {
-            GetText(typeof(Texts), (int)Texts.CardRefreshText).text = $"<color=red>새로고침</color>";
-            GetText(typeof(Texts), (int)Texts.CardRefreshCountValueText).text = $"<color=red>{gm.player.SkillRefreshCount}</color>";
-            GetObject(typeof(GameObjects), (int)GameObjects.ADRefreshDisabledObject).gameObject.SetActive(true);
+            GetText(TextsType, (int)Texts.CardRefreshText).text = $"<color=red>새로고침</color>";
+            GetText(TextsType, (int)Texts.CardRefreshCountValueText).text = $"<color=red>{gm.player.SkillRefreshCount}</color>";
+            GetObject(gameObjectsType, (int)GameObjects.ADRefreshDisabledObject).gameObject.SetActive(true);
         }
             
     }
@@ -132,24 +145,47 @@ public class UI_SkillSelectPopup : UI_Popup
     {
         GameObject cont = GetObject(typeof(GameObjects), (int)GameObjects.SkillCardSelectListObject);
         cont.DestoryChilds();
-        List<SkillBase> skillList = gm.player.Skills.RecommendSkills();
+        //ist<SkillBase> skillList = gm.player.Skills.Test();
+        List<object> skillList = gm.player.Skills.Test();
 
-        foreach(SkillBase skill in skillList)
+        foreach (var candidate in skillList)
         {
             UI_SkillCardItem item = Manager.UiM.MakeSubItem<UI_SkillCardItem>(cont.transform);
             item = item.GetComponent<UI_SkillCardItem>();
             item.Init();
-            item.SetInfo(skill);
+
+            if (candidate is SkillBase skill)
+            {
+                item.SetInfo(skill);
+            }
+            else if (candidate is int evolutionItemID)
+            {
+                item.SetInfo(_evolutionItemID: evolutionItemID);
+            }
         }
 
         Manager.TimeM.TimeStop();
-    } 
+    }
+
+    //void Test()
+    //{
+    //    List<SkillBase> baseSkillCandidates = Po
+    //}
+
+
 
     void SetCurrentSkill(int _index, SkillBase _skill)
     {
-        GetImage(typeof(Images), _index).sprite = Manager.ResourceM.Load<Sprite>(_skill.SkillDatas.SkillIcon);
-        GetImage(typeof(Images), _index).enabled = true;
+        GetImage(ImagesType, _index).sprite = Manager.ResourceM.Load<Sprite>(_skill.SkillDatas.SkillIcon);
+        GetImage(ImagesType, _index).enabled = true;
     }
+
+    void SetEvolutionItem(int _index, int _dataID)
+    {
+        GetImage(ImagesType, (int)Images.EvolutionItem_Icon_0 + _index).sprite = Manager.ResourceM.Load<Sprite>(Manager.DataM.SkillEvolutionDic[_dataID].EvolutionItemIcon);
+        GetImage(ImagesType, (int)Images.EvolutionItem_Icon_0 + _index).enabled = true;
+    }
+
 
     public void OnClickAdRefreshButton()
     {   

@@ -410,8 +410,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Card Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4e400e34c53bf49989da41cdd072db36, type: 2}
-  m_sharedMaterial: {fileID: 5207820940069087074, guid: 4e400e34c53bf49989da41cdd072db36, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f042465329aeb0e4b91a9c9a3b9d666b, type: 2}
+  m_sharedMaterial: {fileID: 6906440704022309904, guid: f042465329aeb0e4b91a9c9a3b9d666b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1420,9 +1420,8 @@ MonoBehaviour:
     SkillTypeStr: 
     Type: 0
     CanEvolve: 0
-    RequiredItemID: 0
+    EvolutionItemID: 0
     EvolvedSkillName: 
-    EvoloutionItemName: 
     PrefabName: 
     BoundDist: 0
     ExplosionName: 
@@ -1534,10 +1533,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Skill Description
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4e400e34c53bf49989da41cdd072db36, type: 2}
-  m_sharedMaterial: {fileID: 5207820940069087074, guid: 4e400e34c53bf49989da41cdd072db36, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f042465329aeb0e4b91a9c9a3b9d666b, type: 2}
+  m_sharedMaterial: {fileID: 6906440704022309904, guid: f042465329aeb0e4b91a9c9a3b9d666b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
