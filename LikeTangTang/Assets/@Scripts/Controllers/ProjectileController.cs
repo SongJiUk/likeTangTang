@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using DG.Tweening;
 using System.Threading;
+using System;
 
 public class ProjectileController : SkillBase
 {
@@ -25,6 +26,9 @@ public class ProjectileController : SkillBase
     float sclaeMul;
     float lifeTime;
     public ProjectileController() : base(Define.SkillType.None){}
+
+    Transform particleT;
+    
     private ParticleSystem electricEffect;
     //초기화, 세팅
     public override bool Init()
@@ -63,6 +67,10 @@ public class ProjectileController : SkillBase
         {
             case Define.SkillType.PlasmaSpinner :
                 rigid.velocity = dir * speed;
+                particleT = GetComponentInChildren<ParticleSystem>()?.transform;
+
+                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f;
+                particleT.rotation = Quaternion.Euler(0, 0, angle);
                 break;
 
             case Define.SkillType.PlasmaShot :
@@ -106,6 +114,9 @@ public class ProjectileController : SkillBase
 
         numBounce--;
         rigid.velocity = -rigid.velocity.normalized * bounceSpeed;
+
+        float angle = Mathf.Atan2(rigid.velocity.y, rigid.velocity.x) * Mathf.Rad2Deg - 90f;;
+        particleT.rotation = Quaternion.Euler(0, 0, angle);
         if(numBounce < 0)
         {
             rigid.velocity = Vector2.zero;
@@ -205,6 +216,12 @@ public class ProjectileController : SkillBase
             {
                 dir = (target.transform.position - transform.position).normalized;
                 rigid.velocity = dir * speed;
+                if (dir.x != 0) 
+                {
+                    Vector3 newScale= transform.localScale;
+                    newScale.x = Mathf.Abs(newScale.x) * (dir.x > 0 ? -1 : 1);
+                    transform.localScale = newScale;
+                }
             }
             else
             {

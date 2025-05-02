@@ -97,6 +97,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
+  - m_GUID: 98be4a981d007465ca776851d08654af
+    m_Address: ElectricShock_Evolution
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 308038cb40d3e4aedaefd98e8c8555dc
+    m_Address: PlasmaSpinner_Evolution
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 50ecb27564ad648aeb977a2b34c1b646
+    m_Address: SuicideDrone_Evolution
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

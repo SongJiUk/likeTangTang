@@ -207,28 +207,75 @@ public class ObjectManager
 
     public List<MonsterController> GetNearMonsters(int _count = 1, int _distanceThreshold = 0)
     {
-        IEnumerable<MonsterController> monsters = mcSet;
+    //     IEnumerable<MonsterController> monsters = mcSet;
+    //     if (_distanceThreshold > 0)
+    //     {
+    //         float thresholdSqr = _distanceThreshold * _distanceThreshold;
+    //         monsters = monsters.Where(monster => (Player.transform.position - monster.transform.position).sqrMagnitude > thresholdSqr);
+    //     }
+
+    //     List<MonsterController> sortedMonsters = monsters.OrderBy(monster =>
+    //    (Player.transform.position - monster.transform.position).sqrMagnitude).ToList();
+
+    //     int min = Mathf.Min(_count, sortedMonsters.Count);
+
+    //     List<MonsterController> nearsMonsters = sortedMonsters.Take(min).ToList();
+
+    //     if (nearsMonsters.Count == 0) return null;
+
+    //     while (nearsMonsters.Count < _count)
+    //         nearsMonsters.Add(nearsMonsters.Last());
+
+    //     return nearsMonsters;
+
+            List<MonsterController> result = new List<MonsterController>();
+
+            float thresholdSqr =  _distanceThreshold > 0 ? _distanceThreshold * _distanceThreshold : 0;
+
+            float[] dist = new float[_count];
+
+            for(int i =0; i<dist.Length; i++) dist[i] = float.MaxValue;
+
+            MonsterController[] nearest = new MonsterController[_count];
+
+            foreach(var monster in mcSet)
+            {
+                if(monster == null || !monster.IsValid()) continue;
+                float distSqr = (Manager.GameM.player.transform.position - monster.transform.position).sqrMagnitude;
+
+                if(distSqr > 0 && distSqr < thresholdSqr) continue;
+
+                for(int i =0; i<_count; i++)
+                {
+                    if(distSqr < dist[i])
+                    {
+                        for(int j = _count-1; j> i; j--)
+                        {
+                            dist[j] = dist[j-1];
+                            nearest[j] = nearest[j-1];
+                        }
+
+                        dist[i] = distSqr;
+                        nearest[i] = monster;
+                        break;
+                    }
+                }
+            }
+            for (int i = 0; i < _count; i++)
+            {
+                if (nearest[i] != null)
+               result.Add(nearest[i]);
+            }
+
+            // 없으면 null 리턴
+            if (result.Count == 0) return null;
+
+            // 부족하면 마지막 값 복제
+            while (result.Count < _count)
+                result.Add(result[result.Count - 1]);
 
 
-        if (_distanceThreshold > 0)
-        {
-            float thresholdSqr = _distanceThreshold * _distanceThreshold;
-            monsters = monsters.Where(monster => (Player.transform.position - monster.transform.position).sqrMagnitude > thresholdSqr);
-        }
-
-        List<MonsterController> sortedMonsters = monsters.OrderBy(monster =>
-       (Player.transform.position - monster.transform.position).sqrMagnitude).ToList();
-
-        int min = Mathf.Min(_count, sortedMonsters.Count);
-
-        List<MonsterController> nearsMonsters = sortedMonsters.Take(min).ToList();
-
-        if (nearsMonsters.Count == 0) return null;
-
-        while (nearsMonsters.Count < _count)
-            nearsMonsters.Add(nearsMonsters.Last());
-
-        return nearsMonsters;
+            return result;
     }
 
     public void KillAllMonsters()

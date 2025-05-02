@@ -50,6 +50,8 @@ public class ElectronicField : RepeatSkill, ITickable
     public override void OnSkillLevelup()
     {
         base.OnSkillLevelup();
+        if(SkillLevel > Define.MAX_SKILL_LEVEL) OnEvolutaion(); 
+
         attackInterval = SkillDatas.AttackInterval;
         transform.localScale = Vector3.one * SkillDatas.ScaleMultiplier;
 
@@ -81,8 +83,6 @@ public class ElectronicField : RepeatSkill, ITickable
     {
         normalEffect.SetActive(false);
         evolutionEffect.SetActive(true);
-
-        transform.localScale = Vector3.one * SkillDatas.ScaleMultiplier;
     }
 
 

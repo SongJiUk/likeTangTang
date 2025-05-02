@@ -49,6 +49,7 @@ public class UI_SkillCardItem : UI_Base
     GameManager gm;
     public override bool Init()
     {
+        //TODO : 새로고침하면,  new, star 초기화가 안되어있음.
         if(!base.Init()) return false;
         gm = Manager.GameM;
         gameObjectsType = typeof(GameObjects);
@@ -70,8 +71,6 @@ public class UI_SkillCardItem : UI_Base
             GetObject(gameObjectsType, (int)GameObjects.StarOn_0 + i).SetActive(false);
             GetObject(gameObjectsType, (int)GameObjects.StarOff_0 + i).SetActive(true);
         }
-
-        
 
         GetButton(ButtonsType, (int)Buttons.SkillCardBackgroundImage).gameObject.BindEvent(OnClickItem);
         
@@ -95,6 +94,13 @@ public class UI_SkillCardItem : UI_Base
         if (_skill != null)
         {
             skill = _skill;
+            //초기화
+            GetObject(gameObjectsType, (int)GameObjects.NewIImageObject).gameObject.SetActive(false);
+            for(int i =0; i<Define.MAX_SKILL_LEVEL; i++)
+            {
+                GetObject(gameObjectsType, (int)GameObjects.StarOn_0 + i).SetActive(false);
+            }
+
 
             if (skill.SkillLevel == 0)
             {
@@ -119,8 +125,12 @@ public class UI_SkillCardItem : UI_Base
         }
         else if(_evolutionItemID != 0)
         {
+
+
             evolutionItemID = _evolutionItemID;
             Data.SkillEvolutionData evoData = Manager.DataM.SkillEvolutionDic[_evolutionItemID];
+
+
 
             GetObject(gameObjectsType, (int)GameObjects.NewIImageObject).gameObject.SetActive(true);
             GetImage(ImagesType, (int)Images.SkillImage).sprite = Manager.ResourceM.Load<Sprite>(Manager.DataM.SkillEvolutionDic[_evolutionItemID].EvolutionItemIcon);
@@ -130,6 +140,7 @@ public class UI_SkillCardItem : UI_Base
 
             for(int i =0; i< Define.MAX_SKILL_LEVEL; i++)
             {
+                GetObject(gameObjectsType, (int)GameObjects.StarOn_0 + i).SetActive(false);
                 GetObject(gameObjectsType, (int)GameObjects.StarOff_0 + i).SetActive(false);
             }
         }

@@ -38,12 +38,7 @@ public class ElectricShock : RepeatSkill, ITickable
 
         for (int i = 0; i < projectileCount; i++)
         {
-            List<MonsterController> targets = GetElectricShockTargets(
-                numBounce,
-                boundDist - 1,
-                boundDist + 1,
-                i
-            );
+            List<MonsterController> targets = GetElectricShockTargets(numBounce, boundDist - 1, boundDist + 1, i);
             if (targets == null || targets.Count == 0) continue;
 
             Vector3 startPos = player.transform.position;
@@ -94,31 +89,29 @@ public class ElectricShock : RepeatSkill, ITickable
 
     }
 
+public MonsterController GetElectricShockTarget(Vector3 _origin, float _minDist, float _maxDist, List<MonsterController> _ignoreMonsters)
+{
+    MonsterController target = null;
+    float nearTargetDist = Mathf.Infinity;
 
-    public MonsterController GetElectricShockTarget(Vector3 _origin, float _minDist, float _maxDist, List<MonsterController> _igonerMonsters)
+    foreach (var mc in Manager.ObjectM.mcSet)
     {
+        if (mc == null || !mc.IsValid()) continue;
+        if (_ignoreMonsters != null && _ignoreMonsters.Contains(mc)) continue;
 
-        var hits = Physics2D.OverlapCircleAll(_origin, _maxDist, LayerMask.GetMask("Monster", "Boss"));
-        MonsterController target = null;
-        float nearTargetDist = Mathf.Infinity;
+        float distSqr = (_origin - mc.transform.position).sqrMagnitude;
+        float minDistSqr = _minDist * _minDist;
+        float maxDistSqr = Mathf.Min(_maxDist, 5f) * Mathf.Min(_maxDist, 5f);
 
-        foreach(var hit in hits)
+        if (distSqr < minDistSqr || distSqr > maxDistSqr) continue;
+
+        if (distSqr < nearTargetDist)
         {
-            var mc = hit.GetComponent<MonsterController>();
-
-            if(mc== null || _igonerMonsters.Contains(mc) || !mc.IsValid()) continue;
-
-            float dist = Vector3.Distance(_origin, mc.transform.position);
-            float limitDist = Mathf.Min(_maxDist, 5f);
-            if(dist < _minDist || dist > limitDist) continue;
-            
-            if(dist < nearTargetDist)
-            {
-                nearTargetDist = dist;
-                target = mc;
-            }
+            nearTargetDist = distSqr;
+            target = mc;
         }
-
-        return target;
     }
+
+    return target;
+}
 }

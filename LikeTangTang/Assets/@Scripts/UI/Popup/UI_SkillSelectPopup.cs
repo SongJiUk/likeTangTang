@@ -190,6 +190,8 @@ public class UI_SkillSelectPopup : UI_Popup
     public void OnClickAdRefreshButton()
     {   
         //TODO : Sound
+        PopulateCardItem();
+        RefreshUI();
     }
 
     public void OnClickCardRefreshButton()

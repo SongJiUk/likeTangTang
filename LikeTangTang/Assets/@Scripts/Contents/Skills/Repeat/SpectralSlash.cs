@@ -2,12 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpectralSlash : RepeatSkill
 {  
     [SerializeField]
     ParticleSystem[] swingParticle;
+    [SerializeField]
+    ParticleSystem[] EvolutionSwingParticle;
+
+    ParticleSystem[] currentSwingParticle;
+
+    Coroutine coSwing;
+
     enum SwingType
     {
         First,
@@ -27,22 +35,30 @@ public class SpectralSlash : RepeatSkill
         gameObject.SetActive(true);
         base.ActivateSkill();
         OnChangedSkillData();
-        StartCoroutine(CoStartSpectralSlash());
+        if(coSwing != null) StopCoroutine(coSwing);
+        coSwing = StartCoroutine(CoStartSpectralSlash());
     }
 
     public override void OnChangedSkillData()
     {
         projectileCount = SkillDatas.ProjectileCount;
+        UpdateCurrentSwingParticle();
+
     }
 
+    void UpdateCurrentSwingParticle()
+    {
+
+        currentSwingParticle = SkillLevel >=6 ? EvolutionSwingParticle : swingParticle;
+    }
 
     void SetParticleRotationAndPosition(ParticleSystem _particle)
     {
         if(Manager.GameM.player == null || transform.parent == null) return;
 
         //MEMO : 플레이어의 회전각도에 따라, 반지름을 구하고, 파티클의 시작 로테이션을 지정해준다.
-        float z = transform.parent.eulerAngles.z;
-        float rad = Mathf.Deg2Rad * z * -1;
+        float z = -transform.parent.eulerAngles.z;
+        float rad = Mathf.Deg2Rad * z;
 
         var main = _particle.main;
         main.startRotation = rad;
@@ -53,10 +69,10 @@ public class SpectralSlash : RepeatSkill
         var waitTime = new WaitForSeconds(SkillDatas.CoolTime);
         while(true)
         {
-            int swingCount = Mathf.Min(projectileCount, swingParticle.Length);
+            int swingCount = Mathf.Min(projectileCount, currentSwingParticle.Length);
             for(int i = 0; i< swingCount; i++)
             {   
-                var particle = swingParticle[i];
+                var particle = currentSwingParticle[i];
                 if(particle == null) continue;
 
                 SetParticleRotationAndPosition(particle);

@@ -195,9 +195,9 @@ public class PlayerController : CreatureController, ITickable
         base.InitSkill();
 
 
-        // NOTE : Temp Code
-        Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.OrbitalBlades);
-        Skills.LevelUpSkill(skillType);
+        // // NOTE : Temp Code
+        // Define.SkillType skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.OrbitalBlades);
+        // Skills.LevelUpSkill(skillType);
         //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.ElectronicField);
         //Skills.LevelUpSkill(skillType);
         //skillType = Utils.GetSkillTypeFromInt((int)Define.SkillType.EnergyRing);

@@ -116,19 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783091ab7f63445e2b3e4740ddd1706b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabName: 
-  duration: 0
-  coolTime: 0
-  projectileCount: 0
-  boundDist: 0
-  numBounce: 0
-  bounceSpeed: 0
-  speed: 0
-  numPenerations: 0
-  range: 0
-  effectRange: 0
-  normalEffect: {fileID: 0}
-  nvolutionEffect: {fileID: 0}
+  normalEffect: {fileID: 4710456470354345244}
+  evolutionEffect: {fileID: 716922358857323966}
 --- !u!1001 &1278257833199866486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -139,6 +128,10 @@ PrefabInstance:
     - target: {fileID: 1751422707498797000, guid: aa762a0eb272442bd89f41d0dd10f2f9, type: 3}
       propertyPath: m_Name
       value: EletronicField_Evolutoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751422707498797000, guid: aa762a0eb272442bd89f41d0dd10f2f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1751422707498797003, guid: aa762a0eb272442bd89f41d0dd10f2f9, type: 3}
       propertyPath: m_RootOrder
@@ -191,6 +184,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1751422707498797003, guid: aa762a0eb272442bd89f41d0dd10f2f9, type: 3}
   m_PrefabInstance: {fileID: 1278257833199866486}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &716922358857323966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1751422707498797000, guid: aa762a0eb272442bd89f41d0dd10f2f9, type: 3}
+  m_PrefabInstance: {fileID: 1278257833199866486}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6417817071722035924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -201,6 +199,10 @@ PrefabInstance:
     - target: {fileID: 1751422707498797000, guid: 7ebb60f20785f44bc8103853935620dc, type: 3}
       propertyPath: m_Name
       value: EletronicField_Normal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751422707498797000, guid: 7ebb60f20785f44bc8103853935620dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1751422707498797003, guid: 7ebb60f20785f44bc8103853935620dc, type: 3}
       propertyPath: m_RootOrder
@@ -248,6 +250,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ebb60f20785f44bc8103853935620dc, type: 3}
+--- !u!1 &4710456470354345244 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1751422707498797000, guid: 7ebb60f20785f44bc8103853935620dc, type: 3}
+  m_PrefabInstance: {fileID: 6417817071722035924}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4710456470354345247 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1751422707498797003, guid: 7ebb60f20785f44bc8103853935620dc, type: 3}

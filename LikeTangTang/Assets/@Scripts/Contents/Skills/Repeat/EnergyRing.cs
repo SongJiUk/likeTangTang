@@ -7,6 +7,9 @@ using UnityEngine.UIElements;
 public class EnergyRing : RepeatSkill, ITickable
 {
     public GameObject[] spinner;
+    public GameObject[] evolutionSpinner;
+
+    GameObject[] currentSpinner;
     bool isPlaying = false;
     float rotationAngle = 0f;
     float durationTimer = 0f;
@@ -14,7 +17,6 @@ public class EnergyRing : RepeatSkill, ITickable
     {
         Skilltype = Define.SkillType.EnergyRing;
         gameObject.SetActive(false);
-        SetActiveSpinner(false);
         coolTime = 0f;
     }
 
@@ -26,6 +28,7 @@ public class EnergyRing : RepeatSkill, ITickable
         Manager.UpdateM.Register(this);
 
         gameObject.SetActive(true);
+        UpdateCurrentSpinner();  
         SetActiveSpinner(true);
         DoSkill();
     }
@@ -35,23 +38,23 @@ public class EnergyRing : RepeatSkill, ITickable
 
     public override void OnChangedSkillData()
     {
+        UpdateCurrentSpinner();
         SetActiveSpinner(true);
         SetEnergyRing();
     }
 
+    public void UpdateCurrentSpinner()
+    {
+        currentSpinner = (SkillLevel == 6) ? evolutionSpinner : spinner;
+    }
+
     public void SetActiveSpinner(bool _isActive)
     {
-        if(SkillLevel == 6)
-        {
+        foreach(GameObject go in spinner) go.SetActive(false);
+        foreach(GameObject go in evolutionSpinner) go.SetActive(false);
 
-        }
-        else
-        {
-            foreach(GameObject go in spinner)
-            {
-                go.SetActive(_isActive);
-            }
-        }
+        foreach(GameObject go in currentSpinner) go.SetActive(_isActive);
+        
     }
     public void Tick(float _deltaTime)
     {
@@ -72,9 +75,9 @@ public class EnergyRing : RepeatSkill, ITickable
                 float rad = angle * Mathf.Deg2Rad;
 
                 Vector3 offset = new Vector3(Mathf.Cos(rad), Mathf.Sin(rad), 0f) * SkillDatas.Range;
-                spinner[i].transform.position = playerPos + offset;
-                spinner[i].transform.rotation = Quaternion.identity;
-                spinner[i].transform.localScale = Vector3.one * SkillDatas.ScaleMultiplier;
+                currentSpinner[i].transform.position = playerPos + offset;
+                currentSpinner[i].transform.rotation = Quaternion.identity;
+                currentSpinner[i].transform.localScale = Vector3.one * SkillDatas.ScaleMultiplier;
             }
 
 
@@ -101,25 +104,25 @@ public class EnergyRing : RepeatSkill, ITickable
     {
         rotationAngle = 0f;
 
-        int count = Mathf.Min(SkillDatas.ProjectileCount, spinner.Length);
-        for (int i = 0; i < spinner.Length; i++)
+        int count = Mathf.Min(SkillDatas.ProjectileCount, currentSpinner.Length);
+        for (int i = 0; i < currentSpinner.Length; i++)
         {
-            spinner[i].SetActive(i < count);
-            spinner[i].transform.localScale = (i < count) ? Vector3.one * SkillDatas.ScaleMultiplier : Vector3.zero;
+            currentSpinner[i].SetActive(i < count);
+            currentSpinner[i].transform.localScale = (i < count) ? Vector3.one * SkillDatas.ScaleMultiplier : Vector3.zero;
         }
     }
     public void BackEnergyRing()
     {
-        for(int i =0; i<spinner.Length; i++)
+        for(int i =0; i<currentSpinner.Length; i++)
         {
             if(i <SkillDatas.ProjectileCount)
             {
-                spinner[i].transform.DOScale(Vector3.zero, 0.3f).SetEase(Ease.InSine)
-                    .OnComplete(() => spinner[i].SetActive(false));
+                currentSpinner[i].transform.DOScale(Vector3.zero, 0.3f).SetEase(Ease.InSine)
+                    .OnComplete(() => currentSpinner[i].SetActive(false));
             }
             else
             {
-                spinner[i].SetActive(false);
+                currentSpinner[i].SetActive(false);
             }
         }
 
