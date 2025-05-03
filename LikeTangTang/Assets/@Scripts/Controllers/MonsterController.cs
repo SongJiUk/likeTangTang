@@ -4,95 +4,95 @@ using UnityEngine;
 using DG.Tweening;
 using System;
 using static Define;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
 
 public class MonsterController : CreatureController, ITickable
 {
-    
     #region Action
     public Action<MonsterController> MonsterInfoUpdate;
     public Action OnBossDead;
-    
     #endregion
-    
-    Coroutine coDotDamage;
 
     #region GravityBomb Info
-    public SkillZone GravityTarget {get; set;}
+    public SkillZone GravityTarget { get; private set; }
     public bool isInGravityZone => GravityTarget != null;
-
-    Coroutine coStartSkillZone;
     #endregion
 
-    #region SKill
-    #endregion
+    #region Player Contact
     private PlayerController contactPlayer;
     private bool isInContactWithPlayer;
+    private float nextDotDamageTime;
+    #endregion
+
+    #region KnockBack
+    private bool isKnockBack;
     private float knockBackEndTime;
     private float knockBackCooldownEndTime;
-    private float nextDotDamageTime;
-    float originalSpeed;
-    bool isKnockBack; 
+    #endregion
+
+    #region Skill Zone
+    private bool isInZone;
     private SkillBase activeSkillInZone;
     private CreatureController zoneOwner;
-    float skillZoneTickTime;
+    private float skillZoneTickTime;
+    #endregion
 
+    #region Movement
+    private Vector2 moveDir;
+    private float pullForce = 0f;
+    private float originalSpeed;
+    #endregion
 
-    
-    private void Awake()
-    {
-    }
+    #region Unity 기본
+
     private void OnEnable()
     {
         if (DataID != 0) SetInfo(DataID);
-        
+
         Manager.UpdateM.Register(this);
+
         isDead = false;
         CreatureState = CreatureState.Moving;
         isKnockBack = false;
+
         contactPlayer = null;
         isInContactWithPlayer = false;
+
         originalSpeed = Speed;
         transform.localScale = Vector3.one;
-
     }
-    void OnDisable()
+
+    private void OnDisable()
     {
         Manager.UpdateM.Unregister(this);
     }
+
     public override bool Init()
     {
         if (!base.Init()) return false;
 
-        string name = gameObject .name;
         objType = ObjectType.Monster;
-    
-
         return true;
     }
 
-    Vector2 moveDir;
-    Vector2 DefualtVelocity;
-    float pullForce = 0;
+    #endregion
 
+    #region Tick
 
     public override void Tick(float _deltaTime)
     {
         base.Tick(_deltaTime);
 
         if (isDead || !Manager.GameM.player.IsValid()) return;
-        
-        if(isInZone && activeSkillInZone != null)
+
+        // Skill Zone 데미지 Tick
+        if (isInZone && activeSkillInZone != null && Time.time >= skillZoneTickTime)
         {
-            if(Time.time >= skillZoneTickTime)
-            {
-                OnDamaged(zoneOwner, activeSkillInZone);
-                skillZoneTickTime = Time.time + activeSkillInZone.SkillDatas.AttackInterval;
-            }
+            OnDamaged(zoneOwner, activeSkillInZone);
+            skillZoneTickTime = Time.time + activeSkillInZone.SkillDatas.AttackInterval;
         }
 
-
-        if(isKnockBack)
+        // KnockBack 처리
+        if (isKnockBack)
         {
             if (Time.time >= knockBackEndTime)
             {
@@ -104,60 +104,55 @@ public class MonsterController : CreatureController, ITickable
             return;
         }
 
+        // KnockBack 쿨타임 중이면 이동 안 함
         if (Time.time < knockBackCooldownEndTime) return;
 
-        moveDir = isInGravityZone ? 
-        (GravityTarget.transform.position - transform.position).normalized 
-        : (Manager.GameM.player.transform.position - transform.position).normalized;
+        // 이동 방향 계산
+        moveDir = isInGravityZone
+            ? (GravityTarget.transform.position - transform.position).normalized
+            : (Manager.GameM.player.transform.position - transform.position).normalized;
 
         Rigid.velocity = isInGravityZone ? moveDir * pullForce : moveDir * Speed;
-        
+
         CreatureSprite.flipX = moveDir.x < 0;
 
-        if (isInContactWithPlayer && Time.time >= nextDotDamageTime && contactPlayer != null)
+        // 플레이어 접촉 시 DOT 데미지
+        if (isInContactWithPlayer && contactPlayer != null && Time.time >= nextDotDamageTime)
         {
             contactPlayer.OnDamaged(this, null, Attack);
             nextDotDamageTime = Time.time + 0.1f;
         }
     }
-    
+
+    #endregion
+
+    #region Collision
+
     public virtual void OnCollisionEnter2D(Collision2D collision)
     {
-        PlayerController player =  collision.gameObject.GetComponent<PlayerController>();
-
-        if (player == null) return;
-        if(player.IsValid() == false) return;
+        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+        if (player == null || !player.IsValid()) return;
 
         contactPlayer = player;
         isInContactWithPlayer = true;
         nextDotDamageTime = Time.time;
-
-
-
     }
 
     public virtual void OnCollisionExit2D(Collision2D collision)
     {
         PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-        if (player == null) return;
-        if(player.IsValid() == false) return;
-         
-        if(contactPlayer == player)
+        if (player == null || !player.IsValid()) return;
+
+        if (contactPlayer == player)
         {
             isInContactWithPlayer = false;
             contactPlayer = null;
         }
     }
 
-    
-    public IEnumerator CoStartDotDamage(PlayerController _target)
-    {
-        while (true)
-        {
-            _target.OnDamaged(this, null, Attack);
-            yield return new WaitForSeconds(0.1f);
-        }
-    }
+    #endregion
+
+    #region 데미지 & 죽음
 
     public override void OnDamaged(BaseController _attacker, SkillBase _skill = null, float _damage = 0)
     {
@@ -172,9 +167,9 @@ public class MonsterController : CreatureController, ITickable
             base.OnDamaged(_attacker, _skill, _damage);
         }
 
-        if(objType == ObjectType.Monster)
+        if (objType == ObjectType.Monster)
         {
-            if(_skill != null) KnockBack(_skill);
+            if (_skill != null) KnockBack(_skill);
             else KnockBack();
         }
     }
@@ -183,33 +178,29 @@ public class MonsterController : CreatureController, ITickable
     {
         base.OnDead();
         InvokeMonsterData();
-        
         Manager.GameM.player.KillCount++;
 
-
-        
-        if(objType == ObjectType.Monster)
+        // 드롭
+        if (objType == ObjectType.Monster && UnityEngine.Random.value >= Manager.GameM.CurrentWaveData.NonDropRate)
         {
-            if (UnityEngine.Random.value >= Manager.GameM.CurrentWaveData.NonDropRate)
-            {
-                GemController gem = Manager.ObjectM.Spawn<GemController>(this.transform.position, _prefabName: Define.DROPITEMNAME);
-                gem.SetInfo(Manager.GameM.GetGemInfo());
-            }
+            GemController gem = Manager.ObjectM.Spawn<GemController>(transform.position, _prefabName: Define.DROPITEMNAME);
+            gem.SetInfo(Manager.GameM.GetGemInfo());
         }
 
-         DOTween.Sequence().
-            Append(transform.DOScale(0f, 0.2f).SetEase(Ease.InOutBounce))
+        DOTween.Sequence()
+            .Append(transform.DOScale(0f, 0.2f).SetEase(Ease.InOutBounce))
             .OnComplete(() =>
             {
-                StopAllCoroutines();
                 Rigid.velocity = Vector2.zero;
                 OnBossDead?.Invoke();
                 Manager.ObjectM.DeSpawn(this);
             });
     }
-    
 
-    Coroutine coKnockBackCoroutine;
+    #endregion
+
+    #region KnockBack
+
     public void KnockBack(SkillBase _skill = null)
     {
         if (_skill == null || _skill.Skilltype == SkillType.TimeStopBomb || _skill.Skilltype == SkillType.GravityBomb) return;
@@ -220,48 +211,32 @@ public class MonsterController : CreatureController, ITickable
 
         Vector2 Knockdir = -moveDir.normalized;
         float power = _skill.SkillDatas.KnockBackPower;
-        
-        Rigid.AddForce(Knockdir * KNOCKBACK_POWER * power, ForceMode2D.Impulse);
 
+        Rigid.AddForce(Knockdir * KNOCKBACK_POWER * power, ForceMode2D.Impulse);
         knockBackEndTime = Time.time + KNOCKBACK_TIME;
     }
 
-    //IEnumerator CoKnockBackCoolTime(SkillBase _skill = null)
-    //{
-    //    yield return new WaitForSeconds(KNOCKBACK_TIME);
-    //    if (Rigid != null)
-    //        Rigid.velocity = Vector2.zero;
-    //    isKnockBack = false;
-    //    CreatureState = CreatureState.Moving;
-    //    yield return new WaitForSeconds(_skill.SkillDatas.KnockBackInterval);
-    //    coKnockBackCoroutine = null;
-        
-    //}
+    #endregion
 
-#region  Set SkillZone Info
-    
-    bool isInZone = false;
+    #region Skill Zone
 
     public void SetGravityTarget(SkillZone _target)
     {
-        if(_target == null) return;
         GravityTarget = _target;
     }
 
     public void ClearGravityTarget(SkillZone _target)
     {
-        if(_target == null) return;
-
-        if(GravityTarget == _target) GravityTarget = null;
+        if (GravityTarget == _target) GravityTarget = null;
     }
-    
+
     public void StartSKillZone(CreatureController _owner, SkillBase _skill, SkillZone _zone = null)
     {
         isInZone = true;
         zoneOwner = _owner;
         activeSkillInZone = _skill;
 
-        switch(_skill.Skilltype)
+        switch (_skill.Skilltype)
         {
             case SkillType.TimeStopBomb:
                 originalSpeed = Speed;
@@ -272,62 +247,41 @@ public class MonsterController : CreatureController, ITickable
                 pullForce = _skill.SkillDatas.PullForce;
                 SetGravityTarget(_zone);
                 break;
-                
         }
+
         skillZoneTickTime = Time.time;
     }
 
     public void StopSkillZone(SkillBase _skill)
     {
         isInZone = false;
-        switch(_skill.Skilltype)
+
+        switch (_skill.Skilltype)
         {
-            case SkillType.TimeStopBomb :
+            case SkillType.TimeStopBomb:
                 Speed = originalSpeed;
                 break;
 
-            case SkillType.GravityBomb :
+            case SkillType.GravityBomb:
                 ClearGravityTarget(GravityTarget);
                 break;
         }
+
         activeSkillInZone = null;
         zoneOwner = null;
-
-        
     }
-    IEnumerator CoStartSkillZone(CreatureController _owner,SkillBase _skill, SkillZone _zone = null)
-    {
-        SkillType skillType = _skill.Skilltype;
-        
-        switch(skillType)
-        {
-            case SkillType.TimeStopBomb :
-                Speed *= _skill.SkillDatas.SlowRatio;
-                break;
 
-            case SkillType.GravityBomb :
-                pullForce = _skill.SkillDatas.PullForce;
-                SetGravityTarget(_zone);
-            break;
-        }
-
-        while(true)
-        {
-            OnDamaged(_owner, _skill);
-            yield return new WaitForSeconds(_skill.SkillDatas.AttackInterval);
-        }
-
-        yield break;
-    }
     #endregion
 
+    #region 기타
 
     public void InvokeMonsterData()
     {
-        if(this.IsValid() && gameObject.IsValid() && objType != ObjectType.Monster)
+        if (this.IsValid() && gameObject.IsValid() && objType != ObjectType.Monster)
         {
             MonsterInfoUpdate?.Invoke(this);
         }
     }
 
+    #endregion
 }

@@ -1,208 +1,197 @@
 using System.Collections;
 using System.Collections.Generic;
 using Data;
-using Unity.VisualScripting;
 using UnityEngine;
 using static Define;
 
 public class CreatureController : BaseController, ITickable
 {
-
     #region State Pattern
-    CreatureState creatureState = CreatureState.Moving;
+
+    private CreatureState creatureState = CreatureState.Moving;
     public virtual CreatureState CreatureState
     {
-        get { return creatureState; }
-        set 
+        get => creatureState;
+        set
         {
             creatureState = value;
             UpdateAnim();
         }
     }
 
-    public virtual void UpdateAnim() {}
-    
-    protected virtual void UpdateIdle() {}
-    protected virtual void UpdateMoving() {}
+    public virtual void UpdateAnim() { }
+    protected virtual void UpdateIdle() { }
+    protected virtual void UpdateMoving() { }
+    protected virtual void UpdateAttack() { }
+    protected virtual void UpdateDead() { }
 
-    protected virtual void UpdateAttack() {}
-
-    protected virtual void UpdateDead() {}
     #endregion
+
     #region Info
+
     protected SpriteRenderer CreatureSprite;
     protected Animator CreatureAnim;
-    public Data.CreatureData creatureData;
-    public Rigidbody2D Rigid { get; set; }
-    
+    public CreatureData creatureData;
+    public Rigidbody2D Rigid { get; private set; }
 
+    // Stats
+    public virtual int DataID { get; set; }
+    public virtual float Hp { get; set; }
+    public virtual float MaxHp { get; set; }
+    public virtual float Attack { get; set; }
+    public virtual float AttackRate { get; set; } = 1f;
+    public virtual float Def { get; set; }
+    public virtual float DefRate { get; set; } = 1f;
+    public virtual float CriticalRate { get; set; }
+    public virtual float CriticalDamage { get; set; } = 1.5f;
+    public virtual float DamageReduction { get; set; }
+    public virtual float SpeedRate { get; set; } = 1f;
+    public virtual float Speed { get; set; }
+
+    protected bool isDead = false;
+
+    // 데미지 애니메이션
     protected bool isStartDamageAnim = false;
-    public virtual int DataID {get ;set;}
-    public virtual float Hp {get; set;}
-    public virtual float MaxHp {get; set;}
-    public virtual float Attack {get; set;}
-    public virtual float AttackRate {get; set;} = 1;
-    public virtual float Def {get; set;}
-    public virtual float DefRate {get; set;} = 1;
-    public virtual float CriticalRate {get; set;}
-    public virtual float CriticalDamage {get; set;} = 1.5f;
-
-    public virtual float DamageReduction {get; set;}
-    public virtual float SpeedRate {get; set;} = 1;
-    public virtual float Speed {get ;set;}
-    protected bool isDead;
     protected float damageAnimEndTime = -1f;
+
+    public SkillComponent Skills { get; protected set; }
+
     #endregion
-    public SkillComponent Skills {get; protected set;}
+
+    #region Init
+
     public override bool Init()
     {
         if (!base.Init()) return false;
-        
+
         Skills = gameObject.GetOrAddComponent<SkillComponent>();
         Rigid = GetComponent<Rigidbody2D>();
 
         CreatureSprite = Utils.FindChild<SpriteRenderer>(gameObject, recursive: true);
-
-        CreatureAnim = gameObject.GetComponent<Animator>();
-        if(CreatureAnim == null)
+        CreatureAnim = GetComponent<Animator>();
+        if (CreatureAnim == null)
             CreatureAnim = Utils.FindChild<Animator>(gameObject, recursive: true);
 
         return true;
     }
-    public virtual void OnDamaged(BaseController _attacker, SkillBase _skill = null, float _damage = 0)
+
+    public virtual void SetInfo(int _dataID)
     {
-        bool isCritical = false;
+        Init();
+        Rigid.simulated = true;
 
+        DataID = _dataID;
+        creatureData = Manager.DataM.CreatureDic[_dataID];
 
-        PlayerController player = _attacker as PlayerController;
-        if(player != null)
-        {
-            bool isSpectralSlashEvolution = _skill.Skilltype == Define.SkillType.SpectralSlash && _skill.SkillLevel == 6;
-            if (isSpectralSlashEvolution)
-            {
-                _damage = _damage * player.CriticalDamage;
-                isCritical = true;
-            }
-            else if(Random.value <= player.CriticalRate)
-            {
-                _damage = _damage * player.CriticalDamage;
-                isCritical = true;
-            }
-        }
+        InitStat();
 
-        if (_skill)
-            _skill.TotalDamage += _damage;
+        CreatureSprite.sprite = Manager.ResourceM.Load<Sprite>(creatureData.Image_Name);
 
-        Hp -= _damage;
-
-        //Manager.ObjectM.ShowFont(transform.position,_damage, 0, transform, isCritical);
-        
-        if(this.IsValid()) damageAnimEndTime = Time.time + 0.1f;
+        InitSkill();
     }
 
-    public virtual void Tick(float _deltaTime)
-    {
-        if(!isDead && Time.time >= damageAnimEndTime && Hp <=0)
-        {
-            Hp = 0;
-            isDead = true;
-            transform.localScale = Vector3.one;
-
-                switch(objType)
-                {
-                    case Define.ObjectType.Player:
-                        //TODO : 부활? OR 다이
-
-                        OnDead();
-                        break;
-
-                    case Define.ObjectType.Monster:
-                    case Define.ObjectType.EliteMonster :
-                    case Define.ObjectType.Boss:
-                        OnDead();
-                        break;
-                }
-        }
-
-        //UpdateController();
-    }
-    // IEnumerator StartDamageAnim()
-    // {
-    //     if(!isStartDamageAnim)
-    //     {
-    //         //데미지 피격
-    //         isStartDamageAnim = true;
-    //         yield return new WaitForSeconds(0.1f);
-
-    //         if(Hp <= 0)
-    //         {
-    //             Hp = 0;
-                
-    //         }
-    //         isStartDamageAnim = false;
-    //     }
-    // }
     public virtual void InitStat()
     {
         var waveRate = Manager.GameM.CurrentWaveData.HpIncreaseRate;
         var stageLevel = Manager.GameM.CurrentStageData.StageLevel;
 
-        MaxHp = (creatureData.MaxHp + (creatureData.MaxHpUpForIncreasStage * stageLevel)) * (creatureData.HpRate + waveRate);
-        Attack = (creatureData.Attack + (creatureData.AttackUpForIncreasStage * stageLevel)) * creatureData.AttackRate;
+        MaxHp = (creatureData.MaxHp + creatureData.MaxHpUpForIncreasStage * stageLevel) *
+                (creatureData.HpRate + waveRate);
+
+        Attack = (creatureData.Attack + creatureData.AttackUpForIncreasStage * stageLevel) *
+                 creatureData.AttackRate;
 
         Hp = MaxHp;
         Speed = creatureData.Speed * creatureData.MoveSpeedRate;
     }
 
+    public virtual void InitSkill()
+    {
+        foreach (int skillID in creatureData.SkillTypeList)
+        {
+            var type = Utils.GetSkillTypeFromInt(skillID);
+            if (type != SkillType.None)
+                Skills.AddSkill(type, skillID);
+        }
+    }
+
+    #endregion
+
+    #region 데미지 & 죽음
+
+    public virtual void OnDamaged(BaseController _attacker, SkillBase _skill = null, float _damage = 0)
+    {
+        bool isCritical = false;
+
+        PlayerController player = _attacker as PlayerController;
+
+        if (player != null)
+        {
+            bool isSpectralSlashEvolution =
+                _skill != null &&
+                _skill.Skilltype == SkillType.SpectralSlash &&
+                _skill.SkillLevel == 6;
+
+            if (isSpectralSlashEvolution)
+            {
+                _damage *= player.CriticalDamage;
+                isCritical = true;
+            }
+            else if (Random.value <= player.CriticalRate)
+            {
+                _damage *= player.CriticalDamage;
+                isCritical = true;
+            }
+        }
+
+        if (_skill != null)
+            _skill.TotalDamage += _damage;
+
+        Hp -= _damage;
+
+        //Manager.ObjectM.ShowFont(transform.position, _damage, 0, transform, isCritical);
+
+        if (this.IsValid())
+            damageAnimEndTime = Time.time + 0.1f;
+    }
+
     public virtual void OnDead()
     {
         CreatureState = CreatureState.Dead;
-        this.GetComponent<Rigidbody2D>().simulated = false;
+        if (Rigid != null)
+            Rigid.simulated = false;
     }
 
-    
-    public virtual void SetInfo(int _dataID)
+    public virtual void Tick(float _deltaTime)
     {
-        Init();
-        Rigid.simulated = true;
-        
-        DataID = _dataID;
-        creatureData = Manager.DataM.CreatureDic[_dataID];
-        InitStat();
-        CreatureSprite.sprite = Manager.ResourceM.Load<Sprite>(creatureData.Image_Name);
-        InitSkill();
-
-        
-    }
-
-
-    public virtual void InitSkill()
-    {
-        foreach(int skillID in creatureData.SkillTypeList)
+        if (!isDead && Time.time >= damageAnimEndTime && Hp <= 0)
         {
-            Define.SkillType type = Utils.GetSkillTypeFromInt(skillID);
-            if(type != Define.SkillType.None) Skills.AddSkill(type, skillID);
+            Hp = 0;
+            isDead = true;
+            transform.localScale = Vector3.one;
+
+            switch (objType)
+            {
+                case ObjectType.Player:
+                case ObjectType.Monster:
+                case ObjectType.EliteMonster:
+                case ObjectType.Boss:
+                    OnDead();
+                    break;
+            }
         }
-        
-        //TODO : 진화스킬
-        //foreach(int evolutionSkillID in creatureData.EvolutionTypeList)
-        //{
-        //    Define.EvoloutionType type = Utils.GetEvolutionSkillTypeFromInt(evolutionSkillID);
-        //    if(type != Define.EvoloutionType.None) Skills.
-        //}
     }
+
+    #endregion
+
+    #region 기타
 
     public bool IsMonster()
     {
-        switch(objType)
-        {
-            case Define.ObjectType.Monster:
-            case Define.ObjectType.EliteMonster:
-            case Define.ObjectType.Boss:
-                return true;
-            default :
-                return false;
-        }
+        return objType == ObjectType.Monster ||
+               objType == ObjectType.EliteMonster ||
+               objType == ObjectType.Boss;
     }
-   
+
+    #endregion
 }
