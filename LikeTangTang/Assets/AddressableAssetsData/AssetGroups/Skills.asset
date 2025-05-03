@@ -22,11 +22,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: d51d297148b2ce84ab2b7a9be55de48e
-    m_Address: TimeStopBombZone
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
   - m_GUID: 95882028e0c868b4f8a0528a02f24fa6
     m_Address: TimeStopBomb
     m_ReadOnly: 0
@@ -109,6 +104,16 @@ MonoBehaviour:
     - PrevLoad
   - m_GUID: 50ecb27564ad648aeb977a2b34c1b646
     m_Address: SuicideDrone_Evolution
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: d51d297148b2ce84ab2b7a9be55de48e
+    m_Address: TimeStopBombZone
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 57d550108094548e388c44cd7fa2203e
+    m_Address: PlasmaShot_Evolution
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad

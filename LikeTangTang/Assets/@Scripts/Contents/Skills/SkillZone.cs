@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class SkillZone : MonoBehaviour
 {
-    public SkillBase skill;
-    public CreatureController owner;
+    protected SkillBase skill;
+    protected CreatureController owner;
 }

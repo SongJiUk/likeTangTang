@@ -169,9 +169,6 @@ public class GameScene : BaseScene, ITickable
 
         Data.DropItemData dropItem;
         
-        
-        //temp
-        dropitemType = DropItemType.Bomb;
         switch(dropitemType)
         {
             case DropItemType.Potion :

@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using System;
 using static Define;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 
 public class MonsterController : CreatureController, ITickable
 {
@@ -81,6 +82,16 @@ public class MonsterController : CreatureController, ITickable
 
         if (isDead || !Manager.GameM.player.IsValid()) return;
         
+        if(isInZone && activeSkillInZone != null)
+        {
+            if(Time.time >= skillZoneTickTime)
+            {
+                OnDamaged(zoneOwner, activeSkillInZone);
+                skillZoneTickTime = Time.time + activeSkillInZone.SkillDatas.AttackInterval;
+            }
+        }
+
+
         if(isKnockBack)
         {
             if (Time.time >= knockBackEndTime)
@@ -229,6 +240,8 @@ public class MonsterController : CreatureController, ITickable
 
 #region  Set SkillZone Info
     
+    bool isInZone = false;
+
     public void SetGravityTarget(SkillZone _target)
     {
         if(_target == null) return;
@@ -244,7 +257,7 @@ public class MonsterController : CreatureController, ITickable
     
     public void StartSKillZone(CreatureController _owner, SkillBase _skill, SkillZone _zone = null)
     {
-
+        isInZone = true;
         zoneOwner = _owner;
         activeSkillInZone = _skill;
 
@@ -261,11 +274,12 @@ public class MonsterController : CreatureController, ITickable
                 break;
                 
         }
-        skillZoneTickTime = Time.time + _skill.SkillDatas.AttackInterval;
+        skillZoneTickTime = Time.time;
     }
 
     public void StopSkillZone(SkillBase _skill)
     {
+        isInZone = false;
         switch(_skill.Skilltype)
         {
             case SkillType.TimeStopBomb :

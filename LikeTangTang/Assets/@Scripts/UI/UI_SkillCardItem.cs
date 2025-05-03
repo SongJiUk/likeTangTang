@@ -94,6 +94,7 @@ public class UI_SkillCardItem : UI_Base
         if (_skill != null)
         {
             skill = _skill;
+
             //초기화
             GetObject(gameObjectsType, (int)GameObjects.NewIImageObject).gameObject.SetActive(false);
             for(int i =0; i<Define.MAX_SKILL_LEVEL; i++)
@@ -118,6 +119,11 @@ public class UI_SkillCardItem : UI_Base
             GetText(TextsType, (int)Texts.CardNameText).text = $"{skill.SkillDatas.SkillName}";
             GetText(TextsType, (int)Texts.SkillDescriptionText).text = $"{skill.SkillDatas.SkillDescription}";
             GetImage(ImagesType, (int)Images.SkillImage).sprite = Manager.ResourceM.Load<Sprite>(skill.SkillDatas.SkillIcon);
+
+            for(int i =0; i< Define.MAX_SKILL_LEVEL; i++)
+            {
+                GetObject(gameObjectsType, (int)GameObjects.StarOff_0 + i).SetActive(true);
+            }
             for (int i = 0; i < skill.SkillLevel; i++)
             {
                 GetObject(gameObjectsType, (int)GameObjects.StarOn_0 + i).SetActive(true);
@@ -148,7 +154,7 @@ public class UI_SkillCardItem : UI_Base
 
     public void OnClickItem()
     {
-        //TODO : 아이템 클릭시.
+        //TODO : 스킬 고를때 선택하면 잘못 선택되는 경우가 있음(테스트 좀 많이 해봐야 될듯)
         if(skill != null)
         {
            Manager.GameM.player.Skills.LevelUpSkill(skill.Skilltype);

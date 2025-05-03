@@ -63,18 +63,21 @@ public class ProjectileController : SkillBase
 
 
         transform.localScale = Vector3.one * skill.SkillDatas.ScaleMultiplier;
+        float angle;
         switch(skillType)
         {
             case Define.SkillType.PlasmaSpinner :
                 rigid.velocity = dir * speed;
                 particleT = GetComponentInChildren<ParticleSystem>()?.transform;
 
-                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f;
+                angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f;
                 particleT.rotation = Quaternion.Euler(0, 0, angle);
                 break;
 
             case Define.SkillType.PlasmaShot :
                 rigid.velocity = dir * speed;
+                angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f;
+                transform.rotation = Quaternion.Euler(0, 0, angle);
                 break;
 
             case Define.SkillType.ElectricShock :

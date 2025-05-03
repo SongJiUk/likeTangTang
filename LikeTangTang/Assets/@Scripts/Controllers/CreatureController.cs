@@ -150,8 +150,6 @@ public class CreatureController : BaseController, ITickable
         MaxHp = (creatureData.MaxHp + (creatureData.MaxHpUpForIncreasStage * stageLevel)) * (creatureData.HpRate + waveRate);
         Attack = (creatureData.Attack + (creatureData.AttackUpForIncreasStage * stageLevel)) * creatureData.AttackRate;
 
-        //TEMP
-        Attack = 10000f;
         Hp = MaxHp;
         Speed = creatureData.Speed * creatureData.MoveSpeedRate;
     }
