@@ -214,6 +214,7 @@ public static class Define
         UnCommon,
         Rare,
         Epic,
+        Unique,
         Legendary
     }
 
@@ -249,4 +250,53 @@ public static class Define
     public static int POTION_ID = 30000;
     public static int MAGNET_ID = 30003;
     public static int BOMB_ID = 30004;
+
+    
+    public class EquipmentUIStyle
+    {
+        public Color NameColor;
+        public Color BorderColor;
+        public Color BgColor;
+
+        public EquipmentUIStyle(Color _nameColor, Color _borderColor, Color _bgColor)
+        {
+            NameColor = _nameColor;
+            BorderColor = _borderColor;
+            BgColor = _bgColor;
+        }
+    }
+
+    public static class EquipmentUIColors
+    {
+        public static readonly Dictionary<MaterialGrade, EquipmentUIStyle> MaterialGradeStyles;
+        public static readonly Dictionary<EquipmentGrade, EquipmentUIStyle> EquipGradeStyles;
+
+        static EquipmentUIColors()
+        {
+            MaterialGradeStyles = new Dictionary<MaterialGrade, EquipmentUIStyle>()
+            {
+                {MaterialGrade.Common, new EquipmentUIStyle(Utils.HexToColor("A2A2A2"), Utils.HexToColor("AC9B83"), Color.clear)},
+                {MaterialGrade.UnCommon, new EquipmentUIStyle(Utils.HexToColor("57FF0B"), Utils.HexToColor("73EC4E"), Color.clear)},
+                {MaterialGrade.Rare, new EquipmentUIStyle(Utils.HexToColor("2471E0"), Utils.HexToColor("0F84FF"), Color.clear)},
+                {MaterialGrade.Epic, new EquipmentUIStyle(Utils.HexToColor("9F37F2"), Utils.HexToColor("B740EA"), Utils.HexToColor("D094FF"))},
+                {MaterialGrade.Unique, new EquipmentUIStyle(Utils.HexToColor("F67B09"), Utils.HexToColor("F19B02"), Utils.HexToColor("F8BE56"))}
+            };
+
+            EquipGradeStyles = new Dictionary<EquipmentGrade, EquipmentUIStyle>()
+            {
+                {EquipmentGrade.Common, new EquipmentUIStyle(Utils.HexToColor("A2A2A2"), Utils.HexToColor("AC9B83"), Color.clear)},
+                {EquipmentGrade.Uncommon, new EquipmentUIStyle(Utils.HexToColor("57FF0B"), Utils.HexToColor("73EC4E"), Color.clear)},
+                {EquipmentGrade.Rare, new EquipmentUIStyle(Utils.HexToColor("2471E0"), Utils.HexToColor("0F84FF"), Color.clear)},
+                {EquipmentGrade.Epic, new EquipmentUIStyle(Utils.HexToColor("9F37F2"), Utils.HexToColor("B740EA"), Utils.HexToColor("D094FF"))},
+                {EquipmentGrade.Epic1, new EquipmentUIStyle(Utils.HexToColor("9F37F2"), Utils.HexToColor("B740EA"), Utils.HexToColor("D094FF"))},
+                {EquipmentGrade.Unique, new EquipmentUIStyle(Utils.HexToColor("F67B09"), Utils.HexToColor("F19B02"), Utils.HexToColor("F8BE56"))},
+                {EquipmentGrade.Unique1, new EquipmentUIStyle(Utils.HexToColor("F67B09"), Utils.HexToColor("F19B02"), Utils.HexToColor("F8BE56"))},
+                {EquipmentGrade.Unique2, new EquipmentUIStyle(Utils.HexToColor("F67B09"), Utils.HexToColor("F19B02"), Utils.HexToColor("F8BE56"))},
+                {EquipmentGrade.Unique3, new EquipmentUIStyle(Utils.HexToColor("F67B09"), Utils.HexToColor("F19B02"), Utils.HexToColor("F8BE56"))}
+            };
+        }
+    }
+
 }
+
+

@@ -182,4 +182,15 @@ public static class Utils
             _list[count] = value;
         }
     }
+
+
+    public static Color HexToColor(string _color)
+    {
+        Color parsedColor;
+        ColorUtility.TryParseHtmlString("#" + _color, out parsedColor);
+
+        return parsedColor;
+    
+    }
+
 }

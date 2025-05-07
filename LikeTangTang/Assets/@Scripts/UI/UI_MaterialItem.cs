@@ -11,6 +11,7 @@ public class UI_MaterialItem : UI_Base
         materialData = _data;
 
         //TODO : Color
-
+        var style = Define.EquipmentUIColors.GradeStyles[_data.MaterialGrade];
+        
     }
 }

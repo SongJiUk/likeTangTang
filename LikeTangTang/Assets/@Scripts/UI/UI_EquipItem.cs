@@ -13,6 +13,7 @@ public class UI_EquipItem : UI_Base
     {
         Equipment = _item;
         parentType = _parentType;
-
+        var style = Define.EquipmentUIColors.EquipGradeStyles[Equipment.EquipmentData.EquipmentGarde];
+        //TODO : 이미지.style
     }
 }
