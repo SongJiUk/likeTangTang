@@ -5,29 +5,55 @@ using UnityEngine;
 using Data;
 using Newtonsoft.Json;
 using System.IO;
+using System.Linq;
+using static Define;
 
 public class GameManager
 {
     public PlayerController player { get { return Manager.ObjectM?.Player; } }
-    public CameraController Camera {get; set;}
+    public CameraController Camera { get; set; }
     public GameData gameData = new GameData();
 
+    public List<Equipment> OwnerEquipment
+    {
+        get { return gameData.OwnedEquipments; }
+
+        set
+        {
+            gameData.OwnedEquipments = value;
+        }
+    }
+
+    public Dictionary<EquipmentType, Equipment> EquipedEquipments
+    {
+        get { return gameData.EquipedEquipments; }
+        set { gameData.EquipedEquipments = value; }
+    }
+
+    public Dictionary<int, int> ItemDic
+    {
+        get { return gameData.ItemDictionary; }
+        set
+        {
+            gameData.ItemDictionary = value;
+        }
+    }
 
     public int UserLevel
     {
-        get { return gameData.userLevel;}
+        get { return gameData.userLevel; }
         set { gameData.userLevel = value; }
     }
 
     public string userName
     {
-        get { return gameData.userName;}
-        set { gameData.userName = value;}
+        get { return gameData.userName; }
+        set { gameData.userName = value; }
     }
 
     public int Gold
     {
-        get { return gameData.gold;}
+        get { return gameData.gold; }
         set
         {
             gameData.gold = value;
@@ -38,8 +64,8 @@ public class GameManager
 
     public int Dia
     {
-        get { return gameData.dia;}
-        set 
+        get { return gameData.dia; }
+        set
         {
             gameData.dia = value;
             SaveGame();
@@ -49,28 +75,29 @@ public class GameManager
 
     public ContinueData ContinueDatas
     {
-        get { return gameData.ContinueDatas;}
-        set { gameData.ContinueDatas = value;}
+        get { return gameData.ContinueDatas; }
+        set { gameData.ContinueDatas = value; }
     }
     public StageData CurrentStageData
     {
-        get { return gameData.CurrentStageData;}
-        set { gameData.CurrentStageData = value;}
+        get { return gameData.CurrentStageData; }
+        set { gameData.CurrentStageData = value; }
     }
     public int CurrentWaveIndex
     {
-        get { return gameData.ContinueDatas.CurrentWaveIndex;}
-        set { gameData.ContinueDatas.CurrentWaveIndex = value;}
+        get { return gameData.ContinueDatas.CurrentWaveIndex; }
+        set { gameData.ContinueDatas.CurrentWaveIndex = value; }
     }
-    
+
     public WaveData CurrentWaveData
     {
-        get { return CurrentStageData.WaveArray[CurrentWaveIndex];}
+        get { return CurrentStageData.WaveArray[CurrentWaveIndex]; }
     }
 
-  
 
-    public Map CurrentMap {get; set;}
+
+
+    public Map CurrentMap { get; set; }
 
     #region Action
     public event Action OnResourcesChanged;
@@ -107,20 +134,20 @@ public class GameManager
         5. 초반 기본 아이템 설정
         */
         path = Application.persistentDataPath + "/SaveData.json";
-        
-        if(LoadGame()) return;
 
-        
-        
-       
+        if (LoadGame()) return;
+
+
+
+
 
         CurrentStageData = Manager.DataM.StageDic[1];
-        foreach(Data.StageData stage in Manager.DataM.StageDic.Values)
+        foreach (Data.StageData stage in Manager.DataM.StageDic.Values)
         {
             StageClearInfoData info = new StageClearInfoData
             {
                 StageIndex = stage.StageIndex,
-                MaxWaveIndex =0,
+                MaxWaveIndex = 0,
             };
             gameData.StageClearInfoDic.Add(stage.StageIndex, info);
         }
@@ -132,18 +159,18 @@ public class GameManager
 
     public bool LoadGame()
     {
-        if(PlayerPrefs.GetInt("ISFIRST", 1) == 1)
+        if (PlayerPrefs.GetInt("ISFIRST", 1) == 1)
         {
             string path = Application.persistentDataPath + "/SaveData.json";
-            if(File.Exists(path)) File.Delete(path);
+            if (File.Exists(path)) File.Delete(path);
             return false;
         }
 
-        if(File.Exists(path) == false) return false;
+        if (File.Exists(path) == false) return false;
 
         string jsonStr = File.ReadAllText(path);
         GameData data = JsonConvert.DeserializeObject<GameData>(jsonStr);
-        if(data != null) gameData = data;
+        if (data != null) gameData = data;
 
         isLoaded = true;
 
@@ -152,11 +179,11 @@ public class GameManager
 
     public void SaveGame()
     {
-        if(player != null)
+        if (player != null)
         {
             gameData.ContinueDatas.SavedBattleSkill = player.Skills?.SavedBattleSkill;
         }
-        
+
         string jsonStr = JsonConvert.SerializeObject(gameData);
         File.WriteAllText(path, jsonStr);
     }
@@ -190,7 +217,7 @@ public class GameManager
         };
 
         float cumulative = 0f;
-        foreach(var gem in gems)
+        foreach (var gem in gems)
         {
             cumulative += gem.chace;
             if (randNum < cumulative)
@@ -209,5 +236,43 @@ public class GameManager
     }
 
 
+    public void SortEquipment(EquipmentSortType sortType)
+    {
+        if (sortType == EquipmentSortType.Grade)
+        {
+            OwnerEquipment = OwnerEquipment.OrderBy(item => item.EquipmentData.EquipmentGarde).ThenBy(item => item.IsEquiped).ThenBy(item => item.Level).ThenBy(item => item.EquipmentData.EquipmentType).ToList();
+
+        }
+        else if (sortType == EquipmentSortType.Level)
+        {
+            OwnerEquipment = OwnerEquipment.OrderBy(item => item.Level).ThenBy(item => item.IsEquiped).ThenBy(item => item.EquipmentData.EquipmentGarde).ThenBy(item => item.EquipmentData.EquipmentType).ToList();
+        }
+    }
+
+    public (int hp, int attack) GetCurrentCharacterStat()
+    {
+        int hpBonus = 0;
+        int attackBonus = 0;
+
+        var (equipHpBonus, equipAttackBonus) = GetEquipmentBonus();
+
+        hpBonus = (equipHpBonus);
+        attackBonus = (equipAttackBonus);
+
+        return (hpBonus, attackBonus);
+    }
+
+    public (int hp, int atk) GetEquipmentBonus()
+    {
+        int hpBonus = 0;
+        int atkBonus = 0;
+
+        foreach (KeyValuePair<EquipmentType, Equipment> pair in EquipedEquipments)
+        {
+            hpBonus += pair.Value.MaxHpBonus;
+            atkBonus += pair.Value.AttackBonus;
+        }
+        return (hpBonus, atkBonus);
+    }
 }
 

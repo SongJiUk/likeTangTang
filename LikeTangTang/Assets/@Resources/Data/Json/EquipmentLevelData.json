@@ -1,0 +1,504 @@
+{
+  "levels": [
+    {
+      "Level": 1,
+      "Cost_Gold": 1000,
+      "Cost_Material": 1
+    },
+    {
+      "Level": 2,
+      "Cost_Gold": 2000,
+      "Cost_Material": 1
+    },
+    {
+      "Level": 3,
+      "Cost_Gold": 3000,
+      "Cost_Material": 1
+    },
+    {
+      "Level": 4,
+      "Cost_Gold": 4000,
+      "Cost_Material": 2
+    },
+    {
+      "Level": 5,
+      "Cost_Gold": 5000,
+      "Cost_Material": 2
+    },
+    {
+      "Level": 6,
+      "Cost_Gold": 6000,
+      "Cost_Material": 2
+    },
+    {
+      "Level": 7,
+      "Cost_Gold": 7000,
+      "Cost_Material": 3
+    },
+    {
+      "Level": 8,
+      "Cost_Gold": 8000,
+      "Cost_Material": 3
+    },
+    {
+      "Level": 9,
+      "Cost_Gold": 9000,
+      "Cost_Material": 3
+    },
+    {
+      "Level": 10,
+      "Cost_Gold": 10000,
+      "Cost_Material": 4
+    },
+    {
+      "Level": 11,
+      "Cost_Gold": 10000,
+      "Cost_Material": 4
+    },
+    {
+      "Level": 12,
+      "Cost_Gold": 10000,
+      "Cost_Material": 4
+    },
+    {
+      "Level": 13,
+      "Cost_Gold": 10000,
+      "Cost_Material": 4
+    },
+    {
+      "Level": 14,
+      "Cost_Gold": 10000,
+      "Cost_Material": 4
+    },
+    {
+      "Level": 15,
+      "Cost_Gold": 15000,
+      "Cost_Material": 5
+    },
+    {
+      "Level": 16,
+      "Cost_Gold": 15000,
+      "Cost_Material": 5
+    },
+    {
+      "Level": 17,
+      "Cost_Gold": 15000,
+      "Cost_Material": 5
+    },
+    {
+      "Level": 18,
+      "Cost_Gold": 15000,
+      "Cost_Material": 5
+    },
+    {
+      "Level": 19,
+      "Cost_Gold": 15000,
+      "Cost_Material": 5
+    },
+    {
+      "Level": 20,
+      "Cost_Gold": 20000,
+      "Cost_Material": 10
+    },
+    {
+      "Level": 21,
+      "Cost_Gold": 20000,
+      "Cost_Material": 10
+    },
+    {
+      "Level": 22,
+      "Cost_Gold": 20000,
+      "Cost_Material": 10
+    },
+    {
+      "Level": 23,
+      "Cost_Gold": 20000,
+      "Cost_Material": 10
+    },
+    {
+      "Level": 24,
+      "Cost_Gold": 20000,
+      "Cost_Material": 10
+    },
+    {
+      "Level": 25,
+      "Cost_Gold": 25000,
+      "Cost_Material": 15
+    },
+    {
+      "Level": 26,
+      "Cost_Gold": 25000,
+      "Cost_Material": 15
+    },
+    {
+      "Level": 27,
+      "Cost_Gold": 25000,
+      "Cost_Material": 15
+    },
+    {
+      "Level": 28,
+      "Cost_Gold": 25000,
+      "Cost_Material": 15
+    },
+    {
+      "Level": 29,
+      "Cost_Gold": 25000,
+      "Cost_Material": 15
+    },
+    {
+      "Level": 30,
+      "Cost_Gold": 30000,
+      "Cost_Material": 20
+    },
+    {
+      "Level": 31,
+      "Cost_Gold": 30000,
+      "Cost_Material": 20
+    },
+    {
+      "Level": 32,
+      "Cost_Gold": 30000,
+      "Cost_Material": 20
+    },
+    {
+      "Level": 33,
+      "Cost_Gold": 30000,
+      "Cost_Material": 20
+    },
+    {
+      "Level": 34,
+      "Cost_Gold": 30000,
+      "Cost_Material": 20
+    },
+    {
+      "Level": 35,
+      "Cost_Gold": 35000,
+      "Cost_Material": 25
+    },
+    {
+      "Level": 36,
+      "Cost_Gold": 35000,
+      "Cost_Material": 25
+    },
+    {
+      "Level": 37,
+      "Cost_Gold": 35000,
+      "Cost_Material": 25
+    },
+    {
+      "Level": 38,
+      "Cost_Gold": 35000,
+      "Cost_Material": 25
+    },
+    {
+      "Level": 39,
+      "Cost_Gold": 35000,
+      "Cost_Material": 25
+    },
+    {
+      "Level": 40,
+      "Cost_Gold": 40000,
+      "Cost_Material": 30
+    },
+    {
+      "Level": 41,
+      "Cost_Gold": 40000,
+      "Cost_Material": 30
+    },
+    {
+      "Level": 42,
+      "Cost_Gold": 40000,
+      "Cost_Material": 30
+    },
+    {
+      "Level": 43,
+      "Cost_Gold": 40000,
+      "Cost_Material": 30
+    },
+    {
+      "Level": 44,
+      "Cost_Gold": 40000,
+      "Cost_Material": 30
+    },
+    {
+      "Level": 45,
+      "Cost_Gold": 45000,
+      "Cost_Material": 35
+    },
+    {
+      "Level": 46,
+      "Cost_Gold": 45000,
+      "Cost_Material": 35
+    },
+    {
+      "Level": 47,
+      "Cost_Gold": 45000,
+      "Cost_Material": 35
+    },
+    {
+      "Level": 48,
+      "Cost_Gold": 45000,
+      "Cost_Material": 35
+    },
+    {
+      "Level": 49,
+      "Cost_Gold": 45000,
+      "Cost_Material": 35
+    },
+    {
+      "Level": 50,
+      "Cost_Gold": 50000,
+      "Cost_Material": 40
+    },
+    {
+      "Level": 51,
+      "Cost_Gold": 50000,
+      "Cost_Material": 40
+    },
+    {
+      "Level": 52,
+      "Cost_Gold": 50000,
+      "Cost_Material": 40
+    },
+    {
+      "Level": 53,
+      "Cost_Gold": 50000,
+      "Cost_Material": 40
+    },
+    {
+      "Level": 54,
+      "Cost_Gold": 50000,
+      "Cost_Material": 40
+    },
+    {
+      "Level": 55,
+      "Cost_Gold": 55000,
+      "Cost_Material": 45
+    },
+    {
+      "Level": 56,
+      "Cost_Gold": 55000,
+      "Cost_Material": 45
+    },
+    {
+      "Level": 57,
+      "Cost_Gold": 55000,
+      "Cost_Material": 45
+    },
+    {
+      "Level": 58,
+      "Cost_Gold": 55000,
+      "Cost_Material": 45
+    },
+    {
+      "Level": 59,
+      "Cost_Gold": 55000,
+      "Cost_Material": 45
+    },
+    {
+      "Level": 60,
+      "Cost_Gold": 60000,
+      "Cost_Material": 50
+    },
+    {
+      "Level": 61,
+      "Cost_Gold": 60000,
+      "Cost_Material": 50
+    },
+    {
+      "Level": 62,
+      "Cost_Gold": 60000,
+      "Cost_Material": 50
+    },
+    {
+      "Level": 63,
+      "Cost_Gold": 60000,
+      "Cost_Material": 50
+    },
+    {
+      "Level": 64,
+      "Cost_Gold": 60000,
+      "Cost_Material": 50
+    },
+    {
+      "Level": 65,
+      "Cost_Gold": 65000,
+      "Cost_Material": 55
+    },
+    {
+      "Level": 66,
+      "Cost_Gold": 65000,
+      "Cost_Material": 55
+    },
+    {
+      "Level": 67,
+      "Cost_Gold": 65000,
+      "Cost_Material": 55
+    },
+    {
+      "Level": 68,
+      "Cost_Gold": 65000,
+      "Cost_Material": 55
+    },
+    {
+      "Level": 69,
+      "Cost_Gold": 65000,
+      "Cost_Material": 55
+    },
+    {
+      "Level": 70,
+      "Cost_Gold": 70000,
+      "Cost_Material": 60
+    },
+    {
+      "Level": 71,
+      "Cost_Gold": 80000,
+      "Cost_Material": 60
+    },
+    {
+      "Level": 72,
+      "Cost_Gold": 90000,
+      "Cost_Material": 60
+    },
+    {
+      "Level": 73,
+      "Cost_Gold": 100000,
+      "Cost_Material": 60
+    },
+    {
+      "Level": 74,
+      "Cost_Gold": 110000,
+      "Cost_Material": 60
+    },
+    {
+      "Level": 75,
+      "Cost_Gold": 120000,
+      "Cost_Material": 65
+    },
+    {
+      "Level": 76,
+      "Cost_Gold": 130000,
+      "Cost_Material": 65
+    },
+    {
+      "Level": 77,
+      "Cost_Gold": 140000,
+      "Cost_Material": 65
+    },
+    {
+      "Level": 78,
+      "Cost_Gold": 150000,
+      "Cost_Material": 65
+    },
+    {
+      "Level": 79,
+      "Cost_Gold": 160000,
+      "Cost_Material": 65
+    },
+    {
+      "Level": 80,
+      "Cost_Gold": 170000,
+      "Cost_Material": 70
+    },
+    {
+      "Level": 81,
+      "Cost_Gold": 180000,
+      "Cost_Material": 70
+    },
+    {
+      "Level": 82,
+      "Cost_Gold": 190000,
+      "Cost_Material": 70
+    },
+    {
+      "Level": 83,
+      "Cost_Gold": 200000,
+      "Cost_Material": 70
+    },
+    {
+      "Level": 84,
+      "Cost_Gold": 210000,
+      "Cost_Material": 70
+    },
+    {
+      "Level": 85,
+      "Cost_Gold": 220000,
+      "Cost_Material": 75
+    },
+    {
+      "Level": 86,
+      "Cost_Gold": 230000,
+      "Cost_Material": 75
+    },
+    {
+      "Level": 87,
+      "Cost_Gold": 240000,
+      "Cost_Material": 75
+    },
+    {
+      "Level": 88,
+      "Cost_Gold": 250000,
+      "Cost_Material": 75
+    },
+    {
+      "Level": 89,
+      "Cost_Gold": 260000,
+      "Cost_Material": 75
+    },
+    {
+      "Level": 90,
+      "Cost_Gold": 270000,
+      "Cost_Material": 80
+    },
+    {
+      "Level": 91,
+      "Cost_Gold": 280000,
+      "Cost_Material": 80
+    },
+    {
+      "Level": 92,
+      "Cost_Gold": 290000,
+      "Cost_Material": 80
+    },
+    {
+      "Level": 93,
+      "Cost_Gold": 300000,
+      "Cost_Material": 80
+    },
+    {
+      "Level": 94,
+      "Cost_Gold": 310000,
+      "Cost_Material": 80
+    },
+    {
+      "Level": 95,
+      "Cost_Gold": 320000,
+      "Cost_Material": 85
+    },
+    {
+      "Level": 96,
+      "Cost_Gold": 330000,
+      "Cost_Material": 85
+    },
+    {
+      "Level": 97,
+      "Cost_Gold": 340000,
+      "Cost_Material": 85
+    },
+    {
+      "Level": 98,
+      "Cost_Gold": 350000,
+      "Cost_Material": 85
+    },
+    {
+      "Level": 99,
+      "Cost_Gold": 360000,
+      "Cost_Material": 85
+    },
+    {
+      "Level": 100,
+      "Cost_Gold": 370000,
+      "Cost_Material": 90
+    }
+  ]
+}

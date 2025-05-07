@@ -1,0 +1,660 @@
+{
+  "speicalskillDatas": [
+    {
+      "DataID": 21000,
+      "SkillType": 1,
+      "SpecialSkillName": "Critical",
+      "SkillGrade": 1,
+      "Name": "치명타 확률 증가",
+      "Description": "치명타 확률 3% 증가"
+    },
+    {
+      "DataID": 21001,
+      "SkillType": 1,
+      "SpecialSkillName": "Critical",
+      "SkillGrade": 3,
+      "Name": "치명타 확률 증가",
+      "Description": "치명타 확률 5% 증가"
+    },
+    {
+      "DataID": 21002,
+      "SkillType": 1,
+      "SpecialSkillName": "Critical",
+      "SkillGrade": 4,
+      "Name": "치명타 확률 증가",
+      "Description": "치명타 확률 7% 증가"
+    },
+    {
+      "DataID": 21003,
+      "SkillType": 1,
+      "SpecialSkillName": "Critical",
+      "SkillGrade": 5,
+      "Name": "치명타 확률 증가",
+      "Description": "치명타 확률 9% 증가"
+    },
+    {
+      "DataID": 21010,
+      "SkillType": 1,
+      "SpecialSkillName": "MaxHpBonus",
+      "SkillGrade": 1,
+      "Name": "최대 체력 증가",
+      "Description": "최대 체력 3% 증가"
+    },
+    {
+      "DataID": 21011,
+      "SkillType": 1,
+      "SpecialSkillName": "MaxHpBonus",
+      "SkillGrade": 3,
+      "Name": "최대 체력 증가",
+      "Description": "최대 체력 6% 증가"
+    },
+    {
+      "DataID": 21012,
+      "SkillType": 1,
+      "SpecialSkillName": "MaxHpBonus",
+      "SkillGrade": 4,
+      "Name": "최대 체력 증가",
+      "Description": "최대 체력 9% 증가"
+    },
+    {
+      "DataID": 21013,
+      "SkillType": 1,
+      "SpecialSkillName": "MaxHpBonus",
+      "SkillGrade": 5,
+      "Name": "최대 체력 증가",
+      "Description": "최대 체력 12% 증가"
+    },
+    {
+      "DataID": 21020,
+      "SkillType": 1,
+      "SpecialSkillName": "ExpBonus",
+      "SkillGrade": 1,
+      "Name": "경험치 획득량 증가",
+      "Description": "경험치 획득량 3% 증가"
+    },
+    {
+      "DataID": 21021,
+      "SkillType": 1,
+      "SpecialSkillName": "ExpBonus",
+      "SkillGrade": 3,
+      "Name": "경험치 획득량 증가",
+      "Description": "경험치 획득량 6% 증가"
+    },
+    {
+      "DataID": 21022,
+      "SkillType": 1,
+      "SpecialSkillName": "ExpBonus",
+      "SkillGrade": 4,
+      "Name": "경험치 획득량 증가",
+      "Description": "경험치 획득량 9% 증가"
+    },
+    {
+      "DataID": 21023,
+      "SkillType": 1,
+      "SpecialSkillName": "ExpBonus",
+      "SkillGrade": 5,
+      "Name": "경험치 획득량 증가",
+      "Description": "경험치 획득량 12% 증가"
+    },
+    {
+      "DataID": 21030,
+      "SkillType": 1,
+      "SpecialSkillName": "DamageReduction",
+      "SkillGrade": 1,
+      "Name": "받는 피해량 감소",
+      "Description": "받는 피해량 5% 감소"
+    },
+    {
+      "DataID": 21031,
+      "SkillType": 1,
+      "SpecialSkillName": "DamageReduction",
+      "SkillGrade": 3,
+      "Name": "받는 피해량 감소",
+      "Description": "받는 피해량 8% 감소"
+    },
+    {
+      "DataID": 21032,
+      "SkillType": 1,
+      "SpecialSkillName": "DamageReduction",
+      "SkillGrade": 4,
+      "Name": "받는 피해량 감소",
+      "Description": "받는 피해량 10% 감소"
+    },
+    {
+      "DataID": 21033,
+      "SkillType": 1,
+      "SpecialSkillName": "DamageReduction",
+      "SkillGrade": 5,
+      "Name": "받는 피해량 감소",
+      "Description": "받는 피해량 12% 감소"
+    },
+    {
+      "DataID": 21040,
+      "SkillType": 1,
+      "SpecialSkillName": "AttackBonusRate",
+      "SkillGrade": 1,
+      "Name": "공격력 증가",
+      "Description": "공격력 5% 증가"
+    },
+    {
+      "DataID": 21041,
+      "SkillType": 1,
+      "SpecialSkillName": "AttackBonusRate",
+      "SkillGrade": 3,
+      "Name": "공격력 증가",
+      "Description": "공격력 8% 증가"
+    },
+    {
+      "DataID": 21042,
+      "SkillType": 1,
+      "SpecialSkillName": "AttackBonusRate",
+      "SkillGrade": 4,
+      "Name": "공격력 증가",
+      "Description": "공격력 10% 증가"
+    },
+    {
+      "DataID": 21043,
+      "SkillType": 1,
+      "SpecialSkillName": "AttackBonusRate",
+      "SkillGrade": 5,
+      "Name": "공격력 증가",
+      "Description": "공격력 12% 증가"
+    },
+    {
+      "DataID": 21050,
+      "SkillType": 1,
+      "SpecialSkillName": "MoveBonusRate",
+      "SkillGrade": 1,
+      "Name": "이동속도 증가",
+      "Description": "이동속도 5% 증가"
+    },
+    {
+      "DataID": 21051,
+      "SkillType": 1,
+      "SpecialSkillName": "MoveBonusRate",
+      "SkillGrade": 3,
+      "Name": "이동속도 증가",
+      "Description": "이동속도 8% 증가"
+    },
+    {
+      "DataID": 21052,
+      "SkillType": 1,
+      "SpecialSkillName": "MoveBonusRate",
+      "SkillGrade": 4,
+      "Name": "이동속도 증가",
+      "Description": "이동속도 10% 증가"
+    },
+    {
+      "DataID": 21053,
+      "SkillType": 1,
+      "SpecialSkillName": "MoveBonusRate",
+      "SkillGrade": 5,
+      "Name": "이동속도 증가",
+      "Description": "이동속도 12% 증가"
+    },
+    {
+      "DataID": 21060,
+      "SkillType": 1,
+      "SpecialSkillName": "Healing",
+      "SkillGrade": 1,
+      "Name": "체력 회복",
+      "Description": "최대 체력의 10% 회복"
+    },
+    {
+      "DataID": 21061,
+      "SkillType": 1,
+      "SpecialSkillName": "Healing",
+      "SkillGrade": 3,
+      "Name": "체력 회복",
+      "Description": "최대 체력의 15% 회복"
+    },
+    {
+      "DataID": 21062,
+      "SkillType": 1,
+      "SpecialSkillName": "Healing",
+      "SkillGrade": 4,
+      "Name": "체력 회복",
+      "Description": "최대 체력의 20% 회복"
+    },
+    {
+      "DataID": 21063,
+      "SkillType": 1,
+      "SpecialSkillName": "Healing",
+      "SkillGrade": 5,
+      "Name": "체력 회복",
+      "Description": "최대 체력의 25% 회복"
+    },
+    {
+      "DataID": 21070,
+      "SkillType": 1,
+      "SpecialSkillName": "HealBonusRate",
+      "SkillGrade": 1,
+      "Name": "회복량 증가",
+      "Description": "회복량 5% 증가"
+    },
+    {
+      "DataID": 21071,
+      "SkillType": 1,
+      "SpecialSkillName": "HealBonusRate",
+      "SkillGrade": 3,
+      "Name": "회복량 증가",
+      "Description": "회복량 8% 증가"
+    },
+    {
+      "DataID": 21072,
+      "SkillType": 1,
+      "SpecialSkillName": "HealBonusRate",
+      "SkillGrade": 4,
+      "Name": "회복량 증가",
+      "Description": "회복량 10% 증가"
+    },
+    {
+      "DataID": 21073,
+      "SkillType": 1,
+      "SpecialSkillName": "HealBonusRate",
+      "SkillGrade": 5,
+      "Name": "회복량 증가",
+      "Description": "회복량 12% 증가"
+    },
+    {
+      "DataID": 21080,
+      "SkillType": 1,
+      "SpecialSkillName": "HpRegen",
+      "SkillGrade": 1,
+      "Name": "체력 재생 증가",
+      "Description": "1초당 최대 체력의 0.5%만큼 회복"
+    },
+    {
+      "DataID": 21081,
+      "SkillType": 1,
+      "SpecialSkillName": "HpRegen",
+      "SkillGrade": 3,
+      "Name": "체력 재생 증가",
+      "Description": "1초당 최대 체력의 0.8%만큼 회복"
+    },
+    {
+      "DataID": 21082,
+      "SkillType": 1,
+      "SpecialSkillName": "HpRegen",
+      "SkillGrade": 4,
+      "Name": "체력 재생 증가",
+      "Description": "1초당 최대 체력의 1.2%만큼 회복"
+    },
+    {
+      "DataID": 21083,
+      "SkillType": 1,
+      "SpecialSkillName": "HpRegen",
+      "SkillGrade": 5,
+      "Name": "체력 재생 증가",
+      "Description": "1초당 최대 체력의 1.5%만큼 회복"
+    },
+    {
+      "DataID": 21090,
+      "SkillType": 1,
+      "SpecialSkillName": "CriticalDamage",
+      "SkillGrade": 1,
+      "Name": "치명타 데미지 증가",
+      "Description": "치명타 데미지 5% 증가"
+    },
+    {
+      "DataID": 21091,
+      "SkillType": 1,
+      "SpecialSkillName": "CriticalDamage",
+      "SkillGrade": 3,
+      "Name": "치명타 데미지 증가",
+      "Description": "치명타 데미지 8% 증가"
+    },
+    {
+      "DataID": 21092,
+      "SkillType": 1,
+      "SpecialSkillName": "CriticalDamage",
+      "SkillGrade": 4,
+      "Name": "치명타 데미지 증가",
+      "Description": "치명타 데미지 12% 증가"
+    },
+    {
+      "DataID": 21093,
+      "SkillType": 1,
+      "SpecialSkillName": "CriticalDamage",
+      "SkillGrade": 5,
+      "Name": "치명타 데미지 증가",
+      "Description": "치명타 데미지 16% 증가"
+    },
+    {
+      "DataID": 21100,
+      "SkillType": 1,
+      "SpecialSkillName": "MagneticRange",
+      "SkillGrade": 1,
+      "Name": "아이템 획득 범위 증가",
+      "Description": "아이템 획득 범위 5% 증가"
+    },
+    {
+      "DataID": 21101,
+      "SkillType": 1,
+      "SpecialSkillName": "MagneticRange",
+      "SkillGrade": 3,
+      "Name": "아이템 획득 범위 증가",
+      "Description": "아이템 획득 범위 8% 증가"
+    },
+    {
+      "DataID": 21102,
+      "SkillType": 1,
+      "SpecialSkillName": "MagneticRange",
+      "SkillGrade": 4,
+      "Name": "아이템 획득 범위 증가",
+      "Description": "아이템 획득 범위 10% 증가"
+    },
+    {
+      "DataID": 21103,
+      "SkillType": 1,
+      "SpecialSkillName": "MagneticRange",
+      "SkillGrade": 5,
+      "Name": "아이템 획득 범위 증가",
+      "Description": "아이템 획득 범위 12% 증가"
+    },
+    {
+      "DataID": 22000,
+      "SkillType": 1,
+      "SpecialSkillName": "PlasmaShot",
+      "SkillGrade": 4,
+      "Name": "플라즈마샷 강화",
+      "Description": "딜레이 10퍼 감소"
+    },
+    {
+      "DataID": 22001,
+      "SkillType": 1,
+      "SpecialSkillName": "PlasmaShot",
+      "SkillGrade": 5,
+      "Name": "플라즈마샷 강화",
+      "Description": "딜레이 15퍼 감소"
+    },
+    {
+      "DataID": 22010,
+      "SkillType": 1,
+      "SpecialSkillName": "EnergyRing",
+      "SkillGrade": 4,
+      "Name": "에너지링 강화",
+      "Description": "회전속도 20퍼 증가"
+    },
+    {
+      "DataID": 22011,
+      "SkillType": 1,
+      "SpecialSkillName": "EnergyRing",
+      "SkillGrade": 5,
+      "Name": "에너지링 강화",
+      "Description": "회전속도 40퍼 증가"
+    },
+    {
+      "DataID": 22020,
+      "SkillType": 1,
+      "SpecialSkillName": "PlasmaSpinner",
+      "SkillGrade": 4,
+      "Name": "플라즈마 스피너 강화",
+      "Description": "부메랑 바운드 +1"
+    },
+    {
+      "DataID": 22021,
+      "SkillType": 1,
+      "SpecialSkillName": "PlasmaSpinner",
+      "SkillGrade": 5,
+      "Name": "플라즈마 스피너 강화",
+      "Description": "부메랑 바운드 +2"
+    },
+    {
+      "DataID": 22030,
+      "SkillType": 1,
+      "SpecialSkillName": "SuicideDrone",
+      "SkillGrade": 4,
+      "Name": "자폭드론 강화",
+      "Description": "드론 발사 스피드 10퍼 증가"
+    },
+    {
+      "DataID": 22031,
+      "SkillType": 1,
+      "SpecialSkillName": "SuicideDrone",
+      "SkillGrade": 5,
+      "Name": "자폭드론 강화",
+      "Description": "드론 개수 1개 추가"
+    },
+    {
+      "DataID": 22040,
+      "SkillType": 1,
+      "SpecialSkillName": "ElectricShock",
+      "SkillGrade": 4,
+      "Name": "전기충격 강화",
+      "Description": "전기충격공격 타겟 +1"
+    },
+    {
+      "DataID": 22041,
+      "SkillType": 1,
+      "SpecialSkillName": "ElectricShock",
+      "SkillGrade": 5,
+      "Name": "전기충격 강화",
+      "Description": "전기충격공격 타겟 +2"
+    },
+    {
+      "DataID": 22050,
+      "SkillType": 1,
+      "SpecialSkillName": "GravityBomb",
+      "SkillGrade": 4,
+      "Name": "중력폭탄 강화",
+      "Description": "범위 10퍼 증가"
+    },
+    {
+      "DataID": 22051,
+      "SkillType": 1,
+      "SpecialSkillName": "GravityBomb",
+      "SkillGrade": 5,
+      "Name": "중력폭탄 강화",
+      "Description": "범위 15퍼 증가"
+    },
+    {
+      "DataID": 22060,
+      "SkillType": 1,
+      "SpecialSkillName": "TimeStopBomb",
+      "SkillGrade": 4,
+      "Name": "시간 정지폭탄 강화",
+      "Description": "범위 10퍼 증가"
+    },
+    {
+      "DataID": 22061,
+      "SkillType": 1,
+      "SpecialSkillName": "TimeStopBomb",
+      "SkillGrade": 5,
+      "Name": "시간 정지폭탄 강화",
+      "Description": "범위 15퍼 증가"
+    },
+    {
+      "DataID": 22070,
+      "SkillType": 1,
+      "SpecialSkillName": "OrbitalBlades",
+      "SkillGrade": 4,
+      "Name": "오비탈블레이드 강화",
+      "Description": "범위 15퍼 증가"
+    },
+    {
+      "DataID": 22071,
+      "SkillType": 1,
+      "SpecialSkillName": "OrbitalBlades",
+      "SkillGrade": 5,
+      "Name": "오비탈블레이드 강화",
+      "Description": "범위 20퍼 증가"
+    },
+    {
+      "DataID": 22080,
+      "SkillType": 1,
+      "SpecialSkillName": "ElectronicField",
+      "SkillGrade": 4,
+      "Name": "일렉트로닉 필드 강화",
+      "Description": "필드 크기 10퍼 증가"
+    },
+    {
+      "DataID": 22081,
+      "SkillType": 1,
+      "SpecialSkillName": "ElectronicField",
+      "SkillGrade": 5,
+      "Name": "일렉트로닉 필드 강화",
+      "Description": "필드 크기 20퍼 증가"
+    },
+    {
+      "DataID": 22090,
+      "SkillType": 1,
+      "SpecialSkillName": "SpectralSlash",
+      "SkillGrade": 4,
+      "Name": "스펙트럴 슬래쉬 강화",
+      "Description": "범위 15퍼 증가"
+    },
+    {
+      "DataID": 22091,
+      "SkillType": 1,
+      "SpecialSkillName": "SpectralSlash",
+      "SkillGrade": 5,
+      "Name": "스펙트럴 슬래쉬 강화",
+      "Description": "범위 20퍼 증가"
+    },
+    {
+      "DataID": 23000,
+      "SkillType": 2,
+      "SpecialSkillName": "LevelUpMoveSpeed",
+      "SkillGrade": 2,
+      "Name": "이동속도 증가",
+      "Description": "레벨업 시 이속 0.15% 증가"
+    },
+    {
+      "DataID": 23001,
+      "SkillType": 2,
+      "SpecialSkillName": "LevelUpMoveSpeed",
+      "SkillGrade": 4,
+      "Name": "이동속도 증가",
+      "Description": "레벨업 시 이속 0.3% 증가"
+    },
+    {
+      "DataID": 23002,
+      "SkillType": 2,
+      "SpecialSkillName": "LevelUpMoveSpeed",
+      "SkillGrade": 5,
+      "Name": "이동속도 증가",
+      "Description": "레벨업 시 이속 0.45% 증가"
+    },
+    {
+      "DataID": 23010,
+      "SkillType": 2,
+      "SpecialSkillName": "LevelUpReduction",
+      "SkillGrade": 2,
+      "Name": "받는 피해량 감소",
+      "Description": "레벨업 시 받는 피해 0.3% 감소"
+    },
+    {
+      "DataID": 23011,
+      "SkillType": 2,
+      "SpecialSkillName": "LevelUpReduction",
+      "SkillGrade": 4,
+      "Name": "받는 피해량 감소",
+      "Description": "레벨업 시 받는 피해 0.6% 감소"
+    },
+    {
+      "DataID": 23012,
+      "SkillType": 2,
+      "SpecialSkillName": "LevelUpReduction",
+      "SkillGrade": 5,
+      "Name": "받는 피해량 감소",
+      "Description": "레벨업 시 받는 피해 1% 감소"
+    },
+    {
+      "DataID": 23020,
+      "SkillType": 2,
+      "SpecialSkillName": "LevelUpAttack",
+      "SkillGrade": 2,
+      "Name": "공격력 증가",
+      "Description": "레벨업 시 공격력 0.3% 증가"
+    },
+    {
+      "DataID": 23021,
+      "SkillType": 2,
+      "SpecialSkillName": "LevelUpAttack",
+      "SkillGrade": 4,
+      "Name": "공격력 증가",
+      "Description": "레벨업 시 공격력 0.6% 증가"
+    },
+    {
+      "DataID": 23022,
+      "SkillType": 2,
+      "SpecialSkillName": "LevelUpAttack",
+      "SkillGrade": 5,
+      "Name": "공격력 증가",
+      "Description": "레벨업 시 공격력 1% 증가"
+    },
+    {
+      "DataID": 23030,
+      "SkillType": 2,
+      "SpecialSkillName": "LevelUpCritical",
+      "SkillGrade": 2,
+      "Name": "치명타 확률 증가",
+      "Description": "레벨업 시 치명타확률 0.1% 증가"
+    },
+    {
+      "DataID": 23031,
+      "SkillType": 2,
+      "SpecialSkillName": "LevelUpCritical",
+      "SkillGrade": 4,
+      "Name": "치명타 확률 증가",
+      "Description": "레벨업 시 치명타확률 0.4% 증가"
+    },
+    {
+      "DataID": 23032,
+      "SkillType": 2,
+      "SpecialSkillName": "LevelUpCritical",
+      "SkillGrade": 5,
+      "Name": "치명타 확률 증가",
+      "Description": "레벨업 시 치명타확률 0.7% 증가"
+    },
+    {
+      "DataID": 23040,
+      "SkillType": 2,
+      "SpecialSkillName": "LevelUpCriticalDamage",
+      "SkillGrade": 2,
+      "Name": "치명타 데미지 증가",
+      "Description": "레벨업 시 치명타데미지 0.7% 증가"
+    },
+    {
+      "DataID": 23041,
+      "SkillType": 2,
+      "SpecialSkillName": "LevelUpCriticalDamage",
+      "SkillGrade": 4,
+      "Name": "치명타 데미지 증가",
+      "Description": "레벨업 시 치명타데미지 1% 증가"
+    },
+    {
+      "DataID": 23042,
+      "SkillType": 2,
+      "SpecialSkillName": "LevelUpCriticalDamage",
+      "SkillGrade": 5,
+      "Name": "치명타 데미지 증가",
+      "Description": "레벨업 시 치명타데미지 1.5% 증가"
+    },
+    {
+      "DataID": 24000,
+      "SkillType": 3,
+      "SpecialSkillName": "Resurrection",
+      "SkillGrade": 2,
+      "Name": "부활",
+      "Description": "사망시 체력 30%로 부활"
+    },
+    {
+      "DataID": 24001,
+      "SkillType": 3,
+      "SpecialSkillName": "Resurrection",
+      "SkillGrade": 4,
+      "Name": "부활",
+      "Description": "사망시 체력 50%로 부활"
+    },
+    {
+      "DataID": 24002,
+      "SkillType": 3,
+      "SpecialSkillName": "Resurrection",
+      "SkillGrade": 5,
+      "Name": "부활",
+      "Description": "\"사망시 체력 100%로 부활"
+    }
+  ]
+}

@@ -40,13 +40,13 @@ class Pool
         pool.Release(_go);
     }
 
-    
 
     GameObject OnCreate()
     {
         GameObject go = GameObject.Instantiate(prefab);
         go.name = prefab.name;
         go.transform.parent = Root;
+
         return go;
       
     }

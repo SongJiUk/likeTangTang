@@ -1,0 +1,83 @@
+DataID,SpecialSkillType,SpecialSkillName,SpecialSkillGrade,Name,Description
+21000,ItemSkill,Critical,Common,치명타 확률 증가,치명타 확률 3% 증가
+21001,ItemSkill,Critical,Rare,치명타 확률 증가,치명타 확률 5% 증가
+21002,ItemSkill,Critical,Epic,치명타 확률 증가,치명타 확률 7% 증가
+21003,ItemSkill,Critical,Unique,치명타 확률 증가,치명타 확률 9% 증가
+21010,ItemSkill,MaxHpBonus,Common,최대 체력 증가,최대 체력 3% 증가
+21011,ItemSkill,MaxHpBonus,Rare,최대 체력 증가,최대 체력 6% 증가
+21012,ItemSkill,MaxHpBonus,Epic,최대 체력 증가,최대 체력 9% 증가
+21013,ItemSkill,MaxHpBonus,Unique,최대 체력 증가,최대 체력 12% 증가
+21020,ItemSkill,ExpBonus,Common,경험치 획득량 증가,경험치 획득량 3% 증가
+21021,ItemSkill,ExpBonus,Rare,경험치 획득량 증가,경험치 획득량 6% 증가
+21022,ItemSkill,ExpBonus,Epic,경험치 획득량 증가,경험치 획득량 9% 증가
+21023,ItemSkill,ExpBonus,Unique,경험치 획득량 증가,경험치 획득량 12% 증가
+21030,ItemSkill,DamageReduction,Common,받는 피해량 감소,받는 피해량 5% 감소
+21031,ItemSkill,DamageReduction,Rare,받는 피해량 감소,받는 피해량 8% 감소
+21032,ItemSkill,DamageReduction,Epic,받는 피해량 감소,받는 피해량 10% 감소
+21033,ItemSkill,DamageReduction,Unique,받는 피해량 감소,받는 피해량 12% 감소
+21040,ItemSkill,AttackBonusRate,Common,공격력 증가,공격력 5% 증가
+21041,ItemSkill,AttackBonusRate,Rare,공격력 증가,공격력 8% 증가
+21042,ItemSkill,AttackBonusRate,Epic,공격력 증가,공격력 10% 증가
+21043,ItemSkill,AttackBonusRate,Unique,공격력 증가,공격력 12% 증가
+21050,ItemSkill,MoveBonusRate,Common,이동속도 증가,이동속도 5% 증가
+21051,ItemSkill,MoveBonusRate,Rare,이동속도 증가,이동속도 8% 증가
+21052,ItemSkill,MoveBonusRate,Epic,이동속도 증가,이동속도 10% 증가
+21053,ItemSkill,MoveBonusRate,Unique,이동속도 증가,이동속도 12% 증가
+21060,ItemSkill,Healing,Common,체력 회복,최대 체력의 10% 회복
+21061,ItemSkill,Healing,Rare,체력 회복,최대 체력의 15% 회복
+21062,ItemSkill,Healing,Epic,체력 회복,최대 체력의 20% 회복
+21063,ItemSkill,Healing,Unique,체력 회복,최대 체력의 25% 회복
+21070,ItemSkill,HealBonusRate,Common,회복량 증가,회복량 5% 증가
+21071,ItemSkill,HealBonusRate,Rare,회복량 증가,회복량 8% 증가
+21072,ItemSkill,HealBonusRate,Epic,회복량 증가,회복량 10% 증가
+21073,ItemSkill,HealBonusRate,Unique,회복량 증가,회복량 12% 증가
+21080,ItemSkill,HpRegen,Common,체력 재생 증가,1초당 최대 체력의 0.5%만큼 회복
+21081,ItemSkill,HpRegen,Rare,체력 재생 증가,1초당 최대 체력의 0.8%만큼 회복
+21082,ItemSkill,HpRegen,Epic,체력 재생 증가,1초당 최대 체력의 1.2%만큼 회복
+21083,ItemSkill,HpRegen,Unique,체력 재생 증가,1초당 최대 체력의 1.5%만큼 회복
+21090,ItemSkill,CriticalDamage,Common,치명타 데미지 증가,치명타 데미지 5% 증가
+21091,ItemSkill,CriticalDamage,Rare,치명타 데미지 증가,치명타 데미지 8% 증가
+21092,ItemSkill,CriticalDamage,Epic,치명타 데미지 증가,치명타 데미지 12% 증가
+21093,ItemSkill,CriticalDamage,Unique,치명타 데미지 증가,치명타 데미지 16% 증가
+21100,ItemSkill,MagneticRange,Common,아이템 획득 범위 증가,아이템 획득 범위 5% 증가
+21101,ItemSkill,MagneticRange,Rare,아이템 획득 범위 증가,아이템 획득 범위 8% 증가
+21102,ItemSkill,MagneticRange,Epic,아이템 획득 범위 증가,아이템 획득 범위 10% 증가
+21103,ItemSkill,MagneticRange,Unique,아이템 획득 범위 증가,아이템 획득 범위 12% 증가
+22000,ItemSkill,PlasmaShot,Epic,플라즈마샷 강화,딜레이 10퍼 감소
+22001,ItemSkill,PlasmaShot,Unique,플라즈마샷 강화,딜레이 15퍼 감소
+22010,ItemSkill,EnergyRing,Epic,에너지링 강화,회전속도 20퍼 증가
+22011,ItemSkill,EnergyRing,Unique,에너지링 강화,회전속도 40퍼 증가
+22020,ItemSkill,PlasmaSpinner,Epic,플라즈마 스피너 강화,부메랑 바운드 +1
+22021,ItemSkill,PlasmaSpinner,Unique,플라즈마 스피너 강화,부메랑 바운드 +2
+22030,ItemSkill,SuicideDrone,Epic,자폭드론 강화,드론 발사 스피드 10퍼 증가
+22031,ItemSkill,SuicideDrone,Unique,자폭드론 강화,드론 개수 1개 추가
+22040,ItemSkill,ElectricShock,Epic,전기충격 강화,전기충격공격 타겟 +1
+22041,ItemSkill,ElectricShock,Unique,전기충격 강화,전기충격공격 타겟 +2
+22050,ItemSkill,GravityBomb,Epic,중력폭탄 강화,범위 10퍼 증가
+22051,ItemSkill,GravityBomb,Unique,중력폭탄 강화,범위 15퍼 증가
+22060,ItemSkill,TimeStopBomb,Epic,시간 정지폭탄 강화,범위 10퍼 증가
+22061,ItemSkill,TimeStopBomb,Unique,시간 정지폭탄 강화,범위 15퍼 증가
+22070,ItemSkill,OrbitalBlades,Epic,오비탈블레이드 강화,범위 15퍼 증가
+22071,ItemSkill,OrbitalBlades,Unique,오비탈블레이드 강화,범위 20퍼 증가
+22080,ItemSkill,ElectronicField,Epic,일렉트로닉 필드 강화,필드 크기 10퍼 증가
+22081,ItemSkill,ElectronicField,Unique,일렉트로닉 필드 강화,필드 크기 20퍼 증가
+22090,ItemSkill,SpectralSlash,Epic,스펙트럴 슬래쉬 강화,범위 15퍼 증가
+22091,ItemSkill,SpectralSlash,Unique,스펙트럴 슬래쉬 강화,범위 20퍼 증가
+23000,LevelUp,LevelUpMoveSpeed,UnCommon,이동속도 증가,레벨업 시 이속 0.15% 증가
+23001,LevelUp,LevelUpMoveSpeed,Epic,이동속도 증가,레벨업 시 이속 0.3% 증가
+23002,LevelUp,LevelUpMoveSpeed,Unique,이동속도 증가,레벨업 시 이속 0.45% 증가
+23010,LevelUp,LevelUpReduction,UnCommon,받는 피해량 감소,레벨업 시 받는 피해 0.3% 감소
+23011,LevelUp,LevelUpReduction,Epic,받는 피해량 감소,레벨업 시 받는 피해 0.6% 감소
+23012,LevelUp,LevelUpReduction,Unique,받는 피해량 감소,레벨업 시 받는 피해 1% 감소
+23020,LevelUp,LevelUpAttack,UnCommon,공격력 증가,레벨업 시 공격력 0.3% 증가
+23021,LevelUp,LevelUpAttack,Epic,공격력 증가,레벨업 시 공격력 0.6% 증가
+23022,LevelUp,LevelUpAttack,Unique,공격력 증가,레벨업 시 공격력 1% 증가
+23030,LevelUp,LevelUpCritical,UnCommon,치명타 확률 증가,레벨업 시 치명타확률 0.1% 증가
+23031,LevelUp,LevelUpCritical,Epic,치명타 확률 증가,레벨업 시 치명타확률 0.4% 증가
+23032,LevelUp,LevelUpCritical,Unique,치명타 확률 증가,레벨업 시 치명타확률 0.7% 증가
+23040,LevelUp,LevelUpCriticalDamage,UnCommon,치명타 데미지 증가,레벨업 시 치명타데미지 0.7% 증가
+23041,LevelUp,LevelUpCriticalDamage,Epic,치명타 데미지 증가,레벨업 시 치명타데미지 1% 증가
+23042,LevelUp,LevelUpCriticalDamage,Unique,치명타 데미지 증가,레벨업 시 치명타데미지 1.5% 증가
+24000,Passive,Resurrection,UnCommon,부활,사망시 체력 30%로 부활
+24001,Passive,Resurrection,Epic,부활,사망시 체력 50%로 부활
+24002,Passive,Resurrection,Unique,부활,"사망시 체력 100%로 부활, 공격력 10% 상승"

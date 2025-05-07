@@ -5,18 +5,22 @@ using JetBrains.Annotations;
 using UnityEngine;
 
 /*
- * 몬스터 (일반)	1000 ~ 1099	슬라임, 고블린 같은 일반 몬스터
-몬스터 (엘리트)	1100 ~ 1199	강화 몬스터, 엘리트 몬스터
-몬스터 (보스)	1200 ~ 1299	스테이지 보스 몬스터
-스킬 (플레이어)	2000 ~ 2099	플레이어 전용 스킬
-스킬(몬스터용) 2200 ~ 2299 몬스터가 사용하는 스킬
-진화에 필요한 아이템 2300~2399
-아이템 (장비)	3000 ~ 3099	무기, 방어구
-아이템 (소모품)	3100 ~ 3199	포션, 버프템
-스테이지	4000 ~ 4099	스테이지 기본 정보
-스테이지 보상	4100 ~ 4199	스테이지 클리어 보상 아이템
-기타	5000 ~ 5999특수 데이터(이벤트, 미션 등)
-머테리얼값     6000 ~ 6099	머테리얼 값
+ * 플레이어 1~ 9999
+ * 몬스터 (일반)	10000 ~ 10999	슬라임, 고블린 같은 일반 몬스터
+몬스터 (엘리트)		11000 ~ 11999 강화 몬스터, 엘리트 몬스터
+몬스터 (보스)		12000 ~ 12999 스테이지 보스 몬스터
+스킬 (플레이어)	20000 ~ 20999	플레이어 전용 스킬
+진화 스킬(플레이어) 21000~ 21999 진화에 사용되는 스킬(아이템, 진화 시스템)
+스킬(몬스터용) 22000 ~ 22999 몬스터가 사용하는 스킬
+진화에 필요한 아이템 23000~ 23999
+아이템 (소모품)	30000 ~ 30999	포션, 버프템
+아이템 (장비)	31000 ~ 39999	무기, 방어구
+
+스테이지	40000 ~ 40999	스테이지 기본 정보
+스테이지 보상	41000 ~ 41999	스테이지 클리어 보상 아이템
+기타	50000 ~ 59999특수 데이터(이벤트, 미션 등)
+재료값     60000 ~ 69999	머테리얼 값
+이펙트, 사운드 등 값 70000~ 79999
  */
 namespace Data
 {
@@ -42,7 +46,7 @@ namespace Data
         public Dictionary<int, StageData> MakeDict()
         {
             Dictionary<int, StageData> dic = new Dictionary<int, StageData>();
-            foreach(StageData stage in stages)
+            foreach (StageData stage in stages)
                 dic.Add(stage.StageIndex, stage);
 
             return dic;
@@ -74,7 +78,7 @@ namespace Data
     }
     #endregion
 
-    
+
     #region Creature Data
     [Serializable]
     public class CreatureData
@@ -82,6 +86,7 @@ namespace Data
         public int DataID;
         public string DescriptionID;
         public string prefabName;
+        public Define.ObjectType Type;
         public float MaxHp;
         public float MaxHpUpForIncreasStage;
         public float Attack;
@@ -106,40 +111,11 @@ namespace Data
         public Dictionary<int, CreatureData> MakeDict()
         {
             Dictionary<int, CreatureData> dic = new Dictionary<int, CreatureData>();
-            foreach(CreatureData data in creatureData)
+            foreach (CreatureData data in creatureData)
                 dic.Add(data.DataID, data);
-            
-            return dic;
-
-        }
-    }
-    #endregion
-
-    #region Json MonsterData
-
-    [Serializable]
-    public class MonsterData
-    {
-        public string name; //key
-        public int maxHp;
-        public int attck;
-        public int giveExp;
-        public string prefab;
-        public List<int> rare;
-    }
-
-    [Serializable]
-    public class MonsterDataLoader : ILoader<string, MonsterData>
-    {
-        public List<MonsterData> stats = new List<MonsterData>();
-
-        public Dictionary<string, MonsterData> MakeDict()
-        {
-            Dictionary<string, MonsterData> dic = new Dictionary<string, MonsterData>();
-            foreach (MonsterData stat in stats)
-                dic.Add(stat.name, stat);
 
             return dic;
+
         }
     }
     #endregion
@@ -149,7 +125,7 @@ namespace Data
     [Serializable]
     public class SkillData
     {
-  
+
         public int DataID;
         public string SkillName; //이름
         public string SkillNameE;
@@ -176,8 +152,7 @@ namespace Data
         public string HitEffectID; // 맞을때 이펙트
         public int CastingEffect;
         public int HitEffect;
-        public string SkillTypeStr; //타입
-        public Define.SkillType Type = Define.SkillType.None; //타입
+        public Define.SkillType SkillType = Define.SkillType.None; //타입
         public bool CanEvolve;
         public int EvolutionItemID;
         public string EvolvedSkillName; //진화스킬 이름
@@ -189,7 +164,7 @@ namespace Data
         public float SlowRatio;
         public float PullForce;
 
-        
+
     }
 
     [Serializable]
@@ -201,18 +176,11 @@ namespace Data
         public Dictionary<int, SkillData> MakeDict()
         {
             Dictionary<int, SkillData> dic = new Dictionary<int, SkillData>();
-            foreach(SkillData stat in skillDatas)
+            foreach (SkillData stat in skillDatas)
             {
-                if(stat.Type == Define.SkillType.None)
-                {
-                    if(Enum.TryParse(stat.SkillTypeStr, out Define.SkillType skillType))
-                        stat.Type = skillType;
-                    else 
-                        Debug.LogError("SkillData Type Match Error!!, Data.Contents 98Line");
-                }
                 dic.Add(stat.DataID, stat);
             }
-            
+
             return dic;
         }
     }
@@ -239,19 +207,10 @@ namespace Data
         public List<SkillEvolutionData> skillEvolutionDatas = new List<SkillEvolutionData>();
 
         public Dictionary<int, SkillEvolutionData> MakeDict()
-         {
+        {
             Dictionary<int, SkillEvolutionData> dic = new Dictionary<int, SkillEvolutionData>();
-            foreach(SkillEvolutionData data in skillEvolutionDatas)
+            foreach (SkillEvolutionData data in skillEvolutionDatas)
             {
-                if(data.Type == Define.SkillType.None)
-                {
-                    if (Enum.TryParse(data.BeforeSKillName, out Define.SkillType skillType))
-                    {
-                        data.Type = skillType;
-                    }
-                    else
-                        Debug.LogError("SKillData 틀림");
-                }
                 dic.Add(data.EvolutionItemID, data);
             }
 
@@ -260,6 +219,7 @@ namespace Data
     }
 
     #endregion
+
     #region LevelData
     [Serializable]
     public class LevelData
@@ -275,9 +235,9 @@ namespace Data
         public Dictionary<int, LevelData> MakeDict()
         {
             Dictionary<int, LevelData> dic = new Dictionary<int, LevelData>();
-            foreach(LevelData data in levelData)
+            foreach (LevelData data in levelData)
                 dic.Add(data.level, data);
-            
+
             return dic;
         }
     }
@@ -297,7 +257,7 @@ namespace Data
         public string AnimName;
         public string EffectName;
     }
-
+    [Serializable]
     public class DropItemDataLoader : ILoader<int, DropItemData>
     {
         public List<DropItemData> dropData = new List<DropItemData>();
@@ -305,23 +265,142 @@ namespace Data
         public Dictionary<int, DropItemData> MakeDict()
         {
             Dictionary<int, DropItemData> dic = new Dictionary<int, DropItemData>();
-            foreach(DropItemData data in dropData)
+            foreach (DropItemData data in dropData)
             {
-                if(data.DropItemType == Define.DropItemType.None)
-                {
-                    if(Enum.TryParse(data.DropItemTypeStr, out Define.DropItemType dropitemType))
-                    {
-                        data.DropItemType = dropitemType;
-                    }
-                    else
-                    {
-                        Debug.LogError("DropItemData Type Match Error!!, DropItemDataLoader MakeDict()!!");
-                    }
-                }
-
                 dic.Add(data.DataID, data);
             }
-             
+
+
+            return dic;
+        }
+    }
+    #endregion
+
+    #region SpecialSkillData
+    [Serializable]
+    public class SpecialSkillData
+    {
+        public int DataID;
+        public Define.SpecialSkillType SkillType;
+        public string SpecialSkillName;
+        public Define.SpecialSkillGrade SkillGrade;
+        public string Name;
+        public string Description;
+    }
+
+    [Serializable]
+    public class SpecialSkillDataLoader : ILoader<int, SpecialSkillData>
+    {
+        public List<SpecialSkillData> speicalskillDatas = new List<SpecialSkillData>();
+
+        public Dictionary<int, SpecialSkillData> MakeDict()
+        {
+            Dictionary<int, SpecialSkillData> dic = new Dictionary<int, SpecialSkillData>();
+
+            foreach (SpecialSkillData data in speicalskillDatas)
+            {
+                dic.Add(data.DataID, data);
+            }
+
+            return dic;
+        }
+    }
+    #endregion
+
+
+    #region EquipmentData
+    [Serializable]
+    public class EquipmentData
+    {
+        public int DataID;
+        public Define.GachaGrade GachaGrade;
+        public Define.EquipmentType EquipmentType;
+        public Define.EquipmentGrade EquipmentGarde;
+        public string NameTextID;
+        public string ItemDescription;
+        public string SpriteName;
+        public float Grade_Hp;
+        public float GradeUp_Hp;
+        public float Grade_Attack;
+        public float GradeUp_Attack;
+        public int Grade_MaxLevel;
+        public int BaseSkill;
+        public int UnCommonGradeAbility;
+        public int RareGradeAbility;
+        public int EpicGradeAbility;
+        public int UniqueGradeAbility;
+    }
+
+    [Serializable]
+    public class EquipmentDataLoader : ILoader<int, EquipmentData>
+    {
+        public List<EquipmentData> equipmentDatas = new List<EquipmentData>();
+
+        public Dictionary<int, EquipmentData> MakeDict()
+        {
+            Dictionary<int, EquipmentData> dic = new Dictionary<int, EquipmentData>();
+
+            foreach(EquipmentData data in equipmentDatas)
+            {
+                dic.Add(data.DataID, data);
+            }
+
+            return dic;
+        }
+    }
+    #endregion
+
+    #region EquipmentLevelData
+    [Serializable]
+    public class EquipmentLevelData
+    {
+        public int Level;
+        public int Cost_Gold;
+        public int Cost_Material;
+    }
+
+    [Serializable]
+    public class EquipmentLevelDataLoader : ILoader<int, EquipmentLevelData>
+    {
+        public List<EquipmentLevelData> levels = new List<EquipmentLevelData>();
+        public Dictionary<int, EquipmentLevelData> MakeDict()
+        {
+            Dictionary<int, EquipmentLevelData> dic = new Dictionary<int, EquipmentLevelData>();
+
+            foreach (EquipmentLevelData levelData in levels)
+                dic.Add(levelData.Level, levelData);
+
+            return dic;
+        }
+    }
+    #endregion
+
+    #region MaterialData
+
+    [Serializable]
+    public class MaterialData
+    {
+        public int MaterialID;
+        public Define.MaterialType MaterialType;
+        public Define.MaterialGrade MaterialGrade;
+        public string NameTextID;
+        public string Description;
+        public string SpriteName;
+    }
+
+    [Serializable]
+    public class MaterialDataLoader : ILoader<int, MaterialData>
+    {
+        public List<MaterialData> material = new List<MaterialData>();
+
+        public Dictionary<int, MaterialData> MakeDict()
+        {
+            Dictionary<int, MaterialData> dic = new Dictionary<int, MaterialData>();
+
+            foreach(MaterialData data in material)
+            {
+                dic.Add(data.MaterialID, data);
+            }
 
             return dic;
         }

@@ -17,5 +17,8 @@ public class GameData
     public ContinueData ContinueDatas = new ContinueData();
     public StageData CurrentStageData = new StageData();
 
+    public List<Equipment> OwnedEquipments = new List<Equipment>();
+    public Dictionary<Define.EquipmentType, Equipment> EquipedEquipments = new Dictionary<Define.EquipmentType, Equipment>();
+    public Dictionary<int, int> ItemDictionary = new Dictionary<int, int>();
     public Dictionary<int, StageClearInfoData> StageClearInfoDic = new Dictionary<int, StageClearInfoData>();
 }

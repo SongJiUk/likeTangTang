@@ -20,9 +20,9 @@ public static class Define
     public const int MAX_SKILL_LEVEL = 5;
     public static readonly Dictionary<int, float> POTION_AMOUNT = new Dictionary<int, float>
     {
-        { 3100, 0.3f},
-        { 3101, 0.6f},
-        { 3102, 1f}
+        { 30000, 0.3f},
+        { 30001, 0.6f},
+        { 30002, 1f}
     };
     public enum ItemType
     {
@@ -38,16 +38,16 @@ public static class Define
     public enum SkillType
     {
         None,
-        PlasmaShot = 2000, //일정 시간마다 전방에 플라즈마 탄환 발사 (짧은 관통 효과 있음)
-        EnergyRing = 2010, // 플레이어 주변에 에너지 고리 생성, 닿으면 몬스터 데미지
-        PlasmaSpinner = 2020, //주변의 적에게 튕기는 부메랑을 발사합니다.
-        SuicideDrone = 2030, //일정 시간 후 폭발하는 자폭 드론을 발사
-        ElectricShock = 2040, //	랜덤 주변 몬스터들에게 전기 번개 튕기면서 연쇄 데미지
-        GravityBomb = 2050, // 	중력 자기장 폭탄(몬스터들을 끌어들이는 폭탄)
-        TimeStopBomb = 2060, // 주변 몬스터 이동속도 50% 감소하는 필드 생성
-        OrbitalBlades = 2070,// 캐릭터 주변을 회전한다.
-        ElectronicField = 2080,
-        SpectralSlash = 2090
+        PlasmaShot = 20000, //일정 시간마다 전방에 플라즈마 탄환 발사 (짧은 관통 효과 있음)
+        EnergyRing = 20100, // 플레이어 주변에 에너지 고리 생성, 닿으면 몬스터 데미지
+        PlasmaSpinner = 20200, //주변의 적에게 튕기는 부메랑을 발사합니다.
+        SuicideDrone = 20300, //일정 시간 후 폭발하는 자폭 드론을 발사
+        ElectricShock = 20400, //	랜덤 주변 몬스터들에게 전기 번개 튕기면서 연쇄 데미지
+        GravityBomb = 20500, // 	중력 자기장 폭탄(몬스터들을 끌어들이는 폭탄)
+        TimeStopBomb = 20600, // 주변 몬스터 이동속도 50% 감소하는 필드 생성
+        OrbitalBlades = 20700,// 캐릭터 주변을 회전한다.
+        ElectronicField = 20800,
+        SpectralSlash = 20900
     }
 
     public enum DropItemType
@@ -62,16 +62,16 @@ public static class Define
     public enum EvoloutionType
     {
         None,
-        PlasmaCannon = 2100, //플라즈마샷 진화
-        Thundering = 2110,
-        OmegaBoomerang = 2120,
-        ClusterDrone = 2130,
-        SuddenStorm = 2140,
-        GravitationalCollapse = 2150,
-        timeFixedField = 2160,
-        OrbitBarrage = 2170,
-        HighVoltageField = 2180,
-        SpectralPhantom = 2190
+        PlasmaCannon = 23000, //플라즈마샷 진화
+        Thundering = 23100,
+        OmegaBoomerang = 23200,
+        ClusterDrone = 23300,
+        SuddenStorm = 23400,
+        GravitationalCollapse = 23500,
+        timeFixedField = 23600,
+        OrbitBarrage = 23700,
+        HighVoltageField = 23800,
+        SpectralPhantom = 23900
     }
 
     public enum SceneType
@@ -93,6 +93,7 @@ public static class Define
 
     public enum ObjectType
     {
+        None,
         Player,
         Monster,
         EliteMonster,
@@ -134,12 +135,118 @@ public static class Define
         EndDrag
     }
 
+    public enum SpecialSkillType
+    {
+        None,
+        ItemSkill,
+        LevelUp,
+        Passive
+    }
+    
+    public enum SpecialSkillGrade
+    {
+        None,
+        Common,
+        UnCommon,
+        Rare,
+        Epic,
+        Unique
+    }
+    
+    public enum GachaGrade
+    {
+        None,
+        Normal,
+
+    }
+
+    public enum EquipmentGrade
+    {
+        None,
+        Common,
+        Uncommon,
+        Rare,
+        Epic,
+        Epic1,
+        Epic2,
+        Unique,
+        Unique1,
+        Unique2,
+        Unique3
+    }
+
+    public enum MaterialType
+    {
+        None,
+        Gold,
+        Dia,
+        Stamina,
+        Exp,
+        WeaponScroll,
+        GloveScroll,
+        RingScroll,
+        HelmetScroll,
+        ArmorScroll,
+        BootsScroll,
+        BronzeKey,
+        SilverKey,
+        GoldKey,
+        RandomScroll,
+        AllRandomEquipmentBox,
+        RandomEquipmentBox,
+        CommonEquipmentBox,
+        UnCommonEquipmentBox,
+        RareEquipmentBox,
+        EpicEquipmentBox,
+        LegendaryEquipmentBox,
+        WeaponEnchantStone,
+        GloveEnchantStone,
+        RingEnchantStone,
+        HelmetEnchantStone,
+        ArmorEnchantStone,
+        BootsEnchantStone,
+    }
+
+    public enum MaterialGrade
+    {
+        None,
+        Common,
+        UnCommon,
+        Rare,
+        Epic,
+        Legendary
+    }
+
+    public enum EquipmentType
+    {
+        None,
+        Weapon,
+        Glove,
+        Armor,
+        Helmet,
+        Ring,
+        Boots,
+    }
+
+    public enum EquipmentSortType
+    {
+        Level,
+        Grade
+    }
+
+    public enum UI_ItemParentType
+    {
+        CharacterEquipment,
+        EquipInventory,
+        GachaResultPopup
+    }
+
     public static string GRIDNAME = "@Grid";
     public static string DROPITEMNAME = "DropItem";
     public static string STANDARDNAME = "Standard";
 
     public static int WAVE_REWARD_TIME = 30;
-    public static int POTION_ID = 3100;
-    public static int MAGNET_ID = 3103;
-    public static int BOMB_ID = 3104;
+    public static int POTION_ID = 30000;
+    public static int MAGNET_ID = 30003;
+    public static int BOMB_ID = 30004;
 }

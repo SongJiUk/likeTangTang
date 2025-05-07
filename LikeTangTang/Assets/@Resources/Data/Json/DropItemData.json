@@ -1,10 +1,10 @@
 {
   "dropData": [
     {
-      "DataID": 3100,
-      "DropItemTypeStr": "Potion",
-      "DropItemType": 0,
-      "Grade": null,
+      "DataID": 30000,
+      "DropItemTypeStr": null,
+      "DropItemType": 1,
+      "Grade": "Normal",
       "NameTextID": "일반 포션",
       "ItemDescription": "Normal Potion",
       "SpriteName": "Normal_Potion.sprite",
@@ -12,10 +12,10 @@
       "EffectName": null
     },
     {
-      "DataID": 3101,
-      "DropItemTypeStr": "Potion",
-      "DropItemType": 0,
-      "Grade": null,
+      "DataID": 30001,
+      "DropItemTypeStr": null,
+      "DropItemType": 1,
+      "Grade": "Rare",
       "NameTextID": "좋은 포션",
       "ItemDescription": "Good Potion",
       "SpriteName": "Good_Potion.sprite",
@@ -23,10 +23,10 @@
       "EffectName": null
     },
     {
-      "DataID": 3102,
-      "DropItemTypeStr": "Potion",
-      "DropItemType": 0,
-      "Grade": null,
+      "DataID": 30002,
+      "DropItemTypeStr": null,
+      "DropItemType": 1,
+      "Grade": "Unique",
       "NameTextID": "최고의 포션",
       "ItemDescription": "Best Potion",
       "SpriteName": "Best_Potion.sprite",
@@ -34,10 +34,10 @@
       "EffectName": null
     },
     {
-      "DataID": 3103,
-      "DropItemTypeStr": "Magnet",
-      "DropItemType": 0,
-      "Grade": null,
+      "DataID": 30003,
+      "DropItemTypeStr": null,
+      "DropItemType": 2,
+      "Grade": "Normal",
       "NameTextID": "자석",
       "ItemDescription": "Magnet",
       "SpriteName": "Magnet.sprite",
@@ -45,10 +45,10 @@
       "EffectName": null
     },
     {
-      "DataID": 3104,
-      "DropItemTypeStr": "Bomb",
-      "DropItemType": 0,
-      "Grade": null,
+      "DataID": 30004,
+      "DropItemTypeStr": null,
+      "DropItemType": 3,
+      "Grade": "Normal",
       "NameTextID": "폭탄",
       "ItemDescription": "Bomb",
       "SpriteName": "Bomb.sprite",
@@ -56,9 +56,9 @@
       "EffectName": null
     },
     {
-      "DataID": 3105,
-      "DropItemTypeStr": "DropBox",
-      "DropItemType": 0,
+      "DataID": 30005,
+      "DropItemTypeStr": null,
+      "DropItemType": 4,
       "Grade": "Normal",
       "NameTextID": "노말 상자",
       "ItemDescription": "Normal Box",
@@ -67,9 +67,9 @@
       "EffectName": "DropBox_Effect_Normal"
     },
     {
-      "DataID": 3106,
-      "DropItemTypeStr": "DropBox",
-      "DropItemType": 0,
+      "DataID": 30006,
+      "DropItemTypeStr": null,
+      "DropItemType": 4,
       "Grade": "Rare",
       "NameTextID": "레어 상자",
       "ItemDescription": "Rare BOx",
@@ -78,9 +78,9 @@
       "EffectName": "DropBox_Effect_Rare"
     },
     {
-      "DataID": 3107,
-      "DropItemTypeStr": "DropBox",
-      "DropItemType": 0,
+      "DataID": 30007,
+      "DropItemTypeStr": null,
+      "DropItemType": 4,
       "Grade": "Unique",
       "NameTextID": "유니크 상자",
       "ItemDescription": "Unique Box",

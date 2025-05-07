@@ -37,7 +37,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: 3cd7aff866baa420baac92fc2e7d3b0d
+  - m_GUID: a5c87303402c9f84f968437f95bdce6d
     m_Address: UI_EquipmentPopup
     m_ReadOnly: 0
     m_SerializedLabels:
@@ -64,6 +64,11 @@ MonoBehaviour:
     - PrevLoad
   - m_GUID: 45167f71314ce42409f560a609924e98
     m_Address: UI_GameResultPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: bd5baa2131254d14fbb305ae4c6dbdaa
+    m_Address: UI_ShopPopup
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad

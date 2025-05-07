@@ -109,9 +109,12 @@ public class CreatureController : BaseController, ITickable
     {
         foreach (int skillID in creatureData.SkillTypeList)
         {
-            var type = Utils.GetSkillTypeFromInt(skillID);
-            if (type != SkillType.None)
-                Skills.AddSkill(type, skillID);
+
+            if(Manager.DataM.SkillDic.TryGetValue(skillID, out var data))
+            {
+                if (data.SkillType != SkillType.None)
+                    Skills.AddSkill(data.SkillType, skillID);
+            }
         }
     }
 

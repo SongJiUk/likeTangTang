@@ -1,9 +1,9 @@
 DataID,DropItemTypeStr,Grade,NameTextID,ItemDescription,SpriteName,AnimName,EffectName
-3100,Potion,,일반 포션,Normal Potion,Normal_Potion.sprite,Normal_Potion_Anim,
-3101,Potion,,좋은 포션,Good Potion,Good_Potion.sprite,Good_Potion_Anim,
-3102,Potion,,최고의 포션,Best Potion,Best_Potion.sprite,Best_Potion_Anim,
-3103,Magnet,,자석,Magnet,Magnet.sprite,,
-3104,Bomb,,폭탄,Bomb,Bomb.sprite,,
-3105,DropBox,Normal,노말 상자,Normal Box,Normal_Box.sprite,Normal_Box_Anim,DropBox_Effect_Normal
-3106,DropBox,Rare,레어 상자,Rare BOx,Rare_Box.sprite,Rare_Box_Anim,DropBox_Effect_Rare
-3107,DropBox,Unique,유니크 상자,Unique Box,Unique_Box.sprite,Unique_Box_Anim,DropBox_Effect_Unique
+30000,Potion,Normal,일반 포션,Normal Potion,Normal_Potion.sprite,Normal_Potion_Anim,
+30001,Potion,Rare,좋은 포션,Good Potion,Good_Potion.sprite,Good_Potion_Anim,
+30002,Potion,Unique,최고의 포션,Best Potion,Best_Potion.sprite,Best_Potion_Anim,
+30003,Magnet,Normal,자석,Magnet,Magnet.sprite,,
+30004,Bomb,Normal,폭탄,Bomb,Bomb.sprite,,
+30005,DropBox,Normal,노말 상자,Normal Box,Normal_Box.sprite,Normal_Box_Anim,DropBox_Effect_Normal
+30006,DropBox,Rare,레어 상자,Rare BOx,Rare_Box.sprite,Rare_Box_Anim,DropBox_Effect_Rare
+30007,DropBox,Unique,유니크 상자,Unique Box,Unique_Box.sprite,Unique_Box_Anim,DropBox_Effect_Unique

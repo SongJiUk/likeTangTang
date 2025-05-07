@@ -10,13 +10,15 @@
       "ClearExp": 5,
       "StageImage": "MapSprite_01.sprite",
       "SpawnMonsterNum": [
-        1000,
-        1001,
-        1002,
-        1003,
-        1004,
-        1005,
-        1006
+        10000,
+        10001,
+        10002,
+        10003,
+        10004,
+        10005,
+        11000,
+        11001,
+        12000
       ],
       "WaveArray": [
         {
@@ -25,7 +27,7 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 3,
           "MonsterID": [
-            1000
+            10000
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -46,8 +48,8 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 13,
           "MonsterID": [
-            1000,
-            1001
+            10000,
+            10001
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -68,10 +70,10 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 23,
           "MonsterID": [
-            1002
+            10002
           ],
           "EleteMonsterID": [
-            1100
+            11000
           ],
           "BossMonsterID": [],
           "RemainTime": 60,
@@ -84,12 +86,12 @@
           "BlueGemDropRate": 0.0,
           "YellowGemDropRate": 0.0,
           "EliteDropItemId": [
-            3100,
-            3101,
-            3102,
-            3105,
-            3106,
-            3107
+            30000,
+            30001,
+            30002,
+            30005,
+            30006,
+            30007
           ]
         },
         {
@@ -98,7 +100,7 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 33,
           "MonsterID": [
-            1002
+            10002
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -119,8 +121,8 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 43,
           "MonsterID": [
-            1002,
-            1003
+            10002,
+            10003
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -141,10 +143,10 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 53,
           "MonsterID": [
-            1003
+            10003
           ],
           "EleteMonsterID": [
-            1100
+            11000
           ],
           "BossMonsterID": [],
           "RemainTime": 60,
@@ -157,12 +159,12 @@
           "BlueGemDropRate": 0.27,
           "YellowGemDropRate": 0.0,
           "EliteDropItemId": [
-            3100,
-            3101,
-            3102,
-            3105,
-            3106,
-            3107
+            30000,
+            30001,
+            30002,
+            30005,
+            30006,
+            30007
           ]
         },
         {
@@ -171,7 +173,7 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 63,
           "MonsterID": [
-            1004
+            10004
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -192,8 +194,8 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 73,
           "MonsterID": [
-            1004,
-            1005
+            10004,
+            10005
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -214,10 +216,10 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 83,
           "MonsterID": [
-            1005
+            10005
           ],
           "EleteMonsterID": [
-            1101
+            11001
           ],
           "BossMonsterID": [],
           "RemainTime": 60,
@@ -230,12 +232,12 @@
           "BlueGemDropRate": 0.73,
           "YellowGemDropRate": 0.27,
           "EliteDropItemId": [
-            3100,
-            3101,
-            3102,
-            3105,
-            3106,
-            3107
+            30000,
+            30001,
+            30002,
+            30005,
+            30006,
+            30007
           ]
         },
         {
@@ -244,11 +246,11 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 93,
           "MonsterID": [
-            1005
+            10005
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [
-            1200
+            12000
           ],
           "RemainTime": 60,
           "WaveType": 0,
@@ -259,7 +261,10 @@
           "GreenGemDropRate": 0.0,
           "BlueGemDropRate": 0.27,
           "YellowGemDropRate": 0.73,
-          "EliteDropItemId": []
+          "EliteDropItemId": [
+            30006,
+            30007
+          ]
         }
       ]
     },
@@ -273,13 +278,14 @@
       "ClearExp": 5,
       "StageImage": "MapSprite_02.sprite",
       "SpawnMonsterNum": [
-        1007,
-        1008,
-        1009,
-        1010,
-        1011,
-        1012,
-        1013
+        10006,
+        10007,
+        10008,
+        10009,
+        10010,
+        11001,
+        11002,
+        12001
       ],
       "WaveArray": [
         {
@@ -288,7 +294,7 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 3,
           "MonsterID": [
-            1006
+            10006
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -309,8 +315,8 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 13,
           "MonsterID": [
-            1006,
-            1007
+            10006,
+            10007
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -331,10 +337,10 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 23,
           "MonsterID": [
-            1007
+            10007
           ],
           "EleteMonsterID": [
-            1101
+            11001
           ],
           "BossMonsterID": [],
           "RemainTime": 60,
@@ -347,12 +353,12 @@
           "BlueGemDropRate": 0.0,
           "YellowGemDropRate": 0.0,
           "EliteDropItemId": [
-            3100,
-            3101,
-            3102,
-            3105,
-            3106,
-            3107
+            30000,
+            30001,
+            30002,
+            30005,
+            30006,
+            30007
           ]
         },
         {
@@ -361,7 +367,7 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 33,
           "MonsterID": [
-            1007
+            10007
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -382,8 +388,8 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 43,
           "MonsterID": [
-            1007,
-            1008
+            10007,
+            10008
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -404,10 +410,10 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 53,
           "MonsterID": [
-            1008
+            10008
           ],
           "EleteMonsterID": [
-            1102
+            11002
           ],
           "BossMonsterID": [],
           "RemainTime": 60,
@@ -420,12 +426,12 @@
           "BlueGemDropRate": 0.27,
           "YellowGemDropRate": 0.0,
           "EliteDropItemId": [
-            3100,
-            3101,
-            3102,
-            3105,
-            3106,
-            3107
+            30000,
+            30001,
+            30002,
+            30005,
+            30006,
+            30007
           ]
         },
         {
@@ -434,7 +440,7 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 63,
           "MonsterID": [
-            1008
+            10008
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -455,8 +461,8 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 73,
           "MonsterID": [
-            1008,
-            1009
+            10008,
+            10009
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -477,10 +483,10 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 83,
           "MonsterID": [
-            1010
+            10010
           ],
           "EleteMonsterID": [
-            1102
+            11002
           ],
           "BossMonsterID": [],
           "RemainTime": 60,
@@ -493,12 +499,12 @@
           "BlueGemDropRate": 0.73,
           "YellowGemDropRate": 0.27,
           "EliteDropItemId": [
-            3100,
-            3101,
-            3102,
-            3105,
-            3106,
-            3107
+            30000,
+            30001,
+            30002,
+            30005,
+            30006,
+            30007
           ]
         },
         {
@@ -507,11 +513,11 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 93,
           "MonsterID": [
-            1010
+            10010
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [
-            1201
+            12001
           ],
           "RemainTime": 60,
           "WaveType": 0,
@@ -523,8 +529,8 @@
           "BlueGemDropRate": 0.27,
           "YellowGemDropRate": 0.73,
           "EliteDropItemId": [
-            3106,
-            3107
+            30006,
+            30007
           ]
         }
       ]
@@ -539,12 +545,14 @@
       "ClearExp": 5,
       "StageImage": "MapSprite_03.sprite",
       "SpawnMonsterNum": [
-        1014,
-        1015,
-        1016,
-        1017,
-        1018,
-        1019
+        10011,
+        10012,
+        10013,
+        10014,
+        10015,
+        11003,
+        11004,
+        12002
       ],
       "WaveArray": [
         {
@@ -553,7 +561,7 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 3,
           "MonsterID": [
-            1011
+            10011
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -574,8 +582,8 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 13,
           "MonsterID": [
-            1011,
-            1012
+            10011,
+            10012
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -596,10 +604,10 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 23,
           "MonsterID": [
-            1012
+            10012
           ],
           "EleteMonsterID": [
-            1103
+            11003
           ],
           "BossMonsterID": [],
           "RemainTime": 60,
@@ -612,12 +620,12 @@
           "BlueGemDropRate": 0.0,
           "YellowGemDropRate": 0.0,
           "EliteDropItemId": [
-            3100,
-            3101,
-            3102,
-            3105,
-            3106,
-            3107
+            30000,
+            30001,
+            30002,
+            30005,
+            30006,
+            30007
           ]
         },
         {
@@ -626,7 +634,7 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 33,
           "MonsterID": [
-            1012
+            10012
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -647,8 +655,8 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 43,
           "MonsterID": [
-            1012,
-            1013
+            10012,
+            10013
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -669,10 +677,10 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 53,
           "MonsterID": [
-            1013
+            10013
           ],
           "EleteMonsterID": [
-            1103
+            11003
           ],
           "BossMonsterID": [],
           "RemainTime": 60,
@@ -685,12 +693,12 @@
           "BlueGemDropRate": 0.27,
           "YellowGemDropRate": 0.0,
           "EliteDropItemId": [
-            3100,
-            3101,
-            3102,
-            3105,
-            3106,
-            3107
+            30000,
+            30001,
+            30002,
+            30005,
+            30006,
+            30007
           ]
         },
         {
@@ -699,7 +707,7 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 63,
           "MonsterID": [
-            1013
+            10013
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -720,8 +728,8 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 73,
           "MonsterID": [
-            1013,
-            1014
+            10013,
+            10014
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -742,10 +750,10 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 83,
           "MonsterID": [
-            1014
+            10014
           ],
           "EleteMonsterID": [
-            1104
+            11004
           ],
           "BossMonsterID": [],
           "RemainTime": 60,
@@ -758,12 +766,12 @@
           "BlueGemDropRate": 0.73,
           "YellowGemDropRate": 0.27,
           "EliteDropItemId": [
-            3100,
-            3101,
-            3102,
-            3105,
-            3106,
-            3107
+            30000,
+            30001,
+            30002,
+            30005,
+            30006,
+            30007
           ]
         },
         {
@@ -772,11 +780,11 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 93,
           "MonsterID": [
-            1015
+            10015
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [
-            1202
+            12002
           ],
           "RemainTime": 60,
           "WaveType": 0,
@@ -788,8 +796,8 @@
           "BlueGemDropRate": 0.27,
           "YellowGemDropRate": 0.73,
           "EliteDropItemId": [
-            3106,
-            3107
+            30006,
+            30007
           ]
         }
       ]
@@ -804,12 +812,14 @@
       "ClearExp": 5,
       "StageImage": "MapSprite_04.sprite",
       "SpawnMonsterNum": [
-        1020,
-        1021,
-        1022,
-        1023,
-        1024,
-        1025
+        10016,
+        10017,
+        10018,
+        10019,
+        10020,
+        11004,
+        11005,
+        12003
       ],
       "WaveArray": [
         {
@@ -818,7 +828,7 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 3,
           "MonsterID": [
-            1016
+            10016
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -839,8 +849,8 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 13,
           "MonsterID": [
-            1016,
-            1017
+            10016,
+            10017
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -861,10 +871,10 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 23,
           "MonsterID": [
-            1017
+            10017
           ],
           "EleteMonsterID": [
-            1104
+            11004
           ],
           "BossMonsterID": [],
           "RemainTime": 60,
@@ -877,12 +887,12 @@
           "BlueGemDropRate": 0.0,
           "YellowGemDropRate": 0.0,
           "EliteDropItemId": [
-            3100,
-            3101,
-            3102,
-            3105,
-            3106,
-            3107
+            30000,
+            30001,
+            30002,
+            30005,
+            30006,
+            30007
           ]
         },
         {
@@ -891,7 +901,7 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 33,
           "MonsterID": [
-            1017
+            10017
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -934,10 +944,10 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 53,
           "MonsterID": [
-            1018
+            10018
           ],
           "EleteMonsterID": [
-            1105
+            11005
           ],
           "BossMonsterID": [],
           "RemainTime": 60,
@@ -950,12 +960,12 @@
           "BlueGemDropRate": 0.27,
           "YellowGemDropRate": 0.0,
           "EliteDropItemId": [
-            3100,
-            3101,
-            3102,
-            3105,
-            3106,
-            3107
+            30000,
+            30001,
+            30002,
+            30005,
+            30006,
+            30007
           ]
         },
         {
@@ -964,7 +974,7 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 63,
           "MonsterID": [
-            1018
+            10018
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -985,8 +995,8 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 73,
           "MonsterID": [
-            1018,
-            1019
+            10018,
+            10019
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -1007,10 +1017,10 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 83,
           "MonsterID": [
-            1019
+            10019
           ],
           "EleteMonsterID": [
-            1105
+            11005
           ],
           "BossMonsterID": [],
           "RemainTime": 60,
@@ -1023,12 +1033,12 @@
           "BlueGemDropRate": 0.73,
           "YellowGemDropRate": 0.27,
           "EliteDropItemId": [
-            3100,
-            3101,
-            3102,
-            3105,
-            3106,
-            3107
+            30000,
+            30001,
+            30002,
+            30005,
+            30006,
+            30007
           ]
         },
         {
@@ -1037,11 +1047,11 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 93,
           "MonsterID": [
-            1020
+            10020
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [
-            1203
+            12003
           ],
           "RemainTime": 60,
           "WaveType": 0,
@@ -1053,8 +1063,8 @@
           "BlueGemDropRate": 0.27,
           "YellowGemDropRate": 0.73,
           "EliteDropItemId": [
-            3106,
-            3107
+            30006,
+            30007
           ]
         }
       ]
@@ -1069,14 +1079,14 @@
       "ClearExp": 5,
       "StageImage": "MapSprite_05.sprite",
       "SpawnMonsterNum": [
-        1026,
-        1027,
-        1028,
-        1029,
-        1030,
-        1031,
-        1032,
-        1033
+        10021,
+        10022,
+        10023,
+        10024,
+        10025,
+        11006,
+        11007,
+        12004
       ],
       "WaveArray": [
         {
@@ -1085,7 +1095,7 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 3,
           "MonsterID": [
-            1021
+            10021
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -1106,8 +1116,8 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 13,
           "MonsterID": [
-            1021,
-            1022
+            10021,
+            10022
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -1128,10 +1138,10 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 23,
           "MonsterID": [
-            1022
+            10022
           ],
           "EleteMonsterID": [
-            1106
+            11006
           ],
           "BossMonsterID": [],
           "RemainTime": 60,
@@ -1144,12 +1154,12 @@
           "BlueGemDropRate": 0.0,
           "YellowGemDropRate": 0.0,
           "EliteDropItemId": [
-            3100,
-            3101,
-            3102,
-            3105,
-            3106,
-            3107
+            30000,
+            30001,
+            30002,
+            30005,
+            30006,
+            30007
           ]
         },
         {
@@ -1158,7 +1168,7 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 33,
           "MonsterID": [
-            1022
+            10022
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -1179,8 +1189,8 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 43,
           "MonsterID": [
-            1022,
-            1023
+            10022,
+            10023
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -1201,10 +1211,10 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 53,
           "MonsterID": [
-            1023
+            10023
           ],
           "EleteMonsterID": [
-            1106
+            11006
           ],
           "BossMonsterID": [],
           "RemainTime": 60,
@@ -1217,12 +1227,12 @@
           "BlueGemDropRate": 0.27,
           "YellowGemDropRate": 0.0,
           "EliteDropItemId": [
-            3100,
-            3101,
-            3102,
-            3105,
-            3106,
-            3107
+            30000,
+            30001,
+            30002,
+            30005,
+            30006,
+            30007
           ]
         },
         {
@@ -1231,7 +1241,7 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 63,
           "MonsterID": [
-            1023
+            10023
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -1252,8 +1262,8 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 73,
           "MonsterID": [
-            1023,
-            1024
+            10023,
+            10024
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],
@@ -1274,10 +1284,10 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 83,
           "MonsterID": [
-            1024
+            10024
           ],
           "EleteMonsterID": [
-            1107
+            11007
           ],
           "BossMonsterID": [],
           "RemainTime": 60,
@@ -1290,12 +1300,12 @@
           "BlueGemDropRate": 0.73,
           "YellowGemDropRate": 0.27,
           "EliteDropItemId": [
-            3100,
-            3101,
-            3102,
-            3105,
-            3106,
-            3107
+            30000,
+            30001,
+            30002,
+            30005,
+            30006,
+            30007
           ]
         },
         {
@@ -1304,11 +1314,11 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 93,
           "MonsterID": [
-            1025
+            10025
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [
-            1204
+            12004
           ],
           "RemainTime": 60,
           "WaveType": 0,
@@ -1320,8 +1330,8 @@
           "BlueGemDropRate": 0.27,
           "YellowGemDropRate": 0.73,
           "EliteDropItemId": [
-            3106,
-            3107
+            30006,
+            30007
           ]
         }
       ]

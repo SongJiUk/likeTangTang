@@ -37,12 +37,12 @@ public class DataTransformer : EditorWindow
         ParseSkillEvolutionData("SkillEvolutionData");
         ParseStageData("StageData");
         ParseCreatureData("CreatureData");
-        // ParseLevelData("Level");
-        // ParseEquipmentLevelData("EquipmentLevel");
-        // ParseEquipmentData("Equipment");
-        // ParseMaterialData("Material");
-        // ParseSupportSkillData("SupportSkill");
-        ParseDropItemData("DropItem");
+        ParseLevelData("LevelData");
+        ParseEquipmentLevelData("EquipmentLevelData");
+        ParseEquipmentData("EquipmentData");
+        ParseMaterialData("MaterialData");
+        ParseSupportSkillData("SpecialSkillData");
+        ParseDropItemData("DropItemData");
         // ParseGachaDataData("GachaTable"); // DictionaryŰ�� ���� �����Ͱ� ���� #Neo
         //ParseStagePackageData("StagePackage");
         // ParseMissionData("Mission");
@@ -101,7 +101,7 @@ public class DataTransformer : EditorWindow
             skillData.HitEffectID = ConvertValue<string>(row[i++]);
             skillData.CastingEffect = ConvertValue<int>(row[i++]);
             skillData.HitEffect = ConvertValue<int>(row[i++]);
-            skillData.SkillTypeStr = ConvertValue<string>(row[i++]);
+            skillData.SkillType = ConvertValue<SkillType>(row[i++]);
             skillData.CanEvolve = ConvertValue<bool>(row[i++]);
             skillData.EvolutionItemID = ConvertValue<int>(row[i++]);
             skillData.EvolvedSkillName = ConvertValue<string>(row[i++]);
@@ -112,6 +112,9 @@ public class DataTransformer : EditorWindow
             skillData.EffectScaleMultiplier = ConvertValue<float>(row[i++]);
             skillData.SlowRatio = ConvertValue<float>(row[i++]);
             skillData.PullForce = ConvertValue<float>(row[i++]);
+            
+
+
             loader.skillDatas.Add(skillData);
         }
         #endregion
@@ -142,10 +145,9 @@ public class DataTransformer : EditorWindow
             skillEvolutionData.EvolutionItemDescription = ConvertValue<string>(row[i++]);
             skillEvolutionData.EvolutionSkillID = ConvertValue<int>(row[i++]);
             skillEvolutionData.SkillName = ConvertValue<string>(row[i++]);
-            skillEvolutionData.BeforeSKillName = ConvertValue<string>(row[i++]);
+            skillEvolutionData.Type = ConvertValue<SkillType>(row[i++]);
             skillEvolutionData.EvolutionItemIcon = ConvertValue<string>(row[i++]);
             
-
             loader.skillEvolutionDatas.Add(skillEvolutionData);
         }
 
@@ -154,62 +156,38 @@ public class DataTransformer : EditorWindow
         AssetDatabase.Refresh();
     }
 
-    //     static void ParseSupportSkillData(string filename)
-    //     {
-    //         SupportSkillDataLoader loader = new SupportSkillDataLoader();
+    static void ParseSupportSkillData(string filename)
+    {
+        SpecialSkillDataLoader loader = new SpecialSkillDataLoader();
 
-    //         #region ExcelData
-    //         string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/Excel/{filename}Data.csv").Split("\n");
+        #region ExcelData
+        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/CSV/{filename}.csv").Split("\n");
 
-    //         for (int y = 1; y < lines.Length; y++)
-    //         {
-    //             string[] row = lines[y].Replace("\r", "").Split(',');
-    //             if (row.Length == 0)
-    //                 continue;
-    //             if (string.IsNullOrEmpty(row[0]))
-    //                 continue;
+        for (int y = 1; y < lines.Length; y++)
+        {
+            string[] row = lines[y].Replace("\r", "").Split(',');
+            if (row.Length == 0)
+                continue;
+            if (string.IsNullOrEmpty(row[0]))
+                continue;
 
-    //             int i = 0;
-    //             SupportSkillData skillData = new SupportSkillData();
-    //             skillData.DataId = ConvertValue<int>(row[i++]);
-    //             skillData.SupportSkillType = ConvertValue<SupportSkillType>(row[i++]);
-    //             skillData.SupportSkillName = ConvertValue<SupportSkillName>(row[i++]);
-    //             skillData.SupportSkillGrade = ConvertValue<SupportSkillGrade>(row[i++]);
-    //             skillData.Name = ConvertValue<string>(row[i++]);
-    //             skillData.Description = ConvertValue<string>(row[i++]);
-    //             skillData.IconLabel = ConvertValue<string>(row[i++]);
-    //             skillData.HpRegen = ConvertValue<float>(row[i++]);
-    //             skillData.HealRate = ConvertValue<float>(row[i++]);
-    //             skillData.HealBonusRate = ConvertValue<float>(row[i++]);
-    //             skillData.MagneticRange = ConvertValue<float>(row[i++]);
-    //             skillData.SoulAmount = ConvertValue<int>(row[i++]);
-    //             skillData.HpRate = ConvertValue<float>(row[i++]);
-    //             skillData.AtkRate = ConvertValue<float>(row[i++]);
-    //             skillData.DefRate = ConvertValue<float>(row[i++]);
-    //             skillData.MoveSpeedRate = ConvertValue<float>(row[i++]);
-    //             skillData.CriRate = ConvertValue<float>(row[i++]);
-    //             skillData.CriDmg = ConvertValue<float>(row[i++]);
-    //             skillData.DamageReduction = ConvertValue<float>(row[i++]);
-    //             skillData.ExpBonusRate = ConvertValue<float>(row[i++]);
-    //             skillData.SoulBonusRate = ConvertValue<float>(row[i++]);
-    //             skillData.ProjectileSpacing = ConvertValue<float>(row[i++]);
-    //             skillData.Duration = ConvertValue<float>(row[i++]);
-    //             skillData.NumProjectiles = ConvertValue<int>(row[i++]);
-    //             skillData.AttackInterval = ConvertValue<float>(row[i++]);
-    //             skillData.NumBounce = ConvertValue<int>(row[i++]);
-    //             skillData.NumPenerations = ConvertValue<int>(row[i++]);
-    //             skillData.ProjRange = ConvertValue<float>(row[i++]);
-    //             skillData.RoatateSpeed = ConvertValue<float>(row[i++]);
-    //             skillData.ScaleMultiplier = ConvertValue<float>(row[i++]);
-    //             skillData.Price = ConvertValue<float>(row[i++]);
-    //             loader.supportSkills.Add(skillData);
-    //         }
-    //         #endregion
+            int i = 0;
+            SpecialSkillData skillData = new SpecialSkillData();
+            skillData.DataID = ConvertValue<int>(row[i++]);
+            skillData.SkillType = ConvertValue<SpecialSkillType>(row[i++]);
+            skillData.SpecialSkillName = ConvertValue<string>(row[i++]);
+            skillData.SkillGrade = ConvertValue<SpecialSkillGrade>(row[i++]);
+            skillData.Name = ConvertValue<string>(row[i++]);
+            skillData.Description = ConvertValue<string>(row[i++]);
+            loader.speicalskillDatas.Add(skillData);
+        }
+        #endregion
 
-    //         string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
-    //         File.WriteAllText($"{Application.dataPath}/@Resources/Data/JsonData/{filename}Data.json", jsonStr);
-    //         AssetDatabase.Refresh();
-    //     }
+        string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
+        File.WriteAllText($"{Application.dataPath}/@Resources/Data/Json/{filename}.json", jsonStr);
+        AssetDatabase.Refresh();
+    }
+
     static void ParseStageData(string filename)
     {
         Dictionary<int, List<WaveData>> waveTable = ParseWaveData("WaveData");
@@ -328,6 +306,7 @@ public class DataTransformer : EditorWindow
             cd.DataID = ConvertValue<int>(row[i++]);
             cd.DescriptionID = ConvertValue<string>(row[i++]);
             cd.prefabName = ConvertValue<string>(row[i++]);
+            cd.Type = ConvertValue<ObjectType>(row[i++]);
             cd.MaxHp = ConvertValue<float>(row[i++]);
             cd.MaxHpUpForIncreasStage = ConvertValue<float>(row[i++]);
             cd.Attack = ConvertValue<float>(row[i++]);
@@ -351,160 +330,153 @@ public class DataTransformer : EditorWindow
         File.WriteAllText($"{Application.dataPath}/@Resources/Data/Json/{filename}.json", jsonStr);
         AssetDatabase.Refresh();
     }
-    //     static void ParseLevelData(string filename)
-    //     {
-    //         LevelDataLoader loader = new LevelDataLoader();
 
-    //         #region ExcelData
-    //         string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/Excel/{filename}Data.csv").Split("\n");
+    static void ParseLevelData(string filename)
+    {
+        LevelDataLoader loader = new LevelDataLoader();
 
-    //         for (int y = 1; y < lines.Length; y++)
-    //         {
-    //             string[] row = lines[y].Replace("\r", "").Split(',');
+        #region ExcelData
+        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/CSV/{filename}.csv").Split("\n");
 
-    //             if (row.Length == 0)
-    //                 continue;
-    //             if (string.IsNullOrEmpty(row[0]))
-    //                 continue;
+        for (int y = 1; y < lines.Length; y++)
+        {
+            string[] row = lines[y].Replace("\r", "").Split(',');
 
-    //             int i = 0;
-    //             LevelData data = new LevelData();
-    //             data.Level = ConvertValue<int>(row[i++]);
-    //             data.TotalExp = ConvertValue<int>(row[i++]);
-    //             loader.levels.Add(data);
-    //         }
+            if (row.Length == 0)
+                continue;
+            if (string.IsNullOrEmpty(row[0]))
+                continue;
 
-    //         #endregion
+            int i = 0;
+            LevelData data = new LevelData();
+            data.level = ConvertValue<int>(row[i++]);
+            data.TotalExp = ConvertValue<float>(row[i++]);
+            loader.levelData.Add(data);
+        }
 
-    //         string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
-    //         File.WriteAllText($"{Application.dataPath}/@Resources/Data/JsonData/{filename}Data.json", jsonStr);
-    //         AssetDatabase.Refresh();
-    //     }
-    //     static void ParseEquipmentLevelData(string filename)
-    //     {
-    //         EquipmentLevelDataLoader loader = new EquipmentLevelDataLoader();
+        #endregion
 
-    //         #region ExcelData
-    //         string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/Excel/{filename}Data.csv").Split("\n");
+        string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
+        File.WriteAllText($"{Application.dataPath}/@Resources/Data/Json/{filename}.json", jsonStr);
+        AssetDatabase.Refresh();
+    }
 
-    //         for (int y = 1; y < lines.Length; y++)
-    //         {
-    //             string[] row = lines[y].Replace("\r", "").Split(',');
+    static void ParseEquipmentLevelData(string filename)
+    {
+        EquipmentLevelDataLoader loader = new EquipmentLevelDataLoader();
 
-    //             if (row.Length == 0)
-    //                 continue;
-    //             if (string.IsNullOrEmpty(row[0]))
-    //                 continue;
+        #region ExcelData
+        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/CSV/{filename}.csv").Split("\n");
 
-    //             int i = 0;
-    //             EquipmentLevelData data = new EquipmentLevelData();
-    //             data.Level = ConvertValue<int>(row[i++]);
-    //             data.UpgradeCost = ConvertValue<int>(row[i++]);
-    //             data.UpgradeRequiredItems = ConvertValue<int>(row[i++]);
+        for (int y = 1; y < lines.Length; y++)
+        {
+            string[] row = lines[y].Replace("\r", "").Split(',');
 
-    //             loader.levels.Add(data);
-    //         }
+            if (row.Length == 0)
+                continue;
+            if (string.IsNullOrEmpty(row[0]))
+                continue;
 
-    //         #endregion
+            int i = 0;
+            EquipmentLevelData data = new EquipmentLevelData();
+            data.Level = ConvertValue<int>(row[i++]);
+            data.Cost_Gold = ConvertValue<int>(row[i++]);
+            data.Cost_Material = ConvertValue<int>(row[i++]);
 
-    //         string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
-    //         File.WriteAllText($"{Application.dataPath}/@Resources/Data/JsonData/{filename}Data.json", jsonStr);
-    //         AssetDatabase.Refresh();
-    //     }
-    //     static void ParseEquipmentData(string filename)
-    //     {
-    //         EquipmentDataLoader loader = new EquipmentDataLoader();
+            loader.levels.Add(data);
+        }
 
-    //         #region ExcelData
-    //         string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/Excel/{filename}Data.csv").Split("\n");
+        #endregion
 
-    //         for (int y = 1; y < lines.Length; y++)
-    //         {
-    //             string[] row = lines[y].Replace("\r", "").Split(',');
+        string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
+        File.WriteAllText($"{Application.dataPath}/@Resources/Data/Json/{filename}.json", jsonStr);
+        AssetDatabase.Refresh();
+    }
+    static void ParseEquipmentData(string filename)
+    {
+        EquipmentDataLoader loader = new EquipmentDataLoader();
 
-    //             if (row.Length == 0)
-    //                 continue;
-    //             if (string.IsNullOrEmpty(row[0]))
-    //                 continue;
+        #region ExcelData
+        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/CSV/{filename}.csv").Split("\n");
 
-    //             int i = 0;
-    //             EquipmentData ed = new EquipmentData();
-    //             ed.DataId = ConvertValue<string>(row[i++]);
-    //             ed.GachaRarity = ConvertValue<GachaRarity>(row[i++]);
-    //             ed.EquipmentType = ConvertValue<EquipmentType>(row[i++]);
-    //             ed.EquipmentGrade = ConvertValue<EquipmentGrade>(row[i++]);
-    //             ed.NameTextID = ConvertValue<string>(row[i++]);
-    //             ed.DescriptionTextID = ConvertValue<string>(row[i++]);
-    //             ed.SpriteName = ConvertValue<string>(row[i++]);
-    //             ed.MaxHpBonus = ConvertValue<int>(row[i++]);
-    //             ed.MaxHpBonusPerUpgrade = ConvertValue<int>(row[i++]);
-    //             ed.AtkDmgBonus = ConvertValue<int>(row[i++]);
-    //             ed.AtkDmgBonusPerUpgrade = ConvertValue<int>(row[i++]);
-    //             ed.MaxLevel = ConvertValue<int>(row[i++]);
-    //             ed.UncommonGradeSkill = ConvertValue<int>(row[i++]);
-    //             ed.RareGradeSkill = ConvertValue<int>(row[i++]);
-    //             ed.EpicGradeSkill = ConvertValue<int>(row[i++]);
-    //             ed.LegendaryGradeSkill = ConvertValue<int>(row[i++]);
-    //             ed.BasicSkill = ConvertValue<int>(row[i++]);
-    //             ed.MergeEquipmentType1 = ConvertValue<MergeEquipmentType>(row[i++]);
-    //             ed.MergeEquipment1 = row[i++];
-    //             ed.MergeEquipmentType2 = ConvertValue<MergeEquipmentType>(row[i++]);
-    //             ed.MergeEquipment2 = row[i++];
-    //             ed.MergedItemCode = row[i++];
-    //             ed.LevelupMaterialID = ConvertValue<int>(row[i++]);
-    //             ed.DowngradeEquipmentCode = ConvertValue<string>(row[i++]);
-    //             ed.DowngradeMaterialCode = ConvertValue<string>(row[i++]);
-    //             ed.DowngradeMaterialCount = ConvertValue<int>(row[i++]);
-    //             loader.Equipments.Add(ed);
-    //         }
+        for (int y = 1; y < lines.Length; y++)
+        {
+            string[] row = lines[y].Replace("\r", "").Split(',');
 
-    //         #endregion
+            if (row.Length == 0)
+                continue;
+            if (string.IsNullOrEmpty(row[0]))
+                continue;
 
-    //         string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
-    //         File.WriteAllText($"{Application.dataPath}/@Resources/Data/JsonData/{filename}Data.json", jsonStr);
-    //         AssetDatabase.Refresh();
-    //     }
+            int i = 0;
+            EquipmentData ed = new EquipmentData();
+            ed.DataID = ConvertValue<int>(row[i++]);
+            ed.GachaGrade = ConvertValue<GachaGrade>(row[i++]);
+            ed.EquipmentType = ConvertValue<EquipmentType>(row[i++]);
+            ed.EquipmentGarde = ConvertValue<EquipmentGrade>(row[i++]);
+            ed.NameTextID = ConvertValue<string>(row[i++]);
+            ed.ItemDescription = ConvertValue<string>(row[i++]);
+            ed.SpriteName = ConvertValue<string>(row[i++]);
+            ed.Grade_Hp = ConvertValue<float>(row[i++]);
+            ed.GradeUp_Hp = ConvertValue<float>(row[i++]);
+            ed.Grade_Attack = ConvertValue<float>(row[i++]);
+            ed.GradeUp_Attack = ConvertValue<float>(row[i++]);
+            ed.Grade_MaxLevel = ConvertValue<int>(row[i++]);
+            ed.BaseSkill = ConvertValue<int>(row[i++]);
+            ed.UnCommonGradeAbility = ConvertValue<int>(row[i++]);
+            ed.RareGradeAbility = ConvertValue<int>(row[i++]);
+            ed.EpicGradeAbility = ConvertValue<int>(row[i++]);
+            ed.UniqueGradeAbility = ConvertValue<int>(row[i++]);
+            loader.equipmentDatas.Add(ed);
+        }
 
-    //     static void ParseMaterialData(string filename)
-    //     {
-    //         MaterialDataLoader loader = new MaterialDataLoader();
+        #endregion
 
-    //         #region ExcelData
-    //         string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/Excel/{filename}Data.csv").Split("\n");
+        string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
+        File.WriteAllText($"{Application.dataPath}/@Resources/Data/Json/{filename}.json", jsonStr);
+        AssetDatabase.Refresh();
+    }
 
-    //         for (int y = 1; y < lines.Length; y++)
-    //         {
-    //             string[] row = lines[y].Replace("\r", "").Split(',');
-    //             if (row.Length == 0)
-    //                 continue;
-    //             if (string.IsNullOrEmpty(row[0]))
-    //                 continue;
+    static void ParseMaterialData(string filename)
+    {
+        MaterialDataLoader loader = new MaterialDataLoader();
 
-    //             int i = 0;
+        #region ExcelData
+        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/CSV/{filename}.csv").Split("\n");
 
-    //             MaterialData material = new MaterialData();
-    //             material.DataId = ConvertValue<int>(row[i++]);
-    //             material.MaterialType = ConvertValue<Define.MaterialType>(row[i++]);
-    //             material.MaterialGrade = ConvertValue<Define.MaterialGrade>(row[i++]);
-    //             material.NameTextID = ConvertValue<string>(row[i++]);
-    //             material.DescriptionTextID = ConvertValue<string>(row[i++]);
-    //             material.SpriteName = ConvertValue<string>(row[i++]);
+        for (int y = 1; y < lines.Length; y++)
+        {
+            string[] row = lines[y].Replace("\r", "").Split(',');
+            if (row.Length == 0)
+                continue;
+            if (string.IsNullOrEmpty(row[0]))
+                continue;
 
-    //             loader.Materials.Add(material);
-    //         }
-    //         #endregion
+            int i = 0;
 
-    //         string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
-    //         File.WriteAllText($"{Application.dataPath}/@Resources/Data/JsonData/{filename}Data.json", jsonStr);
-    //         AssetDatabase.Refresh();
-    //     }
+            MaterialData material = new MaterialData();
+            material.MaterialID = ConvertValue<int>(row[i++]);
+            material.MaterialType = ConvertValue<Define.MaterialType>(row[i++]);
+            material.MaterialGrade = ConvertValue<Define.MaterialGrade>(row[i++]);
+            material.NameTextID = ConvertValue<string>(row[i++]);
+            material.Description = ConvertValue<string>(row[i++]);
+            material.SpriteName = ConvertValue<string>(row[i++]);
+
+            loader.material.Add(material);
+        }
+        #endregion
+
+        string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
+        File.WriteAllText($"{Application.dataPath}/@Resources/Data/Json/{filename}.json", jsonStr);
+        AssetDatabase.Refresh();
+    }
 
     static void ParseDropItemData(string filename)
     {
         DropItemDataLoader loader = new DropItemDataLoader();
 
         #region ExcelData
-        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/CSV/{filename}Data.csv").Split("\n");
+        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/CSV/{filename}.csv").Split("\n");
 
         for (int y = 1; y < lines.Length; y++)
         {
@@ -518,7 +490,7 @@ public class DataTransformer : EditorWindow
 
             DropItemData dropItem = new DropItemData();
             dropItem.DataID = ConvertValue<int>(row[i++]);
-            dropItem.DropItemTypeStr = ConvertValue<string>(row[i++]);
+            dropItem.DropItemType = ConvertValue<DropItemType>(row[i++]);
             dropItem.Grade = ConvertValue<string>(row[i++]);
             dropItem.NameTextID = ConvertValue<string>(row[i++]);
             dropItem.ItemDescription = ConvertValue<string>(row[i++]);
@@ -531,7 +503,7 @@ public class DataTransformer : EditorWindow
         #endregion
 
         string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
-        File.WriteAllText($"{Application.dataPath}/@Resources/Data/Json/{filename}Data.json", jsonStr);
+        File.WriteAllText($"{Application.dataPath}/@Resources/Data/Json/{filename}.json", jsonStr);
         AssetDatabase.Refresh();
     }
 
