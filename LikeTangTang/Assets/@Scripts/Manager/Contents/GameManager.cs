@@ -8,9 +8,13 @@ using System.IO;
 using System.Linq;
 using static Define;
 
+
+
 public class GameManager
 {
     public PlayerController player { get { return Manager.ObjectM?.Player; } }
+
+    public Character CurrentCharacter {get { return Characters.Find(c => c.isCurrentCharacter == true); } }
     public CameraController Camera { get; set; }
     public GameData gameData = new GameData();
 
@@ -37,6 +41,38 @@ public class GameManager
         {
             gameData.ItemDictionary = value;
         }
+    }
+
+    public List<Character> Characters
+    {
+        get { return gameData.Characters; }
+        set
+        {
+            gameData.Characters = value;
+        }
+    }
+    public int GachaCountAdsAdvanced
+    {
+        get { return gameData.GacahCountAdsAdvanced; }
+        set { gameData.GacahCountAdsAdvanced = value; }
+    }
+
+    public int GachaCountAdsCommon
+    {
+        get { return gameData.GacahCountAdsCommon; }
+        set { gameData.GacahCountAdsCommon = value; }
+    }
+
+    public int GoldCountAds
+    { 
+        get { return gameData.GoldCountAds; }
+        set { gameData.GoldCountAds = value; }
+    }
+
+    public int SilverKeyCountAds
+    { 
+        get { return gameData.SilverKeyCountAds; }
+        set { gameData.SilverKeyCountAds = value; }
     }
 
     public int UserLevel
@@ -73,6 +109,17 @@ public class GameManager
         }
     }
 
+    public int Stamina
+    { 
+        get { return gameData.stamina; }
+        set
+        {
+            gameData.stamina = value;
+            SaveGame();
+            OnResourcesChanged?.Invoke();
+        }
+    }
+
     public ContinueData ContinueDatas
     {
         get { return gameData.ContinueDatas; }
@@ -94,6 +141,16 @@ public class GameManager
         get { return CurrentStageData.WaveArray[CurrentWaveIndex]; }
     }
 
+    public Dictionary<int, StageClearInfoData> StageClearInfoDic
+    { 
+        get { return gameData.StageClearInfoDic; }
+        set
+        {
+            gameData.StageClearInfoDic = value;
+            //Manager.Achivement.StageClear();
+            SaveGame();
+        }
+    }
 
 
 
@@ -137,9 +194,13 @@ public class GameManager
 
         if (LoadGame()) return;
 
+        PlayerPrefs.SetInt("ISFIRST", 1);
+        Character character = new Character();
+        character.SetInfo(Define.DEFAULT_PLAYER_ID);
+        character.isCurrentCharacter = true;
 
-
-
+        Characters = new List<Character>();
+        Characters.Add(character);
 
         CurrentStageData = Manager.DataM.StageDic[1];
         foreach (Data.StageData stage in Manager.DataM.StageDic.Values)
@@ -152,10 +213,63 @@ public class GameManager
             gameData.StageClearInfoDic.Add(stage.StageIndex, info);
         }
 
+        //초기 선물
+        FirstGift();
+
         isLoaded = true;
         SaveGame();
-
     }
+
+    public void ExchangeMaterial(MaterialData _data, int _count)
+    {
+        switch(_data.MaterialType)
+        {
+            case MaterialType.Dia:
+                Dia += _count;
+                break;
+
+            case MaterialType.Gold:
+                Gold += _count;
+                break;
+
+            case MaterialType.Stamina:
+                Stamina += _count;
+                break;
+            case MaterialType.BronzeKey:
+            case MaterialType.SilverKey:
+            case MaterialType.GoldKey:
+                    AddMaterialItem(_data.MaterialID, _count);
+                break;
+
+            case MaterialType.RandomScroll:
+                int randScroll = UnityEngine.Random.Range(Define.ID_WeaponScroll, Define.ID_BootsScroll);
+                AddMaterialItem(randScroll, _count);
+                break;
+
+            case MaterialType.WeaponScroll:
+            case MaterialType.GloveScroll:
+            case MaterialType.RingScroll:
+            case MaterialType.HelmetScroll:
+            case MaterialType.ArmorScroll:
+            case MaterialType.BootsScroll:
+                AddMaterialItem(_data.MaterialID, _count);
+                break;
+        }
+    }
+    public void FirstGift()
+    {
+        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_SILVER_KEY], 10);
+        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_GOLD_KEY], 30);
+        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_DIA], 1000);
+        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_GOLD], 10);
+        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_WeaponScroll], 10);
+        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_GloveScroll], 10);
+        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_RingScroll], 10);
+        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_HelmetScroll], 10);
+        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_ArmorScroll], 10);
+        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_BootsScroll], 10);
+    }
+
 
     public bool LoadGame()
     {
@@ -171,6 +285,16 @@ public class GameManager
         string jsonStr = File.ReadAllText(path);
         GameData data = JsonConvert.DeserializeObject<GameData>(jsonStr);
         if (data != null) gameData = data;
+
+        //가진게 있다면 벗기고, 다시 입힘
+        EquipedEquipments = new Dictionary<EquipmentType, Equipment>();
+        for(int i =0; i< OwnerEquipment.Count; i++)
+        {
+            if(OwnerEquipment[i].IsEquiped)
+            {
+                EquipItem(OwnerEquipment[i].EquipmentData.EquipmentType, OwnerEquipment[i]);
+            }
+        }
 
         isLoaded = true;
 
@@ -196,6 +320,16 @@ public class GameManager
     public void SetNextStage()
     {
         CurrentStageData = Manager.DataM.StageDic[CurrentStageData.StageIndex + 1];
+    }
+
+    public int GetMaxStageIndex()
+    {
+        foreach(StageClearInfoData clearInfo in StageClearInfoDic.Values)
+        {
+            if (clearInfo.MaxWaveIndex != 10) return clearInfo.StageIndex;
+        }
+
+        return 0;
     }
 
     public void ClearContinueData()
@@ -235,6 +369,20 @@ public class GameManager
         return new GemInfo(_type, Vector3.one);
     }
 
+    public void EquipItem(EquipmentType _type, Equipment _equipment)
+    {
+        if(EquipedEquipments.ContainsKey(_type))
+        {
+            EquipedEquipments[_type].IsEquiped = false;
+            EquipedEquipments.Remove(_type);
+        }
+
+        EquipedEquipments.Add(_type, _equipment);
+        _equipment.IsEquiped = true;
+        _equipment.IsConfirmed = true;
+
+        
+    }
 
     public void SortEquipment(EquipmentSortType sortType)
     {
@@ -248,6 +396,7 @@ public class GameManager
             OwnerEquipment = OwnerEquipment.OrderBy(item => item.Level).ThenBy(item => item.IsEquiped).ThenBy(item => item.EquipmentData.EquipmentGarde).ThenBy(item => item.EquipmentData.EquipmentType).ToList();
         }
     }
+
 
     public (int hp, int attack) GetCurrentCharacterStat()
     {
@@ -273,6 +422,80 @@ public class GameManager
             atkBonus += pair.Value.AttackBonus;
         }
         return (hpBonus, atkBonus);
+    }
+
+    public List<Equipment> DoGaCha(GachaType gachaType, int _count = 1)
+    {
+        List<Equipment> ret = new List<Equipment>();
+
+        for (int i = 0; i < _count; i++)
+        {
+            EquipmentGrade grade = GetRandomGrade(Define.COMMON_GACHA_GRADE_PROB);
+
+            switch (gachaType)
+            {
+                case GachaType.CommonGacha:
+                    grade = GetRandomGrade(Define.COMMON_GACHA_GRADE_PROB);
+                    //TODO : 업적 넣을거면 업적
+                    break;
+
+                case GachaType.AdvancedGacha:
+                    grade = GetRandomGrade(Define.ADVENCED_GACHA_GRADE_PROB);
+                    break;
+            }
+
+
+            List<GachaRateData> list = Manager.DataM.GachaTableDataDic[gachaType].GachaRateTable.Where(item => item.EquipGrade == grade).ToList();
+            int index = UnityEngine.Random.Range(0, list.Count);
+            int key = list[index].EquipmentID;
+
+            if(Manager.DataM.EquipmentDic.ContainsKey(key))
+            {
+                ret.Add(AddEquipment(key));
+            }
+        }
+
+        return ret;
+    }
+
+
+
+    public Equipment AddEquipment(int _key)
+    {
+        if (_key.Equals("None")) return null;
+        Equipment equip = new Equipment(_key);
+        equip.IsConfirmed = false;
+        OwnerEquipment.Add(equip);
+
+        //TODO : EquipmnetInfo Change
+
+        return equip;
+    }
+
+    public EquipmentGrade GetRandomGrade(float[] _prob)
+    {
+        float randomValue = UnityEngine.Random.value;
+        float sum = 0;
+
+        for(int i =0; i<=(int)EquipmentGrade.Epic; i++)
+        {
+            sum += _prob[i];
+            if (randomValue < sum)
+                return (EquipmentGrade)i;
+        }
+
+        return EquipmentGrade.Common;
+    }
+
+
+    public void AddMaterialItem(int _id, int _count)
+    {
+        if (ItemDic.ContainsKey(_id))
+            ItemDic[_id] += _count;
+        else
+            ItemDic[_id] = _count;
+
+        SaveGame();
     }
 }
 

@@ -23,6 +23,7 @@ public class DataManager
     public Dictionary<int, Data.MaterialData> MaterialDic { get; private set; } = new Dictionary<int, Data.MaterialData>();
     public Dictionary<int, Data.SpecialSkillData> SpecialSkillDic { get; private set; } = new Dictionary<int, Data.SpecialSkillData>();
     public Dictionary<int, Data.DropItemData> DropItemDic {get; private set;} = new Dictionary<int, Data.DropItemData>();
+    public Dictionary<Define.GachaType, Data.GachaTableData> GachaTableDataDic { get; private set; } = new Dictionary<Define.GachaType, Data.GachaTableData>();
     
 
 
@@ -39,7 +40,7 @@ public class DataManager
         MaterialDic = LoadJson<Data.MaterialDataLoader, int, Data.MaterialData>("MaterialData.json").MakeDict();
         SpecialSkillDic = LoadJson<Data.SpecialSkillDataLoader, int, Data.SpecialSkillData>("SpecialSkillData.json").MakeDict();
         DropItemDic = LoadJson<Data.DropItemDataLoader, int, Data.DropItemData>("DropItemData.json").MakeDict();
-
+        GachaTableDataDic = LoadJson<Data.GachaDataLoader, Define.GachaType, Data.GachaTableData>("GachaData.json").MakeDict();
     }
 
     Loader LoadJson<Loader, key, value>(string _path) where Loader : ILoader<key, value>

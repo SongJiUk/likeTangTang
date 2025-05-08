@@ -8,4 +8,14 @@ public class SoundManager
     {
 
     }
+
+    public void PlayButtonClick()
+    {
+
+    }
+
+    public void PlayPopupClose()
+    {
+
+    }
 }

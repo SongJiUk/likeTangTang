@@ -12,10 +12,18 @@ public class GameData
     public string userName = "Player";
     public int gold = 0;
     public int dia = 0;
+    public int stamina = 0;
+
+    //하루에 한번 초기화
+    public int GacahCountAdsAdvanced = 1;
+    public int GacahCountAdsCommon = 1;
+    public int GoldCountAds = 1;
+    public int SilverKeyCountAds = 3;
 
     // TODO : 모든 정보가 다 들어간다고 생각하면 됌. 
     public ContinueData ContinueDatas = new ContinueData();
     public StageData CurrentStageData = new StageData();
+    public List<Character> Characters = new List<Character>();
 
     public List<Equipment> OwnedEquipments = new List<Equipment>();
     public Dictionary<Define.EquipmentType, Equipment> EquipedEquipments = new Dictionary<Define.EquipmentType, Equipment>();

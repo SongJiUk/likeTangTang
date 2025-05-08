@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class UI_EquipmentPopup : UI_Base
+public class UI_EquipmentPopup : UI_Popup
 {
     List<UI_EquipItem> slotPool = new List<UI_EquipItem>();
     List<UI_MaterialItem> itemPool = new List<UI_MaterialItem>();
@@ -71,9 +71,9 @@ public class UI_EquipmentPopup : UI_Base
         TextsType = typeof(Texts);
 
         BindObject(gameObjectsType);
-        BindObject(ButtonsType);
-        BindObject(ImagesType);
-        BindObject(TextsType);
+        BindButton(ButtonsType);
+        BindImage(ImagesType);
+        BindText(TextsType);
 
         GetObject(gameObjectsType, (int)GameObjects.CharacterRedDotObject).SetActive(false);
         GetObject(gameObjectsType, (int)GameObjects.MergeButtonRedDotObject).SetActive(false);
@@ -134,8 +134,9 @@ public class UI_EquipmentPopup : UI_Base
 
 
         var (hp, attack) = Manager.GameM.GetCurrentCharacterStat();
-        GetText(TextsType, (int)Texts.AttackValueText).text = (Manager.GameM.player.Attack + attack).ToString();
-        GetText(TextsType, (int)Texts.HealthValueText).text = (Manager.GameM.player.MaxHp + hp).ToString();
+        //TODO : Player를 먼저 Setting해줘야 될것 같음
+        GetText(TextsType, (int)Texts.AttackValueText).text = (Manager.GameM.CurrentCharacter.Attack + attack).ToString();
+        GetText(TextsType, (int)Texts.HealthValueText).text = (Manager.GameM.CurrentCharacter.MaxHp + hp).ToString();
 
 
         SetItem();

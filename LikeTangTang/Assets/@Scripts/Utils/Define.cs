@@ -24,6 +24,41 @@ public static class Define
         { 30001, 0.6f},
         { 30002, 1f}
     };
+
+    public static int STAGE_GOLD_UP = 1000;
+    public static int ID_GOLD = 60000;
+    public static int ID_DIA = 60001;
+    public static int ID_STAMINA = 60002;
+    public static int ID_WeaponScroll = 61000;
+    public static int ID_GloveScroll = 61001;
+    public static int ID_RingScroll = 61002;
+    public static int ID_HelmetScroll = 61003;
+    public static int ID_ArmorScroll = 61004;
+    public static int ID_BootsScroll = 61005;
+    public static int ID_BORONZE_KEY = 62000;
+    public static int ID_SILVER_KEY = 62001;
+    public static int ID_GOLD_KEY = 62002;
+    public static int ID_CLOVER = 62003;
+
+    public static readonly float[] COMMON_GACHA_GRADE_PROB = new float[]
+    {
+        0,
+        0.6f, //Common
+        0.3f, //Uncommon
+        0.09f, // rare
+        0.01f // epic
+    };
+
+    public static readonly float[] ADVENCED_GACHA_GRADE_PROB = new float[]
+    {
+        0,
+        0.35f,
+        0.4f,
+        0.15f,
+        0.1f
+    };
+
+
     public enum ItemType
     {
         None,
@@ -157,14 +192,26 @@ public static class Define
     {
         None,
         Normal,
+        Common,
+        UnCommon,
+        Rare,
+        Epic,
+        Unique
 
+    }
+
+    public enum GachaType
+    {
+        None = -1,
+        CommonGacha = 0,
+        AdvancedGacha
     }
 
     public enum EquipmentGrade
     {
-        None,
-        Common,
-        Uncommon,
+        None = -1,
+        Common = 0,
+        UnCommon,
         Rare,
         Epic,
         Epic1,
@@ -191,6 +238,7 @@ public static class Define
         BronzeKey,
         SilverKey,
         GoldKey,
+        Clover,
         RandomScroll,
         AllRandomEquipmentBox,
         RandomEquipmentBox,
@@ -285,7 +333,7 @@ public static class Define
             EquipGradeStyles = new Dictionary<EquipmentGrade, EquipmentUIStyle>()
             {
                 {EquipmentGrade.Common, new EquipmentUIStyle(Utils.HexToColor("A2A2A2"), Utils.HexToColor("AC9B83"), Color.clear)},
-                {EquipmentGrade.Uncommon, new EquipmentUIStyle(Utils.HexToColor("57FF0B"), Utils.HexToColor("73EC4E"), Color.clear)},
+                {EquipmentGrade.UnCommon, new EquipmentUIStyle(Utils.HexToColor("57FF0B"), Utils.HexToColor("73EC4E"), Color.clear)},
                 {EquipmentGrade.Rare, new EquipmentUIStyle(Utils.HexToColor("2471E0"), Utils.HexToColor("0F84FF"), Color.clear)},
                 {EquipmentGrade.Epic, new EquipmentUIStyle(Utils.HexToColor("9F37F2"), Utils.HexToColor("B740EA"), Utils.HexToColor("D094FF"))},
                 {EquipmentGrade.Epic1, new EquipmentUIStyle(Utils.HexToColor("9F37F2"), Utils.HexToColor("B740EA"), Utils.HexToColor("D094FF"))},

@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Assets\@Scripts\Contents\Skills\Repeat\SpectralSlash.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\SkillComponent.cs" />
+    <Compile Include="Assets\@Scripts\UI\UI_MaterialItem.cs" />
     <Compile Include="Assets\@Scripts\Controllers\GridController.cs" />
     <Compile Include="Assets\@Scripts\Manager\Contents\ObjectManager.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\TimeStopBombZone.cs" />
@@ -125,6 +126,8 @@
     <Compile Include="Assets\_ExternalModule\Favorites\Common\Scripts\FG_GameObjectGUIDs.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\UIManager.cs" />
     <Compile Include="Assets\@Scripts\Data\GameData.cs" />
+    <Compile Include="Assets\@Scripts\Contents\Equipment.cs" />
+    <Compile Include="Assets\@Scripts\UI\UI_EquipItem.cs" />
     <Compile Include="Assets\@Scripts\Manager\Contents\GameManager.cs" />
     <Compile Include="Assets\@Scripts\Controllers\CameraController.cs" />
     <Compile Include="Assets\@Scripts\Controllers\DropItem\DropItemController.cs" />
@@ -137,9 +140,12 @@
     <Compile Include="Assets\@Scripts\UI\Popup\UI_SkillSelectPopup.cs" />
     <Compile Include="Assets\@Scripts\Test\UI_Test.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\CustomSceneManager.cs" />
-    <Compile Include="Assets\@Scripts\Contents\Equipment.cs" />
-    <Compile Include="Assets\@Scripts\UI\UI_EquipItem.cs" />
-    <Compile Include="Assets\@Scripts\UI\UI_MaterialItem.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_EquipmentInfoPopup.cs" />
+    <Compile Include="Assets\@Scripts\Manager\AdManager.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_GachaResultsPopup.cs" />
+    <Compile Include="Assets\@Scripts\Contents\AnimationEventDetector.cs" />
+    <Compile Include="Assets\@Scripts\UI\UI_ParticlePlay.cs" />
+    <Compile Include="Assets\@Scripts\Contents\Character.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -1160,6 +1166,14 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityUIExtensions">
+      <HintPath>Library\ScriptAssemblies\UnityUIExtensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityUIExtensions.editor">
+      <HintPath>Library\ScriptAssemblies\UnityUIExtensions.editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

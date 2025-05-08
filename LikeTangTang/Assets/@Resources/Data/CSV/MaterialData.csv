@@ -12,6 +12,7 @@ MaterialID,MaterialType,MaterialGrade,NameTextID,Description,SpriteName
 62000,BronzeKey,Common,브론즈 키,일반 장비 상자를 오픈할 때 사용,Key_Bronze.sprite
 62001,SilverKey,Rare,실버 키,중급 장비 상자를 오픈할 때 사용,Key_Silver.sprite
 62002,GoldKey,Epic,골드 키,상급 장비 상자를 오픈할 떄 사용,Key_Gold.sprite
+62003,Clover,Common,부활권,캐릭터 부활시 소모,Clover.sprite
 63000,RandomScroll,Common,랜덤 스크롤,랜덤한 강화 스크롤로 교환,Scroll_Random.sprite
 63001,AllRandomEquipmentBox,Common,ALL 랜덤 스크롤,랜덤한 장비를 얻을 수 있는 상자,EquipmentBox_AllRandom.sprite
 63002,CommonEquipmentBox,Common,일반 장비상자,일반 등급의 장비를 얻을 수 있는 상자,EquipmentBox_Random.sprite

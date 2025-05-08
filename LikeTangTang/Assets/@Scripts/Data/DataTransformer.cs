@@ -43,7 +43,7 @@ public class DataTransformer : EditorWindow
         ParseMaterialData("MaterialData");
         ParseSupportSkillData("SpecialSkillData");
         ParseDropItemData("DropItemData");
-        // ParseGachaDataData("GachaTable"); // DictionaryŰ�� ���� �����Ͱ� ���� #Neo
+        ParseGachaData("GachaData"); // DictionaryŰ�� ���� �����Ͱ� ���� #Neo
         //ParseStagePackageData("StagePackage");
         // ParseMissionData("Mission");
         // ParseAchievementData("Achievement");
@@ -507,81 +507,66 @@ public class DataTransformer : EditorWindow
         AssetDatabase.Refresh();
     }
 
-    //     static void ParseGachaDataData(string filename)
-    //     {
-    //         Dictionary<GachaType, List<GachaRateData>> gachaTable = ParseGachaRateData("GachaTable");
-    //         GachaDataLoader loader = new GachaDataLoader();
+    static void ParseGachaData(string filename)
+    {
+        Dictionary<GachaType, List<GachaRateData>> gachaTable = ParseGachaRateData("GachaData");
+        GachaDataLoader loader = new GachaDataLoader();
 
-    //         #region ExcelData
-    //         /*        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/Excel/{filename}Data.csv").Split("\n");
+        #region ExcelData
+        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/CSV/{filename}.csv").Split("\n");
 
-    //                 for (int y = 1; y < lines.Length; y++)
-    //                 {
-    //                     string[] row = lines[y].Replace("\r", "").Split(',');
-    //                     if (row.Length == 0)
-    //                         continue;
-    //                     if (string.IsNullOrEmpty(row[0]))
-    //                         continue;
+        for (int i = 0; i < gachaTable.Count + 1; i++)
+        {
+            GachaTableData gachaData = new GachaTableData()
+            {
+                Type = (GachaType)i,
+            };
+            if (gachaTable.TryGetValue(gachaData.Type, out List<GachaRateData> gachaRate))
+                gachaData.GachaRateTable.AddRange(gachaRate);
 
-    //                     int i = 0;
+            loader.list.Add(gachaData);
+        }
+        #endregion
 
-    //                     GachaData gacha = new GachaData();
-    //                     gacha.DropItemType = ConvertValue<Define.DropItemType>(row[i++]);
+        string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
+        File.WriteAllText($"{Application.dataPath}/@Resources/Data/Json/{filename}.json", jsonStr);
+        AssetDatabase.Refresh();
+    }
 
-    //                     loader.Gachas.Add(gacha);
-    //                 }*/
-    //         for (int i = 0; i < gachaTable.Count+1; i++)
-    //         {
-    //             GachaTableData gachaData = new GachaTableData()
-    //             {
-    //                 Type = (GachaType)i,
-    //             };
-    //             if (gachaTable.TryGetValue(gachaData.Type, out List<GachaRateData> gachaRate))
-    //                 gachaData.GachaRateTable.AddRange(gachaRate);
+    static Dictionary<GachaType, List<GachaRateData>> ParseGachaRateData(string filename)
+    {
+        Dictionary<GachaType, List<GachaRateData>> gachaTable = new Dictionary<GachaType, List<GachaRateData>>();
 
-    //             loader.GachaTable.Add(gachaData);
-    //         }
-    //         #endregion
+     
+        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/CSV/{filename}.csv").Split("\n");
 
-    //         string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
-    //         File.WriteAllText($"{Application.dataPath}/@Resources/Data/JsonData/{filename}Data.json", jsonStr);
-    //         AssetDatabase.Refresh();
-    //     }
+        for (int y = 1; y < lines.Length; y++)
+        {
+            string[] row = lines[y].Replace("\r", "").Split(',');
+            if (row.Length == 0)
+                continue;
 
-    //     static Dictionary<GachaType, List<GachaRateData>> ParseGachaRateData(string filename)
-    //     {
-    //         Dictionary<GachaType, List<GachaRateData>> gachaTable = new Dictionary<GachaType, List<GachaRateData>>();
+            if (string.IsNullOrEmpty(row[0]))
+                continue;
 
-    //         #region ExcelData
-    //         string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/Excel/{filename}Data.csv").Split("\n");
+            int i = 0;
+            GachaType dropType = (GachaType)Enum.Parse(typeof(GachaType), row[i++]);
+            GachaRateData rateData = new GachaRateData()
+            {
+                EquipmentID = int.Parse(row[i++]),
+                GachaRate = float.Parse(row[i++]),
+                EquipGrade = ConvertValue<EquipmentGrade>(row[i++]),
+            };
 
-    //         for(int y=1; y<lines.Length; y++)
-    //         {
-    //             string[] row = lines[y].Replace("\r", "").Split(',');
-    //             if (row.Length == 0)
-    //                 continue;
+            if (gachaTable.ContainsKey(dropType) == false)
+                gachaTable.Add(dropType, new List<GachaRateData>());
 
-    //             if (string.IsNullOrEmpty(row[0]))
-    //                 continue;
+            gachaTable[dropType].Add(rateData);
+        }
+        
 
-    //             int i = 0;
-    //             GachaType dropType = (GachaType)Enum.Parse(typeof(GachaType), row[i++]);
-    //             GachaRateData rateData = new GachaRateData()
-    //             {
-    //                 EquipmentID = row[i++],
-    //                 GachaRate = float.Parse(row[i++]),
-    //                 EquipGrade = ConvertValue<EquipmentGrade>(row[i++]),
-    //             };
-
-    //             if (gachaTable.ContainsKey(dropType) == false)
-    //                 gachaTable.Add(dropType, new List<GachaRateData>());
-
-    //             gachaTable[dropType].Add(rateData);
-    //         }
-    //         #endregion
-
-    //         return gachaTable;
-    //     }
+        return gachaTable;
+    }
 
     //     static void ParseStagePackageData(string filename)
     //     {

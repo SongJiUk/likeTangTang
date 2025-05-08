@@ -17,6 +17,8 @@ public class SkillComponent : MonoBehaviour
 
 
     public Dictionary<Define.SkillType, int> SavedBattleSkill = new Dictionary<Define.SkillType, int>();
+    //TODO : 서포트 스킬(진화스킬)
+
     public T AddSkill<T>(Vector3 _pos, Transform _parent = null ) where T : SkillBase
     {
         //[ ] 나중에 templateID로 바꾸기.

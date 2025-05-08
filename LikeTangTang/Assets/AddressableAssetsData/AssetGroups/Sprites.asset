@@ -362,6 +362,181 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
+  - m_GUID: 077757e715eb0f548b4078083086b0d7
+    m_Address: Weapon_ElectricShock.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 3c66405d8bd3c854ca9e756ef06a9d7e
+    m_Address: Weapon_ElectronicField.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: a10fc8257842c714fb7bb5a949c8e7da
+    m_Address: Weapon_EnergyRing.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 5ed3992875b47234997a4c2f2e3ff3b1
+    m_Address: Weapon_GravityBomb.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: d8c1d62529ca4556bda0098688e208a5
+    m_Address: Weapon_OrbitalBlades.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 545ff757b9164563ba87fad97f59482a
+    m_Address: Weapon_PlasmaShot.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 9b58b32968506c94b8b8e7d97f67458c
+    m_Address: Weapon_PlasmaSpinner.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: be91cc6611cb4cf0ba8fec00dc9c964f
+    m_Address: Weapon_SpectralSlash.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: c9c7be67c92449a49875cf1fd3dc1104
+    m_Address: Weapon_SuicideDrone.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 9e44e25f56ec79241b0d287e9284f45c
+    m_Address: Weapon_TimeStopBomb.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 61c8ddbbfaeac964d844ab24fb45954f
+    m_Address: Boots_Icon.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: dc274b6b281f0444cb5d70115e472ac0
+    m_Address: Ring_Icon.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 24e1274f519101142b6d19cc6f75f3ef
+    m_Address: Helmet_Icon.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 679a532b29a4dba418dec40bdc6144b9
+    m_Address: Armor_Icon.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 96fd330c4ac8480469a21f4be9e313a2
+    m_Address: Weapon_Icon.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 2265cc6ca5cc64946aa7f53ee6cede1f
+    m_Address: Glove_Icon.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: a4e47f7830003024bbd9268069ee0f16
+    m_Address: Scroll_Glove.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: de215409d5886f4468fd16850763305c
+    m_Address: Scroll_Belt.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 65401930e10844147974e1faa70e7f8a
+    m_Address: Scroll_Ring.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: bad05f32d0e27a24486798f00560b95e
+    m_Address: Scroll_Weapon.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: c20e474b31b78424eae49ddacd3c9ba1
+    m_Address: Scroll_Random.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: c3a4cc76e13635143b5bd5f53cfd810c
+    m_Address: Scroll_Boots.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: b2029118fbea1a642a5ed67e5d6822ad
+    m_Address: Scroll_Armor.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 63fb60850e69e4d4597124076586c260
+    m_Address: Key_Silver.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 0aaf453f46947e0478c00d1a707579b3
+    m_Address: Key_Bronze.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 461b84244ce10a84cb03535644111498
+    m_Address: Clover.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: a49a1a578b6b6e64bb26a70a8f38bac8
+    m_Address: Key_Gold.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: adc58ede0ed89aa4f9e8a26a211feae8
+    m_Address: Scroll_Helmet.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 310246dd7ded6b74d901fd3b9f28f939
+    m_Address: EnchantStone_Armor.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 3efbb8a6d0b7c884d8e6c752ca07e3ce
+    m_Address: EnchantStone_Ring.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 78c622a42c40af24a98e5749436576cc
+    m_Address: EnchantStone_Glove.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: ef33f3455860f1c43b9b6ecbeff10209
+    m_Address: EnchantStone_Belt.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 785f16652bc56bb4baa9189e9826e8de
+    m_Address: EnchantStone_Weapon.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 2efdbd0b876049b4a9da8cc0115e69b6
+    m_Address: EnchantStone_Boots.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 787caeb8fac403a4f9ca25d23468a3f7
+    m_Address: EnchantStone_Helmet.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

@@ -105,8 +105,16 @@
       "SpriteName": "Key_Gold.sprite"
     },
     {
-      "MaterialID": 63000,
+      "MaterialID": 62003,
       "MaterialType": 14,
+      "MaterialGrade": 1,
+      "NameTextID": "부활권",
+      "Description": "캐릭터 부활시 소모",
+      "SpriteName": "Clover.sprite"
+    },
+    {
+      "MaterialID": 63000,
+      "MaterialType": 15,
       "MaterialGrade": 1,
       "NameTextID": "랜덤 스크롤",
       "Description": "랜덤한 강화 스크롤로 교환",
@@ -114,7 +122,7 @@
     },
     {
       "MaterialID": 63001,
-      "MaterialType": 15,
+      "MaterialType": 16,
       "MaterialGrade": 1,
       "NameTextID": "ALL 랜덤 스크롤",
       "Description": "랜덤한 장비를 얻을 수 있는 상자",
@@ -122,7 +130,7 @@
     },
     {
       "MaterialID": 63002,
-      "MaterialType": 17,
+      "MaterialType": 18,
       "MaterialGrade": 1,
       "NameTextID": "일반 장비상자",
       "Description": "일반 등급의 장비를 얻을 수 있는 상자",
@@ -130,7 +138,7 @@
     },
     {
       "MaterialID": 63003,
-      "MaterialType": 18,
+      "MaterialType": 19,
       "MaterialGrade": 2,
       "NameTextID": "고급 장비상자",
       "Description": "고급 등급의 장비를 얻을 수 있는 상자",
@@ -138,7 +146,7 @@
     },
     {
       "MaterialID": 63004,
-      "MaterialType": 19,
+      "MaterialType": 20,
       "MaterialGrade": 3,
       "NameTextID": "희귀 장비상자",
       "Description": "희귀 등급의 장비를 얻을 수 있는 상자",
@@ -146,7 +154,7 @@
     },
     {
       "MaterialID": 63005,
-      "MaterialType": 20,
+      "MaterialType": 21,
       "MaterialGrade": 4,
       "NameTextID": "에픽 장비상자",
       "Description": "에픽 등급의 장비를 얻을 수 있는 상자",
@@ -154,15 +162,15 @@
     },
     {
       "MaterialID": 63006,
-      "MaterialType": 21,
-      "MaterialGrade": 5,
+      "MaterialType": 22,
+      "MaterialGrade": 6,
       "NameTextID": "레전드 장비상자",
       "Description": "레전드 등급의 장비를 얻을 수 있는 상자",
       "SpriteName": "EquipmentBox_Random.sprite"
     },
     {
       "MaterialID": 64000,
-      "MaterialType": 22,
+      "MaterialType": 23,
       "MaterialGrade": 4,
       "NameTextID": "무기 강화석",
       "Description": "무기를 합성할 때 사용",
@@ -170,15 +178,15 @@
     },
     {
       "MaterialID": 64001,
-      "MaterialType": 22,
-      "MaterialGrade": 5,
+      "MaterialType": 23,
+      "MaterialGrade": 6,
       "NameTextID": "무기 강화석",
       "Description": "무기를 합성할 때 사용",
       "SpriteName": "EnchanStone_Weapon.sprite"
     },
     {
       "MaterialID": 64002,
-      "MaterialType": 23,
+      "MaterialType": 24,
       "MaterialGrade": 4,
       "NameTextID": "장갑 강화석",
       "Description": "장갑을 합성할 때 사용",
@@ -186,15 +194,15 @@
     },
     {
       "MaterialID": 64003,
-      "MaterialType": 23,
-      "MaterialGrade": 5,
+      "MaterialType": 24,
+      "MaterialGrade": 6,
       "NameTextID": "장갑 강화석",
       "Description": "장갑을 합성할 때 사용",
       "SpriteName": "EnchanStone_Glove.sprite"
     },
     {
       "MaterialID": 64004,
-      "MaterialType": 24,
+      "MaterialType": 25,
       "MaterialGrade": 4,
       "NameTextID": "반지 강화석",
       "Description": "반지를 합성할 때 사용",
@@ -202,15 +210,15 @@
     },
     {
       "MaterialID": 64005,
-      "MaterialType": 24,
-      "MaterialGrade": 5,
+      "MaterialType": 25,
+      "MaterialGrade": 6,
       "NameTextID": "반지 강화석",
       "Description": "반지를 합성할 때 사용",
       "SpriteName": "EnchanStone_Rign.sprite"
     },
     {
       "MaterialID": 64006,
-      "MaterialType": 25,
+      "MaterialType": 26,
       "MaterialGrade": 4,
       "NameTextID": "헬멧 강화석",
       "Description": "헬멧를 합성할 때 사용",
@@ -218,15 +226,15 @@
     },
     {
       "MaterialID": 64007,
-      "MaterialType": 25,
-      "MaterialGrade": 5,
+      "MaterialType": 26,
+      "MaterialGrade": 6,
       "NameTextID": "헬멧 강화석",
       "Description": "헬멧를 합성할 때 사용",
       "SpriteName": "EnchanStone_Helmet.sprite"
     },
     {
       "MaterialID": 64008,
-      "MaterialType": 26,
+      "MaterialType": 27,
       "MaterialGrade": 4,
       "NameTextID": "아머 강화석",
       "Description": "아머를 합성할 때 사용",
@@ -234,15 +242,15 @@
     },
     {
       "MaterialID": 64009,
-      "MaterialType": 26,
-      "MaterialGrade": 5,
+      "MaterialType": 27,
+      "MaterialGrade": 6,
       "NameTextID": "아머 강화석",
       "Description": "아머를 합성할 때 사용",
       "SpriteName": "EnchanStone_Armor.sprite"
     },
     {
       "MaterialID": 64010,
-      "MaterialType": 27,
+      "MaterialType": 28,
       "MaterialGrade": 4,
       "NameTextID": "부츠 강화석",
       "Description": "부츠를 합성할 때 사용",
@@ -250,8 +258,8 @@
     },
     {
       "MaterialID": 64011,
-      "MaterialType": 27,
-      "MaterialGrade": 5,
+      "MaterialType": 28,
+      "MaterialGrade": 6,
       "NameTextID": "부츠 강화석",
       "Description": "부츠를 합성할 때 사용",
       "SpriteName": "EnchanStone_Boots.sprite"

@@ -52,11 +52,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: dbb78276004ed4b9c86444e784ca84a8
-    m_Address: UI_ShopPopup
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
   - m_GUID: 29a22acaeac8b4fe5848f41794632d68
     m_Address: UI_TitleScene
     m_ReadOnly: 0
@@ -69,6 +64,26 @@ MonoBehaviour:
     - PrevLoad
   - m_GUID: bd5baa2131254d14fbb305ae4c6dbdaa
     m_Address: UI_ShopPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: d70cfb68c693d5b4c945321314dcbe5f
+    m_Address: UI_MaterialItem
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: aab35252266fa2944be3715a8ef4cb94
+    m_Address: UI_GachaResultsPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 2f89d00a5e7684247878a4f8ddfb9ee8
+    m_Address: UI_EquipmentInfoPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: b3334937219623f4e893cab79c429060
+    m_Address: UI_EquipItem
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad

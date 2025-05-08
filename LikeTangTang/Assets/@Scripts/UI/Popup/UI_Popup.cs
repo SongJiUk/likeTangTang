@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class UI_Popup : UI_Base
 {
-    // Start is called before the first frame update
-    void Start()
+    public override bool Init()
     {
-        
-    }
+        if (!base.Init()) return false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return true;
     }
 }
