@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -190,7 +191,12 @@ public static class Utils
         ColorUtility.TryParseHtmlString("#" + _color, out parsedColor);
 
         return parsedColor;
-    
+    }
+
+    public static int GetUpgradeNumber(Enum _grade)
+    {
+        var match = Regex.Match(_grade.ToString(), @"\d+");
+        return match.Success ? int.Parse(match.Value) : 0;
     }
 
 }

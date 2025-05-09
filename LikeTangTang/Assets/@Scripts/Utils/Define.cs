@@ -222,6 +222,18 @@ public static class Define
         Unique3
     }
 
+    public static int GetGradeNum(EquipmentGrade _grade)
+    {
+        return _grade switch
+        {
+            EquipmentGrade.UnCommon => 0,
+            EquipmentGrade.Rare => 1,
+            EquipmentGrade.Epic or EquipmentGrade.Epic1 or EquipmentGrade.Epic2 => 2,
+            EquipmentGrade.Unique or EquipmentGrade.Unique1 or EquipmentGrade.Unique2 or EquipmentGrade.Unique3 => 3,
+            _ => -1
+        };
+    }
+
     public enum MaterialType
     {
         None,

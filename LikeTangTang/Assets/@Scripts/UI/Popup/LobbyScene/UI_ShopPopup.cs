@@ -179,12 +179,12 @@ public class UI_ShopPopup : UI_Popup
 
     void OnClickAdvancedBoxOpenButton()
     {
-
+        Manager.UiM.ShowToast("열쇠가 없다");
     }
 
     void OnClickAdvancedBoxTenOpenButton()
     {
-
+        Manager.UiM.ShowToast("열쇠가 없다");
     }
 
     //일반 장비

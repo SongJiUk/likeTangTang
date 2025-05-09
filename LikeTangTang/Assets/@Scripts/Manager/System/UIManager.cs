@@ -17,7 +17,7 @@ public class UIManager
 {
     UI_Base ui_Base;
     Stack<UI_Popup> popupStack = new Stack<UI_Popup>();
-
+ 
     UI_Scene sceneUI = null;
     public UI_Scene SceneUI { get { return sceneUI; } }
 
@@ -50,6 +50,7 @@ public class UIManager
     //{
     //    return ui_Base as T;
     //}
+
 
 
     public T ShowSceneUI<T>(string _name = null) where T : UI_Scene
@@ -86,6 +87,21 @@ public class UIManager
     }
 
     
+    public UI_Toast ShowToast(string _detail)
+    {
+        string name = typeof(UI_Toast).Name;
+        GameObject go = Manager.ResourceM.Instantiate(name, _pooling : true);
+        UI_Toast toast = go.GetOrAddComponent<UI_Toast>();
+        toast.SetInfo(_detail);
+        go.transform.SetParent(Root.transform);
+
+        return toast;
+    }
+
+    public void CloseToast(UI_Toast _toast)
+    {
+        Manager.ResourceM.Destory(_toast.gameObject);
+    }
 
 
     public void ClosePopup(UI_Popup _popup)
@@ -99,6 +115,7 @@ public class UIManager
         }
 
         Manager.SoundM.PlayPopupClose();
+        ClosePopup();
     }
 
     public void ClosePopup()

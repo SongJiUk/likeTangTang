@@ -80,6 +80,7 @@ public class UI_LobbyScene : UI_Scene
         ui_BattlePopup.gameObject.SetActive(false);
         ui_ShopPopup.gameObject.SetActive(false);
         ui_EquipmentPopup.gameObject.SetActive(false);
+        equipmentInfoPopup.gameObject.SetActive(false);
     }
     void OnClickEquipmentToggle()
     {

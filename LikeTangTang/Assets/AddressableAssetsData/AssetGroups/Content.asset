@@ -16,7 +16,22 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 94163b93d7bb24f928019105ae174de0
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 4b62d5d77fdd648a8a3a33abce39e51f
+    m_Address: Grove_02.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 9c9c36e45a0554eb3bf1066a9bcfca9c
+    m_Address: Grove_01.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 7eddb478934a74b25ba2a61a29e4f0f0
+    m_Address: Grove_03.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

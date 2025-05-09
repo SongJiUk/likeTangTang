@@ -65,7 +65,7 @@ public class UI_EquipItem : UI_Base
         BindButton(ButtonsType);
 
         GetButton(ButtonsType, (int)Buttons.EquipmentGradeBackgroundImage).gameObject.BindEvent(OnClickEquipItemButton);
-        
+        GetObject(gameObjectsType, (int)GameObjects.SpecialImage).SetActive(false);
 
         return true;
 
@@ -83,11 +83,7 @@ public class UI_EquipItem : UI_Base
         GetImage(ImagesType, (int)Images.EquipmentEnforceBackgroundImage).color = style.BgColor;
 
         #region Epic1 -> 1 Unique2 -> 2
-        string grade = Equipment.EquipmentData.EquipmentGarde.ToString();
-        int num = 0;
-        Match match = Regex.Match(grade, @"\d+");
-        if (match.Success)
-            num = int.Parse(match.Value);
+        int num = Utils.GetUpgradeNumber(Equipment.EquipmentData.EquipmentGarde);
 
         if (num == 0)
         {
