@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_BattlePopup : UI_Base
+public class UI_BattlePopup : UI_Popup
 {
-
+    private void OnEnable()
+    {
+        StartCoroutine(CoCheckPopup());
+    }
     public enum Toggles
     {
         GameStartToggle
@@ -29,5 +32,16 @@ public class UI_BattlePopup : UI_Base
     protected override void RefreshUI()
     {
         
+    }
+
+    IEnumerator CoCheckPopup()
+    {
+        yield return new WaitForEndOfFrame();
+        if (PlayerPrefs.GetInt("ISFIRST") == 1)
+        {
+            //Managers.UI.ShowPopupUI<UI_BeginnerSupportRewardPopup>();
+            PlayerPrefs.SetInt("ISFIRST", 0);
+            PlayerPrefs.Save();
+        }
     }
 }

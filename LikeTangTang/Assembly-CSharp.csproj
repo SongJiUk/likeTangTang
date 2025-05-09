@@ -66,6 +66,7 @@
     <Compile Include="Assets\@Scripts\Contents\Skills\TimeStopBombZone.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\Repeat\RepeatSkill.cs" />
     <Compile Include="Assets\@Scripts\Controllers\DropItem\MagnetController.cs" />
+    <Compile Include="Assets\@Scripts\UI\UI_ParticlePlay.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\Repeat\SuicideDrone.cs" />
     <Compile Include="Assets\@Scripts\Controllers\MapTileController.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\ResourceManager.cs" />
@@ -75,8 +76,8 @@
     <Compile Include="Assets\@Scripts\UI\UI_Base.cs" />
     <Compile Include="Assets\@Scripts\Scenes\GameScene.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_GameResultPopup.cs" />
-    <Compile Include="Assets\@Scripts\Controllers\EliteMonsterController.cs" />
     <Compile Include="Assets\@Scripts\UI\Scene\UI_LobbyScene.cs" />
+    <Compile Include="Assets\@Scripts\Controllers\EliteMonsterController.cs" />
     <Compile Include="Assets\@Scripts\Manager\Contents\PoolManager.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\Repeat\EnergyRing.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\SkillBase.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_EquipmentPopup.cs" />
     <Compile Include="Assets\@Scripts\Controllers\CreatureController.cs" />
     <Compile Include="Assets\@Scripts\UI\UI_EventHandler.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_GachaResultsPopup.cs" />
     <Compile Include="Assets\@Scripts\Data\ContinueData.cs" />
     <Compile Include="Assets\@Scripts\Data\Data.Contents.cs" />
     <Compile Include="Assets\@Scripts\Data\StageClearInfoData.cs" />
@@ -106,9 +108,11 @@
     <Compile Include="Assets\@Scripts\Contents\Skills\Repeat\TimeStopBomb.cs" />
     <Compile Include="Assets\@Scripts\Manager\Contents\SpawnManager.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\DataManager.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_EquipmentInfoPopup.cs" />
     <Compile Include="Assets\@Scripts\UI\UI_SkillCardItem.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\TimeManager.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\SoundManager.cs" />
+    <Compile Include="Assets\@Scripts\Manager\AdManager.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\UpdateManager.cs" />
     <Compile Include="Assets\@Scripts\Controllers\MonsterController.cs" />
     <Compile Include="Assets\@Scripts\Map.cs" />
@@ -124,6 +128,7 @@
     <Compile Include="Assets\@Scripts\Contents\Skills\Repeat\Projectile\FireBall.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_ShopPopup.cs" />
     <Compile Include="Assets\_ExternalModule\Favorites\Common\Scripts\FG_GameObjectGUIDs.cs" />
+    <Compile Include="Assets\@Scripts\Contents\Character.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\UIManager.cs" />
     <Compile Include="Assets\@Scripts\Data\GameData.cs" />
     <Compile Include="Assets\@Scripts\Contents\Equipment.cs" />
@@ -134,18 +139,14 @@
     <Compile Include="Assets\@Scripts\Contents\Skills\Repeat\ElectricShock.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\Repeat\GravityBomb.cs" />
     <Compile Include="Assets\@Scripts\Controllers\BaseController.cs" />
+    <Compile Include="Assets\@Scripts\Contents\AnimationEventDetector.cs" />
     <Compile Include="Assets\@Scripts\Controllers\DropItem\PotionController.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\Repeat\OrbitalBlades.cs" />
     <Compile Include="Assets\@Scripts\Manager\Manager.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_SkillSelectPopup.cs" />
     <Compile Include="Assets\@Scripts\Test\UI_Test.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\CustomSceneManager.cs" />
-    <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_EquipmentInfoPopup.cs" />
-    <Compile Include="Assets\@Scripts\Manager\AdManager.cs" />
-    <Compile Include="Assets\@Scripts\UI\Popup\UI_GachaResultsPopup.cs" />
-    <Compile Include="Assets\@Scripts\Contents\AnimationEventDetector.cs" />
-    <Compile Include="Assets\@Scripts\UI\UI_ParticlePlay.cs" />
-    <Compile Include="Assets\@Scripts\Contents\Character.cs" />
+    <Compile Include="Assets\@Scripts\Manager\AchievementManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -1136,6 +1137,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.Mobile.AndroidLogcat.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityUIExtensions">
+      <HintPath>Library\ScriptAssemblies\UnityUIExtensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1166,10 +1171,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityUIExtensions">
-      <HintPath>Library\ScriptAssemblies\UnityUIExtensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityUIExtensions.editor">

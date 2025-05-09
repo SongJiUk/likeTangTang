@@ -84,6 +84,6 @@ public class UI_MaterialItem : UI_Base
     void OnClickMaterialInfoButton()
     {
         Manager.SoundM.PlayButtonClick();
-        //TODO : Info 생성해서, 띄워줌
+        //TODO : Info 생성해서, 띄워줌 
     }
 }

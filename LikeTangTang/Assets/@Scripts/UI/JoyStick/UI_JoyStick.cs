@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 
-public class UI_JoyStick : UI_Base
+public class UI_JoyStick : UI_Scene
 {
 
     enum GameObjects

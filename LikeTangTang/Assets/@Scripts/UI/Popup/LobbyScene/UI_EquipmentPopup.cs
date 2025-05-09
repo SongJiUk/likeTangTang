@@ -117,7 +117,7 @@ public class UI_EquipmentPopup : UI_Popup
         foreach (var slot in equipedSlotPool.Values)
             slot.gameObject.SetActive(false);
 
-        foreach(Equipment item in Manager.GameM.OwnerEquipment)
+        foreach(Equipment item in Manager.GameM.OwnedEquipment)
         {
             if(item.IsEquiped)
             {
@@ -148,7 +148,7 @@ public class UI_EquipmentPopup : UI_Popup
 
         Transform parent = GetObject(gameObjectsType, (int)GameObjects.EquipInventoryObject).transform;
 
-        int needCount = Manager.GameM.OwnerEquipment.Count(item => !item.IsEquiped);
+        int needCount = Manager.GameM.OwnedEquipment.Count(item => !item.IsEquiped);
 
         while(slotPool.Count < needCount)
         {
@@ -160,7 +160,7 @@ public class UI_EquipmentPopup : UI_Popup
             slot.gameObject.SetActive(false);
 
         int index = 0;
-        foreach(Equipment item in Manager.GameM.OwnerEquipment)
+        foreach(Equipment item in Manager.GameM.OwnedEquipment)
         {
             if (item.IsEquiped) continue;
 

@@ -17,10 +17,12 @@ public class Manager : MonoBehaviour
     GameManager gameM = new GameManager();
     ObjectManager objectM = new ObjectManager();
     PoolManager poolM = new PoolManager();
+    AchievementManager achievementM = new AchievementManager();
 
     public static GameManager GameM { get { return Instance?.gameM; } }
     public static ObjectManager ObjectM { get { return Instance?.objectM; } }
     public static PoolManager PoolM { get { return Instance?.poolM; } }
+    public static AchievementManager AchievementM { get { return Instance?.achievementM; } }
 
     #endregion
 

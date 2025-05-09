@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class UI_ShopPopup : UI_Base
+public class UI_ShopPopup : UI_Popup
 {
 
     enum GameObjects

@@ -53,7 +53,7 @@ public class GameScene : BaseScene, ITickable
         gm = Manager.GameM;
         tm = Manager.TimeM;
         Manager.UpdateM.Register(this);
-        Manager.UiM.ShowPopup<UI_JoyStick>();
+        Manager.UiM.ShowSceneUI<UI_JoyStick>();
         
         if(Manager.GameM.ContinueDatas.isContinue)
         {
@@ -73,7 +73,7 @@ public class GameScene : BaseScene, ITickable
         Manager.GameM.Camera.Target = player.gameObject;
         
 
-        ui = Manager.UiM.ShowPopup<UI_GameScene>();
+        ui = Manager.UiM.ShowSceneUI<UI_GameScene>();
 
         OnWaveStart = ui.OnWaveStart;
         OnWaveEnd = ui.OnWaveEnd;

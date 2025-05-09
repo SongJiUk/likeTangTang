@@ -11,7 +11,7 @@ public class LobbyScene : BaseScene
         
         SceneType = Define.SceneType.LobbyScene;
 
-        Manager.UiM.ShowPopup<UI_LobbyScene>();
+        Manager.UiM.ShowSceneUI<UI_LobbyScene>();
     }
 
     public override void Clear()

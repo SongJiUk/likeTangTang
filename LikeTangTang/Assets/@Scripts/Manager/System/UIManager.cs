@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using System.Linq.Expressions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //TODO : 마무리 후 스프라이트 이쁜걸로 찾아서 수정하기.
 
@@ -15,7 +16,7 @@ UI는 Set, Refresh두 함수를 이용하는게 관리하기 용이함.
 public class UIManager
 {
     UI_Base ui_Base;
-    Stack<UI_Base> popupStack = new Stack<UI_Base>();
+    Stack<UI_Popup> popupStack = new Stack<UI_Popup>();
 
     UI_Scene sceneUI = null;
     public UI_Scene SceneUI { get { return sceneUI; } }
@@ -45,26 +46,32 @@ public class UIManager
 
 
     //NOTE : 해당 씬의 스크립트를 호출해서 사용할 수 있게 해줌. ex) Manager.UiM.GetSceneUI<UI_GameScene>().RefreshUI();
-    public T GetSceneUI<T>() where T : UI_Base
+    //public T GetSceneUI<T>() where T : UI_Base
+    //{
+    //    return ui_Base as T;
+    //}
+
+
+    public T ShowSceneUI<T>(string _name = null) where T : UI_Scene
     {
-        return ui_Base as T;
-    }
+        //if(ui_Base != null) return GetSceneUI<T>();
 
+        if(string.IsNullOrEmpty(_name))
+            _name = typeof(T).Name;
 
-    public T ShowSceneUI<T>() where T : UI_Base
-    {
-        if(ui_Base != null) return GetSceneUI<T>();
+        GameObject go = Manager.ResourceM.Instantiate(_name);
 
-        string key = typeof(T).Name;
-        T ui = Manager.ResourceM.Instantiate(key, _pooling:true).GetOrAddComponent<T>();
-        ui_Base = ui;
+        T ui = go.GetOrAddComponent<T>();
+        sceneUI = ui;
+
+        go.transform.SetParent(Root.transform);
 
         return ui;
         
     }
 
     //NOTE : 설계적인 규칙임(UI는 겹쳐서 사용되는 경우가 많기 때문에, Stack으로 관리하면 편함)
-    public T ShowPopup<T>(string _name = null) where T : UI_Base
+    public T ShowPopup<T>(string _name = null) where T : UI_Popup
     {
         if (string.IsNullOrEmpty(_name)) 
             _name = typeof(T).Name;
@@ -74,18 +81,51 @@ public class UIManager
         popupStack.Push(popup);
         go.transform.SetParent(Root.transform);
 
+        RefreshTimeScale();
         return popup;
+    }
+
+    
+
+
+    public void ClosePopup(UI_Popup _popup)
+    {
+        if(popupStack.Count == 0) return;
+
+        if(popupStack.Peek() != _popup)
+        {
+            Debug.Log("Failed Close Popup");
+            return;
+        }
+
+        Manager.SoundM.PlayPopupClose();
     }
 
     public void ClosePopup()
     {
-        if(popupStack.Count == 0) return;
+        if (popupStack.Count == 0) return;
 
-        UI_Base ui = popupStack.Pop();
-        Manager.ResourceM.Destory(ui.gameObject);
+        UI_Popup popup = popupStack.Pop();
+        Manager.ResourceM.Destory(popup.gameObject);
+        popup = null;
+
+        RefreshTimeScale();
 
     }
+    
 
+    public void RefreshTimeScale()
+    {
+        if(SceneManager.GetActiveScene().name != Define.SceneType.GameScene.ToString())
+        {
+            Time.timeScale = 1f;
+            return;
+        }
 
+        if (popupStack.Count > 0)
+            Time.timeScale = 0;
+        else
+            Time.timeScale = 1;
 
+    }
 }

@@ -1103,6 +1103,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.Mobile.AndroidLogcat.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityUIExtensions">
+      <HintPath>Library\ScriptAssemblies\UnityUIExtensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1133,10 +1137,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityUIExtensions">
-      <HintPath>Library\ScriptAssemblies\UnityUIExtensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityUIExtensions.editor">

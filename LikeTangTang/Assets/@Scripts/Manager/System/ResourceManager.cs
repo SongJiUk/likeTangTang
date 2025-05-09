@@ -8,7 +8,7 @@ using Object = UnityEngine.Object;
 
 public class ResourceManager
 {
-    Dictionary<string, Object> resourceDic = new     Dictionary<string, Object>();
+    Dictionary<string, Object> resourceDic = new Dictionary<string, Object>();
     public Dictionary<string, Object> ResourceDic { get; }
 
    

@@ -27,6 +27,8 @@ public class DataTransformer : EditorWindow
         string path = Application.persistentDataPath + "/SaveData.json";
         if (File.Exists(path))
             File.Delete(path);
+
+        Debug.Log("PlayerPrefs + SaveData 삭제 완료: " + path);
     }
 #endif
 

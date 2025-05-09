@@ -116,6 +116,7 @@ public class UI_GachaResultsPopup : UI_Popup
     {
         Manager.SoundM.PlayPopupClose();
         gameObject.SetActive(false);
+        Manager.GameM.SaveGame();
     }
 
 

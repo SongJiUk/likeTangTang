@@ -18,7 +18,7 @@ public class GameManager
     public CameraController Camera { get; set; }
     public GameData gameData = new GameData();
 
-    public List<Equipment> OwnerEquipment
+    public List<Equipment> OwnedEquipment
     {
         get { return gameData.OwnedEquipments; }
 
@@ -191,7 +191,6 @@ public class GameManager
         5. 초반 기본 아이템 설정
         */
         path = Application.persistentDataPath + "/SaveData.json";
-
         if (LoadGame()) return;
 
         PlayerPrefs.SetInt("ISFIRST", 1);
@@ -273,12 +272,13 @@ public class GameManager
 
     public bool LoadGame()
     {
-        if (PlayerPrefs.GetInt("ISFIRST", 1) == 1)
-        {
-            string path = Application.persistentDataPath + "/SaveData.json";
-            if (File.Exists(path)) File.Delete(path);
-            return false;
-        }
+        //if (PlayerPrefs.GetInt("ISFIRST", 1)    == 1)
+        //{
+        //    string _path = Application.persistentDataPath + "/SaveData.json";
+        //    if (File.Exists(_path)) 
+        //        File.Delete(_path);
+        //    return false;
+        //}
 
         if (File.Exists(path) == false) return false;
 
@@ -288,11 +288,11 @@ public class GameManager
 
         //가진게 있다면 벗기고, 다시 입힘
         EquipedEquipments = new Dictionary<EquipmentType, Equipment>();
-        for(int i =0; i< OwnerEquipment.Count; i++)
+        for(int i =0; i< OwnedEquipment.Count; i++)
         {
-            if(OwnerEquipment[i].IsEquiped)
+            if(OwnedEquipment[i].IsEquiped)
             {
-                EquipItem(OwnerEquipment[i].EquipmentData.EquipmentType, OwnerEquipment[i]);
+                EquipItem(OwnedEquipment[i].EquipmentData.EquipmentType, OwnedEquipment[i]);
             }
         }
 
@@ -301,7 +301,7 @@ public class GameManager
         return true;
     }
 
-    public void SaveGame()
+    public void SaveGame ()
     {
         if (player != null)
         {
@@ -388,12 +388,12 @@ public class GameManager
     {
         if (sortType == EquipmentSortType.Grade)
         {
-            OwnerEquipment = OwnerEquipment.OrderBy(item => item.EquipmentData.EquipmentGarde).ThenBy(item => item.IsEquiped).ThenBy(item => item.Level).ThenBy(item => item.EquipmentData.EquipmentType).ToList();
+            OwnedEquipment = OwnedEquipment.OrderBy(item => item.EquipmentData.EquipmentGarde).ThenBy(item => item.IsEquiped).ThenBy(item => item.Level).ThenBy(item => item.EquipmentData.EquipmentType).ToList();
 
         }
         else if (sortType == EquipmentSortType.Level)
         {
-            OwnerEquipment = OwnerEquipment.OrderBy(item => item.Level).ThenBy(item => item.IsEquiped).ThenBy(item => item.EquipmentData.EquipmentGarde).ThenBy(item => item.EquipmentData.EquipmentType).ToList();
+            OwnedEquipment = OwnedEquipment.OrderBy(item => item.Level).ThenBy(item => item.IsEquiped).ThenBy(item => item.EquipmentData.EquipmentGarde).ThenBy(item => item.EquipmentData.EquipmentType).ToList();
         }
     }
 
@@ -465,7 +465,7 @@ public class GameManager
         if (_key.Equals("None")) return null;
         Equipment equip = new Equipment(_key);
         equip.IsConfirmed = false;
-        OwnerEquipment.Add(equip);
+        OwnedEquipment.Add(equip);
 
         //TODO : EquipmnetInfo Change
 
@@ -496,6 +496,16 @@ public class GameManager
             ItemDic[_id] = _count;
 
         SaveGame();
+    }
+
+    public void RemoveMaterialItem(int _id, int _count)
+    {
+        if (ItemDic.ContainsKey(_id))
+        {
+            ItemDic[_id] -= _count;
+            SaveGame();
+        }
+            
     }
 }
 

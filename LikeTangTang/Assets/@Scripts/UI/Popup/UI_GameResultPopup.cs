@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class UI_GameResultPopup : UI_Base
+public class UI_GameResultPopup : UI_Popup
 {
 
     enum GameObjects
