@@ -537,6 +537,131 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
+  - m_GUID: f992bab5c9ee14090b5ece565247f885
+    m_Address: Ring_02.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: ecd69b4d0b45d404d832061f5fe8ae1e
+    m_Address: Ring_04.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 2d9a2effd3629402fbd6da98683241b5
+    m_Address: Ring_05.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 5b78c3077e68a4578b39790ebd87c666
+    m_Address: Ring_01.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 008edfc7c9022452ab024697fe8a6c2f
+    m_Address: Ring_03.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 511ac5f4571cb4c4c85134fe90b12ec6
+    m_Address: Helmet_03.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: fa6dc6be9e2734e5ab0e0cf25f783111
+    m_Address: Helmet_05.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: fd6a5c53a4bb24166ba0a5fd50b8860d
+    m_Address: Helmet_04.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: f0397a21413634be4941a341e8d0c7e6
+    m_Address: Helmet_02.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 8eb046756a47545298b5b6e6505e4642
+    m_Address: Helmet_01.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 3a4a95673b2ea4bd7ae02da7c9524c44
+    m_Address: Boots_01.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: b697cabe23f234822b1389c82475e233
+    m_Address: Boots_02.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 593e1b3dceec94518a16ce1fe1fcfb6b
+    m_Address: Boots_05.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 1273f01182da841469461319fd35fd64
+    m_Address: Boots_04.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 35aabab37367d4b9e85ccbe83992c75e
+    m_Address: Boots_03.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: a4d78e9e1a6d4405aafc8c55b4d34965
+    m_Address: Armor_04.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 0ca29f56bc9b24dfcb9fb5f1d43dc59e
+    m_Address: Armor_03.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 2c9f1433d31d74866acbd9bfae0ed5fd
+    m_Address: Armor_02.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: dea2c137f31da4106aa331ecca4e196b
+    m_Address: Armor_01.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 6dfdbc0f5a5e048dfb601ab2896e87b0
+    m_Address: Armor_05.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 9c9c36e45a0554eb3bf1066a9bcfca9c
+    m_Address: Glove_01.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 7eddb478934a74b25ba2a61a29e4f0f0
+    m_Address: Glove_03.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 5711bd179d3bc4c83b4ec4be4aafd172
+    m_Address: Glove_04.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 1c424755af1634c2bb6d6887fc5a0890
+    m_Address: Glove_05.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 4b62d5d77fdd648a8a3a33abce39e51f
+    m_Address: Glove_02.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

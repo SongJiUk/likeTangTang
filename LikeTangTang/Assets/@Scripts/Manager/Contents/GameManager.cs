@@ -447,7 +447,7 @@ public class GameManager
 
             List<GachaRateData> list = Manager.DataM.GachaTableDataDic[gachaType].GachaRateTable.Where(item => item.EquipGrade == grade).ToList();
             int index = UnityEngine.Random.Range(0, list.Count);
-            int key = list[index].EquipmentID;
+            string key = list[index].EquipmentID;
 
             if(Manager.DataM.EquipmentDic.ContainsKey(key))
             {
@@ -460,7 +460,7 @@ public class GameManager
 
 
 
-    public Equipment AddEquipment(int _key)
+    public Equipment AddEquipment(string _key)
     {
         if (_key.Equals("None")) return null;
         Equipment equip = new Equipment(_key);

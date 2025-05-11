@@ -42,7 +42,6 @@ public static class Define
 
     public static readonly float[] COMMON_GACHA_GRADE_PROB = new float[]
     {
-        0,
         0.6f, //Common
         0.3f, //Uncommon
         0.09f, // rare
@@ -51,7 +50,6 @@ public static class Define
 
     public static readonly float[] ADVENCED_GACHA_GRADE_PROB = new float[]
     {
-        0,
         0.35f,
         0.4f,
         0.15f,
@@ -295,6 +293,13 @@ public static class Define
         Grade
     }
 
+    public enum MergeEquipmentType
+    {
+        None,
+        ItemCode,
+        Grade
+    }
+
     public enum UI_ItemParentType
     {
         CharacterEquipment,
@@ -320,9 +325,9 @@ public static class Define
 
         public EquipmentUIStyle(Color _nameColor, Color _borderColor, Color _bgColor)
         {
-            NameColor = _nameColor;
-            BorderColor = _borderColor;
-            BgColor = _bgColor;
+            NameColor = _nameColor; //이름
+            BorderColor = _borderColor; //테두리
+            BgColor = _bgColor; // Enforce, BG
         }
     }
 
@@ -344,9 +349,9 @@ public static class Define
 
             EquipGradeStyles = new Dictionary<EquipmentGrade, EquipmentUIStyle>()
             {
-                {EquipmentGrade.Common, new EquipmentUIStyle(Utils.HexToColor("A2A2A2"), Utils.HexToColor("AC9B83"), Color.clear)},
-                {EquipmentGrade.UnCommon, new EquipmentUIStyle(Utils.HexToColor("57FF0B"), Utils.HexToColor("73EC4E"), Color.clear)},
-                {EquipmentGrade.Rare, new EquipmentUIStyle(Utils.HexToColor("2471E0"), Utils.HexToColor("0F84FF"), Color.clear)},
+                {EquipmentGrade.Common, new EquipmentUIStyle(Utils.HexToColor("A2A2A2"), Utils.HexToColor("AC9B83"), Utils.HexToColor("AC9B83"))},
+                {EquipmentGrade.UnCommon, new EquipmentUIStyle(Utils.HexToColor("57FF0B"), Utils.HexToColor("73EC4E"), Utils.HexToColor("73EC4E"))},
+                {EquipmentGrade.Rare, new EquipmentUIStyle(Utils.HexToColor("2471E0"), Utils.HexToColor("0F84FF"), Utils.HexToColor("0F84FF"))},
                 {EquipmentGrade.Epic, new EquipmentUIStyle(Utils.HexToColor("9F37F2"), Utils.HexToColor("B740EA"), Utils.HexToColor("D094FF"))},
                 {EquipmentGrade.Epic1, new EquipmentUIStyle(Utils.HexToColor("9F37F2"), Utils.HexToColor("B740EA"), Utils.HexToColor("D094FF"))},
                 {EquipmentGrade.Unique, new EquipmentUIStyle(Utils.HexToColor("F67B09"), Utils.HexToColor("F19B02"), Utils.HexToColor("F8BE56"))},

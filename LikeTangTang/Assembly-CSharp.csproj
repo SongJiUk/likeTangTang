@@ -153,6 +153,7 @@
     <Compile Include="Assets/@Scripts/Manager/System/CustomSceneManager.cs" />
     <Compile Include="Assets/@Scripts/UI/UI_Toast.cs" />
     <Compile Include="Assets/@Scripts/UI/Popup/UI_MergePopup.cs" />
+    <Compile Include="Assets/@Scripts/UI/Popup/UI_MergePopup1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

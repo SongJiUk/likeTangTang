@@ -412,7 +412,7 @@ public class DataTransformer : EditorWindow
 
             int i = 0;
             EquipmentData ed = new EquipmentData();
-            ed.DataID = ConvertValue<int>(row[i++]);
+            ed.DataID = ConvertValue<string>(row[i++]);
             ed.GachaGrade = ConvertValue<GachaGrade>(row[i++]);
             ed.EquipmentType = ConvertValue<EquipmentType>(row[i++]);
             ed.EquipmentGarde = ConvertValue<EquipmentGrade>(row[i++]);
@@ -429,6 +429,15 @@ public class DataTransformer : EditorWindow
             ed.RareGradeAbility = ConvertValue<int>(row[i++]);
             ed.EpicGradeAbility = ConvertValue<int>(row[i++]);
             ed.UniqueGradeAbility = ConvertValue<int>(row[i++]);
+            ed.MergeEquipmentType_1 = ConvertValue<MergeEquipmentType>(row[i++]);
+            ed.MergeEquipment_1 = ConvertValue<string>(row[i++]);
+            ed.MergeEquipmentType_2 = ConvertValue<MergeEquipmentType>(row[i++]);
+            ed.MergeEquipment_2 = ConvertValue<string>(row[i++]);
+            ed.MergeItemCode = ConvertValue<string>(row[i++]);
+            ed.LevelUpMaterial = ConvertValue<int>(row[i++]);
+            ed.DownGradeEquipmentCode = ConvertValue<string>(row[i++]);
+            ed. DownGradeMaterialCode = ConvertValue<string>(row[i++]);
+            ed.DownGradeMaterialCount = ConvertValue<int>(row[i++]);
             loader.equipmentDatas.Add(ed);
         }
 
@@ -555,7 +564,7 @@ public class DataTransformer : EditorWindow
             GachaType dropType = (GachaType)Enum.Parse(typeof(GachaType), row[i++]);
             GachaRateData rateData = new GachaRateData()
             {
-                EquipmentID = int.Parse(row[i++]),
+                EquipmentID = ConvertValue<string>(row[i++]),
                 GachaRate = float.Parse(row[i++]),
                 EquipGrade = ConvertValue<EquipmentGrade>(row[i++]),
             };

@@ -19,7 +19,7 @@ public class DataManager
     public Dictionary<int, Data.CreatureData> CreatureDic { get; private set; } = new Dictionary<int, Data.CreatureData>();
     public Dictionary<int, Data.LevelData> LevelDic {get; private set; } = new Dictionary<int, Data.LevelData>();
     public Dictionary<int, Data.EquipmentLevelData> EquipmentLevelDic { get; private set; } = new Dictionary<int, Data.EquipmentLevelData>();
-    public Dictionary<int, Data.EquipmentData> EquipmentDic { get; private set; } = new Dictionary<int, Data.EquipmentData>();
+    public Dictionary<string, Data.EquipmentData> EquipmentDic { get; private set; } = new Dictionary<string, Data.EquipmentData>();
     public Dictionary<int, Data.MaterialData> MaterialDic { get; private set; } = new Dictionary<int, Data.MaterialData>();
     public Dictionary<int, Data.SpecialSkillData> SpecialSkillDic { get; private set; } = new Dictionary<int, Data.SpecialSkillData>();
     public Dictionary<int, Data.DropItemData> DropItemDic {get; private set;} = new Dictionary<int, Data.DropItemData>();
@@ -36,7 +36,7 @@ public class DataManager
         CreatureDic = LoadJson<Data.CreatureDataLoader, int, Data.CreatureData>("CreatureData.json").MakeDict();
         LevelDic = LoadJson<Data.LevelDataLoader, int, Data.LevelData>("LevelData.json").MakeDict();
         EquipmentLevelDic = LoadJson<Data.EquipmentLevelDataLoader, int, Data.EquipmentLevelData>("EquipmentLevelData.json").MakeDict();
-        EquipmentDic = LoadJson<Data.EquipmentDataLoader, int, Data.EquipmentData>("EquipmentData.json").MakeDict();
+        EquipmentDic = LoadJson<Data.EquipmentDataLoader, string, Data.EquipmentData>("EquipmentData.json").MakeDict();
         MaterialDic = LoadJson<Data.MaterialDataLoader, int, Data.MaterialData>("MaterialData.json").MakeDict();
         SpecialSkillDic = LoadJson<Data.SpecialSkillDataLoader, int, Data.SpecialSkillData>("SpecialSkillData.json").MakeDict();
         DropItemDic = LoadJson<Data.DropItemDataLoader, int, Data.DropItemData>("DropItemData.json").MakeDict();

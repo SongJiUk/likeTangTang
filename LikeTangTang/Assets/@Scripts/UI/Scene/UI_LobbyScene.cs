@@ -35,6 +35,8 @@ public class UI_LobbyScene : UI_Scene
     UI_BattlePopup ui_BattlePopup;
     UI_EquipmentPopup ui_EquipmentPopup;
     UI_EquipmentInfoPopup equipmentInfoPopup;
+    UI_MergePopup uI_MergePopup;
+
     public UI_EquipmentInfoPopup EquipmentInfoPopup { get { return equipmentInfoPopup; } }
     public override bool Init()
     {
@@ -58,6 +60,8 @@ public class UI_LobbyScene : UI_Scene
         ui_ShopPopup = Manager.UiM.ShowPopup<UI_ShopPopup>();
         ui_EquipmentPopup = Manager.UiM.ShowPopup<UI_EquipmentPopup>();
         equipmentInfoPopup = Manager.UiM.ShowPopup<UI_EquipmentInfoPopup>();
+        uI_MergePopup = Manager.UiM.ShowPopup<UI_MergePopup>();
+
         AllOff();
 
         Manager.GameM.OnResourcesChanged -= Refresh;
@@ -81,6 +85,7 @@ public class UI_LobbyScene : UI_Scene
         ui_ShopPopup.gameObject.SetActive(false);
         ui_EquipmentPopup.gameObject.SetActive(false);
         equipmentInfoPopup.gameObject.SetActive(false);
+        uI_MergePopup.gameObject.SetActive(false);
     }
     void OnClickEquipmentToggle()
     {

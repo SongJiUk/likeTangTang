@@ -312,7 +312,7 @@ namespace Data
     [Serializable]
     public class EquipmentData
     {
-        public int DataID;
+        public string DataID;
         public Define.GachaGrade GachaGrade;
         public Define.EquipmentType EquipmentType;
         public Define.EquipmentGrade EquipmentGarde;
@@ -329,16 +329,26 @@ namespace Data
         public int RareGradeAbility;
         public int EpicGradeAbility;
         public int UniqueGradeAbility;
+
+        public Define.MergeEquipmentType MergeEquipmentType_1;
+        public string MergeEquipment_1;
+        public Define.MergeEquipmentType MergeEquipmentType_2;
+        public string MergeEquipment_2;
+        public string MergeItemCode;
+        public int LevelUpMaterial;
+        public string DownGradeEquipmentCode;
+        public string DownGradeMaterialCode;
+        public int DownGradeMaterialCount;
     }
 
     [Serializable]
-    public class EquipmentDataLoader : ILoader<int, EquipmentData>
+    public class EquipmentDataLoader : ILoader<string, EquipmentData>
     {
         public List<EquipmentData> equipmentDatas = new List<EquipmentData>();
 
-        public Dictionary<int, EquipmentData> MakeDict()
+        public Dictionary<string, EquipmentData> MakeDict()
         {
-            Dictionary<int, EquipmentData> dic = new Dictionary<int, EquipmentData>();
+            Dictionary<string, EquipmentData> dic = new Dictionary<string, EquipmentData>();
 
             foreach(EquipmentData data in equipmentDatas)
             {
@@ -433,7 +443,7 @@ namespace Data
 
     public class GachaRateData
     {
-        public int EquipmentID;
+        public string EquipmentID;
         public float GachaRate;
         public Define.EquipmentGrade EquipGrade;
     }

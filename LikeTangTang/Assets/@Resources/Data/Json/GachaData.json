@@ -4,742 +4,742 @@
       "Type": 0,
       "GachaRateTable": [
         {
-          "EquipmentID": 31000,
+          "EquipmentID": "31000",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31010,
+          "EquipmentID": "31010",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31020,
+          "EquipmentID": "31020",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31030,
+          "EquipmentID": "31030",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31040,
+          "EquipmentID": "31040",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31050,
+          "EquipmentID": "31050",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31060,
+          "EquipmentID": "31060",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31070,
+          "EquipmentID": "31070",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31080,
+          "EquipmentID": "31080",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31090,
+          "EquipmentID": "31090",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 32000,
+          "EquipmentID": "32000",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 32010,
+          "EquipmentID": "32010",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 32020,
+          "EquipmentID": "32020",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 32030,
+          "EquipmentID": "32030",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 32040,
+          "EquipmentID": "32040",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 33000,
+          "EquipmentID": "33000",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 33010,
+          "EquipmentID": "33010",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 33020,
+          "EquipmentID": "33020",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 33030,
+          "EquipmentID": "33030",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 33040,
+          "EquipmentID": "33040",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 34000,
+          "EquipmentID": "34000",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 34010,
+          "EquipmentID": "34010",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 34020,
+          "EquipmentID": "34020",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 34030,
+          "EquipmentID": "34030",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 34040,
+          "EquipmentID": "34040",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 35000,
+          "EquipmentID": "35000",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 35010,
+          "EquipmentID": "35010",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 35020,
+          "EquipmentID": "35020",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 35030,
+          "EquipmentID": "35030",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 35040,
+          "EquipmentID": "35040",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 35050,
+          "EquipmentID": "35050",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 36000,
+          "EquipmentID": "36000",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 36010,
+          "EquipmentID": "36010",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 36020,
+          "EquipmentID": "36020",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 36030,
+          "EquipmentID": "36030",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 36040,
+          "EquipmentID": "36040",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 36050,
+          "EquipmentID": "36050",
           "GachaRate": 0.015789,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31001,
+          "EquipmentID": "31001",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31011,
+          "EquipmentID": "31011",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31021,
+          "EquipmentID": "31021",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31031,
+          "EquipmentID": "31031",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31041,
+          "EquipmentID": "31041",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31051,
+          "EquipmentID": "31051",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31061,
+          "EquipmentID": "31061",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31071,
+          "EquipmentID": "31071",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31081,
+          "EquipmentID": "31081",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31091,
+          "EquipmentID": "31091",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 32001,
+          "EquipmentID": "32001",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 32011,
+          "EquipmentID": "32011",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 32021,
+          "EquipmentID": "32021",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 32031,
+          "EquipmentID": "32031",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 32041,
+          "EquipmentID": "32041",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 33001,
+          "EquipmentID": "33001",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 33011,
+          "EquipmentID": "33011",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 33021,
+          "EquipmentID": "33021",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 33031,
+          "EquipmentID": "33031",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 33041,
+          "EquipmentID": "33041",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 34001,
+          "EquipmentID": "34001",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 34011,
+          "EquipmentID": "34011",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 34021,
+          "EquipmentID": "34021",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 34031,
+          "EquipmentID": "34031",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 34041,
+          "EquipmentID": "34041",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 35001,
+          "EquipmentID": "35001",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 35011,
+          "EquipmentID": "35011",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 35021,
+          "EquipmentID": "35021",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 35031,
+          "EquipmentID": "35031",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 35041,
+          "EquipmentID": "35041",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 35051,
+          "EquipmentID": "35051",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 36001,
+          "EquipmentID": "36001",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 36011,
+          "EquipmentID": "36011",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 36021,
+          "EquipmentID": "36021",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 36031,
+          "EquipmentID": "36031",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 36041,
+          "EquipmentID": "36041",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 36051,
+          "EquipmentID": "36051",
           "GachaRate": 0.00789,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31002,
+          "EquipmentID": "31002",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31012,
+          "EquipmentID": "31012",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31022,
+          "EquipmentID": "31022",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31032,
+          "EquipmentID": "31032",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31042,
+          "EquipmentID": "31042",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31052,
+          "EquipmentID": "31052",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31062,
+          "EquipmentID": "31062",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31072,
+          "EquipmentID": "31072",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31082,
+          "EquipmentID": "31082",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31092,
+          "EquipmentID": "31092",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 32002,
+          "EquipmentID": "32002",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 32012,
+          "EquipmentID": "32012",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 32022,
+          "EquipmentID": "32022",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 32032,
+          "EquipmentID": "32032",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 32042,
+          "EquipmentID": "32042",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 33002,
+          "EquipmentID": "33002",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 33012,
+          "EquipmentID": "33012",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 33022,
+          "EquipmentID": "33022",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 33032,
+          "EquipmentID": "33032",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 33042,
+          "EquipmentID": "33042",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 34002,
+          "EquipmentID": "34002",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 34012,
+          "EquipmentID": "34012",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 34022,
+          "EquipmentID": "34022",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 34032,
+          "EquipmentID": "34032",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 34042,
+          "EquipmentID": "34042",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 35002,
+          "EquipmentID": "35002",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 35012,
+          "EquipmentID": "35012",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 35022,
+          "EquipmentID": "35022",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 35032,
+          "EquipmentID": "35032",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 35042,
+          "EquipmentID": "35042",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 35052,
+          "EquipmentID": "35052",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 36002,
+          "EquipmentID": "36002",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 36012,
+          "EquipmentID": "36012",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 36022,
+          "EquipmentID": "36022",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 36032,
+          "EquipmentID": "36032",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 36042,
+          "EquipmentID": "36042",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 36052,
+          "EquipmentID": "36052",
           "GachaRate": 0.00236,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31003,
+          "EquipmentID": "31003",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 31013,
+          "EquipmentID": "31013",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 31023,
+          "EquipmentID": "31023",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 31033,
+          "EquipmentID": "31033",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 31043,
+          "EquipmentID": "31043",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 31053,
+          "EquipmentID": "31053",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 31063,
+          "EquipmentID": "31063",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 31073,
+          "EquipmentID": "31073",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 31083,
+          "EquipmentID": "31083",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 31093,
+          "EquipmentID": "31093",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 32003,
+          "EquipmentID": "32003",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 32013,
+          "EquipmentID": "32013",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 32023,
+          "EquipmentID": "32023",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 32033,
+          "EquipmentID": "32033",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 32043,
+          "EquipmentID": "32043",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 33003,
+          "EquipmentID": "33003",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 33013,
+          "EquipmentID": "33013",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 33023,
+          "EquipmentID": "33023",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 33033,
+          "EquipmentID": "33033",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 33043,
+          "EquipmentID": "33043",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 34003,
+          "EquipmentID": "34003",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 34013,
+          "EquipmentID": "34013",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 34023,
+          "EquipmentID": "34023",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 34033,
+          "EquipmentID": "34033",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 34043,
+          "EquipmentID": "34043",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 35003,
+          "EquipmentID": "35003",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 35013,
+          "EquipmentID": "35013",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 35023,
+          "EquipmentID": "35023",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 35033,
+          "EquipmentID": "35033",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 35043,
+          "EquipmentID": "35043",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 35053,
+          "EquipmentID": "35053",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 36003,
+          "EquipmentID": "36003",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 36013,
+          "EquipmentID": "36013",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 36023,
+          "EquipmentID": "36023",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 36033,
+          "EquipmentID": "36033",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 36043,
+          "EquipmentID": "36043",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 36053,
+          "EquipmentID": "36053",
           "GachaRate": 0.00026,
           "EquipGrade": 3
         }
@@ -749,742 +749,742 @@
       "Type": 1,
       "GachaRateTable": [
         {
-          "EquipmentID": 31000,
+          "EquipmentID": "31000",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31010,
+          "EquipmentID": "31010",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31020,
+          "EquipmentID": "31020",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31030,
+          "EquipmentID": "31030",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31040,
+          "EquipmentID": "31040",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31050,
+          "EquipmentID": "31050",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31060,
+          "EquipmentID": "31060",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31070,
+          "EquipmentID": "31070",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31080,
+          "EquipmentID": "31080",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31090,
+          "EquipmentID": "31090",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 32000,
+          "EquipmentID": "32000",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 32010,
+          "EquipmentID": "32010",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 32020,
+          "EquipmentID": "32020",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 32030,
+          "EquipmentID": "32030",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 32040,
+          "EquipmentID": "32040",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 33000,
+          "EquipmentID": "33000",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 33010,
+          "EquipmentID": "33010",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 33020,
+          "EquipmentID": "33020",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 33030,
+          "EquipmentID": "33030",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 33040,
+          "EquipmentID": "33040",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 34000,
+          "EquipmentID": "34000",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 34010,
+          "EquipmentID": "34010",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 34020,
+          "EquipmentID": "34020",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 34030,
+          "EquipmentID": "34030",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 34040,
+          "EquipmentID": "34040",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 35000,
+          "EquipmentID": "35000",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 35010,
+          "EquipmentID": "35010",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 35020,
+          "EquipmentID": "35020",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 35030,
+          "EquipmentID": "35030",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 35040,
+          "EquipmentID": "35040",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 35050,
+          "EquipmentID": "35050",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 36000,
+          "EquipmentID": "36000",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 36010,
+          "EquipmentID": "36010",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 36020,
+          "EquipmentID": "36020",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 36030,
+          "EquipmentID": "36030",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 36040,
+          "EquipmentID": "36040",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 36050,
+          "EquipmentID": "36050",
           "GachaRate": 0.00921,
           "EquipGrade": 0
         },
         {
-          "EquipmentID": 31001,
+          "EquipmentID": "31001",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31011,
+          "EquipmentID": "31011",
           "GachaRate": 0.00394,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31021,
+          "EquipmentID": "31021",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31031,
+          "EquipmentID": "31031",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31041,
+          "EquipmentID": "31041",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31051,
+          "EquipmentID": "31051",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31061,
+          "EquipmentID": "31061",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31071,
+          "EquipmentID": "31071",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31081,
+          "EquipmentID": "31081",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31091,
+          "EquipmentID": "31091",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 32001,
+          "EquipmentID": "32001",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 32011,
+          "EquipmentID": "32011",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 32021,
+          "EquipmentID": "32021",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 32031,
+          "EquipmentID": "32031",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 32041,
+          "EquipmentID": "32041",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 33001,
+          "EquipmentID": "33001",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 33011,
+          "EquipmentID": "33011",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 33021,
+          "EquipmentID": "33021",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 33031,
+          "EquipmentID": "33031",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 33041,
+          "EquipmentID": "33041",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 34001,
+          "EquipmentID": "34001",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 34011,
+          "EquipmentID": "34011",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 34021,
+          "EquipmentID": "34021",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 34031,
+          "EquipmentID": "34031",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 34041,
+          "EquipmentID": "34041",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 35001,
+          "EquipmentID": "35001",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 35011,
+          "EquipmentID": "35011",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 35021,
+          "EquipmentID": "35021",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 35031,
+          "EquipmentID": "35031",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 35041,
+          "EquipmentID": "35041",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 35051,
+          "EquipmentID": "35051",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 36001,
+          "EquipmentID": "36001",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 36011,
+          "EquipmentID": "36011",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 36021,
+          "EquipmentID": "36021",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 36031,
+          "EquipmentID": "36031",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 36041,
+          "EquipmentID": "36041",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 36051,
+          "EquipmentID": "36051",
           "GachaRate": 0.01052,
           "EquipGrade": 1
         },
         {
-          "EquipmentID": 31002,
+          "EquipmentID": "31002",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31012,
+          "EquipmentID": "31012",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31022,
+          "EquipmentID": "31022",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31032,
+          "EquipmentID": "31032",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31042,
+          "EquipmentID": "31042",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31052,
+          "EquipmentID": "31052",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31062,
+          "EquipmentID": "31062",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31072,
+          "EquipmentID": "31072",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31082,
+          "EquipmentID": "31082",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31092,
+          "EquipmentID": "31092",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 32002,
+          "EquipmentID": "32002",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 32012,
+          "EquipmentID": "32012",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 32022,
+          "EquipmentID": "32022",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 32032,
+          "EquipmentID": "32032",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 32042,
+          "EquipmentID": "32042",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 33002,
+          "EquipmentID": "33002",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 33012,
+          "EquipmentID": "33012",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 33022,
+          "EquipmentID": "33022",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 33032,
+          "EquipmentID": "33032",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 33042,
+          "EquipmentID": "33042",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 34002,
+          "EquipmentID": "34002",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 34012,
+          "EquipmentID": "34012",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 34022,
+          "EquipmentID": "34022",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 34032,
+          "EquipmentID": "34032",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 34042,
+          "EquipmentID": "34042",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 35002,
+          "EquipmentID": "35002",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 35012,
+          "EquipmentID": "35012",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 35022,
+          "EquipmentID": "35022",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 35032,
+          "EquipmentID": "35032",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 35042,
+          "EquipmentID": "35042",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 35052,
+          "EquipmentID": "35052",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 36002,
+          "EquipmentID": "36002",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 36012,
+          "EquipmentID": "36012",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 36022,
+          "EquipmentID": "36022",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 36032,
+          "EquipmentID": "36032",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 36042,
+          "EquipmentID": "36042",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 36052,
+          "EquipmentID": "36052",
           "GachaRate": 0.00394,
           "EquipGrade": 2
         },
         {
-          "EquipmentID": 31003,
+          "EquipmentID": "31003",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 31013,
+          "EquipmentID": "31013",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 31023,
+          "EquipmentID": "31023",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 31033,
+          "EquipmentID": "31033",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 31043,
+          "EquipmentID": "31043",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 31053,
+          "EquipmentID": "31053",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 31063,
+          "EquipmentID": "31063",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 31073,
+          "EquipmentID": "31073",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 31083,
+          "EquipmentID": "31083",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 31093,
+          "EquipmentID": "31093",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 32003,
+          "EquipmentID": "32003",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 32013,
+          "EquipmentID": "32013",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 32023,
+          "EquipmentID": "32023",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 32033,
+          "EquipmentID": "32033",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 32043,
+          "EquipmentID": "32043",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 33003,
+          "EquipmentID": "33003",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 33013,
+          "EquipmentID": "33013",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 33023,
+          "EquipmentID": "33023",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 33033,
+          "EquipmentID": "33033",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 33043,
+          "EquipmentID": "33043",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 34003,
+          "EquipmentID": "34003",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 34013,
+          "EquipmentID": "34013",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 34023,
+          "EquipmentID": "34023",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 34033,
+          "EquipmentID": "34033",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 34043,
+          "EquipmentID": "34043",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 35003,
+          "EquipmentID": "35003",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 35013,
+          "EquipmentID": "35013",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 35023,
+          "EquipmentID": "35023",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 35033,
+          "EquipmentID": "35033",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 35043,
+          "EquipmentID": "35043",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 35053,
+          "EquipmentID": "35053",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 36003,
+          "EquipmentID": "36003",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 36013,
+          "EquipmentID": "36013",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 36023,
+          "EquipmentID": "36023",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 36033,
+          "EquipmentID": "36033",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 36043,
+          "EquipmentID": "36043",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         },
         {
-          "EquipmentID": 36053,
+          "EquipmentID": "36053",
           "GachaRate": 0.00263,
           "EquipGrade": 3
         }

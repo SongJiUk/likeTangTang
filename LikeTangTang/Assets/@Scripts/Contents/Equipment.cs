@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Equipment
 {
-    public int key;
+    public string key;
     public Data.EquipmentData EquipmentData;
 
     public int Level { get; set; } = 1;
@@ -28,15 +28,9 @@ public class Equipment
     public bool IsUnvailable { get; set; } = false; //합성에서 선택 불가능한지
 
 
-    public Equipment(int _key)
+    public Equipment(string _key)
     {
         key = _key;
-
-        if (key == 0 || !Manager.DataM.EquipmentDic.ContainsKey(key))
-        {
-            Debug.Log($"Equipment 생성자 잘못된 키 입력 : {key} - Equipment 할당 안됨(아마, 장착된장비가 없어서 뜨는것");
-            return;
-        }
 
         EquipmentData = Manager.DataM.EquipmentDic[key];
     }

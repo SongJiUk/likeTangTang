@@ -124,9 +124,7 @@ public class UI_ShopPopup : UI_Popup
 
     void DoGaCha(Define.GachaType _gachaType, int _count =1)
     {
-        List<Equipment> list = new List<Equipment>();
-
-        list = Manager.GameM.DoGaCha(_gachaType, _count).ToList();
+        List<Equipment> list = Manager.GameM.DoGaCha(_gachaType, _count).ToList();
         Manager.UiM.ShowPopup<UI_GachaResultsPopup>().SetInfo(list);
     }
 
