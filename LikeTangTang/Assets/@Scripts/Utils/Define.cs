@@ -220,6 +220,24 @@ public static class Define
         Unique3
     }
 
+    public static EquipmentGrade GetEquipmnetGrade(EquipmentGrade _grade)
+    { 
+        return _grade switch
+        {
+            EquipmentGrade.UnCommon => EquipmentGrade.UnCommon,
+            EquipmentGrade.Rare => EquipmentGrade.Rare,
+            EquipmentGrade.Epic => EquipmentGrade.Epic,
+            EquipmentGrade.Epic1 => EquipmentGrade.Epic,
+            EquipmentGrade.Epic2 => EquipmentGrade.Epic,
+            EquipmentGrade.Unique => EquipmentGrade.Unique,
+            EquipmentGrade.Unique1 => EquipmentGrade.Unique,
+            EquipmentGrade.Unique2 => EquipmentGrade.Unique,
+            EquipmentGrade.Unique3 => EquipmentGrade.Unique,
+            _ => EquipmentGrade.None
+        };
+    }
+
+
     public static int GetGradeNum(EquipmentGrade _grade)
     {
         return _grade switch
@@ -231,6 +249,18 @@ public static class Define
             _ => -1
         };
     }
+
+    public static int GetEvolutionofEvolutionNum(EquipmentGrade _grade)
+    {
+        return _grade switch
+        {
+            EquipmentGrade.Epic1 or EquipmentGrade.Unique1 => 1,
+            EquipmentGrade.Epic2 or EquipmentGrade.Unique2 => 2,
+            EquipmentGrade.Unique3 => 3,
+            _ => -1
+        };
+    }
+
 
     public enum MaterialType
     {
@@ -354,6 +384,7 @@ public static class Define
                 {EquipmentGrade.Rare, new EquipmentUIStyle(Utils.HexToColor("2471E0"), Utils.HexToColor("0F84FF"), Utils.HexToColor("0F84FF"))},
                 {EquipmentGrade.Epic, new EquipmentUIStyle(Utils.HexToColor("9F37F2"), Utils.HexToColor("B740EA"), Utils.HexToColor("D094FF"))},
                 {EquipmentGrade.Epic1, new EquipmentUIStyle(Utils.HexToColor("9F37F2"), Utils.HexToColor("B740EA"), Utils.HexToColor("D094FF"))},
+                {EquipmentGrade.Epic2, new EquipmentUIStyle(Utils.HexToColor("9F37F2"), Utils.HexToColor("B740EA"), Utils.HexToColor("D094FF"))},
                 {EquipmentGrade.Unique, new EquipmentUIStyle(Utils.HexToColor("F67B09"), Utils.HexToColor("F19B02"), Utils.HexToColor("F8BE56"))},
                 {EquipmentGrade.Unique1, new EquipmentUIStyle(Utils.HexToColor("F67B09"), Utils.HexToColor("F19B02"), Utils.HexToColor("F8BE56"))},
                 {EquipmentGrade.Unique2, new EquipmentUIStyle(Utils.HexToColor("F67B09"), Utils.HexToColor("F19B02"), Utils.HexToColor("F8BE56"))},

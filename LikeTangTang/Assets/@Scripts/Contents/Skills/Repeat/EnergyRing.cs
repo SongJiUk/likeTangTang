@@ -20,7 +20,10 @@ public class EnergyRing : RepeatSkill, ITickable
         coolTime = 0f;
     }
 
-  
+    private void OnDestroy()
+    {
+        Manager.UpdateM.Unregister(this);
+    }
 
     public override void ActivateSkill()
     {

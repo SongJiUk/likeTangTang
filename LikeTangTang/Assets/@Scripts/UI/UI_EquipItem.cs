@@ -127,7 +127,7 @@ public class UI_EquipItem : UI_Base
             Equipment.IsConfirmed = true;
             Manager.GameM.SaveGame();
 
-            UI_EquipmentInfoPopup infoPopup = (Manager.UiM.SceneUI as UI_LobbyScene).EquipmentInfoPopup;
+            UI_EquipmentInfoPopup infoPopup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_EquipmentInfoPopup;
             if(infoPopup != null)
             {
                 infoPopup.SetInfo(Equipment);

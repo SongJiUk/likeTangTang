@@ -152,6 +152,7 @@ public class UI_SkillCardItem : UI_Base
         }
     }
 
+    //지워라 이거: 스킬 어디서 배우는지 확인, 어떻게 추가되는지도 확인 그거 확인해서 지우면 됌
     public void OnClickItem()
     {
         //TODO : 스킬 고를때 선택하면 잘못 선택되는 경우가 있음(테스트 좀 많이 해봐야 될듯)

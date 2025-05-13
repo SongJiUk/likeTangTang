@@ -102,6 +102,9 @@ public class SkillComponent : MonoBehaviour
         //         if(skillbase != null) skillList.Add(skillbase);
         //     }
         // }
+    }
+    public void RemoveSkill()
+    {
 
     }
 
@@ -157,7 +160,7 @@ public class SkillComponent : MonoBehaviour
     }
 
 
-    public List<object> Test()
+    public List<object> GetSkills()
     {
         List<SkillBase> baseSkillCandidates = RecommendSkills();
         List<int> evoItemCandidates = GetAvailableEvolutionItems();

@@ -79,4 +79,12 @@ public class Manager : MonoBehaviour
     {
         return ToString();
     }
+
+    public static void Clear()
+    {
+        SceneM.Clear();
+        UiM.Clear();
+        PoolM.Clear();
+        ObjectM.Clear();
+    }
 }

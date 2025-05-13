@@ -11,7 +11,10 @@ public class ElectricShock : RepeatSkill, ITickable
         Skilltype = Define.SkillType.ElectricShock;
         coolTime = 0f;
     }
-
+    private void OnDestroy()
+    {
+        Manager.UpdateM.Unregister(this);
+    }
     public override void ActivateSkill()
     {
         base.ActivateSkill();

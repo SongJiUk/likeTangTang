@@ -234,7 +234,7 @@ E34031,Normal,Helmet,Uncommon,스펙트럴 옵틱스,스펙트럼 범위의 모�
 E34032,Normal,Helmet,Rare,스펙트럴 옵틱스,스펙트럼 범위의 모든 빛을 감지하는 정밀 광학 헬멧.,Helmet_04.sprite,98,8,0,0,30,0,21010,21011,21032,21033,ItemCode,E34032,ItemCode,E34032,E34033,61003,,,0
 E34033,Normal,Helmet,Epic,스펙트럴 옵틱스,스펙트럼 범위의 모든 빛을 감지하는 정밀 광학 헬멧.,Helmet_04.sprite,195,11,0,0,40,0,21010,21011,21032,21033,Grade,Epic,None,None,E34034,61003,,,0
 E34034,Normal,Helmet,Epic1,스펙트럴 옵틱스,스펙트럼 범위의 모든 빛을 감지하는 정밀 광학 헬멧.,Helmet_04.sprite,215,15,0,0,50,0,21010,21011,21032,21033,Grade,Epic,None,None,E34035,61003,E34033,E34033,1
-E34035,Normal,Helmet,Epic2,스펙트럴 옵틱스,스펙트럼 범위의 모든 빛을 감지하는 정밀 광학 헬멧.,Helmet_04.sprite,268,16,0,0,60,0,21010,21011,21032,21033,ItemCode,N31003,ItemCode,N31003,E34036,61003,E34033,E34033,2
+E34035,Normal,Helmet,Epic2,스펙트럴 옵틱스,스펙트럼 범위의 모든 빛을 감지하는 정밀 광학 헬멧.,Helmet_04.sprite,268,16,0,0,60,0,21010,21011,21032,21033,ItemCode,E34033,ItemCode,E34033,E34036,61003,E34033,E34033,2
 E34036,Normal,Helmet,Unique,스펙트럴 옵틱스,스펙트럼 범위의 모든 빛을 감지하는 정밀 광학 헬멧.,Helmet_04.sprite,322,19,0,0,70,0,21010,21011,21032,21033,Grade,Unique,None,None,E34037,61003,,,0
 E34037,Normal,Helmet,Unique1,스펙트럴 옵틱스,스펙트럼 범위의 모든 빛을 감지하는 정밀 광학 헬멧.,Helmet_04.sprite,376,22,0,0,80,0,21010,21011,21032,21033,Grade,Unique,None,None,E34038,61003,E34036,E34036,1
 E34038,Normal,Helmet,Unique2,스펙트럴 옵틱스,스펙트럼 범위의 모든 빛을 감지하는 정밀 광학 헬멧.,Helmet_04.sprite,429,25,0,0,90,0,21010,21011,21032,21033,Grade,Unique,None,None,E34039,61003,E34036,E34036,2
@@ -254,7 +254,7 @@ E35001,Normal,Ring,Uncommon,시간왜곡 반지,시간의 흐름에 간섭하는
 E35002,Normal,Ring,Rare,시간왜곡 반지,시간의 흐름에 간섭하는 신비한 고대 반지.,Ring_01.sprite,0,0,27,4,30,0,21040,21041,21002,21003,ItemCode,E35002,ItemCode,E35002,E35003,61002,,,0
 E35003,Normal,Ring,Epic,시간왜곡 반지,시간의 흐름에 간섭하는 신비한 고대 반지.,Ring_01.sprite,0,0,46,7,40,0,21040,21041,21002,21003,Grade,Epic,None,None,E35004,61002,,,0
 E35004,Normal,Ring,Epic1,시간왜곡 반지,시간의 흐름에 간섭하는 신비한 고대 반지.,Ring_01.sprite,0,0,55,8,50,0,21040,21041,21002,21003,Grade,Epic,None,None,E35005,61002,E35003,E35003,1
-E35005,Normal,Ring,Epic2,시간왜곡 반지,시간의 흐름에 간섭하는 신비한 고대 반지.,Ring_01.sprite,0,0,64,10,60,0,21040,21041,21002,21003,ItemCode,N31003,ItemCode,N31003,E35006,61002,E35003,E35003,2
+E35005,Normal,Ring,Epic2,시간왜곡 반지,시간의 흐름에 간섭하는 신비한 고대 반지.,Ring_01.sprite,0,0,64,10,60,0,21040,21041,21002,21003,ItemCode,E35003,ItemCode,E35003,E35006,61002,E35003,E35003,2
 E35006,Normal,Ring,Unique,시간왜곡 반지,시간의 흐름에 간섭하는 신비한 고대 반지.,Ring_01.sprite,0,0,120,11,70,0,21040,21041,21002,21003,Grade,Unique,None,None,E35007,61002,,,0
 E35007,Normal,Ring,Unique1,시간왜곡 반지,시간의 흐름에 간섭하는 신비한 고대 반지.,Ring_01.sprite,0,0,140,13,80,0,21040,21041,21002,21003,Grade,Unique,None,None,E35008,61002,E35006,E35006,1
 E35008,Normal,Ring,Unique2,시간왜곡 반지,시간의 흐름에 간섭하는 신비한 고대 반지.,Ring_01.sprite,0,0,160,15,90,0,21040,21041,21002,21003,Grade,Unique,None,None,E35009,61002,E35006,E35006,2
@@ -264,7 +264,7 @@ E35011,Normal,Ring,Uncommon,플라즈마 밴드,플라즈마 에너지를 안정
 E35012,Normal,Ring,Rare,플라즈마 밴드,플라즈마 에너지를 안정적으로 순환시키는 강화 밴드.,Ring_02.sprite,0,0,27,4,30,0,21040,21041,21092,21093,ItemCode,E35012,ItemCode,E35012,E35013,61002,,,0
 E35013,Normal,Ring,Epic,플라즈마 밴드,플라즈마 에너지를 안정적으로 순환시키는 강화 밴드.,Ring_02.sprite,0,0,46,7,40,0,21040,21041,21092,21093,Grade,Epic,None,None,E35014,61002,,,0
 E35014,Normal,Ring,Epic1,플라즈마 밴드,플라즈마 에너지를 안정적으로 순환시키는 강화 밴드.,Ring_02.sprite,0,0,55,8,50,0,21040,21041,21092,21093,Grade,Epic,None,None,E35015,61002,E35013,E35013,1
-E35015,Normal,Ring,Epic2,플라즈마 밴드,플라즈마 에너지를 안정적으로 순환시키는 강화 밴드.,Ring_02.sprite,0,0,64,10,60,0,21040,21041,21092,21093,ItemCode,N31003,ItemCode,N31003,E35016,61002,E35013,E35013,2
+E35015,Normal,Ring,Epic2,플라즈마 밴드,플라즈마 에너지를 안정적으로 순환시키는 강화 밴드.,Ring_02.sprite,0,0,64,10,60,0,21040,21041,21092,21093,ItemCode,E35013,ItemCode,E35013,E35016,61002,E35013,E35013,2
 E35016,Normal,Ring,Unique,플라즈마 밴드,플라즈마 에너지를 안정적으로 순환시키는 강화 밴드.,Ring_02.sprite,0,0,120,11,70,0,21040,21041,21092,21093,Grade,Unique,None,None,E35017,61002,,,0
 E35017,Normal,Ring,Unique1,플라즈마 밴드,플라즈마 에너지를 안정적으로 순환시키는 강화 밴드.,Ring_02.sprite,0,0,140,13,80,0,21040,21041,21092,21093,Grade,Unique,None,None,E35018,61002,E35016,E35016,1
 E35018,Normal,Ring,Unique2,플라즈마 밴드,플라즈마 에너지를 안정적으로 순환시키는 강화 밴드.,Ring_02.sprite,0,0,160,15,90,0,21040,21041,21092,21093,Grade,Unique,None,None,E35019,61002,E35016,E35016,2
@@ -274,7 +274,7 @@ E35021,Normal,Ring,Uncommon,스톰 시그넷,폭풍의 힘이 봉인된 전설�
 E35022,Normal,Ring,Rare,스톰 시그넷,폭풍의 힘이 봉인된 전설적인 인장 반지.,Ring_03.sprite,0,0,27,4,30,0,21040,21041,21022,21023,ItemCode,E35022,ItemCode,E35022,E35023,61002,,,0
 E35023,Normal,Ring,Epic,스톰 시그넷,폭풍의 힘이 봉인된 전설적인 인장 반지.,Ring_03.sprite,0,0,46,7,40,0,21040,21041,21022,21023,Grade,Epic,None,None,E35024,61002,,,0
 E35024,Normal,Ring,Epic1,스톰 시그넷,폭풍의 힘이 봉인된 전설적인 인장 반지.,Ring_03.sprite,0,0,55,8,50,0,21040,21041,21022,21023,Grade,Epic,None,None,E35025,61002,E35023,E35023,1
-E35025,Normal,Ring,Epic2,스톰 시그넷,폭풍의 힘이 봉인된 전설적인 인장 반지.,Ring_03.sprite,0,0,64,10,60,0,21040,21041,21022,21023,ItemCode,N31003,ItemCode,N31003,E35026,61002,E35023,E35023,2
+E35025,Normal,Ring,Epic2,스톰 시그넷,폭풍의 힘이 봉인된 전설적인 인장 반지.,Ring_03.sprite,0,0,64,10,60,0,21040,21041,21022,21023,ItemCode,E35023,ItemCode,E35023,E35026,61002,E35023,E35023,2
 E35026,Normal,Ring,Unique,스톰 시그넷,폭풍의 힘이 봉인된 전설적인 인장 반지.,Ring_03.sprite,0,0,120,11,70,0,21040,21041,21022,21023,Grade,Unique,None,None,E35027,61002,,,0
 E35027,Normal,Ring,Unique1,스톰 시그넷,폭풍의 힘이 봉인된 전설적인 인장 반지.,Ring_03.sprite,0,0,140,13,80,0,21040,21041,21022,21023,Grade,Unique,None,None,E35028,61002,E35026,E35026,1
 E35028,Normal,Ring,Unique2,스톰 시그넷,폭풍의 힘이 봉인된 전설적인 인장 반지.,Ring_03.sprite,0,0,160,15,90,0,21040,21041,21022,21023,Grade,Unique,None,None,E35029,61002,E35026,E35026,2
@@ -284,7 +284,7 @@ E35031,Normal,Ring,Uncommon,중력 균형의 고리,중력의 균형을 제어�
 E35032,Normal,Ring,Rare,중력 균형의 고리,중력의 균형을 제어하는 과학과 마법의 산물.,Ring_04.sprite,0,0,27,4,30,0,21040,21041,23031,23032,ItemCode,E35032,ItemCode,E35032,E35033,61002,,,0
 E35033,Normal,Ring,Epic,중력 균형의 고리,중력의 균형을 제어하는 과학과 마법의 산물.,Ring_04.sprite,0,0,46,7,40,0,21040,21041,23031,23032,Grade,Epic,None,None,E35034,61002,,,0
 E35034,Normal,Ring,Epic1,중력 균형의 고리,중력의 균형을 제어하는 과학과 마법의 산물.,Ring_04.sprite,0,0,55,8,50,0,21040,21041,23031,23032,Grade,Epic,None,None,E35035,61002,E35033,E35033,1
-E35035,Normal,Ring,Epic2,중력 균형의 고리,중력의 균형을 제어하는 과학과 마법의 산물.,Ring_04.sprite,0,0,64,10,60,0,21040,21041,23031,23032,ItemCode,N31003,ItemCode,N31003,E35036,61002,E35033,E35033,2
+E35035,Normal,Ring,Epic2,중력 균형의 고리,중력의 균형을 제어하는 과학과 마법의 산물.,Ring_04.sprite,0,0,64,10,60,0,21040,21041,23031,23032,ItemCode,E35033,ItemCode,E35033,E35036,61002,E35033,E35033,2
 E35036,Normal,Ring,Unique,중력 균형의 고리,중력의 균형을 제어하는 과학과 마법의 산물.,Ring_04.sprite,0,0,120,11,70,0,21040,21041,23031,23032,Grade,Unique,None,None,E35037,61002,,,0
 E35037,Normal,Ring,Unique1,중력 균형의 고리,중력의 균형을 제어하는 과학과 마법의 산물.,Ring_04.sprite,0,0,140,13,80,0,21040,21041,23031,23032,Grade,Unique,None,None,E35038,61002,E35036,E35036,1
 E35038,Normal,Ring,Unique2,중력 균형의 고리,중력의 균형을 제어하는 과학과 마법의 산물.,Ring_04.sprite,0,0,160,15,90,0,21040,21041,23031,23032,Grade,Unique,None,None,E35039,61002,E35036,E35036,2
@@ -294,7 +294,7 @@ E35041,Normal,Ring,Uncommon,에테르 서클릿,에테르 에너지에 동조하
 E35042,Normal,Ring,Rare,에테르 서클릿,에테르 에너지에 동조하는 신비로운 서클릿.,Ring_05.sprite,0,0,27,4,30,0,21040,21041,23041,23042,ItemCode,E35042,ItemCode,E35042,E35043,61002,,,0
 E35043,Normal,Ring,Epic,에테르 서클릿,에테르 에너지에 동조하는 신비로운 서클릿.,Ring_05.sprite,0,0,46,7,40,0,21040,21041,23041,23042,Grade,Epic,None,None,E35044,61002,,,0
 E35044,Normal,Ring,Epic1,에테르 서클릿,에테르 에너지에 동조하는 신비로운 서클릿.,Ring_05.sprite,0,0,55,8,50,0,21040,21041,23041,23042,Grade,Epic,None,None,E35045,61002,E35043,E35043,1
-E35045,Normal,Ring,Epic2,에테르 서클릿,에테르 에너지에 동조하는 신비로운 서클릿.,Ring_05.sprite,0,0,64,10,60,0,21040,21041,23041,23042,ItemCode,N31003,ItemCode,N31003,E35046,61002,E35043,E35043,2
+E35045,Normal,Ring,Epic2,에테르 서클릿,에테르 에너지에 동조하는 신비로운 서클릿.,Ring_05.sprite,0,0,64,10,60,0,21040,21041,23041,23042,ItemCode,E35043,ItemCode,E35043,E35046,61002,E35043,E35043,2
 E35046,Normal,Ring,Unique,에테르 서클릿,에테르 에너지에 동조하는 신비로운 서클릿.,Ring_05.sprite,0,0,120,11,70,0,21040,21041,23041,23042,Grade,Unique,None,None,E35047,61002,,,0
 E35047,Normal,Ring,Unique1,에테르 서클릿,에테르 에너지에 동조하는 신비로운 서클릿.,Ring_05.sprite,0,0,140,13,80,0,21040,21041,23041,23042,Grade,Unique,None,None,E35048,61002,E35046,E35046,1
 E35048,Normal,Ring,Unique2,에테르 서클릿,에테르 에너지에 동조하는 신비로운 서클릿.,Ring_05.sprite,0,0,160,15,90,0,21040,21041,23041,23042,Grade,Unique,None,None,E35049,61002,E35046,E35046,2
@@ -304,7 +304,7 @@ E36001,Normal,Boots,Uncommon,플라즈마 스텝 부츠,플라즈마 추진 기�
 E36002,Normal,Boots,Rare,플라즈마 스텝 부츠,플라즈마 추진 기술이 적용된 고속 기동 부츠.,Boots_01.sprite,98,8,0,0,30,0,21050,21051,21022,21023,ItemCode,E36002,ItemCode,E36002,E36003,61005,,,0
 E36003,Normal,Boots,Epic,플라즈마 스텝 부츠,플라즈마 추진 기술이 적용된 고속 기동 부츠.,Boots_01.sprite,195,11,0,0,40,0,21050,21051,21022,21023,Grade,Epic,None,None,E36004,61005,,,0
 E36004,Normal,Boots,Epic1,플라즈마 스텝 부츠,플라즈마 추진 기술이 적용된 고속 기동 부츠.,Boots_01.sprite,215,15,0,0,50,0,21050,21051,21022,21023,Grade,Epic,None,None,E36005,61005,E36003,E36003,1
-E36005,Normal,Boots,Epic2,플라즈마 스텝 부츠,플라즈마 추진 기술이 적용된 고속 기동 부츠.,Boots_01.sprite,268,16,0,0,60,0,21050,21051,21022,21023,ItemCode,N31003,ItemCode,N31003,E36006,61005,E36003,E36003,2
+E36005,Normal,Boots,Epic2,플라즈마 스텝 부츠,플라즈마 추진 기술이 적용된 고속 기동 부츠.,Boots_01.sprite,268,16,0,0,60,0,21050,21051,21022,21023,ItemCode,E36003,ItemCode,E36003,E36006,61005,E36003,E36003,2
 E36006,Normal,Boots,Unique,플라즈마 스텝 부츠,플라즈마 추진 기술이 적용된 고속 기동 부츠.,Boots_01.sprite,322,19,0,0,70,0,21050,21051,21022,21023,Grade,Unique,None,None,E36007,61005,,,0
 E36007,Normal,Boots,Unique1,플라즈마 스텝 부츠,플라즈마 추진 기술이 적용된 고속 기동 부츠.,Boots_01.sprite,376,22,0,0,80,0,21050,21051,21022,21023,Grade,Unique,None,None,E36008,61005,E36006,E36006,1
 E36008,Normal,Boots,Unique2,플라즈마 스텝 부츠,플라즈마 추진 기술이 적용된 고속 기동 부츠.,Boots_01.sprite,429,25,0,0,90,0,21050,21051,21022,21023,Grade,Unique,None,None,E36009,61005,E36006,E36006,2
@@ -314,7 +314,7 @@ E36011,Normal,Boots,Uncommon,퀀텀 러너,양자 이동 기술로 설계된 차
 E36012,Normal,Boots,Rare,퀀텀 러너,양자 이동 기술로 설계된 차세대 러닝 부츠.,Boots_02.sprite,98,8,0,0,30,0,21050,21051,21052,21053,ItemCode,E36012,ItemCode,E36012,E36013,61005,,,0
 E36013,Normal,Boots,Epic,퀀텀 러너,양자 이동 기술로 설계된 차세대 러닝 부츠.,Boots_02.sprite,195,11,0,0,40,0,21050,21051,21052,21053,Grade,Epic,None,None,E36014,61005,,,0
 E36014,Normal,Boots,Epic1,퀀텀 러너,양자 이동 기술로 설계된 차세대 러닝 부츠.,Boots_02.sprite,215,15,0,0,50,0,21050,21051,21052,21053,Grade,Epic,None,None,E36015,61005,E36013,E36013,1
-E36015,Normal,Boots,Epic2,퀀텀 러너,양자 이동 기술로 설계된 차세대 러닝 부츠.,Boots_02.sprite,268,16,0,0,60,0,21050,21051,21052,21053,ItemCode,N31003,ItemCode,N31003,E36016,61005,E36013,E36013,2
+E36015,Normal,Boots,Epic2,퀀텀 러너,양자 이동 기술로 설계된 차세대 러닝 부츠.,Boots_02.sprite,268,16,0,0,60,0,21050,21051,21052,21053,ItemCode,E36013,ItemCode,E36013,E36016,61005,E36013,E36013,2
 E36016,Normal,Boots,Unique,퀀텀 러너,양자 이동 기술로 설계된 차세대 러닝 부츠.,Boots_02.sprite,322,19,0,0,70,0,21050,21051,21052,21053,Grade,Unique,None,None,E36017,61005,,,0
 E36017,Normal,Boots,Unique1,퀀텀 러너,양자 이동 기술로 설계된 차세대 러닝 부츠.,Boots_02.sprite,376,22,0,0,80,0,21050,21051,21052,21053,Grade,Unique,None,None,E36018,61005,E36016,E36016,1
 E36018,Normal,Boots,Unique2,퀀텀 러너,양자 이동 기술로 설계된 차세대 러닝 부츠.,Boots_02.sprite,429,25,0,0,90,0,21050,21051,21052,21053,Grade,Unique,None,None,E36019,61005,E36016,E36016,2
@@ -324,7 +324,7 @@ E36021,Normal,Boots,Uncommon,블레이즈 트레드,타오르는 화염의 흔�
 E36022,Normal,Boots,Rare,블레이즈 트레드,타오르는 화염의 흔적을 남기는 전투용 트레드.,Boots_03.sprite,98,8,0,0,30,0,21050,21051,21102,21103,ItemCode,E36022,ItemCode,E36022,E36023,61005,,,0
 E36023,Normal,Boots,Epic,블레이즈 트레드,타오르는 화염의 흔적을 남기는 전투용 트레드.,Boots_03.sprite,195,11,0,0,40,0,21050,21051,21102,21103,Grade,Epic,None,None,E36024,61005,,,0
 E36024,Normal,Boots,Epic1,블레이즈 트레드,타오르는 화염의 흔적을 남기는 전투용 트레드.,Boots_03.sprite,215,15,0,0,50,0,21050,21051,21102,21103,Grade,Epic,None,None,E36025,61005,E36023,E36023,1
-E36025,Normal,Boots,Epic2,블레이즈 트레드,타오르는 화염의 흔적을 남기는 전투용 트레드.,Boots_03.sprite,268,16,0,0,60,0,21050,21051,21102,21103,ItemCode,N31003,ItemCode,N31003,E36026,61005,E36023,E36023,2
+E36025,Normal,Boots,Epic2,블레이즈 트레드,타오르는 화염의 흔적을 남기는 전투용 트레드.,Boots_03.sprite,268,16,0,0,60,0,21050,21051,21102,21103,ItemCode,E36023,ItemCode,E36023,E36026,61005,E36023,E36023,2
 E36026,Normal,Boots,Unique,블레이즈 트레드,타오르는 화염의 흔적을 남기는 전투용 트레드.,Boots_03.sprite,322,19,0,0,70,0,21050,21051,21102,21103,Grade,Unique,None,None,E36027,61005,,,0
 E36027,Normal,Boots,Unique1,블레이즈 트레드,타오르는 화염의 흔적을 남기는 전투용 트레드.,Boots_03.sprite,376,22,0,0,80,0,21050,21051,21102,21103,Grade,Unique,None,None,E36028,61005,E36026,E36026,1
 E36028,Normal,Boots,Unique2,블레이즈 트레드,타오르는 화염의 흔적을 남기는 전투용 트레드.,Boots_03.sprite,429,25,0,0,90,0,21050,21051,21102,21103,Grade,Unique,None,None,E36029,61005,E36026,E36026,2
@@ -334,7 +334,7 @@ E36031,Normal,Boots,Uncommon,네오 서지 부츠,최신 에너지 서지 기술
 E36032,Normal,Boots,Rare,네오 서지 부츠,최신 에너지 서지 기술로 강화된 전력 부츠.,Boots_04.sprite,98,8,0,0,30,0,21050,21051,21032,21033,ItemCode,E36032,ItemCode,E36032,E36033,61005,,,0
 E36033,Normal,Boots,Epic,네오 서지 부츠,최신 에너지 서지 기술로 강화된 전력 부츠.,Boots_04.sprite,195,11,0,0,40,0,21050,21051,21032,21033,Grade,Epic,None,None,E36034,61005,,,0
 E36034,Normal,Boots,Epic1,네오 서지 부츠,최신 에너지 서지 기술로 강화된 전력 부츠.,Boots_04.sprite,215,15,0,0,50,0,21050,21051,21032,21033,Grade,Epic,None,None,E36035,61005,E36033,E36033,1
-E36035,Normal,Boots,Epic2,네오 서지 부츠,최신 에너지 서지 기술로 강화된 전력 부츠.,Boots_04.sprite,268,16,0,0,60,0,21050,21051,21032,21033,ItemCode,N31003,ItemCode,N31003,E36036,61005,E36033,E36033,2
+E36035,Normal,Boots,Epic2,네오 서지 부츠,최신 에너지 서지 기술로 강화된 전력 부츠.,Boots_04.sprite,268,16,0,0,60,0,21050,21051,21032,21033,ItemCode,E36033,ItemCode,E36033,E36036,61005,E36033,E36033,2
 E36036,Normal,Boots,Unique,네오 서지 부츠,최신 에너지 서지 기술로 강화된 전력 부츠.,Boots_04.sprite,322,19,0,0,70,0,21050,21051,21032,21033,Grade,Unique,None,None,E36037,61005,,,0
 E36037,Normal,Boots,Unique1,네오 서지 부츠,최신 에너지 서지 기술로 강화된 전력 부츠.,Boots_04.sprite,376,22,0,0,80,0,21050,21051,21032,21033,Grade,Unique,None,None,E36038,61005,E36036,E36036,1
 E36038,Normal,Boots,Unique2,네오 서지 부츠,최신 에너지 서지 기술로 강화된 전력 부츠.,Boots_04.sprite,429,25,0,0,90,0,21050,21051,21032,21033,Grade,Unique,None,None,E36039,61005,E36036,E36036,2
@@ -344,7 +344,7 @@ E36041,Normal,Boots,Uncommon,스펙트럴 그라운더,스펙트럼 에너지를
 E36042,Normal,Boots,Rare,스펙트럴 그라운더,스펙트럼 에너지를 지면과 동조시키는 특수 부츠.,Boots_05.sprite,98,8,0,0,30,0,21050,21051,21012,21013,ItemCode,E36042,ItemCode,E36042,E36043,61005,,,0
 E36043,Normal,Boots,Epic,스펙트럴 그라운더,스펙트럼 에너지를 지면과 동조시키는 특수 부츠.,Boots_05.sprite,195,11,0,0,40,0,21050,21051,21012,21013,Grade,Epic,None,None,E36044,61005,,,0
 E36044,Normal,Boots,Epic1,스펙트럴 그라운더,스펙트럼 에너지를 지면과 동조시키는 특수 부츠.,Boots_05.sprite,215,15,0,0,50,0,21050,21051,21012,21013,Grade,Epic,None,None,E36045,61005,E36043,E36043,1
-E36045,Normal,Boots,Epic2,스펙트럴 그라운더,스펙트럼 에너지를 지면과 동조시키는 특수 부츠.,Boots_05.sprite,268,16,0,0,60,0,21050,21051,21012,21013,ItemCode,N31003,ItemCode,N31003,E36046,61005,E36043,E36043,2
+E36045,Normal,Boots,Epic2,스펙트럴 그라운더,스펙트럼 에너지를 지면과 동조시키는 특수 부츠.,Boots_05.sprite,268,16,0,0,60,0,21050,21051,21012,21013,ItemCode,E36043,ItemCode,E36043,E36046,61005,E36043,E36043,2
 E36046,Normal,Boots,Unique,스펙트럴 그라운더,스펙트럼 에너지를 지면과 동조시키는 특수 부츠.,Boots_05.sprite,322,19,0,0,70,0,21050,21051,21012,21013,Grade,Unique,None,None,E36047,61005,,,0
 E36047,Normal,Boots,Unique1,스펙트럴 그라운더,스펙트럼 에너지를 지면과 동조시키는 특수 부츠.,Boots_05.sprite,376,22,0,0,80,0,21050,21051,21012,21013,Grade,Unique,None,None,E36048,61005,E36046,E36046,1
 E36048,Normal,Boots,Unique2,스펙트럴 그라운더,스펙트럼 에너지를 지면과 동조시키는 특수 부츠.,Boots_05.sprite,429,25,0,0,90,0,21050,21051,21012,21013,Grade,Unique,None,None,E36049,61005,E36046,E36046,2

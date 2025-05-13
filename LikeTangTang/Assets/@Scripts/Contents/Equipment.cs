@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Equipment
 {
-    public string key;
+    public string key = "";
     public Data.EquipmentData EquipmentData;
 
     public int Level { get; set; } = 1;
@@ -31,6 +31,12 @@ public class Equipment
     public Equipment(string _key)
     {
         key = _key;
+
+        if (string.IsNullOrEmpty(key))
+        {
+            Debug.Log("키가 비어있음(아마 장착한 장비가 없어서 그럴 확률이 높음");
+            return;
+        }
 
         EquipmentData = Manager.DataM.EquipmentDic[key];
     }

@@ -21,19 +21,29 @@ public class UI_GameScene : UI_Scene
         ExpSliderObject,
 
     }
+
+    public enum Buttons
+    {
+        PauseButton
+    }
+
+   
+
     public override bool Init()
     {
-        SetUIInfo();
+        TextsType = typeof(Texts);
+        ButtonsType = typeof(Buttons);
+        SlidersType = typeof(Sliders);
+
+        BindText(TextsType);
+        BindButton(ButtonsType);
+        BindSlider(SlidersType);
+
+        GetButton(ButtonsType, (int)Buttons.PauseButton).gameObject.BindEvent(OnClickPauseButton);
 
         Manager.GameM.player.OnPlayerDataUpdated = OnPlayerDataUpdated;
         Manager.GameM.player.OnPlayerLevelUp = OnPlayerLevelUp;
         return true;
-    }
-
-    protected override void SetUIInfo()
-    {
-        Bind<TextMeshProUGUI>(typeof(Texts));
-        Bind<Slider>(typeof(Sliders));
     }
 
     public void OnWaveStart(int _currentStageIndex)
@@ -77,7 +87,7 @@ public class UI_GameScene : UI_Scene
 
         //TODO : 스킬 개수 가져와서 팝업 띄우기
         //List<SkillBase> list = Manager.GameM.player.Skills.RecommendSkills();
-        List<object> list = Manager.GameM.player.Skills.Test();
+        List<object> list = Manager.GameM.player.Skills.GetSkills();
         if(list.Count > 0) Manager.UiM.ShowPopup<UI_SkillSelectPopup>();
 
         GetSlider(typeof(Sliders), (int)Sliders.ExpSliderObject).value = Manager.GameM.player.ExpRatio;
@@ -105,5 +115,11 @@ public class UI_GameScene : UI_Scene
         yield return null;
 
         //DOTween.Sequence().Append(GetObject(int)gameObjects.WhiteFlash)
+    }
+
+    void OnClickPauseButton()
+    {
+        Manager.SoundM.PlayButtonClick();
+        Manager.UiM.ShowPopup<UI_PausePopup>();
     }
 }

@@ -14,8 +14,11 @@ public class TimeStopBomb : RepeatSkill, ITickable
         SpawnTimeStopBomb();
     }
 
-    
 
+    private void OnDestroy()
+    {
+        Manager.UpdateM.Unregister(this);
+    }
 
     public override void ActivateSkill()
     {

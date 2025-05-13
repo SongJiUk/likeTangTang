@@ -42,6 +42,11 @@ public class UI_ShopPopup : UI_Popup
         FirstGoldProductTitleText,
         SecondGoldProductTitleText
     }
+
+    private void OnEnable()
+    {
+        PopupOpenAnim(GetObject(gameObjectsType, (int)GameObjects.ContentObject));
+    }
     private void Awake()
     {
         Init();
@@ -182,7 +187,9 @@ public class UI_ShopPopup : UI_Popup
 
     void OnClickAdvancedBoxTenOpenButton()
     {
-        Manager.UiM.ShowToast("열쇠가 없다");
+        DoGaCha(Define.GachaType.AdvancedGacha, 10);
+        Refresh();
+
     }
 
     //일반 장비

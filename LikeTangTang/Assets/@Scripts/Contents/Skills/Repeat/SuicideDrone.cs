@@ -16,6 +16,10 @@ public class SuicideDrone : RepeatSkill, ITickable
         SpawnDrones();
     }
 
+    private void OnDestroy()
+    {
+        Manager.UpdateM.Unregister(this);
+    }
     public override void ActivateSkill()
     {
         base.ActivateSkill();

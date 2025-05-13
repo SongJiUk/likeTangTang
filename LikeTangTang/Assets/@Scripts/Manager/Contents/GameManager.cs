@@ -388,13 +388,25 @@ public class GameManager
     {
         if (sortType == EquipmentSortType.Grade)
         {
-            OwnedEquipment = OwnedEquipment.OrderBy(item => item.EquipmentData.EquipmentGarde).ThenBy(item => item.IsEquiped).ThenBy(item => item.Level).ThenBy(item => item.EquipmentData.EquipmentType).ToList();
+            OwnedEquipment = OwnedEquipment.
+                OrderByDescending(item => item.IsEquiped).
+                ThenByDescending(item => item.EquipmentData.EquipmentGarde).
+                ThenByDescending(item => item.Level).
+                ThenByDescending(item => item.EquipmentData.DataID).
+                ThenBy(item => item.EquipmentData.EquipmentType).
+                ToList();
 
         }
         else if (sortType == EquipmentSortType.Level)
         {
-            OwnedEquipment = OwnedEquipment.OrderBy(item => item.Level).ThenBy(item => item.IsEquiped).ThenBy(item => item.EquipmentData.EquipmentGarde).ThenBy(item => item.EquipmentData.EquipmentType).ToList();
-        }
+            OwnedEquipment = OwnedEquipment.
+                OrderByDescending(item => item.IsEquiped).
+                ThenByDescending(item => item.Level).
+                ThenByDescending(item => item.EquipmentData.EquipmentGarde).
+                ThenByDescending(item => item.EquipmentData.DataID).
+                ThenBy(item => item.EquipmentData.EquipmentType).
+                ToList();
+        }   
     }
 
 
@@ -472,6 +484,37 @@ public class GameManager
         return equip;
     }
 
+    public Equipment MergeEquipment(Equipment _equipment, Equipment _mergeEquipment1, Equipment _mergeEquipment2, bool _isAllMerge = false)
+    {
+        _equipment = OwnedEquipment.Find(equip => equip == _equipment);
+        if(_equipment == null) return null;
+
+        _mergeEquipment1 = OwnedEquipment.Find(equip => equip == _mergeEquipment1);
+        if (_mergeEquipment1 == null) return null;
+
+        if(_mergeEquipment2 != null)
+        {
+            _mergeEquipment2 = OwnedEquipment.Find(equip => equip == _mergeEquipment2);
+
+            if (_mergeEquipment2 == null) return null;
+        }
+
+        int level = _equipment.Level;
+        bool isEquiped = _equipment.IsEquiped;
+        string mergeItemCode = _equipment.EquipmentData.MergeItemCode;
+        Equipment newEquipment = AddEquipment(mergeItemCode);
+        newEquipment.Level = level;
+        newEquipment.IsEquiped = isEquiped;
+
+        OwnedEquipment.Remove(_equipment);
+        OwnedEquipment.Remove(_mergeEquipment1);
+        OwnedEquipment.Remove(_mergeEquipment2);
+
+        if (!_isAllMerge) SaveGame();
+
+        return newEquipment;
+
+    }
     public EquipmentGrade GetRandomGrade(float[] _prob)
     {
         float randomValue = UnityEngine.Random.value;

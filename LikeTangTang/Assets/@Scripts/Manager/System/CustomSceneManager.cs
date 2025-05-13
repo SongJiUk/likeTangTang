@@ -6,20 +6,29 @@ using UnityEngine.SceneManagement;
 
 public class CustomSceneManager
 {
+    public BaseScene CurrentScene { get { return GameObject.FindObjectOfType<BaseScene>(); } }
+
 
     public void LoadScene(Define.SceneType _type, Transform _tr = null) //씬 이동 애니메이션()
     {
-        switch(_type)
+        switch(CurrentScene.SceneType)
         {
             case Define.SceneType.TitleScene :
-                
-            break;
+                Manager.Clear();
+                SceneManager.LoadScene(GetScene(_type));
+                break;
 
             case Define.SceneType.LobbyScene :
+                Time.timeScale = 1;
+                Manager.ResourceM.Destory(Manager.UiM.SceneUI.gameObject);
+                Manager.Clear();
                 SceneManager.LoadScene(GetScene(_type));
             break;
 
-            case Define.SceneType.GameScene : 
+            case Define.SceneType.GameScene :
+                Time.timeScale = 1;
+                Manager.ResourceM.Destory(Manager.UiM.SceneUI.gameObject);
+                Manager.Clear();
                 SceneManager.LoadScene(GetScene(_type));
             break;
         }
@@ -32,4 +41,8 @@ public class CustomSceneManager
         return sceneName;
     }
 
+    public void Clear()
+    {
+        CurrentScene.Clear();
+    }
 }

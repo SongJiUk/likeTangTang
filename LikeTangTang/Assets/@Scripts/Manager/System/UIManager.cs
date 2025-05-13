@@ -37,9 +37,9 @@ public class UIManager
     {
         if(string.IsNullOrEmpty(_name)) _name = typeof(T).Name;
 
-        GameObject go = Manager.ResourceM.Instantiate($"{_name}",_parent);
-        //go.transform.SetParent(_parent);
-        go.transform.parent = _parent;
+        GameObject go = Manager.ResourceM.Instantiate($"{_name}");
+        if (_parent != null)
+            go.transform.SetParent(_parent);
         
         return Utils.GetOrAddComponent<T>(go);
     }
@@ -129,7 +129,10 @@ public class UIManager
         RefreshTimeScale();
 
     }
-    
+    public void CloseAllPopup()
+    {
+        while (popupStack.Count > 0) ClosePopup();
+    }
 
     public void RefreshTimeScale()
     {
@@ -143,6 +146,12 @@ public class UIManager
             Time.timeScale = 0;
         else
             Time.timeScale = 1;
+    }
 
+    public void Clear()
+    {
+        CloseAllPopup();
+        Time.timeScale = 1;
+        sceneUI = null;
     }
 }

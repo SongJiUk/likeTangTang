@@ -36,7 +36,10 @@ public class ElectronicField : RepeatSkill, ITickable
     {
         
     }
-
+    private void OnDestroy()
+    {
+        Manager.UpdateM.Unregister(this);
+    }
     public override void ActivateSkill()
     {
         gameObject.SetActive(true);

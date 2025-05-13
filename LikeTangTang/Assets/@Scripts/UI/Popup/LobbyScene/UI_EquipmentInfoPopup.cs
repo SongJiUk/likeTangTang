@@ -137,7 +137,7 @@ public class UI_EquipmentInfoPopup : UI_Popup
 
         //TODO : 장비 옵션(등급에 따라)
         int gradeNum = Define.GetGradeNum(grade);
-        if(gradeNum < 0 ) Debug.Log("Grade Error!");
+        //if(gradeNum < 0 ) Debug.Log("Grade Error!");
 
         for(int i =0; i<=gradeNum; i++) 
             GetImage(ImagesType, (int)Images.UncommonSkillLockImage +i).gameObject.SetActive(false);

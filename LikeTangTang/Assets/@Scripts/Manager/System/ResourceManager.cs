@@ -23,16 +23,7 @@ public class ResourceManager
 
     public GameObject Instantiate(string _key, Transform _parent = null, bool _pooling = false)
     {
-
-        //if(resourceDic.TryGetValue(_key, out Object resource))
-        //{
-        //    var obj = GameObject.Instantiate(resource);
-        //    return obj as GameObject;
-        //}
-        //return null;
-
         GameObject prefab = Load<GameObject>(_key);
-
         if (prefab == null)
         {
             Debug.LogError("키에 맞는 프리팹이 없음!!, ResourceManager 38Line");
@@ -44,7 +35,6 @@ public class ResourceManager
 
         GameObject go = GameObject.Instantiate(prefab, _parent);
         go.name = prefab.name;
-
         return go;
     }
 

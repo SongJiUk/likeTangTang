@@ -146,7 +146,7 @@ public class UI_SkillSelectPopup : UI_Popup
         GameObject cont = GetObject(typeof(GameObjects), (int)GameObjects.SkillCardSelectListObject);
         cont.DestoryChilds();
         //ist<SkillBase> skillList = gm.player.Skills.Test();
-        List<object> skillList = gm.player.Skills.Test();
+        List<object> skillList = gm.player.Skills.GetSkills();
 
         foreach (var candidate in skillList)
         {
@@ -166,12 +166,6 @@ public class UI_SkillSelectPopup : UI_Popup
 
         Manager.TimeM.TimeStop();
     }
-
-    //void Test()
-    //{
-    //    List<SkillBase> baseSkillCandidates = Po
-    //}
-
 
 
     void SetCurrentSkill(int _index, SkillBase _skill)

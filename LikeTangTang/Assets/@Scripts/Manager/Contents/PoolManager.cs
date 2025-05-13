@@ -45,7 +45,7 @@ class Pool
     {
         GameObject go = GameObject.Instantiate(prefab);
         go.name = prefab.name;
-        go.transform.parent = Root;
+        go.transform.SetParent(Root);
 
         return go;
       
@@ -102,6 +102,11 @@ public class PoolManager
     {
         Pool pool = new Pool(_prefab);
         pools.Add(_prefab.name, pool);
+    }
+
+    public void Clear()
+    {
+        pools.Clear();
     }
 
 }

@@ -16,6 +16,11 @@ public class GravityBomb : RepeatSkill, ITickable
         SpawnGravityBomb();
     }
 
+    private void OnDestroy()
+    {
+        Manager.UpdateM.Unregister(this);
+    }
+
     public override void ActivateSkill()
     {
         base.ActivateSkill();

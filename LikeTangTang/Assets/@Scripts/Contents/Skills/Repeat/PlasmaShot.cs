@@ -10,7 +10,10 @@ public class PlasmaShot : RepeatSkill, ITickable
         Skilltype = Define.SkillType.PlasmaShot;
         coolTime = 0f;
     }
-    
+    private void OnDestroy()
+    {
+        Manager.UpdateM.Unregister(this);
+    }
     public override void ActivateSkill()
     {
         base.ActivateSkill();

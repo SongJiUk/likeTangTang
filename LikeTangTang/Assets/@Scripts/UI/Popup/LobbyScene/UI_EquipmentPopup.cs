@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Linq;
+
 
 public class UI_EquipmentPopup : UI_Popup
 {
@@ -59,7 +61,6 @@ public class UI_EquipmentPopup : UI_Popup
     private void Awake()
     {
         Init();
-
     }
     public override bool Init()
     {
@@ -138,8 +139,12 @@ public class UI_EquipmentPopup : UI_Popup
         GetText(TextsType, (int)Texts.AttackValueText).text = (Manager.GameM.CurrentCharacter.Attack + attack).ToString();
         GetText(TextsType, (int)Texts.HealthValueText).text = (Manager.GameM.CurrentCharacter.MaxHp + hp).ToString();
 
-
         SetItem();
+
+        LayoutRebuilder.ForceRebuildLayoutImmediate(GetObject(gameObjectsType, (int)GameObjects.EquipInventoryObject).GetComponent<RectTransform>());
+        LayoutRebuilder.ForceRebuildLayoutImmediate(GetObject(gameObjectsType, (int)GameObjects.ItemInventoryObject).GetComponent<RectTransform>());
+        LayoutRebuilder.ForceRebuildLayoutImmediate(GetObject(gameObjectsType, (int)GameObjects.EquipInventoryGroupObject).GetComponent<RectTransform>());
+        LayoutRebuilder.ForceRebuildLayoutImmediate(GetObject(gameObjectsType, (int)GameObjects.ItemInventoryGroupObject).GetComponent<RectTransform>());
     }
 
     void SortEquipments()
@@ -223,6 +228,13 @@ public class UI_EquipmentPopup : UI_Popup
     void OnClickMergeButton()
     {
         //TODO : 합성
+        UI_MergePopup mergePopup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_MergePopup;
+           
+        if(mergePopup != null)
+        {
+            mergePopup.SetInfo(null);
+            mergePopup.gameObject.SetActive(true);
+        }
 
     }
 

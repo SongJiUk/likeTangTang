@@ -159,6 +159,14 @@ public class ObjectManager
     //    }
     //}
 
+    public void Clear()
+    {
+        mcSet.Clear();
+        pjSet.Clear();
+        gemSet.Clear();
+        dropItemSet.Clear();
+    }
+
     public void LoadMap(string _name)
     {
         var obj = Manager.ResourceM.Instantiate(_name);

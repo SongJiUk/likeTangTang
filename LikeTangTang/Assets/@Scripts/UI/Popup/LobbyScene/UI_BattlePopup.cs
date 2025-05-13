@@ -19,6 +19,7 @@ public class UI_BattlePopup : UI_Popup
 
         GetToggle(typeof(Toggles), (int)Toggles.GameStartToggle).gameObject.BindEvent(() =>
         {
+            Manager.GameM.isGameEnd = false;
             Manager.SceneM.LoadScene(Define.SceneType.GameScene);
         });
         return true;
