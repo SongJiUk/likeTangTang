@@ -8,7 +8,7 @@ using System;
 public class PlayerController : CreatureController, ITickable
 {
     Dictionary<string, Transform> EquipmentDic = new();
-
+    string weaponName = "";
     #region Action
     public Action OnPlayerDataUpdated;
     public Action OnPlayerLevelUp;
@@ -274,7 +274,7 @@ public class PlayerController : CreatureController, ITickable
     public override bool Init()
     {
         base.Init();
-
+        weaponName = "";
         Manager.GameM.OnMovePlayerDir += HandleOnMoveDirChange;
         scale = transform.localScale;
 
@@ -287,9 +287,28 @@ public class PlayerController : CreatureController, ITickable
     {
         base.SetInfo(_dataID);
 
+        
         if (CreatureAnim != null)
             CreatureAnim.runtimeAnimatorController =
                 Manager.ResourceM.Load<RuntimeAnimatorController>(creatureData.CreatureAnimName);
+    }
+
+    public override void InitStat(bool _isHpFull = false)
+    {
+        MaxHp = Manager.GameM.CurrentCharacter.MaxHp;
+        Attack = Manager.GameM.CurrentCharacter.Attack;
+        Speed = creatureData.Speed * creatureData.MoveSpeedRate;
+
+        var (equip_Hp, equip_Attack) = Manager.GameM.GetCurrentCharacterStat();
+        MaxHp += equip_Hp;
+        Attack += equip_Attack;
+
+        Attack *= AttackRate;
+        Def *= DefRate;
+        Speed *= SpeedRate;
+
+
+        if (_isHpFull) Hp = MaxHp;
     }
 
     private void OnDestroy()

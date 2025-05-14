@@ -30,7 +30,7 @@ public class UI_LobbyScene : UI_Scene
     }
 
     #endregion
-
+    
     UI_ShopPopup ui_ShopPopup;
     UI_BattlePopup ui_BattlePopup;
     UI_EquipmentPopup ui_EquipmentPopup;
@@ -38,11 +38,13 @@ public class UI_LobbyScene : UI_Scene
     UI_MergePopup ui_MergePopup;
     UI_MergeResultPopup ui_MergeResultPopup;
     UI_MergeAllResultPopup ui_MergeAllResultPopup;
+    UI_EquipmentResetPopup ui_EquipmentResetPopup;
     public UI_EquipmentPopup Ui_EquipmentPopup { get { return ui_EquipmentPopup; } }
     public UI_EquipmentInfoPopup Ui_EquipmentInfoPopup { get { return ui_equipmentInfoPopup; } }
     public UI_MergePopup Ui_MergePopup { get { return ui_MergePopup; } }
     public UI_MergeResultPopup Ui_MergeResultPopup { get { return ui_MergeResultPopup; } }
     public UI_MergeAllResultPopup Ui_MergeAllResultPopup { get { return ui_MergeAllResultPopup; } }
+    public UI_EquipmentResetPopup Ui_EquipmentResetPopup { get { return ui_EquipmentResetPopup; } }
     public override bool Init()
     {
         gameObjectsType = typeof(GameObjects);
@@ -68,6 +70,7 @@ public class UI_LobbyScene : UI_Scene
         ui_MergePopup = Manager.UiM.ShowPopup<UI_MergePopup>();
         ui_MergeResultPopup = Manager.UiM.ShowPopup<UI_MergeResultPopup>();
         ui_MergeAllResultPopup = Manager.UiM.ShowPopup<UI_MergeAllResultPopup>();
+        ui_EquipmentResetPopup = Manager.UiM.ShowPopup<UI_EquipmentResetPopup>();
 
         AllOff();
 
@@ -95,6 +98,7 @@ public class UI_LobbyScene : UI_Scene
         ui_MergePopup.gameObject.SetActive(false);
         ui_MergeResultPopup.gameObject.SetActive(false);
         ui_MergeAllResultPopup.gameObject.SetActive(false);
+        ui_EquipmentResetPopup.gameObject.SetActive(false);
     }
     void OnClickEquipmentToggle()
     {
@@ -114,5 +118,14 @@ public class UI_LobbyScene : UI_Scene
     {
         AllOff();
         ui_ShopPopup.gameObject.SetActive(true);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            Manager.GameM.Gold += 10000;
+            Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_WeaponScroll], 100);
+        }
     }
 }

@@ -97,6 +97,36 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
+  - m_GUID: 77fa737f90ce6f04fa613ec04e8a2d69
+    m_Address: UI_MergeEquipItem
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 5c5515883eb246246a75f1be7d2db756
+    m_Address: UI_MergeResultPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 554cc1ae797654246ab45c9a2336dab0
+    m_Address: UI_MergeAllResultPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 438b8f0830b5bfc45865d82f6cf7836f
+    m_Address: UI_PausePopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 3dd13cb4456f86745a5b14b4de4146ab
+    m_Address: UI_UserInfoItem
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: aa6e62f9ee89a7547bafcb44c79b75c0
+    m_Address: UI_EquipmentResetPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

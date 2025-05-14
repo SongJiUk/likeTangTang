@@ -29,4 +29,14 @@ public class GameData
     public Dictionary<Define.EquipmentType, Equipment> EquipedEquipments = new Dictionary<Define.EquipmentType, Equipment>();
     public Dictionary<int, int> ItemDictionary = new Dictionary<int, int>();
     public Dictionary<int, StageClearInfoData> StageClearInfoDic = new Dictionary<int, StageClearInfoData>();
+
+    public void Init()
+    {
+        foreach (var e in OwnedEquipments)
+            e?.Init();
+
+        foreach(var e in EquipedEquipments)
+            e.Value?.Init();
+        
+    }
 }

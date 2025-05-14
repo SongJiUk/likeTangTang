@@ -1,104 +1,104 @@
 DataID,GachaGrade,EquipmentType,EquipmentGrade,NameTextID,ItemDescription,SpriteName,Grade_Hp,GradeUp_Hp,Grade_Attack,GradeUp_Attack,Grade_MaxLevel,BaseSkill,UnCommonGradeAbility,RareGradeAbility,EpicGradeAbility,UniqueGradeAbility,MergeEquipmentType_1,MergeEquipment_1,MergeEquipmentType_2,MergeEquipment_2,MergedItemCode,LevelUpMaterial,DownGradeEquipmentCode,DownGradeMaterialCode,DownGradeMaterialCount
-E31000,Normal,Weapon,Common,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,13,3,10,2040,21040,21041,22040,22041,ItemCode,E31000,ItemCode,E31000,E31001,61000,,,0
-E31001,Normal,Weapon,Uncommon,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,26,4,20,2040,21040,21041,22040,22041,ItemCode,E31001,ItemCode,E31001,E31002,61000,,,0
-E31002,Normal,Weapon,Rare,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,39,5,30,2040,21040,21041,22040,22041,ItemCode,E31002,ItemCode,E31002,E31003,61000,,,0
-E31003,Normal,Weapon,Epic,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,65,9,40,2040,21040,21041,22040,22041,Grade,Epic,None,None,E31004,61000,,,0
-E31004,Normal,Weapon,Epic1,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,78,10,50,2040,21040,21041,22040,22041,Grade,Epic,None,None,E31005,61000,E31003,E31003,1
-E31005,Normal,Weapon,Epic2,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,91,11,60,2040,21040,21041,22040,22041,ItemCode,E31003,ItemCode,E31003,E31006,61000,E31003,E31003,2
-E31006,Normal,Weapon,Unique,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,172,13,70,2040,21040,21041,22040,22041,Grade,Unique,None,None,E31007,61000,,,0
-E31007,Normal,Weapon,Unique1,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,200,15,80,2040,21040,21041,22040,22041,Grade,Unique,None,None,E31008,61000,E31007,E31007,1
-E31008,Normal,Weapon,Unique2,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,229,17,90,2040,21040,21041,22040,22041,Grade,Unique,None,None,E31009,61000,E31007,E31007,2
-E31009,Normal,Weapon,Unique3,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,257,19,100,2040,21040,21041,22040,22041,None,None,None,None,None,61000,E31007,E31007,3
-E31010,Normal,Weapon,Common,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,13,3,10,2080,21040,21041,22080,22081,ItemCode,E31010,ItemCode,E31010,E31011,61000,,,0
-E31011,Normal,Weapon,Uncommon,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,26,4,20,2080,21040,21041,22080,22081,ItemCode,E31011,ItemCode,E31011,E31012,61000,,,0
-E31012,Normal,Weapon,Rare,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,39,5,30,2080,21040,21041,22080,22081,ItemCode,E31012,ItemCode,E31012,E31013,61000,,,0
-E31013,Normal,Weapon,Epic,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,65,9,40,2080,21040,21041,22080,22081,Grade,Epic,None,None,E31014,61000,,,0
-E31014,Normal,Weapon,Epic1,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,78,10,50,2080,21040,21041,22080,22081,Grade,Epic,None,None,E31015,61000,E31013,E31013,1
-E31015,Normal,Weapon,Epic2,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,91,11,60,2080,21040,21041,22080,22081,ItemCode,E31013,ItemCode,E31013,E31016,61000,E31013,E31013,2
-E31016,Normal,Weapon,Unique,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,172,13,70,2080,21040,21041,22080,22081,Grade,Unique,None,None,E31017,61000,,,0
-E31017,Normal,Weapon,Unique1,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,200,15,80,2080,21040,21041,22080,22081,Grade,Unique,None,None,E31018,61000,E31016,E31016,1
-E31018,Normal,Weapon,Unique2,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,229,17,90,2080,21040,21041,22080,22081,Grade,Unique,None,None,E31019,61000,E31016,E31016,2
-E31019,Normal,Weapon,Unique3,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,257,19,100,2080,21040,21041,22080,22081,None,None,None,None,None,61000,E31016,E31016,3
-E31020,Normal,Weapon,Common,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,13,3,10,2010,21040,21041,22010,22011,ItemCode,E31020,ItemCode,E31020,E31021,61000,,,0
-E31021,Normal,Weapon,Uncommon,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,26,4,20,2010,21040,21041,22010,22011,ItemCode,E31021,ItemCode,E31021,E31022,61000,,,0
-E31022,Normal,Weapon,Rare,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,39,5,30,2010,21040,21041,22010,22011,ItemCode,E31022,ItemCode,E31022,E31023,61000,,,0
-E31023,Normal,Weapon,Epic,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,65,9,40,2010,21040,21041,22010,22011,Grade,Epic,None,None,E31024,61000,,,0
-E31024,Normal,Weapon,Epic1,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,78,10,50,2010,21040,21041,22010,22011,Grade,Epic,None,None,E31025,61000,E31023,E31023,1
-E31025,Normal,Weapon,Epic2,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,91,11,60,2010,21040,21041,22010,22011,ItemCode,E31023,ItemCode,E31023,E31026,61000,E31023,E31023,2
-E31026,Normal,Weapon,Unique,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,172,13,70,2010,21040,21041,22010,22011,Grade,Unique,None,None,E31027,61000,,,0
-E31027,Normal,Weapon,Unique1,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,200,15,80,2010,21040,21041,22010,22011,Grade,Unique,None,None,E31028,61000,E31026,E31026,1
-E31028,Normal,Weapon,Unique2,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,229,17,90,2010,21040,21041,22010,22011,Grade,Unique,None,None,E31029,61000,E31026,E31026,2
-E31029,Normal,Weapon,Unique3,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,257,19,100,2010,21040,21041,22010,22011,None,None,None,None,None,61000,E31026,E31026,3
-E31030,Normal,Weapon,Common,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,13,3,10,2050,21040,21041,22050,22051,ItemCode,E31030,ItemCode,E31030,E31031,61000,,,0
-E31031,Normal,Weapon,Uncommon,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,26,4,20,2050,21040,21041,22050,22051,ItemCode,E31031,ItemCode,E31031,E31032,61000,,,0
-E31032,Normal,Weapon,Rare,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,39,5,30,2050,21040,21041,22050,22051,ItemCode,E31032,ItemCode,E31032,E31033,61000,,,0
-E31033,Normal,Weapon,Epic,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,65,9,40,2050,21040,21041,22050,22051,Grade,Epic,None,None,E31034,61000,,,0
-E31034,Normal,Weapon,Epic1,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,78,10,50,2050,21040,21041,22050,22051,Grade,Epic,None,None,E31035,61000,E31033,E31033,1
-E31035,Normal,Weapon,Epic2,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,91,11,60,2050,21040,21041,22050,22051,ItemCode,E31033,ItemCode,E31033,E31036,61000,E31033,E31033,2
-E31036,Normal,Weapon,Unique,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,172,13,70,2050,21040,21041,22050,22051,Grade,Unique,None,None,E31037,61000,,,0
-E31037,Normal,Weapon,Unique1,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,200,15,80,2050,21040,21041,22050,22051,Grade,Unique,None,None,E31038,61000,E31036,E31036,1
-E31038,Normal,Weapon,Unique2,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,229,17,90,2050,21040,21041,22050,22051,Grade,Unique,None,None,E31039,61000,E31036,E31036,2
-E31039,Normal,Weapon,Unique3,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,257,19,100,2050,21040,21041,22050,22051,None,None,None,None,None,61000,E31036,E31036,3
-E31040,Normal,Weapon,Common,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,13,3,10,2070,21000,21001,22070,22071,ItemCode,E31040,ItemCode,E31040,E31041,61000,,,0
-E31041,Normal,Weapon,Uncommon,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,26,4,20,2070,21000,21001,22070,22071,ItemCode,E31041,ItemCode,E31041,E31042,61000,,,0
-E31042,Normal,Weapon,Rare,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,39,5,30,2070,21000,21001,22070,22071,ItemCode,E31042,ItemCode,E31042,E31043,61000,,,0
-E31043,Normal,Weapon,Epic,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,65,9,40,2070,21000,21001,22070,22071,Grade,Epic,None,None,E31044,61000,,,0
-E31044,Normal,Weapon,Epic1,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,78,10,50,2070,21000,21001,22070,22071,Grade,Epic,None,None,E31045,61000,E31043,E31043,1
-E31045,Normal,Weapon,Epic2,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,91,11,60,2070,21000,21001,22070,22071,ItemCode,E31043,ItemCode,E31043,E31046,61000,E31043,E31043,2
-E31046,Normal,Weapon,Unique,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,172,13,70,2070,21000,21001,22070,22071,Grade,Unique,None,None,E31047,61000,,,0
-E31047,Normal,Weapon,Unique1,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,200,15,80,2070,21000,21001,22070,22071,Grade,Unique,None,None,E31048,61000,E31046,E31046,1
-E31048,Normal,Weapon,Unique2,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,229,17,90,2070,21000,21001,22070,22071,Grade,Unique,None,None,E31049,61000,E31046,E31046,2
-E31049,Normal,Weapon,Unique3,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,257,19,100,2070,21000,21001,22070,22071,None,None,None,None,None,61000,E31046,E31046,3
-E31050,Normal,Weapon,Common,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,13,3,10,2000,21000,21001,22000,22001,ItemCode,E31050,ItemCode,E31050,E31051,61000,,,0
-E31051,Normal,Weapon,Uncommon,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,26,4,20,2000,21000,21001,22000,22001,ItemCode,E31051,ItemCode,E31051,E31052,61000,,,0
-E31052,Normal,Weapon,Rare,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,39,5,30,2000,21000,21001,22000,22001,ItemCode,E31052,ItemCode,E31052,E31053,61000,,,0
-E31053,Normal,Weapon,Epic,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,65,9,40,2000,21000,21001,22000,22001,Grade,Epic,None,None,E31054,61000,,,0
-E31054,Normal,Weapon,Epic1,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,78,10,50,2000,21000,21001,22000,22001,Grade,Epic,None,None,E31055,61000,E31053,E31053,1
-E31055,Normal,Weapon,Epic2,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,91,11,60,2000,21000,21001,22000,22001,ItemCode,E31053,ItemCode,E31053,E31056,61000,E31053,E31053,2
-E31056,Normal,Weapon,Unique,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,172,13,70,2000,21000,21001,22000,22001,Grade,Unique,None,None,E31057,61000,,,0
-E31057,Normal,Weapon,Unique1,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,200,15,80,2000,21000,21001,22000,22001,Grade,Unique,None,None,E31058,61000,E31056,E31056,1
-E31058,Normal,Weapon,Unique2,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,229,17,90,2000,21000,21001,22000,22001,Grade,Unique,None,None,E31059,61000,E31056,E31056,2
-E31059,Normal,Weapon,Unique3,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,257,19,100,2000,21000,21001,22000,22001,None,None,None,None,None,61000,E31056,E31056,3
-E31060,Normal,Weapon,Common,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,13,3,10,2020,21000,21001,22020,22021,ItemCode,E31060,ItemCode,E31060,E31061,61000,,,0
-E31061,Normal,Weapon,Uncommon,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,26,4,20,2000,21000,21001,22020,22021,ItemCode,E31061,ItemCode,E31061,E31062,61000,,,0
-E31062,Normal,Weapon,Rare,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,39,5,30,2000,21000,21001,22020,22021,ItemCode,E31062,ItemCode,E31062,E31063,61000,,,0
-E31063,Normal,Weapon,Epic,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,65,9,40,2000,21000,21001,22020,22021,Grade,Epic,None,None,E31064,61000,,,0
-E31064,Normal,Weapon,Epic1,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,78,10,50,2000,21000,21001,22020,22021,Grade,Epic,None,None,E31065,61000,E31063,E31063,1
-E31065,Normal,Weapon,Epic2,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,91,11,60,2000,21000,21001,22020,22021,ItemCode,E31063,ItemCode,E31063,E31066,61000,E31063,E31063,2
-E31066,Normal,Weapon,Unique,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,172,13,70,2000,21000,21001,22020,22021,Grade,Unique,None,None,E31067,61000,,,0
-E31067,Normal,Weapon,Unique1,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,200,15,80,2000,21000,21001,22020,22021,Grade,Unique,None,None,E31068,61000,E31066,E31066,1
-E31068,Normal,Weapon,Unique2,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,229,17,90,2000,21000,21001,22020,22021,Grade,Unique,None,None,E31069,61000,E31066,E31066,2
-E31069,Normal,Weapon,Unique3,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,257,19,100,2000,21000,21001,22020,22021,None,None,None,None,None,61000,E31066,E31066,3
-E31070,Normal,Weapon,Common,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,13,3,10,2090,21000,21001,22090,22091,ItemCode,E31070,ItemCode,E31070,E31071,61000,,,0
-E31071,Normal,Weapon,Uncommon,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,26,4,20,2090,21000,21001,22090,22091,ItemCode,E31071,ItemCode,E31071,E31072,61000,,,0
-E31072,Normal,Weapon,Rare,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,39,5,30,2090,21000,21001,22090,22091,ItemCode,E31072,ItemCode,E31072,E31073,61000,,,0
-E31073,Normal,Weapon,Epic,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,65,9,40,2090,21000,21001,22090,22091,Grade,Epic,None,None,E31074,61000,,,0
-E31074,Normal,Weapon,Epic1,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,78,10,50,2090,21000,21001,22090,22091,Grade,Epic,None,None,E31075,61000,E31073,E31073,1
-E31075,Normal,Weapon,Epic2,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,91,11,60,2090,21000,21001,22090,22091,ItemCode,E31073,ItemCode,E31073,E31076,61000,E31073,E31073,2
-E31076,Normal,Weapon,Unique,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,172,13,70,2090,21000,21001,22090,22091,Grade,Unique,None,None,E31077,61000,,,0
-E31077,Normal,Weapon,Unique1,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,200,15,80,2090,21000,21001,22090,22091,Grade,Unique,None,None,E31078,61000,E31076,E31076,1
-E31078,Normal,Weapon,Unique2,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,229,17,90,2090,21000,21001,22090,22091,Grade,Unique,None,None,E31079,61000,E31076,E31076,2
-E31079,Normal,Weapon,Unique3,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,257,19,100,2090,21000,21001,22090,22091,None,None,None,None,None,61000,E31076,E31076,3
-E31080,Normal,Weapon,Common,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,13,3,10,2030,21090,21091,22030,22031,ItemCode,E31080,ItemCode,E31080,E31081,61000,,,0
-E31081,Normal,Weapon,Uncommon,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,26,4,20,2030,21090,21091,22030,22031,ItemCode,E31081,ItemCode,E31081,E31082,61000,,,0
-E31082,Normal,Weapon,Rare,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,39,5,30,2030,21090,21091,22030,22031,ItemCode,E31082,ItemCode,E31082,E31083,61000,,,0
-E31083,Normal,Weapon,Epic,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,65,9,40,2030,21090,21091,22030,22031,Grade,Epic,None,None,E31084,61000,,,0
-E31084,Normal,Weapon,Epic1,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,78,10,50,2030,21090,21091,22030,22031,Grade,Epic,None,None,E31085,61000,E31083,E31083,1
-E31085,Normal,Weapon,Epic2,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,91,11,60,2030,21090,21091,22030,22031,ItemCode,E31083,ItemCode,E31083,E31086,61000,E31083,E31083,2
-E31086,Normal,Weapon,Unique,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,172,13,70,2030,21090,21091,22030,22031,Grade,Unique,None,None,E31087,61000,,,0
-E31087,Normal,Weapon,Unique1,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,200,15,80,2030,21090,21091,22030,22031,Grade,Unique,None,None,E31088,61000,E31086,E31086,1
-E31088,Normal,Weapon,Unique2,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,229,17,90,2030,21090,21091,22030,22031,Grade,Unique,None,None,E31089,61000,E31086,E31086,2
-E31089,Normal,Weapon,Unique3,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,257,19,100,2030,21090,21091,22030,22031,None,None,None,None,None,61000,E31086,E31086,3
-E31090,Normal,Weapon,Common,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,13,3,10,2060,21090,21091,22060,22061,ItemCode,E31090,ItemCode,E31090,E31091,61000,,,0
-E31091,Normal,Weapon,Uncommon,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,26,4,20,2060,21090,21091,22060,22061,ItemCode,E31091,ItemCode,E31091,E31092,61000,,,0
-E31092,Normal,Weapon,Rare,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,39,5,30,2060,21090,21091,22060,22061,ItemCode,E31092,ItemCode,E31092,E31093,61000,,,0
-E31093,Normal,Weapon,Epic,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,65,9,40,2060,21090,21091,22060,22061,Grade,Epic,None,None,E31094,61000,,,0
-E31094,Normal,Weapon,Epic1,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,78,10,50,2060,21090,21091,22060,22061,Grade,Epic,None,None,E31095,61000,E31093,E31093,1
-E31095,Normal,Weapon,Epic2,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,91,11,60,2060,21090,21091,22060,22061,ItemCode,E31093,ItemCode,E31093,E31096,61000,E31093,E31093,2
-E31096,Normal,Weapon,Unique,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,172,13,70,2060,21090,21091,22060,22061,Grade,Unique,None,None,E31097,61000,,,0
-E31097,Normal,Weapon,Unique1,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,200,15,80,2060,21090,21091,22060,22061,Grade,Unique,None,None,E31098,61000,E31096,E31096,1
-E31098,Normal,Weapon,Unique2,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,229,17,90,2060,21090,21091,22060,22061,Grade,Unique,None,None,E31099,61000,E31096,E31096,2
-E31099,Normal,Weapon,Unique3,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,257,19,100,2060,21090,21091,22060,22061,None,None,None,None,None,61000,E31096,E31096,3
+E31000,Normal,Weapon,Common,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,13,3,10,20400,21040,21041,22040,22041,ItemCode,E31000,ItemCode,E31000,E31001,61000,,,0
+E31001,Normal,Weapon,Uncommon,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,26,4,20,20400,21040,21041,22040,22041,ItemCode,E31001,ItemCode,E31001,E31002,61000,,,0
+E31002,Normal,Weapon,Rare,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,39,5,30,20400,21040,21041,22040,22041,ItemCode,E31002,ItemCode,E31002,E31003,61000,,,0
+E31003,Normal,Weapon,Epic,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,65,9,40,20400,21040,21041,22040,22041,Grade,Epic,None,None,E31004,61000,,,0
+E31004,Normal,Weapon,Epic1,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,78,10,50,20400,21040,21041,22040,22041,Grade,Epic,None,None,E31005,61000,E31003,E31003,1
+E31005,Normal,Weapon,Epic2,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,91,11,60,20400,21040,21041,22040,22041,ItemCode,E31003,ItemCode,E31003,E31006,61000,E31003,E31003,2
+E31006,Normal,Weapon,Unique,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,172,13,70,20400,21040,21041,22040,22041,Grade,Unique,None,None,E31007,61000,,,0
+E31007,Normal,Weapon,Unique1,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,200,15,80,20400,21040,21041,22040,22041,Grade,Unique,None,None,E31008,61000,E31007,E31007,1
+E31008,Normal,Weapon,Unique2,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,229,17,90,20400,21040,21041,22040,22041,Grade,Unique,None,None,E31009,61000,E31007,E31007,2
+E31009,Normal,Weapon,Unique3,테슬라 임펄스,강력한 전기 충격파를 방출하는 고출력 전자 무기.,Weapon_ElectricShock.sprite,0,0,257,19,100,20400,21040,21041,22040,22041,None,None,None,None,None,61000,E31007,E31007,3
+E31010,Normal,Weapon,Common,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,13,3,10,20800,21040,21041,22080,22081,ItemCode,E31010,ItemCode,E31010,E31011,61000,,,0
+E31011,Normal,Weapon,Uncommon,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,26,4,20,20800,21040,21041,22080,22081,ItemCode,E31011,ItemCode,E31011,E31012,61000,,,0
+E31012,Normal,Weapon,Rare,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,39,5,30,20800,21040,21041,22080,22081,ItemCode,E31012,ItemCode,E31012,E31013,61000,,,0
+E31013,Normal,Weapon,Epic,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,65,9,40,20800,21040,21041,22080,22081,Grade,Epic,None,None,E31014,61000,,,0
+E31014,Normal,Weapon,Epic1,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,78,10,50,20800,21040,21041,22080,22081,Grade,Epic,None,None,E31015,61000,E31013,E31013,1
+E31015,Normal,Weapon,Epic2,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,91,11,60,20800,21040,21041,22080,22081,ItemCode,E31013,ItemCode,E31013,E31016,61000,E31013,E31013,2
+E31016,Normal,Weapon,Unique,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,172,13,70,20800,21040,21041,22080,22081,Grade,Unique,None,None,E31017,61000,,,0
+E31017,Normal,Weapon,Unique1,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,200,15,80,20800,21040,21041,22080,22081,Grade,Unique,None,None,E31018,61000,E31016,E31016,1
+E31018,Normal,Weapon,Unique2,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,229,17,90,20800,21040,21041,22080,22081,Grade,Unique,None,None,E31019,61000,E31016,E31016,2
+E31019,Normal,Weapon,Unique3,자이언트 커패시터,초대형 커패시터로 에너지를 저장하고 폭발적으로 방출하는 무기.,Weapon_ElectronicField.sprite,0,0,257,19,100,20800,21040,21041,22080,22081,None,None,None,None,None,61000,E31016,E31016,3
+E31020,Normal,Weapon,Common,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,13,3,10,20100,21040,21041,22010,22011,ItemCode,E31020,ItemCode,E31020,E31021,61000,,,0
+E31021,Normal,Weapon,Uncommon,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,26,4,20,20100,21040,21041,22010,22011,ItemCode,E31021,ItemCode,E31021,E31022,61000,,,0
+E31022,Normal,Weapon,Rare,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,39,5,30,20100,21040,21041,22010,22011,ItemCode,E31022,ItemCode,E31022,E31023,61000,,,0
+E31023,Normal,Weapon,Epic,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,65,9,40,20100,21040,21041,22010,22011,Grade,Epic,None,None,E31024,61000,,,0
+E31024,Normal,Weapon,Epic1,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,78,10,50,20100,21040,21041,22010,22011,Grade,Epic,None,None,E31025,61000,E31023,E31023,1
+E31025,Normal,Weapon,Epic2,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,91,11,60,20100,21040,21041,22010,22011,ItemCode,E31023,ItemCode,E31023,E31026,61000,E31023,E31023,2
+E31026,Normal,Weapon,Unique,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,172,13,70,20100,21040,21041,22010,22011,Grade,Unique,None,None,E31027,61000,,,0
+E31027,Normal,Weapon,Unique1,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,200,15,80,20100,21040,21041,22010,22011,Grade,Unique,None,None,E31028,61000,E31026,E31026,1
+E31028,Normal,Weapon,Unique2,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,229,17,90,20100,21040,21041,22010,22011,Grade,Unique,None,None,E31029,61000,E31026,E31026,2
+E31029,Normal,Weapon,Unique3,이온 링 제너레이터,이온 입자를 고속으로 순환시켜 파괴적인 링 에너지를 생성.,Weapon_EnergyRing.sprite,0,0,257,19,100,20100,21040,21041,22010,22011,None,None,None,None,None,61000,E31026,E31026,3
+E31030,Normal,Weapon,Common,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,13,3,10,20500,21040,21041,22050,22051,ItemCode,E31030,ItemCode,E31030,E31031,61000,,,0
+E31031,Normal,Weapon,Uncommon,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,26,4,20,20500,21040,21041,22050,22051,ItemCode,E31031,ItemCode,E31031,E31032,61000,,,0
+E31032,Normal,Weapon,Rare,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,39,5,30,20500,21040,21041,22050,22051,ItemCode,E31032,ItemCode,E31032,E31033,61000,,,0
+E31033,Normal,Weapon,Epic,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,65,9,40,20500,21040,21041,22050,22051,Grade,Epic,None,None,E31034,61000,,,0
+E31034,Normal,Weapon,Epic1,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,78,10,50,20500,21040,21041,22050,22051,Grade,Epic,None,None,E31035,61000,E31033,E31033,1
+E31035,Normal,Weapon,Epic2,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,91,11,60,20500,21040,21041,22050,22051,ItemCode,E31033,ItemCode,E31033,E31036,61000,E31033,E31033,2
+E31036,Normal,Weapon,Unique,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,172,13,70,20500,21040,21041,22050,22051,Grade,Unique,None,None,E31037,61000,,,0
+E31037,Normal,Weapon,Unique1,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,200,15,80,20500,21040,21041,22050,22051,Grade,Unique,None,None,E31038,61000,E31036,E31036,1
+E31038,Normal,Weapon,Unique2,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,229,17,90,20500,21040,21041,22050,22051,Grade,Unique,None,None,E31039,61000,E31036,E31036,2
+E31039,Normal,Weapon,Unique3,그라비톤 코어,중력 왜곡을 일으키는 고밀도 에너지 코어.,Weapon_GravityBomb.sprite,0,0,257,19,100,20500,21040,21041,22050,22051,None,None,None,None,None,61000,E31036,E31036,3
+E31040,Normal,Weapon,Common,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,13,3,10,20700,21000,21001,22070,22071,ItemCode,E31040,ItemCode,E31040,E31041,61000,,,0
+E31041,Normal,Weapon,Uncommon,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,26,4,20,20700,21000,21001,22070,22071,ItemCode,E31041,ItemCode,E31041,E31042,61000,,,0
+E31042,Normal,Weapon,Rare,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,39,5,30,20700,21000,21001,22070,22071,ItemCode,E31042,ItemCode,E31042,E31043,61000,,,0
+E31043,Normal,Weapon,Epic,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,65,9,40,20700,21000,21001,22070,22071,Grade,Epic,None,None,E31044,61000,,,0
+E31044,Normal,Weapon,Epic1,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,78,10,50,20700,21000,21001,22070,22071,Grade,Epic,None,None,E31045,61000,E31043,E31043,1
+E31045,Normal,Weapon,Epic2,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,91,11,60,20700,21000,21001,22070,22071,ItemCode,E31043,ItemCode,E31043,E31046,61000,E31043,E31043,2
+E31046,Normal,Weapon,Unique,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,172,13,70,20700,21000,21001,22070,22071,Grade,Unique,None,None,E31047,61000,,,0
+E31047,Normal,Weapon,Unique1,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,200,15,80,20700,21000,21001,22070,22071,Grade,Unique,None,None,E31048,61000,E31046,E31046,1
+E31048,Normal,Weapon,Unique2,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,229,17,90,20700,21000,21001,22070,22071,Grade,Unique,None,None,E31049,61000,E31046,E31046,2
+E31049,Normal,Weapon,Unique3,오르비탈 엣지,궤도를 따라 날아가는 고속 절단 블레이드.,Weapon_OrbitalBlades.sprite,0,0,257,19,100,20700,21000,21001,22070,22071,None,None,None,None,None,61000,E31046,E31046,3
+E31050,Normal,Weapon,Common,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,13,3,10,20000,21000,21001,22000,22001,ItemCode,E31050,ItemCode,E31050,E31051,61000,,,0
+E31051,Normal,Weapon,Uncommon,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,26,4,20,20000,21000,21001,22000,22001,ItemCode,E31051,ItemCode,E31051,E31052,61000,,,0
+E31052,Normal,Weapon,Rare,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,39,5,30,20000,21000,21001,22000,22001,ItemCode,E31052,ItemCode,E31052,E31053,61000,,,0
+E31053,Normal,Weapon,Epic,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,65,9,40,20000,21000,21001,22000,22001,Grade,Epic,None,None,E31054,61000,,,0
+E31054,Normal,Weapon,Epic1,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,78,10,50,20000,21000,21001,22000,22001,Grade,Epic,None,None,E31055,61000,E31053,E31053,1
+E31055,Normal,Weapon,Epic2,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,91,11,60,20000,21000,21001,22000,22001,ItemCode,E31053,ItemCode,E31053,E31056,61000,E31053,E31053,2
+E31056,Normal,Weapon,Unique,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,172,13,70,20000,21000,21001,22000,22001,Grade,Unique,None,None,E31057,61000,,,0
+E31057,Normal,Weapon,Unique1,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,200,15,80,20000,21000,21001,22000,22001,Grade,Unique,None,None,E31058,61000,E31056,E31056,1
+E31058,Normal,Weapon,Unique2,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,229,17,90,20000,21000,21001,22000,22001,Grade,Unique,None,None,E31059,61000,E31056,E31056,2
+E31059,Normal,Weapon,Unique3,플라즈마 캐스터,고온 플라즈마를 연속 발사하는 에너지 무기.,Weapon_PlasmaShot.sprite,0,0,257,19,100,20000,21000,21001,22000,22001,None,None,None,None,None,61000,E31056,E31056,3
+E31060,Normal,Weapon,Common,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,13,3,10,20200,21000,21001,22020,22021,ItemCode,E31060,ItemCode,E31060,E31061,61000,,,0
+E31061,Normal,Weapon,Uncommon,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,26,4,20,20200,21000,21001,22020,22021,ItemCode,E31061,ItemCode,E31061,E31062,61000,,,0
+E31062,Normal,Weapon,Rare,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,39,5,30,20200,21000,21001,22020,22021,ItemCode,E31062,ItemCode,E31062,E31063,61000,,,0
+E31063,Normal,Weapon,Epic,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,65,9,40,20200,21000,21001,22020,22021,Grade,Epic,None,None,E31064,61000,,,0
+E31064,Normal,Weapon,Epic1,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,78,10,50,20200,21000,21001,22020,22021,Grade,Epic,None,None,E31065,61000,E31063,E31063,1
+E31065,Normal,Weapon,Epic2,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,91,11,60,20200,21000,21001,22020,22021,ItemCode,E31063,ItemCode,E31063,E31066,61000,E31063,E31063,2
+E31066,Normal,Weapon,Unique,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,172,13,70,20200,21000,21001,22020,22021,Grade,Unique,None,None,E31067,61000,,,0
+E31067,Normal,Weapon,Unique1,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,200,15,80,20200,21000,21001,22020,22021,Grade,Unique,None,None,E31068,61000,E31066,E31066,1
+E31068,Normal,Weapon,Unique2,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,229,17,90,20200,21000,21001,22020,22021,Grade,Unique,None,None,E31069,61000,E31066,E31066,2
+E31069,Normal,Weapon,Unique3,플라즈마 자이로,회전하는 플라즈마 구체로 적을 추격하는 첨단 무기.,Weapon_PlasmaSpinner.sprite,0,0,257,19,100,20200,21000,21001,22020,22021,None,None,None,None,None,61000,E31066,E31066,3
+E31070,Normal,Weapon,Common,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,13,3,10,20900,21000,21001,22090,22091,ItemCode,E31070,ItemCode,E31070,E31071,61000,,,0
+E31071,Normal,Weapon,Uncommon,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,26,4,20,20900,21000,21001,22090,22091,ItemCode,E31071,ItemCode,E31071,E31072,61000,,,0
+E31072,Normal,Weapon,Rare,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,39,5,30,20900,21000,21001,22090,22091,ItemCode,E31072,ItemCode,E31072,E31073,61000,,,0
+E31073,Normal,Weapon,Epic,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,65,9,40,20900,21000,21001,22090,22091,Grade,Epic,None,None,E31074,61000,,,0
+E31074,Normal,Weapon,Epic1,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,78,10,50,20900,21000,21001,22090,22091,Grade,Epic,None,None,E31075,61000,E31073,E31073,1
+E31075,Normal,Weapon,Epic2,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,91,11,60,20900,21000,21001,22090,22091,ItemCode,E31073,ItemCode,E31073,E31076,61000,E31073,E31073,2
+E31076,Normal,Weapon,Unique,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,172,13,70,20900,21000,21001,22090,22091,Grade,Unique,None,None,E31077,61000,,,0
+E31077,Normal,Weapon,Unique1,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,200,15,80,20900,21000,21001,22090,22091,Grade,Unique,None,None,E31078,61000,E31076,E31076,1
+E31078,Normal,Weapon,Unique2,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,229,17,90,20900,21000,21001,22090,22091,Grade,Unique,None,None,E31079,61000,E31076,E31076,2
+E31079,Normal,Weapon,Unique3,스펙트럴 레이저 블레이드,스펙트럼 에너지로 형성된 고밀도 광자 블레이드.,Weapon_SpectralSlash.sprite,0,0,257,19,100,20900,21000,21001,22090,22091,None,None,None,None,None,61000,E31076,E31076,3
+E31080,Normal,Weapon,Common,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,13,3,10,20300,21090,21091,22030,22031,ItemCode,E31080,ItemCode,E31080,E31081,61000,,,0
+E31081,Normal,Weapon,Uncommon,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,26,4,20,20300,21090,21091,22030,22031,ItemCode,E31081,ItemCode,E31081,E31082,61000,,,0
+E31082,Normal,Weapon,Rare,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,39,5,30,20300,21090,21091,22030,22031,ItemCode,E31082,ItemCode,E31082,E31083,61000,,,0
+E31083,Normal,Weapon,Epic,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,65,9,40,20300,21090,21091,22030,22031,Grade,Epic,None,None,E31084,61000,,,0
+E31084,Normal,Weapon,Epic1,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,78,10,50,20300,21090,21091,22030,22031,Grade,Epic,None,None,E31085,61000,E31083,E31083,1
+E31085,Normal,Weapon,Epic2,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,91,11,60,20300,21090,21091,22030,22031,ItemCode,E31083,ItemCode,E31083,E31086,61000,E31083,E31083,2
+E31086,Normal,Weapon,Unique,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,172,13,70,20300,21090,21091,22030,22031,Grade,Unique,None,None,E31087,61000,,,0
+E31087,Normal,Weapon,Unique1,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,200,15,80,20300,21090,21091,22030,22031,Grade,Unique,None,None,E31088,61000,E31086,E31086,1
+E31088,Normal,Weapon,Unique2,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,229,17,90,20300,21090,21091,22030,22031,Grade,Unique,None,None,E31089,61000,E31086,E31086,2
+E31089,Normal,Weapon,Unique3,자폭 AI 드론,자율적으로 표적을 추적하고 폭발하는 인공지능 드론.,Weapon_SuicideDrone.sprite,0,0,257,19,100,20300,21090,21091,22030,22031,None,None,None,None,None,61000,E31086,E31086,3
+E31090,Normal,Weapon,Common,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,13,3,10,20600,21090,21091,22060,22061,ItemCode,E31090,ItemCode,E31090,E31091,61000,,,0
+E31091,Normal,Weapon,Uncommon,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,26,4,20,20600,21090,21091,22060,22061,ItemCode,E31091,ItemCode,E31091,E31092,61000,,,0
+E31092,Normal,Weapon,Rare,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,39,5,30,20600,21090,21091,22060,22061,ItemCode,E31092,ItemCode,E31092,E31093,61000,,,0
+E31093,Normal,Weapon,Epic,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,65,9,40,20600,21090,21091,22060,22061,Grade,Epic,None,None,E31094,61000,,,0
+E31094,Normal,Weapon,Epic1,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,78,10,50,20600,21090,21091,22060,22061,Grade,Epic,None,None,E31095,61000,E31093,E31093,1
+E31095,Normal,Weapon,Epic2,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,91,11,60,20600,21090,21091,22060,22061,ItemCode,E31093,ItemCode,E31093,E31096,61000,E31093,E31093,2
+E31096,Normal,Weapon,Unique,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,172,13,70,20600,21090,21091,22060,22061,Grade,Unique,None,None,E31097,61000,,,0
+E31097,Normal,Weapon,Unique1,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,200,15,80,20600,21090,21091,22060,22061,Grade,Unique,None,None,E31098,61000,E31096,E31096,1
+E31098,Normal,Weapon,Unique2,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,229,17,90,20600,21090,21091,22060,22061,Grade,Unique,None,None,E31099,61000,E31096,E31096,2
+E31099,Normal,Weapon,Unique3,크로노 디스럽터,시간의 흐름을 교란하는 고급 시간 변조 장치.,Weapon_TimeStopBomb.sprite,0,0,257,19,100,20600,21090,21091,22060,22061,None,None,None,None,None,61000,E31096,E31096,3
 E32000,Normal,Glove,Common,플라즈마 그립,순수한 플라즈마 에너지를 손아귀에 응축한 첨단 전투 장갑.,Glove_01.sprite,0,0,10,2,10,0,21040,21041,21002,21003,ItemCode,E32000,ItemCode,E32000,E32001,61001,,,0
 E32001,Normal,Glove,Uncommon,플라즈마 그립,순수한 플라즈마 에너지를 손아귀에 응축한 첨단 전투 장갑.,Glove_01.sprite,0,0,21,3,20,0,21040,21041,21002,21003,ItemCode,E32001,ItemCode,E32001,E32002,61001,,,0
 E32002,Normal,Glove,Rare,플라즈마 그립,순수한 플라즈마 에너지를 손아귀에 응축한 첨단 전투 장갑.,Glove_01.sprite,0,0,31,4,30,0,21040,21041,21002,21003,ItemCode,E32002,ItemCode,E32002,E32003,61001,,,0

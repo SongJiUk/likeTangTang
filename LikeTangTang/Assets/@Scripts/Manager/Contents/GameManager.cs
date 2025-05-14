@@ -284,6 +284,8 @@ public class GameManager
 
         string jsonStr = File.ReadAllText(path);
         GameData data = JsonConvert.DeserializeObject<GameData>(jsonStr);
+        data.Init();
+
         if (data != null) gameData = data;
 
         //가진게 있다면 벗기고, 다시 입힘
@@ -380,8 +382,15 @@ public class GameManager
         EquipedEquipments.Add(_type, _equipment);
         _equipment.IsEquiped = true;
         _equipment.IsConfirmed = true;
+    }
 
-        
+    public void UnEquipItem(Equipment _equipment)
+    {
+        if(EquipedEquipments.ContainsKey(_equipment.EquipmentData.EquipmentType))
+        {
+            EquipedEquipments[_equipment.EquipmentData.EquipmentType].IsEquiped = false;
+            EquipedEquipments.Remove(_equipment.EquipmentData.EquipmentType);
+        }
     }
 
     public void SortEquipment(EquipmentSortType sortType)
@@ -410,10 +419,10 @@ public class GameManager
     }
 
 
-    public (int hp, int attack) GetCurrentCharacterStat()
+    public (float hp, float attack) GetCurrentCharacterStat()
     {
-        int hpBonus = 0;
-        int attackBonus = 0;
+        float hpBonus = 0;
+        float attackBonus = 0;
 
         var (equipHpBonus, equipAttackBonus) = GetEquipmentBonus();
 
@@ -423,10 +432,10 @@ public class GameManager
         return (hpBonus, attackBonus);
     }
 
-    public (int hp, int atk) GetEquipmentBonus()
+    public (float hp, float atk) GetEquipmentBonus()
     {
-        int hpBonus = 0;
-        int atkBonus = 0;
+        float hpBonus = 0;
+        float atkBonus = 0;
 
         foreach (KeyValuePair<EquipmentType, Equipment> pair in EquipedEquipments)
         {
@@ -475,7 +484,8 @@ public class GameManager
     public Equipment AddEquipment(string _key)
     {
         if (_key.Equals("None")) return null;
-        Equipment equip = new Equipment(_key);
+        Equipment equip = new Equipment();
+        equip.Init(_key);
         equip.IsConfirmed = false;
         OwnedEquipment.Add(equip);
 

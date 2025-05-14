@@ -662,6 +662,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
+  - m_GUID: 3606c68fc4e3dba43a2f7e70416269b2
+    m_Address: Ui_Hp_Icon.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: bebd2e84ccbffb2489b09dcc81f6cf53
+    m_Address: Ui_Attack_Icon.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

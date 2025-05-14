@@ -73,6 +73,7 @@
     <Compile Include="Assets\@Scripts\Contents\Skills\Repeat\Projectile\PlasmaSpinner.cs" />
     <Compile Include="Assets\@Scripts\UI\JoyStick\UI_JoyStick.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_Popup.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_BackToHomePopup.cs" />
     <Compile Include="Assets\@Scripts\UI\UI_Base.cs" />
     <Compile Include="Assets\@Scripts\Scenes\GameScene.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_GameResultPopup.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Assets\@Scripts\Contents\Skills\Sequence\SequenceSkill.cs" />
     <Compile Include="Assets\@Scripts\Controllers\ProjectileController.cs" />
     <Compile Include="Assets\@Scripts\UI\UI_HP_Bar.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_EquipmentResetPopup.cs" />
     <Compile Include="Assets\@Scripts\Manager\AchievementManager.cs" />
     <Compile Include="Assets\@Scripts\Test\Test.cs" />
     <Compile Include="Assets\@Scripts\Controllers\DropItem\BombController.cs" />
@@ -123,6 +125,7 @@
     <Compile Include="Assets\@Scripts\Scenes\LobbyScene.cs" />
     <Compile Include="Assets\@Scripts\Utils\Memo.cs" />
     <Compile Include="Assets\@Scripts\UI\Scene\UI_Scene.cs" />
+    <Compile Include="Assets\@Scripts\UI\UI_UserInfoItem.cs" />
     <Compile Include="Assets\@Scripts\Scenes\TitleScene.cs" />
     <Compile Include="Assets\@Scripts\Controllers\DropItem\GemController.cs" />
     <Compile Include="Assets\@Scripts\Scenes\BaseScene.cs" />
@@ -134,9 +137,11 @@
     <Compile Include="Assets\@Scripts\Manager\System\UIManager.cs" />
     <Compile Include="Assets\@Scripts\Data\GameData.cs" />
     <Compile Include="Assets\@Scripts\Contents\Equipment.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_MergeResultPopup.cs" />
     <Compile Include="Assets\@Scripts\UI\UI_EquipItem.cs" />
     <Compile Include="Assets\@Scripts\Manager\Contents\GameManager.cs" />
     <Compile Include="Assets\@Scripts\UI\UI_Toast.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_PausePopup.cs" />
     <Compile Include="Assets\@Scripts\Controllers\CameraController.cs" />
     <Compile Include="Assets\@Scripts\Controllers\DropItem\DropItemController.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\Repeat\ElectricShock.cs" />
@@ -149,11 +154,8 @@
     <Compile Include="Assets\@Scripts\Manager\Manager.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_SkillSelectPopup.cs" />
     <Compile Include="Assets\@Scripts\Test\UI_Test.cs" />
-    <Compile Include="Assets\@Scripts\Manager\System\CustomSceneManager.cs" />
-    <Compile Include="Assets\@Scripts\UI\Popup\UI_MergeResultPopup.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_MergeAllResultPopup.cs" />
-    <Compile Include="Assets\@Scripts\UI\Popup\UI_PausePopup.cs" />
-    <Compile Include="Assets\@Scripts\UI\Popup\UI_BackToHomePopup.cs" />
+    <Compile Include="Assets\@Scripts\Manager\System\CustomSceneManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

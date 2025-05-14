@@ -12,7 +12,7 @@ public abstract class BaseScene : MonoBehaviour
     {
         Init();
     }
-    
+
     public virtual void Init()
     {
         var obj  = GameObject.FindObjectOfType(typeof(EventSystem));

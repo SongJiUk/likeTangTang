@@ -74,7 +74,7 @@ public class BossController : MonsterController
     {
         base.OnDead();
     }
-    public override void InitStat()
+    public override void InitStat(bool _isHpFull = false)
     {
         var stageLevel = Manager.GameM.CurrentStageData.StageLevel;
 

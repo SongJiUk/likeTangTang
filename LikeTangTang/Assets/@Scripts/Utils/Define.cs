@@ -39,7 +39,7 @@ public static class Define
     public static int ID_SILVER_KEY = 62001;
     public static int ID_GOLD_KEY = 62002;
     public static int ID_CLOVER = 62003;
-
+    public static int MAX_STAMINA = 50;
     public static readonly float[] COMMON_GACHA_GRADE_PROB = new float[]
     {
         0.6f, //Common
