@@ -35,11 +35,11 @@ public class UI_EquipmentResetPopup : UI_Popup
         DowngradeTargetEquipmentGradeBackgroundImage,
         DowngradeTargetEquipmentImage,
         DowngradeTargetEquipmentEnforceBackgroundImage,
-        DowngradeEquipmentGradeBackgroundImage,
-        DowngradeEquipmentImage,
+        //DowngradeEquipmentGradeBackgroundImage,
+        //DowngradeEquipmentImage,
         DowngradeResultMaterialImage,
-        DowngradEnchantStoneBackgroundImage,
-        DowngradEnchantStoneImage
+        DowngradeEquipmentGradeBackgroundImage,
+        DowngradeEquipmentImage
 
     }
 
@@ -53,8 +53,9 @@ public class UI_EquipmentResetPopup : UI_Popup
         ResultMaterialCountValueText,
         DowngradeTargetEquipmentLevelValueText,
         DowngradeTargetEnforceValueText,
+        //DowngradeEquipmentLevelText,
         DowngradeEquipmentLevelText,
-        DowngradEnchantStoneCountValueText,
+        DowngradEquipmentCountValueText,
         DowngradeResultGoldCountValueText,
         DowngradeResultMaterialCountValueText
     }
@@ -157,7 +158,7 @@ public class UI_EquipmentResetPopup : UI_Popup
         {
             GetImage(ImagesType, (int)Images.TargetEquipmentEnforceBackgroundImage).gameObject.SetActive(true);
             GetImage(ImagesType, (int)Images.TargetEquipmentEnforceBackgroundImage).color = Define.EquipmentUIColors.EquipGradeStyles[equipmentGrade].BorderColor;
-            GetImage(ImagesType, (int)Images.ResultEquipmentEnforceBackgroundImage).gameObject.SetActive(false);
+            GetImage(ImagesType, (int)Images.ResultEquipmentEnforceBackgroundImage).gameObject.SetActive(true);
             GetImage(ImagesType, (int)Images.ResultEquipmentEnforceBackgroundImage).color = Define.EquipmentUIColors.EquipGradeStyles[equipmentGrade].BorderColor;
             GetText(TextsType, (int)Texts.TargetEnforceValueText).text = $"{grade}";
             GetText(TextsType, (int)Texts.ResultEnforceValueText).text = $"{grade}";
@@ -191,16 +192,15 @@ public class UI_EquipmentResetPopup : UI_Popup
         GetText(TextsType, (int)Texts.DowngradeTargetEnforceValueText).text = $"{grade}";
 
         //다운그레이드될 아이템
+        //GetImage(ImagesType, (int)Images.DowngradeEquipmentGradeBackgroundImage).color = Define.EquipmentUIColors.EquipGradeStyles[equipmentGrade].BgColor;
+        //GetImage(ImagesType, (int)Images.DowngradeEquipmentImage).sprite = Manager.ResourceM.Load<Sprite>(equipment.EquipmentData.SpriteName);
+        //GetText(TextsType, (int)Texts.DowngradeEquipmentLevelText).text = $"Lv. 1";
+
+        //grade에 따라 아이템 개수
         GetImage(ImagesType, (int)Images.DowngradeEquipmentGradeBackgroundImage).color = Define.EquipmentUIColors.EquipGradeStyles[equipmentGrade].BgColor;
         GetImage(ImagesType, (int)Images.DowngradeEquipmentImage).sprite = Manager.ResourceM.Load<Sprite>(equipment.EquipmentData.SpriteName);
         GetText(TextsType, (int)Texts.DowngradeEquipmentLevelText).text = $"Lv. 1";
-
-        //grade에 따라 아이템 개수
-
-
-        GetImage(ImagesType, (int)Images.DowngradEnchantStoneBackgroundImage).color = Define.EquipmentUIColors.EquipGradeStyles[equipmentGrade].BgColor;
-        GetImage(ImagesType, (int)Images.DowngradEnchantStoneImage).sprite = Manager.ResourceM.Load<Sprite>(equipment.EquipmentData.SpriteName);
-        GetText(TextsType, (int)Texts.DowngradEnchantStoneCountValueText).text = $"x {grade}";
+        GetText(TextsType, (int)Texts.DowngradEquipmentCountValueText).text = $"x {grade}";
 
         int gold = CalculateResetGold();
         GetText(TextsType, (int)Texts.DowngradeResultGoldCountValueText).text = $"x {gold}";
@@ -248,12 +248,84 @@ public class UI_EquipmentResetPopup : UI_Popup
 
     void OnClickResetButton()
     {
-        
+        //초기화는 돈과 재료만 돌려줌
+        int gold = CalculateResetGold();
+        int material = CalculateResetMaterialCount();
+        int materialCode = equipment.EquipmentData.LevelUpMaterial;
+        equipment.Level = 1;
+
+        Queue<string> spriteNames = new();
+        Queue<int> counts = new();
+
+        UI_RewardPopup rewardPopup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
+        rewardPopup.gameObject.SetActive(true);
+
+        Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_GOLD], gold);
+        Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[materialCode], material);
+        spriteNames.Enqueue($"{Manager.DataM.MaterialDic[Define.ID_GOLD].SpriteName}");
+        spriteNames.Enqueue($"{Manager.DataM.MaterialDic[materialCode].SpriteName}");
+        counts.Enqueue(gold);
+        counts.Enqueue(material);
+
+        (Manager.UiM.SceneUI as UI_LobbyScene).Ui_EquipmentInfoPopup.gameObject.SetActive(false);
+        (Manager.UiM.SceneUI as UI_LobbyScene).Ui_EquipmentPopup.SetInfo();
+        gameObject.SetActive(false);
+
+        rewardPopup.SetInfo(spriteNames, counts);
     }
 
     void OnClickDowngradeButton()
     {
-        
+        if (equipment.EquipmentData.DownGradeEquipmentCode == null) return;
+
+        if (!Manager.DataM.EquipmentDic.TryGetValue(equipment.EquipmentData.DownGradeEquipmentCode, out Data.EquipmentData downgradEquip)) return;
+
+        int gold = 0;
+        int material = 0;
+
+        if (equipment.Level > 1)
+        {
+            gold = CalculateResetGold();
+            material = CalculateResetMaterialCount();
+        }
+
+        Manager.GameM.AddEquipment(downgradEquip.DataID);
+
+        for (int i = 0; i < equipment.EquipmentData.DownGradeMaterialCount; i++)
+        {
+            Manager.GameM.AddEquipment(equipment.EquipmentData.DownGradeEquipmentCode);
+        }
+
+        Manager.GameM.OwnedEquipment.Remove(equipment);
+
+        Queue<string> spriteNames = new();
+        Queue<int> counts = new();
+
+        spriteNames.Enqueue(Manager.DataM.EquipmentDic[equipment.EquipmentData.DownGradeEquipmentCode].DataID);
+        counts.Enqueue(equipment.EquipmentData.DownGradeMaterialCount);
+
+
+        if (gold > 0)
+        {
+            Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_GOLD], gold);
+            spriteNames.Enqueue($"{Manager.DataM.MaterialDic[Define.ID_GOLD].SpriteName}");
+            counts.Enqueue(gold);
+        }
+        if (material > 0)
+        {
+            int materialCode = equipment.EquipmentData.LevelUpMaterial;
+            Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[materialCode], material);
+            spriteNames.Enqueue($"{Manager.DataM.MaterialDic[materialCode].SpriteName}");
+            counts.Enqueue(material);
+        }
+
+        UI_RewardPopup rewardPopup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
+        rewardPopup.gameObject.SetActive(true);
+        rewardPopup.SetInfo(spriteNames, counts, equipment);
+
+        (Manager.UiM.SceneUI as UI_LobbyScene).Ui_EquipmentInfoPopup.gameObject.SetActive(false);
+        (Manager.UiM.SceneUI as UI_LobbyScene).Ui_EquipmentPopup.SetInfo();
+        gameObject.SetActive(false);
     }
 
     int CalculateResetGold()

@@ -8,10 +8,7 @@ using System.Text.RegularExpressions;
 
 public class UI_EquipItem : UI_Base
 {
-    enum Buttons
-    {
-        EquipmentGradeBackgroundImage
-    }
+
     enum GameObjects
     {
         NewTextObject,
@@ -45,6 +42,8 @@ public class UI_EquipItem : UI_Base
     public Equipment Equipment;
     public Action OnClickEquipItem;
     Define.UI_ItemParentType parentType;
+    ScrollRect scrollRect;
+    bool isDrag = false;
     private void Awake()
     {
         Init();
@@ -57,25 +56,28 @@ public class UI_EquipItem : UI_Base
         gameObjectsType = typeof(GameObjects);
         TextsType = typeof(Texts);
         ImagesType = typeof(Images);
-        ButtonsType = typeof(Buttons);
 
         BindObject(gameObjectsType);
         BindText(TextsType);
         BindImage(ImagesType);
-        BindButton(ButtonsType);
 
-        GetButton(ButtonsType, (int)Buttons.EquipmentGradeBackgroundImage).gameObject.BindEvent(OnClickEquipItemButton);
         GetObject(gameObjectsType, (int)GameObjects.SpecialImage).SetActive(false);
 
+        gameObject.BindEvent(null, OnDrag, Define.UIEvent.Drag);
+        gameObject.BindEvent(null, OnBeginDrag, Define.UIEvent.BeginDrag);
+        gameObject.BindEvent(null, OnEndDrag, Define.UIEvent.EndDrag);
+
+        gameObject.BindEvent(OnClickEquipItemButton);
         return true;
 
 
     }
 
-    public void SetInfo(Equipment _item, Define.UI_ItemParentType _parentType)
+    public void SetInfo(Equipment _item, Define.UI_ItemParentType _parentType, ScrollRect _scrollRect = null)
     {
         Equipment = _item;
         parentType = _parentType;
+        scrollRect = _scrollRect;
         var style = Define.EquipmentUIColors.EquipGradeStyles[Equipment.EquipmentData.EquipmentGarde];
         //TODO : 이미지.style
         GetImage(ImagesType, (int)Images.EquipmentGradeBackgroundImage).color = style.BorderColor;
@@ -116,8 +118,9 @@ public class UI_EquipItem : UI_Base
 
     public void OnClickEquipItemButton()
     {
-        //Manager.SoundM.PlayButtonClick();
-        
+        Manager.SoundM.PlayButtonClick();
+        if (isDrag) return;
+
         if(parentType == Define.UI_ItemParentType.GachaResultPopup)
         {
             //Manager.UiM.ShowPopup<UI_GhachaEquipmentInfoPopup>().SetInfo(Equipment);
@@ -135,6 +138,33 @@ public class UI_EquipItem : UI_Base
             }
             
         }
+    }
+
+    public void OnDrag(BaseEventData baseEventData)
+    {
+        if (parentType == Define.UI_ItemParentType.GachaResultPopup) return;
+        if (scrollRect == null) return;
+        isDrag = true;
+        PointerEventData pointerEventData = baseEventData as PointerEventData;
+        scrollRect.OnDrag(pointerEventData);
+    }
+
+    public void OnBeginDrag(BaseEventData baseEventData)
+    {
+        if (parentType == Define.UI_ItemParentType.GachaResultPopup) return;
+        if (scrollRect == null) return;
+        isDrag = true;
+        PointerEventData pointerEventData = baseEventData as PointerEventData;
+        scrollRect.OnBeginDrag(pointerEventData);
+    }
+
+    public void OnEndDrag(BaseEventData baseEventData)
+    {
+        if (parentType == Define.UI_ItemParentType.GachaResultPopup) return;
+        if (scrollRect == null) return;
+        isDrag = false;
+        PointerEventData pointerEventData = baseEventData as PointerEventData;
+        scrollRect.OnEndDrag(pointerEventData);
     }
 
 }

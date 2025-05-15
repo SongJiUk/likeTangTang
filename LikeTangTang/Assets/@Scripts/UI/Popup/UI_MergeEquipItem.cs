@@ -23,7 +23,8 @@ public class UI_MergeEquipItem : UI_Base
     enum Texts
     {
         EnforceValueText,
-        EquipmentLevelValueText
+        EquipmentLevelValueText,
+        EquipmentCountValueText
     }
 
     enum Images
@@ -66,7 +67,7 @@ public class UI_MergeEquipItem : UI_Base
         GetObject(gameObjectsType, (int)GameObjects.SelectObject).SetActive(false);
         GetObject(gameObjectsType, (int)GameObjects.LockObject).SetActive(false);
         GetImage(ImagesType, (int)Images.EquipmentEnforceBackgroundImage).gameObject.SetActive(false);
-
+        GetText(TextsType, (int)Texts.EquipmentCountValueText).gameObject.SetActive(false);
         GetButton(ButtonsType, (int)Buttons.EquipmentGradeBackgroundImage).gameObject.BindEvent(OnClickEquipmentItemButton);
 
         return true;
@@ -98,11 +99,27 @@ public class UI_MergeEquipItem : UI_Base
         GetImage(ImagesType, (int)Images.EquipmentImage).sprite = Manager.ResourceM.Load<Sprite>(equipment.EquipmentData.SpriteName);
         GetImage(ImagesType, (int)Images.EquipmentTypeImage).sprite = Manager.ResourceM.Load<Sprite>($"{equipment.EquipmentData.EquipmentType}_Icon.sprite");
         GetText(TextsType, (int)Texts.EquipmentLevelValueText).text = $"Lv. {equipment.Level}";
+        GetText(TextsType, (int)Texts.EquipmentCountValueText).gameObject.SetActive(false);
         GetObject(gameObjectsType, (int)GameObjects.EquipmentRedDotObject).SetActive(equipment.IsUpgradeable);
         GetObject(gameObjectsType, (int)GameObjects.NewTextObject).SetActive(equipment.IsConfirmed);
         GetObject(gameObjectsType, (int)GameObjects.EquippedObject).SetActive(equipment.IsEquiped);
         GetObject(gameObjectsType, (int)GameObjects.SelectObject).SetActive(_isSelected);
         GetObject(gameObjectsType, (int)GameObjects.LockObject).SetActive(_isLock);
+    }
+
+    public void SetInfo(Equipment _item, int _count)
+    {
+        transform.localScale = Vector3.one;
+        equipment = _item;
+        GetImage(ImagesType, (int)Images.EquipmentGradeBackgroundImage).color = Define.EquipmentUIColors.EquipGradeStyles[equipment.EquipmentData.EquipmentGarde].BgColor;
+        GetImage(ImagesType, (int)Images.EquipmentImage).sprite = Manager.ResourceM.Load<Sprite>(equipment.EquipmentData.SpriteName);
+        GetImage(ImagesType, (int)Images.EquipmentTypeBackgroundImage).color = Define.EquipmentUIColors.EquipGradeStyles[equipment.EquipmentData.EquipmentGarde].BorderColor;
+        GetImage(ImagesType, (int)Images.EquipmentTypeImage).sprite = Manager.ResourceM.Load<Sprite>($"{equipment.EquipmentData.EquipmentType}_Icon.sprite");
+        GetImage(ImagesType, (int)Images.EquipmentEnforceBackgroundImage).gameObject.SetActive(false);
+        GetText(TextsType, (int)Texts.EquipmentLevelValueText).text = $"Lv. 1";
+        GetText(TextsType, (int)Texts.EquipmentCountValueText).gameObject.SetActive(true);
+        GetText(TextsType, (int)Texts.EquipmentCountValueText).text = $"x {_count}";
+
     }
 
     void OnClickEquipmentItemButton()

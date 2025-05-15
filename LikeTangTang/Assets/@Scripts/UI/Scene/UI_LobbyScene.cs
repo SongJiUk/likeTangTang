@@ -39,12 +39,14 @@ public class UI_LobbyScene : UI_Scene
     UI_MergeResultPopup ui_MergeResultPopup;
     UI_MergeAllResultPopup ui_MergeAllResultPopup;
     UI_EquipmentResetPopup ui_EquipmentResetPopup;
+    UI_RewardPopup ui_RewardPopup;
     public UI_EquipmentPopup Ui_EquipmentPopup { get { return ui_EquipmentPopup; } }
     public UI_EquipmentInfoPopup Ui_EquipmentInfoPopup { get { return ui_equipmentInfoPopup; } }
     public UI_MergePopup Ui_MergePopup { get { return ui_MergePopup; } }
     public UI_MergeResultPopup Ui_MergeResultPopup { get { return ui_MergeResultPopup; } }
     public UI_MergeAllResultPopup Ui_MergeAllResultPopup { get { return ui_MergeAllResultPopup; } }
     public UI_EquipmentResetPopup Ui_EquipmentResetPopup { get { return ui_EquipmentResetPopup; } }
+    public UI_RewardPopup Ui_RewardPopup { get { return ui_RewardPopup; } }
     public override bool Init()
     {
         gameObjectsType = typeof(GameObjects);
@@ -71,6 +73,7 @@ public class UI_LobbyScene : UI_Scene
         ui_MergeResultPopup = Manager.UiM.ShowPopup<UI_MergeResultPopup>();
         ui_MergeAllResultPopup = Manager.UiM.ShowPopup<UI_MergeAllResultPopup>();
         ui_EquipmentResetPopup = Manager.UiM.ShowPopup<UI_EquipmentResetPopup>();
+        ui_RewardPopup = Manager.UiM.ShowPopup<UI_RewardPopup>();
 
         AllOff();
 
@@ -99,6 +102,7 @@ public class UI_LobbyScene : UI_Scene
         ui_MergeResultPopup.gameObject.SetActive(false);
         ui_MergeAllResultPopup.gameObject.SetActive(false);
         ui_EquipmentResetPopup.gameObject.SetActive(false);
+        ui_RewardPopup.gameObject.SetActive(false);
     }
     void OnClickEquipmentToggle()
     {

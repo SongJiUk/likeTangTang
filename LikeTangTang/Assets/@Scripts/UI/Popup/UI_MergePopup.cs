@@ -495,7 +495,10 @@ public class UI_MergePopup : UI_Popup
 
     void SortEquipments()
     {
-        Manager.GameM.SortEquipment(equipmentSortType);
+        if(equipment != null) 
+            Manager.GameM.SortEquipment(equipmentSortType, equipment);
+        else 
+            Manager.GameM.SortEquipment(equipmentSortType);
         var parent = GetObject(gameObjectsType, (int)GameObjects.EquipInventoryScrollContentObject).transform;
         bool isSelected = false;
         int index = 0;

@@ -13,7 +13,7 @@ public class UI_EquipmentPopup : UI_Popup
     Define.EquipmentSortType equipmentSortType;
     string sort_Level = "정렬 : 레벨";
     string sort_Grade = "정렬 : 등급";
-
+    public ScrollRect scrollRect;
 
     enum Images
     {
@@ -171,7 +171,7 @@ public class UI_EquipmentPopup : UI_Popup
 
             var slot = slotPool[index++];
             slot.gameObject.SetActive(true);
-            slot.SetInfo(item, Define.UI_ItemParentType.EquipInventory);
+            slot.SetInfo(item, Define.UI_ItemParentType.EquipInventory, scrollRect);
         }
     }
 
@@ -201,7 +201,7 @@ public class UI_EquipmentPopup : UI_Popup
                 slot.gameObject.SetActive(true);
 
                 int count = Manager.GameM.ItemDic[id];
-                slot.SetInfo(data, parent, count);
+                slot.SetInfo(data, parent, count, scrollRect);
             }
         }
 

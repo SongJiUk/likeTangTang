@@ -156,6 +156,7 @@
     <Compile Include="Assets\@Scripts\Test\UI_Test.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_MergeAllResultPopup.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\CustomSceneManager.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_RewardPopup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

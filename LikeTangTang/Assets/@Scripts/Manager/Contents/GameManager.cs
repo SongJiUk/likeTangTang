@@ -393,12 +393,14 @@ public class GameManager
         }
     }
 
-    public void SortEquipment(EquipmentSortType sortType)
+    public void SortEquipment(EquipmentSortType _sortType, Equipment _equipment = null)
     {
-        if (sortType == EquipmentSortType.Grade)
+
+        if (_sortType == EquipmentSortType.Grade)
         {
             OwnedEquipment = OwnedEquipment.
                 OrderByDescending(item => item.IsEquiped).
+                ThenByDescending(item => _equipment != null && item.EquipmentData.EquipmentType == _equipment.EquipmentData.EquipmentType).
                 ThenByDescending(item => item.EquipmentData.EquipmentGarde).
                 ThenByDescending(item => item.Level).
                 ThenByDescending(item => item.EquipmentData.DataID).
@@ -406,16 +408,17 @@ public class GameManager
                 ToList();
 
         }
-        else if (sortType == EquipmentSortType.Level)
+        else if (_sortType == EquipmentSortType.Level)
         {
             OwnedEquipment = OwnedEquipment.
                 OrderByDescending(item => item.IsEquiped).
+                ThenByDescending(item => _equipment != null && item.EquipmentData.EquipmentType == _equipment.EquipmentData.EquipmentType).
                 ThenByDescending(item => item.Level).
                 ThenByDescending(item => item.EquipmentData.EquipmentGarde).
                 ThenByDescending(item => item.EquipmentData.DataID).
                 ThenBy(item => item.EquipmentData.EquipmentType).
                 ToList();
-        }   
+        }
     }
 
 
