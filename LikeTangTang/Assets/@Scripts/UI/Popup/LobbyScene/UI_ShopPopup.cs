@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class UI_ShopPopup : UI_Popup
 {
@@ -42,7 +43,8 @@ public class UI_ShopPopup : UI_Popup
         FirstGoldProductTitleText,
         SecondGoldProductTitleText
     }
-
+    int goldAmount = 0;
+    Action OnCompleteBuyItem;
     private void OnEnable()
     {
         PopupOpenAnim(GetObject(gameObjectsType, (int)GameObjects.ContentObject));
@@ -87,7 +89,7 @@ public class UI_ShopPopup : UI_Popup
 
         //골드 상점
         GetObject(gameObjectsType, (int)GameObjects.FreeGoldSoldOutObject).SetActive(false);
-        GetButton(ButtonsType, (int)Buttons.FreeGoldButton).gameObject.BindEvent(OnClickFreeGoldButton);
+        GetButton(ButtonsType, (int)Buttons.FreeGoldButton).gameObject.BindEvent(OnClickFreeGoldADButton);
         GetButton(ButtonsType, (int)Buttons.FirstGoldProductButton).gameObject.BindEvent(OnClickFirstGoldProductButton);
         GetButton(ButtonsType, (int)Buttons.SecondGoldProductButton).gameObject.BindEvent(OnClickSecondGoldProductButton);
 
@@ -99,8 +101,8 @@ public class UI_ShopPopup : UI_Popup
     void Refresh()
     {
         Manager.GameM.ItemDic.TryGetValue(Define.ID_BORONZE_KEY, out int bronzeKeyCount);
-        Manager.GameM.ItemDic.TryGetValue(Define.ID_BORONZE_KEY, out int silverKeyCount);
-        Manager.GameM.ItemDic.TryGetValue(Define.ID_BORONZE_KEY, out int goldKeyCount);
+        Manager.GameM.ItemDic.TryGetValue(Define.ID_SILVER_KEY, out int silverKeyCount);
+        Manager.GameM.ItemDic.TryGetValue(Define.ID_GOLD_KEY, out int goldKeyCount);
 
         //키
         GetObject(gameObjectsType, (int)GameObjects.AdKeySoldOutObject).SetActive(Manager.GameM.SilverKeyCountAds == 0);
@@ -117,7 +119,7 @@ public class UI_ShopPopup : UI_Popup
         //골드 상자
         GetObject(gameObjectsType, (int)GameObjects.FreeGoldSoldOutObject).SetActive(Manager.GameM.GoldCountAds == 0);
 
-        int goldAmount = Define.STAGE_GOLD_UP;
+        goldAmount = Define.STAGE_GOLD_UP;
         //TODO : 리워드 데이터..스테이지마다 + 1000
         goldAmount *= Manager.GameM.GetMaxStageIndex();
 
@@ -127,10 +129,11 @@ public class UI_ShopPopup : UI_Popup
     }
 
 
-    void DoGaCha(Define.GachaType _gachaType, int _count =1)
+    void DoGaCha(Define.GachaType _gachaType, int _count = 1)
     {
         List<Equipment> list = Manager.GameM.DoGaCha(_gachaType, _count).ToList();
-        Manager.UiM.ShowPopup<UI_GachaResultsPopup>().SetInfo(list);
+        UI_GachaResultsPopup popup =  Manager.UiM.MakeSubItem<UI_GachaResultsPopup>(transform);
+        popup.SetInfo(list);
     }
 
 
@@ -140,6 +143,7 @@ public class UI_ShopPopup : UI_Popup
         Manager.SoundM.PlayButtonClick();
         if(Manager.GameM.SilverKeyCountAds > 0)
         {
+            Manager.GameM.SilverKeyCountAds--;
             //TODO : 광고 실행, 리워드 받기
         }
     }
@@ -147,21 +151,33 @@ public class UI_ShopPopup : UI_Popup
     void OnClickSilverKeyButton()
     {
         Manager.SoundM.PlayButtonClick();
-        if(Manager.GameM.Dia > 150)
+        if(Manager.GameM.Dia >= 150)
         {
-            string[] spriteName = new string[1];
-            int[] count = new int[1];
-
-            spriteName[0] = Manager.DataM.MaterialDic[Define.ID_SILVER_KEY].SpriteName;
-            count[0] = 1;
-
-            //리워드
+            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(this.transform);
+            Manager.DataM.MaterialDic.TryGetValue(Define.ID_SILVER_KEY, out var item);
+            popup.SetInfo(item, 150, 1);
+            popup.OnCompleteBuyItem = Refresh;
+        }
+        else
+        {
+            Manager.UiM.ShowToast("다이아가 부족합니다");
         }
     }
 
     void OnClickGoldKeyButton()
     {
-    
+        Manager.SoundM.PlayButtonClick();
+        if(Manager.GameM.Dia >= 300)
+        {
+            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(this.transform);
+            Manager.DataM.MaterialDic.TryGetValue(Define.ID_GOLD_KEY, out var item);
+            popup.SetInfo(item, 300, 1);
+            popup.OnCompleteBuyItem = Refresh;
+        }
+        else
+        {
+            Manager.UiM.ShowToast("다이아가 부족합니다");
+        }
     }
 
     //상급장비
@@ -172,23 +188,49 @@ public class UI_ShopPopup : UI_Popup
     
     void OnClickAdvancedBoxADButton()
     {
-        Manager.SoundM.PlayButtonClick();
-        if(Manager.GameM.GachaCountAdsAdvanced > 0)
-        {
+       //TODO : 광고
+       Manager.SoundM.PlayButtonClick();
+       if(Manager.GameM.GachaCountAdsAdvanced > 0)
+       {
+            Manager.GameM.GachaCountAdsAdvanced--;
             DoGaCha(Define.GachaType.AdvancedGacha, 1);
             Refresh();
-        }
+       }
+       else
+       {
+            Manager.UiM.ShowToast("오늘은 무료광고를 모두 시청했습니다.");
+       }
     }
 
     void OnClickAdvancedBoxOpenButton()
     {
-        Manager.UiM.ShowToast("열쇠가 없다");
+        Manager.SoundM.PlayButtonClick();
+        if(Manager.GameM.ItemDic[Define.ID_GOLD_KEY] > 0)
+        {
+            Manager.GameM.ItemDic[Define.ID_GOLD_KEY]--;
+            DoGaCha(Define.GachaType.AdvancedGacha, 1);
+            Refresh();
+        }
+        else
+        {
+            Manager.UiM.ShowToast("열쇠가 부족합니다.");
+        }
     }
 
     void OnClickAdvancedBoxTenOpenButton()
     {
-        DoGaCha(Define.GachaType.AdvancedGacha, 10);
-        Refresh();
+        Manager.SoundM.PlayButtonClick();
+        if(Manager.GameM.ItemDic[Define.ID_GOLD_KEY] >= 10 )
+        {
+            Manager.GameM.ItemDic[Define.ID_GOLD_KEY] -= 10;
+            DoGaCha(Define.GachaType.AdvancedGacha, 10);
+            Refresh();
+        }
+        else
+        {
+            Manager.UiM.ShowToast("열쇠가 부족합니다.");
+        }
+
 
     }
 
@@ -196,33 +238,88 @@ public class UI_ShopPopup : UI_Popup
 
     void OnClickCommonGachaListButton()
     {
-
+        
     }
 
     void OnClickADCommonGachaOpenButton()
     {
-
+        Manager.SoundM.PlayButtonClick();
+       if(Manager.GameM.GachaCountAdsCommon > 0)
+       {
+            Manager.GameM.GachaCountAdsCommon--;
+            DoGaCha(Define.GachaType.CommonGacha, 1);
+            Refresh();
+       }
+       else
+       {
+            Manager.UiM.ShowToast("오늘은 무료광고를 모두 시청했습니다.");
+       }
     }
 
     void OnClickCommonGachaOpenButton()
     {
-
+        Manager.SoundM.PlayButtonClick();
+        if(Manager.GameM.ItemDic[Define.ID_SILVER_KEY] > 0)
+        {
+            DoGaCha(Define.GachaType.CommonGacha, 1);
+            Manager.GameM.ItemDic[Define.ID_SILVER_KEY]--;
+            Refresh();
+        }
+        else
+        {
+            Manager.UiM.ShowToast("열쇠가 부족합니다.");
+        }
     }
 
     //골드
 
-    void OnClickFreeGoldButton()
+    void OnClickFreeGoldADButton()
     {
+        Manager.SoundM.PlayButtonClick();
+        if(Manager.GameM.GoldCountAds >0)
+        {   Manager.GameM.GoldCountAds--;
 
+            //TODO : 광고 람다
+            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(this.transform);
+            Manager.DataM.MaterialDic.TryGetValue(Define.ID_GOLD, out var item);
+            popup.SetInfo(item, 0, goldAmount);
+            Refresh();
+        }
+        else
+        {
+            Manager.UiM.ShowToast("오늘은 무료광고를 모두 시청했습니다");
+        }
     }
 
     void OnClickFirstGoldProductButton()
     {
-
+        Manager.SoundM.PlayButtonClick();
+        if(Manager.GameM.Dia >= 300)
+        {
+            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(this.transform);
+            Manager.DataM.MaterialDic.TryGetValue(Define.ID_GOLD, out var item);
+            popup.SetInfo(item, 300, goldAmount * 3);
+            popup.OnCompleteBuyItem = Refresh;
+        }
+        else
+        {
+            Manager.UiM.ShowToast("다이아가 부족합니다");
+        }
     }
 
     void OnClickSecondGoldProductButton()
     {
-
+         Manager.SoundM.PlayButtonClick();
+        if(Manager.GameM.Dia >= 500)
+        {
+            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(this.transform);
+            Manager.DataM.MaterialDic.TryGetValue(Define.ID_GOLD, out var item);
+            popup.SetInfo(item, 500, goldAmount * 5);
+            popup.OnCompleteBuyItem = Refresh;
+        }
+        else
+        {
+            Manager.UiM.ShowToast("다이아가 부족합니다");
+        }
     }
 }

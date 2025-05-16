@@ -71,7 +71,7 @@ public class UI_GachaResultsPopup : UI_Popup
 
     void Refresh()
     {
-
+        //TODO : 여기서 초기화 해줘야됌.( 아이템을!!!!)
     }
 
     void OnClickSkipButton()
@@ -115,7 +115,7 @@ public class UI_GachaResultsPopup : UI_Popup
     void OnClickConfirmButton()
     {
         Manager.SoundM.PlayPopupClose();
-        gameObject.SetActive(false);
+        Manager.ResourceM.Destory(gameObject);
         Manager.GameM.SaveGame();
     }
 
