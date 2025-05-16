@@ -370,9 +370,9 @@ public static class Define
         {
             MaterialGradeStyles = new Dictionary<MaterialGrade, EquipmentUIStyle>()
             {
-                {MaterialGrade.Common, new EquipmentUIStyle(Utils.HexToColor("A2A2A2"), Utils.HexToColor("AC9B83"), Color.clear)},
-                {MaterialGrade.UnCommon, new EquipmentUIStyle(Utils.HexToColor("57FF0B"), Utils.HexToColor("73EC4E"), Color.clear)},
-                {MaterialGrade.Rare, new EquipmentUIStyle(Utils.HexToColor("2471E0"), Utils.HexToColor("0F84FF"), Color.clear)},
+                {MaterialGrade.Common, new EquipmentUIStyle(Utils.HexToColor("A2A2A2"), Utils.HexToColor("AC9B83"), Utils.HexToColor("AC9B83"))},
+                {MaterialGrade.UnCommon, new EquipmentUIStyle(Utils.HexToColor("57FF0B"), Utils.HexToColor("73EC4E"), Utils.HexToColor("73EC4E"))},
+                {MaterialGrade.Rare, new EquipmentUIStyle(Utils.HexToColor("2471E0"), Utils.HexToColor("0F84FF"), Utils.HexToColor("0F84FF"))},
                 {MaterialGrade.Epic, new EquipmentUIStyle(Utils.HexToColor("9F37F2"), Utils.HexToColor("B740EA"), Utils.HexToColor("D094FF"))},
                 {MaterialGrade.Unique, new EquipmentUIStyle(Utils.HexToColor("F67B09"), Utils.HexToColor("F19B02"), Utils.HexToColor("F8BE56"))}
             };

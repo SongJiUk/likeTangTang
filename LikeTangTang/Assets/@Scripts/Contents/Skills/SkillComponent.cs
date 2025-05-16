@@ -15,6 +15,8 @@ public class SkillComponent : MonoBehaviour
 
     public List<SequenceSkill> SequenceSkills { get;} = new List<SequenceSkill>();
 
+    public List<Data.SpecialSkillData> SpecialSkills {get; } = new List<Data.SpecialSkillData>();
+
 
     public Dictionary<Define.SkillType, int> SavedBattleSkill = new Dictionary<Define.SkillType, int>();
     //TODO : 서포트 스킬(진화스킬)
@@ -102,6 +104,19 @@ public class SkillComponent : MonoBehaviour
         //         if(skillbase != null) skillList.Add(skillbase);
         //     }
         // }
+    }
+
+    public void AddSpecialSkill(Data.SpecialSkillData _skill, bool _isLockSkill = false)
+    {
+        //_skill.isLearned = true;
+
+        //if(_skill.SpecialSkillName == ) //TODO : 스킬타입이 힐링이면 바로 치료(이건 빼야될듯 아니면 인게임에 회복기능 하나 만들어주던가.)
+
+        SpecialSkills.Add(_skill);
+
+        //TODO : LoadSkill이면 return;
+
+        
     }
     public void RemoveSkill()
     {

@@ -88,9 +88,15 @@ public class UI_MaterialItem : UI_Base
     void OnClickMaterialInfoButton()
     {
         Manager.SoundM.PlayButtonClick();
-        if (isDrag) return;
-        //TODO : Info 생성해서, 띄워줌 
-        Debug.Log("가보자");
+        if (isDrag) return;    
+        if(materialData == null) return;
+        
+        RectTransform parentPopupRect = scrollRect.GetComponent<RectTransform>();
+        Vector2 scrennPos = Input.mousePosition;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(parentPopupRect, scrennPos, null ,out Vector2 localPos);
+        UI_ToolTipItem tooltip = Manager.UiM.MakeSubItem<UI_ToolTipItem>(parentPopupRect);
+        tooltip.SetInfo(materialData, localPos);
+        tooltip.gameObject.SetActive(true);
     }
 
     public void OnDrag(BaseEventData baseEventData)
