@@ -38,6 +38,9 @@ public class CreatureController : BaseController, ITickable
     public virtual int DataID { get; set; }
     public virtual float Hp { get; set; }
     public virtual float MaxHp { get; set; }
+    public virtual float MaxHpRate { get; set; }
+    public virtual float HealBounsRate { get; set; }
+    public virtual float HpRegen { get; set; }
     public virtual float Attack { get; set; }
     public virtual float AttackRate { get; set; } = 1f;
     public virtual float Def { get; set; }
@@ -47,6 +50,8 @@ public class CreatureController : BaseController, ITickable
     public virtual float DamageReduction { get; set; }
     public virtual float SpeedRate { get; set; } = 1f;
     public virtual float Speed { get; set; }
+
+    public virtual float CollectDistBonus { get; set; }
 
     protected bool isDead = false;
 
@@ -77,17 +82,16 @@ public class CreatureController : BaseController, ITickable
 
     public virtual void SetInfo(int _dataID)
     {
-        Init();
-        Rigid.simulated = true;
+        
 
         DataID = _dataID;
         creatureData = Manager.DataM.CreatureDic[_dataID];
-
+        Init();
         InitStat();
+        InitSkill();
 
         CreatureSprite.sprite = Manager.ResourceM.Load<Sprite>(creatureData.Image_Name);
-
-        InitSkill();
+        Rigid.simulated = true;
     }
 
     public virtual void InitStat(bool _isHpFull = true)
@@ -130,6 +134,8 @@ public class CreatureController : BaseController, ITickable
     }
 
     #endregion
+
+    public virtual void UpdatePlayerStat() { }
 
     #region 데미지 & 죽음
 

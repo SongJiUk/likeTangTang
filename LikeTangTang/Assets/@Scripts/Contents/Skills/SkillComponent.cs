@@ -76,46 +76,40 @@ public class SkillComponent : MonoBehaviour
             skill = gameObject.AddComponent(skillType) as SkillBase;
         }
 
-        skill.UpdateSkillData();
+         skill.UpdateSkillData();
 
         if(skill != null) skillList.Add(skill);
-        
-        // if(_type == Define.SkillType.EnergyRing || _type == Define.SkillType.ElectronicField || _type == Define.SkillType.SpectralSlash)
-        // {
-
-        //     GameObject go = Manager.ResourceM.Instantiate(name, Utils.FindChild(gameObject, Define.STANDARDNAME).transform);
-        //     if(go != null)
-        //     {
-        //         SkillBase skill = go.GetOrAddComponent<SkillBase>();
-        //         skillList.Add(skill);
-        //     }
-        // }
-        // else
-        // {
-        //     Type skillType = Type.GetType(name);
-        //     SequenceSkill skill = gameObject.AddComponent(skillType) as SequenceSkill;
-        //     if(skill != null)
-        //     {
-                
-        //     }
-        //     else
-        //     {
-        //         RepeatSkill skillbase = gameObject.GetComponent(skillType) as RepeatSkill;
-        //         if(skillbase != null) skillList.Add(skillbase);
-        //     }
-        // }
     }
 
     public void AddSpecialSkill(Data.SpecialSkillData _skill, bool _isLockSkill = false)
     {
-        //_skill.isLearned = true;
+        _skill.IsLearned = true;
 
-        //if(_skill.SpecialSkillName == ) //TODO : 스킬타입이 힐링이면 바로 치료(이건 빼야될듯 아니면 인게임에 회복기능 하나 만들어주던가.)
+        if (_skill.SpecialSkillName == Define.SpecialSkillName.Healing)
+        {
+            //TODO : 스킬타입이 힐링이면 바로 치료(이건 빼야될듯 아니면 인게임에 회복기능 하나 만들어주던가.)
+        }
 
         SpecialSkills.Add(_skill);
 
         //TODO : LoadSkill이면 return;
+        if (_isLockSkill) return;
 
+
+        if(_skill.SkillType == Define.SpecialSkillType.General)
+        {
+            GeneralSpecialSkill(_skill);
+        }
+        else if(_skill.SkillType == Define.SpecialSkillType.Special)
+        {
+            foreach(SkillBase playerSkill in skillList)
+            {
+                if(_skill.SpecialSkillName.ToString() == playerSkill.Skilltype.ToString())
+                {
+                    playerSkill.UpdateSkillData();
+                }
+            }
+        }
         
     }
     public void RemoveSkill()
@@ -207,4 +201,52 @@ public class SkillComponent : MonoBehaviour
         }
     }
 
+
+    public void GeneralSpecialSkill(Data.SpecialSkillData _skill)
+    {
+        List<Data.SpecialSkillData> skillList = SpecialSkills.Where(_skill => _skill.SkillType == Define.SpecialSkillType.General).ToList();
+
+        PlayerController player = Manager.GameM.player;
+        player.CriticalRate += _skill.CriticalBouns;
+        player.MaxHpRate += _skill.MaxHpBonus;
+        player.ExpBounsRate += _skill.ExpBonus;
+        player.DamageReduction += _skill.DamageReductionBonus;
+        player.AttackRate += _skill.AttackBonus;
+        player.SpeedRate += _skill.MoveSpeedBonus;
+        player.HealBounsRate += _skill.HealingBouns;
+        player.HpRegen += _skill.HpRegenBonus;
+        player.CriticalDamage += _skill.CriticalDamageBouns;
+        player.CollectDistBonus += _skill.CollectRangeBouns;
+
+        player.UpdatePlayerStat();
+    }
+
+    public void PlayerLevelUpBonus()
+    {
+        List<Data.SpecialSkillData> skills = SpecialSkills.Where(skill => skill.SkillType == Define.SpecialSkillType.LevelUp).ToList();
+
+        float MoveSpeedBonus = 0;
+        float DamageReductionBonus = 0;
+        float AttackBonus = 0;
+        float CriticalBonus = 0;
+        float CriticalDamageBonus = 0;
+
+        foreach(Data.SpecialSkillData skill in skills)
+        {
+            MoveSpeedBonus += skill.LevelUpMoveSpeedBonus;
+            DamageReductionBonus += skill.LevelUpDamageReductionBonus;
+            AttackBonus += skill.LevelUpAttackBonus;
+            CriticalBonus += skill.LevelUpCriticalBonus;
+            CriticalDamageBonus += skill.CriticalDamageBouns;
+        }
+
+        PlayerController player = Manager.GameM.player;
+        player.SpeedRate += MoveSpeedBonus;
+        player.DamageReduction += DamageReductionBonus;
+        player.AttackRate += AttackBonus;
+        player.CriticalRate += CriticalBonus;
+        player.CriticalDamage += CriticalDamageBonus;
+
+        player.UpdatePlayerStat();
+    }
 }

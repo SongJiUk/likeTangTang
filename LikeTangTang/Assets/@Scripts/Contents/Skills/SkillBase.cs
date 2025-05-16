@@ -111,6 +111,20 @@ public class SkillBase : BaseController
 
         if(Manager.DataM.SkillDic.TryGetValue(id, out skillData) == false) return SkillDatas;
         
+        foreach(SpecialSkillData specialSkill in Manager.GameM.player.Skills.SpecialSkills)
+        {
+            if(Skilltype.ToString() == specialSkill.SkillType.ToString())
+            {
+                skillData.CoolTime += specialSkill.CoolTime;
+                skillData.RoatateSpeed += specialSkill.RoatateSpeed;
+                skillData.NumBounce += (int)specialSkill.NumBounce;
+                skillData.Speed += specialSkill.Speed;
+                skillData.ProjectileCount += (int)specialSkill.ProjectileCount;
+                skillData.ScaleMultiplier += specialSkill.ScaleMultiplier;
+            }
+        }
+
+
         SkillDatas = skillData;
         OnChangedSkillData();
         return SkillDatas;

@@ -83,6 +83,45 @@ public static class Define
         SpectralSlash = 20900
     }
 
+    public enum SpecialSkillType
+    {
+        General,
+        Passive, 
+        LevelUp,
+        Special
+    }
+
+    public enum SpecialSkillName
+    {
+        CriticalBouns,
+        MaxHpBonus,
+        ExpBonus,
+        DamageReductionBonus,
+        AttackBonus,
+        MoveSpeedBonus,
+        Healing,
+        HealingBouns,
+        HpRegenBonus,
+        CriticalDamageBouns,
+        CollectRangeBouns,
+        PlasmaShot,
+        EnergyRing,
+        PlasmaSpinner,
+        SuicideDrone,
+        ElectricShock,
+        GravityBomb,
+        TimeStopBomb,
+        OrbitalBlades,
+        ElectronicField,
+        SpectralSlash,
+        LevelUpMoveSpeedBonus,
+        LevelUpDamageReductionBonus,
+        LevelUpAttackBonus,
+        LevelUpCriticalBonus,
+        LevelUpCriticalDamageBonus,
+        Resurrection
+    }
+
     public enum DropItemType
     {
         None,
@@ -168,14 +207,6 @@ public static class Define
         EndDrag
     }
 
-    public enum SpecialSkillType
-    {
-        None,
-        ItemSkill,
-        LevelUp,
-        Passive
-    }
-    
     public enum SpecialSkillGrade
     {
         None,

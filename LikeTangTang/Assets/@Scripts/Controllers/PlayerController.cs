@@ -34,6 +34,23 @@ public class PlayerController : CreatureController, ITickable
         get => Manager.GameM.ContinueDatas.MaxHp;
         set => Manager.GameM.ContinueDatas.MaxHp = value;
     }
+    public override float MaxHpRate
+    {
+        get => Manager.GameM.ContinueDatas.MaxHpBonusRate;
+        set => Manager.GameM.ContinueDatas.MaxHpBonusRate = value;
+    }
+
+    public override float HealBounsRate
+    {
+        get => Manager.GameM.ContinueDatas.HealBonusRate;
+        set => Manager.GameM.ContinueDatas.HealBonusRate = value;
+    }
+
+    public override float HpRegen
+    {
+        get => Manager.GameM.ContinueDatas.HpRegen;
+        set => Manager.GameM.ContinueDatas.HpRegen = value;
+    }
 
     public override float Attack
     {
@@ -89,6 +106,12 @@ public class PlayerController : CreatureController, ITickable
         set => Manager.GameM.ContinueDatas.MoveSpeed = value;
     }
 
+    public override float CollectDistBonus
+    {
+        get => Manager.GameM.ContinueDatas.CollectDistBonus;
+        set => Manager.GameM.ContinueDatas.CollectDistBonus = value;
+    }
+
     public int Level
     {
         get => Manager.GameM.ContinueDatas.Level;
@@ -100,6 +123,8 @@ public class PlayerController : CreatureController, ITickable
         get => Manager.GameM.ContinueDatas.TotalExp;
         set => Manager.GameM.ContinueDatas.TotalExp = value;
     }
+
+    
 
     public float Exp
     {
@@ -183,6 +208,38 @@ public class PlayerController : CreatureController, ITickable
     public override void InitSkill()
     {
         base.InitSkill();
+
+        Equipment item;
+        Manager.GameM.EquipedEquipments.TryGetValue(Define.EquipmentType.Weapon, out item);
+
+        if (item != null)
+        {
+            Define.SkillType type = Utils.GetSkillTypeFromInt(item.EquipmentData.BaseSkill);
+            if(type != Define.SkillType.None)
+            {
+                Skills.LevelUpSkill(type);
+            }
+        }
+
+        foreach (Equipment equip in Manager.GameM.EquipedEquipments.Values)
+        {
+            int[] SpecialSkills = new int[]
+            {
+                    equip.EquipmentData.UnCommonGradeAbility,
+                    equip.EquipmentData.RareGradeAbility,
+                    equip.EquipmentData.EpicGradeAbility,
+                    equip.EquipmentData.UniqueGradeAbility
+            };
+
+            int grade = Define.GetGradeNum(equip.EquipmentData.EquipmentGarde);
+            Data.SpecialSkillData Skill;
+
+            for (int i = 0; i <= grade; i++)
+            {
+                if (Manager.DataM.SpecialSkillDic.TryGetValue(SpecialSkills[i], out Skill))
+                    Skills.AddSpecialSkill(Skill);
+            }
+        }
     }
 
     #endregion
@@ -303,12 +360,24 @@ public class PlayerController : CreatureController, ITickable
         MaxHp += equip_Hp;
         Attack += equip_Attack;
 
+        MaxHp *= MaxHpRate;
         Attack *= AttackRate;
         Def *= DefRate;
         Speed *= SpeedRate;
 
 
         if (_isHpFull) Hp = MaxHp;
+    }
+
+    public override void UpdatePlayerStat()
+    {
+        InitStat();
+
+        MaxHp *= MaxHpRate;
+        Hp *= MaxHpRate;
+        Attack *= AttackRate;
+        Def *= DefRate;
+        Speed *= SpeedRate;
     }
 
     private void OnDestroy()

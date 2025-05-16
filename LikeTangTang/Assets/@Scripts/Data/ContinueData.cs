@@ -15,6 +15,7 @@ public class ContinueData
     public float MaxHp;
     public float MaxHpBonusRate = 1;
     public float HealBonusRate = 1;
+    public float HpRegen;
     public float Attack;
     public float AttackRate = 1;
     public float Def;
@@ -43,6 +44,7 @@ public class ContinueData
         MaxHp = 0;
         MaxHpBonusRate = 1f;
         HealBonusRate = 1f;
+        HpRegen = 0f;
         Attack = 0;
         AttackRate = 1f;
         Def = 0;

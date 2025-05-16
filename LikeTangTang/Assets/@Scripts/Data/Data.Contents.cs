@@ -220,6 +220,9 @@ namespace Data
 
     #endregion
 
+
+
+
     #region LevelData
     [Serializable]
     public class LevelData
@@ -282,10 +285,37 @@ namespace Data
     {
         public int DataID;
         public Define.SpecialSkillType SkillType;
-        public string SpecialSkillName;
+        public Define.SpecialSkillName SpecialSkillName;
         public Define.SpecialSkillGrade SkillGrade;
         public string Name;
         public string Description;
+        public bool IsLocked;
+        public bool IsLearned;
+        public float MaxHpBonus;
+        public float AttackBonus;
+        public float CriticalBouns;
+        public float MoveSpeedBonus;
+        public float ExpBonus;
+        public float DamageReductionBonus;
+        public float HealingBouns;
+        public float HpRegenBonus;
+        public float CriticalDamageBouns;
+        public float CollectRangeBouns;
+        public float Healing;
+        public float LevelUpMoveSpeedBonus;
+        public float LevelUpDamageReductionBonus;
+        public float LevelUpAttackBonus;
+        public float LevelUpCriticalBonus;
+        public float LevelUpCriticalDamageBonus;
+        public float Resurrection;
+        public float CoolTime;
+        public float RoatateSpeed;
+        public float NumBounce;
+        public float Speed;
+        public float ProjectileCount;
+        public float ScaleMultiplier;
+
+
     }
 
     [Serializable]

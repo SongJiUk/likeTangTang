@@ -177,10 +177,36 @@ public class DataTransformer : EditorWindow
             SpecialSkillData skillData = new SpecialSkillData();
             skillData.DataID = ConvertValue<int>(row[i++]);
             skillData.SkillType = ConvertValue<SpecialSkillType>(row[i++]);
-            skillData.SpecialSkillName = ConvertValue<string>(row[i++]);
+            skillData.SpecialSkillName = ConvertValue<SpecialSkillName>(row[i++]);
             skillData.SkillGrade = ConvertValue<SpecialSkillGrade>(row[i++]);
             skillData.Name = ConvertValue<string>(row[i++]);
             skillData.Description = ConvertValue<string>(row[i++]);
+            skillData.IsLocked = ConvertValue<bool>(row[i++]);
+            skillData.IsLearned = ConvertValue<bool>(row[i++]);
+            skillData.MaxHpBonus = ConvertValue<float>(row[i++]);
+            skillData.AttackBonus = ConvertValue<float>(row[i++]);
+            skillData.CriticalBouns = ConvertValue<float>(row[i++]);
+            skillData.MoveSpeedBonus = ConvertValue<float>(row[i++]);
+            skillData.ExpBonus = ConvertValue<float>(row[i++]);
+            skillData.DamageReductionBonus = ConvertValue<float>(row[i++]);
+            skillData.HealingBouns = ConvertValue<float>(row[i++]);
+            skillData.HpRegenBonus = ConvertValue<float>(row[i++]);
+            skillData.CriticalDamageBouns = ConvertValue<float>(row[i++]);
+            skillData.CollectRangeBouns = ConvertValue<float>(row[i++]);
+            skillData.Healing = ConvertValue<float>(row[i++]);
+            skillData.LevelUpMoveSpeedBonus = ConvertValue<float>(row[i++]);
+            skillData.LevelUpDamageReductionBonus = ConvertValue<float>(row[i++]);
+            skillData.LevelUpAttackBonus = ConvertValue<float>(row[i++]);
+            skillData.LevelUpCriticalBonus = ConvertValue<float>(row[i++]);
+            skillData.LevelUpCriticalDamageBonus = ConvertValue<float>(row[i++]);
+            skillData.Resurrection = ConvertValue<float>(row[i++]);
+            skillData.CoolTime = ConvertValue<float>(row[i++]);
+            skillData.RoatateSpeed = ConvertValue<float>(row[i++]);
+            skillData.NumBounce = ConvertValue<float>(row[i++]);
+            skillData.Speed = ConvertValue<float>(row[i++]);
+            skillData.ProjectileCount = ConvertValue<float>(row[i++]);
+            skillData.ScaleMultiplier = ConvertValue<float>(row[i++]);
+
             loader.speicalskillDatas.Add(skillData);
         }
         #endregion
