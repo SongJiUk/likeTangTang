@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Linq;
 
@@ -15,6 +16,7 @@ public class UI_MergePopup : UI_Popup
     Define.EquipmentSortType equipmentSortType;
     string sort_Level = "정렬 : 레벨";
     string sort_Grade = "정렬 : 등급";
+    public ScrollRect scrollRect;
     enum GameObjects
     {
         ContentObject,
@@ -522,7 +524,7 @@ public class UI_MergePopup : UI_Popup
             }
 
 
-            item.SetInfo(equipmentitem, Define.UI_ItemParentType.EquipInventory, isSelected, IsLocked(equipmentitem));
+            item.SetInfo(equipmentitem, Define.UI_ItemParentType.EquipInventory, isSelected, IsLocked(equipmentitem), scrollRect);
 
             index++;
         }

@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
+using UnityEngine.EventSystems;
 
 public class UI_MergeEquipItem : UI_Base
 {
-    enum Buttons
-    {
-        EquipmentGradeBackgroundImage
-    }
+   
 
     enum GameObjects
     {
@@ -39,8 +38,8 @@ public class UI_MergeEquipItem : UI_Base
 
 
     public Equipment equipment;
-
-
+    ScrollRect scrollRect;
+    bool isDrag = false;
 
     private void Awake()
     {
@@ -52,12 +51,10 @@ public class UI_MergeEquipItem : UI_Base
     {
         if (!base.Init()) return false;
         gameObjectsType = typeof(GameObjects);
-        ButtonsType = typeof(Buttons);
         TextsType = typeof(Texts);
         ImagesType = typeof(Images);
 
         BindObject(gameObjectsType);
-        BindButton(ButtonsType);
         BindText(TextsType);
         BindImage(ImagesType);
 
@@ -68,15 +65,20 @@ public class UI_MergeEquipItem : UI_Base
         GetObject(gameObjectsType, (int)GameObjects.LockObject).SetActive(false);
         GetImage(ImagesType, (int)Images.EquipmentEnforceBackgroundImage).gameObject.SetActive(false);
         GetText(TextsType, (int)Texts.EquipmentCountValueText).gameObject.SetActive(false);
-        GetButton(ButtonsType, (int)Buttons.EquipmentGradeBackgroundImage).gameObject.BindEvent(OnClickEquipmentItemButton);
+        gameObject.BindEvent(OnClickEquipmentItemButton);
+
+        gameObject.BindEvent(null, OnDrag, Define.UIEvent.Drag);
+        gameObject.BindEvent(null, OnBeginDrag, Define.UIEvent.BeginDrag);
+        gameObject.BindEvent(null, OnEndDrag, Define.UIEvent.EndDrag);
 
         return true;
     }
 
-    public void SetInfo(Equipment _item, Define.UI_ItemParentType _parentType, bool _isSelected = false, bool _isLock = false)
+    public void SetInfo(Equipment _item, Define.UI_ItemParentType _parentType, bool _isSelected = false, bool _isLock = false, ScrollRect _scrollRect = null)
     {
         equipment = _item;
         transform.localScale = Vector3.one;
+        if (_scrollRect != null) scrollRect = _scrollRect;
         GetImage(ImagesType, (int)Images.EquipmentGradeBackgroundImage).color = Define.EquipmentUIColors.EquipGradeStyles[equipment.EquipmentData.EquipmentGarde].BgColor;
         GetImage(ImagesType, (int)Images.EquipmentTypeBackgroundImage).color = Define.EquipmentUIColors.EquipGradeStyles[equipment.EquipmentData.EquipmentGarde].BorderColor;
 
@@ -127,5 +129,30 @@ public class UI_MergeEquipItem : UI_Base
         Manager.SoundM.PlayButtonClick();
 
         (Manager.UiM.SceneUI as UI_LobbyScene).Ui_MergePopup.SetMergeItem(equipment);
+    }
+
+    public void OnDrag(BaseEventData baseEventData)
+    {
+        
+        if (scrollRect == null) return;
+        isDrag = true;
+        PointerEventData pointerEventData = baseEventData as PointerEventData;
+        scrollRect.OnDrag(pointerEventData);
+    }
+
+    public void OnBeginDrag(BaseEventData baseEventData)
+    {
+        if (scrollRect == null) return;
+        isDrag = true;
+        PointerEventData pointerEventData = baseEventData as PointerEventData;
+        scrollRect.OnBeginDrag(pointerEventData);
+    }
+
+    public void OnEndDrag(BaseEventData baseEventData)
+    {
+        if (scrollRect == null) return;
+        isDrag = false;
+        PointerEventData pointerEventData = baseEventData as PointerEventData;
+        scrollRect.OnEndDrag(pointerEventData);
     }
 }

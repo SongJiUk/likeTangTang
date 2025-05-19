@@ -79,7 +79,7 @@ public class UI_EquipItem : UI_Base
     {
         Equipment = _item;
         parentType = _parentType;
-        scrollRect = _scrollRect;
+        if(_scrollRect != null) scrollRect = _scrollRect;
         var style = Define.EquipmentUIColors.EquipGradeStyles[Equipment.EquipmentData.EquipmentGarde];
         //TODO : 이미지.style
         GetImage(ImagesType, (int)Images.EquipmentGradeBackgroundImage).color = style.BorderColor;
