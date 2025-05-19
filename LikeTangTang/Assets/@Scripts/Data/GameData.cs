@@ -19,6 +19,9 @@ public class GameData
     public int GacahCountAdsCommon = 1;
     public int GoldCountAds = 1;
     public int SilverKeyCountAds = 3;
+    public int DiaCountAds = 3;
+    public int StaminaCountAds = 2;
+    public int RemainBuyStaminaForDia = 3;
 
     // TODO : 모든 정보가 다 들어간다고 생각하면 됌. 
     public ContinueData ContinueDatas = new ContinueData();

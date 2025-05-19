@@ -20,7 +20,6 @@ public class UI_ShopPopup : UI_Popup
     {
         AdKeyButton,
         SilverKeyProductButton,
-
         GoldKeyProductButton,
         ADAdvancedGachaOpenButton,
         AdvancedGachaOpenButton,
@@ -126,6 +125,16 @@ public class UI_ShopPopup : UI_Popup
         GetText(TextsType, (int)Texts.FreeGoldTitleText).text = $"{goldAmount}";
         GetText(TextsType, (int)Texts.FirstGoldProductTitleText).text = $"{goldAmount * 3}";
         GetText(TextsType, (int)Texts.SecondGoldProductTitleText).text = $"{goldAmount * 5}";
+
+        if(Manager.GameM.SilverKeyCountAds == 0)
+        {
+            GetObject(gameObjectsType, (int)GameObjects.AdKeyRedDotObject).SetActive(false);
+        }
+
+        if(Manager.GameM.GoldCountAds == 0)
+        {
+            GetObject(gameObjectsType, (int)GameObjects.FreeGoldRedDotObject).SetActive(false);
+        }
     }
 
 
@@ -144,7 +153,14 @@ public class UI_ShopPopup : UI_Popup
         if(Manager.GameM.SilverKeyCountAds > 0)
         {
             Manager.GameM.SilverKeyCountAds--;
-            //TODO : 광고 실행, 리워드 받기
+            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(this.transform);
+            Manager.DataM.MaterialDic.TryGetValue(Define.ID_SILVER_KEY, out var item);
+            popup.SetInfo(item, 0, 1);
+            popup.OnCompleteBuyItem = Refresh;
+        }
+        else
+        {
+            Manager.UiM.ShowToast("오늘은 더이상 광고를 시청할수 없습니다.");
         }
     }
 

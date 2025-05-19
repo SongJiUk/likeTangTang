@@ -6,56 +6,85 @@ public class UI_DiaChargePopup : UI_Popup
 {
     enum GameObjects
     {
+        ContentObject,
 
     }
 
     enum Texts
-    { 
-
+    {
+        ADRemainingValueText
     }
 
     enum Buttons
-    { 
-
+    {
+        BuyADButton,
+        BackgroundButton
     }
 
-    enum Images
-    { 
-
-    }
 
     private void Awake()
     {
         Init();
     }
 
+    private void OnEnable()
+    {
+        PopupOpenAnim(GetObject(gameObjectsType, (int)GameObjects.ContentObject));
+    }
     public override bool Init()
     {
         if (!base.Init()) return false;
         gameObjectsType = typeof(GameObjects);
         TextsType = typeof(Texts);
         ButtonsType = typeof(Buttons);
-        ImagesType = typeof(Images);
 
         BindObject(gameObjectsType);
         BindText(TextsType);
         BindButton(ButtonsType);
-        BindImage(ImagesType);
 
+        GetButton(ButtonsType, (int)Buttons.BuyADButton).gameObject.BindEvent(OnClickBuyAdButton);
+        GetButton(ButtonsType, (int)Buttons.BackgroundButton).gameObject.BindEvent(OnClickBgButton);
+        Refresh();
 
-
-
-        return true;
+        return true; 
 
     }
 
     public void SetInfo()
     {
-
+        Refresh();
     }
 
     void Refresh()
     {
+        GetText(TextsType, (int)Texts.ADRemainingValueText).text = $"오늘 남은 횟수 : {Manager.GameM.DiaCountAds}";
+    }
 
+    void OnClickBuyAdButton()
+    {
+        Manager.SoundM.PlayButtonClick();
+
+        if(Manager.GameM.DiaCountAds > 0)
+        {
+            Queue<string> name = new();
+            name.Enqueue(Manager.DataM.MaterialDic[Define.ID_DIA].SpriteName);
+            Queue<int> count = new();
+            count.Enqueue(200);
+            UI_RewardPopup popup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
+            popup.gameObject.SetActive(true);
+            Manager.GameM.DiaCountAds--;
+            Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_DIA], 200);
+            Refresh();
+            popup.SetInfo(name, count);
+        }
+        else
+        {
+            Manager.UiM.ShowToast("오늘은 더이상 구매할 수 없습니다.");
+        }
+    }
+
+    void OnClickBgButton()
+    {
+        Manager.UiM.ClosePopup(this);
     }
 }

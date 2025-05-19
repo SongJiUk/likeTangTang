@@ -75,6 +75,23 @@ public class GameManager
         set { gameData.SilverKeyCountAds = value; }
     }
 
+    public int DiaCountAds
+    {
+        get { return gameData.DiaCountAds; }
+        set { gameData.DiaCountAds = value; }
+    }
+
+    public int StaminaCountAds
+    {
+        get { return gameData.StaminaCountAds; }
+        set { gameData.StaminaCountAds = value; }
+    }
+
+    public int RemainBuyStaminaForDia
+    {
+        get { return gameData.RemainBuyStaminaForDia; }
+        set { gameData.RemainBuyStaminaForDia = value; }
+    }
     public int UserLevel
     {
         get { return gameData.userLevel; }
@@ -111,10 +128,15 @@ public class GameManager
 
     public int Stamina
     { 
-        get { return gameData.stamina; }
+        get 
+        {
+            if (gameData.stamina > MAX_STAMINA) gameData.stamina = MAX_STAMINA;
+            return gameData.stamina;
+        }
         set
         {
             gameData.stamina = value;
+            if (gameData.stamina > MAX_STAMINA) gameData.stamina = MAX_STAMINA;
             SaveGame();
             OnResourcesChanged?.Invoke();
         }
@@ -233,6 +255,7 @@ public class GameManager
 
             case MaterialType.Stamina:
                 Stamina += _count;
+                if (Stamina > MAX_STAMINA) Stamina = MAX_STAMINA;
                 break;
             case MaterialType.BronzeKey:
             case MaterialType.SilverKey:
@@ -303,7 +326,7 @@ public class GameManager
         return true;
     }
 
-    public void SaveGame ()
+    public void SaveGame()
     {
         if (player != null)
         {

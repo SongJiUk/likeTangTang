@@ -5,16 +5,60 @@ using UnityEngine.UI;
 
 public class UI_BattlePopup : UI_Popup
 {
-    private void OnEnable()
+
+    public enum GameObjects
     {
-        StartCoroutine(CoCheckPopup());
+        SettingButtonRedDotObject,
+        AttendanceCheckButtonRedDotObject,
+        MissionButtonRedDotObject,
+        AchievementButtonRedDotObject
     }
+
     public enum Toggles
     {
         GameStartToggle
     }
+
+    public enum Buttons
+    {
+        SettingButton,
+        AttendanceCheckButton,
+        MissionButton,
+        AchievementButton,
+        StageSelectButton,
+        FirstClearRewardButton,
+        SecondClearRewardButton,
+        ThirdClearRewardButton,
+        GameStartButton,
+        OfflineRewardButton
+    }
+
+    public enum Texts
+    {
+        StageNameText,
+        SurvivalWaveValueText
+    }
+
+    //TODO : 여기서 체크
+    private void OnEnable()
+    {
+        StartCoroutine(CoCheckPopup());
+    }
+   
     public override bool Init()
     {
+        gameObjectsType = typeof(GameObjects);
+        TogglesType = typeof(Toggles);
+        ButtonsType = typeof(Buttons);
+        TextsType = typeof(Texts);
+
+        BindObject(gameObjectsType);
+        BindToggle(TogglesType);
+        BindButton(ButtonsType);
+        BindText(TextsType);
+
+
+
         SetUIInfo();
 
         GetToggle(typeof(Toggles), (int)Toggles.GameStartToggle).gameObject.BindEvent(() =>
@@ -25,10 +69,7 @@ public class UI_BattlePopup : UI_Popup
         return true;
     }
 
-    protected override void SetUIInfo()
-    {
-        Bind<Toggle>(typeof(Toggles));
-    }
+   
 
     protected override void RefreshUI()
     {
@@ -40,9 +81,14 @@ public class UI_BattlePopup : UI_Popup
         yield return new WaitForEndOfFrame();
         if (PlayerPrefs.GetInt("ISFIRST") == 1)
         {
-            //Managers.UI.ShowPopupUI<UI_BeginnerSupportRewardPopup>();
+            //TODO :Managers.UI.ShowPopupUI<UI_BeginnerSupportRewardPopup>();
             PlayerPrefs.SetInt("ISFIRST", 0);
             PlayerPrefs.Save();
         }
+
+        if (Manager.GameM.ContinueDatas.isContinue)
+            Manager.UiM.ShowPopup<UI_BackToBattlePopup>();
+        else
+            Manager.GameM.ClearContinueData();
     }
 }

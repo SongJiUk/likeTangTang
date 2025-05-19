@@ -74,12 +74,14 @@ public class UI_UserInfoItem : UI_Base
 
     void OnClickStaminaButton()
     {
-        Debug.Log("asdasd");
+        Manager.SoundM.PlayButtonClick();
+        Manager.UiM.ShowPopup<UI_StaminaChargePopup>();
     }
 
     void OnClickDiaButton()
     {
-
+        Manager.SoundM.PlayButtonClick();
+        Manager.UiM.ShowPopup<UI_DiaChargePopup>();
     }
 
     void OnClickGoldButton()
