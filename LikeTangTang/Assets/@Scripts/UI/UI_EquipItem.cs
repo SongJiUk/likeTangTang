@@ -67,6 +67,8 @@ public class UI_EquipItem : UI_Base
         gameObject.BindEvent(null, OnBeginDrag, Define.UIEvent.BeginDrag);
         gameObject.BindEvent(null, OnEndDrag, Define.UIEvent.EndDrag);
 
+        GetObject(gameObjectsType, (int)GameObjects.GetEffectObject).SetActive(false);
+
         gameObject.BindEvent(OnClickEquipItemButton);
         return true;
 
@@ -114,6 +116,11 @@ public class UI_EquipItem : UI_Base
         {
             GetObject(gameObjectsType, (int)GameObjects.EquippedObject).SetActive(false);
         }
+
+        if(parentType == Define.UI_ItemParentType.GachaResultPopup)
+        {
+            GetObject(gameObjectsType, (int)GameObjects.GetEffectObject).SetActive(true);
+        }
     }
 
     public void OnClickEquipItemButton()
@@ -136,8 +143,14 @@ public class UI_EquipItem : UI_Base
                 infoPopup.SetInfo(Equipment);
                 infoPopup.gameObject.SetActive(true);
             }
-            
+
+            Refresh();
         }
+    }
+
+    void Refresh()
+    {
+        GetObject(gameObjectsType, (int)GameObjects.NewTextObject).SetActive(!Equipment.IsConfirmed);
     }
 
     public void OnDrag(BaseEventData baseEventData)

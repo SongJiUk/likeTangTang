@@ -184,6 +184,8 @@ public class UI_ShopPopup : UI_Popup
     void OnClickAdvancedBoxListButton()
     {
         Manager.SoundM.PlayButtonClick();
+        UI_GachaListPopup popup = Manager.UiM.MakeSubItem<UI_GachaListPopup>(transform);
+        popup.SetInfo(Define.GachaType.AdvancedGacha);
     }
     
     void OnClickAdvancedBoxADButton()
@@ -238,7 +240,9 @@ public class UI_ShopPopup : UI_Popup
 
     void OnClickCommonGachaListButton()
     {
-        
+        Manager.SoundM.PlayButtonClick();
+        UI_GachaListPopup popup = Manager.UiM.MakeSubItem<UI_GachaListPopup>(transform);
+        popup.SetInfo(Define.GachaType.CommonGacha);
     }
 
     void OnClickADCommonGachaOpenButton()

@@ -101,7 +101,7 @@ public class UI_MergeEquipItem : UI_Base
         GetText(TextsType, (int)Texts.EquipmentLevelValueText).text = $"Lv. {equipment.Level}";
         GetText(TextsType, (int)Texts.EquipmentCountValueText).gameObject.SetActive(false);
         GetObject(gameObjectsType, (int)GameObjects.EquipmentRedDotObject).SetActive(equipment.IsUpgradeable);
-        GetObject(gameObjectsType, (int)GameObjects.NewTextObject).SetActive(equipment.IsConfirmed);
+        GetObject(gameObjectsType, (int)GameObjects.NewTextObject).SetActive(!equipment.IsConfirmed);
         GetObject(gameObjectsType, (int)GameObjects.EquippedObject).SetActive(equipment.IsEquiped);
         GetObject(gameObjectsType, (int)GameObjects.SelectObject).SetActive(_isSelected);
         GetObject(gameObjectsType, (int)GameObjects.LockObject).SetActive(_isLock);

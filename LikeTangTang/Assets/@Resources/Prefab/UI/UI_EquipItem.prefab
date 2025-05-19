@@ -722,6 +722,7 @@ GameObject:
   - component: {fileID: 2233831807785408349}
   - component: {fileID: 1249615697728712767}
   - component: {fileID: 2742908463814611287}
+  - component: {fileID: 2450729901517272716}
   m_Layer: 5
   m_Name: GetEffectObject
   m_TagString: Untagged
@@ -5537,6 +5538,29 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &2450729901517272716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662636054423378470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f85388e938d9e4599afc6d9441ed57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: e2b837c495d14cc42b950b34add07416, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  fixedTime: 1
+  use3dRotation: 0
+  _useLengthScale: 0
 --- !u!1 &5106174026919562295
 GameObject:
   m_ObjectHideFlags: 0
@@ -5703,6 +5727,7 @@ GameObject:
   - component: {fileID: 1662435574053926943}
   - component: {fileID: 3667882644882746438}
   - component: {fileID: 637493781930078259}
+  - component: {fileID: 267101914076762258}
   m_Layer: 5
   m_Name: GetEffect_particle
   m_TagString: Untagged
@@ -10584,6 +10609,29 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &267101914076762258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5896314170033948347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f85388e938d9e4599afc6d9441ed57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 611c6e1d31d27da4aa3cf582790e26eb, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  fixedTime: 1
+  use3dRotation: 0
+  _useLengthScale: 0
 --- !u!1 &5904645845743091008
 GameObject:
   m_ObjectHideFlags: 0
