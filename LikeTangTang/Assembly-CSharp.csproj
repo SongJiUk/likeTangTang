@@ -161,6 +161,17 @@
     <Compile Include="Assets\@Scripts\UI\Popup\UI_MergeAllResultPopup.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\CustomSceneManager.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_GachaRateItem.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_AchievementPopup.cs" />
+    <Compile Include="Assets\@Scripts\UI\UI_AchievementItem.cs" />
+    <Compile Include="Assets\@Scripts\UI\UI_SkillDamageItem.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_TotalDamagePopup.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_CheckOutPopup.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_DiaChargePopup.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_MissionPopup.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_OfflineRewardPopup.cs" />
+    <Compile Include="Assets\@Scripts\UI\UI_MonsterInfoItem.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_StageSelectPopup.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_StaminaChargePopup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
