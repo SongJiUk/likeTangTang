@@ -478,4 +478,28 @@ namespace Data
         public Define.EquipmentGrade EquipGrade;
     }
     #endregion
+
+    [Serializable]
+    public class AttendanceCheckData
+    {
+        public int Day;
+        public int RewardItemId;
+        public int RewardItemValue;
+    }
+
+    public class AttendanceCheckDataLoader : ILoader<int, AttendanceCheckData>
+    {
+        public List<AttendanceCheckData> list = new List<AttendanceCheckData>();
+
+        public Dictionary<int, AttendanceCheckData> MakeDict()
+        {
+            Dictionary<int, AttendanceCheckData> dic = new Dictionary<int, AttendanceCheckData>();
+            foreach (AttendanceCheckData data in list)
+                dic.Add(data.Day, data);
+
+            return dic;
+        }
+    }
+
+
 }

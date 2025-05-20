@@ -129,6 +129,7 @@
     <Compile Include="Assets\@Scripts\Controllers\MonsterController.cs" />
     <Compile Include="Assets\@Scripts\Map.cs" />
     <Compile Include="Assets\@Scripts\Controllers\DropItem\DropBoxController.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_BackToBattlePopup.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_MergePopup.cs" />
     <Compile Include="Assets\@Scripts\Controllers\PlayerController.cs" />
     <Compile Include="Assets\@Scripts\Scenes\LobbyScene.cs" />
@@ -172,7 +173,9 @@
     <Compile Include="Assets\@Scripts\UI\Popup\UI_MergeAllResultPopup.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_TotalDamagePopup.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\CustomSceneManager.cs" />
-    <Compile Include="Assets\@Scripts\UI\Popup\UI_BackToBattlePopup.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_BeginnerSupportRewardPopup.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_SettingPopup.cs" />
+    <Compile Include="Assets\@Scripts\UI\UI_CheckOutItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

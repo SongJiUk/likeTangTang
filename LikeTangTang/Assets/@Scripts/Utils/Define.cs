@@ -40,6 +40,7 @@ public static class Define
     public static int ID_GOLD_KEY = 62002;
     public static int ID_CLOVER = 62003;
     public static int MAX_STAMINA = 50;
+    public static int GAMESTART_NEED_STAMINA = 3;
 
     public static int STAMINA_RECHARGET_INTERVAL = 300;
     public static readonly float[] COMMON_GACHA_GRADE_PROB = new float[]
@@ -161,7 +162,8 @@ public static class Define
     public enum Sound
     {
         Bgm,
-        Effect
+        Effect,
+        Max
     }
 
 
@@ -368,6 +370,12 @@ public static class Define
         CharacterEquipment,
         EquipInventory,
         GachaResultPopup
+    }
+
+    public enum JoyStickType
+    {
+        Fixed,
+        Flexible
     }
 
     public static string GRIDNAME = "@Grid";

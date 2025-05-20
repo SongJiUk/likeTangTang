@@ -174,7 +174,39 @@ public class GameManager
         }
     }
 
+    public bool BGMOn
+    {
+        get { return gameData.BGMOn; }
+        set
+        {
+            if (gameData.BGMOn == value)
+                return;
 
+            gameData.BGMOn = value;
+            if (!gameData.BGMOn)
+                Manager.SoundM.Stop(Sound.Bgm);
+            else
+            {
+                string name = "Bgm_Lobby";
+                if (Manager.SceneM.CurrentScene.SceneType == SceneType.GameScene)
+                    name = "Bgm_Game";
+
+                Manager.SoundM.Play(Define.Sound.Bgm, name);
+            }
+        }
+    }
+
+    public bool EffectSoundOn
+    {
+        get { return gameData.EffectSoundOn; }
+        set { gameData.EffectSoundOn = value; }
+    }
+
+    public Define.JoyStickType JoyStickType
+    {
+        get { return gameData.JoyStickType; }
+        set { gameData.JoyStickType = value;}
+    }
 
     public Map CurrentMap { get; set; }
 
@@ -283,13 +315,13 @@ public class GameManager
         ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_SILVER_KEY], 10);
         ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_GOLD_KEY], 30);
         ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_DIA], 1000);
-        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_GOLD], 10);
-        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_WeaponScroll], 10);
-        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_GloveScroll], 10);
-        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_RingScroll], 10);
-        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_HelmetScroll], 10);
-        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_ArmorScroll], 10);
-        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_BootsScroll], 10);
+        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_GOLD], 100000);
+        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_WeaponScroll], 15);
+        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_GloveScroll], 15);
+        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_RingScroll], 15);
+        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_HelmetScroll], 15);
+        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_ArmorScroll], 15);
+        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_BootsScroll], 15);
     }
 
 

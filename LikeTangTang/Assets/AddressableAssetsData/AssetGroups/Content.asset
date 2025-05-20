@@ -72,6 +72,61 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
+  - m_GUID: c2509251ea8132f4b8f87d5da048d8a4
+    m_Address: UI_SettingPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 76fc3da36981b954bbf0580f8f11a6a7
+    m_Address: Stage5.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: f1663d6bfba323947a4d3367bde60456
+    m_Address: Stage4.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: aa139921111ff2540a0f5d2a907db810
+    m_Address: Stage2.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 927df8e2970943a4f8f390a2cd2e44d5
+    m_Address: Stage3.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 1b53c83915526774c85db8893a33da7e
+    m_Address: Stage1.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 3ec1df1c29768c0458dc8bf46314a17f
+    m_Address: Bgm_Lobby
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: af1c048f2eb55194eaebfd00d79044da
+    m_Address: PopupClose
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: e8759c8ab95e6f244a0aa9d1658dcb24
+    m_Address: ButtonClick
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 1a78c902d5e2426419725dc610b1c527
+    m_Address: Bgm_Game
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 261cb1405f377124f973d2490a703c5e
+    m_Address: UI_CheckOutItem
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

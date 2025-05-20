@@ -16,7 +16,6 @@ using static Define;
 using UnityEngine.Analytics;
 
 
-// [ ] 하루 날잡고 이거 파악하기
 public class DataTransformer : EditorWindow
 {
 #if UNITY_EDITOR
@@ -49,7 +48,7 @@ public class DataTransformer : EditorWindow
         //ParseStagePackageData("StagePackage");
         // ParseMissionData("Mission");
         // ParseAchievementData("Achievement");
-        // ParseCheckOutData("CheckOut");
+        ParseCheckOutData("AttendanceCheckData");
         // ParseOfflineRewardData("OfflineReward");
         // ParseBattlePassData("BattlePass");
         // ParseDailyShopData("DailyShop");
@@ -711,37 +710,37 @@ public class DataTransformer : EditorWindow
     //         AssetDatabase.Refresh();
     //     }
 
-    //     static void ParseCheckOutData(string filename)
-    //     {
-    //         CheckOutDataLoader loader = new CheckOutDataLoader();
+    static void ParseCheckOutData(string filename)
+    {
+        AttendanceCheckDataLoader loader = new AttendanceCheckDataLoader();
 
-    //         #region ExcelData
-    //         string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/Excel/{filename}Data.csv").Split("\n");
+        #region ExcelData
+        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/CSV/{filename}.csv").Split("\n");
 
-    //         for (int y = 1; y < lines.Length; y++)
-    //         {
-    //             string[] row = lines[y].Replace("\r", "").Split(',');
+        for (int y = 1; y < lines.Length; y++)
+        {
+            string[] row = lines[y].Replace("\r", "").Split(',');
 
-    //             if (row.Length == 0)
-    //                 continue;
-    //             if (string.IsNullOrEmpty(row[0]))
-    //                 continue;
+            if (row.Length == 0)
+                continue;
+            if (string.IsNullOrEmpty(row[0]))
+                continue;
 
-    //             int i = 0;
-    //             CheckOutData chk = new CheckOutData();
-    //             chk.Day = ConvertValue<int>(row[i++]);
-    //             chk.RewardItemId = ConvertValue<int>(row[i++]);
-    //             chk.MissionTarRewardItemValuegetValue = ConvertValue<int>(row[i++]);
+            int i = 0;
+            AttendanceCheckData acd = new AttendanceCheckData();
+            acd.Day = ConvertValue<int>(row[i++]);
+            acd.RewardItemId = ConvertValue<int>(row[i++]);
+            acd.RewardItemValue = ConvertValue<int>(row[i++]);
 
-    //             loader.checkouts.Add(chk);
-    //         }
+            loader.list.Add(acd);
+        }
 
-    //         #endregion
+        #endregion
 
-    //         string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
-    //         File.WriteAllText($"{Application.dataPath}/@Resources/Data/JsonData/{filename}Data.json", jsonStr);
-    //         AssetDatabase.Refresh();
-    //     }
+        string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
+        File.WriteAllText($"{Application.dataPath}/@Resources/Data/Json/{filename}.json", jsonStr);
+        AssetDatabase.Refresh();
+    }
 
     //     static void ParseOfflineRewardData(string filename)
     //     {

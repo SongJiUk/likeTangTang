@@ -23,6 +23,10 @@ public class GameData
     public int StaminaCountAds = 2;
     public int RemainBuyStaminaForDia = 3;
 
+    public bool BGMOn = true;
+    public bool EffectSoundOn = true;
+    public Define.JoyStickType JoyStickType = Define.JoyStickType.Flexible;
+
     // TODO : 모든 정보가 다 들어간다고 생각하면 됌. 
     public ContinueData ContinueDatas = new ContinueData();
     public StageData CurrentStageData = new StageData();

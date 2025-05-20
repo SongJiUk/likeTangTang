@@ -9,6 +9,43 @@ public class TimeManager : MonoBehaviour
     public float second = 0f;
     public float TimeRemaining = 60f;
 
+    public int AttendanceDay
+    {
+        get
+        {
+            int savedTime = PlayerPrefs.GetInt("AttendanceDay", 1);
+            return savedTime;
+        }
+        set
+        {
+            PlayerPrefs.SetInt("AttendanceDay", value);
+            //TDOO : 업적 출석 : Manager.AchievementM.
+            PlayerPrefs.Save();
+        }
+    }
+
+    public DateTime LastLoginTime
+    {
+        get
+        {
+            string savedTimeStr = PlayerPrefs.GetString("LastLoginTime", string.Empty);
+            if (!string.IsNullOrEmpty(savedTimeStr))
+            {
+                return DateTime.Parse(savedTimeStr);
+            }
+            else
+                return DateTime.Now;
+        }
+
+        set
+        {
+
+            string savedTimeStr = value.ToString();
+            PlayerPrefs.SetString("LastLoginTime", savedTimeStr);
+            PlayerPrefs.Save();
+
+        }
+    }
     public float StaminaTime
     {
         get
@@ -93,6 +130,27 @@ public class TimeManager : MonoBehaviour
         }
     }
 
+    public void CheckAttendance()
+    {
+        if (!IsSameDay(LastLoginTime, DateTime.Now))
+        {
+            AttendanceDay++;
+            LastLoginTime = DateTime.Now;
+
+            Manager.GameM.GachaCountAdsAdvanced = 1;
+            Manager.GameM.GachaCountAdsCommon = 1;
+            Manager.GameM.GoldCountAds = 1;
+            Manager.GameM.SilverKeyCountAds = 3;
+            Manager.GameM.DiaCountAds = 3;
+            Manager.GameM.StaminaCountAds = 2;
+            Manager.GameM.RemainBuyStaminaForDia = 3;
+
+            //TODO : 미션정보, 빠른모험 등등
+
+            Manager.GameM.SaveGame();
+        }
+    }
+
     public int GetCurrentMinute()
     {
         return (int)minute;
@@ -111,5 +169,13 @@ public class TimeManager : MonoBehaviour
     public void TimeReStart()
     {
         Time.timeScale = 1f;
+    }
+
+    public bool IsSameDay(DateTime _savedTime, DateTime _currentTime)
+    {
+        if (LastLoginTime.Day == DateTime.Now.Day)
+            return true;
+        else
+            return false;
     }
 }

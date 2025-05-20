@@ -86,7 +86,7 @@ public static class Utils
 
     public static void BindEvent(this GameObject _go, Action _action = null, Action<BaseEventData> _dragAction = null, Define.UIEvent _type = Define.UIEvent.Click)
     {
-        UI_Base.BindEvent(_go, _action, _dragAction, _type);
+        UI_Base.BindEvent(_go, _action, _dragAction, _type); 
     }
 
     public static Vector2 CreateObjectAroundPlayer(Vector3 _pos, float _minDist = 6f, float _maxDist = 10f)

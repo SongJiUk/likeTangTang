@@ -1,0 +1,69 @@
+{
+  "list": [
+    {
+      "Day": 1,
+      "RewardItemId": 60001,
+      "RewardItemValue": 100
+    },
+    {
+      "Day": 2,
+      "RewardItemId": 62001,
+      "RewardItemValue": 3
+    },
+    {
+      "Day": 3,
+      "RewardItemId": 60001,
+      "RewardItemValue": 200
+    },
+    {
+      "Day": 4,
+      "RewardItemId": 62001,
+      "RewardItemValue": 3
+    },
+    {
+      "Day": 5,
+      "RewardItemId": 60001,
+      "RewardItemValue": 300
+    },
+    {
+      "Day": 6,
+      "RewardItemId": 62002,
+      "RewardItemValue": 3
+    },
+    {
+      "Day": 7,
+      "RewardItemId": 60001,
+      "RewardItemValue": 400
+    },
+    {
+      "Day": 8,
+      "RewardItemId": 62002,
+      "RewardItemValue": 3
+    },
+    {
+      "Day": 9,
+      "RewardItemId": 60001,
+      "RewardItemValue": 500
+    },
+    {
+      "Day": 10,
+      "RewardItemId": 62002,
+      "RewardItemValue": 3
+    },
+    {
+      "Day": 15,
+      "RewardItemId": 60001,
+      "RewardItemValue": 500
+    },
+    {
+      "Day": 20,
+      "RewardItemId": 60001,
+      "RewardItemValue": 500
+    },
+    {
+      "Day": 30,
+      "RewardItemId": 60001,
+      "RewardItemValue": 500
+    }
+  ]
+}
