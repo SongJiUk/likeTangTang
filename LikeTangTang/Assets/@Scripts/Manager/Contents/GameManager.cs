@@ -208,6 +208,12 @@ public class GameManager
         set { gameData.JoyStickType = value;}
     }
 
+    public bool[] AttendanceReceived
+    {
+        get { return gameData.AttendanceReceived;}
+        set { gameData.AttendanceReceived = value; }
+    }
+    
     public Map CurrentMap { get; set; }
 
     #region Action
