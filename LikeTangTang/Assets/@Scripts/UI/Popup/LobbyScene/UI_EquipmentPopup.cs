@@ -14,7 +14,7 @@ public class UI_EquipmentPopup : UI_Popup
     string sort_Level = "정렬 : 레벨";
     string sort_Grade = "정렬 : 등급";
     public ScrollRect scrollRect;
-
+    public bool isOpen = false;
     enum Images
     {
         CharacterImage
@@ -129,7 +129,6 @@ public class UI_EquipmentPopup : UI_Popup
                 }
             }
         }
-
 
         SortEquipments();
 

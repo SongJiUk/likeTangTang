@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Sound
+  m_EditorClassIdentifier: 
+  m_GroupName: Sound
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 860a06555c81244499dcf5f7d3376c94
+  m_SerializeEntries:
+  - m_GUID: 3ec1df1c29768c0458dc8bf46314a17f
+    m_Address: Bgm_Lobby
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: af1c048f2eb55194eaebfd00d79044da
+    m_Address: PopupClose
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: e8759c8ab95e6f244a0aa9d1658dcb24
+    m_Address: ButtonClick
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 1a78c902d5e2426419725dc610b1c527
+    m_Address: Bgm_Game
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 5d8eee6a355b8c945815132773d57ec4, type: 2}
+    - {fileID: 11400000, guid: 8dec814750f6513418d89dd02e845dec, type: 2}

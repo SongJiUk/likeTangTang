@@ -378,6 +378,27 @@ public static class Define
         Flexible
     }
 
+
+    public enum MissionType
+    {
+        Daily,
+        Weekly
+    }
+
+    public enum MissionTarget
+    {
+        StageEnter,
+        EquipmentLevelUp,
+        EquipmentMerge,
+        GachaOpen,
+        OfflineRewardGet,
+        MonsterKill,
+        EliteMonsterKill,
+        BossMonsterKill,
+        StageClear,
+        ADWatchIng
+    }
+
     public static string GRIDNAME = "@Grid";
     public static string DROPITEMNAME = "DropItem";
     public static string STANDARDNAME = "Standard";

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class UI_CheckOutPopup : UI_Popup
 {
     enum GameObjects
@@ -66,7 +66,6 @@ public class UI_CheckOutPopup : UI_Popup
         GetObject(gameObjectsType, (int)GameObjects.SecondClearRewardCompleteObject).SetActive(false);
         GetObject(gameObjectsType, (int)GameObjects.ThirdClearRewardCompleteObject).SetActive(false);
 
-        Refresh();
         return true;
 
     }
@@ -79,9 +78,21 @@ public class UI_CheckOutPopup : UI_Popup
 
     void Refresh()
     {
-        if (userCheckOutDay == 0) return;
+        if (userCheckOutDay == 0) return; 
 
-        monthlyCount = userCheckOutDay % 30;
+        monthlyCount = userCheckOutDay % DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+        
+        if(monthlyCount == 0)
+        {
+            for(int i =0; i<Manager.GameM.AttendanceReceived.Length; i++)
+            {
+                Manager.GameM.AttendanceReceived[i] = false;
+            }
+            monthlyCount = 1;
+            userCheckOutDay = 1;
+            Manager.TimeM.AttendanceDay = userCheckOutDay;
+        }
+
         dailyCount = userCheckOutDay % 10;
 
         if (dailyCount == 0)
@@ -91,37 +102,29 @@ public class UI_CheckOutPopup : UI_Popup
         Transform parent = GetObject(gameObjectsType, (int)GameObjects.CheckOutBoardObject).transform;
         makeItemParent = parent;
 
-        List<UI_CheckOutItem> items = new List<UI_CheckOutItem>();
-
-        for(int i =0; i< parent.childCount; i++)
-        {
-            UI_CheckOutItem item = parent.GetChild(i).GetComponent<UI_CheckOutItem>();
-            if (item != null) items.Add(item);
-        }
-
 
         for(int count = 1; count <=10; count++)
         {
-            UI_CheckOutItem item = null;
-
-            if (count - 1 < items.Count)
-            {
-                item = items[count - 1];
-                item.gameObject.SetActive(true);
-            }
-            else
-                item = Manager.UiM.MakeSubItem<UI_CheckOutItem>(makeItemParent);
-
-            item.transform.SetAsFirstSibling();
-            item.SetInfo(count, dailyCount >= count);
+            UI_CheckOutItem item = Manager.UiM.MakeSubItem<UI_CheckOutItem>(makeItemParent);
+            item.transform.SetAsLastSibling();
+            
+            item.SetInfo(userCheckOutDay, count, dailyCount >= count);
         }
 
         if(monthlyCount >= 10 && monthlyCount < 20)
             GetObject(gameObjectsType, (int)GameObjects.FirstClearRewardCompleteObject).gameObject.SetActive(true);
         else if(monthlyCount >=20 && monthlyCount <30)
+        {
+            GetObject(gameObjectsType, (int)GameObjects.FirstClearRewardCompleteObject).gameObject.SetActive(true);
             GetObject(gameObjectsType, (int)GameObjects.SecondClearRewardCompleteObject).gameObject.SetActive(true);
-        else
+        }
+        else if(monthlyCount >= 30)
+        {
             GetObject(gameObjectsType, (int)GameObjects.ThirdClearRewardCompleteObject).gameObject.SetActive(true);
+            GetObject(gameObjectsType, (int)GameObjects.FirstClearRewardCompleteObject).gameObject.SetActive(true);
+            GetObject(gameObjectsType, (int)GameObjects.SecondClearRewardCompleteObject).gameObject.SetActive(true);
+        }
+            
 
 
         GetText(TextsType, (int)Texts.DaysCountText).text = $"{monthlyCount}일";
@@ -132,6 +135,13 @@ public class UI_CheckOutPopup : UI_Popup
     {
         Manager.SoundM.PlayPopupClose();
         userCheckOutDay = 0;
-        Manager.UiM.ClosePopup(this);
+        Manager.ResourceM.Destory(gameObject);
+    }
+
+    public void OnClickButtonTest()
+    {
+        Debug.Log("On click start button");
+        userCheckOutDay += 1;
+        Refresh();
     }
 }

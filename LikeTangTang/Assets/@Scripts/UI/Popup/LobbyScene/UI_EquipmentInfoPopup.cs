@@ -270,8 +270,8 @@ public class UI_EquipmentInfoPopup : UI_Popup
             Manager.UiM.ShowToast("장비가 최대레벨입니다.");
             return;
         }
-
-            int UpgradeCostGold = Manager.DataM.EquipmentLevelDic[equipment.Level].Cost_Gold;
+        
+        int UpgradeCostGold = Manager.DataM.EquipmentLevelDic[equipment.Level].Cost_Gold;
         int UpgradeCostMaterial = Manager.DataM.EquipmentLevelDic[equipment.Level].Cost_Material;
         int MaterialCount = 0;
 
@@ -282,6 +282,13 @@ public class UI_EquipmentInfoPopup : UI_Popup
             equipment.LevelUp();
             Manager.GameM.Gold -= UpgradeCostGold;
             Manager.GameM.RemoveMaterialItem(equipment.EquipmentData.LevelUpMaterial, UpgradeCostMaterial);
+
+            if (Manager.GameM.MissionDic.TryGetValue(Define.MissionTarget.EquipmentLevelUp, out MissionInfo info))
+            {
+                info.Progress++;
+                Manager.GameM.SaveGame();
+            }
+                
 
             //TODO : LevelUP sound;
             Refresh();

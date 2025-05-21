@@ -53,6 +53,7 @@ public class UI_ToolTipItem : UI_Base
 
     public void SetInfo(Data.MaterialData _data, Vector2 _rt)
     {
+        transform.localScale = Vector3.one;
         //TODO : 이미지, 이름, 설명
         GetImage(ImagesType, (int)Images.TargetImage).sprite = Manager.ResourceM.Load<Sprite>(_data.SpriteName);
         GetImage(ImagesType, (int)Images.BackgroundImage).color = Define.EquipmentUIColors.MaterialGradeStyles[_data.MaterialGrade].BgColor;

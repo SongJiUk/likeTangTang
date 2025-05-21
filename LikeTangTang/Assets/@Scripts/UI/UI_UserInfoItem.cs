@@ -66,6 +66,7 @@ public class UI_UserInfoItem : UI_Base
 
     public void Refresh()
     {
+        transform.localScale = Vector3.one;
         //GetText(TextsType, (int)Texts.UserLevelText).text = $"{Manager.GameM.CurrentCharacter.Level}";
         GetText(TextsType, (int)Texts.StaminaValueText).text = $"{Manager.GameM.Stamina} / {Define.MAX_STAMINA}";
         GetText(TextsType, (int)Texts.DiaValueText).text = $"{Manager.GameM.Dia}";

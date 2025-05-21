@@ -25,6 +25,7 @@ public class DataManager
     public Dictionary<int, Data.DropItemData> DropItemDic {get; private set;} = new Dictionary<int, Data.DropItemData>();
     public Dictionary<Define.GachaType, Data.GachaTableData> GachaTableDataDic { get; private set; } = new Dictionary<Define.GachaType, Data.GachaTableData>();
     public Dictionary<int, Data.AttendanceCheckData> AttendanceCheckDataDic { get; private set; } = new Dictionary<int, Data.AttendanceCheckData>();
+    public Dictionary<int, Data.MissionData> MissionDataDic { get; private set; } = new Dictionary<int, Data.MissionData>();
     
 
 
@@ -43,6 +44,7 @@ public class DataManager
         DropItemDic = LoadJson<Data.DropItemDataLoader, int, Data.DropItemData>("DropItemData.json").MakeDict();
         GachaTableDataDic = LoadJson<Data.GachaDataLoader, Define.GachaType, Data.GachaTableData>("GachaData.json").MakeDict();
         AttendanceCheckDataDic = LoadJson<Data.AttendanceCheckDataLoader, int, Data.AttendanceCheckData>("AttendanceCheckData.json").MakeDict();
+        MissionDataDic = LoadJson<Data.MissionDataLoader, int, Data.MissionData>("MissionData.json").MakeDict();
     }
 
     Loader LoadJson<Loader, key, value>(string _path) where Loader : ILoader<key, value>

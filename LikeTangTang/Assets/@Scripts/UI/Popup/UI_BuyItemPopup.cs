@@ -99,7 +99,6 @@ public class UI_BuyItemPopup : UI_Popup
 
     void OnClickQuitButton()
     {
-        gameObject.SetActive(false);
         Manager.ResourceM.Destory(gameObject);
     }
 }

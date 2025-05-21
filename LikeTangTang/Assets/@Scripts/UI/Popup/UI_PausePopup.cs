@@ -45,42 +45,31 @@ public class UI_PausePopup : UI_Popup
 
     void OnClickResumeButton()
     {
-
+        Manager.UiM.ClosePopup(this);
     }
 
     void OnClickStatisticsButton()
     {
-
+        Manager.SoundM.PlayButtonClick();
+        Manager.UiM.ShowPopup<UI_TotalDamagePopup>();
     }
 
     void OnClickHomeButton()
     {
         Manager.SoundM.PlayButtonClick();
 
-        Manager.GameM.isGameEnd = true;
-
-        StageClearInfoData info;
-
-        if(Manager.GameM.StageClearInfoDic.TryGetValue(Manager.GameM.CurrentStageData.StageIndex, out info))
-        {
-            if(Manager.GameM.CurrentWaveIndex > info.MaxWaveIndex)
-            {
-                info.MaxWaveIndex = Manager.GameM.CurrentWaveIndex;
-                Manager.GameM.StageClearInfoDic[Manager.GameM.CurrentStageData.StageIndex] = info;
-            }
-        }
-
-        Manager.GameM.ClearContinueData();
-        Manager.SceneM.LoadScene(Define.SceneType.LobbyScene, transform);
+        Manager.UiM.ShowPopup<UI_BackToHomePopup>();
     }
 
     void SoundButton()
     {
-
+        Manager.SoundM.PlayButtonClick();
+        //TODO : 사운드 on / off
     }
 
     void SettingButton()
     {
-
+        Manager.SoundM.PlayButtonClick();
+        Manager.UiM.ShowPopup<UI_SettingPopup>();
     }
 }

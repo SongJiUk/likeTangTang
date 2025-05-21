@@ -70,6 +70,7 @@ public class UI_EquipItem : UI_Base
         GetObject(gameObjectsType, (int)GameObjects.GetEffectObject).SetActive(false);
 
         gameObject.BindEvent(OnClickEquipItemButton);
+        
         return true;
 
 
@@ -80,6 +81,8 @@ public class UI_EquipItem : UI_Base
         Equipment = _item;
         parentType = _parentType;
         if(_scrollRect != null) scrollRect = _scrollRect;
+        transform.localScale = Vector3.one;
+
         var style = Define.EquipmentUIColors.EquipGradeStyles[Equipment.EquipmentData.EquipmentGarde];
         //TODO : 이미지.style
         GetImage(ImagesType, (int)Images.EquipmentGradeBackgroundImage).color = style.BorderColor;

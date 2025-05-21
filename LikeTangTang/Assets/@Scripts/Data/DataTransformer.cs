@@ -46,7 +46,7 @@ public class DataTransformer : EditorWindow
         ParseDropItemData("DropItemData");
         ParseGachaData("GachaData"); // DictionaryŰ�� ���� �����Ͱ� ���� #Neo
         //ParseStagePackageData("StagePackage");
-        // ParseMissionData("Mission");
+        ParseMissionData("MissionData");
         // ParseAchievementData("Achievement");
         ParseCheckOutData("AttendanceCheckData");
         // ParseOfflineRewardData("OfflineReward");
@@ -239,18 +239,15 @@ public class DataTransformer : EditorWindow
             stageData.StageLevel = ConvertValue<int>(row[i++]);
             stageData.MapName = ConvertValue<string>(row[i++]);
             stageData.StageKill = ConvertValue<int>(row[i++]);
-            //stageData.FirstWaveCountValue = ConvertValue<int>(row[i++]);
-            //stageData.FirstWaveClearRewardItemId = ConvertValue<int>(row[i++]);
-            //stageData.FirstWaveClearRewardItemValue = ConvertValue<int>(row[i++]);
-
-            //stageData.SecondWaveCountValue = ConvertValue<int>(row[i++]);
-            //stageData.SecondWaveClearRewardItemId = ConvertValue<int>(row[i++]);
-            //stageData.SecondWaveClearRewardItemValue = ConvertValue<int>(row[i++]);
-
-            //stageData.ThirdWaveCountValue = ConvertValue<int>(row[i++]);
-            //stageData.ThirdWaveClearRewardItemId = ConvertValue<int>(row[i++]);
-            //stageData.ThirdWaveClearRewardItemValue = ConvertValue<int>(row[i++]);
-
+            stageData.FirstWaveCountValue = ConvertValue<int>(row[i++]);
+            stageData.FirstWaveClearRewardItemID = ConvertValue<int>(row[i++]);
+            stageData.FirstWaveClearRewardItemValue = ConvertValue<int>(row[i++]);
+            stageData.SecondWaveCountValue = ConvertValue<int>(row[i++]);
+            stageData.SecondWaveClearRewardItemID = ConvertValue<int>(row[i++]);
+            stageData.SecondWaveClearRewardItemValue = ConvertValue<int>(row[i++]);
+            stageData.ThirdWaveCountValue = ConvertValue<int>(row[i++]);
+            stageData.ThirdWaveClearRewardItemID = ConvertValue<int>(row[i++]);
+            stageData.ThirdWaveClearRewardItemValue = ConvertValue<int>(row[i++]);
             stageData.ClearGold = ConvertValue<int>(row[i++]);
             stageData.ClearExp = ConvertValue<int>(row[i++]);
             stageData.StageImage = ConvertValue<string>(row[i++]);
@@ -639,41 +636,41 @@ public class DataTransformer : EditorWindow
     //         AssetDatabase.Refresh();
     //     }
 
-    //     static void ParseMissionData(string filename)
-    //     {
-    //         MissionDataLoader loader = new MissionDataLoader();
+    static void ParseMissionData(string filename)
+    {
+        MissionDataLoader loader = new MissionDataLoader();
 
-    //         #region ExcelData
-    //         string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/Excel/{filename}Data.csv").Split("\n");
+        #region ExcelData
+        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/CSV/{filename}.csv").Split("\n");
 
-    //         for (int y = 1; y < lines.Length; y++)
-    //         {
-    //             string[] row = lines[y].Replace("\r", "").Split(',');
+        for (int y = 1; y < lines.Length; y++)
+        {
+            string[] row = lines[y].Replace("\r", "").Split(',');
 
-    //             if (row.Length == 0)
-    //                 continue;
-    //             if (string.IsNullOrEmpty(row[0]))
-    //                 continue;
+            if (row.Length == 0)
+                continue;
+            if (string.IsNullOrEmpty(row[0]))
+                continue;
 
-    //             int i = 0;
-    //             MissionData stp = new MissionData();
-    //             stp.MissionId = ConvertValue<int>(row[i++]);
-    //             stp.MissionType = ConvertValue<Define.MissionType>(row[i++]);
-    //             stp.DescriptionTextID = ConvertValue<string>(row[i++]);
-    //             stp.MissionTarget = ConvertValue<Define.MissionTarget>(row[i++]);
-    //             stp.MissionTargetValue = ConvertValue<int>(row[i++]);
-    //             stp.ClearRewardItmeId = ConvertValue<int>(row[i++]);
-    //             stp.RewardValue = ConvertValue<int>(row[i++]);
+            int i = 0;
+            MissionData stp = new MissionData();
+            stp.MissionID = ConvertValue<int>(row[i++]);
+            stp.MissionType = ConvertValue<Define.MissionType>(row[i++]);
+            stp.DescriptionTextID = ConvertValue<string>(row[i++]);
+            stp.MissionTarget = ConvertValue<Define.MissionTarget>(row[i++]);
+            stp.MissionTargetValue = ConvertValue<int>(row[i++]);
+            stp.ClearRewardItmeID = ConvertValue<int>(row[i++]);
+            stp.RewardValue = ConvertValue<int>(row[i++]);
 
-    //             loader.missions.Add(stp);
-    //         }
+            loader.list.Add(stp);
+        }
 
-    //         #endregion
+        #endregion
 
-    //         string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
-    //         File.WriteAllText($"{Application.dataPath}/@Resources/Data/JsonData/{filename}Data.json", jsonStr);
-    //         AssetDatabase.Refresh();
-    //     }
+        string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
+        File.WriteAllText($"{Application.dataPath}/@Resources/Data/Json/{filename}.json", jsonStr);
+        AssetDatabase.Refresh();
+    }
 
     //     static void ParseAchievementData(string filename)
     //     {

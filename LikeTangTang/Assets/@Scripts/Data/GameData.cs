@@ -38,6 +38,19 @@ public class GameData
     public Dictionary<Define.EquipmentType, Equipment> EquipedEquipments = new Dictionary<Define.EquipmentType, Equipment>();
     public Dictionary<int, int> ItemDictionary = new Dictionary<int, int>();
     public Dictionary<int, StageClearInfoData> StageClearInfoDic = new Dictionary<int, StageClearInfoData>();
+    public Dictionary<Define.MissionTarget, MissionInfo> MissionDic = new Dictionary<Define.MissionTarget, MissionInfo>()
+    {
+        {Define.MissionTarget.StageEnter, new MissionInfo() { Progress = 0, isRewarded = false} },
+        {Define.MissionTarget.EquipmentLevelUp, new MissionInfo() { Progress = 0, isRewarded = false} },
+        {Define.MissionTarget.EquipmentMerge, new MissionInfo() { Progress = 0, isRewarded = false} },
+        {Define.MissionTarget.GachaOpen, new MissionInfo() { Progress = 0, isRewarded = false} },
+        {Define.MissionTarget.OfflineRewardGet, new MissionInfo() { Progress = 0, isRewarded = false} },
+        {Define.MissionTarget.MonsterKill, new MissionInfo() { Progress = 0, isRewarded = false} },
+        {Define.MissionTarget.EliteMonsterKill, new MissionInfo() { Progress = 0, isRewarded = false} },
+        {Define.MissionTarget.StageClear, new MissionInfo() { Progress = 0, isRewarded = false} },
+        {Define.MissionTarget.ADWatchIng, new MissionInfo() { Progress = 0, isRewarded = false} },
+    };
+
 
     public void Init()
     {

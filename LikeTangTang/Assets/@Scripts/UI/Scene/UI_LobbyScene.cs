@@ -76,6 +76,7 @@ public class UI_LobbyScene : UI_Scene
         ui_RewardPopup = Manager.UiM.ShowPopup<UI_RewardPopup>();
 
         AllOff();
+        OnClickBattleToggle();
 
         Manager.GameM.OnResourcesChanged -= Refresh;
         Manager.GameM.OnResourcesChanged += Refresh;
@@ -106,28 +107,54 @@ public class UI_LobbyScene : UI_Scene
     }
     void OnClickEquipmentToggle()
     {
-        AllOff();
-        ui_EquipmentPopup.gameObject.SetActive(true);
-        ui_EquipmentPopup.SetInfo();
+        if(!ui_EquipmentPopup.isOpen)
+        {
+            AllOff();
+            ui_EquipmentPopup.gameObject.SetActive(true);
+            ui_EquipmentPopup.SetInfo();
+
+            ui_EquipmentPopup.isOpen = true;
+            ui_BattlePopup.isOpen = false;
+            ui_ShopPopup.isOpen = false;
+        }
+        
     }
 
     void OnClickBattleToggle()
     {
-        AllOff();
-        ui_BattlePopup.gameObject.SetActive(true);
+        if(!ui_BattlePopup.isOpen)
+        {
+            AllOff();
+            ui_BattlePopup.gameObject.SetActive(true);
+            
+            ui_EquipmentPopup.isOpen = false;
+            ui_BattlePopup.isOpen = true;
+            ui_ShopPopup.isOpen = false;
+        }
+
+        
         //Manager.GameM.player.DataID = 1;
     }
 
     void OnClickShopToggle()
     {
-        AllOff();
-        ui_ShopPopup.gameObject.SetActive(true);
+        if(!ui_ShopPopup.isOpen)
+        {
+            AllOff();
+            ui_ShopPopup.gameObject.SetActive(true);
+
+            ui_EquipmentPopup.isOpen = false;
+            ui_BattlePopup.isOpen = false;
+            ui_ShopPopup.isOpen = true;
+        }
+        
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F1))
         {
+            Manager.GameM.Stamina += 10;
             Manager.GameM.Gold += 10000;
             Manager.GameM.Dia += 10000;
             Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_WeaponScroll], 100);

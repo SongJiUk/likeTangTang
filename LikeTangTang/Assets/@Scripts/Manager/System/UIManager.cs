@@ -134,6 +134,10 @@ public class UIManager
         while (popupStack.Count > 0) ClosePopup();
     }
 
+    public int GetPopupCount()
+    {
+        return popupStack.Count;
+    }
     public void RefreshTimeScale()
     {
         if(SceneManager.GetActiveScene().name != Define.SceneType.GameScene.ToString())

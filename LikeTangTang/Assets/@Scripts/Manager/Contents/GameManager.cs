@@ -8,7 +8,12 @@ using System.IO;
 using System.Linq;
 using static Define;
 
-
+[Serializable]
+public class MissionInfo
+{
+    public int Progress;
+    public bool isRewarded;
+}
 
 public class GameManager
 {
@@ -41,6 +46,12 @@ public class GameManager
         {
             gameData.ItemDictionary = value;
         }
+    }
+
+    public Dictionary<Define.MissionTarget, MissionInfo> MissionDic
+    {
+        get { return gameData.MissionDic; }
+        set { gameData.MissionDic = value; }
     }
 
     public List<Character> Characters
@@ -397,7 +408,7 @@ public class GameManager
 
     public void ClearContinueData()
     {
-        gameData.ContinueDatas.Clear();
+        ContinueDatas.Clear();
         CurrentWaveIndex = 0;
         SaveGame();
     }

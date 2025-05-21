@@ -47,6 +47,7 @@ public class UI_BackToBattlePopup : UI_Popup
     void OnClickBackButton()
     {
         Manager.SoundM.PlayPopupClose();
+        Manager.GameM.ClearContinueData();
         Manager.UiM.ClosePopup(this);
     }
 }

@@ -687,6 +687,31 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
+  - m_GUID: 1b53c83915526774c85db8893a33da7e
+    m_Address: MapSprite_01.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 927df8e2970943a4f8f390a2cd2e44d5
+    m_Address: MapSprite_03.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: f1663d6bfba323947a4d3367bde60456
+    m_Address: MapSprite_04.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: aa139921111ff2540a0f5d2a907db810
+    m_Address: MapSprite_02.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 76fc3da36981b954bbf0580f8f11a6a7
+    m_Address: MapSprite_05.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

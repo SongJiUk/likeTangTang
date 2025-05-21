@@ -158,7 +158,7 @@ public class MonsterController : CreatureController, ITickable
     {
         if (_skill != null)
         {
-            Manager.SoundM.Play(Sound.Effect, _skill.SkillDatas.HitEffectID);
+            //TODO : 다 만들고 마지막 사운드Manager.SoundM.Play(Sound.Effect, _skill.SkillDatas.HitEffectID);
             float totalDamage = Manager.GameM.player.Attack * _skill.SkillDatas.DamageMultiplier;
             base.OnDamaged(_attacker, _skill, totalDamage);
         }
@@ -203,7 +203,7 @@ public class MonsterController : CreatureController, ITickable
 
     public void KnockBack(SkillBase _skill = null)
     {
-        if (_skill == null || _skill.Skilltype == SkillType.TimeStopBomb || _skill.Skilltype == SkillType.GravityBomb) return;
+        if (_skill == null || _skill.Skilltype == SkillType.TimeStopBomb || _skill.Skilltype == SkillType.GravityBomb || _skill.Skilltype == SkillType.ElectronicField) return;
         if (isKnockBack) return;
 
         isKnockBack = true;

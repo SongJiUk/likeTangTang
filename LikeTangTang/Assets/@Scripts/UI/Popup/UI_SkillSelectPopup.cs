@@ -122,7 +122,8 @@ public class UI_SkillSelectPopup : UI_Popup
     }
 
     protected override void RefreshUI()
-    {   
+    {
+        GetSlider(SlidersType, (int)Sliders.ExpSliderObject).value = Manager.GameM.player.ExpRatio;
         GetText(TextsType, (int)Texts.CharacterLevelValueText).text = $"{gm.player.Level}";
         GetText(TextsType, (int)Texts.BeforeLevelValueText).text = $"LV. {gm.player.Level - 1}";
         GetText(TextsType, (int)Texts.AfterLevelValueText).text = $"LV. {gm.player.Level}";

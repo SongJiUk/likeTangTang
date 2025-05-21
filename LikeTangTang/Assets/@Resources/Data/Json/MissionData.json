@@ -1,0 +1,94 @@
+{
+  "list": [
+    {
+      "MissionID": 80001,
+      "MissionType": 0,
+      "DescriptionTextID": "스테이지 입장",
+      "MissionTarget": 0,
+      "MissionTargetValue": 1,
+      "ClearRewardItmeID": 60001,
+      "RewardValue": 50
+    },
+    {
+      "MissionID": 80002,
+      "MissionType": 0,
+      "DescriptionTextID": "장비 레벨업",
+      "MissionTarget": 1,
+      "MissionTargetValue": 1,
+      "ClearRewardItmeID": 60001,
+      "RewardValue": 50
+    },
+    {
+      "MissionID": 80003,
+      "MissionType": 0,
+      "DescriptionTextID": "장비 합성",
+      "MissionTarget": 2,
+      "MissionTargetValue": 1,
+      "ClearRewardItmeID": 60001,
+      "RewardValue": 50
+    },
+    {
+      "MissionID": 80004,
+      "MissionType": 0,
+      "DescriptionTextID": "장비 상자 오픈",
+      "MissionTarget": 3,
+      "MissionTargetValue": 1,
+      "ClearRewardItmeID": 60001,
+      "RewardValue": 50
+    },
+    {
+      "MissionID": 80005,
+      "MissionType": 0,
+      "DescriptionTextID": "정찰 보상 습득",
+      "MissionTarget": 4,
+      "MissionTargetValue": 1,
+      "ClearRewardItmeID": 60001,
+      "RewardValue": 50
+    },
+    {
+      "MissionID": 80006,
+      "MissionType": 0,
+      "DescriptionTextID": "몬스터 처치 2000회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 2000,
+      "ClearRewardItmeID": 60001,
+      "RewardValue": 50
+    },
+    {
+      "MissionID": 80007,
+      "MissionType": 0,
+      "DescriptionTextID": "몬스터 처치 5000회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 5000,
+      "ClearRewardItmeID": 60001,
+      "RewardValue": 50
+    },
+    {
+      "MissionID": 80008,
+      "MissionType": 0,
+      "DescriptionTextID": "엘리트 처치 5회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 5,
+      "ClearRewardItmeID": 60001,
+      "RewardValue": 50
+    },
+    {
+      "MissionID": 80009,
+      "MissionType": 0,
+      "DescriptionTextID": "스테이지 클리어 1회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 1,
+      "ClearRewardItmeID": 60001,
+      "RewardValue": 50
+    },
+    {
+      "MissionID": 80010,
+      "MissionType": 0,
+      "DescriptionTextID": "광고 시청 2회",
+      "MissionTarget": 9,
+      "MissionTargetValue": 2,
+      "ClearRewardItmeID": 60001,
+      "RewardValue": 100
+    }
+  ]
+}

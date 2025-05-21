@@ -177,7 +177,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 14
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -228,6 +228,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2396825682049853851, guid: 29a22acaeac8b4fe5848f41794632d68, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396825682049853851, guid: 29a22acaeac8b4fe5848f41794632d68, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396825682049853851, guid: 29a22acaeac8b4fe5848f41794632d68, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3146652389643943603, guid: 29a22acaeac8b4fe5848f41794632d68, type: 3}
       propertyPath: m_Name
       value: UI_TitleScene
@@ -316,6 +328,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4255447666237818482, guid: 29a22acaeac8b4fe5848f41794632d68, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4255447666237818482, guid: 29a22acaeac8b4fe5848f41794632d68, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651506219898433316, guid: 29a22acaeac8b4fe5848f41794632d68, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651506219898433316, guid: 29a22acaeac8b4fe5848f41794632d68, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8168110253808265532, guid: 29a22acaeac8b4fe5848f41794632d68, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -323,6 +351,10 @@ PrefabInstance:
     - target: {fileID: 8168110253808265532, guid: 29a22acaeac8b4fe5848f41794632d68, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9023801352300846681, guid: 29a22acaeac8b4fe5848f41794632d68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29a22acaeac8b4fe5848f41794632d68, type: 3}

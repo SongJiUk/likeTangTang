@@ -44,6 +44,7 @@ public class UI_ShopPopup : UI_Popup
     }
     int goldAmount = 0;
     Action OnCompleteBuyItem;
+    public bool isOpen = false;
     private void OnEnable()
     {
         PopupOpenAnim(GetObject(gameObjectsType, (int)GameObjects.ContentObject));
@@ -141,7 +142,7 @@ public class UI_ShopPopup : UI_Popup
     void DoGaCha(Define.GachaType _gachaType, int _count = 1)
     {
         List<Equipment> list = Manager.GameM.DoGaCha(_gachaType, _count).ToList();
-        UI_GachaResultsPopup popup =  Manager.UiM.MakeSubItem<UI_GachaResultsPopup>(transform);
+        UI_GachaResultsPopup popup =  Manager.UiM.MakeSubItem<UI_GachaResultsPopup>(Manager.UiM.Root.transform);
         popup.SetInfo(list);
     }
 
@@ -153,7 +154,7 @@ public class UI_ShopPopup : UI_Popup
         if(Manager.GameM.SilverKeyCountAds > 0)
         {
             Manager.GameM.SilverKeyCountAds--;
-            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(this.transform);
+            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(Manager.UiM.Root.transform);
             Manager.DataM.MaterialDic.TryGetValue(Define.ID_SILVER_KEY, out var item);
             popup.SetInfo(item, 0, 1);
             popup.OnCompleteBuyItem = Refresh;
@@ -169,7 +170,7 @@ public class UI_ShopPopup : UI_Popup
         Manager.SoundM.PlayButtonClick();
         if(Manager.GameM.Dia >= 150)
         {
-            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(this.transform);
+            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(Manager.UiM.Root.transform);
             Manager.DataM.MaterialDic.TryGetValue(Define.ID_SILVER_KEY, out var item);
             popup.SetInfo(item, 150, 1);
             popup.OnCompleteBuyItem = Refresh;
@@ -185,7 +186,7 @@ public class UI_ShopPopup : UI_Popup
         Manager.SoundM.PlayButtonClick();
         if(Manager.GameM.Dia >= 300)
         {
-            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(this.transform);
+            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(Manager.UiM.Root.transform);
             Manager.DataM.MaterialDic.TryGetValue(Define.ID_GOLD_KEY, out var item);
             popup.SetInfo(item, 300, 1);
             popup.OnCompleteBuyItem = Refresh;
@@ -200,7 +201,7 @@ public class UI_ShopPopup : UI_Popup
     void OnClickAdvancedBoxListButton()
     {
         Manager.SoundM.PlayButtonClick();
-        UI_GachaListPopup popup = Manager.UiM.MakeSubItem<UI_GachaListPopup>(transform);
+        UI_GachaListPopup popup = Manager.UiM.MakeSubItem<UI_GachaListPopup>(Manager.UiM.Root.transform);
         popup.SetInfo(Define.GachaType.AdvancedGacha);
     }
     
@@ -257,7 +258,7 @@ public class UI_ShopPopup : UI_Popup
     void OnClickCommonGachaListButton()
     {
         Manager.SoundM.PlayButtonClick();
-        UI_GachaListPopup popup = Manager.UiM.MakeSubItem<UI_GachaListPopup>(transform);
+        UI_GachaListPopup popup = Manager.UiM.MakeSubItem<UI_GachaListPopup>(Manager.UiM.Root.transform);
         popup.SetInfo(Define.GachaType.CommonGacha);
     }
 
@@ -300,7 +301,7 @@ public class UI_ShopPopup : UI_Popup
         {   Manager.GameM.GoldCountAds--;
 
             //TODO : 광고 람다
-            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(this.transform);
+            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(Manager.UiM.Root.transform);
             Manager.DataM.MaterialDic.TryGetValue(Define.ID_GOLD, out var item);
             popup.SetInfo(item, 0, goldAmount);
             Refresh();
@@ -316,7 +317,7 @@ public class UI_ShopPopup : UI_Popup
         Manager.SoundM.PlayButtonClick();
         if(Manager.GameM.Dia >= 300)
         {
-            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(this.transform);
+            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(Manager.UiM.Root.transform);
             Manager.DataM.MaterialDic.TryGetValue(Define.ID_GOLD, out var item);
             popup.SetInfo(item, 300, goldAmount * 3);
             popup.OnCompleteBuyItem = Refresh;
@@ -332,7 +333,7 @@ public class UI_ShopPopup : UI_Popup
          Manager.SoundM.PlayButtonClick();
         if(Manager.GameM.Dia >= 500)
         {
-            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(this.transform);
+            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(Manager.UiM.Root.transform);
             Manager.DataM.MaterialDic.TryGetValue(Define.ID_GOLD, out var item);
             popup.SetInfo(item, 500, goldAmount * 5);
             popup.OnCompleteBuyItem = Refresh;

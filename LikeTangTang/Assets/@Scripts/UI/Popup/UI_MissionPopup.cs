@@ -6,16 +6,20 @@ public class UI_MissionPopup : UI_Popup
 {
     enum GameObjects
     {
+        ContentObject,
+        DailyMissionScrollObject,
 
     }
 
     enum Texts
     {
+        DailyMissionCommentText,
 
     }
 
     enum Buttons
     {
+        BackgroundButton,
 
     }
 
@@ -42,20 +46,32 @@ public class UI_MissionPopup : UI_Popup
         BindButton(ButtonsType);
         BindImage(ImagesType);
 
+        GetButton(ButtonsType, (int)Buttons.BackgroundButton).gameObject.BindEvent(OnClickBgButton);
 
-
-
+        Refresh();
         return true;
 
     }
 
     public void SetInfo()
     {
-
+        Refresh();
     }
 
     void Refresh()
     {
+        foreach(KeyValuePair<int, Data.MissionData> data in Manager.DataM.MissionDataDic)
+        {
+            if (data.Value.MissionType == Define.MissionType.Daily)
+            {
+                UI_MissionItem mission = Manager.UiM.MakeSubItem<UI_MissionItem>(GetObject(gameObjectsType, (int)GameObjects.DailyMissionScrollObject).transform);
+                mission.SetInfo(data.Value);
+            }
+        }
+    }
 
+    void OnClickBgButton()
+    {
+        Manager.UiM.ClosePopup(this);
     }
 }

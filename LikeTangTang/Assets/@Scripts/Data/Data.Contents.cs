@@ -33,11 +33,25 @@ namespace Data
         public int StageLevel;
         public string MapName;
         public int StageKill;
+
+        public int FirstWaveCountValue;
+        public int FirstWaveClearRewardItemID;
+        public int FirstWaveClearRewardItemValue;
+
+        public int SecondWaveCountValue;
+        public int SecondWaveClearRewardItemID;
+        public int SecondWaveClearRewardItemValue;
+
+        public int ThirdWaveCountValue;
+        public int ThirdWaveClearRewardItemID;
+        public int ThirdWaveClearRewardItemValue;
+
         public int ClearGold;
         public int ClearExp;
         public string StageImage;
         public List<int> SpawnMonsterNum;
         public List<WaveData> WaveArray;
+
     }
 
     public class StageDataLoader : ILoader<int, StageData>
@@ -380,7 +394,7 @@ namespace Data
         {
             Dictionary<string, EquipmentData> dic = new Dictionary<string, EquipmentData>();
 
-            foreach(EquipmentData data in equipmentDatas)
+            foreach (EquipmentData data in equipmentDatas)
             {
                 dic.Add(data.DataID, data);
             }
@@ -437,7 +451,7 @@ namespace Data
         {
             Dictionary<int, MaterialData> dic = new Dictionary<int, MaterialData>();
 
-            foreach(MaterialData data in material)
+            foreach (MaterialData data in material)
             {
                 dic.Add(data.MaterialID, data);
             }
@@ -496,6 +510,33 @@ namespace Data
             Dictionary<int, AttendanceCheckData> dic = new Dictionary<int, AttendanceCheckData>();
             foreach (AttendanceCheckData data in list)
                 dic.Add(data.Day, data);
+
+            return dic;
+        }
+    }
+
+    [Serializable]
+    public class MissionData
+    {
+        public int MissionID;
+        public Define.MissionType MissionType;
+        public string DescriptionTextID;
+        public Define.MissionTarget MissionTarget;
+        public int MissionTargetValue;
+        public int ClearRewardItmeID;
+        public int RewardValue;
+    }
+
+    public class MissionDataLoader : ILoader<int, MissionData>
+    {
+        public List<MissionData> list = new List<MissionData>();
+
+        public Dictionary<int, MissionData> MakeDict()
+        {
+            Dictionary<int, MissionData> dic = new Dictionary<int, MissionData>();
+
+            foreach (MissionData data in list)
+                dic.Add(data.MissionID, data);
 
             return dic;
         }

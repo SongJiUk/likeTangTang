@@ -71,9 +71,11 @@ public class UI_SkillCardItem : UI_Base
             GetObject(gameObjectsType, (int)GameObjects.StarOn_0 + i).SetActive(false);
             GetObject(gameObjectsType, (int)GameObjects.StarOff_0 + i).SetActive(true);
         }
-
-        GetButton(ButtonsType, (int)Buttons.SkillCardBackgroundImage).gameObject.BindEvent(OnClickItem);
         
+        GetButton(ButtonsType, (int)Buttons.SkillCardBackgroundImage).gameObject.BindEvent(OnClickItem);
+
+        transform.localScale = Vector3.one;
+
         return true;
     }
 

@@ -36,6 +36,6 @@ public class UI_BeginnerSupportRewardPopup : UI_Popup
     void OnClickBgButton()
     {
         Manager.SoundM.PlayPopupClose();
-        gameObject.SetActive(false);
+        Manager.UiM.ClosePopup(this);
     }
 }
