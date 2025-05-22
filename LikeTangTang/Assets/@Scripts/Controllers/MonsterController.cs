@@ -179,6 +179,7 @@ public class MonsterController : CreatureController, ITickable
         base.OnDead();
         InvokeMonsterData();
         Manager.GameM.player.KillCount++;
+        Manager.GameM.TotalMonsterKillCount++;
 
         // 드롭
         if (objType == ObjectType.Monster && UnityEngine.Random.value >= Manager.GameM.CurrentWaveData.NonDropRate)

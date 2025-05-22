@@ -19,7 +19,7 @@ public class TimeManager : MonoBehaviour
         set
         {
             PlayerPrefs.SetInt("AttendanceDay", value);
-            //TDOO : 업적 출석 : Manager.AchievementM.
+            Manager.AchievementM.Attendance();
             PlayerPrefs.Save();
         }
     }
@@ -83,6 +83,7 @@ public class TimeManager : MonoBehaviour
     public void Init()
     {
         TimeStart();
+        Manager.AchievementM.Attendance();
     }
 
     void TimeStart()

@@ -24,8 +24,9 @@ public class GameData
     public int TotalEliteMonsterKillCount = 0;
     public int TotalBossKillCount = 0;
     public List<Data.AchievementData> Achievements = new List<AchievementData>();
+    public bool isAchievementAcceptItem = false;
     #endregion
-
+    public bool isMissionPossibleAcceptItem = false;
     //하루에 한번 초기화
     public int GacahCountAdsAdvanced = 1;
     public int GacahCountAdsCommon = 1;

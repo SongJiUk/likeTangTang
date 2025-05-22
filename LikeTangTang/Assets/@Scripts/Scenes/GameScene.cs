@@ -213,6 +213,9 @@ public class GameScene : BaseScene, ITickable
     {
         yield return new WaitForSeconds(1f);
         isGameEnd = true;
+        if (Manager.GameM.MissionDic.TryGetValue(MissionTarget.StageClear, out MissionInfo missionInfo))
+            missionInfo.Progress++;
+
         Manager.GameM.isGameEnd = true;
         UI_GameResultPopup rp = Manager.UiM.ShowPopup<UI_GameResultPopup>();
         rp.Init();

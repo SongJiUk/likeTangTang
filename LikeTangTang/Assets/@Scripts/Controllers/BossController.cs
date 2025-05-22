@@ -73,6 +73,10 @@ public class BossController : MonsterController
     public override void OnDead()
     {
         base.OnDead();
+
+        if (Manager.GameM.MissionDic.TryGetValue(Define.MissionTarget.BossKill, out MissionInfo mission))
+            mission.Progress++;
+        Manager.GameM.TotalBossKillCount++;
     }
     public override void InitStat(bool _isHpFull = false)
     {

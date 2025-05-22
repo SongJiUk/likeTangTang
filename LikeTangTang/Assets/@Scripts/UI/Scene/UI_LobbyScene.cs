@@ -47,6 +47,13 @@ public class UI_LobbyScene : UI_Scene
     public UI_MergeAllResultPopup Ui_MergeAllResultPopup { get { return ui_MergeAllResultPopup; } }
     public UI_EquipmentResetPopup Ui_EquipmentResetPopup { get { return ui_EquipmentResetPopup; } }
     public UI_RewardPopup Ui_RewardPopup { get { return ui_RewardPopup; } }
+
+    private void OnDestroy()
+    {
+        if(Manager.GameM != null)
+            Manager.GameM.OnResourcesChanged -= Refresh;
+    }
+
     public override bool Init()
     {
         gameObjectsType = typeof(GameObjects);
@@ -78,7 +85,7 @@ public class UI_LobbyScene : UI_Scene
         AllOff();
         OnClickBattleToggle();
 
-        Manager.GameM.OnResourcesChanged -= Refresh;
+        
         Manager.GameM.OnResourcesChanged += Refresh;
         Refresh();
 
@@ -89,6 +96,9 @@ public class UI_LobbyScene : UI_Scene
     void Refresh()
     {
         //TODO : 이거 다이아, 골드, 스테미너 변경할때 사용해주면 됌
+
+        Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.Mission);
+        Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.AchievementPopup);
     }
 
    

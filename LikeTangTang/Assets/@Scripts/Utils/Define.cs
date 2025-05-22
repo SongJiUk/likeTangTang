@@ -401,7 +401,12 @@ public static class Define
         Login,
         CommonGachaOpen,
         AdvancedGachaOpen,
+    }
 
+    public enum RedDotObjectType
+    {
+        Mission,
+        AchievementPopup,
 
     }
 

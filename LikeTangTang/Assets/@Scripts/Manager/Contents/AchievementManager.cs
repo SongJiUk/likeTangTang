@@ -22,7 +22,7 @@ public class AchievementManager
     //업적 완료 처리
     public void CompleteAchievement(int _dataID)
     {
-        AchievementData achievement = achievements.Find(a => a.AchievementID == _dataID);
+         AchievementData achievement = achievements.Find(a => a.AchievementID == _dataID);
 
         if(achievement != null && !achievement.IsRewarded)
         {
@@ -114,6 +114,13 @@ public class AchievementManager
 
             case Define.MissionTarget.Login:
                 return Manager.TimeM.AttendanceDay;
+
+            case Define.MissionTarget.CommonGachaOpen:
+                return Manager.GameM.CommonGachaOpenCount;
+
+            case Define.MissionTarget.AdvancedGachaOpen:
+                return Manager.GameM.AdvancedGachaOpenCount;
+
         }
         return 0;
     }
@@ -131,7 +138,7 @@ public class AchievementManager
     //출석
     public void Attendance()
     {
-        List<AchievementData> list = achievements.Where(data => data.MissionTarget == Define.MissionTarget.Login).ToList();
+         List<AchievementData> list = achievements.Where(data => data.MissionTarget == Define.MissionTarget.Login).ToList();
 
         foreach(AchievementData achievement in list)
         {
@@ -140,6 +147,8 @@ public class AchievementManager
                 CompleteAchievement(achievement.AchievementID);
             }
         }
+
+        Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.AchievementPopup);
     }
 
     //스테이지 클리어
@@ -164,11 +173,13 @@ public class AchievementManager
 
         foreach(AchievementData achievement in list)
         {
-            if(!achievement.IsCompleted && achievement.MissionTargetValue == Manager.GameM.CommonGachaOpenCount)
+            if(!achievement.IsCompleted && achievement.MissionTargetValue <= Manager.GameM.CommonGachaOpenCount)
             {
                 CompleteAchievement(achievement.AchievementID);
             }
         }
+
+        Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.AchievementPopup);
     }
 
 
@@ -179,11 +190,13 @@ public class AchievementManager
 
         foreach (AchievementData achievement in list)
         {
-            if (!achievement.IsCompleted && achievement.MissionTargetValue == Manager.GameM.AdvancedGachaOpenCount)
+            if (!achievement.IsCompleted && achievement.MissionTargetValue <= Manager.GameM.AdvancedGachaOpenCount)
             {
                 CompleteAchievement(achievement.AchievementID);
             }
         }
+
+        Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.AchievementPopup);
     }
     
     //정찰
@@ -198,6 +211,8 @@ public class AchievementManager
                 CompleteAchievement(achievement.AchievementID);
             }
         }
+
+        Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.AchievementPopup);
     }
 
     //빠른정찰
@@ -212,6 +227,7 @@ public class AchievementManager
                 CompleteAchievement(achievement.AchievementID);
             }
         }
+        Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.AchievementPopup);
     }
 
     //몬스터 처치

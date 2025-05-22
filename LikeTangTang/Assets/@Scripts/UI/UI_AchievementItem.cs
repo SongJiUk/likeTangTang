@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class UI_AchievementItem : UI_Base
 {
     enum GameObjects
@@ -93,7 +93,10 @@ public class UI_AchievementItem : UI_Base
         if (progress >= achievementData.MissionTargetValue)
         {
             SetButton(MissionState.Complete);
-            if (achievementData.IsRewarded) SetButton(MissionState.Rewarded);
+
+            if (achievementData.IsRewarded)
+                SetButton(MissionState.Rewarded);
+            
         }
         else
             SetButton(MissionState.Progress);
@@ -142,11 +145,13 @@ public class UI_AchievementItem : UI_Base
         UI_RewardPopup popup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
         popup.gameObject.SetActive(true);
         Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[achievementData.ClearRewardItemID], achievementData.RewardValue);
-        Manager.AchievementM.RewardedAchievement(achievementData.ClearRewardItemID);
+        Manager.AchievementM.RewardedAchievement(achievementData.AchievementID);
         achievementData = Manager.AchievementM.GetNextAchievement(achievementData.AchievementID);
         if (achievementData != null) Refresh();
 
         popup.SetInfo(name, count);
 
+
+        Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.AchievementPopup);
     }
 }

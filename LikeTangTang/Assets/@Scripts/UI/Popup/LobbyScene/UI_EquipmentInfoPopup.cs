@@ -286,6 +286,7 @@ public class UI_EquipmentInfoPopup : UI_Popup
             if (Manager.GameM.MissionDic.TryGetValue(Define.MissionTarget.EquipmentLevelUp, out MissionInfo info))
             {
                 info.Progress++;
+                Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.Mission);
                 Manager.GameM.SaveGame();
             }
                 

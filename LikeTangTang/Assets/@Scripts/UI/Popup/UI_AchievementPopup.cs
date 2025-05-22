@@ -54,6 +54,8 @@ public class UI_AchievementPopup : UI_Popup
             UI_AchievementItem item = Manager.UiM.MakeSubItem<UI_AchievementItem>(GetObject(gameObjectsType, (int)GameObjects.AchievementScrollObject).transform);
             item.SetInfo(achievement);
         }
+
+        Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.AchievementPopup);
     }
 
     void OnClickBgButton()

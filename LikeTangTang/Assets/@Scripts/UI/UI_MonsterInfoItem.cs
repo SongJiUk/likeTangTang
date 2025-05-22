@@ -49,7 +49,7 @@ public class UI_MonsterInfoItem : UI_Base
 
     }
 
-    public void SetInfo()
+    public void SetInfo(int _monsterID, int _stageLevel, Transform _parent)
     {
 
     }

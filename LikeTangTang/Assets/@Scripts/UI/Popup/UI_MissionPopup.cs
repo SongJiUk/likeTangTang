@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class UI_MissionPopup : UI_Popup
 {
     enum GameObjects
@@ -68,6 +68,10 @@ public class UI_MissionPopup : UI_Popup
                 mission.SetInfo(data.Value);
             }
         }
+
+        Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.Mission);
+
+
     }
 
     void OnClickBgButton()

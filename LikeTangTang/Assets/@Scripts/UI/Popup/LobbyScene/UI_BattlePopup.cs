@@ -126,6 +126,8 @@ public class UI_BattlePopup : UI_Popup
         GetButton(ButtonsType, (int)Buttons.GameStartButton).gameObject.BindEvent(OnClickGameStartButton);
         GetButton(ButtonsType, (int)Buttons.OfflineRewardButton).gameObject.BindEvent(OnClickOfflineRewardButton);
 
+        Manager.GameM.RefreshUI = RefreshUpsideGroup;
+
         InitBoxes();
         Refresh();
         return true;
@@ -176,6 +178,8 @@ public class UI_BattlePopup : UI_Popup
             Manager.GameM.CurrentStageData = Manager.DataM.StageDic[1];
 
         GetText(TextsType, (int)Texts.StageNameText).text = Manager.GameM.CurrentStageData.StageName;
+        
+        RefreshUpsideGroup();
 
 
         if (Manager.GameM.StageClearInfoDic.TryGetValue(Manager.GameM.CurrentStageData.StageIndex, out StageClearInfoData info))
@@ -296,6 +300,25 @@ public class UI_BattlePopup : UI_Popup
                 break;
         }
     }
+    
+    public void RefreshUpsideGroup()
+    {
+        if (Manager.GameM.IsMissionPossibleAcceptItem)
+            GetObject(gameObjectsType, (int)GameObjects.MissionButtonRedDotObject).SetActive(true);
+        else
+            GetObject(gameObjectsType, (int)GameObjects.MissionButtonRedDotObject).SetActive(false);
+
+        if (Manager.GameM.IsAchievementAcceptItem)
+            GetObject(gameObjectsType, (int)GameObjects.AchievementButtonRedDotObject).SetActive(true);
+        else
+            GetObject(gameObjectsType, (int)GameObjects.AchievementButtonRedDotObject).SetActive(false);
+
+        if (Manager.GameM.AttendanceReceived[Manager.TimeM.AttendanceDay - 1])
+            GetObject(gameObjectsType, (int)GameObjects.AttendanceCheckButtonRedDotObject).SetActive(false);
+        else
+            GetObject(gameObjectsType, (int)GameObjects.AttendanceCheckButtonRedDotObject).SetActive(true);
+    }
+
 
     IEnumerator CoCheckPopup()
     {
@@ -344,6 +367,7 @@ public class UI_BattlePopup : UI_Popup
         Manager.SoundM.PlayButtonClick();
 
         UI_StageSelectPopup popup = Manager.UiM.ShowPopup<UI_StageSelectPopup>();
+        popup.SetInfo(currentStageData);
 
     }
 

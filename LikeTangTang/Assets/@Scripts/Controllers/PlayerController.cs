@@ -166,7 +166,11 @@ public class PlayerController : CreatureController, ITickable
         get => Manager.GameM.ContinueDatas.KillCount;
         set
         {
-            Manager.GameM.ContinueDatas.KillCount = value;
+                Manager.GameM.ContinueDatas.KillCount = value;
+
+            if (Manager.GameM.MissionDic.TryGetValue(Define.MissionTarget.MonsterKill, out MissionInfo missionInfo))
+                missionInfo.Progress = value;
+
             OnPlayerDataUpdated?.Invoke();
         }
     }

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class UI_MissionItem : UI_Base
 {
     enum Images
@@ -97,6 +96,7 @@ public class UI_MissionItem : UI_Base
             if (missioninfo.Progress >= missionData.MissionTargetValue)
             {
                 SetButton(MissionState.Complete);
+
                 if (missioninfo.isRewarded)
                     SetButton(MissionState.Rewarded);
             }
@@ -108,7 +108,6 @@ public class UI_MissionItem : UI_Base
 
         string spriteName = Manager.DataM.MaterialDic[missionData.ClearRewardItmeID].SpriteName;
         GetImage(ImagesType, (int)Images.RewardItmeIconImage).sprite = Manager.ResourceM.Load<Sprite>(spriteName);
-
     }
 
     void SetButton(MissionState _state)
@@ -161,6 +160,8 @@ public class UI_MissionItem : UI_Base
             
 
         Refresh();
+        Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.Mission);
+
         rewardPopup.SetInfo(name, count);
 
     }

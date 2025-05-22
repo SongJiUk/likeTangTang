@@ -4,6 +4,7 @@ using System.Diagnostics.Tracing;
 using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 //TODO : 마무리 후 스프라이트 이쁜걸로 찾아서 수정하기.
 
@@ -157,5 +158,31 @@ public class UIManager
         CloseAllPopup();
         Time.timeScale = 1;
         sceneUI = null;
+    }
+
+    public void CheckRedDotObject(Define.RedDotObjectType _type)
+    {
+        switch(_type)
+        {
+            case Define.RedDotObjectType.Mission:
+
+                Manager.GameM.IsMissionPossibleAcceptItem = Manager.DataM.MissionDataDic.Values.Any(data =>
+                {
+                    if (!Manager.GameM.MissionDic.TryGetValue(data.MissionTarget, out var info))
+                        return false;
+
+                    return info.Progress >= data.MissionTargetValue && !info.isRewarded;
+                });
+                break;
+
+            case Define.RedDotObjectType.AchievementPopup:
+
+                Manager.GameM.IsAchievementAcceptItem = Manager.AchievementM.GetAchievements().Any(a =>
+                    {
+                        return a.IsCompleted && !a.IsRewarded;
+                    });
+                break;
+
+        }
     }
 }

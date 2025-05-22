@@ -54,6 +54,18 @@ public class GameManager
         set { gameData.MissionDic = value; }
     }
 
+    public Action RefreshUI;
+    public bool IsMissionPossibleAcceptItem
+    {
+        get { return gameData.isMissionPossibleAcceptItem; }
+        set 
+        {
+            gameData.isMissionPossibleAcceptItem = value;
+            SaveGame();
+            RefreshUI?.Invoke();
+        }
+    }
+
     public List<Data.AchievementData> Achievements
     {
         get { return gameData.Achievements; }
@@ -62,7 +74,17 @@ public class GameManager
             gameData.Achievements = value; 
         }
     }
-    
+
+    public bool IsAchievementAcceptItem
+    { 
+        get { return gameData.isAchievementAcceptItem; }
+        set 
+        {
+            gameData.isAchievementAcceptItem = value;
+            SaveGame();
+            RefreshUI?.Invoke();
+        }
+    }
 
     public int CommonGachaOpenCount
     {
@@ -263,7 +285,7 @@ public class GameManager
         set
         {
             gameData.StageClearInfoDic = value;
-            //Manager.Achivement.StageClear();
+            Manager.AchievementM.StageClear();
             SaveGame();
         }
     }
@@ -632,11 +654,12 @@ public class GameManager
             {
                 case GachaType.CommonGacha:
                     grade = GetRandomGrade(Define.COMMON_GACHA_GRADE_PROB);
-                    //TODO : 업적 넣을거면 업적
+                    CommonGachaOpenCount++;
                     break;
 
                 case GachaType.AdvancedGacha:
                     grade = GetRandomGrade(Define.ADVENCED_GACHA_GRADE_PROB);
+                    AdvancedGachaOpenCount++;
                     break;
             }
 
@@ -694,6 +717,13 @@ public class GameManager
         OwnedEquipment.Remove(_equipment);
         OwnedEquipment.Remove(_mergeEquipment1);
         OwnedEquipment.Remove(_mergeEquipment2);
+
+        if (Manager.GameM.MissionDic.TryGetValue(MissionTarget.EquipmentMerge, out MissionInfo missionInfo))
+        {
+            missionInfo.Progress++;
+            Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.Mission);
+        }
+            
 
         if (!_isAllMerge) SaveGame();
 

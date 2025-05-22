@@ -142,6 +142,12 @@ public class UI_ShopPopup : UI_Popup
     void DoGaCha(Define.GachaType _gachaType, int _count = 1)
     {
         List<Equipment> list = Manager.GameM.DoGaCha(_gachaType, _count).ToList();
+        if (Manager.GameM.MissionDic.TryGetValue(Define.MissionTarget.GachaOpen, out MissionInfo missionInfo))
+        {
+            missionInfo.Progress++;
+            Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.Mission);
+        }
+            
         UI_GachaResultsPopup popup =  Manager.UiM.MakeSubItem<UI_GachaResultsPopup>(Manager.UiM.Root.transform);
         popup.SetInfo(list);
     }

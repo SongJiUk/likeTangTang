@@ -135,7 +135,7 @@ public class UI_CheckOutPopup : UI_Popup
     {
         Manager.SoundM.PlayPopupClose();
         userCheckOutDay = 0;
-        Manager.ResourceM.Destory(gameObject);
+        Manager.UiM.ClosePopup(this);
     }
 
     public void OnClickButtonTest()

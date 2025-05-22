@@ -177,6 +177,7 @@
     <Compile Include="Assets\@Scripts\UI\Popup\UI_TotalDamagePopup.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\CustomSceneManager.cs" />
     <Compile Include="Assets\@Scripts\Manager\Contents\AchievementManager.cs" />
+    <Compile Include="Assets\@Scripts\UI\UI_StageInfoItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

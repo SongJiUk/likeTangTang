@@ -1712,7 +1712,7 @@
     },
     {
       "AchievementID": 90701,
-      "DescriptionTextID": "엘리트 처치 1회",
+      "DescriptionTextID": "엘리트 몬스터 처치 1회",
       "MissionTarget": 7,
       "MissionTargetValue": 1,
       "ClearRewardItemID": 60001,
@@ -1722,7 +1722,7 @@
     },
     {
       "AchievementID": 90702,
-      "DescriptionTextID": "엘리트 처치 10회",
+      "DescriptionTextID": "엘리트 몬스터 처치 10회",
       "MissionTarget": 7,
       "MissionTargetValue": 10,
       "ClearRewardItemID": 60001,
@@ -1732,7 +1732,7 @@
     },
     {
       "AchievementID": 90703,
-      "DescriptionTextID": "엘리트 처치 20회",
+      "DescriptionTextID": "엘리트 몬스터 처치 20회",
       "MissionTarget": 7,
       "MissionTargetValue": 20,
       "ClearRewardItemID": 60001,
@@ -1742,7 +1742,7 @@
     },
     {
       "AchievementID": 90704,
-      "DescriptionTextID": "엘리트 처치 30회",
+      "DescriptionTextID": "엘리트 몬스터 처치 30회",
       "MissionTarget": 7,
       "MissionTargetValue": 30,
       "ClearRewardItemID": 60001,
@@ -1752,7 +1752,7 @@
     },
     {
       "AchievementID": 90705,
-      "DescriptionTextID": "엘리트 처치 40회",
+      "DescriptionTextID": "엘리트 몬스터 처치 40회",
       "MissionTarget": 7,
       "MissionTargetValue": 40,
       "ClearRewardItemID": 60001,
@@ -1762,7 +1762,7 @@
     },
     {
       "AchievementID": 90706,
-      "DescriptionTextID": "엘리트 처치 50회",
+      "DescriptionTextID": "엘리트 몬스터 처치 50회",
       "MissionTarget": 7,
       "MissionTargetValue": 50,
       "ClearRewardItemID": 60001,
@@ -1772,7 +1772,7 @@
     },
     {
       "AchievementID": 90707,
-      "DescriptionTextID": "엘리트 처치 60회",
+      "DescriptionTextID": "엘리트 몬스터 처치 60회",
       "MissionTarget": 7,
       "MissionTargetValue": 60,
       "ClearRewardItemID": 60001,
@@ -1782,7 +1782,7 @@
     },
     {
       "AchievementID": 90708,
-      "DescriptionTextID": "엘리트 처치 70회",
+      "DescriptionTextID": "엘리트 몬스터 처치 70회",
       "MissionTarget": 7,
       "MissionTargetValue": 70,
       "ClearRewardItemID": 60001,
@@ -1792,7 +1792,7 @@
     },
     {
       "AchievementID": 90709,
-      "DescriptionTextID": "엘리트 처치 80회",
+      "DescriptionTextID": "엘리트 몬스터 처치 80회",
       "MissionTarget": 7,
       "MissionTargetValue": 80,
       "ClearRewardItemID": 60001,
@@ -1802,7 +1802,7 @@
     },
     {
       "AchievementID": 90710,
-      "DescriptionTextID": "엘리트 처치 90회",
+      "DescriptionTextID": "엘리트 몬스터 처치 90회",
       "MissionTarget": 7,
       "MissionTargetValue": 90,
       "ClearRewardItemID": 60001,
@@ -1812,7 +1812,7 @@
     },
     {
       "AchievementID": 90711,
-      "DescriptionTextID": "엘리트 처치 100회",
+      "DescriptionTextID": "엘리트 몬스터 처치 100회",
       "MissionTarget": 7,
       "MissionTargetValue": 100,
       "ClearRewardItemID": 60001,
@@ -1822,7 +1822,7 @@
     },
     {
       "AchievementID": 90712,
-      "DescriptionTextID": "엘리트 처치 200회",
+      "DescriptionTextID": "엘리트 몬스터 처치 200회",
       "MissionTarget": 7,
       "MissionTargetValue": 200,
       "ClearRewardItemID": 60001,
@@ -1832,7 +1832,7 @@
     },
     {
       "AchievementID": 90713,
-      "DescriptionTextID": "엘리트 처치 300회",
+      "DescriptionTextID": "엘리트 몬스터 처치 300회",
       "MissionTarget": 7,
       "MissionTargetValue": 300,
       "ClearRewardItemID": 60001,
@@ -1842,7 +1842,7 @@
     },
     {
       "AchievementID": 90714,
-      "DescriptionTextID": "엘리트 처치 400회",
+      "DescriptionTextID": "엘리트 몬스터 처치 400회",
       "MissionTarget": 7,
       "MissionTargetValue": 400,
       "ClearRewardItemID": 60001,
@@ -1852,7 +1852,7 @@
     },
     {
       "AchievementID": 90715,
-      "DescriptionTextID": "엘리트 처치 500회",
+      "DescriptionTextID": "엘리트 몬스터 처치 500회",
       "MissionTarget": 7,
       "MissionTargetValue": 500,
       "ClearRewardItemID": 60001,
@@ -1862,7 +1862,7 @@
     },
     {
       "AchievementID": 90716,
-      "DescriptionTextID": "엘리트 처치 600회",
+      "DescriptionTextID": "엘리트 몬스터 처치 600회",
       "MissionTarget": 7,
       "MissionTargetValue": 600,
       "ClearRewardItemID": 60001,
@@ -1872,7 +1872,7 @@
     },
     {
       "AchievementID": 90717,
-      "DescriptionTextID": "엘리트 처치 700회",
+      "DescriptionTextID": "엘리트 몬스터 처치 700회",
       "MissionTarget": 7,
       "MissionTargetValue": 700,
       "ClearRewardItemID": 60001,
@@ -1882,7 +1882,7 @@
     },
     {
       "AchievementID": 90718,
-      "DescriptionTextID": "엘리트 처치 800회",
+      "DescriptionTextID": "엘리트 몬스터 처치 800회",
       "MissionTarget": 7,
       "MissionTargetValue": 800,
       "ClearRewardItemID": 60001,
@@ -1892,7 +1892,7 @@
     },
     {
       "AchievementID": 90719,
-      "DescriptionTextID": "엘리트 처치 900회",
+      "DescriptionTextID": "엘리트 몬스터 처치 900회",
       "MissionTarget": 7,
       "MissionTargetValue": 900,
       "ClearRewardItemID": 60001,
@@ -1902,7 +1902,7 @@
     },
     {
       "AchievementID": 90720,
-      "DescriptionTextID": "엘리트 처치 1000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 1000회",
       "MissionTarget": 7,
       "MissionTargetValue": 1000,
       "ClearRewardItemID": 60001,
@@ -1912,7 +1912,7 @@
     },
     {
       "AchievementID": 90721,
-      "DescriptionTextID": "엘리트 처치 2000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 2000회",
       "MissionTarget": 7,
       "MissionTargetValue": 2000,
       "ClearRewardItemID": 60001,
@@ -1922,7 +1922,7 @@
     },
     {
       "AchievementID": 90722,
-      "DescriptionTextID": "엘리트 처치 3000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 3000회",
       "MissionTarget": 7,
       "MissionTargetValue": 3000,
       "ClearRewardItemID": 60001,
@@ -1932,7 +1932,7 @@
     },
     {
       "AchievementID": 90723,
-      "DescriptionTextID": "엘리트 처치 4000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 4000회",
       "MissionTarget": 7,
       "MissionTargetValue": 4000,
       "ClearRewardItemID": 60001,
@@ -1942,7 +1942,7 @@
     },
     {
       "AchievementID": 90724,
-      "DescriptionTextID": "엘리트 처치 5000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 5000회",
       "MissionTarget": 7,
       "MissionTargetValue": 5000,
       "ClearRewardItemID": 60001,
@@ -1952,7 +1952,7 @@
     },
     {
       "AchievementID": 90725,
-      "DescriptionTextID": "엘리트 처치 6000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 6000회",
       "MissionTarget": 7,
       "MissionTargetValue": 6000,
       "ClearRewardItemID": 60001,
@@ -1962,7 +1962,7 @@
     },
     {
       "AchievementID": 90726,
-      "DescriptionTextID": "엘리트 처치 7000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 7000회",
       "MissionTarget": 7,
       "MissionTargetValue": 7000,
       "ClearRewardItemID": 60001,
@@ -1972,7 +1972,7 @@
     },
     {
       "AchievementID": 90727,
-      "DescriptionTextID": "엘리트 처치 8000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 8000회",
       "MissionTarget": 7,
       "MissionTargetValue": 8000,
       "ClearRewardItemID": 60001,
@@ -1982,7 +1982,7 @@
     },
     {
       "AchievementID": 90728,
-      "DescriptionTextID": "엘리트 처치 9000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 9000회",
       "MissionTarget": 7,
       "MissionTargetValue": 9000,
       "ClearRewardItemID": 60001,
@@ -1992,7 +1992,7 @@
     },
     {
       "AchievementID": 90729,
-      "DescriptionTextID": "엘리트 처치 10000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 10000회",
       "MissionTarget": 7,
       "MissionTargetValue": 10000,
       "ClearRewardItemID": 60001,
@@ -2002,7 +2002,7 @@
     },
     {
       "AchievementID": 90730,
-      "DescriptionTextID": "엘리트 처치 20000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 20000회",
       "MissionTarget": 7,
       "MissionTargetValue": 20000,
       "ClearRewardItemID": 60001,
@@ -2012,7 +2012,7 @@
     },
     {
       "AchievementID": 90731,
-      "DescriptionTextID": "엘리트 처치 30000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 30000회",
       "MissionTarget": 7,
       "MissionTargetValue": 30000,
       "ClearRewardItemID": 60001,
@@ -2022,7 +2022,7 @@
     },
     {
       "AchievementID": 90732,
-      "DescriptionTextID": "엘리트 처치 40000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 40000회",
       "MissionTarget": 7,
       "MissionTargetValue": 40000,
       "ClearRewardItemID": 60001,
@@ -2032,7 +2032,7 @@
     },
     {
       "AchievementID": 90733,
-      "DescriptionTextID": "엘리트 처치 50000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 50000회",
       "MissionTarget": 7,
       "MissionTargetValue": 50000,
       "ClearRewardItemID": 60001,
@@ -2042,7 +2042,7 @@
     },
     {
       "AchievementID": 90734,
-      "DescriptionTextID": "엘리트 처치 60000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 60000회",
       "MissionTarget": 7,
       "MissionTargetValue": 60000,
       "ClearRewardItemID": 60001,
@@ -2052,7 +2052,7 @@
     },
     {
       "AchievementID": 90735,
-      "DescriptionTextID": "엘리트 처치 70000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 70000회",
       "MissionTarget": 7,
       "MissionTargetValue": 70000,
       "ClearRewardItemID": 60001,
@@ -2062,7 +2062,7 @@
     },
     {
       "AchievementID": 90736,
-      "DescriptionTextID": "엘리트 처치 80000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 80000회",
       "MissionTarget": 7,
       "MissionTargetValue": 80000,
       "ClearRewardItemID": 60001,
@@ -2072,7 +2072,7 @@
     },
     {
       "AchievementID": 90737,
-      "DescriptionTextID": "엘리트 처치 90000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 90000회",
       "MissionTarget": 7,
       "MissionTargetValue": 90000,
       "ClearRewardItemID": 60001,
@@ -2082,7 +2082,7 @@
     },
     {
       "AchievementID": 90738,
-      "DescriptionTextID": "엘리트 처치 100000회",
+      "DescriptionTextID": "엘리트 몬스터 처치 100000회",
       "MissionTarget": 7,
       "MissionTargetValue": 100000,
       "ClearRewardItemID": 60001,
