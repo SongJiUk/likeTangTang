@@ -6,56 +6,59 @@ public class UI_AchievementPopup : UI_Popup
 {
     enum GameObjects
     {
-
+        ContentObject,
+        AchievementScrollObject
     }
 
-    enum Texts
-    {
-
-    }
 
     enum Buttons
     {
-
+        BackgroundButton
     }
 
-    enum Images
-    {
-
-    }
 
     private void Awake()
     {
         Init();
     }
 
+    private void OnEnable()
+    {
+        PopupOpenAnim(GetObject(gameObjectsType, (int)GameObjects.ContentObject));
+    }
     public override bool Init()
     {
         if (!base.Init()) return false;
         gameObjectsType = typeof(GameObjects);
-        TextsType = typeof(Texts);
         ButtonsType = typeof(Buttons);
-        ImagesType = typeof(Images);
 
         BindObject(gameObjectsType);
-        BindText(TextsType);
         BindButton(ButtonsType);
-        BindImage(ImagesType);
 
+        GetButton(ButtonsType, (int)Buttons.BackgroundButton).gameObject.BindEvent(OnClickBgButton);
 
-
-
+        Refresh();
         return true;
 
     }
 
     public void SetInfo()
     {
-
+        Refresh();
     }
 
     void Refresh()
     {
+        foreach(Data.AchievementData achievement in Manager.AchievementM.GetAchievements())
+        {
+            UI_AchievementItem item = Manager.UiM.MakeSubItem<UI_AchievementItem>(GetObject(gameObjectsType, (int)GameObjects.AchievementScrollObject).transform);
+            item.SetInfo(achievement);
+        }
+    }
 
+    void OnClickBgButton()
+    {
+        Manager.SoundM.PlayPopupClose();
+        Manager.UiM.ClosePopup(this);
     }
 }

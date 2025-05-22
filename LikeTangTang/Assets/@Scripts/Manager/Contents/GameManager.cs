@@ -54,6 +54,89 @@ public class GameManager
         set { gameData.MissionDic = value; }
     }
 
+    public List<Data.AchievementData> Achievements
+    {
+        get { return gameData.Achievements; }
+        set 
+        { 
+            gameData.Achievements = value; 
+        }
+    }
+    
+
+    public int CommonGachaOpenCount
+    {
+        get { return gameData.CommonGachaOpenCount; }
+        set 
+        {
+            gameData.CommonGachaOpenCount = value;
+            Manager.AchievementM.CommonBoxOpen();
+        }
+    }
+
+    public int AdvancedGachaOpenCount
+    {
+        get { return gameData.AdvancedGachaOpenCount; }
+        set 
+        {
+            gameData.AdvancedGachaOpenCount = value;
+            Manager.AchievementM.AdvancedBoxOpen();
+        }
+    }
+
+    public int OfflineRewardGetCount
+    {
+        get { return gameData.OfflineRewardGetCount; }
+        set
+        {
+            gameData.OfflineRewardGetCount = value;
+            Manager.AchievementM.OfflineReward();
+        }
+    }
+
+    public int FastOfflineRewardGetCount
+    {
+        get { return gameData.FastOfflineRewardGetCount; }
+        set
+        {
+            gameData.FastOfflineRewardGetCount = value;
+            Manager.AchievementM.FastReward();
+        }
+    }
+
+    public int TotalMonsterKillCount
+    {
+        get { return gameData.TotalMonsterKillCount; }
+        set 
+        {
+            gameData.TotalMonsterKillCount = value;
+            if(value % 100 == 0)
+                Manager.AchievementM.MonsterKill();
+        }
+    }
+
+    public int TotalEliteMonsterKillCount
+    {
+        get { return gameData.TotalEliteMonsterKillCount; }
+        set 
+        {
+            gameData.TotalEliteMonsterKillCount = value;
+            Manager.AchievementM.EliteMonsterKill();
+        }
+    }
+
+    public int TotalBossKillCount
+    {
+        get { return gameData.TotalBossKillCount; }
+        set
+        {
+            gameData.TotalBossKillCount = value;
+            Manager.AchievementM.BossKill();
+        }
+    }
+
+
+
     public List<Character> Characters
     {
         get { return gameData.Characters; }
@@ -224,6 +307,8 @@ public class GameManager
         get { return gameData.AttendanceReceived;}
         set { gameData.AttendanceReceived = value; }
     }
+
+    
     
     public Map CurrentMap { get; set; }
 
@@ -282,6 +367,8 @@ public class GameManager
             };
             gameData.StageClearInfoDic.Add(stage.StageIndex, info);
         }
+
+        Manager.AchievementM.Init();
 
         //초기 선물
         FirstGift();
@@ -404,6 +491,19 @@ public class GameManager
         }
 
         return 0;
+    }
+
+    public int GetMaxStageClearIndex()
+    {
+        int MaxStageClearIndex = 0;
+
+        foreach(StageClearInfoData clearInfo in StageClearInfoDic.Values)
+        {
+            if (clearInfo.isClear)
+                MaxStageClearIndex = Mathf.Max(MaxStageClearIndex, clearInfo.StageIndex);
+        }
+
+        return MaxStageClearIndex;
     }
 
     public void ClearContinueData()

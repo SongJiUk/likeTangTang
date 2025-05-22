@@ -118,6 +118,12 @@ public class TimeManager : MonoBehaviour
                 second = 0f;
             }
 
+            if(minute == 0)
+            {
+                CheckAttendance();
+                minute = 60;
+            }
+
         }
     }
 
@@ -146,6 +152,19 @@ public class TimeManager : MonoBehaviour
             Manager.GameM.RemainBuyStaminaForDia = 3;
 
             //TODO : 미션정보, 빠른모험 등등
+            Manager.GameM.MissionDic.Clear();
+            Manager.GameM.MissionDic = new Dictionary<Define.MissionTarget, MissionInfo>()
+            {
+                {Define.MissionTarget.StageEnter, new MissionInfo() { Progress = 0, isRewarded = false} },
+                {Define.MissionTarget.EquipmentLevelUp, new MissionInfo() { Progress = 0, isRewarded = false} },
+                {Define.MissionTarget.EquipmentMerge, new MissionInfo() { Progress = 0, isRewarded = false} },
+                {Define.MissionTarget.GachaOpen, new MissionInfo() { Progress = 0, isRewarded = false} },
+                {Define.MissionTarget.OfflineRewardGet, new MissionInfo() { Progress = 0, isRewarded = false} },
+                {Define.MissionTarget.MonsterKill, new MissionInfo() { Progress = 0, isRewarded = false} },
+                {Define.MissionTarget.EliteMonsterKill, new MissionInfo() { Progress = 0, isRewarded = false} },
+                {Define.MissionTarget.StageClear, new MissionInfo() { Progress = 0, isRewarded = false} },
+                {Define.MissionTarget.ADWatchIng, new MissionInfo() { Progress = 0, isRewarded = false} }
+            };
 
             Manager.GameM.SaveGame();
         }

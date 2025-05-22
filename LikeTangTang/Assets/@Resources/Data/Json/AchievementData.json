@@ -1,0 +1,2474 @@
+{
+  "list": [
+    {
+      "AchievementID": 90001,
+      "DescriptionTextID": "누적 로그인 1일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 1,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 10,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90002,
+      "DescriptionTextID": "누적 로그인 5일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 5,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90003,
+      "DescriptionTextID": "누적 로그인 10일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 10,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90004,
+      "DescriptionTextID": "누적 로그인 15일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 15,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 150,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90005,
+      "DescriptionTextID": "누적 로그인 20일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 20,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 200,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90006,
+      "DescriptionTextID": "누적 로그인 30일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 30,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90007,
+      "DescriptionTextID": "누적 로그인 40일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 40,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 400,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90008,
+      "DescriptionTextID": "누적 로그인 50일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 50,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90009,
+      "DescriptionTextID": "누적 로그인 60일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 60,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 600,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90010,
+      "DescriptionTextID": "누적 로그인 70일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 70,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 700,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90011,
+      "DescriptionTextID": "누적 로그인 80일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 80,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 800,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90012,
+      "DescriptionTextID": "누적 로그인 90일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 90,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 900,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90013,
+      "DescriptionTextID": "누적 로그인 100일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 100,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 1000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90014,
+      "DescriptionTextID": "누적 로그인 150일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 150,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 1500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90015,
+      "DescriptionTextID": "누적 로그인 200일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 200,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 2000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90016,
+      "DescriptionTextID": "누적 로그인 250일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 250,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 2500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90017,
+      "DescriptionTextID": "누적 로그인 300일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 300,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 3000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90018,
+      "DescriptionTextID": "누적 로그인 350일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 350,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 3500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90019,
+      "DescriptionTextID": "누적 로그인 400일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 400,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 4000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90020,
+      "DescriptionTextID": "누적 로그인 450일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 450,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 4500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90021,
+      "DescriptionTextID": "누적 로그인 500일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 500,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 5000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90022,
+      "DescriptionTextID": "누적 로그인 700일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 700,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 7000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90023,
+      "DescriptionTextID": "누적 로그인 1000일",
+      "MissionTarget": 11,
+      "MissionTargetValue": 1000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 10000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90101,
+      "DescriptionTextID": "스테이지 클리어",
+      "MissionTarget": 9,
+      "MissionTargetValue": 1,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90102,
+      "DescriptionTextID": "스테이지 클리어",
+      "MissionTarget": 9,
+      "MissionTargetValue": 2,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 250,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90103,
+      "DescriptionTextID": "스테이지 클리어",
+      "MissionTarget": 9,
+      "MissionTargetValue": 3,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90104,
+      "DescriptionTextID": "스테이지 클리어",
+      "MissionTarget": 9,
+      "MissionTargetValue": 4,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 750,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90105,
+      "DescriptionTextID": "스테이지 클리어",
+      "MissionTarget": 9,
+      "MissionTargetValue": 5,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 1000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90201,
+      "DescriptionTextID": "일반 장비 상자 오픈 1회",
+      "MissionTarget": 12,
+      "MissionTargetValue": 1,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90202,
+      "DescriptionTextID": "일반 장비 상자 오픈 10회",
+      "MissionTarget": 12,
+      "MissionTargetValue": 10,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90203,
+      "DescriptionTextID": "일반 장비 상자 오픈 50회",
+      "MissionTarget": 12,
+      "MissionTargetValue": 50,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90204,
+      "DescriptionTextID": "일반 장비 상자 오픈 100회",
+      "MissionTarget": 12,
+      "MissionTargetValue": 100,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90205,
+      "DescriptionTextID": "일반 장비 상자 오픈 200회",
+      "MissionTarget": 12,
+      "MissionTargetValue": 200,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90206,
+      "DescriptionTextID": "일반 장비 상자 오픈 300회",
+      "MissionTarget": 12,
+      "MissionTargetValue": 300,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90207,
+      "DescriptionTextID": "일반 장비 상자 오픈 400회",
+      "MissionTarget": 12,
+      "MissionTargetValue": 400,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90208,
+      "DescriptionTextID": "일반 장비 상자 오픈 500회",
+      "MissionTarget": 12,
+      "MissionTargetValue": 500,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90209,
+      "DescriptionTextID": "일반 장비 상자 오픈 600회",
+      "MissionTarget": 12,
+      "MissionTargetValue": 600,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90210,
+      "DescriptionTextID": "일반 장비 상자 오픈 700회",
+      "MissionTarget": 12,
+      "MissionTargetValue": 700,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90211,
+      "DescriptionTextID": "일반 장비 상자 오픈 800회",
+      "MissionTarget": 12,
+      "MissionTargetValue": 800,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90212,
+      "DescriptionTextID": "일반 장비 상자 오픈 900회",
+      "MissionTarget": 12,
+      "MissionTargetValue": 900,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90213,
+      "DescriptionTextID": "일반 장비 상자 오픈 1000회",
+      "MissionTarget": 12,
+      "MissionTargetValue": 1000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90301,
+      "DescriptionTextID": "고급 장비 상자 오픈 1회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 1,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90302,
+      "DescriptionTextID": "고급 장비 상자 오픈 10회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 10,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90303,
+      "DescriptionTextID": "고급 장비 상자 오픈 50회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 50,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90304,
+      "DescriptionTextID": "고급 장비 상자 오픈 100회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 100,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90305,
+      "DescriptionTextID": "고급 장비 상자 오픈 200회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 200,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90306,
+      "DescriptionTextID": "고급 장비 상자 오픈 300회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 300,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90307,
+      "DescriptionTextID": "고급 장비 상자 오픈 400회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 400,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90308,
+      "DescriptionTextID": "고급 장비 상자 오픈 500회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 500,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90309,
+      "DescriptionTextID": "고급 장비 상자 오픈 600회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 600,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90310,
+      "DescriptionTextID": "고급 장비 상자 오픈 700회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 700,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90311,
+      "DescriptionTextID": "고급 장비 상자 오픈 800회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 800,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90312,
+      "DescriptionTextID": "고급 장비 상자 오픈 900회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 900,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90313,
+      "DescriptionTextID": "고급 장비 상자 오픈 1000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 1000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90314,
+      "DescriptionTextID": "고급 장비 상자 오픈 2000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 2000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 1000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90315,
+      "DescriptionTextID": "고급 장비 상자 오픈 3000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 3000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 1000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90316,
+      "DescriptionTextID": "고급 장비 상자 오픈 4000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 4000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 1000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90317,
+      "DescriptionTextID": "고급 장비 상자 오픈 5000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 5000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 1000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90318,
+      "DescriptionTextID": "고급 장비 상자 오픈 6000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 6000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 1000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90319,
+      "DescriptionTextID": "고급 장비 상자 오픈 7000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 7000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 1000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90320,
+      "DescriptionTextID": "고급 장비 상자 오픈 8000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 8000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 1000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90321,
+      "DescriptionTextID": "고급 장비 상자 오픈 9000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 9000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 1000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90322,
+      "DescriptionTextID": "고급 장비 상자 오픈 10000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 10000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 2000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90323,
+      "DescriptionTextID": "고급 장비 상자 오픈 20000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 20000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 2000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90324,
+      "DescriptionTextID": "고급 장비 상자 오픈 30000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 30000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 2000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90325,
+      "DescriptionTextID": "고급 장비 상자 오픈 40000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 40000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 2000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90326,
+      "DescriptionTextID": "고급 장비 상자 오픈 50000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 50000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 2000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90327,
+      "DescriptionTextID": "고급 장비 상자 오픈 60000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 60000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 2000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90328,
+      "DescriptionTextID": "고급 장비 상자 오픈 70000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 70000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 2000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90329,
+      "DescriptionTextID": "고급 장비 상자 오픈 80000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 80000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 2000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90330,
+      "DescriptionTextID": "고급 장비 상자 오픈 90000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 90000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 2000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90331,
+      "DescriptionTextID": "고급 장비 상자 오픈 100000회",
+      "MissionTarget": 13,
+      "MissionTargetValue": 100000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 2000,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90401,
+      "DescriptionTextID": "정찰 1회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 1,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90402,
+      "DescriptionTextID": "정찰 5회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 5,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90403,
+      "DescriptionTextID": "정찰 10회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 10,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90404,
+      "DescriptionTextID": "정찰 15회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 15,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90405,
+      "DescriptionTextID": "정찰 20회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 20,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90406,
+      "DescriptionTextID": "정찰 25회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 25,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90407,
+      "DescriptionTextID": "정찰 30회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 30,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90408,
+      "DescriptionTextID": "정찰 35회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 35,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90409,
+      "DescriptionTextID": "정찰 40회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 40,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90410,
+      "DescriptionTextID": "정찰 45회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 45,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90411,
+      "DescriptionTextID": "정찰 50회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 50,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90412,
+      "DescriptionTextID": "정찰 55회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 55,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90413,
+      "DescriptionTextID": "정찰 60회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 60,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90414,
+      "DescriptionTextID": "정찰 65회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 65,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90415,
+      "DescriptionTextID": "정찰 70회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 70,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90416,
+      "DescriptionTextID": "정찰 75회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 75,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90417,
+      "DescriptionTextID": "정찰 80회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 80,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90418,
+      "DescriptionTextID": "정찰 85회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 85,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90419,
+      "DescriptionTextID": "정찰 90회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 90,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90420,
+      "DescriptionTextID": "정찰 95회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 95,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 30,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90421,
+      "DescriptionTextID": "정찰 100회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 100,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 60,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90422,
+      "DescriptionTextID": "정찰 200회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 200,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 60,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90423,
+      "DescriptionTextID": "정찰 300회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 300,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 60,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90424,
+      "DescriptionTextID": "정찰 400회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 400,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 60,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90425,
+      "DescriptionTextID": "정찰 500회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 500,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 60,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90426,
+      "DescriptionTextID": "정찰 600회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 600,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 60,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90427,
+      "DescriptionTextID": "정찰 700회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 700,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 60,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90428,
+      "DescriptionTextID": "정찰 800회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 800,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 60,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90429,
+      "DescriptionTextID": "정찰 900회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 900,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 60,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90430,
+      "DescriptionTextID": "정찰 1000회",
+      "MissionTarget": 4,
+      "MissionTargetValue": 1000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 60,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90501,
+      "DescriptionTextID": "빠른 정찰 1회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 1,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90502,
+      "DescriptionTextID": "빠른 정찰 5회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 5,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90503,
+      "DescriptionTextID": "빠른 정찰 10회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 10,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90504,
+      "DescriptionTextID": "빠른 정찰 15회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 15,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90505,
+      "DescriptionTextID": "빠른 정찰 20회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 20,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90506,
+      "DescriptionTextID": "빠른 정찰 25회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 25,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90507,
+      "DescriptionTextID": "빠른 정찰 30회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 30,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90508,
+      "DescriptionTextID": "빠른 정찰 35회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 35,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90509,
+      "DescriptionTextID": "빠른 정찰 40회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 40,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90510,
+      "DescriptionTextID": "빠른 정찰 45회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 45,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90511,
+      "DescriptionTextID": "빠른 정찰 50회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 50,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90512,
+      "DescriptionTextID": "빠른 정찰 55회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 55,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90513,
+      "DescriptionTextID": "빠른 정찰 60회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 60,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90514,
+      "DescriptionTextID": "빠른 정찰 65회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 65,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90515,
+      "DescriptionTextID": "빠른 정찰 70회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 70,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90516,
+      "DescriptionTextID": "빠른 정찰 75회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 75,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90517,
+      "DescriptionTextID": "빠른 정찰 80회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 80,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90518,
+      "DescriptionTextID": "빠른 정찰 85회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 85,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90519,
+      "DescriptionTextID": "빠른 정찰 90회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 90,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90520,
+      "DescriptionTextID": "빠른 정찰 95회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 95,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90521,
+      "DescriptionTextID": "빠른 정찰 100회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 100,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90522,
+      "DescriptionTextID": "빠른 정찰 200회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 200,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90523,
+      "DescriptionTextID": "빠른 정찰 300회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 300,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90524,
+      "DescriptionTextID": "빠른 정찰 400회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 400,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90525,
+      "DescriptionTextID": "빠른 정찰 500회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 500,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90526,
+      "DescriptionTextID": "빠른 정찰 600회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 600,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90527,
+      "DescriptionTextID": "빠른 정찰 700회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 700,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90528,
+      "DescriptionTextID": "빠른 정찰 800회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 800,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90529,
+      "DescriptionTextID": "빠른 정찰 900회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 900,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90530,
+      "DescriptionTextID": "빠른 정찰 1000회",
+      "MissionTarget": 5,
+      "MissionTargetValue": 1000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90601,
+      "DescriptionTextID": "몬스터 처치 100회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 100,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 10,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90602,
+      "DescriptionTextID": "몬스터 처치 500회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 500,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 10,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90603,
+      "DescriptionTextID": "몬스터 처치 1000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 1000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 10,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90604,
+      "DescriptionTextID": "몬스터 처치 2000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 2000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 10,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90605,
+      "DescriptionTextID": "몬스터 처치 3000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 3000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 10,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90606,
+      "DescriptionTextID": "몬스터 처치 4000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 4000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 10,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90607,
+      "DescriptionTextID": "몬스터 처치 5000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 5000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 10,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90608,
+      "DescriptionTextID": "몬스터 처치 6000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 6000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 10,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90609,
+      "DescriptionTextID": "몬스터 처치 7000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 7000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 10,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90610,
+      "DescriptionTextID": "몬스터 처치 8000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 8000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 10,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90611,
+      "DescriptionTextID": "몬스터 처치 9000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 9000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 10,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90612,
+      "DescriptionTextID": "몬스터 처치 10000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 10000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 10,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90613,
+      "DescriptionTextID": "몬스터 처치 20000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 20000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90614,
+      "DescriptionTextID": "몬스터 처치 30000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 30000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90615,
+      "DescriptionTextID": "몬스터 처치 40000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 40000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90616,
+      "DescriptionTextID": "몬스터 처치 50000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 50000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90617,
+      "DescriptionTextID": "몬스터 처치 60000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 60000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90618,
+      "DescriptionTextID": "몬스터 처치 70000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 70000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90619,
+      "DescriptionTextID": "몬스터 처치 80000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 80000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90620,
+      "DescriptionTextID": "몬스터 처치 90000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 90000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90621,
+      "DescriptionTextID": "몬스터 처치 100000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 100000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90622,
+      "DescriptionTextID": "몬스터 처치 200000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 200000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90623,
+      "DescriptionTextID": "몬스터 처치 300000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 300000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90624,
+      "DescriptionTextID": "몬스터 처치 400000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 400000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90625,
+      "DescriptionTextID": "몬스터 처치 500000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 500000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90626,
+      "DescriptionTextID": "몬스터 처치 600000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 600000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90627,
+      "DescriptionTextID": "몬스터 처치 700000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 700000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90628,
+      "DescriptionTextID": "몬스터 처치 800000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 800000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90629,
+      "DescriptionTextID": "몬스터 처치 900000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 900000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90630,
+      "DescriptionTextID": "몬스터 처치 1000000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 1000000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90631,
+      "DescriptionTextID": "몬스터 처치 2000000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 2000000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90632,
+      "DescriptionTextID": "몬스터 처치 3000000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 3000000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90633,
+      "DescriptionTextID": "몬스터 처치 4000000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 4000000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90634,
+      "DescriptionTextID": "몬스터 처치 5000000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 5000000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90635,
+      "DescriptionTextID": "몬스터 처치 6000000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 6000000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90636,
+      "DescriptionTextID": "몬스터 처치 7000000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 7000000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90637,
+      "DescriptionTextID": "몬스터 처치 8000000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 8000000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90638,
+      "DescriptionTextID": "몬스터 처치 9000000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 9000000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90639,
+      "DescriptionTextID": "몬스터 처치 10000000회",
+      "MissionTarget": 6,
+      "MissionTargetValue": 10000000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90701,
+      "DescriptionTextID": "엘리트 처치 1회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 1,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90702,
+      "DescriptionTextID": "엘리트 처치 10회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 10,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90703,
+      "DescriptionTextID": "엘리트 처치 20회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 20,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90704,
+      "DescriptionTextID": "엘리트 처치 30회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 30,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90705,
+      "DescriptionTextID": "엘리트 처치 40회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 40,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90706,
+      "DescriptionTextID": "엘리트 처치 50회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 50,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90707,
+      "DescriptionTextID": "엘리트 처치 60회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 60,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90708,
+      "DescriptionTextID": "엘리트 처치 70회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 70,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90709,
+      "DescriptionTextID": "엘리트 처치 80회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 80,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90710,
+      "DescriptionTextID": "엘리트 처치 90회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 90,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90711,
+      "DescriptionTextID": "엘리트 처치 100회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 100,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90712,
+      "DescriptionTextID": "엘리트 처치 200회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 200,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90713,
+      "DescriptionTextID": "엘리트 처치 300회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 300,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90714,
+      "DescriptionTextID": "엘리트 처치 400회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 400,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90715,
+      "DescriptionTextID": "엘리트 처치 500회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 500,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90716,
+      "DescriptionTextID": "엘리트 처치 600회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 600,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90717,
+      "DescriptionTextID": "엘리트 처치 700회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 700,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90718,
+      "DescriptionTextID": "엘리트 처치 800회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 800,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90719,
+      "DescriptionTextID": "엘리트 처치 900회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 900,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90720,
+      "DescriptionTextID": "엘리트 처치 1000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 1000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90721,
+      "DescriptionTextID": "엘리트 처치 2000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 2000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90722,
+      "DescriptionTextID": "엘리트 처치 3000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 3000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90723,
+      "DescriptionTextID": "엘리트 처치 4000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 4000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90724,
+      "DescriptionTextID": "엘리트 처치 5000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 5000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90725,
+      "DescriptionTextID": "엘리트 처치 6000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 6000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90726,
+      "DescriptionTextID": "엘리트 처치 7000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 7000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90727,
+      "DescriptionTextID": "엘리트 처치 8000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 8000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90728,
+      "DescriptionTextID": "엘리트 처치 9000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 9000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90729,
+      "DescriptionTextID": "엘리트 처치 10000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 10000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90730,
+      "DescriptionTextID": "엘리트 처치 20000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 20000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90731,
+      "DescriptionTextID": "엘리트 처치 30000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 30000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90732,
+      "DescriptionTextID": "엘리트 처치 40000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 40000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90733,
+      "DescriptionTextID": "엘리트 처치 50000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 50000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90734,
+      "DescriptionTextID": "엘리트 처치 60000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 60000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90735,
+      "DescriptionTextID": "엘리트 처치 70000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 70000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90736,
+      "DescriptionTextID": "엘리트 처치 80000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 80000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90737,
+      "DescriptionTextID": "엘리트 처치 90000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 90000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90738,
+      "DescriptionTextID": "엘리트 처치 100000회",
+      "MissionTarget": 7,
+      "MissionTargetValue": 100000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90801,
+      "DescriptionTextID": "보스 처치 1회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 1,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90802,
+      "DescriptionTextID": "보스 처치 10회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 10,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90803,
+      "DescriptionTextID": "보스 처치 20회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 20,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90804,
+      "DescriptionTextID": "보스 처치 30회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 30,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90805,
+      "DescriptionTextID": "보스 처치 40회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 40,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90806,
+      "DescriptionTextID": "보스 처치 50회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 50,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90807,
+      "DescriptionTextID": "보스 처치 60회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 60,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90808,
+      "DescriptionTextID": "보스 처치 70회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 70,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90809,
+      "DescriptionTextID": "보스 처치 80회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 80,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90810,
+      "DescriptionTextID": "보스 처치 90회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 90,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90811,
+      "DescriptionTextID": "보스 처치 100회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 100,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 50,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90812,
+      "DescriptionTextID": "보스 처치 200회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 200,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90813,
+      "DescriptionTextID": "보스 처치 300회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 300,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90814,
+      "DescriptionTextID": "보스 처치 400회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 400,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90815,
+      "DescriptionTextID": "보스 처치 500회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 500,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90816,
+      "DescriptionTextID": "보스 처치 600회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 600,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90817,
+      "DescriptionTextID": "보스 처치 700회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 700,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90818,
+      "DescriptionTextID": "보스 처치 800회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 800,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90819,
+      "DescriptionTextID": "보스 처치 900회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 900,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90820,
+      "DescriptionTextID": "보스 처치 1000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 1000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 100,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90821,
+      "DescriptionTextID": "보스 처치 2000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 2000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90822,
+      "DescriptionTextID": "보스 처치 3000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 3000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90823,
+      "DescriptionTextID": "보스 처치 4000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 4000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90824,
+      "DescriptionTextID": "보스 처치 5000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 5000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90825,
+      "DescriptionTextID": "보스 처치 6000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 6000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90826,
+      "DescriptionTextID": "보스 처치 7000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 7000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90827,
+      "DescriptionTextID": "보스 처치 8000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 8000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90828,
+      "DescriptionTextID": "보스 처치 9000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 9000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90829,
+      "DescriptionTextID": "보스 처치 10000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 10000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 300,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90830,
+      "DescriptionTextID": "보스 처치 20000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 20000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90831,
+      "DescriptionTextID": "보스 처치 30000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 30000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90832,
+      "DescriptionTextID": "보스 처치 40000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 40000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90833,
+      "DescriptionTextID": "보스 처치 50000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 50000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90834,
+      "DescriptionTextID": "보스 처치 60000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 60000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90835,
+      "DescriptionTextID": "보스 처치 70000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 70000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90836,
+      "DescriptionTextID": "보스 처치 80000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 80000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90837,
+      "DescriptionTextID": "보스 처치 90000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 90000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    },
+    {
+      "AchievementID": 90838,
+      "DescriptionTextID": "보스 처치 100000회",
+      "MissionTarget": 8,
+      "MissionTargetValue": 100000,
+      "ClearRewardItemID": 60001,
+      "RewardValue": 500,
+      "IsCompleted": false,
+      "IsRewarded": false
+    }
+  ]
+}

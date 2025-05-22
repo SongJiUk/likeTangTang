@@ -14,6 +14,18 @@ public class GameData
     public int dia = 0;
     public int stamina = 0;
 
+    #region 업적
+    public int TotalStageClear = 0;
+    public int CommonGachaOpenCount = 0;
+    public int AdvancedGachaOpenCount = 0;
+    public int OfflineRewardGetCount = 0;
+    public int FastOfflineRewardGetCount = 0;
+    public int TotalMonsterKillCount = 0;
+    public int TotalEliteMonsterKillCount = 0;
+    public int TotalBossKillCount = 0;
+    public List<Data.AchievementData> Achievements = new List<AchievementData>();
+    #endregion
+
     //하루에 한번 초기화
     public int GacahCountAdsAdvanced = 1;
     public int GacahCountAdsCommon = 1;

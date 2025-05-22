@@ -49,7 +49,7 @@
       "MissionID": 80006,
       "MissionType": 0,
       "DescriptionTextID": "몬스터 처치 2000회",
-      "MissionTarget": 5,
+      "MissionTarget": 6,
       "MissionTargetValue": 2000,
       "ClearRewardItmeID": 60001,
       "RewardValue": 50
@@ -58,7 +58,7 @@
       "MissionID": 80007,
       "MissionType": 0,
       "DescriptionTextID": "몬스터 처치 5000회",
-      "MissionTarget": 5,
+      "MissionTarget": 6,
       "MissionTargetValue": 5000,
       "ClearRewardItmeID": 60001,
       "RewardValue": 50
@@ -67,7 +67,7 @@
       "MissionID": 80008,
       "MissionType": 0,
       "DescriptionTextID": "엘리트 처치 5회",
-      "MissionTarget": 6,
+      "MissionTarget": 7,
       "MissionTargetValue": 5,
       "ClearRewardItmeID": 60001,
       "RewardValue": 50
@@ -76,7 +76,7 @@
       "MissionID": 80009,
       "MissionType": 0,
       "DescriptionTextID": "스테이지 클리어 1회",
-      "MissionTarget": 8,
+      "MissionTarget": 9,
       "MissionTargetValue": 1,
       "ClearRewardItmeID": 60001,
       "RewardValue": 50
@@ -85,7 +85,7 @@
       "MissionID": 80010,
       "MissionType": 0,
       "DescriptionTextID": "광고 시청 2회",
-      "MissionTarget": 9,
+      "MissionTarget": 10,
       "MissionTargetValue": 2,
       "ClearRewardItmeID": 60001,
       "RewardValue": 100

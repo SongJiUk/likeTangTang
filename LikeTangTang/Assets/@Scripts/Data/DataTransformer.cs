@@ -47,7 +47,7 @@ public class DataTransformer : EditorWindow
         ParseGachaData("GachaData"); // DictionaryŰ�� ���� �����Ͱ� ���� #Neo
         //ParseStagePackageData("StagePackage");
         ParseMissionData("MissionData");
-        // ParseAchievementData("Achievement");
+        ParseAchievementData("AchievementData");
         ParseCheckOutData("AttendanceCheckData");
         // ParseOfflineRewardData("OfflineReward");
         // ParseBattlePassData("BattlePass");
@@ -672,40 +672,41 @@ public class DataTransformer : EditorWindow
         AssetDatabase.Refresh();
     }
 
-    //     static void ParseAchievementData(string filename)
-    //     {
-    //         AchievementDataLoader loader = new AchievementDataLoader();
+    static void ParseAchievementData(string filename)
+    {
+        AchievementDataLoader loader = new AchievementDataLoader();
 
-    //         #region ExcelData
-    //         string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/Excel/{filename}Data.csv").Split("\n");
+        #region ExcelData
+        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/CSV/{filename}.csv").Split("\n");
 
-    //         for (int y = 1; y < lines.Length; y++)
-    //         {
-    //             string[] row = lines[y].Replace("\r", "").Split(',');
+        for (int y = 1; y < lines.Length; y++)
+        {
+            string[] row = lines[y].Replace("\r", "").Split(',');
 
-    //             if (row.Length == 0)
-    //                 continue;
-    //             if (string.IsNullOrEmpty(row[0]))
-    //                 continue;
+            if (row.Length == 0)
+                continue;
+            if (string.IsNullOrEmpty(row[0]))
+                continue;
 
-    //             int i = 0;
-    //             AchievementData ach = new AchievementData();
-    //             ach.AchievementID = ConvertValue<int>(row[i++]);
-    //             ach.DescriptionTextID = ConvertValue<string>(row[i++]);
-    //             ach.MissionTarget = ConvertValue<Define.MissionTarget>(row[i++]);
-    //             ach.MissionTargetValue = ConvertValue<int>(row[i++]);
-    //             ach.ClearRewardItmeId = ConvertValue<int>(row[i++]);
-    //             ach.RewardValue = ConvertValue<int>(row[i++]);
+            int i = 0;
+            AchievementData ach = new AchievementData();
+            ach.AchievementID = ConvertValue<int>(row[i++]);
+            ach.DescriptionTextID = ConvertValue<string>(row[i++]);
+            ach.MissionTarget = ConvertValue<Define.MissionTarget>(row[i++]);
+            ach.MissionTargetValue = ConvertValue<int>(row[i++]);
+            ach.ClearRewardItemID = ConvertValue<int>(row[i++]);
+            ach.RewardValue = ConvertValue<int>(row[i++]);
+            ach.IsCompleted = ConvertValue<bool>(row[i++]);
+            ach.IsRewarded = ConvertValue<bool>(row[i++]);
+            loader.list.Add(ach);
+        }
 
-    //             loader.Achievements.Add(ach);
-    //         }
+        #endregion
 
-    //         #endregion
-
-    //         string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
-    //         File.WriteAllText($"{Application.dataPath}/@Resources/Data/JsonData/{filename}Data.json", jsonStr);
-    //         AssetDatabase.Refresh();
-    //     }
+        string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
+        File.WriteAllText($"{Application.dataPath}/@Resources/Data/Json/{filename}.json", jsonStr);
+        AssetDatabase.Refresh();
+    }
 
     static void ParseCheckOutData(string filename)
     {

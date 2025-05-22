@@ -392,11 +392,17 @@ public static class Define
         EquipmentMerge,
         GachaOpen,
         OfflineRewardGet,
+        FastOfflineRewardGet,
         MonsterKill,
         EliteMonsterKill,
-        BossMonsterKill,
+        BossKill,
         StageClear,
-        ADWatchIng
+        ADWatchIng,
+        Login,
+        CommonGachaOpen,
+        AdvancedGachaOpen,
+
+
     }
 
     public static string GRIDNAME = "@Grid";

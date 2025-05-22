@@ -85,6 +85,7 @@
     <Compile Include="Assets\@Scripts\UI\Scene\UI_LobbyScene.cs" />
     <Compile Include="Assets\@Scripts\Controllers\EliteMonsterController.cs" />
     <Compile Include="Assets\@Scripts\Manager\Contents\PoolManager.cs" />
+    <Compile Include="Assets\@Scripts\UI\UI_MissionItem.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\Repeat\EnergyRing.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\SkillBase.cs" />
     <Compile Include="Assets\@Scripts\UI\Scene\UI_TitleScene.cs" />
@@ -115,7 +116,6 @@
     <Compile Include="Assets\@Scripts\UI\UI_HP_Bar.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_EquipmentResetPopup.cs" />
     <Compile Include="Assets\@Scripts\UI\UI_MonsterInfoItem.cs" />
-    <Compile Include="Assets\@Scripts\Manager\AchievementManager.cs" />
     <Compile Include="Assets\@Scripts\Test\Test.cs" />
     <Compile Include="Assets\@Scripts\Controllers\DropItem\BombController.cs" />
     <Compile Include="Assets\@Scripts\UI\Scene\UI_GameScene.cs" />
@@ -176,7 +176,7 @@
     <Compile Include="Assets\@Scripts\UI\Popup\UI_MergeAllResultPopup.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_TotalDamagePopup.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\CustomSceneManager.cs" />
-    <Compile Include="Assets\@Scripts\UI\UI_MissionItem.cs" />
+    <Compile Include="Assets\@Scripts\Manager\Contents\AchievementManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

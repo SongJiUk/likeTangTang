@@ -222,6 +222,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
+  - m_GUID: 26aa75d8ef652d34c8b3baaf6fe47c72
+    m_Address: UI_AchievementItem
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: c564f965d312e384b8e816c8220069d2
+    m_Address: UI_BeginnerSupportRewardPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

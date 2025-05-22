@@ -542,5 +542,32 @@ namespace Data
         }
     }
 
+    [Serializable]
+    public class AchievementData
+    {
+        public int AchievementID;
+        public string DescriptionTextID;
+        public Define.MissionTarget MissionTarget;
+        public int MissionTargetValue;
+        public int ClearRewardItemID;
+        public int RewardValue;
+        public bool IsCompleted;
+        public bool IsRewarded;
+    }
 
+
+    public class AchievementDataLoader : ILoader<int, AchievementData>
+    {
+        public List<AchievementData> list = new List<AchievementData>();
+
+        public Dictionary<int, AchievementData> MakeDict()
+        {
+            Dictionary<int, AchievementData> dic = new Dictionary<int, AchievementData>();
+
+            foreach (AchievementData data in list)
+                dic.Add(data.AchievementID, data);
+
+            return dic;
+        }
+    }
 }
