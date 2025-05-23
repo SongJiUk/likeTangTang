@@ -98,7 +98,9 @@ namespace Data
     public class CreatureData
     {
         public int DataID;
-        public string DescriptionID;
+        public string Name;
+        public string NameKR;
+        public string Description;
         public string prefabName;
         public Define.ObjectType Type;
         public float MaxHp;

@@ -328,7 +328,9 @@ public class DataTransformer : EditorWindow
             int i = 0;
             CreatureData cd = new CreatureData();
             cd.DataID = ConvertValue<int>(row[i++]);
-            cd.DescriptionID = ConvertValue<string>(row[i++]);
+            cd.Name = ConvertValue<string>(row[i++]);
+            cd.NameKR = ConvertValue<string>(row[i++]);
+            cd.Description = ConvertValue<string>(row[i++]);
             cd.prefabName = ConvertValue<string>(row[i++]);
             cd.Type = ConvertValue<ObjectType>(row[i++]);
             cd.MaxHp = ConvertValue<float>(row[i++]);

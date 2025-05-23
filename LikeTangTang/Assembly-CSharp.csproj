@@ -65,6 +65,7 @@
     <Compile Include="Assets\@Scripts\Manager\Contents\ObjectManager.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\TimeStopBombZone.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_MissionPopup.cs" />
+    <Compile Include="Assets\@Scripts\Manager\Contents\AchievementManager.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\Repeat\RepeatSkill.cs" />
     <Compile Include="Assets\@Scripts\Controllers\DropItem\MagnetController.cs" />
     <Compile Include="Assets\@Scripts\UI\UI_ParticlePlay.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Assets\@Scripts\Controllers\BossController.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\ElectronicField.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_BuyItemPopup.cs" />
+    <Compile Include="Assets\@Scripts\UI\UI_StageInfoItem.cs" />
     <Compile Include="Assets\@Scripts\Utils\Define.cs" />
     <Compile Include="Assets\@Scripts\Utils\Utils.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_EquipmentPopup.cs" />
@@ -176,8 +178,6 @@
     <Compile Include="Assets\@Scripts\UI\Popup\UI_MergeAllResultPopup.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_TotalDamagePopup.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\CustomSceneManager.cs" />
-    <Compile Include="Assets\@Scripts\Manager\Contents\AchievementManager.cs" />
-    <Compile Include="Assets\@Scripts\UI\UI_StageInfoItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
