@@ -572,4 +572,30 @@ namespace Data
             return dic;
         }
     }
+
+    [Serializable]
+    public class OfflineRewardData
+    {
+        public int StageIndex;
+        public int Reward_Gold;
+        public int Reward_Exp;
+        public int FastReward_Scroll;
+        public int FastReward_Box;
+    }
+
+    public class OfflineRewardDataLoader : ILoader<int, OfflineRewardData>
+    {
+        public List<OfflineRewardData> list = new List<OfflineRewardData>();
+
+        public Dictionary<int, OfflineRewardData> MakeDict()
+        {
+            Dictionary<int, OfflineRewardData> dic = new Dictionary<int, OfflineRewardData>();
+
+            foreach (OfflineRewardData data in list)
+                dic.Add(data.StageIndex, data);
+
+            return dic;
+        }
+    }
+
 }

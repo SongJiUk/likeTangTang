@@ -46,6 +46,44 @@ public class TimeManager : MonoBehaviour
 
         }
     }
+    DateTime lastRewardTime;
+    public DateTime LastRewardTime
+    {
+        get
+        {
+            if(lastRewardTime == default(DateTime))
+            {
+                string savedTimeStr = PlayerPrefs.GetString("LastRewardTime", string.Empty);
+                if (!string.IsNullOrEmpty(savedTimeStr))
+                    lastRewardTime = DateTime.Parse(savedTimeStr);
+                else
+                    lastRewardTime = DateTime.Now;
+            }
+
+            return lastRewardTime;
+        }
+
+        set
+        {
+            lastRewardTime = value;
+            string timeStr = value.ToString();
+            PlayerPrefs.SetString("LastRewardTime", timeStr);
+            PlayerPrefs.Save();
+        }
+    }
+
+    public TimeSpan TimeSinceLastReward
+    {
+        get
+        {
+            TimeSpan timeSpan = DateTime.Now - LastRewardTime;
+            if (timeSpan > TimeSpan.FromHours(24))
+                return TimeSpan.FromHours(24);
+
+            return timeSpan;
+        }
+    }
+
     public float StaminaTime
     {
         get
@@ -80,6 +118,8 @@ public class TimeManager : MonoBehaviour
         }
 
     }
+
+    
     public void Init()
     {
         TimeStart();
@@ -197,5 +237,11 @@ public class TimeManager : MonoBehaviour
             return true;
         else
             return false;
+    }
+
+    public float CalculateGoldPerMinute(float _goldPerHour)
+    {
+        float goldPerMinute = _goldPerHour / 60f * (int)TimeSinceLastReward.TotalMinutes;
+        return goldPerMinute;
     }
 }

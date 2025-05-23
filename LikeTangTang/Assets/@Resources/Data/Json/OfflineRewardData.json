@@ -1,0 +1,39 @@
+{
+  "list": [
+    {
+      "StageIndex": 1,
+      "Reward_Gold": 3000,
+      "Reward_Exp": 1200,
+      "FastReward_Scroll": 1,
+      "FastReward_Box": 1
+    },
+    {
+      "StageIndex": 2,
+      "Reward_Gold": 3300,
+      "Reward_Exp": 1320,
+      "FastReward_Scroll": 1,
+      "FastReward_Box": 1
+    },
+    {
+      "StageIndex": 3,
+      "Reward_Gold": 3600,
+      "Reward_Exp": 1440,
+      "FastReward_Scroll": 1,
+      "FastReward_Box": 1
+    },
+    {
+      "StageIndex": 4,
+      "Reward_Gold": 3900,
+      "Reward_Exp": 1560,
+      "FastReward_Scroll": 1,
+      "FastReward_Box": 1
+    },
+    {
+      "StageIndex": 5,
+      "Reward_Gold": 4200,
+      "Reward_Exp": 1680,
+      "FastReward_Scroll": 1,
+      "FastReward_Box": 1
+    }
+  ]
+}

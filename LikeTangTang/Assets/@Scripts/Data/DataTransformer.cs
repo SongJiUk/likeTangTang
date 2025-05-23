@@ -49,7 +49,7 @@ public class DataTransformer : EditorWindow
         ParseMissionData("MissionData");
         ParseAchievementData("AchievementData");
         ParseCheckOutData("AttendanceCheckData");
-        // ParseOfflineRewardData("OfflineReward");
+        ParseOfflineRewardData("OfflineRewardData");
         // ParseBattlePassData("BattlePass");
         // ParseDailyShopData("DailyShop");
         // ParseAccountPassDataData("AccountPass");
@@ -742,40 +742,40 @@ public class DataTransformer : EditorWindow
         AssetDatabase.Refresh();
     }
 
-    //     static void ParseOfflineRewardData(string filename)
-    //     {
-    //         OfflineRewardDataLoader loader = new OfflineRewardDataLoader();
+    static void ParseOfflineRewardData(string filename)
+    {
+        OfflineRewardDataLoader loader = new OfflineRewardDataLoader();
 
-    //         #region ExcelData
-    //         string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/Excel/{filename}Data.csv").Split("\n");
+        #region ExcelData
+        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/CSV/{filename}.csv").Split("\n");
 
-    //         for (int y = 1; y < lines.Length; y++)
-    //         {
-    //             string[] row = lines[y].Replace("\r", "").Split(',');
+        for (int y = 1; y < lines.Length; y++)
+        {
+            string[] row = lines[y].Replace("\r", "").Split(',');
 
-    //             if (row.Length == 0)
-    //                 continue;
-    //             if (string.IsNullOrEmpty(row[0]))
-    //                 continue;
+            if (row.Length == 0)
+                continue;
+            if (string.IsNullOrEmpty(row[0]))
+                continue;
 
-    //             int i = 0;
-    //             OfflineRewardData ofr = new OfflineRewardData();
-    //             ofr.StageIndex = ConvertValue<int>(row[i++]);
-    //             ofr.Reward_Gold = ConvertValue<int>(row[i++]);
-    //             ofr.Reward_Exp = ConvertValue<int>(row[i++]);
-    //             ofr.FastReward_Scroll = ConvertValue<int>(row[i++]);
-    //             ofr.FastReward_Box = ConvertValue<int>(row[i++]);
+            int i = 0;
+            OfflineRewardData ofr = new OfflineRewardData();
+            ofr.StageIndex = ConvertValue<int>(row[i++]);
+            ofr.Reward_Gold = ConvertValue<int>(row[i++]);
+            ofr.Reward_Exp = ConvertValue<int>(row[i++]);
+            ofr.FastReward_Scroll = ConvertValue<int>(row[i++]);
+            ofr.FastReward_Box = ConvertValue<int>(row[i++]);
 
 
-    //             loader.offlines.Add(ofr);
-    //         }
+            loader.list.Add(ofr);
+        }
 
-    //         #endregion
+        #endregion
 
-    //         string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
-    //         File.WriteAllText($"{Application.dataPath}/@Resources/Data/JsonData/{filename}Data.json", jsonStr);
-    //         AssetDatabase.Refresh();
-    //     }
+        string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
+        File.WriteAllText($"{Application.dataPath}/@Resources/Data/Json/{filename}.json", jsonStr);
+        AssetDatabase.Refresh();
+    }
 
     //     static void ParseBattlePassData(string filename)
     //     {

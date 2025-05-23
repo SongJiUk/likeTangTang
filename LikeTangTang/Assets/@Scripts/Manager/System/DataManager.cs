@@ -27,6 +27,7 @@ public class DataManager
     public Dictionary<int, Data.AttendanceCheckData> AttendanceCheckDataDic { get; private set; } = new Dictionary<int, Data.AttendanceCheckData>();
     public Dictionary<int, Data.MissionData> MissionDataDic { get; private set; } = new Dictionary<int, Data.MissionData>();
     public Dictionary<int, Data.AchievementData> AchievementDataDic { get; private set; } = new Dictionary<int, Data.AchievementData>();
+    public Dictionary<int, Data.OfflineRewardData> OfflineRewardDataDic { get; private set; } = new Dictionary<int, Data.OfflineRewardData>();
     
 
 
@@ -47,6 +48,7 @@ public class DataManager
         AttendanceCheckDataDic = LoadJson<Data.AttendanceCheckDataLoader, int, Data.AttendanceCheckData>("AttendanceCheckData.json").MakeDict();
         MissionDataDic = LoadJson<Data.MissionDataLoader, int, Data.MissionData>("MissionData.json").MakeDict();
         AchievementDataDic = LoadJson<Data.AchievementDataLoader, int, Data.AchievementData>("AchievementData.json").MakeDict();
+        OfflineRewardDataDic = LoadJson<Data.OfflineRewardDataLoader, int, Data.OfflineRewardData>("OfflineRewardData.json").MakeDict();
     }
 
     Loader LoadJson<Loader, key, value>(string _path) where Loader : ILoader<key, value>
