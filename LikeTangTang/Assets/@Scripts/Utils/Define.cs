@@ -35,6 +35,7 @@ public static class Define
     public static int ID_HelmetScroll = 61003;
     public static int ID_ArmorScroll = 61004;
     public static int ID_BootsScroll = 61005;
+    public static int ID_RandomScroll = 63000;
     public static int ID_BORONZE_KEY = 62000;
     public static int ID_SILVER_KEY = 62001;
     public static int ID_GOLD_KEY = 62002;

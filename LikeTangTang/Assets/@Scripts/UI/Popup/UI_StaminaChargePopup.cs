@@ -69,7 +69,7 @@ public class UI_StaminaChargePopup : UI_Popup
 
     void Refresh()
     {
-        GetText(TextsType, (int)Texts.HaveStaminaValueText).text = $"+ 1";
+        GetText(TextsType, (int)Texts.HaveStaminaValueText).text = $"+ 5";
         GetText(TextsType, (int)Texts.ADRemainingValueText).text = $"오늘 남은 횟수 : {Manager.GameM.StaminaCountAds}";
         GetText(TextsType, (int)Texts.DiaRemainingValueText).text = $"오늘 남은 횟수 : {Manager.GameM.RemainBuyStaminaForDia}";
     }

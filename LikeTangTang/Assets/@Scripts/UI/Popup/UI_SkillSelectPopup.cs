@@ -145,7 +145,7 @@ public class UI_SkillSelectPopup : UI_Popup
     void PopulateCardItem()
     {
         GameObject cont = GetObject(typeof(GameObjects), (int)GameObjects.SkillCardSelectListObject);
-        cont.DestoryChilds();
+        cont.DestroyChilds();
         //ist<SkillBase> skillList = gm.player.Skills.Test();
         List<object> skillList = gm.player.Skills.GetSkills();
 

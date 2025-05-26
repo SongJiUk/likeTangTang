@@ -59,7 +59,8 @@ public class UI_OfflineRewardPopup : UI_Popup
         GetButton(ButtonsType, (int)Buttons.BackgroundButton).gameObject.BindEvent(OnClickBackgroundButton);
         GetButton(ButtonsType, (int)Buttons.FastRewardButton).gameObject.BindEvent(OnClickFastRewardButton);
         GetButton(ButtonsType, (int)Buttons.ClaimButton).gameObject.BindEvent(OnClickClaimButton);
-        
+        GetObject(gameObjectsType, (int)GameObjects.OfflineRewardGoldEffect).SetActive(false);
+
         Refresh();
         StartCoroutine(CoTimeCheck());
         
@@ -116,7 +117,6 @@ public class UI_OfflineRewardPopup : UI_Popup
             {
                 GetText(TextsType, (int)Texts.ClaimButtonText).text = "받기";
                 GetButton(ButtonsType, (int)Buttons.ClaimButton).GetComponent<Image>().color = Utils.HexToColor("50D500");
-                Refresh();
             }
             yield return new WaitForSeconds(1);
         }
@@ -125,16 +125,32 @@ public class UI_OfflineRewardPopup : UI_Popup
 
     void OnClickBackgroundButton()
     {
-
+        Manager.UiM.ClosePopup(this);
     }
 
     void OnClickFastRewardButton()
     {
-
+        Manager.SoundM.PlayButtonClick();
+        if(Manager.DataM.OfflineRewardDataDic.TryGetValue(Manager.GameM.GetMaxStageIndex(), out Data.OfflineRewardData data))
+        {
+            UI_FastRewardPopup popup = Manager.UiM.ShowPopup<UI_FastRewardPopup>();
+            popup.SetInfo(data);
+        }
     }
 
     void OnClickClaimButton()
     {
+        Manager.SoundM.PlayButtonClick();
 
+        if (Manager.TimeM.TimeSinceLastReward.TotalMinutes < 10) return;
+
+        if(Manager.DataM.OfflineRewardDataDic.TryGetValue(Manager.GameM.GetMaxStageIndex(), out Data.OfflineRewardData data))
+        {
+            GetObject(gameObjectsType, (int)GameObjects.OfflineRewardGoldEffect).SetActive(true);
+            Manager.TimeM.GiveOfflioneReward(data);
+        }
+
+        Refresh();
+        Manager.UiM.ClosePopup(this);
     }
 }

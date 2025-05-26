@@ -218,7 +218,6 @@ public class GameScene : BaseScene, ITickable
 
         Manager.GameM.isGameEnd = true;
         UI_GameResultPopup rp = Manager.UiM.ShowPopup<UI_GameResultPopup>();
-        rp.Init();
         rp.SetInfo();
     }
     float lastSecond =- 1f;

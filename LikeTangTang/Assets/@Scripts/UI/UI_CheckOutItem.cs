@@ -89,7 +89,7 @@ public class UI_CheckOutItem : UI_Base
                 Queue<int> count = new ();
 
                 name.Enqueue(Manager.DataM.MaterialDic[matID].SpriteName);
-                count.Enqueue(Manager.DataM.AttendanceCheckDataDic[tenDayCount].RewardItemValue);
+                count.Enqueue(Manager.DataM.AttendanceCheckDataDic[num].RewardItemValue);
 
 
                 UI_RewardPopup popup =  (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;

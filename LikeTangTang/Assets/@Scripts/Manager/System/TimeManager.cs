@@ -116,10 +116,73 @@ public class TimeManager : MonoBehaviour
             PlayerPrefs.SetString("LastGeneratedStaminaTime", timeStr);
             PlayerPrefs.Save();
         }
-
     }
 
-    
+    public DateTime LastAttendanceResetDate
+    {
+        get
+        {
+            string savedTime = PlayerPrefs.GetString("LastAttendanceResetDate", string.Empty);
+            if (!string.IsNullOrEmpty(savedTime))
+                return DateTime.Parse(savedTime);
+            else
+                return DateTime.Now;
+        }
+
+        set
+        {
+            string timeStr = value.ToString();
+            PlayerPrefs.SetString("LastAttendanceResetDate", timeStr);
+            PlayerPrefs.Save();
+        }
+    }
+
+    public void GiveOfflioneReward(Data.OfflineRewardData _offlineRewardData)
+    {
+        Queue<string> name = new();
+        Queue<int> count = new();
+        int gold = (int)CalculateGoldPerMinute(_offlineRewardData.Reward_Gold);
+
+        name.Enqueue(Manager.DataM.MaterialDic[Define.ID_GOLD].SpriteName);
+        count.Enqueue(gold);
+
+        Manager.GameM.Gold += gold;
+        LastRewardTime = DateTime.Now;
+        if (Manager.GameM.MissionDic.TryGetValue(Define.MissionTarget.OfflineRewardGet, out MissionInfo info)) info.Progress++;
+        Manager.GameM.OfflineRewardGetCount++;
+
+        UI_RewardPopup popup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
+        popup.gameObject.SetActive(true);
+        popup.SetInfo(name, count);
+    }
+
+    public void GiveFastOfflioneReward(Data.OfflineRewardData _offlineRewardData)
+    {
+        Queue<string> name = new();
+        Queue<int> count = new();
+        int gold = _offlineRewardData.Reward_Gold * 5;
+
+        name.Enqueue(Manager.DataM.MaterialDic[Define.ID_GOLD].SpriteName);
+        count.Enqueue(gold);
+        name.Enqueue(Manager.DataM.MaterialDic[Define.ID_RandomScroll].SpriteName);
+        count.Enqueue(_offlineRewardData.FastReward_Scroll);
+        name.Enqueue(Manager.DataM.MaterialDic[Define.ID_SILVER_KEY].SpriteName);
+        count.Enqueue(_offlineRewardData.FastReward_Scroll);
+
+        if (Manager.GameM.MissionDic.TryGetValue(Define.MissionTarget.FastOfflineRewardGet, out MissionInfo info)) info.Progress++;
+        Manager.GameM.FastOfflineRewardGetCount++;
+
+        UI_RewardPopup popup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
+        popup.gameObject.SetActive(true);
+
+        Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_GOLD], gold);
+        Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_RandomScroll], _offlineRewardData.FastReward_Scroll);
+        Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_SILVER_KEY], _offlineRewardData.FastReward_Scroll);
+
+        popup.SetInfo(name, count);
+    }
+
+
     public void Init()
     {
         TimeStart();
@@ -168,7 +231,7 @@ public class TimeManager : MonoBehaviour
         }
     }
 
-    public void RechargetStamina(int _count = 1)
+    public void RechargetStamina(int _count = 5)
     {
         if(Manager.GameM.Stamina < Define.MAX_STAMINA)
         {

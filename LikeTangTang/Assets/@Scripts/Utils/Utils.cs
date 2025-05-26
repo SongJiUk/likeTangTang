@@ -152,7 +152,7 @@ public static class Utils
         return closestMC;
     }
 
-    public static void DestoryChilds(this GameObject _go)
+    public static void DestroyChilds(this GameObject _go)
     {
         Transform[] children = new Transform[_go.transform.childCount];
 

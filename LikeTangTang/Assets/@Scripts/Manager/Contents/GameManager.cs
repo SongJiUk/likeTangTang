@@ -208,6 +208,19 @@ public class GameManager
         get { return gameData.RemainBuyStaminaForDia; }
         set { gameData.RemainBuyStaminaForDia = value; }
     }
+
+    public int FastRewardCountAd
+    {
+        get { return gameData.FastRewardCountAd; }
+        set { gameData.FastRewardCountAd = value; }
+    }
+
+    public int FastRewardCountStamina
+    {
+        get { return gameData.FastRewardCountStamina; }
+        set { gameData.FastRewardCountStamina = value; }
+    }
+
     public int UserLevel
     {
         get { return gameData.userLevel; }
@@ -389,6 +402,9 @@ public class GameManager
             };
             gameData.StageClearInfoDic.Add(stage.StageIndex, info);
         }
+
+        Manager.TimeM.LastRewardTime = DateTime.Now;
+        Manager.TimeM.LastGeneratedStaminaTime = DateTime.Now;
 
         Manager.AchievementM.Init();
 

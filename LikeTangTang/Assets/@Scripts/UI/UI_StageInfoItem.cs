@@ -189,13 +189,22 @@ public class UI_StageInfoItem : UI_Base
 
     void SetRewardUI(StageClearInfoData _info)
     {
-        GetObject(gameObjectsType, (int)GameObjects.FirstClearRewardCompleteObject).SetActive(false);
-        GetObject(gameObjectsType, (int)GameObjects.SecondClearRewardCompleteObject).SetActive(false);
-        GetObject(gameObjectsType, (int)GameObjects.ThirdClearRewardCompleteObject).SetActive(false);
+        GetObject(gameObjectsType, (int)GameObjects.FirstClearRewardCompleteObject).SetActive(_info.isOpenFirstBox);
+        GetObject(gameObjectsType, (int)GameObjects.SecondClearRewardCompleteObject).SetActive(_info.isOpenSecondBox);
+        GetObject(gameObjectsType, (int)GameObjects.ThirdClearRewardCompleteObject).SetActive(_info.isOpenThirdBox);
 
-        GetObject(gameObjectsType, (int)GameObjects.FirstClearRewardLockObject).SetActive(_info.isOpenFirstBox);
-        GetObject(gameObjectsType, (int)GameObjects.SecondClearRewardLockObject).SetActive(_info.isOpenSecondBox);
-        GetObject(gameObjectsType, (int)GameObjects.ThirdClearRewardLockObject).SetActive(_info.isOpenThirdBox);
+        if(_info.isClear)
+        {
+            GetObject(gameObjectsType, (int)GameObjects.FirstClearRewardLockObject).SetActive(false);
+            GetObject(gameObjectsType, (int)GameObjects.SecondClearRewardLockObject).SetActive(false);
+            GetObject(gameObjectsType, (int)GameObjects.ThirdClearRewardLockObject).SetActive(false);
+        }
+        else
+        {
+            GetObject(gameObjectsType, (int)GameObjects.FirstClearRewardLockObject).SetActive(!_info.isOpenFirstBox);
+            GetObject(gameObjectsType, (int)GameObjects.SecondClearRewardLockObject).SetActive(!_info.isOpenSecondBox);
+            GetObject(gameObjectsType, (int)GameObjects.ThirdClearRewardLockObject).SetActive(!_info.isOpenThirdBox);
+        }
     }
 
 }

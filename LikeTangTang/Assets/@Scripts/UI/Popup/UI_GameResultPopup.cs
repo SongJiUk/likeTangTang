@@ -32,8 +32,11 @@ public class UI_GameResultPopup : UI_Popup
         StatisticsButton,
         ConfirmButton
     }
-  
 
+    private void Awake()
+    {
+        Init();
+    }
     public override bool Init()
     {
         if (base.Init() == false) return false;
@@ -73,13 +76,22 @@ public class UI_GameResultPopup : UI_Popup
     // [ ] : 씬이동, 랭킹
     public void OnClickStatisticsButton()
     {
-        Debug.Log("Click Statistics Button");
+
     }
 
     public void OnClickConfirmButton()
     {
-        Debug.Log("Click Confirm Button");
-        Time.timeScale = 1f;
-        Manager.UiM.ClosePopup();
+        Manager.SoundM.PlayButtonClick();
+        StageClearInfoData info;
+
+        if(Manager.GameM.StageClearInfoDic.TryGetValue(Manager.GameM.CurrentStageData.StageIndex, out info))
+        {
+            info.MaxWaveIndex = Manager.GameM.CurrentWaveIndex;
+            info.isClear = true;
+            Manager.GameM.StageClearInfoDic[Manager.GameM.CurrentStageData.StageIndex] = info;
+        }
+        Manager.GameM.ClearContinueData();
+        Manager.GameM.SetNextStage();
+        Manager.SceneM.LoadScene(Define.SceneType.LobbyScene, transform);
     }
 }

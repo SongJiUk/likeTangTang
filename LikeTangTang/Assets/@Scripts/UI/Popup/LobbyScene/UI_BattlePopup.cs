@@ -374,17 +374,90 @@ public class UI_BattlePopup : UI_Popup
     void OnClickFirstClearRewardButton()
     {
         Manager.SoundM.PlayButtonClick();
+        if (boxes[0].state != RewardBoxState.RedDot) return;
+
+        if (Manager.GameM.StageClearInfoDic.ContainsKey(currentStageData.StageIndex))
+        {
+            Manager.GameM.StageClearInfoDic[currentStageData.StageIndex].isOpenFirstBox = true;
+            SetBoxState(0, RewardBoxState.Complete);
+
+            Queue<string> name = new();
+            Queue<int> count = new();
+
+            int itemID = currentStageData.FirstWaveClearRewardItemID;
+            if (Manager.DataM.MaterialDic.TryGetValue(itemID, out Data.MaterialData data))
+            {
+                name.Enqueue(data.SpriteName);
+                count.Enqueue(currentStageData.FirstWaveClearRewardItemValue);
+
+                UI_RewardPopup popup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
+                popup.gameObject.SetActive(true);
+
+                Manager.GameM.ExchangeMaterial(data, currentStageData.FirstWaveClearRewardItemValue);
+                popup.SetInfo(name, count);
+
+            }
+        }
 
     }
 
     void OnClickSecondClearRewardButton()
     {
         Manager.SoundM.PlayButtonClick();
+        if (boxes[1].state != RewardBoxState.RedDot) return;
+
+        if(Manager.GameM.StageClearInfoDic.ContainsKey(currentStageData.StageIndex))
+        {
+            Manager.GameM.StageClearInfoDic[currentStageData.StageIndex].isOpenSecondBox = true;
+            SetBoxState(1, RewardBoxState.Complete);
+
+            Queue<string> name = new();
+            Queue<int> count = new();
+
+            int itemID = currentStageData.SecondWaveClearRewardItemID;
+            if(Manager.DataM.MaterialDic.TryGetValue(itemID, out Data.MaterialData data))
+            {
+                name.Enqueue(data.SpriteName);
+                count.Enqueue(currentStageData.SecondWaveClearRewardItemValue);
+
+                UI_RewardPopup popup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
+                popup.gameObject.SetActive(true);
+
+                Manager.GameM.ExchangeMaterial(data, currentStageData.SecondWaveClearRewardItemValue);
+                popup.SetInfo(name, count);
+
+            }
+        }
     }
 
     void OnClickThirdClearRewardButton()
     {
         Manager.SoundM.PlayButtonClick();
+        if (boxes[2].state != RewardBoxState.RedDot) return;
+
+        if (Manager.GameM.StageClearInfoDic.ContainsKey(currentStageData.StageIndex))
+        {
+            Manager.GameM.StageClearInfoDic[currentStageData.StageIndex].isOpenThirdBox = true;
+            SetBoxState(2, RewardBoxState.Complete);
+
+            Queue<string> name = new();
+            Queue<int> count = new();
+
+            int itemID = currentStageData.ThirdWaveClearRewardItemID;
+            if (Manager.DataM.MaterialDic.TryGetValue(itemID, out Data.MaterialData data))
+            {
+                name.Enqueue(data.SpriteName);
+                count.Enqueue(currentStageData.ThirdWaveClearRewardItemValue);
+
+                UI_RewardPopup popup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
+                popup.gameObject.SetActive(true);
+
+                Manager.GameM.ExchangeMaterial(data, currentStageData.ThirdWaveClearRewardItemValue);
+                popup.SetInfo(name, count);
+
+            }
+        }
+
     }
 
     void OnClickGameStartButton()

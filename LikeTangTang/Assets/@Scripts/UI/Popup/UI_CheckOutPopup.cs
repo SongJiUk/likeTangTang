@@ -82,9 +82,11 @@ public class UI_CheckOutPopup : UI_Popup
 
         monthlyCount = userCheckOutDay % DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
         
-        if(monthlyCount == 0)
+        //초기화 데이
+        if(Manager.TimeM.LastAttendanceResetDate != DateTime.Today &&  DateTime.Now.Day == 1)
         {
-            for(int i =0; i<Manager.GameM.AttendanceReceived.Length; i++)
+            Manager.TimeM.LastAttendanceResetDate = DateTime.Today;
+            for (int i = 0; i < Manager.GameM.AttendanceReceived.Length; i++)
             {
                 Manager.GameM.AttendanceReceived[i] = false;
             }
@@ -93,15 +95,17 @@ public class UI_CheckOutPopup : UI_Popup
             Manager.TimeM.AttendanceDay = userCheckOutDay;
         }
 
-        dailyCount = userCheckOutDay % 10;
+        dailyCount = (userCheckOutDay - 1) % 10 + 1;
 
         if (dailyCount == 0)
             dailyCount = 10;
 
 
-        Transform parent = GetObject(gameObjectsType, (int)GameObjects.CheckOutBoardObject).transform;
-        makeItemParent = parent;
 
+        GetObject(gameObjectsType, (int)GameObjects.CheckOutBoardObject).DestroyChilds(); 
+         Transform parent = GetObject(gameObjectsType, (int)GameObjects.CheckOutBoardObject).transform;
+        makeItemParent = parent;
+            
 
         for(int count = 1; count <=10; count++)
         {
@@ -111,21 +115,12 @@ public class UI_CheckOutPopup : UI_Popup
             item.SetInfo(userCheckOutDay, count, dailyCount >= count);
         }
 
-        if(monthlyCount >= 10 && monthlyCount < 20)
+        if (monthlyCount >= 15)
             GetObject(gameObjectsType, (int)GameObjects.FirstClearRewardCompleteObject).gameObject.SetActive(true);
-        else if(monthlyCount >=20 && monthlyCount <30)
-        {
-            GetObject(gameObjectsType, (int)GameObjects.FirstClearRewardCompleteObject).gameObject.SetActive(true);
+        if (monthlyCount >= 20)
             GetObject(gameObjectsType, (int)GameObjects.SecondClearRewardCompleteObject).gameObject.SetActive(true);
-        }
-        else if(monthlyCount >= 30)
-        {
+        if (monthlyCount >= 30)
             GetObject(gameObjectsType, (int)GameObjects.ThirdClearRewardCompleteObject).gameObject.SetActive(true);
-            GetObject(gameObjectsType, (int)GameObjects.FirstClearRewardCompleteObject).gameObject.SetActive(true);
-            GetObject(gameObjectsType, (int)GameObjects.SecondClearRewardCompleteObject).gameObject.SetActive(true);
-        }
-            
-
 
         GetText(TextsType, (int)Texts.DaysCountText).text = $"{monthlyCount}일";
         GetSlider(SlidersType, (int)Sliders.CheckOutProgressSliderObject).value = monthlyCount;
