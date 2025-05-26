@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 96921124}
   - component: {fileID: 96921125}
   m_Layer: 0
-  m_Name: OrbitalBlades
+  m_Name: Weapon_OrbitalBlades
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 230640611}
   - component: {fileID: 230640612}
   m_Layer: 0
-  m_Name: ElectronicField
+  m_Name: Weapon_ElectronicField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 467840712}
   - component: {fileID: 467840713}
   m_Layer: 0
-  m_Name: PlasmaSpinner
+  m_Name: Weapon_PlasmaSpinner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 807975510}
   - component: {fileID: 807975511}
   m_Layer: 0
-  m_Name: GravityBomb
+  m_Name: Weapon_GravityBomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 880883072}
   - component: {fileID: 880883073}
   m_Layer: 0
-  m_Name: SpectralSlash
+  m_Name: Weapon_SpectralSlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 1043513283}
   - component: {fileID: 1043513284}
   m_Layer: 0
-  m_Name: EnergyRing
+  m_Name: Weapon_EnergyRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -515,7 +515,7 @@ GameObject:
   - component: {fileID: 1064977289}
   - component: {fileID: 1064977290}
   m_Layer: 0
-  m_Name: ElectricShock
+  m_Name: Weapon_ElectricShock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -599,7 +599,7 @@ GameObject:
   - component: {fileID: 1231864833}
   - component: {fileID: 1231864834}
   m_Layer: 0
-  m_Name: PlasmaShot
+  m_Name: Weapon_PlasmaShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -683,7 +683,7 @@ GameObject:
   - component: {fileID: 1958342352}
   - component: {fileID: 1958342353}
   m_Layer: 0
-  m_Name: SuicideDrone
+  m_Name: Weapon_SuicideDrone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -767,7 +767,7 @@ GameObject:
   - component: {fileID: 2141834240}
   - component: {fileID: 2141834241}
   m_Layer: 0
-  m_Name: TimeStopBomb
+  m_Name: Weapon_TimeStopBomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1081,8 +1081,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creatureData:
     DataID: 0
-    DescriptionID: 
+    Name: 
+    NameKR: 
+    Description: 
     prefabName: 
+    Type: 0
     MaxHp: 0
     MaxHpUpForIncreasStage: 0
     Attack: 0
@@ -1097,6 +1100,8 @@ MonoBehaviour:
     CreatureAnimName: 
     SkillTypeList: 
     EvolutionTypeList: 
+  DefaultMat: {fileID: 0}
+  HitEffectmat: {fileID: 0}
   standard: {fileID: 3221486345780909004}
   firePos: {fileID: 6513942791621251143}
   WeaponHolder: {fileID: 7141319909557381858}
@@ -1288,6 +1293,10 @@ PrefabInstance:
     - target: {fileID: 8893253925310174185, guid: c742de94ae91c4f25882d7a6c8b98ca4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8893253925310174186, guid: c742de94ae91c4f25882d7a6c8b98ca4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 8893253925310174189, guid: c742de94ae91c4f25882d7a6c8b98ca4, type: 3}
       propertyPath: m_Name

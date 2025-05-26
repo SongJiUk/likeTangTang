@@ -63,6 +63,7 @@ public class UI_TitleScene : UI_Scene
                 Manager.DataM.Init();
                 Manager.GameM.Init();
                 Manager.TimeM.Init();
+                Manager.AdM.Init();
                 
                 StartAnim();
             }

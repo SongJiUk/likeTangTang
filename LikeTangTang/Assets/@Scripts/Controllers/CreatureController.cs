@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Data;
 using UnityEngine;
 using static Define;
@@ -57,9 +58,13 @@ public class CreatureController : BaseController, ITickable
 
     // 데미지 애니메이션
     protected bool isStartDamageAnim = false;
+
+    public Material DefaultMat;
+    public Material HitEffectmat;
     protected float damageAnimEndTime = -1f;
 
     public SkillComponent Skills { get; protected set; }
+
 
     #endregion
 
@@ -80,9 +85,11 @@ public class CreatureController : BaseController, ITickable
         return true;
     }
 
+    public virtual void Healing(float _healAmount, bool _isEffect = true) { }
+
     public virtual void SetInfo(int _dataID)
     {
-        
+
 
         DataID = _dataID;
         creatureData = Manager.DataM.CreatureDic[_dataID];
@@ -117,7 +124,7 @@ public class CreatureController : BaseController, ITickable
         Equipment item;
         Manager.GameM.EquipedEquipments.TryGetValue(EquipmentType.Weapon, out item);
 
-        if(item != null)
+        if (item != null)
         {
 
             //weaponName = item.EquipmentData.NameTextID;
@@ -125,7 +132,7 @@ public class CreatureController : BaseController, ITickable
         foreach (int skillID in creatureData.SkillTypeList)
         {
 
-            if(Manager.DataM.SkillDic.TryGetValue(skillID, out var data))
+            if (Manager.DataM.SkillDic.TryGetValue(skillID, out var data))
             {
                 if (data.SkillType != SkillType.None)
                     Skills.AddSkill(data.SkillType, skillID);
@@ -169,7 +176,7 @@ public class CreatureController : BaseController, ITickable
 
         Hp -= _damage;
 
-        //Manager.ObjectM.ShowFont(transform.position, _damage, 0, transform, isCritical);
+        Manager.ObjectM.ShowFont(transform.position, _damage, 0, transform, isCritical);
 
         if (this.IsValid())
             damageAnimEndTime = Time.time + 0.1f;
@@ -214,4 +221,56 @@ public class CreatureController : BaseController, ITickable
     }
 
     #endregion
+
+
+    IEnumerator CoPlayDamageAnim()
+    {
+        if (!isStartDamageAnim)
+        {
+            isStartDamageAnim = true;
+            DefaultMat = Manager.ResourceM.Load<Material>("CreatureDefaultMat");
+            HitEffectmat = Manager.ResourceM.Load<Material>("PaintWhite");
+
+            CreatureSprite.material = HitEffectmat;
+            yield return new WaitForSeconds(0.1f);
+            CreatureSprite.material = DefaultMat;
+
+            if (Hp <= 0)
+            {
+                transform.localScale = Vector3.one;
+                switch (objType)
+                {
+                    case ObjectType.Player:
+                        SpecialSkillData resurrection = Skills.SpecialSkills.FirstOrDefault(x => x.SpecialSkillName == SpecialSkillName.Resurrection);
+
+                        if (resurrection == null) OnDead();
+                        else
+                        {
+                            Resurrection(resurrection.HealingBouns, resurrection.MoveSpeedBonus, resurrection.AttackBonus);
+                            Skills.SpecialSkills.Remove(resurrection);
+                            //Skills.OnSkillBookChanged();
+                        }
+                        break;
+
+                    default:
+                        OnDead();
+                        break;
+                }
+
+            }
+            isStartDamageAnim = false;
+
+        }
+    }
+
+    public void Resurrection(float _healRate, float _moveSpeed = 0, float _attackRate = 0)
+    {
+        Healing(_healRate, false);
+        Manager.ResourceM.Instantiate("Revival", transform);
+        SpeedRate += _moveSpeed;
+        AttackRate += _attackRate;
+        UpdatePlayerStat();
+        Manager.ObjectM.KillAllMonsters();
+    }
+
 }

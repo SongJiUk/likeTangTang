@@ -9,6 +9,10 @@ using DG.Tweening;
 
 public class UI_GameScene : UI_Scene
 {
+    enum GameObjects
+    {
+        WhiteFlash,
+    }
     public enum Texts
     {
         KillValueText,
@@ -34,10 +38,12 @@ public class UI_GameScene : UI_Scene
         TextsType = typeof(Texts);
         ButtonsType = typeof(Buttons);
         SlidersType = typeof(Sliders);
+        gameObjectsType = typeof(GameObjects);
 
         BindText(TextsType);
         BindButton(ButtonsType);
         BindSlider(SlidersType);
+        BindObject(gameObjectsType);
 
         GetButton(ButtonsType, (int)Buttons.PauseButton).gameObject.BindEvent(OnClickPauseButton);
 
@@ -114,7 +120,9 @@ public class UI_GameScene : UI_Scene
         Color color = Color.white;
         yield return null;
 
-        //DOTween.Sequence().Append(GetObject(int)gameObjects.WhiteFlash)
+        DOTween.Sequence().Append(GetObject(gameObjectsType, (int)GameObjects.WhiteFlash).GetComponent<Image>().DOFade(1, 0.1f))
+        .Append(GetObject(gameObjectsType, (int)GameObjects.WhiteFlash).GetComponent<Image>().DOFade(0, 0.2f)).OnComplete(() => { });
+
     }
 
     void OnClickPauseButton()

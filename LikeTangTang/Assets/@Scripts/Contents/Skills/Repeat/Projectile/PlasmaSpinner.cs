@@ -11,6 +11,10 @@ public class PlasmaSpinner : RepeatSkill, ITickable
         Skilltype = Define.SkillType.PlasmaSpinner;
         coolTime = 0f;
     }
+     private void OnDestroy()
+    {
+        Manager.UpdateM.Unregister(this);
+    }
 
     public override void ActivateSkill()
     {

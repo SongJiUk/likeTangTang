@@ -60,6 +60,9 @@ public static class Define
         0.1f
     };
 
+    public static string CRITICAL_DAMANGEFONT = "CriticalDamageFont";
+    public static string DAMAGEFONT = "DamageFont";
+
 
     public enum ItemType
     {

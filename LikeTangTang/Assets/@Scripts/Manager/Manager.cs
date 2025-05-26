@@ -18,11 +18,14 @@ public class Manager : MonoBehaviour
     ObjectManager objectM = new ObjectManager();
     PoolManager poolM = new PoolManager();
     AchievementManager achievementM = new AchievementManager();
+    AdManager adM = new AdManager();
 
     public static GameManager GameM { get { return Instance?.gameM; } }
     public static ObjectManager ObjectM { get { return Instance?.objectM; } }
     public static PoolManager PoolM { get { return Instance?.poolM; } }
     public static AchievementManager AchievementM { get { return Instance?.achievementM; } }
+
+    public static AdManager AdM { get { return Instance?.adM; }}
 
     #endregion
 
@@ -43,7 +46,6 @@ public class Manager : MonoBehaviour
     public static SoundManager SoundM { get { return Instance?.soundM; } }
     public static UIManager UiM { get { return Instance?.uiM; } }
     public static UpdateManager UpdateM {get {return Instance?.updateM;}}
-
     public static TimeManager TimeM {get {return Instance?.timeM;}}
 
     #endregion

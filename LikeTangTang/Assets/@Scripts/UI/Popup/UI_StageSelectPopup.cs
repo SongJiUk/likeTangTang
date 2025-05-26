@@ -35,6 +35,7 @@ public class UI_StageSelectPopup : UI_Popup
     int currentPage = 0;
     int maxPage = 4;
     Action<int> OnSelectionPageChangedEvent;
+    Action OnChangedStageInfoEvent;
     private void Awake()
     {
         Init();
@@ -66,9 +67,11 @@ public class UI_StageSelectPopup : UI_Popup
 
     }
 
-    public void SetInfo(Data.StageData _stageData)
+    public void SetInfo(Data.StageData _stageData, Action _action = null)
     {
         stageData = _stageData;
+        if(_action != null)
+            OnChangedStageInfoEvent = _action;
         Refresh();
     }
 
@@ -164,7 +167,9 @@ public class UI_StageSelectPopup : UI_Popup
     void OnClickStageSelectButton()
     {
         Manager.GameM.CurrentStageData = stageData;
+        OnChangedStageInfoEvent?.Invoke();
         Manager.UiM.ClosePopup(this);
+
     }
 
     void OnClickBackButton()

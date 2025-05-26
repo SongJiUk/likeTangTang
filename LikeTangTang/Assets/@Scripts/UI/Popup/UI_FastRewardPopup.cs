@@ -63,7 +63,7 @@ public class UI_FastRewardPopup : UI_Popup
 
         if(Manager.GameM.Stamina >= 15 && Manager.GameM.FastRewardCountStamina > 0)
         {
-            GetButton(ButtonsType, (int)Buttons.ClaimButton).gameObject.GetComponent<Image>().color = Utils.HexToColor("500500");
+            GetButton(ButtonsType, (int)Buttons.ClaimButton).gameObject.GetComponent<Image>().color = Utils.HexToColor("50D500");
             isClaim = true;
         }
         else
@@ -92,11 +92,14 @@ public class UI_FastRewardPopup : UI_Popup
     {
         Manager.SoundM.PlayButtonClick();
 
-        if(Manager.GameM.FastRewardCountAd > 0)
+        if (Manager.GameM.FastRewardCountAd > 0)
         {
-            Manager.GameM.FastRewardCountAd--;
-            Manager.TimeM.GiveFastOfflioneReward(OfflineRewardData);
-            Manager.UiM.ClosePopup(this);
+            Manager.AdM.ShowRewardedAd(() =>
+            {
+                Manager.GameM.FastRewardCountAd--;
+                Manager.TimeM.GiveFastOfflioneReward(OfflineRewardData);
+                Manager.UiM.ClosePopup(this);
+            });
         }
         else
         {

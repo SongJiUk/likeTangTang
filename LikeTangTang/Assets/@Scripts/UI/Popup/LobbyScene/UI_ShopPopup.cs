@@ -159,11 +159,22 @@ public class UI_ShopPopup : UI_Popup
         Manager.SoundM.PlayButtonClick();
         if(Manager.GameM.SilverKeyCountAds > 0)
         {
-            Manager.GameM.SilverKeyCountAds--;
-            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(Manager.UiM.Root.transform);
-            Manager.DataM.MaterialDic.TryGetValue(Define.ID_SILVER_KEY, out var item);
-            popup.SetInfo(item, 0, 1);
-            popup.OnCompleteBuyItem = Refresh;
+            Manager.AdM.ShowRewardedAd(() =>
+            {
+                UI_RewardPopup Popup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
+                Queue<string> spriteName = new Queue<string>();
+                Queue<int> count = new Queue<int>();
+                spriteName.Enqueue(Manager.DataM.MaterialDic[Define.ID_SILVER_KEY].SpriteName); ;
+                count.Enqueue(1);
+                Popup.SetInfo(spriteName, count);
+                Popup.gameObject.SetActive(true);
+                Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_SILVER_KEY], 1);
+                Manager.GameM.SilverKeyCountAds--;
+                OnCompleteBuyItem?.Invoke();
+
+                Refresh();
+            });
+            
         }
         else
         {
@@ -213,18 +224,20 @@ public class UI_ShopPopup : UI_Popup
     
     void OnClickAdvancedBoxADButton()
     {
-       //TODO : 광고
        Manager.SoundM.PlayButtonClick();
-       if(Manager.GameM.GachaCountAdsAdvanced > 0)
-       {
-            Manager.GameM.GachaCountAdsAdvanced--;
-            DoGaCha(Define.GachaType.AdvancedGacha, 1);
-            Refresh();
-       }
-       else
-       {
+        if (Manager.GameM.GachaCountAdsAdvanced > 0)
+        {
+            Manager.AdM.ShowRewardedAd(() =>
+            {
+                Manager.GameM.GachaCountAdsAdvanced--;
+                DoGaCha(Define.GachaType.AdvancedGacha, 1);
+                Refresh();
+            });
+        }
+        else
+        {
             Manager.UiM.ShowToast("오늘은 무료광고를 모두 시청했습니다.");
-       }
+        }
     }
 
     void OnClickAdvancedBoxOpenButton()
@@ -273,9 +286,12 @@ public class UI_ShopPopup : UI_Popup
         Manager.SoundM.PlayButtonClick();
        if(Manager.GameM.GachaCountAdsCommon > 0)
        {
-            Manager.GameM.GachaCountAdsCommon--;
-            DoGaCha(Define.GachaType.CommonGacha, 1);
-            Refresh();
+            Manager.AdM.ShowRewardedAd(() =>
+            {
+                Manager.GameM.GachaCountAdsCommon--;
+                DoGaCha(Define.GachaType.CommonGacha, 1);
+                Refresh();
+            });
        }
        else
        {
@@ -303,14 +319,32 @@ public class UI_ShopPopup : UI_Popup
     void OnClickFreeGoldADButton()
     {
         Manager.SoundM.PlayButtonClick();
-        if(Manager.GameM.GoldCountAds >0)
-        {   Manager.GameM.GoldCountAds--;
+        if (Manager.GameM.GoldCountAds > 0)
+        {
+            Manager.AdM.ShowRewardedAd(() =>
+            {
+                int goldAmount = 0;
+                if (Manager.DataM.OfflineRewardDataDic.TryGetValue(Manager.GameM.GetMaxStageIndex(), out Data.OfflineRewardData data))
+                {
+                    goldAmount = data.Reward_Gold;
+                }
 
-            //TODO : 광고 람다
-            UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(Manager.UiM.Root.transform);
-            Manager.DataM.MaterialDic.TryGetValue(Define.ID_GOLD, out var item);
-            popup.SetInfo(item, 0, goldAmount);
-            Refresh();
+                UI_RewardPopup Popup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
+
+                Queue<string> spriteName = new Queue<string>();
+                Queue<int> count = new Queue<int>();
+
+                spriteName.Enqueue(Manager.DataM.MaterialDic[Define.ID_GOLD].SpriteName); ;
+                count.Enqueue(goldAmount);
+                Popup.SetInfo(spriteName, count);
+                Popup.gameObject.SetActive(true);
+                OnCompleteBuyItem?.Invoke();
+                Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_GOLD], 1);
+                Manager.GameM.GoldCountAds--;
+
+                Refresh();
+            });
+
         }
         else
         {

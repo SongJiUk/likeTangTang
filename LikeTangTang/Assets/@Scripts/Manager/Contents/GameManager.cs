@@ -279,7 +279,11 @@ public class GameManager
     public StageData CurrentStageData
     {
         get { return gameData.CurrentStageData; }
-        set { gameData.CurrentStageData = value; }
+        set
+        {
+            gameData.CurrentStageData = value;
+            SaveGame();
+         }
     }
     public int CurrentWaveIndex
     {
@@ -402,7 +406,7 @@ public class GameManager
             };
             gameData.StageClearInfoDic.Add(stage.StageIndex, info);
         }
-
+        Manager.GameM.Stamina = MAX_STAMINA;
         Manager.TimeM.LastRewardTime = DateTime.Now;
         Manager.TimeM.LastGeneratedStaminaTime = DateTime.Now;
 

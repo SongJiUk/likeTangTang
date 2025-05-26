@@ -13,22 +13,25 @@ public class DamageFont : MonoBehaviour
         damageText = GetComponent<TextMeshPro>();
         transform.position = _pos;
 
-        if(_heal > 0)
+        if (_heal > 0)
         {
-            damageText.text = $"{_heal}";
-            //Color
+            damageText.text = $"{Mathf.RoundToInt(_heal)}";
+            damageText.color = Utils.HexToColor("4EEE6F");
         }
-        else if(_isCritical)
+        else if (_isCritical)
         {
-            damageText.text = $"{_damage}";
-            //Color
+            damageText.text = $"{Mathf.RoundToInt(_damage)}";
+            damageText.color = Utils.HexToColor("EFAD00");
         }
         else
         {
-            damageText.text = $"{_damage}";
+            damageText.text = $"{Mathf.RoundToInt(_damage)}";
+            damageText.color = Color.white;
         }
-        //if (_parent != null)
-        //    GetComponent<MeshRenderer>().sortingOrder = 300;
+
+        damageText.alpha = 1;
+        if (_parent != null)
+           GetComponent<MeshRenderer>().sortingOrder = 300;
 
         DoAnim();
     }

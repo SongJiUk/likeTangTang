@@ -116,16 +116,20 @@ public class UI_StaminaChargePopup : UI_Popup
 
         if (Manager.GameM.StaminaCountAds > 0)
         {
-            Queue<string> name = new();
-            name.Enqueue(Manager.DataM.MaterialDic[Define.ID_STAMINA].SpriteName);
-            Queue<int> count = new();
-            count.Enqueue(5);
-            UI_RewardPopup popup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
-            popup.gameObject.SetActive(true);
-            Manager.GameM.StaminaCountAds--;
-            Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_STAMINA], 5);
-            Refresh();
-            popup.SetInfo(name, count);
+            Manager.AdM.ShowRewardedAd(() =>
+            {
+                Queue<string> name = new();
+                name.Enqueue(Manager.DataM.MaterialDic[Define.ID_STAMINA].SpriteName);
+                Queue<int> count = new();
+                count.Enqueue(5);
+                UI_RewardPopup popup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
+                popup.gameObject.SetActive(true);
+                Manager.GameM.StaminaCountAds--;
+                Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_STAMINA], 5);
+                Refresh();
+                popup.SetInfo(name, count);
+            });
+            
         }
         else
         {

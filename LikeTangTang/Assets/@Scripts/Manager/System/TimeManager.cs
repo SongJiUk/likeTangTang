@@ -222,10 +222,10 @@ public class TimeManager : MonoBehaviour
                 second = 0f;
             }
 
-            if(minute == 0)
+            if(minute == 60)
             {
                 CheckAttendance();
-                minute = 60;
+                minute = 0;
             }
 
         }

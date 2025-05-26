@@ -183,10 +183,7 @@ public class ObjectManager
     public void ShowFont(Vector2 _pos, float _damage, float _heal, Transform _parent, bool _isCritical = false)
     {
         string prefabName;
-        if (_isCritical)
-            prefabName = "ciri"; // TODO : 프리팹 생성 후 이름 변경.
-        else
-            prefabName = "nociri";
+        prefabName = _isCritical == true ?  Define.CRITICAL_DAMANGEFONT : Define.DAMAGEFONT;
 
         GameObject go = Manager.ResourceM.Instantiate(prefabName, _pooling: true);
         DamageFont damageFont = go.GetOrAddComponent<DamageFont>();
@@ -291,7 +288,7 @@ public class ObjectManager
         //TODO : 화면 밝게 빛나게
         UI_GameScene scene = Manager.UiM.SceneUI as UI_GameScene;
 
-        //if(scene != null) scene.WhiteFlash();
+        if(scene != null) scene.WhiteFlash();
 
         foreach(MonsterController monster in mcSet.ToList())
         {

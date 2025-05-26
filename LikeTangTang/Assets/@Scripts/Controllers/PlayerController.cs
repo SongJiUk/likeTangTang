@@ -218,6 +218,11 @@ public class PlayerController : CreatureController, ITickable
 
         if (item != null)
         {
+            //TODO : 여기 잘 고치기
+            string str = Manager.DataM.EquipmentDic[item.key].SpriteName;
+            string result = str.Replace(".sprite", "");
+            Debug.Log(result);
+            EquipmentDic[result].gameObject.SetActive(true);
             Define.SkillType type = Utils.GetSkillTypeFromInt(item.EquipmentData.BaseSkill);
             if(type != Define.SkillType.None)
             {

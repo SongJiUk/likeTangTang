@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -69,6 +70,7 @@ public class UI_BattlePopup : UI_Popup
     public bool isOpen = false;
     
     Data.StageData currentStageData;
+    Action OnChangedStageInfo;
     class RewardBox
     {
         public GameObject ItemImage;
@@ -127,7 +129,7 @@ public class UI_BattlePopup : UI_Popup
         GetButton(ButtonsType, (int)Buttons.OfflineRewardButton).gameObject.BindEvent(OnClickOfflineRewardButton);
 
         Manager.GameM.RefreshUI = RefreshUpsideGroup;
-
+        OnChangedStageInfo = Refresh;
         InitBoxes();
         Refresh();
         return true;
@@ -367,7 +369,7 @@ public class UI_BattlePopup : UI_Popup
         Manager.SoundM.PlayButtonClick();
 
         UI_StageSelectPopup popup = Manager.UiM.ShowPopup<UI_StageSelectPopup>();
-        popup.SetInfo(currentStageData);
+        popup.SetInfo(currentStageData, OnChangedStageInfo);
 
     }
 

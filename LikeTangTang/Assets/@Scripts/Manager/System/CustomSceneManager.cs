@@ -22,6 +22,7 @@ public class CustomSceneManager
                 Time.timeScale = 1;
                 Manager.ResourceM.Destory(Manager.UiM.SceneUI.gameObject);
                 Manager.Clear();
+                Manager.AdM.ShowBanner();
                 SceneManager.LoadScene(GetScene(_type));
             break;
 
@@ -29,6 +30,7 @@ public class CustomSceneManager
                 Time.timeScale = 1;
                 Manager.ResourceM.Destory(Manager.UiM.SceneUI.gameObject);
                 Manager.Clear();
+                Manager.AdM.HideBanner();
                 SceneManager.LoadScene(GetScene(_type));
             break;
         }

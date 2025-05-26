@@ -32,8 +32,8 @@ public class UI_JoyStick : UI_Scene
         handlerBG = GetObject(typeof(GameObjects), (int)GameObjects.BG);
         handler = GetObject(typeof(GameObjects), (int)GameObjects.Handler);
 
-        circleRadius = handlerBG.gameObject.GetComponent<RectTransform>().sizeDelta.y / 2;
-
+        RectTransform bgrect = handlerBG.gameObject.GetComponent<RectTransform>();
+        circleRadius = (bgrect.rect.width * handlerBG.transform.lossyScale.x) / 2f;
         
         BindEvent(touchBG, OnPointerDown, _type: Define.UIEvent.PointerDown);
         BindEvent(touchBG, OnPointerUp, _type: Define.UIEvent.PointerUp);

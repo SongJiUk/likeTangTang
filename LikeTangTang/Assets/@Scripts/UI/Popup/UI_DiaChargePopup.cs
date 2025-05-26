@@ -64,22 +64,26 @@ public class UI_DiaChargePopup : UI_Popup
     {
         Manager.SoundM.PlayButtonClick();
 
-        if(Manager.GameM.DiaCountAds > 0)
+        if (Manager.GameM.DiaCountAds > 0)
         {
-            Queue<string> name = new();
-            name.Enqueue(Manager.DataM.MaterialDic[Define.ID_DIA].SpriteName);
-            Queue<int> count = new();
-            count.Enqueue(200);
-            UI_RewardPopup popup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
-            popup.gameObject.SetActive(true);
-            Manager.GameM.DiaCountAds--;
-            Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_DIA], 200);
-            Refresh();
-            popup.SetInfo(name, count);
+            Manager.AdM.ShowRewardedAd(() =>
+            {
+                Queue<string> name = new();
+                name.Enqueue(Manager.DataM.MaterialDic[Define.ID_DIA].SpriteName);
+                Queue<int> count = new();
+                count.Enqueue(200);
+                UI_RewardPopup popup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
+                popup.gameObject.SetActive(true);
+                Manager.GameM.DiaCountAds--;
+                Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_DIA], 200);
+                Refresh();
+                popup.SetInfo(name, count);
+            });
+
         }
         else
         {
-            Manager.UiM.ShowToast("오늘은 더이상 구매할 수 없습니다.");
+            Manager.UiM.ShowToast("오늘은 더이상 광고를 시청하실 수 없습니다.");
         }
     }
 
