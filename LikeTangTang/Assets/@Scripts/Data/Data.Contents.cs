@@ -330,6 +330,7 @@ namespace Data
         public float Speed;
         public float ProjectileCount;
         public float ScaleMultiplier;
+        public float EffectScaleMultiplier;
 
 
     }

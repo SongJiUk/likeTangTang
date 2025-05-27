@@ -242,6 +242,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
+  - m_GUID: d92e422dd24fe5e4aa04f5209ed6f3f5
+    m_Address: UI_GameoverPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 21d675466d595a245b05c6ac12bae705
+    m_Address: UI_ContinuePopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 3d356158ac9e6e744aa7c6b88af2290f
+    m_Address: UI_FastRewardPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

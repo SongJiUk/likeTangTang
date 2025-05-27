@@ -76,7 +76,8 @@ public class UI_GameResultPopup : UI_Popup
     // [ ] : 씬이동, 랭킹
     public void OnClickStatisticsButton()
     {
-
+        Manager.SoundM.PlayButtonClick();
+        Manager.UiM.ShowPopup<UI_TotalDamagePopup>().SetInfo();
     }
 
     public void OnClickConfirmButton()

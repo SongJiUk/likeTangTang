@@ -1,48 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class UI_TotalDamagePopup : UI_Popup
 {
     enum GameObjects
     {
-
-    }
-
-    enum Texts
-    {
-
+        ContentObject,
+        TotalDamageContentObject,
     }
 
     enum Buttons
     {
+        BackgroundButton,
 
     }
 
-    enum Images
-    {
-
-    }
 
     private void Awake()
     {
         Init();
     }
 
+    private void OnEnable()
+    {
+        PopupOpenAnim(GetObject(gameObjectsType, (int)GameObjects.ContentObject));
+    }
+
     public override bool Init()
     {
         if (!base.Init()) return false;
         gameObjectsType = typeof(GameObjects);
-        TextsType = typeof(Texts);
         ButtonsType = typeof(Buttons);
-        ImagesType = typeof(Images);
 
         BindObject(gameObjectsType);
-        BindText(TextsType);
         BindButton(ButtonsType);
-        BindImage(ImagesType);
 
-
+        GetButton(ButtonsType, (int)Buttons.BackgroundButton).gameObject.BindEvent(OnClickBgButton);
 
 
         return true;
@@ -51,11 +46,23 @@ public class UI_TotalDamagePopup : UI_Popup
 
     public void SetInfo()
     {
-
+        Refresh();
     }
 
     void Refresh()
     {
+        GetObject(gameObjectsType, (int)GameObjects.TotalDamageContentObject).DestroyChilds();
+        List<SkillBase> skillList = Manager.GameM.player.Skills.skillList.ToList();
+        foreach(SkillBase skill in skillList.FindAll(skill => skill.isLearnSkill))
+        {
+            UI_SkillDamageItem item = Manager.UiM.MakeSubItem<UI_SkillDamageItem>(GetObject(gameObjectsType, (int)GameObjects.TotalDamageContentObject).transform);
+            item.SetInfo(skill);
+            item.transform.localScale = Vector3.one;
+        }
+    }
 
+    void OnClickBgButton()
+    {
+        Manager.UiM.ClosePopup(this);
     }
 }

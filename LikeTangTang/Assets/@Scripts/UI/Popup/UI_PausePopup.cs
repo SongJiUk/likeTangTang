@@ -51,7 +51,7 @@ public class UI_PausePopup : UI_Popup
     void OnClickStatisticsButton()
     {
         Manager.SoundM.PlayButtonClick();
-        Manager.UiM.ShowPopup<UI_TotalDamagePopup>();
+        Manager.UiM.ShowPopup<UI_TotalDamagePopup>().SetInfo();
     }
 
     void OnClickHomeButton()

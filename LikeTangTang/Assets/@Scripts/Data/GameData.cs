@@ -37,6 +37,7 @@ public class GameData
     public int RemainBuyStaminaForDia = 3;
     public int FastRewardCountAd = 1;
     public int FastRewardCountStamina = 3;
+    public int RebirthCountAds = 3;
 
     public bool BGMOn = true;
     public bool EffectSoundOn = true;

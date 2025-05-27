@@ -79,6 +79,10 @@ public class SkillComponent : MonoBehaviour
          skill.UpdateSkillData();
 
         if(skill != null) skillList.Add(skill);
+        if (SavedBattleSkill.ContainsKey(_type))
+            SavedBattleSkill[_type] = skill.SkillLevel;
+        else
+            SavedBattleSkill.Add(_type, skill.SkillLevel);
     }
 
     public void AddSpecialSkill(Data.SpecialSkillData _skill, bool _isLockSkill = false)
@@ -112,6 +116,16 @@ public class SkillComponent : MonoBehaviour
         }
         
     }
+
+    public void LoadSkill(Define.SkillType _skillType, int _level)
+    {
+        AddSkill(_skillType);
+        for(int i = 0; i<_level; i++)
+        {
+            LevelUpSkill(_skillType);
+        }
+    }
+
     public void RemoveSkill()
     {
 
@@ -120,11 +134,16 @@ public class SkillComponent : MonoBehaviour
     public void LevelUpSkill(Define.SkillType _type)
     {   
         for(int i =0; i< skillList.Count; i++)
-        {
+        {   
             if(skillList[i].Skilltype == _type)
             {
                 if(skillList[i].SkillLevel > 6) continue;
                 skillList[i].OnSkillLevelup();
+                if(SavedBattleSkill.ContainsKey(_type))
+                {
+                    SavedBattleSkill[_type] = skillList[i].SkillLevel;
+                    Manager.GameM.SaveGame();
+                }
             }
         }
     }
@@ -249,4 +268,6 @@ public class SkillComponent : MonoBehaviour
 
         player.UpdatePlayerStat();
     }
+
+
 }

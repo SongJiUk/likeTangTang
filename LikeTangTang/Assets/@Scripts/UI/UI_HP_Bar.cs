@@ -11,7 +11,12 @@ public class UI_HP_Bar : UI_Base, ITickable
     {
         HPBar
     }
-    
+
+    private void OnDestroy()
+    {
+        Manager.UpdateM.Unregister(this);
+
+    }
     //TDOO : Init어디서 해줄지 생각.
     public override bool Init()
     {
@@ -19,6 +24,7 @@ public class UI_HP_Bar : UI_Base, ITickable
         Bind<GameObject>(typeof(GameObjects));
 
         slider = GetObject(typeof(GameObjects), (int)GameObjects.HPBar).GetComponent<Slider>();
+        Manager.UpdateM.Register(this);
         return true;
     }
     public void Tick(float _deltatime)

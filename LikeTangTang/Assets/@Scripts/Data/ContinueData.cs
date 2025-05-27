@@ -6,9 +6,10 @@ using UnityEngine;
 [Serializable]
 public class ContinueData
 {
-    public bool isContinue;
+    public bool isContinue { get { return SavedBattleSkill.Count > 0; } }
     public string PrefabName;
     public string PlayerName;
+    public bool IsDead;
     public int PlayerDataID;
     public int CurrentWaveIndex;
     public float Hp;
@@ -36,6 +37,7 @@ public class ContinueData
     public List<Data.SpecialSkillData> SavedSpecialSkill = new List<Data.SpecialSkillData>();
     public void Clear()
     {
+        IsDead = false;
         PlayerDataID = 0;
         PrefabName = string.Empty;
         PlayerName = string.Empty;

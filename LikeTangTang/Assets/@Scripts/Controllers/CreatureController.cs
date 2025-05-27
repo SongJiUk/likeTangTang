@@ -69,12 +69,10 @@ public class CreatureController : BaseController, ITickable
     #endregion
 
     #region Init
-
     public override bool Init()
     {
         if (!base.Init()) return false;
 
-        Skills = gameObject.GetOrAddComponent<SkillComponent>();
         Rigid = GetComponent<Rigidbody2D>();
 
         CreatureSprite = Utils.FindChild<SpriteRenderer>(gameObject, recursive: true);
@@ -95,7 +93,8 @@ public class CreatureController : BaseController, ITickable
         creatureData = Manager.DataM.CreatureDic[_dataID];
         Init();
         InitStat();
-        InitSkill();
+
+        
 
         CreatureSprite.sprite = Manager.ResourceM.Load<Sprite>(creatureData.Image_Name);
         Rigid.simulated = true;
@@ -117,6 +116,35 @@ public class CreatureController : BaseController, ITickable
         Speed = creatureData.Speed * creatureData.MoveSpeedRate;
     }
 
+
+    public void LoadSkil()
+    {
+        foreach(KeyValuePair<SkillType, int> pair in Manager.GameM.ContinueDatas.SavedBattleSkill.ToList())
+        {
+            Skills.LoadSkill(pair.Key, pair.Value);
+        }
+
+        foreach (Data.SpecialSkillData specialSkill in Manager.GameM.ContinueDatas.SavedSpecialSkill.ToList())
+        {
+            Skills.AddSpecialSkill(specialSkill, true);
+        }
+
+        // TODO :
+
+        /*
+         * else if(_skill.SkillType == Define.SpecialSkillType.Special)
+        {
+            foreach(SkillBase playerSkill in skillList)
+            {
+                if(_skill.SpecialSkillName.ToString() == playerSkill.Skilltype.ToString())
+                {
+                    playerSkill.UpdateSkillData();
+                }
+            }
+        }
+        여기 넣는것처럼은 해줘야됌
+         */
+    }
     public virtual void InitSkill()
     {
         //TODO : 여기에 스킬 추가 
@@ -178,8 +206,8 @@ public class CreatureController : BaseController, ITickable
 
         Manager.ObjectM.ShowFont(transform.position, _damage, 0, transform, isCritical);
 
-        if (this.IsValid())
-            damageAnimEndTime = Time.time + 0.1f;
+        if (this.IsValid() || gameObject.IsValid())
+            StartCoroutine(CoPlayDamageAnim());
     }
 
     public virtual void OnDead()
@@ -191,22 +219,22 @@ public class CreatureController : BaseController, ITickable
 
     public virtual void Tick(float _deltaTime)
     {
-        if (!isDead && Time.time >= damageAnimEndTime && Hp <= 0)
-        {
-            Hp = 0;
-            isDead = true;
-            transform.localScale = Vector3.one;
+        //if (!isDead && Time.time >= damageAnimEndTime && Hp <= 0)
+        //{
+        //    Hp = 0;
+        //    isDead = true;
+        //    transform.localScale = Vector3.one;
 
-            switch (objType)
-            {
-                case ObjectType.Player:
-                case ObjectType.Monster:
-                case ObjectType.EliteMonster:
-                case ObjectType.Boss:
-                    OnDead();
-                    break;
-            }
-        }
+        //    switch (objType)
+        //    {
+        //        case ObjectType.Player:
+        //        case ObjectType.Monster:
+        //        case ObjectType.EliteMonster:
+        //        case ObjectType.Boss:
+        //            OnDead();
+        //            break;
+        //    }
+        //}
     }
 
     #endregion
@@ -229,7 +257,7 @@ public class CreatureController : BaseController, ITickable
         {
             isStartDamageAnim = true;
             DefaultMat = Manager.ResourceM.Load<Material>("CreatureDefaultMat");
-            HitEffectmat = Manager.ResourceM.Load<Material>("PaintWhite");
+            HitEffectmat = Manager.ResourceM.Load<Material>("DamagedEffectMat");
 
             CreatureSprite.material = HitEffectmat;
             yield return new WaitForSeconds(0.1f);
@@ -237,6 +265,7 @@ public class CreatureController : BaseController, ITickable
 
             if (Hp <= 0)
             {
+                Hp = 0;
                 transform.localScale = Vector3.one;
                 switch (objType)
                 {
@@ -272,5 +301,4 @@ public class CreatureController : BaseController, ITickable
         UpdatePlayerStat();
         Manager.ObjectM.KillAllMonsters();
     }
-
 }

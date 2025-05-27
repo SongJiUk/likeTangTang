@@ -47,6 +47,8 @@ public class UI_GameScene : UI_Scene
 
         GetButton(ButtonsType, (int)Buttons.PauseButton).gameObject.BindEvent(OnClickPauseButton);
 
+        OnPlayerDataUpdated();
+
         Manager.GameM.player.OnPlayerDataUpdated = OnPlayerDataUpdated;
         Manager.GameM.player.OnPlayerLevelUp = OnPlayerLevelUp;
         return true;
@@ -85,6 +87,7 @@ public class UI_GameScene : UI_Scene
     {
         GetSlider(typeof(Sliders), (int)Sliders.ExpSliderObject).value = Manager.GameM.player.ExpRatio;
         GetText(typeof(Texts), (int)Texts.KillValueText).text = $"{Manager.GameM.player.KillCount}";
+        GetText(typeof(Texts), (int)Texts.CharacterLevelValueText).text = $"{Manager.GameM.player.Level}";
     }
    
     public void OnPlayerLevelUp()

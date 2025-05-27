@@ -16,32 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 94163b93d7bb24f928019105ae174de0
-  m_SerializeEntries:
-  - m_GUID: b4df2cb7d5f52d247b2f89a70110109b
-    m_Address: OfflineRewardData.json
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: 3d356158ac9e6e744aa7c6b88af2290f
-    m_Address: UI_FastRewardPopup
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: 2d0c1abb18f0ebb44943b8e52d6b6086
-    m_Address: CriticalDamageFont
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: 2ef93401a097fc84ab30ae2d81d7120a
-    m_Address: DamageFont
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: 8efcc7cbadf58ea4ba3e362afe0a22b9
-    m_Address: CreatureDefaultMat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

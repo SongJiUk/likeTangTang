@@ -90,6 +90,8 @@ public class SkillBase : BaseController
 
         SkillLevel++;
         UpdateSkillData();
+
+        Manager.GameM.SaveGame();
     }
 
     public void Evolution()
@@ -113,7 +115,7 @@ public class SkillBase : BaseController
         
         foreach(SpecialSkillData specialSkill in Manager.GameM.player.Skills.SpecialSkills)
         {
-            if(Skilltype.ToString() == specialSkill.SkillType.ToString())
+            if(Skilltype.ToString() == specialSkill.SpecialSkillName.ToString())
             {
                 skillData.CoolTime += specialSkill.CoolTime;
                 skillData.RoatateSpeed += specialSkill.RoatateSpeed;
@@ -121,6 +123,7 @@ public class SkillBase : BaseController
                 skillData.Speed += specialSkill.Speed;
                 skillData.ProjectileCount += (int)specialSkill.ProjectileCount;
                 skillData.ScaleMultiplier += specialSkill.ScaleMultiplier;
+                skillData.EffectScaleMultiplier += specialSkill.EffectScaleMultiplier;
             }
         }
 

@@ -220,6 +220,7 @@ public class GameScene : BaseScene, ITickable
         UI_GameResultPopup rp = Manager.UiM.ShowPopup<UI_GameResultPopup>();
         rp.SetInfo();
     }
+
     float lastSecond =- 1f;
     float lastMinute = 0;
     float elapsedTIme = 0f;
@@ -238,7 +239,7 @@ public class GameScene : BaseScene, ITickable
             Manager.GameM.minute = currentMinute;
             Manager.GameM.second = currentSecond;
 
-            if (currentSecond == WAVE_REWARD_TIME) SpawnReward();
+            if (currentSecond == WAVE_REWARD_TIME) SpawnWaveReward();
 
             if (currentMinute != lastMinute) WaveEnd();
         }
@@ -299,34 +300,37 @@ public class GameScene : BaseScene, ITickable
         if(!Manager.GameM.isGameEnd)
         {
             //[ ] : GameContinuePopup생성해서 수정
-            UI_GameResultPopup rp = Manager.UiM.ShowPopup<UI_GameResultPopup>();
-            rp.Init();
-            rp.SetInfo();
+            UI_ContinuePopup popup = Manager.UiM.ShowPopup<UI_ContinuePopup>();
+            popup.SetInfo();
+            Manager.GameM.SaveGame();
         }
     }
 
-    public void SpawnReward()
-    {
-        DropItemType dropItemType = (DropItemType)UnityEngine.Random.Range(0,3);
+    //public void SpawnReward()
+    //{
+    //    DropItemType dropItemType = (DropItemType)UnityEngine.Random.Range(0,3);
 
-        Vector3 spawnPos = Utils.CreateObjectAroundPlayer(gm.player.transform.position);
-        Data.DropItemData dropItem;
+    //    Vector3 spawnPos = Utils.CreateObjectAroundPlayer(gm.player.transform.position);
+    //    Data.DropItemData dropItem;
 
-        // switch(dropItemType)
-        // {
-        //     case DropItem.Potion :
-        //         if(Manager.DataM.DropItemDic.TryGetValue(POTION_ID, out dropItem))
-                    
+    //    switch (dropItemType)
+    //    {
+    //        case DropItemType.Potion:
+    //            if (Manager.DataM.DropItemDic.TryGetValue(POTION_ID, out dropItem))
+    //                Manager.ObjectM.Spawn<PotionController>(spawnPos).SetInfo(dropItem);
+    //                break;
 
-        //     break;
+    //        case DropItemType.Magnet:
+    //            if (Manager.DataM.DropItemDic.TryGetValue(MAGNET_ID, out dropItem))
+    //                Manager.ObjectM.Spawn<MagnetController>(spawnPos).SetInfo(dropItem);
+    //            break;
 
-        //     case DropItem.Magnet :
-        //     break;
-
-        //     case DropItem.Bomb :
-        //     break;
-        // }
-    }
+    //        case DropItemType.Bomb:
+    //            if (Manager.DataM.DropItemDic.TryGetValue(BOMB_ID, out dropItem))
+    //                Manager.ObjectM.Spawn<BombController>(spawnPos).SetInfo(dropItem);
+    //            break;
+    //    }
+    //}
 
     #region  전에 쓰던 잼, 킬 코드
     // int maxGemCount = 10;

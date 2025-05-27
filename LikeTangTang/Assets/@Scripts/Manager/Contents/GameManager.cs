@@ -221,6 +221,12 @@ public class GameManager
         set { gameData.FastRewardCountStamina = value; }
     }
 
+    public int RebirthCountAds
+    {
+        get { return gameData.RebirthCountAds; }
+        set { gameData.RebirthCountAds = value; }
+    }
+
     public int UserLevel
     {
         get { return gameData.userLevel; }
@@ -423,6 +429,9 @@ public class GameManager
     {
         switch(_data.MaterialType)
         {
+            case MaterialType.Clover:
+                AddMaterialItem(_data.MaterialID, _count);
+                break;
             case MaterialType.Dia:
                 Dia += _count;
                 break;
@@ -458,7 +467,7 @@ public class GameManager
     }
     public void FirstGift()
     {
-        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_SILVER_KEY], 10);
+        ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_CLOVER], 20);
         ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_GOLD_KEY], 30);
         ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_DIA], 1000);
         ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_GOLD], 100000);
@@ -509,6 +518,7 @@ public class GameManager
         if (player != null)
         {
             gameData.ContinueDatas.SavedBattleSkill = player.Skills?.SavedBattleSkill;
+            gameData.ContinueDatas.SavedSpecialSkill = player.Skills?.SpecialSkills;
         }
 
         string jsonStr = JsonConvert.SerializeObject(gameData);
@@ -784,6 +794,25 @@ public class GameManager
             SaveGame();
         }
             
+    }
+
+    public void GameOver()
+    {
+        isGameEnd = true;
+        player.StopAllCoroutines();
+        Manager.UiM.ShowPopup<UI_GameoverPopup>().SetInfo();
+    }
+
+    public float GetTotalDamage()
+    {
+        float result = 0;
+
+        foreach(SkillBase skill in player.Skills.skillList)
+        {
+            result += skill.TotalDamage;
+        }
+
+        return result;
     }
 }
 

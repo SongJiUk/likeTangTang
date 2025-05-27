@@ -77,6 +77,26 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
+  - m_GUID: 74844a3cbde96dd4ea0d6d43ce518da5
+    m_Address: HealEffect
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 76ab356a8f729ae468b567e14b21b614
+    m_Address: Revival
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 2ef93401a097fc84ab30ae2d81d7120a
+    m_Address: DamageFont
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 2d0c1abb18f0ebb44943b8e52d6b6086
+    m_Address: CriticalDamageFont
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

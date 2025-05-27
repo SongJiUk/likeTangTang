@@ -17,6 +17,8 @@ public class BossController : MonsterController
         transform.localScale = new Vector3(2f,2f,2f);
         objType = Define.ObjectType.Boss;
         CreatureState = Define.CreatureState.Moving;
+
+        Skills = gameObject.GetOrAddComponent<SkillComponent>();
         InvokeMonsterData();
 
         return true;

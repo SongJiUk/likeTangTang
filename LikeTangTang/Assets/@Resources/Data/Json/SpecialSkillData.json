@@ -31,7 +31,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21001,
@@ -64,7 +65,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21002,
@@ -97,7 +99,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21003,
@@ -130,7 +133,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21010,
@@ -163,7 +167,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21011,
@@ -196,7 +201,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21012,
@@ -229,7 +235,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21013,
@@ -262,7 +269,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21020,
@@ -295,7 +303,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21021,
@@ -328,7 +337,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21022,
@@ -361,7 +371,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21023,
@@ -394,7 +405,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21030,
@@ -427,7 +439,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21031,
@@ -460,7 +473,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21032,
@@ -493,7 +507,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21033,
@@ -526,7 +541,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21040,
@@ -559,7 +575,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21041,
@@ -592,7 +609,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21042,
@@ -625,7 +643,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21043,
@@ -658,7 +677,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21050,
@@ -691,7 +711,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21051,
@@ -724,7 +745,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21052,
@@ -757,7 +779,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21053,
@@ -790,7 +813,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21060,
@@ -823,7 +847,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21061,
@@ -856,7 +881,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21062,
@@ -889,7 +915,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21063,
@@ -922,7 +949,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21070,
@@ -955,7 +983,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21071,
@@ -988,7 +1017,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21072,
@@ -1021,7 +1051,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21073,
@@ -1054,7 +1085,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21080,
@@ -1087,7 +1119,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21081,
@@ -1120,7 +1153,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21082,
@@ -1153,7 +1187,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21083,
@@ -1186,7 +1221,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21090,
@@ -1219,7 +1255,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21091,
@@ -1252,7 +1289,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21092,
@@ -1285,7 +1323,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21093,
@@ -1318,7 +1357,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21100,
@@ -1351,7 +1391,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21101,
@@ -1384,7 +1425,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21102,
@@ -1417,7 +1459,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 21103,
@@ -1450,7 +1493,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 22000,
@@ -1483,7 +1527,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 22001,
@@ -1516,7 +1561,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 22010,
@@ -1549,7 +1595,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 22011,
@@ -1582,7 +1629,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 22020,
@@ -1615,7 +1663,8 @@
       "NumBounce": 1.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 22021,
@@ -1648,7 +1697,8 @@
       "NumBounce": 2.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 22030,
@@ -1681,7 +1731,8 @@
       "NumBounce": 0.0,
       "Speed": 0.1,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 22031,
@@ -1714,7 +1765,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 1.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 22040,
@@ -1747,7 +1799,8 @@
       "NumBounce": 1.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 22041,
@@ -1780,7 +1833,8 @@
       "NumBounce": 2.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 22050,
@@ -1813,7 +1867,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.1
     },
     {
       "DataID": 22051,
@@ -1846,7 +1901,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.15
     },
     {
       "DataID": 22060,
@@ -1879,7 +1935,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.1
     },
     {
       "DataID": 22061,
@@ -1912,7 +1969,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.15
     },
     {
       "DataID": 22070,
@@ -1945,7 +2003,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.15
+      "ScaleMultiplier": 0.15,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 22071,
@@ -1978,7 +2037,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.2
+      "ScaleMultiplier": 0.2,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 22080,
@@ -2011,7 +2071,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.1
+      "ScaleMultiplier": 0.1,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 22081,
@@ -2044,7 +2105,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.2
+      "ScaleMultiplier": 0.2,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 22090,
@@ -2077,7 +2139,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.15
+      "ScaleMultiplier": 0.15,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 22091,
@@ -2110,7 +2173,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.2
+      "ScaleMultiplier": 0.2,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 23000,
@@ -2143,7 +2207,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 23001,
@@ -2176,7 +2241,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 23002,
@@ -2209,7 +2275,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 23010,
@@ -2242,7 +2309,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 23011,
@@ -2275,7 +2343,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 23012,
@@ -2308,7 +2377,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 23020,
@@ -2341,7 +2411,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 23021,
@@ -2374,7 +2445,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 23022,
@@ -2407,7 +2479,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 23030,
@@ -2440,7 +2513,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 23031,
@@ -2473,7 +2547,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 23032,
@@ -2506,7 +2581,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 23040,
@@ -2539,7 +2615,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 23041,
@@ -2572,7 +2649,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 23042,
@@ -2605,7 +2683,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 24000,
@@ -2638,7 +2717,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 24001,
@@ -2671,7 +2751,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     },
     {
       "DataID": 24002,
@@ -2704,7 +2785,8 @@
       "NumBounce": 0.0,
       "Speed": 0.0,
       "ProjectileCount": 0.0,
-      "ScaleMultiplier": 0.0
+      "ScaleMultiplier": 0.0,
+      "EffectScaleMultiplier": 0.0
     }
   ]
 }

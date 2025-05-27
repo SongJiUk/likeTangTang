@@ -1102,6 +1102,7 @@ MonoBehaviour:
     EvolutionTypeList: 
   DefaultMat: {fileID: 0}
   HitEffectmat: {fileID: 0}
+  hp_bar: {fileID: 1653363156695520473}
   standard: {fileID: 3221486345780909004}
   firePos: {fileID: 6513942791621251143}
   WeaponHolder: {fileID: 7141319909557381858}
@@ -1302,6 +1303,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_HP_Bar
       objectReference: {fileID: 0}
+    - target: {fileID: 8893253926856839742, guid: c742de94ae91c4f25882d7a6c8b98ca4, type: 3}
+      propertyPath: m_Value
+      value: 0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 8893253926856839743, guid: c742de94ae91c4f25882d7a6c8b98ca4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c742de94ae91c4f25882d7a6c8b98ca4, type: 3}
 --- !u!224 &1653363156695520472 stripped
@@ -1309,3 +1318,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8893253925310174185, guid: c742de94ae91c4f25882d7a6c8b98ca4, type: 3}
   m_PrefabInstance: {fileID: 7897838564408821553}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1653363156695520473 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8893253925310174184, guid: c742de94ae91c4f25882d7a6c8b98ca4, type: 3}
+  m_PrefabInstance: {fileID: 7897838564408821553}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f822b0992604aecb860631c58279c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

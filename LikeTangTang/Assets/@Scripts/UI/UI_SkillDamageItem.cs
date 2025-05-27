@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class UI_SkillDamageItem : UI_Base
 {
-    enum GameObjects
-    {
 
-    }
 
     enum Texts
     {
-
-    }
-
-    enum Buttons
-    {
-
+        SkillNameValueText,
+        SkillDamageValueText,
+        DamageProbabilityValueText,
     }
 
     enum Images
     {
-
+        SkillImage
     }
+
+    enum Sliders
+    {
+        DamageSliderObject
+    }
+
+    SkillBase skill;
 
     private void Awake()
     {
@@ -32,30 +33,35 @@ public class UI_SkillDamageItem : UI_Base
     public override bool Init()
     {
         if (!base.Init()) return false;
-        gameObjectsType = typeof(GameObjects);
         TextsType = typeof(Texts);
-        ButtonsType = typeof(Buttons);
         ImagesType = typeof(Images);
+        SlidersType = typeof(Sliders);
 
-        BindObject(gameObjectsType);
         BindText(TextsType);
-        BindButton(ButtonsType);
         BindImage(ImagesType);
-
-
-
+        BindSlider(SlidersType);
 
         return true;
-
     }
 
-    public void SetInfo()
+    public void SetInfo(SkillBase _skill)
     {
-
+        skill = _skill;
+        Refresh();
     }
 
     void Refresh()
     {
+        GetImage(ImagesType, (int)Images.SkillImage).sprite = Manager.ResourceM.Load<Sprite>(skill.SkillDatas.SkillIcon);
+        GetText(TextsType, (int)Texts.SkillNameValueText).text = $"{skill.SkillDatas.SkillName}";
+        GetText(TextsType, (int)Texts.SkillDamageValueText).text = $"{(int)skill.TotalDamage}";
 
+        float allSkillDamage = Manager.GameM.GetTotalDamage();
+        float percentage = skill.TotalDamage / allSkillDamage;
+
+        if (allSkillDamage == 0) percentage = 1;
+
+        GetText(TextsType, (int)Texts.DamageProbabilityValueText).text = (percentage * 100).ToString("F2") + "%";
+        GetSlider(SlidersType, (int)Sliders.DamageSliderObject).value = percentage;
     }
 }

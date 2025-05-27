@@ -7,8 +7,8 @@ using System;
 
 public class PlayerController : CreatureController, ITickable
 {
-    Dictionary<string, Transform> EquipmentDic = new();
-    string weaponName = "";
+    public Dictionary<string, Transform> EquipmentDic = new();
+    [SerializeField] private UI_HP_Bar hp_bar;
     #region Action
     public Action OnPlayerDataUpdated;
     public Action OnPlayerLevelUp;
@@ -16,6 +16,11 @@ public class PlayerController : CreatureController, ITickable
     #endregion
 
     #region 플레이어 스탯
+    public bool IsDead
+    {
+        get => Manager.GameM.ContinueDatas.IsDead;
+        set => Manager.GameM.ContinueDatas.IsDead = value;
+    }
 
     public override int DataID
     {
@@ -218,10 +223,9 @@ public class PlayerController : CreatureController, ITickable
 
         if (item != null)
         {
-            //TODO : 여기 잘 고치기
             string str = Manager.DataM.EquipmentDic[item.key].SpriteName;
             string result = str.Replace(".sprite", "");
-            Debug.Log(result);
+
             EquipmentDic[result].gameObject.SetActive(true);
             Define.SkillType type = Utils.GetSkillTypeFromInt(item.EquipmentData.BaseSkill);
             if(type != Define.SkillType.None)
@@ -257,6 +261,7 @@ public class PlayerController : CreatureController, ITickable
 
     Vector2 moveDir;
     Vector3 scale;
+    Vector3 hpbar_Scale;
 
     public Vector2 MoveDir
     {
@@ -290,11 +295,18 @@ public class PlayerController : CreatureController, ITickable
         if (moveDir == Vector2.zero) return;
 
         if (moveDir.x < 0)
+        {
             scale.x = Mathf.Abs(scale.x);
+            hpbar_Scale.x = Mathf.Abs(hpbar_Scale.x);
+        }
         else
+        {
             scale.x = -Mathf.Abs(scale.x);
+            hpbar_Scale.x = -Mathf.Abs(hpbar_Scale.x);
+        }
 
         transform.localScale = scale;
+        hp_bar.transform.localScale = hpbar_Scale;
     }
 
     #endregion
@@ -340,9 +352,10 @@ public class PlayerController : CreatureController, ITickable
     public override bool Init()
     {
         base.Init();
-        weaponName = "";
         Manager.GameM.OnMovePlayerDir += HandleOnMoveDirChange;
         scale = transform.localScale;
+        hpbar_Scale = hp_bar.transform.localScale;
+        Skills = gameObject.GetOrAddComponent<SkillComponent>();
 
         FindEquipment();
 
@@ -353,7 +366,11 @@ public class PlayerController : CreatureController, ITickable
     {
         base.SetInfo(_dataID);
 
-        
+        if (Manager.GameM.ContinueDatas.isContinue)
+            LoadSkil();
+        else
+            InitSkill();
+
         if (CreatureAnim != null)
             CreatureAnim.runtimeAnimatorController =
                 Manager.ResourceM.Load<RuntimeAnimatorController>(creatureData.CreatureAnimName);
@@ -383,7 +400,7 @@ public class PlayerController : CreatureController, ITickable
         InitStat();
 
         MaxHp *= MaxHpRate;
-        Hp *= MaxHpRate;
+        Hp = MaxHp;
         Attack *= AttackRate;
         Def *= DefRate;
         Speed *= SpeedRate;
@@ -416,28 +433,33 @@ public class PlayerController : CreatureController, ITickable
 
         // TODO: 실제 데미지 계산이 확정되면 아래 주석 해제
         // base.OnDamaged(_attacker, _skill, totalDamage);
-        base.OnDamaged(_attacker, null, 0); // 현재 테스트용 데미지 0
+        base.OnDamaged(_attacker, null, totalDamage); // 현재 테스트용 데미지 0
     }
 
     public override void OnDead()
     {
-        base.OnDead();
-        Time.timeScale = 0f;
+        IsDead = true;
         OnPlayerDead?.Invoke();
     }
 
     #endregion
 
     #region Tick
-
+    float regenTimer = 0;
     public override void Tick(float _deltaTime)
     {
         base.Tick(_deltaTime);
-        if (isDead) return;
 
         UpdatePlayerDir();
         Move();
         CollectDropItem();
+
+        regenTimer += _deltaTime;
+        if(regenTimer >= 2f)
+        {
+            regenTimer = 0f;
+            HpSelfRecovery();
+        }
     }
 
     #endregion
@@ -462,15 +484,25 @@ public class PlayerController : CreatureController, ITickable
     #endregion
 
     #region 힐
+    void HpSelfRecovery()
+    {
+        Healing(HpRegen, false);
+    }
 
-    public void Healing(float _amount, bool _isEffect = true)
+    public override void Healing(float _amount, bool _isEffect = true)
     {
         if (_amount <= 0) return;
 
-        float res = MaxHp * _amount;
+        float res = (MaxHp * _amount) * HealBounsRate;
+        if (res == 0) return;
         Hp += res;
 
-        // TODO: Heal 이펙트 추가
+        if (Hp > MaxHp) Hp = MaxHp;
+
+
+        Manager.ObjectM.ShowFont(transform.position, 0, res, transform);
+        if (_isEffect)
+            Manager.ResourceM.Instantiate("HealEffect", transform);
     }
 
     #endregion

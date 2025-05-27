@@ -15,7 +15,8 @@ public class EliteMonsterController : MonsterController
 
         Rigid.simulated = true;
         transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
-
+        
+        Skills = gameObject.GetOrAddComponent<SkillComponent>();
         objType = Define.ObjectType.EliteMonster;
 
         InvokeMonsterData();

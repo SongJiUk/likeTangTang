@@ -205,6 +205,7 @@ public class DataTransformer : EditorWindow
             skillData.Speed = ConvertValue<float>(row[i++]);
             skillData.ProjectileCount = ConvertValue<float>(row[i++]);
             skillData.ScaleMultiplier = ConvertValue<float>(row[i++]);
+            skillData.EffectScaleMultiplier = ConvertValue<float>(row[i++]);
 
             loader.speicalskillDatas.Add(skillData);
         }
