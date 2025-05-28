@@ -117,6 +117,9 @@ public class GameScene : BaseScene, ITickable
             CreateRandomExp();
         }
         SpawnWaveReward();
+        Manager.GameM.CurrentMap.MagneticFieldReduction();
+
+
         spawnManager.StartSpawn();
         Manager.GameM.SaveGame();
 
@@ -153,8 +156,8 @@ public class GameScene : BaseScene, ITickable
             for(int i =0; i<gm.CurrentWaveData.BossMonsterID.Count; i++)
             {
                 bossMonster = Manager.ObjectM.Spawn<BossController>(spawnPos, gm.CurrentWaveData.BossMonsterID[i]);
-                bossMonster.BossMonsterInfoUpdate -= ui.BossMonsterInfoUpdate;
-                bossMonster.BossMonsterInfoUpdate += ui.BossMonsterInfoUpdate;
+                bossMonster.BossMonsterInfoUpdate -= ui.MonsterInfoUpdate;
+                bossMonster.BossMonsterInfoUpdate += ui.MonsterInfoUpdate;
                 bossMonster.OnBossDead -= OnBossDead;
                 bossMonster.OnBossDead += OnBossDead;
             }
@@ -208,7 +211,7 @@ public class GameScene : BaseScene, ITickable
         //TODO : 보스가 죽으면, 게임을 끝내고, 게임 결과창을 띄움
         StartCoroutine(CoGameEnd());
     }
-
+    
     IEnumerator CoGameEnd()
     {
         yield return new WaitForSeconds(1f);
@@ -236,8 +239,16 @@ public class GameScene : BaseScene, ITickable
         if(currentSecond != lastSecond)
         {
             OnChangeSecond?.Invoke(currentMinute, currentSecond);
+            if (bossMonster != null)
+            {
+                lastSecond = currentSecond;
+                lastMinute = currentMinute;
+                return;
+            }
+
             Manager.GameM.minute = currentMinute;
             Manager.GameM.second = currentSecond;
+
 
             if (currentSecond == WAVE_REWARD_TIME) SpawnWaveReward();
 
@@ -246,26 +257,6 @@ public class GameScene : BaseScene, ITickable
 
         lastSecond = currentSecond;
         lastMinute = currentMinute;
-
-
-        //elapsedTIme += _deltaTime;
-
-
-        //while(elapsedTIme >= 1f)
-        //{
-        //    elapsedTIme -= 1f;
-        //    totalSeconds++;
-
-        //    int minutes = totalSeconds / 60;
-        //    int seconds = totalSeconds % 60;
-        //    OnChangeSecond?.Invoke(minutes, seconds);
-
-        //    if (seconds == WAVE_REWARD_TIME) SpawnReward();
-
-        //    if (totalSeconds > 60) WaveEnd();
-        //}
-
-
     }
 
     public void CreateRandomExp()

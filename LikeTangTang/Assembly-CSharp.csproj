@@ -181,6 +181,9 @@
     <Compile Include="Assets\@Scripts\UI\Popup\UI_MergeAllResultPopup.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_TotalDamagePopup.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\CustomSceneManager.cs" />
+    <Compile Include="Assets\@Scripts\UI\UI_SafeAreaFitter.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_CharacterSelectPopup.cs" />
+    <Compile Include="Assets\@Scripts\Controllers\SafeZoneController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

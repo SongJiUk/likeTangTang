@@ -243,32 +243,40 @@ public class UI_ShopPopup : UI_Popup
     void OnClickAdvancedBoxOpenButton()
     {
         Manager.SoundM.PlayButtonClick();
-        if(Manager.GameM.ItemDic[Define.ID_GOLD_KEY] > 0)
+        if (Manager.GameM.ItemDic.TryGetValue(Define.ID_GOLD_KEY, out int count))
         {
-            Manager.GameM.ItemDic[Define.ID_GOLD_KEY]--;
-            DoGaCha(Define.GachaType.AdvancedGacha, 1);
-            Refresh();
-        }
-        else
-        {
-            Manager.UiM.ShowToast("열쇠가 부족합니다.");
-        }
+            if (count > 0)
+            {
+                DoGaCha(Define.GachaType.AdvancedGacha, 1);
+                Manager.GameM.ItemDic[Define.ID_GOLD_KEY]--;
+                Refresh();
+            }
+            else
+            {
+                Manager.UiM.ShowToast("열쇠가 부족합니다.");
+            }
+        }   
+        else Debug.LogError("ItemDic에 GoldKey 등록이 안됨.");
+        
     }
 
     void OnClickAdvancedBoxTenOpenButton()
     {
         Manager.SoundM.PlayButtonClick();
-        if(Manager.GameM.ItemDic[Define.ID_GOLD_KEY] >= 10 )
+        if (Manager.GameM.ItemDic.TryGetValue(Define.ID_GOLD_KEY, out int count))
         {
-            Manager.GameM.ItemDic[Define.ID_GOLD_KEY] -= 10;
-            DoGaCha(Define.GachaType.AdvancedGacha, 10);
-            Refresh();
+            if (count >= 10)
+            {
+                DoGaCha(Define.GachaType.CommonGacha, 1);
+                Manager.GameM.ItemDic[Define.ID_GOLD_KEY]--;
+                Refresh();
+            }
+            else
+            {
+                Manager.UiM.ShowToast("열쇠가 부족합니다.");
+            }
         }
-        else
-        {
-            Manager.UiM.ShowToast("열쇠가 부족합니다.");
-        }
-
+        else Debug.LogError("ItemDic에 GoldKey 등록이 안됨.");
 
     }
 
@@ -302,16 +310,21 @@ public class UI_ShopPopup : UI_Popup
     void OnClickCommonGachaOpenButton()
     {
         Manager.SoundM.PlayButtonClick();
-        if(Manager.GameM.ItemDic[Define.ID_SILVER_KEY] > 0)
+        if (Manager.GameM.ItemDic.TryGetValue(Define.ID_SILVER_KEY, out int count))
         {
-            DoGaCha(Define.GachaType.CommonGacha, 1);
-            Manager.GameM.ItemDic[Define.ID_SILVER_KEY]--;
-            Refresh();
+            if (count > 0)
+            {
+                DoGaCha(Define.GachaType.CommonGacha, 1);
+                Manager.GameM.ItemDic[Define.ID_SILVER_KEY]--;
+                Refresh();
+            }
+            else
+            {
+                Manager.UiM.ShowToast("열쇠가 부족합니다.");
+            }
         }
-        else
-        {
-            Manager.UiM.ShowToast("열쇠가 부족합니다.");
-        }
+        else Debug.LogError("ItemDic에 SilverKey 등록이 안됨.");
+        
     }
 
     //골드

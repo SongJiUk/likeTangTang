@@ -13,6 +13,7 @@ public class PlayerController : CreatureController, ITickable
     public Action OnPlayerDataUpdated;
     public Action OnPlayerLevelUp;
     public Action OnPlayerDead;
+    public Action OnPlayerDamaged;
     #endregion
 
     #region 플레이어 스탯
@@ -435,10 +436,10 @@ public class PlayerController : CreatureController, ITickable
         }
 
         totalDamage *= 1 - DamageReduction;
-
+        Manager.GameM.Camera.Shake();
         // TODO: 실제 데미지 계산이 확정되면 아래 주석 해제
-        // base.OnDamaged(_attacker, _skill, totalDamage);
-        base.OnDamaged(_attacker, null, totalDamage); // 현재 테스트용 데미지 0
+        //base.OnDamaged(_attacker, _skill, totalDamage);
+        base.OnDamaged(_attacker, null, 0); // 현재 테스트용 데미지 0
     }
 
     public override void OnDead()
@@ -509,8 +510,21 @@ public class PlayerController : CreatureController, ITickable
         if (_isEffect)
             Manager.ResourceM.Instantiate("HealEffect", transform);
     }
-
     #endregion
+
+    //TODO : 이거 시작할때 바로 여기 들어와서 데미지 한번 입고, 반투명해짐
+    public void OnSafeZoneExit(BaseController _attacker)
+    {
+        float damage = MaxHp * 0.05f;
+        OnDamaged(_attacker, null, damage);
+        CreatureSprite.color = new Color(1, 1, 1, 0.5f);
+        OnPlayerDamaged?.Invoke();
+    }
+
+    public void OnSafeZoneEnter()
+    {
+        CreatureSprite.color = new Color(1, 1, 1, 1f);
+    }
 
     #region 애니메이션
 

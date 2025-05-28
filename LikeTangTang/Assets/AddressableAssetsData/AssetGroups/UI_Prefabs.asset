@@ -122,7 +122,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: aa6e62f9ee89a7547bafcb44c79b75c0
+  - m_GUID: 1202137c78b18be4ab89bda97f448af9
     m_Address: UI_EquipmentResetPopup
     m_ReadOnly: 0
     m_SerializedLabels:

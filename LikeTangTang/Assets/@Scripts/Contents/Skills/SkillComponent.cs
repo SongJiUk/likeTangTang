@@ -101,7 +101,6 @@ public class SkillComponent : MonoBehaviour
         //TODO : LoadSkill이면 return;
         if (_isLoadSkill)
         {
-
             foreach (SkillBase playerSkill in skillList)
             {
                 if (_skill.SpecialSkillName.ToString() == playerSkill.Skilltype.ToString())
@@ -109,7 +108,6 @@ public class SkillComponent : MonoBehaviour
                     playerSkill.UpdateSkillData();
                 }
             }
-
             return;
         }
         

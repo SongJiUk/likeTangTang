@@ -80,6 +80,8 @@ public class CreatureController : BaseController, ITickable
         if (CreatureAnim == null)
             CreatureAnim = Utils.FindChild<Animator>(gameObject, recursive: true);
 
+        //TODO : 가끔 몬스터들이 흰색으로 나오는 경우가 있음
+        if(DefaultMat != null) CreatureSprite.material = DefaultMat;
         return true;
     }
 

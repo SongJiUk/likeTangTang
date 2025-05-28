@@ -67,9 +67,10 @@ public class UI_TitleScene : UI_Scene
                 
                 StartAnim();
             }
-                
         });
     }
+
+    
 
     public void StartAnim()
     {
