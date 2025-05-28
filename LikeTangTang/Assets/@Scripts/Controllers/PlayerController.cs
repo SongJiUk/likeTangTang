@@ -253,6 +253,8 @@ public class PlayerController : CreatureController, ITickable
                     Skills.AddSpecialSkill(Skill);
             }
         }
+
+
     }
 
     #endregion
@@ -374,12 +376,15 @@ public class PlayerController : CreatureController, ITickable
         if (CreatureAnim != null)
             CreatureAnim.runtimeAnimatorController =
                 Manager.ResourceM.Load<RuntimeAnimatorController>(creatureData.CreatureAnimName);
+        UpdatePlayerStat();
+        Manager.GameM.SaveGame();
     }
 
     public override void InitStat(bool _isHpFull = false)
     {
         MaxHp = Manager.GameM.CurrentCharacter.MaxHp;
         Attack = Manager.GameM.CurrentCharacter.Attack;
+        Def = Manager.GameM.CurrentCharacter.Def;
         Speed = creatureData.Speed * creatureData.MoveSpeedRate;
 
         var (equip_Hp, equip_Attack) = Manager.GameM.GetCurrentCharacterStat();
@@ -398,12 +403,12 @@ public class PlayerController : CreatureController, ITickable
     public override void UpdatePlayerStat()
     {
         InitStat();
-
-        MaxHp *= MaxHpRate;
         Hp = MaxHp;
-        Attack *= AttackRate;
-        Def *= DefRate;
-        Speed *= SpeedRate;
+
+        //MaxHp *= MaxHpRate;
+        //Attack *= AttackRate;
+        //Def *= DefRate;
+        //Speed *= SpeedRate;
     }
 
     private void OnDestroy()

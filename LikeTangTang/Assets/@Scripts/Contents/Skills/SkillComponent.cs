@@ -83,9 +83,11 @@ public class SkillComponent : MonoBehaviour
             SavedBattleSkill[_type] = skill.SkillLevel;
         else
             SavedBattleSkill.Add(_type, skill.SkillLevel);
+
+        Manager.GameM.ContinueDatas.SavedBattleSkill = SavedBattleSkill;
     }
 
-    public void AddSpecialSkill(Data.SpecialSkillData _skill, bool _isLockSkill = false)
+    public void AddSpecialSkill(Data.SpecialSkillData _skill, bool _isLoadSkill = false)
     {
         _skill.IsLearned = true;
 
@@ -97,24 +99,37 @@ public class SkillComponent : MonoBehaviour
         SpecialSkills.Add(_skill);
 
         //TODO : LoadSkill이면 return;
-        if (_isLockSkill) return;
-
-
-        if(_skill.SkillType == Define.SpecialSkillType.General)
+        if (_isLoadSkill)
         {
-            GeneralSpecialSkill(_skill);
-        }
-        else if(_skill.SkillType == Define.SpecialSkillType.Special)
-        {
-            foreach(SkillBase playerSkill in skillList)
+
+            foreach (SkillBase playerSkill in skillList)
             {
-                if(_skill.SpecialSkillName.ToString() == playerSkill.Skilltype.ToString())
+                if (_skill.SpecialSkillName.ToString() == playerSkill.Skilltype.ToString())
                 {
                     playerSkill.UpdateSkillData();
                 }
             }
+
+            return;
         }
         
+
+        if (_skill.SkillType == Define.SpecialSkillType.General)
+        {
+            GeneralSpecialSkill(_skill);
+        }
+        else if (_skill.SkillType == Define.SpecialSkillType.Special)
+        {
+            foreach (SkillBase playerSkill in skillList)
+            {
+                if (_skill.SpecialSkillName.ToString() == playerSkill.Skilltype.ToString())
+                {
+                    
+                    playerSkill.UpdateSkillData();
+                }
+            }
+        }
+        Manager.GameM.ContinueDatas.SavedSpecialSkill.Add(_skill);
     }
 
     public void LoadSkill(Define.SkillType _skillType, int _level)
@@ -142,6 +157,7 @@ public class SkillComponent : MonoBehaviour
                 if(SavedBattleSkill.ContainsKey(_type))
                 {
                     SavedBattleSkill[_type] = skillList[i].SkillLevel;
+                    Manager.GameM.ContinueDatas.SavedBattleSkill = SavedBattleSkill;
                     Manager.GameM.SaveGame();
                 }
             }

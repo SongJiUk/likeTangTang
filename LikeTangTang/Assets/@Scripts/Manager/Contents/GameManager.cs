@@ -515,11 +515,11 @@ public class GameManager
 
     public void SaveGame()
     {
-        if (player != null)
-        {
-            gameData.ContinueDatas.SavedBattleSkill = player.Skills?.SavedBattleSkill;
-            gameData.ContinueDatas.SavedSpecialSkill = player.Skills?.SpecialSkills;
-        }
+        //if (player != null)
+        //{
+        //    gameData.ContinueDatas.SavedBattleSkill = player.Skills?.SavedBattleSkill;
+        //    gameData.ContinueDatas.SavedSpecialSkill = player.Skills?.SpecialSkills;
+        //}
 
         string jsonStr = JsonConvert.SerializeObject(gameData);
         File.WriteAllText(path, jsonStr);

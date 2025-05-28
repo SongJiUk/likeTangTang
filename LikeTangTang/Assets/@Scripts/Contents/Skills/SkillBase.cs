@@ -117,7 +117,7 @@ public class SkillBase : BaseController
         {
             if(Skilltype.ToString() == specialSkill.SpecialSkillName.ToString())
             {
-                skillData.CoolTime += specialSkill.CoolTime;
+                skillData.CoolTime -= specialSkill.CoolTime;
                 skillData.RoatateSpeed += specialSkill.RoatateSpeed;
                 skillData.NumBounce += (int)specialSkill.NumBounce;
                 skillData.Speed += specialSkill.Speed;

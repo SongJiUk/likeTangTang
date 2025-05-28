@@ -128,38 +128,13 @@ public class CreatureController : BaseController, ITickable
         {
             Skills.AddSpecialSkill(specialSkill, true);
         }
-
-        // TODO :
-
-        /*
-         * else if(_skill.SkillType == Define.SpecialSkillType.Special)
-        {
-            foreach(SkillBase playerSkill in skillList)
-            {
-                if(_skill.SpecialSkillName.ToString() == playerSkill.Skilltype.ToString())
-                {
-                    playerSkill.UpdateSkillData();
-                }
-            }
-        }
-        여기 넣는것처럼은 해줘야됌
-         */
     }
     public virtual void InitSkill()
     {
         //TODO : 여기에 스킬 추가 
 
-        Equipment item;
-        Manager.GameM.EquipedEquipments.TryGetValue(EquipmentType.Weapon, out item);
-
-        if (item != null)
-        {
-
-            //weaponName = item.EquipmentData.NameTextID;
-        }
         foreach (int skillID in creatureData.SkillTypeList)
         {
-
             if (Manager.DataM.SkillDic.TryGetValue(skillID, out var data))
             {
                 if (data.SkillType != SkillType.None)
