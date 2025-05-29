@@ -29,6 +29,7 @@ public static class Define
     public static int ID_GOLD = 60000;
     public static int ID_DIA = 60001;
     public static int ID_STAMINA = 60002;
+    public static int ID_LevelUpCoupon = 60004;
     public static int ID_WeaponScroll = 61000;
     public static int ID_GloveScroll = 61001;
     public static int ID_RingScroll = 61002;
@@ -308,6 +309,7 @@ public static class Define
         Dia,
         Stamina,
         Exp,
+        LevelUpCoupon,
         WeaponScroll,
         GloveScroll,
         RingScroll,

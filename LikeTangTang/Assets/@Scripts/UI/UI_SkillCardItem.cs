@@ -76,6 +76,7 @@ public class UI_SkillCardItem : UI_Base
 
         transform.localScale = Vector3.one;
 
+        skill = null;
         return true;
     }
 
@@ -97,7 +98,6 @@ public class UI_SkillCardItem : UI_Base
         {
             skill = _skill;
 
-            //초기화
             GetObject(gameObjectsType, (int)GameObjects.NewIImageObject).gameObject.SetActive(false);
             for(int i =0; i<Define.MAX_SKILL_LEVEL; i++)
             {
@@ -110,19 +110,13 @@ public class UI_SkillCardItem : UI_Base
                 GetObject(gameObjectsType, (int)GameObjects.NewIImageObject).gameObject.SetActive(true);
             }
 
-            //TODO : 스킬 아이템 세팅 
-            if (skill.SkillLevel == 5)
-            {
-                GetObject(gameObjectsType, (int)GameObjects.EvoSkillInfoObject).gameObject.SetActive(true);
-                GetImage(ImagesType, (int)Images.EvoSkillINeedITemImage).sprite = Manager.ResourceM.Load<Sprite>(Manager.DataM.SkillEvolutionDic[skill.SkillDatas.EvolutionItemID].EvolutionItemIcon);
-            }
-
-
             GetText(TextsType, (int)Texts.CardNameText).text = $"{skill.SkillDatas.SkillName}";
             GetText(TextsType, (int)Texts.SkillDescriptionText).text = $"{skill.SkillDatas.SkillDescription}";
             GetImage(ImagesType, (int)Images.SkillImage).sprite = Manager.ResourceM.Load<Sprite>(skill.SkillDatas.SkillIcon);
+            GetObject(gameObjectsType, (int)GameObjects.EvoSkillInfoObject).gameObject.SetActive(true);
+            GetImage(ImagesType, (int)Images.EvoSkillINeedITemImage).sprite = Manager.ResourceM.Load<Sprite>(Manager.DataM.SkillEvolutionDic[skill.SkillDatas.EvolutionItemID].EvolutionItemIcon);
 
-            for(int i =0; i< Define.MAX_SKILL_LEVEL; i++)
+            for (int i =0; i< Define.MAX_SKILL_LEVEL; i++)
             {
                 GetObject(gameObjectsType, (int)GameObjects.StarOff_0 + i).SetActive(true);
             }
@@ -133,11 +127,8 @@ public class UI_SkillCardItem : UI_Base
         }
         else if(_evolutionItemID != 0)
         {
-
-
             evolutionItemID = _evolutionItemID;
             Data.SkillEvolutionData evoData = Manager.DataM.SkillEvolutionDic[_evolutionItemID];
-
 
 
             GetObject(gameObjectsType, (int)GameObjects.NewIImageObject).gameObject.SetActive(true);
@@ -154,10 +145,8 @@ public class UI_SkillCardItem : UI_Base
         }
     }
 
-    //지워라 이거: 스킬 어디서 배우는지 확인, 어떻게 추가되는지도 확인 그거 확인해서 지우면 됌
     public void OnClickItem()
     {
-        //TODO : 스킬 고를때 선택하면 잘못 선택되는 경우가 있음(테스트 좀 많이 해봐야 될듯)
         if(skill != null)
         {
            Manager.GameM.player.Skills.LevelUpSkill(skill.Skilltype);

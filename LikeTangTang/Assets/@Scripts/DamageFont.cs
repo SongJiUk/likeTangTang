@@ -21,7 +21,7 @@ public class DamageFont : MonoBehaviour
         else if (_isCritical)
         {
             damageText.text = $"{Mathf.RoundToInt(_damage)}";
-            damageText.color = Utils.HexToColor("EFAD00");
+            damageText.color = Utils.HexToColor("FF0000");
         }
         else
         {

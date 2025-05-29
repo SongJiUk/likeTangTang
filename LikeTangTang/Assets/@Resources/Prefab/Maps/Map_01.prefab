@@ -664,6 +664,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1132721043990337420}
     m_Modifications:
+    - target: {fileID: 537052115477802331, guid: 123eabf60e3db3b478db12bdd50ab084, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 537052115477802331, guid: 123eabf60e3db3b478db12bdd50ab084, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 537052115477802331, guid: 123eabf60e3db3b478db12bdd50ab084, type: 3}
+      propertyPath: m_Color.r
+      value: 0.73333335
+      objectReference: {fileID: 0}
     - target: {fileID: 1290159579780068142, guid: 123eabf60e3db3b478db12bdd50ab084, type: 3}
       propertyPath: m_Name
       value: MagneticField

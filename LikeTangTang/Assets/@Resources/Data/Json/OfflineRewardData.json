@@ -3,37 +3,37 @@
     {
       "StageIndex": 1,
       "Reward_Gold": 3000,
-      "Reward_Exp": 1200,
+      "Reward_LevelUpCoupon": 1,
       "FastReward_Scroll": 1,
-      "FastReward_Box": 1
+      "FastReward_LevelUpCoupon": 1
     },
     {
       "StageIndex": 2,
       "Reward_Gold": 3300,
-      "Reward_Exp": 1320,
-      "FastReward_Scroll": 1,
-      "FastReward_Box": 1
+      "Reward_LevelUpCoupon": 2,
+      "FastReward_Scroll": 2,
+      "FastReward_LevelUpCoupon": 2
     },
     {
       "StageIndex": 3,
       "Reward_Gold": 3600,
-      "Reward_Exp": 1440,
-      "FastReward_Scroll": 1,
-      "FastReward_Box": 1
+      "Reward_LevelUpCoupon": 3,
+      "FastReward_Scroll": 3,
+      "FastReward_LevelUpCoupon": 3
     },
     {
       "StageIndex": 4,
       "Reward_Gold": 3900,
-      "Reward_Exp": 1560,
-      "FastReward_Scroll": 1,
-      "FastReward_Box": 1
+      "Reward_LevelUpCoupon": 4,
+      "FastReward_Scroll": 4,
+      "FastReward_LevelUpCoupon": 4
     },
     {
       "StageIndex": 5,
       "Reward_Gold": 4200,
-      "Reward_Exp": 1680,
-      "FastReward_Scroll": 1,
-      "FastReward_Box": 1
+      "Reward_LevelUpCoupon": 5,
+      "FastReward_Scroll": 5,
+      "FastReward_LevelUpCoupon": 5
     }
   ]
 }

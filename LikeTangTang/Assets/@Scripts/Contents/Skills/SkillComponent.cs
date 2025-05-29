@@ -20,6 +20,7 @@ public class SkillComponent : MonoBehaviour
 
     public Dictionary<Define.SkillType, int> SavedBattleSkill = new Dictionary<Define.SkillType, int>();
     //TODO : 서포트 스킬(진화스킬)
+    public Dictionary<Define.SkillType, int> SavedEvolutionSkill = new Dictionary<Define.SkillType, int>();
 
     public T AddSkill<T>(Vector3 _pos, Transform _parent = null ) where T : SkillBase
     {
@@ -225,10 +226,15 @@ public class SkillComponent : MonoBehaviour
             if (!skill.isLearnSkill) continue;
             if (!skill.isCanEvolve()) continue;
 
-            if(skill.SkillDatas.EvolutionItemID == _evolutionItemID)
+            if (skill.SkillDatas.EvolutionItemID == _evolutionItemID)
             {
                 evolutionItemList.Add(_evolutionItemID);
                 skill.Evolution();
+
+                SavedEvolutionSkill[skill.Skilltype] = _evolutionItemID;
+                Manager.GameM.ContinueDatas.SavedEvolutionSkill = SavedEvolutionSkill;
+                Manager.GameM.SaveGame();
+
                 break;
             }
         }

@@ -763,9 +763,9 @@ public class DataTransformer : EditorWindow
             OfflineRewardData ofr = new OfflineRewardData();
             ofr.StageIndex = ConvertValue<int>(row[i++]);
             ofr.Reward_Gold = ConvertValue<int>(row[i++]);
-            ofr.Reward_Exp = ConvertValue<int>(row[i++]);
+            ofr.Reward_LevelUpCoupon = ConvertValue<int>(row[i++]);
             ofr.FastReward_Scroll = ConvertValue<int>(row[i++]);
-            ofr.FastReward_Box = ConvertValue<int>(row[i++]);
+            ofr.FastReward_LevelUpCoupon = ConvertValue<int>(row[i++]);
 
 
             loader.list.Add(ofr);

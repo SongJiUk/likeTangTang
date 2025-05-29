@@ -33,8 +33,16 @@
       "SpriteName": "Exp.sprite"
     },
     {
-      "MaterialID": 61000,
+      "MaterialID": 60004,
       "MaterialType": 5,
+      "MaterialGrade": 3,
+      "NameTextID": "레벨업 쿠폰",
+      "Description": "레벨업을 하는데 사용됩니다.",
+      "SpriteName": "LevelUpCoupon.sprite"
+    },
+    {
+      "MaterialID": 61000,
+      "MaterialType": 6,
       "MaterialGrade": 1,
       "NameTextID": "무기 강화 스크롤",
       "Description": "무기를 강화할 때 사용",
@@ -42,7 +50,7 @@
     },
     {
       "MaterialID": 61001,
-      "MaterialType": 6,
+      "MaterialType": 7,
       "MaterialGrade": 1,
       "NameTextID": "장갑 강화 스크롤",
       "Description": "장갑을 강화할 때 사용",
@@ -50,7 +58,7 @@
     },
     {
       "MaterialID": 61002,
-      "MaterialType": 7,
+      "MaterialType": 8,
       "MaterialGrade": 1,
       "NameTextID": "반지 강화 스크롤",
       "Description": "반지를 강화할 때 사용",
@@ -58,7 +66,7 @@
     },
     {
       "MaterialID": 61003,
-      "MaterialType": 8,
+      "MaterialType": 9,
       "MaterialGrade": 1,
       "NameTextID": "헬멧 강화 스크롤",
       "Description": "헬멧을 강화할 때 사용",
@@ -66,7 +74,7 @@
     },
     {
       "MaterialID": 61004,
-      "MaterialType": 9,
+      "MaterialType": 10,
       "MaterialGrade": 1,
       "NameTextID": "아머 강화 스크롤",
       "Description": "아머를 강화할 때 사용",
@@ -74,7 +82,7 @@
     },
     {
       "MaterialID": 61005,
-      "MaterialType": 10,
+      "MaterialType": 11,
       "MaterialGrade": 1,
       "NameTextID": "부츠 강화 스크롤",
       "Description": "부츠를 강화할 때 사용",
@@ -82,7 +90,7 @@
     },
     {
       "MaterialID": 62000,
-      "MaterialType": 11,
+      "MaterialType": 12,
       "MaterialGrade": 1,
       "NameTextID": "브론즈 키",
       "Description": "일반 장비 상자를 오픈할 때 사용",
@@ -90,7 +98,7 @@
     },
     {
       "MaterialID": 62001,
-      "MaterialType": 12,
+      "MaterialType": 13,
       "MaterialGrade": 3,
       "NameTextID": "실버 키",
       "Description": "중급 장비 상자를 오픈할 때 사용",
@@ -98,7 +106,7 @@
     },
     {
       "MaterialID": 62002,
-      "MaterialType": 13,
+      "MaterialType": 14,
       "MaterialGrade": 4,
       "NameTextID": "골드 키",
       "Description": "상급 장비 상자를 오픈할 떄 사용",
@@ -106,7 +114,7 @@
     },
     {
       "MaterialID": 62003,
-      "MaterialType": 14,
+      "MaterialType": 15,
       "MaterialGrade": 1,
       "NameTextID": "부활권",
       "Description": "캐릭터 부활시 소모",
@@ -114,7 +122,7 @@
     },
     {
       "MaterialID": 63000,
-      "MaterialType": 15,
+      "MaterialType": 16,
       "MaterialGrade": 1,
       "NameTextID": "랜덤 스크롤",
       "Description": "랜덤한 강화 스크롤로 교환",
@@ -122,7 +130,7 @@
     },
     {
       "MaterialID": 63001,
-      "MaterialType": 16,
+      "MaterialType": 17,
       "MaterialGrade": 1,
       "NameTextID": "ALL 랜덤 스크롤",
       "Description": "랜덤한 장비를 얻을 수 있는 상자",
@@ -130,7 +138,7 @@
     },
     {
       "MaterialID": 63002,
-      "MaterialType": 18,
+      "MaterialType": 19,
       "MaterialGrade": 1,
       "NameTextID": "일반 장비상자",
       "Description": "일반 등급의 장비를 얻을 수 있는 상자",
@@ -138,7 +146,7 @@
     },
     {
       "MaterialID": 63003,
-      "MaterialType": 19,
+      "MaterialType": 20,
       "MaterialGrade": 2,
       "NameTextID": "고급 장비상자",
       "Description": "고급 등급의 장비를 얻을 수 있는 상자",
@@ -146,7 +154,7 @@
     },
     {
       "MaterialID": 63004,
-      "MaterialType": 20,
+      "MaterialType": 21,
       "MaterialGrade": 3,
       "NameTextID": "희귀 장비상자",
       "Description": "희귀 등급의 장비를 얻을 수 있는 상자",
@@ -154,7 +162,7 @@
     },
     {
       "MaterialID": 63005,
-      "MaterialType": 21,
+      "MaterialType": 22,
       "MaterialGrade": 4,
       "NameTextID": "에픽 장비상자",
       "Description": "에픽 등급의 장비를 얻을 수 있는 상자",
@@ -162,7 +170,7 @@
     },
     {
       "MaterialID": 63006,
-      "MaterialType": 22,
+      "MaterialType": 23,
       "MaterialGrade": 6,
       "NameTextID": "레전드 장비상자",
       "Description": "레전드 등급의 장비를 얻을 수 있는 상자",
@@ -170,7 +178,7 @@
     },
     {
       "MaterialID": 64000,
-      "MaterialType": 23,
+      "MaterialType": 24,
       "MaterialGrade": 4,
       "NameTextID": "무기 강화석",
       "Description": "무기를 합성할 때 사용",
@@ -178,7 +186,7 @@
     },
     {
       "MaterialID": 64001,
-      "MaterialType": 23,
+      "MaterialType": 24,
       "MaterialGrade": 6,
       "NameTextID": "무기 강화석",
       "Description": "무기를 합성할 때 사용",
@@ -186,7 +194,7 @@
     },
     {
       "MaterialID": 64002,
-      "MaterialType": 24,
+      "MaterialType": 25,
       "MaterialGrade": 4,
       "NameTextID": "장갑 강화석",
       "Description": "장갑을 합성할 때 사용",
@@ -194,7 +202,7 @@
     },
     {
       "MaterialID": 64003,
-      "MaterialType": 24,
+      "MaterialType": 25,
       "MaterialGrade": 6,
       "NameTextID": "장갑 강화석",
       "Description": "장갑을 합성할 때 사용",
@@ -202,7 +210,7 @@
     },
     {
       "MaterialID": 64004,
-      "MaterialType": 25,
+      "MaterialType": 26,
       "MaterialGrade": 4,
       "NameTextID": "반지 강화석",
       "Description": "반지를 합성할 때 사용",
@@ -210,7 +218,7 @@
     },
     {
       "MaterialID": 64005,
-      "MaterialType": 25,
+      "MaterialType": 26,
       "MaterialGrade": 6,
       "NameTextID": "반지 강화석",
       "Description": "반지를 합성할 때 사용",
@@ -218,7 +226,7 @@
     },
     {
       "MaterialID": 64006,
-      "MaterialType": 26,
+      "MaterialType": 27,
       "MaterialGrade": 4,
       "NameTextID": "헬멧 강화석",
       "Description": "헬멧를 합성할 때 사용",
@@ -226,7 +234,7 @@
     },
     {
       "MaterialID": 64007,
-      "MaterialType": 26,
+      "MaterialType": 27,
       "MaterialGrade": 6,
       "NameTextID": "헬멧 강화석",
       "Description": "헬멧를 합성할 때 사용",
@@ -234,7 +242,7 @@
     },
     {
       "MaterialID": 64008,
-      "MaterialType": 27,
+      "MaterialType": 28,
       "MaterialGrade": 4,
       "NameTextID": "아머 강화석",
       "Description": "아머를 합성할 때 사용",
@@ -242,7 +250,7 @@
     },
     {
       "MaterialID": 64009,
-      "MaterialType": 27,
+      "MaterialType": 28,
       "MaterialGrade": 6,
       "NameTextID": "아머 강화석",
       "Description": "아머를 합성할 때 사용",
@@ -250,7 +258,7 @@
     },
     {
       "MaterialID": 64010,
-      "MaterialType": 28,
+      "MaterialType": 29,
       "MaterialGrade": 4,
       "NameTextID": "부츠 강화석",
       "Description": "부츠를 합성할 때 사용",
@@ -258,7 +266,7 @@
     },
     {
       "MaterialID": 64011,
-      "MaterialType": 28,
+      "MaterialType": 29,
       "MaterialGrade": 6,
       "NameTextID": "부츠 강화석",
       "Description": "부츠를 합성할 때 사용",

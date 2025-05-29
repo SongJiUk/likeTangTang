@@ -34,7 +34,7 @@ public class TimeManager : MonoBehaviour
                 return DateTime.Parse(savedTimeStr);
             }
             else
-                return DateTime.Now;
+                return DateTime.MinValue;
         }
 
         set
@@ -168,6 +168,8 @@ public class TimeManager : MonoBehaviour
         count.Enqueue(_offlineRewardData.FastReward_Scroll);
         name.Enqueue(Manager.DataM.MaterialDic[Define.ID_SILVER_KEY].SpriteName);
         count.Enqueue(_offlineRewardData.FastReward_Scroll);
+        name.Enqueue(Manager.DataM.MaterialDic[Define.ID_LevelUpCoupon].SpriteName);
+        count.Enqueue(_offlineRewardData.FastReward_LevelUpCoupon);
 
         if (Manager.GameM.MissionDic.TryGetValue(Define.MissionTarget.FastOfflineRewardGet, out MissionInfo info)) info.Progress++;
         Manager.GameM.FastOfflineRewardGetCount++;
@@ -178,6 +180,7 @@ public class TimeManager : MonoBehaviour
         Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_GOLD], gold);
         Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_RandomScroll], _offlineRewardData.FastReward_Scroll);
         Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_SILVER_KEY], _offlineRewardData.FastReward_Scroll);
+        Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_LevelUpCoupon], _offlineRewardData.FastReward_LevelUpCoupon);
 
         popup.SetInfo(name, count);
     }
@@ -186,6 +189,7 @@ public class TimeManager : MonoBehaviour
     public void Init()
     {
         TimeStart();
+        CheckAttendance();
         Manager.AchievementM.Attendance();
     }
 
@@ -296,7 +300,7 @@ public class TimeManager : MonoBehaviour
 
     public bool IsSameDay(DateTime _savedTime, DateTime _currentTime)
     {
-        if (LastLoginTime.Day == DateTime.Now.Day)
+        if (_savedTime.Day == _currentTime.Day)
             return true;
         else
             return false;

@@ -277,6 +277,16 @@ public class GameManager
         }
     }
 
+
+    public int LevelUpCoupon
+    {
+        get { return gameData.levelUpCoupon; }
+        set
+        {
+            gameData.levelUpCoupon = value;
+            SaveGame();
+        }
+    }
     public ContinueData ContinueDatas
     {
         get { return gameData.ContinueDatas; }
@@ -439,6 +449,10 @@ public class GameManager
             case MaterialType.Gold:
                 Gold += _count;
                 break;
+            case MaterialType.LevelUpCoupon:
+                LevelUpCoupon += _count;
+                AddMaterialItem(_data.MaterialID, _count);
+                break;
 
             case MaterialType.Stamina:
                 Stamina += _count;
@@ -515,11 +529,6 @@ public class GameManager
 
     public void SaveGame()
     {
-        //if (player != null)
-        //{
-        //    gameData.ContinueDatas.SavedBattleSkill = player.Skills?.SavedBattleSkill;
-        //    gameData.ContinueDatas.SavedSpecialSkill = player.Skills?.SpecialSkills;
-        //}
 
         string jsonStr = JsonConvert.SerializeObject(gameData);
         File.WriteAllText(path, jsonStr);

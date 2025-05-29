@@ -34,6 +34,7 @@ public class ContinueData
     public int KillCount;
     public int SkillRefreshCount = 3;
     public Dictionary<Define.SkillType, int> SavedBattleSkill = new Dictionary<Define.SkillType, int>();
+    public Dictionary<Define.SkillType, int> SavedEvolutionSkill = new Dictionary<Define.SkillType, int>();
     public List<Data.SpecialSkillData> SavedSpecialSkill = new List<Data.SpecialSkillData>();
     public void Clear()
     {
@@ -64,6 +65,7 @@ public class ContinueData
         KillCount = 0;
         SkillRefreshCount = 3;
         SavedBattleSkill.Clear();
+        SavedEvolutionSkill.Clear();
         SavedSpecialSkill.Clear();
     }
 }

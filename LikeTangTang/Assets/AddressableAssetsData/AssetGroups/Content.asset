@@ -16,7 +16,12 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 94163b93d7bb24f928019105ae174de0
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 4f408a3b62c586f409d5f2a524de8034
+    m_Address: LevelUpCoupon.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

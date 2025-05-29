@@ -11,6 +11,7 @@ public class UI_GameScene : UI_Scene
 {
     enum GameObjects
     {
+        WaveObject,
         BossInfoObject,
         EliteInfoObject,
         MonsterAlarmObject,
@@ -66,9 +67,6 @@ public class UI_GameScene : UI_Scene
 
         GetButton(ButtonsType, (int)Buttons.PauseButton).gameObject.BindEvent(OnClickPauseButton);
 
-        GetImage(ImagesType, (int)Images.WhiteFlash).gameObject.SetActive(false);
-        GetImage(ImagesType, (int)Images.OnDamaged).gameObject.SetActive(false);
-
         GetObject(gameObjectsType, (int)GameObjects.BossInfoObject).SetActive(false);
         GetObject(gameObjectsType, (int)GameObjects.EliteInfoObject).SetActive(false);
         GetObject(gameObjectsType, (int)GameObjects.MonsterAlarmObject).SetActive(false);
@@ -78,9 +76,15 @@ public class UI_GameScene : UI_Scene
         Manager.GameM.player.OnPlayerDataUpdated = OnPlayerDataUpdated;
         Manager.GameM.player.OnPlayerLevelUp = OnPlayerLevelUp;
         Manager.GameM.player.OnPlayerDamaged = OnDamaged;
+
+        Refresh();
         return true;
     }
 
+    void Refresh()
+    {
+        LayoutRebuilder.ForceRebuildLayoutImmediate(GetObject(gameObjectsType, (int)GameObjects.WaveObject).GetComponent<RectTransform>());
+    }
     public void OnWaveStart(int _currentStageIndex)
     {
         GetText(typeof(Texts), (int)(Texts.WaveValueText)).text = _currentStageIndex.ToString();
@@ -93,7 +97,7 @@ public class UI_GameScene : UI_Scene
 
     public void OnChangeSecond(int _minute, int _second)
     {
-        if (_second == 30 && Manager.GameM.CurrentWaveIndex < 9)
+        if (_second == 45 && Manager.GameM.CurrentWaveIndex < 9)
         {
             //TOOD : 알람
             StartCoroutine(SwitchAlarm(AlramType.Wave));
@@ -101,11 +105,14 @@ public class UI_GameScene : UI_Scene
 
         if(Manager.GameM.CurrentWaveData.BossMonsterID.Count > 0)
         {
-            // TODO : 알람
-            StartCoroutine(SwitchAlarm(AlramType.Boss));
+            int bossGenTime = 5;
+            if(_second == bossGenTime)
+                StartCoroutine(SwitchAlarm(AlramType.Boss));
         }
 
         GetText(typeof(Texts), (int)Texts.TimeLimitValueText).text = $"{_minute:D2} : {_second:D2}";
+
+        Refresh();
 
         //TODO : 실험 해보기 
         //if (_second == 60)
@@ -218,8 +225,17 @@ public class UI_GameScene : UI_Scene
         yield return null;
 
         DOTween.Sequence().
-            Append(GetImage(ImagesType, (int)Images.WhiteFlash).DOFade(1, 0.1f))
-            .Append(GetImage(ImagesType, (int)Images.WhiteFlash).DOFade(0, 0.2f)).OnComplete(() => { });
+            Append(GetImage(ImagesType, (int)Images.WhiteFlash).DOFade(1, 0.15f))
+            .Append(GetImage(ImagesType, (int)Images.WhiteFlash).DOFade(0, 0.3f)).OnComplete(() => { });
     }
+    
 
+    //TODO : 지우기 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            Manager.GameM.player.Exp += 10;
+        }
+    }
 }

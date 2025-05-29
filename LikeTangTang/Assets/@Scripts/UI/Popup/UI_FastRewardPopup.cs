@@ -82,6 +82,9 @@ public class UI_FastRewardPopup : UI_Popup
         UI_MaterialItem key = Manager.UiM.MakeSubItem<UI_MaterialItem>(cont.transform);
         key.SetInfo(Manager.DataM.MaterialDic[Define.ID_SILVER_KEY].SpriteName, OfflineRewardData.FastReward_Scroll);
 
+        UI_MaterialItem coupon = Manager.UiM.MakeSubItem<UI_MaterialItem>(cont.transform);
+        coupon.SetInfo(Manager.DataM.MaterialDic[Define.ID_LevelUpCoupon].SpriteName, OfflineRewardData.FastReward_LevelUpCoupon);
+
         GetText(TextsType, (int)Texts.EemainingCountValueText).text = Manager.GameM.FastRewardCountStamina.ToString();
 
         LayoutRebuilder.ForceRebuildLayoutImmediate(GetButton(ButtonsType, (int)Buttons.ADFreeButton).gameObject.GetComponent<RectTransform>());

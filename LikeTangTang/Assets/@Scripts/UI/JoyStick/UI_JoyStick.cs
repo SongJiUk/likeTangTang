@@ -20,7 +20,7 @@ public class UI_JoyStick : UI_Scene
     GameObject handlerBG;
 
 
-    float circleRadius;
+    float circleRadius; 
     Vector2 touchPos;
     Vector2 moveDir;
 

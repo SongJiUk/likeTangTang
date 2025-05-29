@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 public class BossController : MonsterController
 {
     public Action<BossController> BossMonsterInfoUpdate;
+    public Action OnBossDead;
     // [ ] DATA LOAD
     float range = 2.0f;
     public override bool Init()
@@ -79,6 +80,8 @@ public class BossController : MonsterController
         if (Manager.GameM.MissionDic.TryGetValue(Define.MissionTarget.BossKill, out MissionInfo mission))
             mission.Progress++;
         Manager.GameM.TotalBossKillCount++;
+
+        OnBossDead?.Invoke();
     }
     public override void InitStat(bool _isHpFull = false)
     {

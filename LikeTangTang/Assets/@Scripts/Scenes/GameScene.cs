@@ -78,7 +78,6 @@ public class GameScene : BaseScene, ITickable
         OnWaveStart = ui.OnWaveStart;
         OnWaveEnd = ui.OnWaveEnd;
         OnChangeSecond = ui.OnChangeSecond;
-        //[ ] : UI 업데이트.
 
     }
     public override void Clear()

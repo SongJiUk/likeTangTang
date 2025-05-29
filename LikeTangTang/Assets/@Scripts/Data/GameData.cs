@@ -13,6 +13,7 @@ public class GameData
     public int gold = 0;
     public int dia = 0;
     public int stamina = 0;
+    public int levelUpCoupon = 0;
 
     #region 업적
     public int TotalStageClear = 0;

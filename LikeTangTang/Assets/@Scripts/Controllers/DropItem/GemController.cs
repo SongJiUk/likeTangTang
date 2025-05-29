@@ -88,7 +88,8 @@ public class GemController : DropItemController
                 .SetEase(Ease.Linear))
                 .OnComplete(() =>
                 {
-                    coMoveToPlayer = StartCoroutine(CoMoveToPlayer());
+                    if(this.IsValid())
+                        coMoveToPlayer = StartCoroutine(CoMoveToPlayer());
                 });
          }
     }

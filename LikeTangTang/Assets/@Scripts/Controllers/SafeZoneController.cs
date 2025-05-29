@@ -13,7 +13,7 @@ public class SafeZoneController : BaseController
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision) //세이프존을 들어올떄
+    private void OnTriggerEnter2D(Collider2D collision) 
     {
         PlayerController pc = collision.GetComponent<PlayerController>();
         if (!pc.IsValid()) return;
@@ -26,7 +26,7 @@ public class SafeZoneController : BaseController
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)// 세이프티존을 나갈떄 이어야할거같은데
+    private void OnTriggerExit2D(Collider2D collision)
     {
         PlayerController pc = collision.GetComponent<PlayerController>();
         if (!pc.IsValid()) return;

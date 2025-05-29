@@ -3,6 +3,7 @@ MaterialID,MaterialType,MaterialGrade,NameTextID,Description,SpriteName
 60001,Dia,Epic,다이아,상점에서 물품을 구매할 때 사용합니다.,Dia.sprite
 60002,Stamina,Epic,스테미나,스테이지 입장시 사용합니다.,Stamina.sprite
 60003,Exp,Rare,경험치,캐릭터 경험치,Exp.sprite
+60004,LevelUpCoupon,Rare,레벨업 쿠폰,레벨업을 하는데 사용됩니다.,LevelUpCoupon.sprite
 61000,WeaponScroll,Common,무기 강화 스크롤,무기를 강화할 때 사용,Scroll_Weapon.sprite
 61001,GloveScroll,Common,장갑 강화 스크롤,장갑을 강화할 때 사용,Scroll_Glove.sprite
 61002,RingScroll,Common,반지 강화 스크롤,반지를 강화할 때 사용,Scroll_Ring.sprite

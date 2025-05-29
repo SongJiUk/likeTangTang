@@ -80,8 +80,6 @@ public class CreatureController : BaseController, ITickable
         if (CreatureAnim == null)
             CreatureAnim = Utils.FindChild<Animator>(gameObject, recursive: true);
 
-        //TODO : 가끔 몬스터들이 흰색으로 나오는 경우가 있음
-        if(DefaultMat != null) CreatureSprite.material = DefaultMat;
         return true;
     }
 
@@ -96,8 +94,8 @@ public class CreatureController : BaseController, ITickable
         Init();
         InitStat();
 
-        
-
+        isStartDamageAnim = false;
+        if (DefaultMat != null) CreatureSprite.material = DefaultMat;
         CreatureSprite.sprite = Manager.ResourceM.Load<Sprite>(creatureData.Image_Name);
         Rigid.simulated = true;
     }
@@ -124,6 +122,11 @@ public class CreatureController : BaseController, ITickable
         foreach(KeyValuePair<SkillType, int> pair in Manager.GameM.ContinueDatas.SavedBattleSkill.ToList())
         {
             Skills.LoadSkill(pair.Key, pair.Value);
+        }
+
+        foreach (KeyValuePair<SkillType, int> pair in Manager.GameM.ContinueDatas.SavedEvolutionSkill.ToList())
+        {
+            Skills.TryEvolveSkill(pair.Value);
         }
 
         foreach (Data.SpecialSkillData specialSkill in Manager.GameM.ContinueDatas.SavedSpecialSkill.ToList())
@@ -190,6 +193,8 @@ public class CreatureController : BaseController, ITickable
     public virtual void OnDead()
     {
         CreatureState = CreatureState.Dead;
+        isStartDamageAnim = false;
+        StopAllCoroutines();
         if (Rigid != null)
             Rigid.simulated = false;
     }

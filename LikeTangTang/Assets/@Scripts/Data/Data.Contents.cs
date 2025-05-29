@@ -579,9 +579,9 @@ namespace Data
     {
         public int StageIndex;
         public int Reward_Gold;
-        public int Reward_Exp;
+        public int Reward_LevelUpCoupon;
         public int FastReward_Scroll;
-        public int FastReward_Box;
+        public int FastReward_LevelUpCoupon;
     }
 
     public class OfflineRewardDataLoader : ILoader<int, OfflineRewardData>

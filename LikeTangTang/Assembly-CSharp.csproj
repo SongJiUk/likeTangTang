@@ -112,8 +112,10 @@
     <Compile Include="Assets\@Scripts\Data\StageClearInfoData.cs" />
     <Compile Include="Assets\@Scripts\Data\DataTransformer.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_BattlePopup.cs" />
+    <Compile Include="Assets\@Scripts\UI\Popup\UI_CharacterSelectPopup.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\SkillZone.cs" />
     <Compile Include="Assets\@Scripts\DamageFont.cs" />
+    <Compile Include="Assets\@Scripts\UI\UI_SafeAreaFitter.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\Sequence\SequenceSkill.cs" />
     <Compile Include="Assets\@Scripts\Controllers\ProjectileController.cs" />
     <Compile Include="Assets\@Scripts\UI\UI_HP_Bar.cs" />
@@ -148,6 +150,7 @@
     <Compile Include="Assets\@Scripts\Contents\Skills\Repeat\PlasmaShot.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\Repeat\Projectile\FireBall.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_ShopPopup.cs" />
+    <Compile Include="Assets\@Scripts\Controllers\SafeZoneController.cs" />
     <Compile Include="Assets\_ExternalModule\Favorites\Common\Scripts\FG_GameObjectGUIDs.cs" />
     <Compile Include="Assets\@Scripts\Contents\Character.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\UIManager.cs" />
@@ -181,9 +184,6 @@
     <Compile Include="Assets\@Scripts\UI\Popup\UI_MergeAllResultPopup.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\UI_TotalDamagePopup.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\CustomSceneManager.cs" />
-    <Compile Include="Assets\@Scripts\UI\UI_SafeAreaFitter.cs" />
-    <Compile Include="Assets\@Scripts\UI\Popup\UI_CharacterSelectPopup.cs" />
-    <Compile Include="Assets\@Scripts\Controllers\SafeZoneController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

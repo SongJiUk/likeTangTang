@@ -9,7 +9,6 @@ public class MonsterController : CreatureController, ITickable
 {
     #region Action
     public Action<MonsterController> MonsterInfoUpdate;
-    public Action OnBossDead;
     #endregion
 
     #region GravityBomb Info
@@ -193,7 +192,6 @@ public class MonsterController : CreatureController, ITickable
             .OnComplete(() =>
             {
                 Rigid.velocity = Vector2.zero;
-                OnBossDead?.Invoke();
                 Manager.ObjectM.DeSpawn(this);
             });
     }

@@ -30,7 +30,7 @@ public class SkillBase : BaseController
 
     public bool isCanEvolve()
     {
-        return SkillDatas.CanEvolve;
+        return SkillDatas.CanEvolve; 
     }
 
     public SkillBase(Define.SkillType _skillType)
