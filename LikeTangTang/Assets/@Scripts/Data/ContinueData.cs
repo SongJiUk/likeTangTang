@@ -20,7 +20,7 @@ public class ContinueData
     public float Attack;
     public float AttackRate = 1;
     public float Def;
-    public float DefRate;
+    public float DefRate = 1f;
     public float MoveSpeed;
     public float MoveSpeedRate = 1;
     public float TotalExp;

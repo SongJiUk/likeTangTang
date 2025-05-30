@@ -384,9 +384,15 @@ public class PlayerController : CreatureController, ITickable
     public override void InitStat(bool _isHpFull = false)
     {
         MaxHp = Manager.GameM.CurrentCharacter.MaxHp;
+        MaxHpRate = Manager.GameM.CurrentCharacter.MaxHpRate;
         Attack = Manager.GameM.CurrentCharacter.Attack;
+        AttackRate = Manager.GameM.CurrentCharacter.AttackRate;
         Def = Manager.GameM.CurrentCharacter.Def;
-        Speed = creatureData.Speed * creatureData.MoveSpeedRate;
+        DefRate = Manager.GameM.CurrentCharacter.DefRate;
+        Speed = creatureData.Speed;
+        SpeedRate = Manager.GameM.CurrentCharacter.SpeedRate;
+        CriticalRate += Manager.GameM.CurrentCharacter.CriticalRate;
+        CriticalDamage += Manager.GameM.CurrentCharacter.CriticalDamage;
 
         var (equip_Hp, equip_Attack) = Manager.GameM.GetCurrentCharacterStat();
         MaxHp += equip_Hp;

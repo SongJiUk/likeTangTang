@@ -15,13 +15,9 @@ public class UI_EquipmentPopup : UI_Popup
     string sort_Grade = "정렬 : 등급";
     public ScrollRect scrollRect;
     public bool isOpen = false;
-    enum Images
-    {
-        CharacterImage
-    }
-
     enum GameObjects
     {
+        CharacterImage,
         ContentObject,
         WeaponEquipObject,
         GlovesEquipObject,
@@ -68,12 +64,10 @@ public class UI_EquipmentPopup : UI_Popup
 
         gameObjectsType = typeof(GameObjects);
         ButtonsType = typeof(Buttons);
-        ImagesType = typeof(Images);
         TextsType = typeof(Texts);
 
         BindObject(gameObjectsType);
         BindButton(ButtonsType);
-        BindImage(ImagesType);
         BindText(TextsType);
 
         GetObject(gameObjectsType, (int)GameObjects.CharacterRedDotObject).SetActive(false);
@@ -114,6 +108,8 @@ public class UI_EquipmentPopup : UI_Popup
 
     void Refresh()
     {
+        GetObject(gameObjectsType, (int)GameObjects.CharacterImage).GetComponent<RawImage>().texture = Manager.SceneM.cam_target;
+
 
         foreach (var slot in equipedSlotPool.Values)
             slot.gameObject.SetActive(false);

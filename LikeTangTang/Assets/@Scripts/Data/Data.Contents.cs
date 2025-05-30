@@ -115,6 +115,7 @@ namespace Data
         public float MoveSpeedRate;
         public string Image_Name;
         public string CreatureAnimName;
+        public string CharacterAnimName;
         public List<int> SkillTypeList;
         public List<int> EvolutionTypeList;
 
@@ -608,7 +609,7 @@ namespace Data
         public float HpUp;
         public float SpeedUp;
         public float CriticalUp;
-        public float CiriticalDamageUp;
+        public float CriticalDamageUp;
         public float DefUp;
     }
 

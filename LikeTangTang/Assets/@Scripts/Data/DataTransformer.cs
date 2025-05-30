@@ -347,6 +347,7 @@ public class DataTransformer : EditorWindow
             cd.MoveSpeedRate = ConvertValue<float>(row[i++]);
             cd.Image_Name = ConvertValue<string>(row[i++]);
             cd.CreatureAnimName = ConvertValue<string>(row[i++]);
+            cd.CharacterAnimName = ConvertValue<string>(row[i++]);
             cd.SkillTypeList = ConvertList<int>(row[i++]);
             cd.EvolutionTypeList = ConvertList<int>(row[i++]);
             loader.creatureData.Add(cd);
@@ -802,7 +803,7 @@ public class DataTransformer : EditorWindow
             chd.HpUp = ConvertValue<float>(row[i++]);
             chd.SpeedUp = ConvertValue<float>(row[i++]);
             chd.CriticalUp = ConvertValue<float>(row[i++]);
-            chd.CiriticalDamageUp = ConvertValue<float>(row[i++]);
+            chd.CriticalDamageUp = ConvertValue<float>(row[i++]);
             chd.DefUp = ConvertValue<float>(row[i++]);
             
 

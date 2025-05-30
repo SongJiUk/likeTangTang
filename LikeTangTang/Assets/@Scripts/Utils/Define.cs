@@ -12,6 +12,7 @@ public static class Define
     public const int YELLOW_GEM_EXP = 10;
     #endregion
     public const int DEFAULT_PLAYER_ID = 1;
+    public const int PlAYER_NUM = 5;
 
     public const float KNOCKBACK_POWER = 10f;
     public const float KNOCKBACK_COOLTIME = 0.5f;

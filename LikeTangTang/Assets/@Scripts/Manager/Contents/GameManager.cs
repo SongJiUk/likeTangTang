@@ -405,12 +405,15 @@ public class GameManager
         if (LoadGame()) return;
 
         PlayerPrefs.SetInt("ISFIRST", 1);
-        Character character = new Character();
-        character.SetInfo(Define.DEFAULT_PLAYER_ID);
-        character.isCurrentCharacter = true;
+        for (int i = DEFAULT_PLAYER_ID; i <= PlAYER_NUM; i++)
+        {
 
-        Characters = new List<Character>();
-        Characters.Add(character);
+            Character character = new Character();
+            character.SetInfo(i);
+            Characters.Add(character);
+            if (i == 1) character.isCurrentCharacter = true;
+        }
+        
 
         CurrentStageData = Manager.DataM.StageDic[1];
         foreach (Data.StageData stage in Manager.DataM.StageDic.Values)
@@ -512,7 +515,8 @@ public class GameManager
 
         if (data != null) gameData = data;
 
-        //가진게 있다면 벗기고, 다시 입힘
+        CurrentCharacter.SetInfo(CurrentCharacter.DataId);
+        
         EquipedEquipments = new Dictionary<EquipmentType, Equipment>();
         for(int i =0; i< OwnedEquipment.Count; i++)
         {
@@ -521,6 +525,8 @@ public class GameManager
                 EquipItem(OwnedEquipment[i].EquipmentData.EquipmentType, OwnedEquipment[i]);
             }
         }
+
+        
 
         isLoaded = true;
 
