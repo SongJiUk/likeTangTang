@@ -50,6 +50,7 @@ public class DataTransformer : EditorWindow
         ParseAchievementData("AchievementData");
         ParseCheckOutData("AttendanceCheckData");
         ParseOfflineRewardData("OfflineRewardData");
+        ParseCharacterLevelData("CharacterLevelData");
         // ParseBattlePassData("BattlePass");
         // ParseDailyShopData("DailyShop");
         // ParseAccountPassDataData("AccountPass");
@@ -527,7 +528,7 @@ public class DataTransformer : EditorWindow
             DropItemData dropItem = new DropItemData();
             dropItem.DataID = ConvertValue<int>(row[i++]);
             dropItem.DropItemType = ConvertValue<DropItemType>(row[i++]);
-            dropItem.Grade = ConvertValue<string>(row[i++]);
+            dropItem.Grade = ConvertValue<ItemGrade>(row[i++]);
             dropItem.NameTextID = ConvertValue<string>(row[i++]);
             dropItem.ItemDescription = ConvertValue<string>(row[i++]);
             dropItem.SpriteName = ConvertValue<string>(row[i++]);
@@ -769,6 +770,44 @@ public class DataTransformer : EditorWindow
 
 
             loader.list.Add(ofr);
+        }
+
+        #endregion
+
+        string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
+        File.WriteAllText($"{Application.dataPath}/@Resources/Data/Json/{filename}.json", jsonStr);
+        AssetDatabase.Refresh();
+    }
+    static void ParseCharacterLevelData(string filename)
+    {
+        CharacterLevelDataLoader loader = new CharacterLevelDataLoader();
+
+        #region ExcelData
+        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/CSV/{filename}.csv").Split("\n");
+
+        for (int y = 1; y < lines.Length; y++)
+        {
+            string[] row = lines[y].Replace("\r", "").Split(',');
+
+            if (row.Length == 0)
+                continue;
+            if (string.IsNullOrEmpty(row[0]))
+                continue;
+
+            int i = 0;
+            CharacterLevelData chd = new CharacterLevelData();
+            chd.Level = ConvertValue<int>(row[i++]);
+            chd.NeedCouponCount = ConvertValue<int>(row[i++]);
+            chd.AttackUp = ConvertValue<float>(row[i++]);
+            chd.HpUp = ConvertValue<float>(row[i++]);
+            chd.SpeedUp = ConvertValue<float>(row[i++]);
+            chd.CriticalUp = ConvertValue<float>(row[i++]);
+            chd.CiriticalDamageUp = ConvertValue<float>(row[i++]);
+            chd.DefUp = ConvertValue<float>(row[i++]);
+            
+
+
+            loader.list.Add(chd);
         }
 
         #endregion

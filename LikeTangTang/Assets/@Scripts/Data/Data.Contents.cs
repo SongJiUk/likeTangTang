@@ -269,7 +269,7 @@ namespace Data
         public int DataID;
         public string DropItemTypeStr;
         public Define.DropItemType DropItemType;
-        public string Grade;
+        public Define.ItemGrade Grade;
         public string NameTextID;
         public string ItemDescription;
         public string SpriteName;
@@ -594,6 +594,34 @@ namespace Data
 
             foreach (OfflineRewardData data in list)
                 dic.Add(data.StageIndex, data);
+
+            return dic;
+        }
+    }
+
+    [Serializable]
+    public class CharacterLevelData
+    {
+        public int Level;
+        public int NeedCouponCount;
+        public float AttackUp;
+        public float HpUp;
+        public float SpeedUp;
+        public float CriticalUp;
+        public float CiriticalDamageUp;
+        public float DefUp;
+    }
+
+    public class CharacterLevelDataLoader : ILoader<int, CharacterLevelData>
+    {
+        public List<CharacterLevelData> list = new List<CharacterLevelData>();
+
+        public Dictionary<int, CharacterLevelData> MakeDict()
+        {
+            Dictionary<int, CharacterLevelData> dic = new Dictionary<int, CharacterLevelData>();
+
+            foreach (CharacterLevelData data in list)
+                dic.Add(data.Level, data);
 
             return dic;
         }

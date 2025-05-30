@@ -1,0 +1,304 @@
+{
+  "list": [
+    {
+      "Level": 1,
+      "NeedCouponCount": 0,
+      "AttackUp": 0.0,
+      "HpUp": 0.0,
+      "SpeedUp": 0.0,
+      "CriticalUp": 0.0,
+      "CiriticalDamageUp": 0.0,
+      "DefUp": 0.0
+    },
+    {
+      "Level": 2,
+      "NeedCouponCount": 1,
+      "AttackUp": 2.0,
+      "HpUp": 10.0,
+      "SpeedUp": 0.01,
+      "CriticalUp": 2.0,
+      "CiriticalDamageUp": 10.0,
+      "DefUp": 0.01
+    },
+    {
+      "Level": 3,
+      "NeedCouponCount": 3,
+      "AttackUp": 2.0,
+      "HpUp": 10.0,
+      "SpeedUp": 0.01,
+      "CriticalUp": 2.0,
+      "CiriticalDamageUp": 10.0,
+      "DefUp": 0.01
+    },
+    {
+      "Level": 4,
+      "NeedCouponCount": 6,
+      "AttackUp": 3.0,
+      "HpUp": 15.0,
+      "SpeedUp": 0.01,
+      "CriticalUp": 3.0,
+      "CiriticalDamageUp": 15.0,
+      "DefUp": 0.01
+    },
+    {
+      "Level": 5,
+      "NeedCouponCount": 10,
+      "AttackUp": 3.0,
+      "HpUp": 15.0,
+      "SpeedUp": 0.01,
+      "CriticalUp": 3.0,
+      "CiriticalDamageUp": 15.0,
+      "DefUp": 0.01
+    },
+    {
+      "Level": 6,
+      "NeedCouponCount": 15,
+      "AttackUp": 4.0,
+      "HpUp": 20.0,
+      "SpeedUp": 0.01,
+      "CriticalUp": 4.0,
+      "CiriticalDamageUp": 20.0,
+      "DefUp": 0.01
+    },
+    {
+      "Level": 7,
+      "NeedCouponCount": 21,
+      "AttackUp": 4.0,
+      "HpUp": 20.0,
+      "SpeedUp": 0.01,
+      "CriticalUp": 4.0,
+      "CiriticalDamageUp": 20.0,
+      "DefUp": 0.01
+    },
+    {
+      "Level": 8,
+      "NeedCouponCount": 28,
+      "AttackUp": 5.0,
+      "HpUp": 25.0,
+      "SpeedUp": 0.02,
+      "CriticalUp": 5.0,
+      "CiriticalDamageUp": 25.0,
+      "DefUp": 0.02
+    },
+    {
+      "Level": 9,
+      "NeedCouponCount": 36,
+      "AttackUp": 5.0,
+      "HpUp": 25.0,
+      "SpeedUp": 0.02,
+      "CriticalUp": 5.0,
+      "CiriticalDamageUp": 25.0,
+      "DefUp": 0.02
+    },
+    {
+      "Level": 10,
+      "NeedCouponCount": 45,
+      "AttackUp": 6.0,
+      "HpUp": 30.0,
+      "SpeedUp": 0.02,
+      "CriticalUp": 6.0,
+      "CiriticalDamageUp": 30.0,
+      "DefUp": 0.02
+    },
+    {
+      "Level": 11,
+      "NeedCouponCount": 55,
+      "AttackUp": 6.0,
+      "HpUp": 30.0,
+      "SpeedUp": 0.02,
+      "CriticalUp": 6.0,
+      "CiriticalDamageUp": 30.0,
+      "DefUp": 0.02
+    },
+    {
+      "Level": 12,
+      "NeedCouponCount": 66,
+      "AttackUp": 7.0,
+      "HpUp": 35.0,
+      "SpeedUp": 0.02,
+      "CriticalUp": 7.0,
+      "CiriticalDamageUp": 35.0,
+      "DefUp": 0.02
+    },
+    {
+      "Level": 13,
+      "NeedCouponCount": 78,
+      "AttackUp": 7.0,
+      "HpUp": 35.0,
+      "SpeedUp": 0.02,
+      "CriticalUp": 7.0,
+      "CiriticalDamageUp": 35.0,
+      "DefUp": 0.02
+    },
+    {
+      "Level": 14,
+      "NeedCouponCount": 91,
+      "AttackUp": 8.0,
+      "HpUp": 40.0,
+      "SpeedUp": 0.02,
+      "CriticalUp": 8.0,
+      "CiriticalDamageUp": 40.0,
+      "DefUp": 0.02
+    },
+    {
+      "Level": 15,
+      "NeedCouponCount": 105,
+      "AttackUp": 8.0,
+      "HpUp": 40.0,
+      "SpeedUp": 0.02,
+      "CriticalUp": 8.0,
+      "CiriticalDamageUp": 40.0,
+      "DefUp": 0.02
+    },
+    {
+      "Level": 16,
+      "NeedCouponCount": 120,
+      "AttackUp": 9.0,
+      "HpUp": 45.0,
+      "SpeedUp": 0.03,
+      "CriticalUp": 9.0,
+      "CiriticalDamageUp": 45.0,
+      "DefUp": 0.03
+    },
+    {
+      "Level": 17,
+      "NeedCouponCount": 136,
+      "AttackUp": 9.0,
+      "HpUp": 45.0,
+      "SpeedUp": 0.03,
+      "CriticalUp": 9.0,
+      "CiriticalDamageUp": 45.0,
+      "DefUp": 0.03
+    },
+    {
+      "Level": 18,
+      "NeedCouponCount": 153,
+      "AttackUp": 10.0,
+      "HpUp": 50.0,
+      "SpeedUp": 0.03,
+      "CriticalUp": 10.0,
+      "CiriticalDamageUp": 50.0,
+      "DefUp": 0.03
+    },
+    {
+      "Level": 19,
+      "NeedCouponCount": 171,
+      "AttackUp": 10.0,
+      "HpUp": 50.0,
+      "SpeedUp": 0.03,
+      "CriticalUp": 10.0,
+      "CiriticalDamageUp": 50.0,
+      "DefUp": 0.03
+    },
+    {
+      "Level": 20,
+      "NeedCouponCount": 190,
+      "AttackUp": 12.0,
+      "HpUp": 60.0,
+      "SpeedUp": 0.03,
+      "CriticalUp": 12.0,
+      "CiriticalDamageUp": 60.0,
+      "DefUp": 0.03
+    },
+    {
+      "Level": 21,
+      "NeedCouponCount": 210,
+      "AttackUp": 12.0,
+      "HpUp": 60.0,
+      "SpeedUp": 0.03,
+      "CriticalUp": 12.0,
+      "CiriticalDamageUp": 60.0,
+      "DefUp": 0.03
+    },
+    {
+      "Level": 22,
+      "NeedCouponCount": 231,
+      "AttackUp": 14.0,
+      "HpUp": 70.0,
+      "SpeedUp": 0.03,
+      "CriticalUp": 14.0,
+      "CiriticalDamageUp": 70.0,
+      "DefUp": 0.03
+    },
+    {
+      "Level": 23,
+      "NeedCouponCount": 253,
+      "AttackUp": 14.0,
+      "HpUp": 70.0,
+      "SpeedUp": 0.03,
+      "CriticalUp": 14.0,
+      "CiriticalDamageUp": 70.0,
+      "DefUp": 0.03
+    },
+    {
+      "Level": 24,
+      "NeedCouponCount": 276,
+      "AttackUp": 16.0,
+      "HpUp": 80.0,
+      "SpeedUp": 0.04,
+      "CriticalUp": 16.0,
+      "CiriticalDamageUp": 80.0,
+      "DefUp": 0.04
+    },
+    {
+      "Level": 25,
+      "NeedCouponCount": 300,
+      "AttackUp": 16.0,
+      "HpUp": 80.0,
+      "SpeedUp": 0.04,
+      "CriticalUp": 16.0,
+      "CiriticalDamageUp": 80.0,
+      "DefUp": 0.04
+    },
+    {
+      "Level": 26,
+      "NeedCouponCount": 325,
+      "AttackUp": 18.0,
+      "HpUp": 90.0,
+      "SpeedUp": 0.04,
+      "CriticalUp": 18.0,
+      "CiriticalDamageUp": 90.0,
+      "DefUp": 0.04
+    },
+    {
+      "Level": 27,
+      "NeedCouponCount": 351,
+      "AttackUp": 18.0,
+      "HpUp": 90.0,
+      "SpeedUp": 0.04,
+      "CriticalUp": 18.0,
+      "CiriticalDamageUp": 90.0,
+      "DefUp": 0.04
+    },
+    {
+      "Level": 28,
+      "NeedCouponCount": 378,
+      "AttackUp": 20.0,
+      "HpUp": 100.0,
+      "SpeedUp": 0.04,
+      "CriticalUp": 20.0,
+      "CiriticalDamageUp": 100.0,
+      "DefUp": 0.04
+    },
+    {
+      "Level": 29,
+      "NeedCouponCount": 406,
+      "AttackUp": 20.0,
+      "HpUp": 100.0,
+      "SpeedUp": 0.04,
+      "CriticalUp": 20.0,
+      "CiriticalDamageUp": 100.0,
+      "DefUp": 0.04
+    },
+    {
+      "Level": 30,
+      "NeedCouponCount": 435,
+      "AttackUp": 25.0,
+      "HpUp": 120.0,
+      "SpeedUp": 0.05,
+      "CriticalUp": 25.0,
+      "CiriticalDamageUp": 120.0,
+      "DefUp": 0.05
+    }
+  ]
+}

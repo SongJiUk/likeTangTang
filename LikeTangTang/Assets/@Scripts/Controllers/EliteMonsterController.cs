@@ -39,7 +39,7 @@ public class EliteMonsterController : MonsterController
     
     void DropItem()
     {
-        //dropList = Manager.GameM.CurrentWaveData.EliteDropItemId;
+        dropList = Manager.GameM.CurrentWaveData.EliteDropItemId;
         
 
         if(dropList.Count == 0) return;

@@ -347,6 +347,13 @@ public static class Define
         Legendary
     }
 
+    public enum ItemGrade
+    {
+        Normal,
+        Rare,
+        Unique
+    }
+
     public enum EquipmentType
     {
         None,
