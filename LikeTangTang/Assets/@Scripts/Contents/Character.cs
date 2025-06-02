@@ -9,6 +9,7 @@ public class Character
     public Data.CharacterLevelData CharacterLevelData;
     public int DataId { get; set; } = 1;
     public int Level { get; set; } = 1;
+    public int UseCoupon { get; set; }
     public float MaxHp { get; set; } = 1;
     public float MaxHpRate { get; set; } = 1;
     public float Attack { get; set; } = 1;
@@ -56,11 +57,20 @@ public class Character
         SpeedRate = Data.MoveSpeedRate;
         CriticalRate = CharacterLevelData.CriticalUp;
         CriticalDamage = CharacterLevelData.CriticalDamageUp;
+
+        int index = Manager.GameM.Characters.IndexOf(this);
+        Manager.GameM.Characters[index] = this;
     }
 
     public void ChangeCharacter(int _id)
     {
         //TODO : isCurrentCharacter = false 해줘야됌 (기존 캐릭터)
+        //int index = Manager.GameM.Characters.IndexOf(this);
+        //isCurrentCharacter = false;
+        //Manager.GameM.Characters[index] = this;
+
+
+
         DataId = _id;
         Data = Manager.DataM.CreatureDic[DataId];
         CharacterLevelData = Manager.DataM.CharacterLevelDataDic[Level];

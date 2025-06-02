@@ -165,6 +165,7 @@ public class GameManager
         set
         {
             gameData.Characters = value;
+            OnResourcesChanged?.Invoke();
         }
     }
     public int GachaCountAdsAdvanced
@@ -225,12 +226,6 @@ public class GameManager
     {
         get { return gameData.RebirthCountAds; }
         set { gameData.RebirthCountAds = value; }
-    }
-
-    public int UserLevel
-    {
-        get { return gameData.userLevel; }
-        set { gameData.userLevel = value; }
     }
 
     public string userName

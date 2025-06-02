@@ -348,6 +348,7 @@ public class DataTransformer : EditorWindow
             cd.Image_Name = ConvertValue<string>(row[i++]);
             cd.CreatureAnimName = ConvertValue<string>(row[i++]);
             cd.CharacterAnimName = ConvertValue<string>(row[i++]);
+            cd.UnLockStage = ConvertValue<int>(row[i++]);
             cd.SkillTypeList = ConvertList<int>(row[i++]);
             cd.EvolutionTypeList = ConvertList<int>(row[i++]);
             loader.creatureData.Add(cd);

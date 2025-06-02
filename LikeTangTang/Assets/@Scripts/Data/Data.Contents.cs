@@ -116,6 +116,7 @@ namespace Data
         public string Image_Name;
         public string CreatureAnimName;
         public string CharacterAnimName;
+        public int UnLockStage;
         public List<int> SkillTypeList;
         public List<int> EvolutionTypeList;
 

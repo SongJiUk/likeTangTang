@@ -20,6 +20,7 @@
       "Image_Name": "Alpha.sprite",
       "CreatureAnimName": "Player_Alpha_Anim",
       "CharacterAnimName": "Character_Alpha",
+      "UnLockStage": 1,
       "SkillTypeList": [
         20000,
         20100,
@@ -65,6 +66,7 @@
       "Image_Name": "Beta.sprite",
       "CreatureAnimName": "Player_Beta_Anim",
       "CharacterAnimName": "Character_Beta",
+      "UnLockStage": 2,
       "SkillTypeList": [
         20000,
         20100,
@@ -110,6 +112,7 @@
       "Image_Name": "Gamma.sprite",
       "CreatureAnimName": "Player_Gamma_Anim",
       "CharacterAnimName": "Character_Gamma",
+      "UnLockStage": 3,
       "SkillTypeList": [
         20000,
         20100,
@@ -155,6 +158,7 @@
       "Image_Name": "Delta.sprite",
       "CreatureAnimName": "Player_Delta_Anim",
       "CharacterAnimName": "Character_Delta",
+      "UnLockStage": 4,
       "SkillTypeList": [
         20000,
         20100,
@@ -200,6 +204,7 @@
       "Image_Name": "Epsilon.sprite",
       "CreatureAnimName": "Player_Epsilon_Anim",
       "CharacterAnimName": "Character_Epsilon",
+      "UnLockStage": 5,
       "SkillTypeList": [
         20000,
         20100,
@@ -245,6 +250,7 @@
       "Image_Name": "MonsterIcon_01.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -272,6 +278,7 @@
       "Image_Name": "MonsterIcon_02.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -299,6 +306,7 @@
       "Image_Name": "MonsterIcon_03.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -326,6 +334,7 @@
       "Image_Name": "MonsterIcon_04.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -353,6 +362,7 @@
       "Image_Name": "MonsterIcon_05.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -380,6 +390,7 @@
       "Image_Name": "MonsterIcon_06.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -407,6 +418,7 @@
       "Image_Name": "MonsterIcon_07.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -434,6 +446,7 @@
       "Image_Name": "MonsterIcon_08.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -461,6 +474,7 @@
       "Image_Name": "MonsterIcon_09.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -488,6 +502,7 @@
       "Image_Name": "MonsterIcon_10.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -515,6 +530,7 @@
       "Image_Name": "MonsterIcon_11.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -542,6 +558,7 @@
       "Image_Name": "MonsterIcon_12.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -569,6 +586,7 @@
       "Image_Name": "MonsterIcon_13.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -596,6 +614,7 @@
       "Image_Name": "MonsterIcon_14.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -623,6 +642,7 @@
       "Image_Name": "MonsterIcon_15.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -650,6 +670,7 @@
       "Image_Name": "MonsterIcon_16.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -677,6 +698,7 @@
       "Image_Name": "MonsterIcon_17.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -704,6 +726,7 @@
       "Image_Name": "MonsterIcon_18.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -731,6 +754,7 @@
       "Image_Name": "MonsterIcon_19.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -758,6 +782,7 @@
       "Image_Name": "MonsterIcon_20.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -785,6 +810,7 @@
       "Image_Name": "MonsterIcon_21.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -812,6 +838,7 @@
       "Image_Name": "MonsterIcon_22.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -839,6 +866,7 @@
       "Image_Name": "MonsterIcon_23.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -866,6 +894,7 @@
       "Image_Name": "MonsterIcon_24.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -893,6 +922,7 @@
       "Image_Name": "MonsterIcon_25.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -920,6 +950,7 @@
       "Image_Name": "MonsterIcon_26.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -947,6 +978,7 @@
       "Image_Name": "MonsterIcon_27.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -974,6 +1006,7 @@
       "Image_Name": "MonsterIcon_28.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -1001,6 +1034,7 @@
       "Image_Name": "MonsterIcon_29.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -1028,6 +1062,7 @@
       "Image_Name": "MonsterIcon_30.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -1055,6 +1090,7 @@
       "Image_Name": "MonsterIcon_31.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -1082,6 +1118,7 @@
       "Image_Name": "MonsterIcon_32.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -1109,6 +1146,7 @@
       "Image_Name": "MonsterIcon_33.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -1136,6 +1174,7 @@
       "Image_Name": "MonsterIcon_34.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -1163,6 +1202,7 @@
       "Image_Name": "MonsterIcon_35.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -1190,6 +1230,7 @@
       "Image_Name": "MonsterIcon_36.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -1217,6 +1258,7 @@
       "Image_Name": "MonsterIcon_37.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -1244,6 +1286,7 @@
       "Image_Name": "MonsterIcon_38.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
@@ -1271,6 +1314,7 @@
       "Image_Name": "MonsterIcon_39.sprite",
       "CreatureAnimName": null,
       "CharacterAnimName": null,
+      "UnLockStage": 0,
       "SkillTypeList": [
         0
       ],
