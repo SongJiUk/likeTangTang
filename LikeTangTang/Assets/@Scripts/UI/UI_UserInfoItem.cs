@@ -33,7 +33,6 @@ public class UI_UserInfoItem : UI_Base
     private void Awake()
     {
         Init();
-
     }
 
     private void OnDestroy()
@@ -62,7 +61,6 @@ public class UI_UserInfoItem : UI_Base
 
         return true;
     }
-
 
     public void Refresh()
     {

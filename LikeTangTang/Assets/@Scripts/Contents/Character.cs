@@ -44,6 +44,7 @@ public class Character
 
     public void LevelUp()
     {
+        //TODO : 크리티컬 데미지와, 크리티컬 확률이 중복되는거같긴함
         Level++;
         Data = Manager.DataM.CreatureDic[DataId];
         CharacterLevelData = Manager.DataM.CharacterLevelDataDic[Level];
@@ -59,18 +60,11 @@ public class Character
         CriticalDamage = CharacterLevelData.CriticalDamageUp;
 
         int index = Manager.GameM.Characters.IndexOf(this);
-        Manager.GameM.Characters[index] = this;
+        Manager.GameM.UpdateCharacter(index, this);
     }
 
     public void ChangeCharacter(int _id)
     {
-        //TODO : isCurrentCharacter = false 해줘야됌 (기존 캐릭터)
-        //int index = Manager.GameM.Characters.IndexOf(this);
-        //isCurrentCharacter = false;
-        //Manager.GameM.Characters[index] = this;
-
-
-
         DataId = _id;
         Data = Manager.DataM.CreatureDic[DataId];
         CharacterLevelData = Manager.DataM.CharacterLevelDataDic[Level];
@@ -84,5 +78,8 @@ public class Character
         SpeedRate = Data.MoveSpeedRate;
         CriticalRate = CharacterLevelData.CriticalUp;
         CriticalDamage = CharacterLevelData.CriticalDamageUp;
+
+        int index = Manager.GameM.Characters.IndexOf(this);
+        Manager.GameM.UpdateCharacter(index, this);
     }
 }

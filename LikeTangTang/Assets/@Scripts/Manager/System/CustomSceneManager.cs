@@ -10,12 +10,15 @@ public class CustomSceneManager
 
     public Camera cam;
     public RenderTexture cam_target;
+    public LobbyScene lobbyScene;
 
 
-    public void Setup(Camera _cam, RenderTexture _cam_target)
+    public void Setup(Camera _cam, RenderTexture _cam_target, LobbyScene _lobbyScene)
     {
         cam = _cam;
         cam_target = _cam_target;
+        lobbyScene = _lobbyScene;
+
     }
 
     public void LoadScene(Define.SceneType _type, Transform _tr = null) //씬 이동 애니메이션()

@@ -265,6 +265,7 @@ public class UI_LobbyScene : UI_Scene
             Manager.GameM.Stamina += 10;
             Manager.GameM.Gold += 10000;
             Manager.GameM.Dia += 10000;
+            Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_LevelUpCoupon], 10000);
             Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_WeaponScroll], 100);
         }
     }

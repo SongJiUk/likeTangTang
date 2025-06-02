@@ -166,7 +166,15 @@ public class GameManager
         {
             gameData.Characters = value;
             OnResourcesChanged?.Invoke();
+            SaveGame();
         }
+    }
+
+    public void UpdateCharacter(int _index, Character _character)
+    {
+        Characters[_index] = _character;
+        OnResourcesChanged?.Invoke();
+        SaveGame();
     }
     public int GachaCountAdsAdvanced
     {
@@ -511,7 +519,7 @@ public class GameManager
         if (data != null) gameData = data;
 
         CurrentCharacter.SetInfo(CurrentCharacter.DataId);
-        
+
         EquipedEquipments = new Dictionary<EquipmentType, Equipment>();
         for(int i =0; i< OwnedEquipment.Count; i++)
         {

@@ -98,6 +98,7 @@ public class UI_EquipmentPopup : UI_Popup
             equipedSlotPool[Define.EquipmentType.Ring] = Manager.UiM.MakeSubItem<UI_EquipItem>(RingCont.transform);
         }
 
+        GetObject(gameObjectsType, (int)GameObjects.CharacterImage).GetComponent<RawImage>().texture = Manager.SceneM.cam_target;
         return true;
     }
 
@@ -108,17 +109,15 @@ public class UI_EquipmentPopup : UI_Popup
 
     void Refresh()
     {
-        GetObject(gameObjectsType, (int)GameObjects.CharacterImage).GetComponent<RawImage>().texture = Manager.SceneM.cam_target;
-
 
         foreach (var slot in equipedSlotPool.Values)
             slot.gameObject.SetActive(false);
 
-        foreach(Equipment item in Manager.GameM.OwnedEquipment)
+        foreach (Equipment item in Manager.GameM.OwnedEquipment)
         {
-            if(item.IsEquiped)
+            if (item.IsEquiped)
             {
-                if(equipedSlotPool.TryGetValue(item.EquipmentData.EquipmentType, out var slot))
+                if (equipedSlotPool.TryGetValue(item.EquipmentData.EquipmentType, out var slot))
                 {
                     slot.gameObject.SetActive(true);
                     slot.SetInfo(item, Define.UI_ItemParentType.CharacterEquipment);
@@ -150,7 +149,7 @@ public class UI_EquipmentPopup : UI_Popup
 
         int needCount = Manager.GameM.OwnedEquipment.Count(item => !item.IsEquiped);
 
-        while(slotPool.Count < needCount)
+        while (slotPool.Count < needCount)
         {
             UI_EquipItem popup = Manager.ResourceM.Instantiate("UI_EquipItem", parent).GetOrAddComponent<UI_EquipItem>();
             slotPool.Add(popup);
@@ -160,7 +159,7 @@ public class UI_EquipmentPopup : UI_Popup
             slot.gameObject.SetActive(false);
 
         int index = 0;
-        foreach(Equipment item in Manager.GameM.OwnedEquipment)
+        foreach (Equipment item in Manager.GameM.OwnedEquipment)
         {
             if (item.IsEquiped) continue;
 
@@ -177,7 +176,7 @@ public class UI_EquipmentPopup : UI_Popup
 
         int needCount = Manager.GameM.ItemDic.Count;
 
-        while(itemPool.Count < needCount)
+        while (itemPool.Count < needCount)
         {
             UI_MaterialItem item = Manager.UiM.MakeSubItem<UI_MaterialItem>(parent);
             itemPool.Add(item);
@@ -188,9 +187,9 @@ public class UI_EquipmentPopup : UI_Popup
 
         int index = 0;
 
-        foreach(int id in Manager.GameM.ItemDic.Keys)
+        foreach (int id in Manager.GameM.ItemDic.Keys)
         {
-            if(Manager.DataM.MaterialDic.TryGetValue(id, out Data.MaterialData data))
+            if (Manager.DataM.MaterialDic.TryGetValue(id, out Data.MaterialData data))
             {
                 UI_MaterialItem slot = itemPool[index++];
                 slot.gameObject.SetActive(true);
@@ -206,12 +205,12 @@ public class UI_EquipmentPopup : UI_Popup
     void OnClickSortButton()
     {
         //TODO : 정렬
-        if(equipmentSortType == Define.EquipmentSortType.Level)
+        if (equipmentSortType == Define.EquipmentSortType.Level)
         {
             equipmentSortType = Define.EquipmentSortType.Grade;
             GetText(TextsType, (int)Texts.SortButtonText).text = sort_Grade;
         }
-        else if(equipmentSortType == Define.EquipmentSortType.Grade)
+        else if (equipmentSortType == Define.EquipmentSortType.Grade)
         {
             equipmentSortType = Define.EquipmentSortType.Level;
             GetText(TextsType, (int)Texts.SortButtonText).text = sort_Level;
@@ -224,8 +223,8 @@ public class UI_EquipmentPopup : UI_Popup
     {
         //TODO : 합성
         UI_MergePopup mergePopup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_MergePopup;
-           
-        if(mergePopup != null)
+
+        if (mergePopup != null)
         {
             mergePopup.SetInfo(null);
             mergePopup.gameObject.SetActive(true);
@@ -236,6 +235,16 @@ public class UI_EquipmentPopup : UI_Popup
     void OnClickCharacterButton()
     {
         //TODO : 캐릭터 변경
+        UI_CharacterSelectPopup characterSelectPopup = Manager.UiM.ShowPopup<UI_CharacterSelectPopup>();
+        characterSelectPopup.SetInfo();
+    }
+
+    public void RefreshCharacterInfo()
+    {
+
+        var (hp, attack) = Manager.GameM.GetCurrentCharacterStat();
+        GetText(TextsType, (int)Texts.AttackValueText).text = (Manager.GameM.CurrentCharacter.Attack + attack).ToString();
+        GetText(TextsType, (int)Texts.HealthValueText).text = (Manager.GameM.CurrentCharacter.MaxHp + hp).ToString();
     }
 
 }

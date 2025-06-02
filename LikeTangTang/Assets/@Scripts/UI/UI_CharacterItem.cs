@@ -23,14 +23,20 @@ public class UI_CharacterItem : UI_Base
     }
     enum Buttons
     {
-        UI_CharacterItem
+        BackgroundImage
     }
-    Character character;
+    public Character character;
+    bool isSubscribe = false;
     private void Awake()
     {
         Init();
     }
 
+    void OnDestroy()
+    {
+        if (isSubscribe)
+            Events.OnCharacterSelected -= HandleOtherSelected;
+    }
     public override bool Init()
     {
         if (!base.Init()) return false;
@@ -45,11 +51,13 @@ public class UI_CharacterItem : UI_Base
         BindText(TextsType);
         BindButton(ButtonsType);
 
-        GetButton(ButtonsType, (int)Buttons.UI_CharacterItem).gameObject.BindEvent(OnClickCharacter);
+        GetButton(ButtonsType, (int)Buttons.BackgroundImage).gameObject.BindEvent(OnClickCharacter);
 
-        GetObject(gameObjectsType, (int)GameObjects.SelectObject).SetActive(false);
-        GetObject(gameObjectsType, (int)GameObjects.EquipedObject).SetActive(false);
-        GetObject(gameObjectsType, (int)GameObjects.LockObject).SetActive(false);
+        if (!isSubscribe)
+        {
+            isSubscribe = true;
+            Events.OnCharacterSelected += HandleOtherSelected;
+        }
 
         return true;
     }
@@ -75,13 +83,22 @@ public class UI_CharacterItem : UI_Base
             GetObject(gameObjectsType, (int)GameObjects.EquipedObject).SetActive(true);
 
 
-        if (creatureData.UnLockStage >= Manager.GameM.CurrentStageData.StageIndex)
-            GetObject(gameObjectsType, (int)GameObjects.LockObject).SetActive(true);
-        
+
+        //TODO : 테스트 이후에 주석 해제
+        // if (creatureData.UnLockStage > Manager.GameM.CurrentStageData.StageIndex)
+        //     GetObject(gameObjectsType, (int)GameObjects.LockObject).SetActive(true);
+
     }
 
     void OnClickCharacter()
     {
+        Events.OnCharacterSelected?.Invoke(this);
         GetObject(gameObjectsType, (int)GameObjects.SelectObject).SetActive(true);
+    }
+
+    void HandleOtherSelected(UI_CharacterItem _selected)
+    {
+        if (_selected != this)
+            GetObject(gameObjectsType, (int)GameObjects.SelectObject).SetActive(false);
     }
 }

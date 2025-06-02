@@ -5,26 +5,33 @@ using UnityEngine;
 public class LobbyScene : BaseScene
 {
 
+    Animator anim;
     public override void Init()
     {
         base.Init();
-        
+
         SceneType = Define.SceneType.LobbyScene;
 
         RenderTexture rt = new RenderTexture(512, 512, 16);
         var cam = GameObject.Find("PreviewCamera").GetComponent<Camera>();
         cam.targetTexture = rt;
         var target = cam.targetTexture;
-        var anim = GameObject.Find("Character").GetComponent<Animator>();
+        anim = GameObject.Find("Character").GetComponent<Animator>();
 
-        //int id = Manager.GameM.CurrentCharacter.DataId;
-        int id = 2;
+        int id = Manager.GameM.CurrentCharacter.DataId;
         string anim_name = Manager.DataM.CreatureDic[id].CharacterAnimName;
         anim.runtimeAnimatorController = Manager.ResourceM.Load<RuntimeAnimatorController>(anim_name);
-        Manager.SceneM.Setup(cam, target);
+        Manager.SceneM.Setup(cam, target, this);
 
 
         Manager.UiM.ShowSceneUI<UI_LobbyScene>();
+    }
+
+    public void ChangeCharacter()
+    {
+        int id = Manager.GameM.CurrentCharacter.DataId;
+        string anim_name = Manager.DataM.CreatureDic[id].CharacterAnimName;
+        anim.runtimeAnimatorController = Manager.ResourceM.Load<RuntimeAnimatorController>(anim_name);
     }
 
     public override void Clear()
