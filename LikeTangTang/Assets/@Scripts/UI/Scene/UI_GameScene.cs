@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using Unity.VisualScripting;
 using DG.Tweening;
+using System.Linq;
 
 
 public class UI_GameScene : UI_Scene
@@ -21,7 +22,19 @@ public class UI_GameScene : UI_Scene
     enum Images
     {
         WhiteFlash,
-        OnDamaged
+        OnDamaged,
+        BattleSkilI_Icon_1,
+        BattleSkilI_Icon_2,
+        BattleSkilI_Icon_3,
+        BattleSkilI_Icon_4,
+        BattleSkilI_Icon_5,
+        BattleSkilI_Icon_6,
+        EvolutionItem_Icon_1,
+        EvolutionItem_Icon_2,
+        EvolutionItem_Icon_3,
+        EvolutionItem_Icon_4,
+        EvolutionItem_Icon_5,
+        EvolutionItem_Icon_6,
     }
 
     public enum Texts
@@ -42,7 +55,8 @@ public class UI_GameScene : UI_Scene
 
     public enum Buttons
     {
-        PauseButton
+        PauseButton,
+        HealButton
     }
 
     enum AlramType
@@ -51,8 +65,21 @@ public class UI_GameScene : UI_Scene
         Boss
     }
 
+    private void Awake()
+    {
+        Init();
+        Manager.GameM.player.Skills.UpdateSkillUI += OnLevelUpSkillUI;
+    }
+
+    private void OnDestroy()
+    {
+        Manager.GameM.player.Skills.UpdateSkillUI -= OnLevelUpSkillUI;
+    }
+
     public override bool Init()
     {
+        if (!base.Init()) return false;
+
         TextsType = typeof(Texts);
         ButtonsType = typeof(Buttons);
         SlidersType = typeof(Sliders);
@@ -66,6 +93,7 @@ public class UI_GameScene : UI_Scene
         BindImage(ImagesType);
 
         GetButton(ButtonsType, (int)Buttons.PauseButton).gameObject.BindEvent(OnClickPauseButton);
+        GetButton(ButtonsType, (int)Buttons.HealButton).gameObject.BindEvent(OnClickHealButton);
 
         GetObject(gameObjectsType, (int)GameObjects.BossInfoObject).SetActive(false);
         GetObject(gameObjectsType, (int)GameObjects.EliteInfoObject).SetActive(false);
@@ -77,7 +105,10 @@ public class UI_GameScene : UI_Scene
         Manager.GameM.player.OnPlayerLevelUp = OnPlayerLevelUp;
         Manager.GameM.player.OnPlayerDamaged = OnDamaged;
 
+        //TODO : 힐 횟수 확인 후 버튼 활성화 버튼 지우기
+        GetButton(ButtonsType, (int)Buttons.HealButton).interactable = false;
         Refresh();
+
         return true;
     }
 
@@ -167,12 +198,44 @@ public class UI_GameScene : UI_Scene
         }
     }
 
- 
 
     void OnClickPauseButton()
     {
         Manager.SoundM.PlayButtonClick();
         Manager.UiM.ShowPopup<UI_PausePopup>();
+    }
+
+    void OnClickHealButton()
+    {
+
+    }
+
+    void OnLevelUpSkillUI()
+    {
+        List<SkillBase> activeSkills = Manager.GameM.player.Skills.skillList.Where(skill => skill.isLearnSkill).ToList();
+
+        for (int i = 0; i < activeSkills.Count; i++)
+        {
+            SetCurrentSkill(i, activeSkills[i]);
+        }
+
+        List<int> GetEvoloutionItems = Manager.GameM.player.Skills.evolutionItemList.ToList();
+        for (int i = 0; i < GetEvoloutionItems.Count; i++)
+        {
+            SetEvolutionItem(i, GetEvoloutionItems[i]);
+        }
+    }
+
+    void SetCurrentSkill(int _num, SkillBase _skill)
+    {
+        GetImage(ImagesType, (int)Images.BattleSkilI_Icon_1 + _num).sprite = Manager.ResourceM.Load<Sprite>(_skill.SkillDatas.SkillIcon);
+        GetImage(ImagesType, (int)Images.BattleSkilI_Icon_1 + _num).enabled = true;
+    }
+
+    void SetEvolutionItem(int _num, int _evolutionItemID)
+    {
+        GetImage(ImagesType, (int)Images.EvolutionItem_Icon_1 + _num).sprite = Manager.ResourceM.Load<Sprite>(Manager.DataM.SkillEvolutionDic[_evolutionItemID].EvolutionItemIcon);
+        GetImage(ImagesType, (int)Images.EvolutionItem_Icon_1 + _num).enabled = true;
     }
 
     IEnumerator SwitchAlarm(AlramType _type)
@@ -230,12 +293,4 @@ public class UI_GameScene : UI_Scene
     }
     
 
-    //TODO : 지우기 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-            Manager.GameM.player.Exp += 10;
-        }
-    }
 }

@@ -318,7 +318,10 @@ public class UI_CharacterSelectPopup : UI_Popup
 
     void OnClickLevelUpButton()
     {
-        if (Manager.GameM.ItemDic[Define.ID_LevelUpCoupon] >= characterLevelUpData.NeedCouponCount)
+        if(!Manager.GameM.ItemDic.TryGetValue(Define.ID_LevelUpCoupon, out var levelUpCouPon))
+            Manager.UiM.ShowToast("레벨업 쿠폰이 부족합니다.");
+
+        if (levelUpCouPon >= characterLevelUpData.NeedCouponCount)
         {
             UI_CharacterLevelupPopup popup = Manager.UiM.ShowPopup<UI_CharacterLevelupPopup>();
             popup.SetInfo(character);

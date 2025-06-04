@@ -21,7 +21,7 @@ public class SkillComponent : MonoBehaviour
     public Dictionary<Define.SkillType, int> SavedBattleSkill = new Dictionary<Define.SkillType, int>();
     //TODO : 서포트 스킬(진화스킬)
     public Dictionary<Define.SkillType, int> SavedEvolutionSkill = new Dictionary<Define.SkillType, int>();
-
+    public event Action UpdateSkillUI;
     public T AddSkill<T>(Vector3 _pos, Transform _parent = null ) where T : SkillBase
     {
         //[ ] 나중에 templateID로 바꾸기.
@@ -145,6 +145,7 @@ public class SkillComponent : MonoBehaviour
 
     }
 
+
     public void LevelUpSkill(Define.SkillType _type)
     {   
         for(int i =0; i< skillList.Count; i++)
@@ -153,7 +154,9 @@ public class SkillComponent : MonoBehaviour
             {
                 if(skillList[i].SkillLevel > 6) continue;
                 skillList[i].OnSkillLevelup();
-                if(SavedBattleSkill.ContainsKey(_type))
+                UpdateSkillUI?.Invoke();
+
+                if (SavedBattleSkill.ContainsKey(_type))
                 {
                     SavedBattleSkill[_type] = skillList[i].SkillLevel;
                     Manager.GameM.ContinueDatas.SavedBattleSkill = SavedBattleSkill;
@@ -233,6 +236,7 @@ public class SkillComponent : MonoBehaviour
 
                 SavedEvolutionSkill[skill.Skilltype] = _evolutionItemID;
                 Manager.GameM.ContinueDatas.SavedEvolutionSkill = SavedEvolutionSkill;
+                UpdateSkillUI?.Invoke();
                 Manager.GameM.SaveGame();
 
                 break;
@@ -289,5 +293,8 @@ public class SkillComponent : MonoBehaviour
         player.UpdatePlayerStat();
     }
 
-
+    public void RefreshSkillUI()
+    {
+        UpdateSkillUI?.Invoke();
+    }
 }

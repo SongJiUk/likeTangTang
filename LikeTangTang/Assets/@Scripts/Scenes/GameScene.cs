@@ -74,6 +74,8 @@ public class GameScene : BaseScene, ITickable
         
 
         ui = Manager.UiM.ShowSceneUI<UI_GameScene>();
+        
+        player.Skills.RefreshSkillUI();
 
         OnWaveStart = ui.OnWaveStart;
         OnWaveEnd = ui.OnWaveEnd;
@@ -165,7 +167,15 @@ public class GameScene : BaseScene, ITickable
 
     void SpawnWaveReward()
     {
-        DropItemType dropitemType = (DropItemType)UnityEngine.Random.Range(1,4);
+        int rand = UnityEngine.Random.Range(0, 100);
+        DropItemType dropitemType;
+
+        if(rand < 60)
+            dropitemType = DropItemType.Potion;
+        else if (rand < 80)
+            dropitemType = DropItemType.Magnet;
+        else
+            dropitemType = DropItemType.Bomb;
 
         Vector3 spawnPos = Utils.CreateObjectAroundPlayer(Manager.GameM.player.transform.position);
 
@@ -260,6 +270,7 @@ public class GameScene : BaseScene, ITickable
 
     public void CreateRandomExp()
     {
+        //TODO : 경험치 올린거생각해줘야됨, 근데 딱히 고칠 필요는 없을거같긴함
         int[] randBox = new int[] { 1, 2, 5, 10 };
         List<GemInfo.GemType> gems = new List<GemInfo.GemType>();
 
@@ -371,4 +382,21 @@ public class GameScene : BaseScene, ITickable
     {
         Manager.UpdateM.Unregister(this);
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            Manager.GameM.player.Exp += 10;
+        }
+        else if (Input.GetKeyDown(KeyCode.F2))
+        {
+            Manager.ObjectM.KillAllMonsters();
+        }
+        else if (Input.GetKeyDown(KeyCode.F3))
+        {
+            WaveEnd();
+        }
+    }
+
 }

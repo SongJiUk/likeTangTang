@@ -39,7 +39,6 @@ public class Character
         SpeedRate = Data.MoveSpeedRate;
         CriticalRate = CharacterLevelData.CriticalUp;
         CriticalDamage = CharacterLevelData.CriticalDamageUp;
-
     }
 
     public void LevelUp()

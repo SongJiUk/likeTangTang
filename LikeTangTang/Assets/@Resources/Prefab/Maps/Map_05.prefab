@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackGround: {fileID: 8609345092528565497}
   Grid: {fileID: 5595163114593722394}
-  MagneticField: {fileID: 0}
+  MagneticField: {fileID: 5195811618089655826}
 --- !u!1 &4762758343518532600
 GameObject:
   m_ObjectHideFlags: 0
@@ -9672,5 +9672,10 @@ PrefabInstance:
 --- !u!4 &5195811618089655823 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1290159579780068147, guid: 123eabf60e3db3b478db12bdd50ab084, type: 3}
+  m_PrefabInstance: {fileID: 6484244953874525500}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5195811618089655826 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1290159579780068142, guid: 123eabf60e3db3b478db12bdd50ab084, type: 3}
   m_PrefabInstance: {fileID: 6484244953874525500}
   m_PrefabAsset: {fileID: 0}

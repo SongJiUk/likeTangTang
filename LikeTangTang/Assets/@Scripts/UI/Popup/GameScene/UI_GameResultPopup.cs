@@ -60,6 +60,7 @@ public class UI_GameResultPopup : UI_Popup
     public void SetInfo()
     {
         Refresh();
+        StageClear();
     }
     void Refresh()
     {
@@ -67,7 +68,8 @@ public class UI_GameResultPopup : UI_Popup
         GetText(typeof(Texts), (int)Texts.ResultSurvivalTimeValueText).text = $"{Manager.GameM.minute:D2} : {Manager.GameM.second:D2}";
         GetText(typeof(Texts), (int)Texts.ResultGoldValueText).text = $"{Manager.GameM.CurrentStageData.ClearGold}";
         GetText(typeof(Texts), (int)Texts.ResultKillValueText).text = $"{Manager.GameM.player.KillCount}";
-
+        
+            
         Manager.GameM.Gold += Manager.GameM.CurrentStageData.ClearGold;
         Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_RandomScroll], 10);
         Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_LevelUpCoupon], Manager.GameM.CurrentStageData.StageIndex);
@@ -86,8 +88,24 @@ public class UI_GameResultPopup : UI_Popup
 
         UI_MaterialItem coupon = Manager.UiM.MakeSubItem<UI_MaterialItem>(cont);
         coupon.SetInfo(Manager.DataM.MaterialDic[Define.ID_LevelUpCoupon].SpriteName, Manager.GameM.CurrentStageData.StageIndex);
+
+        LayoutRebuilder.ForceRebuildLayoutImmediate(GetObject(gameObjectsType, (int)GameObjects.ResultGoldObject).GetComponent<RectTransform>());
+        LayoutRebuilder.ForceRebuildLayoutImmediate(GetObject(gameObjectsType, (int)GameObjects.ResultKillObject).GetComponent<RectTransform>());
     }
 
+    void StageClear()
+    {
+        StageClearInfoData info;
+
+        if (Manager.GameM.StageClearInfoDic.TryGetValue(Manager.GameM.CurrentStageData.StageIndex, out info))
+        {
+            info.MaxWaveIndex = Manager.GameM.CurrentWaveIndex;
+            info.isClear = true;
+            Manager.GameM.StageClearInfoDic[Manager.GameM.CurrentStageData.StageIndex] = info;
+        }
+        Manager.GameM.ClearContinueData();
+        Manager.GameM.SetNextStage();
+    }
 
     public void OnClickStatisticsButton()
     {
@@ -98,16 +116,7 @@ public class UI_GameResultPopup : UI_Popup
     public void OnClickConfirmButton()
     {
         Manager.SoundM.PlayButtonClick();
-        StageClearInfoData info;
-
-        if(Manager.GameM.StageClearInfoDic.TryGetValue(Manager.GameM.CurrentStageData.StageIndex, out info))
-        {
-            info.MaxWaveIndex = Manager.GameM.CurrentWaveIndex;
-            info.isClear = true;
-            Manager.GameM.StageClearInfoDic[Manager.GameM.CurrentStageData.StageIndex] = info;
-        }
-        Manager.GameM.ClearContinueData();
-        Manager.GameM.SetNextStage();
+       
         Manager.SceneM.LoadScene(Define.SceneType.LobbyScene, transform);
     }
 }

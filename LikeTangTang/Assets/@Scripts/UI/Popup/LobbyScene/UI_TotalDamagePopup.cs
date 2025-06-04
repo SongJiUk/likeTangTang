@@ -52,9 +52,13 @@ public class UI_TotalDamagePopup : UI_Popup
     void Refresh()
     {
         GetObject(gameObjectsType, (int)GameObjects.TotalDamageContentObject).DestroyChilds();
-        List<SkillBase> skillList = Manager.GameM.player.Skills.skillList.ToList();
-        foreach(SkillBase skill in skillList.FindAll(skill => skill.isLearnSkill))
+        List<SkillBase> skillList = Manager.GameM.player.Skills.skillList
+            .Where(skill => skill.isLearnSkill)
+            .OrderByDescending(skill => skill.TotalDamage)
+            .ToList();
+        foreach(SkillBase skill in skillList)
         {
+
             UI_SkillDamageItem item = Manager.UiM.MakeSubItem<UI_SkillDamageItem>(GetObject(gameObjectsType, (int)GameObjects.TotalDamageContentObject).transform);
             item.SetInfo(skill);
             item.transform.localScale = Vector3.one;

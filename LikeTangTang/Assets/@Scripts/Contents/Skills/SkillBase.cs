@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Data;
 using UnityEngine;
+using System;
 
 public class SkillBase : BaseController
 {
@@ -22,7 +23,7 @@ public class SkillBase : BaseController
     public float range { get; set; }
     public float effectRange { get; set; }
     public float attackInterval { get; set; }
-
+    
     public bool isLearnSkill
     {
         get { return SkillLevel > 0;}

@@ -283,4 +283,6 @@ public class CreatureController : BaseController, ITickable
         UpdatePlayerStat();
         Manager.ObjectM.KillAllMonsters();
     }
+
+   
 }

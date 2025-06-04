@@ -144,6 +144,8 @@ public class PlayerController : CreatureController, ITickable
                    Exp >= currentLevel.TotalExp)
             {
                 Level++;
+                //TODO : Exp는 0부터 시작해야됌.
+                Exp -= currentLevel.TotalExp;
                 TotalExp = nextLevel.TotalExp;
                 LevelUp(Level);
             }
@@ -156,14 +158,21 @@ public class PlayerController : CreatureController, ITickable
     {
         get
         {
+            //TODO : 현재 경험치 수정 이후
+
+            //if (!Manager.DataM.LevelDic.TryGetValue(Level, out var currentLevelData))
+            //    return 0f;
+
+            //float prevExp = 0f;
+            //if (Manager.DataM.LevelDic.TryGetValue(Level - 1, out var prevLevelData))
+            //    prevExp = prevLevelData.TotalExp;
+
+            //return (Exp - prevExp) / (currentLevelData.TotalExp - prevExp);
+
             if (!Manager.DataM.LevelDic.TryGetValue(Level, out var currentLevelData))
-                return 0f;
+                return 0f;  
 
-            float prevExp = 0f;
-            if (Manager.DataM.LevelDic.TryGetValue(Level - 1, out var prevLevelData))
-                prevExp = prevLevelData.TotalExp;
-
-            return (Exp - prevExp) / (currentLevelData.TotalExp - prevExp);
+            return Exp / currentLevelData.TotalExp;
         }
     }
 
@@ -389,7 +398,7 @@ public class PlayerController : CreatureController, ITickable
         AttackRate = Manager.GameM.CurrentCharacter.AttackRate;
         Def = Manager.GameM.CurrentCharacter.Def;
         DefRate = Manager.GameM.CurrentCharacter.DefRate;
-        Speed = creatureData.Speed;
+        Speed = Manager.GameM.CurrentCharacter.MoveSpeed;
         SpeedRate = Manager.GameM.CurrentCharacter.SpeedRate;
         CriticalRate = Manager.GameM.CurrentCharacter.CriticalRate;
         CriticalDamage = Manager.GameM.CurrentCharacter.CriticalDamage + Define.DEFAULT_CIRITICAL_DAMAGE;
