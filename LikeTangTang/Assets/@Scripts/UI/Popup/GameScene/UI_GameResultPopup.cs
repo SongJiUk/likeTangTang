@@ -74,7 +74,7 @@ public class UI_GameResultPopup : UI_Popup
 
         Transform cont = GetObject(gameObjectsType, (int)GameObjects.ResultRewardScrollContentObject).transform;
         cont.gameObject.DestroyChilds();
-
+         
 
         //TODO : 이거 확인 + 여기에 플레이어 경험치 쿠폰도 같이 주면 좋을거같음.
         UI_MaterialItem gold = Manager.UiM.MakeSubItem<UI_MaterialItem>(cont);

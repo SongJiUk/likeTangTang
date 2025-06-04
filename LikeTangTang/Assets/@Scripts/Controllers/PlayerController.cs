@@ -391,8 +391,8 @@ public class PlayerController : CreatureController, ITickable
         DefRate = Manager.GameM.CurrentCharacter.DefRate;
         Speed = creatureData.Speed;
         SpeedRate = Manager.GameM.CurrentCharacter.SpeedRate;
-        CriticalRate += Manager.GameM.CurrentCharacter.CriticalRate;
-        CriticalDamage += Manager.GameM.CurrentCharacter.CriticalDamage;
+        CriticalRate = Manager.GameM.CurrentCharacter.CriticalRate;
+        CriticalDamage = Manager.GameM.CurrentCharacter.CriticalDamage + Define.DEFAULT_CIRITICAL_DAMAGE;
 
         var (equip_Hp, equip_Attack) = Manager.GameM.GetCurrentCharacterStat();
         MaxHp += equip_Hp;

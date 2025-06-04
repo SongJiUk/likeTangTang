@@ -40,6 +40,7 @@ public class UI_CharacterItem : UI_Base
     public override bool Init()
     {
         if (!base.Init()) return false;
+        
 
         gameObjectsType = typeof(GameObjects);
         ImagesType = typeof(Images);
@@ -64,6 +65,7 @@ public class UI_CharacterItem : UI_Base
 
     public void SetInfo(Character _character)
     {
+        transform.localScale = Vector3.one;
         character = _character;
 
         GetObject(gameObjectsType, (int)GameObjects.SelectObject).SetActive(false);
@@ -85,8 +87,8 @@ public class UI_CharacterItem : UI_Base
 
 
         //TODO : 테스트 이후에 주석 해제
-        // if (creatureData.UnLockStage > Manager.GameM.CurrentStageData.StageIndex)
-        //     GetObject(gameObjectsType, (int)GameObjects.LockObject).SetActive(true);
+        if (creatureData.UnLockStage > Manager.GameM.CurrentStageData.StageIndex)
+            GetObject(gameObjectsType, (int)GameObjects.LockObject).SetActive(true);
 
     }
 

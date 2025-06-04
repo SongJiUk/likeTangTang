@@ -105,7 +105,7 @@ public class UI_GameScene : UI_Scene
 
         if(Manager.GameM.CurrentWaveData.BossMonsterID.Count > 0)
         {
-            int bossGenTime = 5;
+            int bossGenTime = 55;
             if(_second == bossGenTime)
                 StartCoroutine(SwitchAlarm(AlramType.Boss));
         }

@@ -21,7 +21,13 @@ public class UI_CharacterSelectPopup : UI_Popup
         CharacterImage,
         CharacterLevelObject,
         AttackPointObject,
-        HealthPointObject
+        HealthPointObject,
+        AttackUpArrowImage,
+        HpUpArrowImage,
+        DefUpArrowImage,
+        SpeedUpArrowImage,
+        CriticalUpArrowImage,
+        CriticalDamageUpArrowImage
     }
 
     enum Texts
@@ -34,17 +40,17 @@ public class UI_CharacterSelectPopup : UI_Popup
         HealthBonusValueText,
         EnhanceCostMaterialValueText,
         AttackUpNowValueText,
-        AttackUpAfterValueText,
         HpUpNowValueText,
-        HpUpAfterValueText,
         DefUpNowValueText,
-        DefUpAfterValueText,
         SpeedUpNowValueText,
-        SpeedUpAfterValueText,
         CriticalUpNowValueText,
+        CriticalDamageUpNowValueText,
+        AttackUpAfterValueText,
+        HpUpAfterValueText,
+        DefUpAfterValueText,
+        SpeedUpAfterValueText,
         CriticalUpAfterValueText,
-        CiriticalDamageUpNowValueText,
-        CiriticalDamageUpAfterValueText
+        CriticalDamageUpAfterValueText
 
     }
 
@@ -122,13 +128,15 @@ public class UI_CharacterSelectPopup : UI_Popup
 
     public void SetInfo()
     {
-        GetText(TextsType, (int)Texts.AttackUpAfterValueText).gameObject.SetActive(true);
-        GetText(TextsType, (int)Texts.HpUpAfterValueText).gameObject.SetActive(true);
-        GetText(TextsType, (int)Texts.DefUpAfterValueText).gameObject.SetActive(true);
-        GetText(TextsType, (int)Texts.SpeedUpAfterValueText).gameObject.SetActive(true);
-        GetText(TextsType, (int)Texts.CriticalUpAfterValueText).gameObject.SetActive(true);
-        GetText(TextsType, (int)Texts.CiriticalDamageUpAfterValueText).gameObject.SetActive(true);
+        for (int i = 0; i < 6; i++)
+        {
+            GetText(TextsType, (int)Texts.AttackUpAfterValueText + i).gameObject.SetActive(true);
+            GetObject(gameObjectsType, (int)GameObjects.AttackUpArrowImage + i).SetActive(true);
+        }
+
         GetText(TextsType, (int)Texts.EnhanceCostMaterialValueText).gameObject.SetActive(true);
+
+        
         Refresh();
     }
 
@@ -172,13 +180,25 @@ public class UI_CharacterSelectPopup : UI_Popup
 
     void SetupLevelUp()
     {
-         if (character.Level == Manager.DataM.CharacterLevelDataDic.Count)
+
+        if (character.Level == Manager.DataM.CharacterLevelDataDic.Count)
         {
             MaxLevel();
             return;
         }
+        else
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                GetText(TextsType, (int)Texts.AttackUpAfterValueText + i).gameObject.SetActive(true);
+                GetObject(gameObjectsType, (int)GameObjects.AttackUpArrowImage + i).SetActive(true);
+            }
+
+            GetText(TextsType, (int)Texts.EnhanceCostMaterialValueText).gameObject.SetActive(true);
+        }
 
         //TODO : 레벨업 정보 초기화
+        
         GetText(TextsType, (int)Texts.AttackUpNowValueText).text = $"{characterNowLevelData.AttackUp}";
         GetText(TextsType, (int)Texts.AttackUpAfterValueText).text = $"{characterLevelUpData.AttackUp}";
         GetText(TextsType, (int)Texts.HpUpNowValueText).text = $"{characterNowLevelData.HpUp}";
@@ -187,10 +207,10 @@ public class UI_CharacterSelectPopup : UI_Popup
         GetText(TextsType, (int)Texts.DefUpAfterValueText).text = $"{characterLevelUpData.DefUp}";
         GetText(TextsType, (int)Texts.SpeedUpNowValueText).text = $"{characterNowLevelData.SpeedUp}";
         GetText(TextsType, (int)Texts.SpeedUpAfterValueText).text = $"{characterLevelUpData.SpeedUp}";
-        GetText(TextsType, (int)Texts.CriticalUpNowValueText).text = $"{characterNowLevelData.CriticalUp}";
-        GetText(TextsType, (int)Texts.CriticalUpAfterValueText).text = $"{characterLevelUpData.CriticalUp}";
-        GetText(TextsType, (int)Texts.CiriticalDamageUpNowValueText).text = $"{characterNowLevelData.CriticalDamageUp}";
-        GetText(TextsType, (int)Texts.CiriticalDamageUpAfterValueText).text = $"{characterLevelUpData.CriticalDamageUp}";
+        GetText(TextsType, (int)Texts.CriticalUpNowValueText).text = $"{characterNowLevelData.CriticalUp * 100}%";
+        GetText(TextsType, (int)Texts.CriticalUpAfterValueText).text = $"{characterLevelUpData.CriticalUp * 100}%";
+        GetText(TextsType, (int)Texts.CriticalDamageUpNowValueText).text = $"{characterNowLevelData.CriticalDamageUp * 100}%";
+        GetText(TextsType, (int)Texts.CriticalDamageUpAfterValueText).text = $"{characterLevelUpData.CriticalDamageUp * 100}%";
 
         GetText(TextsType, (int)Texts.EnhanceCostMaterialValueText).text = $"{characterLevelUpData.NeedCouponCount}";
     }
@@ -200,29 +220,27 @@ public class UI_CharacterSelectPopup : UI_Popup
     {
         Data.CharacterLevelData characterNowLevelData = Manager.DataM.CharacterLevelDataDic[character.Level];
 
+       
         GetText(TextsType, (int)Texts.AttackUpNowValueText).text = $"{characterNowLevelData.AttackUp}";
-        GetText(TextsType, (int)Texts.AttackUpAfterValueText).gameObject.SetActive(false);
-
         GetText(TextsType, (int)Texts.HpUpNowValueText).text = $"{characterNowLevelData.HpUp}";
-        GetText(TextsType, (int)Texts.HpUpAfterValueText).gameObject.SetActive(false);
-
         GetText(TextsType, (int)Texts.DefUpNowValueText).text = $"{characterNowLevelData.DefUp}";
-        GetText(TextsType, (int)Texts.DefUpAfterValueText).gameObject.SetActive(false);
-
         GetText(TextsType, (int)Texts.SpeedUpNowValueText).text = $"{characterNowLevelData.SpeedUp}";
-        GetText(TextsType, (int)Texts.SpeedUpAfterValueText).gameObject.SetActive(false);
+        GetText(TextsType, (int)Texts.CriticalUpNowValueText).text = $"{characterNowLevelData.CriticalUp * 100}%";
+        GetText(TextsType, (int)Texts.CriticalDamageUpNowValueText).text = $"{characterNowLevelData.CriticalDamageUp * 100}%";
 
-        GetText(TextsType, (int)Texts.CriticalUpNowValueText).text = $"{characterNowLevelData.CriticalUp}";
-        GetText(TextsType, (int)Texts.CriticalUpAfterValueText).gameObject.SetActive(false);
+        for (int i = 0; i < 6; i++)
+        {
+            GetText(TextsType, (int)Texts.AttackUpAfterValueText + i).gameObject.SetActive(false);
+            GetObject(gameObjectsType, (int)GameObjects.AttackUpArrowImage + i).SetActive(false);
+        }
 
-        GetText(TextsType, (int)Texts.CiriticalDamageUpNowValueText).text = $"{characterNowLevelData.CriticalDamageUp}";
-        GetText(TextsType, (int)Texts.CiriticalDamageUpAfterValueText).gameObject.SetActive(false);
         GetText(TextsType, (int)Texts.EnhanceCostMaterialValueText).gameObject.SetActive(false);
         GetButton(ButtonsType, (int)Buttons.LevelUpButton).gameObject.SetActive(false);
     }
 
     void SetupCharacterSelect()
     {
+
         //TODO : 캐릭터 선택 초기화
         Transform cont = GetObject(gameObjectsType, (int)GameObjects.CharacterSelectContent).transform;
         int needCount = Manager.GameM.Characters.Count;
