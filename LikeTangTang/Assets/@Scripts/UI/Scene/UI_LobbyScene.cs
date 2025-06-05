@@ -13,7 +13,7 @@ public class UI_LobbyScene : UI_Scene
         EquipmentToggle,
         BattleToggle,
         ShopToggle,
-        //EvolutionToggle
+        EvolutionToggle
     }
 
     public enum Texts
@@ -21,7 +21,7 @@ public class UI_LobbyScene : UI_Scene
         EquipmentToggleText,
         BattleToggleText,
         ShopToggleText,
-        //EvolutionToggleText
+        EvolutionToggleText
     }
 
     public enum GameObjects
@@ -29,7 +29,7 @@ public class UI_LobbyScene : UI_Scene
         CheckEquipmentImageObject,
         CheckBattleImageObject,
         CheckShopImageObject,
-        //CheckEvolutionImageObject
+        CheckEvolutionImageObject
     }
 
     public enum Images
@@ -57,6 +57,7 @@ public class UI_LobbyScene : UI_Scene
     UI_ShopPopup ui_ShopPopup;
     UI_BattlePopup ui_BattlePopup;
     UI_EquipmentPopup ui_EquipmentPopup;
+    UI_EvolutionPopup ui_EvolutionPopup;
     UI_EquipmentInfoPopup ui_equipmentInfoPopup;
     UI_MergePopup ui_MergePopup;
     UI_MergeResultPopup ui_MergeResultPopup;
@@ -89,23 +90,26 @@ public class UI_LobbyScene : UI_Scene
         BindText(TextsType);
         BindImage(ImagesType);
 
+        
         GetToggle(TogglesType, (int)Toggles.EquipmentToggle).gameObject.BindEvent(OnClickEquipmentToggle);
         GetToggle(TogglesType, (int)Toggles.BattleToggle).gameObject.BindEvent(OnClickBattleToggle);
         GetToggle(TogglesType, (int)Toggles.ShopToggle).gameObject.BindEvent(OnClickShopToggle);
+        GetToggle(TogglesType, (int)Toggles.EvolutionToggle).gameObject.BindEvent(OnClickEvolutionToggle);
 
         EquipmentImageRect = GetObject(gameObjectsType, (int)GameObjects.CheckEquipmentImageObject).GetComponent<RectTransform>();
         BattleImageRect = GetObject(gameObjectsType, (int)GameObjects.CheckBattleImageObject).GetComponent<RectTransform>();
         ShopImageRect = GetObject(gameObjectsType, (int)GameObjects.CheckShopImageObject).GetComponent<RectTransform>();
-        //EvolutionImageRect = GetObject(gameObjectsType, (int)GameObjects.CheckEvolutionImageObject).GetComponent<RectTransform>();
+        EvolutionImageRect = GetObject(gameObjectsType, (int)GameObjects.CheckEvolutionImageObject).GetComponent<RectTransform>();
 
         EquipmentToggleRect = GetToggle(TogglesType, (int)Toggles.EquipmentToggle).GetComponent<RectTransform>();
         BattleToggleRect = GetToggle(TogglesType, (int)Toggles.BattleToggle).GetComponent<RectTransform>();
         ShopToggleRect = GetToggle(TogglesType, (int)Toggles.ShopToggle).GetComponent<RectTransform>();
-        //EvolutionToggleRect = GetToggle(TogglesType, (int)Toggles.EvolutionToggle).GetComponent<RectTransform>();
+        EvolutionToggleRect = GetToggle(TogglesType, (int)Toggles.EvolutionToggle).GetComponent<RectTransform>();
 
         ui_BattlePopup = Manager.UiM.ShowPopup<UI_BattlePopup>();
         ui_ShopPopup = Manager.UiM.ShowPopup<UI_ShopPopup>();
         ui_EquipmentPopup = Manager.UiM.ShowPopup<UI_EquipmentPopup>();
+        ui_EvolutionPopup = Manager.UiM.ShowPopup<UI_EvolutionPopup>();
         ui_equipmentInfoPopup = Manager.UiM.ShowPopup<UI_EquipmentInfoPopup>();
         ui_MergePopup = Manager.UiM.ShowPopup<UI_MergePopup>();
         ui_MergeResultPopup = Manager.UiM.ShowPopup<UI_MergeResultPopup>();
@@ -141,10 +145,12 @@ public class UI_LobbyScene : UI_Scene
         ui_EquipmentPopup.isOpen = false;
         ui_BattlePopup.isOpen = false;
         ui_ShopPopup.isOpen = false;
+        ui_EvolutionPopup.isOpen = false;
 
         ui_BattlePopup.gameObject.SetActive(false);
         ui_ShopPopup.gameObject.SetActive(false);
         ui_EquipmentPopup.gameObject.SetActive(false);
+        ui_EvolutionPopup.gameObject.SetActive(false);
         ui_equipmentInfoPopup.gameObject.SetActive(false);
         ui_MergePopup.gameObject.SetActive(false);
         ui_MergeResultPopup.gameObject.SetActive(false);
@@ -158,24 +164,26 @@ public class UI_LobbyScene : UI_Scene
         GetObject(gameObjectsType, (int)GameObjects.CheckEquipmentImageObject).SetActive(false);
         GetObject(gameObjectsType, (int)GameObjects.CheckBattleImageObject).SetActive(false);
         GetObject(gameObjectsType, (int)GameObjects.CheckShopImageObject).SetActive(false);
-        //GetObject(gameObjectsType, (int)GameObjects.CheckEvolutionImageObject).SetActive(false);
+        GetObject(gameObjectsType, (int)GameObjects.CheckEvolutionImageObject).SetActive(false);
 
         EquipmentImageRect.sizeDelta = OriginImageSize;
         BattleImageRect.sizeDelta = OriginImageSize;
         ShopImageRect.sizeDelta = OriginImageSize;
-        //EvolutionImageRect.sizeDelta = OriginToggleBGSize;
+        EvolutionImageRect.sizeDelta = OriginImageSize;
 
         GetText(TextsType, (int)Texts.EquipmentToggleText).gameObject.SetActive(false);
         GetText(TextsType, (int)Texts.BattleToggleText).gameObject.SetActive(false);
         GetText(TextsType, (int)Texts.ShopToggleText).gameObject.SetActive(false);
-        //GetText(TextsType, (int)Texts.EvolutionToggleText).gameObject.SetActive(false);
+        GetText(TextsType, (int)Texts.EvolutionToggleText).gameObject.SetActive(false);
 
         EquipmentToggleRect.sizeDelta = OriginToggleSize;
         BattleToggleRect.sizeDelta = OriginToggleSize;
         ShopToggleRect.sizeDelta = OriginToggleSize;
-        //EvolutionToggleRect.sizeDelta = OriginToggleSize;
+        EvolutionToggleRect.sizeDelta = OriginToggleSize;
 
     }
+
+   
 
     void OnClickEquipmentToggle()
     {
@@ -250,7 +258,27 @@ public class UI_LobbyScene : UI_Scene
             ui_ShopPopup.isOpen = true;
 
         }
-        
+    }
+
+    void OnClickEvolutionToggle()
+    {
+        Manager.SoundM.PlayButtonClick();
+        if (!ui_EvolutionPopup.isOpen)
+        {
+            GetImage(ImagesType, (int)Images.BackGroundImage).color = Utils.HexToColor("46325D");
+
+            AllOff();
+            TooglesInit();
+            ui_EvolutionPopup.gameObject.SetActive(true);
+
+            EvolutionToggleRect.sizeDelta = ClickedToggleSize;
+            GetText(TextsType, (int)Texts.EvolutionToggleText).gameObject.SetActive(true);
+            GetObject(gameObjectsType, (int)GameObjects.CheckEvolutionImageObject).SetActive(true);
+            EvolutionImageRect.DOSizeDelta(ClickedImageSize, 0.1f).SetEase(Ease.InOutQuad);
+
+            ui_EvolutionPopup.isOpen = true;
+
+        }
     }
 
     void ShowUI(GameObject _contentPopup, Toggle _toggle, TMP_Text text, GameObject _obj, float _duration = 0.2f)

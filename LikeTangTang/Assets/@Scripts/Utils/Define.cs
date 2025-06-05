@@ -98,7 +98,8 @@ public static class Define
         General,
         Passive, 
         LevelUp,
-        Special
+        Special,
+        Evolution
     }
 
     public enum SpecialSkillName
@@ -129,7 +130,12 @@ public static class Define
         LevelUpAttackBonus,
         LevelUpCriticalBonus,
         LevelUpCriticalDamageBonus,
-        Resurrection
+        Resurrection,
+        GoldBonus,
+        DefBonus,
+        DiaBouns,
+        CoolTimeBouns
+
     }
 
     public enum DropItemType
