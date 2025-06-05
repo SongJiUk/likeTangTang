@@ -94,7 +94,8 @@ public class SkillComponent : MonoBehaviour
 
         if (_skill.SpecialSkillName == Define.SpecialSkillName.Healing)
         {
-            //TODO : 스킬타입이 힐링이면 바로 치료(이건 빼야될듯 아니면 인게임에 회복기능 하나 만들어주던가.)
+            Manager.GameM.player.SpecialSkillHealCount++;
+            UpdateSkillUI?.Invoke();
         }
 
         SpecialSkills.Add(_skill);

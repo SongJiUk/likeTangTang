@@ -292,8 +292,11 @@ public class ObjectManager
 
         foreach(MonsterController monster in mcSet.ToList())
         {
-            if(monster.objType == Define.ObjectType.Monster)
-                monster.OnDead();
+            //TDOO : 복구
+            //if(monster.objType == Define.ObjectType.Monster)
+            //    monster.OnDead();
+
+            monster.OnDead();
         }
     }
 

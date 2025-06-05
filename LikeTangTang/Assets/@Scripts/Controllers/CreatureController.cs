@@ -87,8 +87,6 @@ public class CreatureController : BaseController, ITickable
 
     public virtual void SetInfo(int _dataID)
     {
-
-
         DataID = _dataID;
         creatureData = Manager.DataM.CreatureDic[_dataID];
         Init();

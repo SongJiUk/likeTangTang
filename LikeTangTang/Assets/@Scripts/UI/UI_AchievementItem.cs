@@ -79,7 +79,11 @@ public class UI_AchievementItem : UI_Base
 
     void Refresh()
     {
-        if (achievementData == null) return;
+        if (achievementData == null)
+        {
+            LastAchievement();
+            return;
+        }
 
         GetImage(ImagesType, (int)Images.RewardItmeIcon).sprite = Manager.ResourceM.Load<Sprite>(Manager.DataM.MaterialDic[achievementData.ClearRewardItemID].SpriteName);
         GetText(TextsType, (int)Texts.RewardItmeValueText).text = $"x {achievementData.RewardValue}";
@@ -102,6 +106,11 @@ public class UI_AchievementItem : UI_Base
             SetButton(MissionState.Progress);
 
         GetText(TextsType, (int)Texts.AchievementValueText).text = $"{progress} / {achievementData.MissionTargetValue}";
+    }
+
+    void LastAchievement()
+    {
+        SetButton(MissionState.Rewarded);
     }
 
     void SetButton(MissionState _missionState)
@@ -147,7 +156,7 @@ public class UI_AchievementItem : UI_Base
         Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[achievementData.ClearRewardItemID], achievementData.RewardValue);
         Manager.AchievementM.RewardedAchievement(achievementData.AchievementID);
         achievementData = Manager.AchievementM.GetNextAchievement(achievementData.AchievementID);
-        if (achievementData != null) Refresh();
+        Refresh();
 
         popup.SetInfo(name, count);
 

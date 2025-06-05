@@ -958,8 +958,8 @@
           "SpawnInterval": 3,
           "OnceSpawnCount": 43,
           "MonsterID": [
-            1017,
-            1018
+            10017,
+            10018
           ],
           "EleteMonsterID": [],
           "BossMonsterID": [],

@@ -7,7 +7,6 @@ using UnityEngine;
 public class DropBoxController : DropItemController
 {
     GameObject effect;
-    DropItemData dropItem;
     public override bool Init()
     {
         base.Init();
@@ -49,16 +48,31 @@ public class DropBoxController : DropItemController
 
     public override void CompleteGetItem()
     {
-        //TODO : 상자마다, 다르게 해줘야함(뭘 할지 생각해봐야됌)
+        //TODO : 테스트 해보기
+        PlayerController player = Manager.GameM.player;
+        float needExp = 0;
         switch (dropItem.Grade)
         {
             case Define.ItemGrade.Normal:
-                
+                //Heal
+                player.SpecialSkillHealCount++;
+                if (player != null) player.Skills.RefreshSkillUI();
+
                 break;
             case Define.ItemGrade.Rare:
+                // LEvelUP
+                needExp = player.TotalExp - player.Exp;
+                player.Exp += needExp;
                 break;
 
             case Define.ItemGrade.Unique:
+                //HEAL + LEvelUP
+                Manager.GameM.player.SpecialSkillHealCount++;
+                if (Manager.GameM.player != null) Manager.GameM.player.Skills.RefreshSkillUI();
+
+                needExp = player.TotalExp - player.Exp;
+                player.Exp += needExp;
+
                 break;
 
         }

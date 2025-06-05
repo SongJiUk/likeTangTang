@@ -33,6 +33,7 @@ public class ContinueData
     public float CollectDistBonus = 1;
     public int KillCount;
     public int SkillRefreshCount = 3;
+    public int SpecialSkillHealCount = 0;
     public Dictionary<Define.SkillType, int> SavedBattleSkill = new Dictionary<Define.SkillType, int>();
     public Dictionary<Define.SkillType, int> SavedEvolutionSkill = new Dictionary<Define.SkillType, int>();
     public List<Data.SpecialSkillData> SavedSpecialSkill = new List<Data.SpecialSkillData>();
@@ -64,6 +65,7 @@ public class ContinueData
         CollectDistBonus = 1f;
         KillCount = 0;
         SkillRefreshCount = 3;
+        SpecialSkillHealCount = 0;
         SavedBattleSkill.Clear();
         SavedEvolutionSkill.Clear();
         SavedSpecialSkill.Clear();

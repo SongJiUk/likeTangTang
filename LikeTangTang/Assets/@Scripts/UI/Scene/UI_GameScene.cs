@@ -105,7 +105,6 @@ public class UI_GameScene : UI_Scene
         Manager.GameM.player.OnPlayerLevelUp = OnPlayerLevelUp;
         Manager.GameM.player.OnPlayerDamaged = OnDamaged;
 
-        //TODO : 힐 횟수 확인 후 버튼 활성화 버튼 지우기
         GetButton(ButtonsType, (int)Buttons.HealButton).interactable = false;
         Refresh();
 
@@ -207,7 +206,12 @@ public class UI_GameScene : UI_Scene
 
     void OnClickHealButton()
     {
-
+        if(Manager.GameM.player.SpecialSkillHealCount > 0)
+        {
+            Manager.GameM.player.SpecialSkillHealCount--;
+            Manager.GameM.player.Healing(1);
+            OnLevelUpSkillUI();
+        }
     }
 
     void OnLevelUpSkillUI()
@@ -224,6 +228,11 @@ public class UI_GameScene : UI_Scene
         {
             SetEvolutionItem(i, GetEvoloutionItems[i]);
         }
+
+        if (Manager.GameM.player.SpecialSkillHealCount > 0)
+            GetButton(ButtonsType, (int)Buttons.HealButton).interactable = true;
+        else
+            GetButton(ButtonsType, (int)Buttons.HealButton).interactable = false;
     }
 
     void SetCurrentSkill(int _num, SkillBase _skill)

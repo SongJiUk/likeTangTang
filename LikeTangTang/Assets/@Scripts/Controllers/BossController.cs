@@ -11,11 +11,16 @@ public class BossController : MonsterController
     public Action OnBossDead;
     // [ ] DATA LOAD
     float range = 2.0f;
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        transform.localScale = new Vector3(3f, 3f, 3f);
+    }
     public override bool Init()
     {
         if (!base.Init()) return false;
-        Hp = 10000;
-        transform.localScale = new Vector3(2f,2f,2f);
+        transform.localScale = new Vector3(3f, 3f, 3f);
         objType = Define.ObjectType.Boss;
         CreatureState = Define.CreatureState.Moving;
 

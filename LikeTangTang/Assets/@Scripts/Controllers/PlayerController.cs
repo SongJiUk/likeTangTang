@@ -144,7 +144,6 @@ public class PlayerController : CreatureController, ITickable
                    Exp >= currentLevel.TotalExp)
             {
                 Level++;
-                //TODO : Exp는 0부터 시작해야됌.
                 Exp -= currentLevel.TotalExp;
                 TotalExp = nextLevel.TotalExp;
                 LevelUp(Level);
@@ -200,6 +199,12 @@ public class PlayerController : CreatureController, ITickable
     {
         get => Manager.GameM.ContinueDatas.SkillRefreshCount;
         set => Manager.GameM.ContinueDatas.SkillRefreshCount = value;
+    }
+    
+    public int SpecialSkillHealCount
+    {
+        get => Manager.GameM.ContinueDatas.SpecialSkillHealCount;
+        set => Manager.GameM.ContinueDatas.SpecialSkillHealCount = value;
     }
 
     #endregion
@@ -517,6 +522,8 @@ public class PlayerController : CreatureController, ITickable
         float res = (MaxHp * _amount) * HealBounsRate;
         if (res == 0) return;
         Hp += res;
+
+        if (res > MaxHp) res = MaxHp; 
 
         if (Hp > MaxHp) Hp = MaxHp;
 

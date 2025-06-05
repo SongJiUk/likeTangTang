@@ -13,7 +13,7 @@ public class TimeManager : MonoBehaviour
     {
         get
         {
-            int savedTime = PlayerPrefs.GetInt("AttendanceDay", 1);
+            int savedTime = PlayerPrefs.GetInt("AttendanceDay", 0);
             return savedTime;
         }
         set

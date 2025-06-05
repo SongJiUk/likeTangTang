@@ -330,6 +330,8 @@ public class UI_CharacterSelectPopup : UI_Popup
             Manager.GameM.CurrentCharacter.LevelUp();
             Refresh();
 
+            (Manager.UiM.SceneUI as UI_LobbyScene).Ui_EquipmentPopup.SetInfo();
+
         }
         else
         {

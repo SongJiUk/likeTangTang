@@ -550,7 +550,11 @@ public class GameManager
 
     public void SetNextStage()
     {
-        CurrentStageData = Manager.DataM.StageDic[CurrentStageData.StageIndex + 1];
+        if(!Manager.DataM.StageDic.TryGetValue(CurrentStageData.StageIndex +1, out StageData nextStage))
+            CurrentStageData = Manager.DataM.StageDic[CurrentStageData.StageIndex];
+        else
+            CurrentStageData = nextStage;
+        
     }
 
     public int GetMaxStageIndex()

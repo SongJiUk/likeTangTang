@@ -43,7 +43,7 @@ public class MonsterController : CreatureController, ITickable
 
     #region Unity 기본
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         if (DataID != 0) SetInfo(DataID);
 

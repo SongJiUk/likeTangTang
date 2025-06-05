@@ -8,13 +8,18 @@ using UnityEngine;
 public class EliteMonsterController : MonsterController
 {
     List<int> dropList;
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        transform.localScale = new Vector3(2f, 2f, 2f);
+    }
     public override bool Init()
     {
         if (!base.Init()) return false;
         CreatureState = Define.CreatureState.Moving;
 
         Rigid.simulated = true;
-        transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+        transform.localScale = new Vector3(2f, 2f, 2f);
         
         Skills = gameObject.GetOrAddComponent<SkillComponent>();
         objType = Define.ObjectType.EliteMonster;
