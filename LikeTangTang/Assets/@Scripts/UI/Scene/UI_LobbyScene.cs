@@ -265,11 +265,12 @@ public class UI_LobbyScene : UI_Scene
         Manager.SoundM.PlayButtonClick();
         if (!ui_EvolutionPopup.isOpen)
         {
-            GetImage(ImagesType, (int)Images.BackGroundImage).color = Utils.HexToColor("46325D");
+            GetImage(ImagesType, (int)Images.BackGroundImage).color = Utils.HexToColor("EFAD00");
 
             AllOff();
             TooglesInit();
             ui_EvolutionPopup.gameObject.SetActive(true);
+            ui_EvolutionPopup.SetInfo();
 
             EvolutionToggleRect.sizeDelta = ClickedToggleSize;
             GetText(TextsType, (int)Texts.EvolutionToggleText).gameObject.SetActive(true);

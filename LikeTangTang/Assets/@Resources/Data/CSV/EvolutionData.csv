@@ -1,0 +1,11 @@
+Level,EvolutionAbility,EvolutionAbilityNum,NeedGold
+3,AttackBonus,25000,10000
+6,MaxHpBonus,25001,20000
+9,GoldBonus,25002,30000
+12,CriticalBonus,25003,40000
+15,CoolTimeBonus,25004,50000
+18,DefBonus,25005,60000
+21,DiaBonus,25006,70000
+24,HealingBonus,25007,80000
+27,CriticalDamageBonus,25008,90000
+30,MoveSpeedBonus,25009,100000

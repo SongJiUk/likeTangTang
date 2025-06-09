@@ -412,7 +412,7 @@ public class GameManager
         {
 
             Character character = new Character();
-            character.SetInfo(i);
+            character.Init(i);
             Characters.Add(character);
             if (i == 1) character.isCurrentCharacter = true;
         }

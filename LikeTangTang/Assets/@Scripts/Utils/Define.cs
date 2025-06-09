@@ -20,6 +20,7 @@ public static class Define
     public const float KNOCKBACK_TIME = 0.1f;
     public const int MAX_SKILL_COUNT = 6;
     public const int MAX_SKILL_LEVEL = 5;
+    public const int CHARACTER_MAX_LEVEL = 30;
     public static readonly Dictionary<int, float> POTION_AMOUNT = new Dictionary<int, float>
     {
         { 30000, 0.3f},
@@ -344,6 +345,7 @@ public static class Define
         BootsEnchantStone,
     }
 
+
     public enum MaterialGrade
     {
         None,
@@ -428,7 +430,27 @@ public static class Define
     {
         Mission,
         AchievementPopup,
+    }
 
+    public enum EvolutionOnOff
+    {
+        On,
+        Off
+    }
+
+    public enum EvolutionAbility
+    {
+        None = 0,
+        AttackBonus = 1,
+        MaxHpBonus = 2,
+        GoldBonus = 3,
+        CriticalBonus = 4,
+        CoolTimeBonus = 5,
+        DefBonus = 6,
+        DiaBonus = 7,
+        HealingBonus = 8,
+        CriticalDamageBonus = 9,
+        MoveSpeedBonus = 10,
     }
 
     public static string GRIDNAME = "@Grid";
@@ -459,9 +481,16 @@ public static class Define
     {
         public static readonly Dictionary<MaterialGrade, EquipmentUIStyle> MaterialGradeStyles;
         public static readonly Dictionary<EquipmentGrade, EquipmentUIStyle> EquipGradeStyles;
+        public static readonly Dictionary<EvolutionOnOff, Color> EvolutionStyles;
 
         static EquipmentUIColors()
         {
+            EvolutionStyles = new Dictionary<EvolutionOnOff, Color>()
+            {
+                { EvolutionOnOff.On, Utils.HexToColor("FFFFFF")},
+                { EvolutionOnOff.Off, Utils.HexToColor("4B3C3C")}
+            };
+
             MaterialGradeStyles = new Dictionary<MaterialGrade, EquipmentUIStyle>()
             {
                 {MaterialGrade.Common, new EquipmentUIStyle(Utils.HexToColor("A2A2A2"), Utils.HexToColor("AC9B83"), Utils.HexToColor("AC9B83"))},

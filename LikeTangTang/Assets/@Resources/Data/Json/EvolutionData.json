@@ -1,0 +1,64 @@
+{
+  "list": [
+    {
+      "Level": 3,
+      "EvolutionAbility": 1,
+      "EvolutionAbilityNum": 25000,
+      "NeedGold": 10000
+    },
+    {
+      "Level": 6,
+      "EvolutionAbility": 2,
+      "EvolutionAbilityNum": 25001,
+      "NeedGold": 20000
+    },
+    {
+      "Level": 9,
+      "EvolutionAbility": 3,
+      "EvolutionAbilityNum": 25002,
+      "NeedGold": 30000
+    },
+    {
+      "Level": 12,
+      "EvolutionAbility": 4,
+      "EvolutionAbilityNum": 25003,
+      "NeedGold": 40000
+    },
+    {
+      "Level": 15,
+      "EvolutionAbility": 5,
+      "EvolutionAbilityNum": 25004,
+      "NeedGold": 50000
+    },
+    {
+      "Level": 18,
+      "EvolutionAbility": 6,
+      "EvolutionAbilityNum": 25005,
+      "NeedGold": 60000
+    },
+    {
+      "Level": 21,
+      "EvolutionAbility": 7,
+      "EvolutionAbilityNum": 25006,
+      "NeedGold": 70000
+    },
+    {
+      "Level": 24,
+      "EvolutionAbility": 8,
+      "EvolutionAbilityNum": 25007,
+      "NeedGold": 80000
+    },
+    {
+      "Level": 27,
+      "EvolutionAbility": 9,
+      "EvolutionAbilityNum": 25008,
+      "NeedGold": 90000
+    },
+    {
+      "Level": 30,
+      "EvolutionAbility": 10,
+      "EvolutionAbilityNum": 25009,
+      "NeedGold": 100000
+    }
+  ]
+}

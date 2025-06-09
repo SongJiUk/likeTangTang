@@ -30,6 +30,8 @@ public class DataManager
     public Dictionary<int, Data.OfflineRewardData> OfflineRewardDataDic { get; private set; } = new Dictionary<int, Data.OfflineRewardData>();
     public Dictionary<int, Data.CharacterLevelData> CharacterLevelDataDic { get; private set; } = new Dictionary<int, Data.CharacterLevelData>();
 
+    public Dictionary<int, Data.EvolutionData> EvolutionDataDic { get; private set; } = new Dictionary<int, Data.EvolutionData>();
+
 
 
 
@@ -51,6 +53,7 @@ public class DataManager
         AchievementDataDic = LoadJson<Data.AchievementDataLoader, int, Data.AchievementData>("AchievementData.json").MakeDict();
         OfflineRewardDataDic = LoadJson<Data.OfflineRewardDataLoader, int, Data.OfflineRewardData>("OfflineRewardData.json").MakeDict();
         CharacterLevelDataDic = LoadJson<Data.CharacterLevelDataLoader, int, Data.CharacterLevelData>("CharacterLevelData.json").MakeDict();
+        EvolutionDataDic = LoadJson<Data.EvolutionDataLoader, int, Data.EvolutionData>("EvolutionData.json").MakeDict();
     }
 
     Loader LoadJson<Loader, key, value>(string _path) where Loader : ILoader<key, value>

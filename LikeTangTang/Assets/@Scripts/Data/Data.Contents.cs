@@ -333,7 +333,9 @@ namespace Data
         public float ProjectileCount;
         public float ScaleMultiplier;
         public float EffectScaleMultiplier;
-
+        public float DefBouns;
+        public float GoldBouns;
+        public float DiaBouns;
 
     }
 
@@ -623,6 +625,30 @@ namespace Data
             Dictionary<int, CharacterLevelData> dic = new Dictionary<int, CharacterLevelData>();
 
             foreach (CharacterLevelData data in list)
+                dic.Add(data.Level, data);
+
+            return dic;
+        }
+    }
+
+    [Serializable]
+    public class EvolutionData
+    {
+        public int Level;
+        public Define.EvolutionAbility EvolutionAbility;
+        public int EvolutionAbilityNum;
+        public int NeedGold;
+    }
+
+    public class EvolutionDataLoader : ILoader<int, EvolutionData>
+    {
+        public List<EvolutionData> list = new List<EvolutionData>();
+
+        public Dictionary<int, EvolutionData> MakeDict()
+        {
+            Dictionary<int, EvolutionData> dic = new Dictionary<int, EvolutionData>();
+
+            foreach (EvolutionData data in list)
                 dic.Add(data.Level, data);
 
             return dic;

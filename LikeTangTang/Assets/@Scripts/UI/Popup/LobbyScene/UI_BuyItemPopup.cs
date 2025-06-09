@@ -68,8 +68,9 @@ public class UI_BuyItemPopup : UI_Popup
         //TODO : 그 전에 재료가 없으면 걸러져서 들어오기때문에, itme, item의 소모개수, 획득개수를 받아와야하나?
         Manager.GameM.Dia -= UseItemCount;
         if( item.MaterialType == Define.MaterialType.Gold)
-        {
-            Manager.GameM.Gold += GetItemCount;
+        {   
+            //TODO : 이거 골드보너스
+            Manager.GameM.Gold += GetItemCount * (int)Manager.GameM.CurrentCharacter.Evol_GoldBonus;
         }
         else if(item.MaterialType == Define.MaterialType.Stamina)
         {

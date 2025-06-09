@@ -83,11 +83,11 @@ DataID,SpecialSkillType,SpecialSkillName,SpecialSkillGrade,Name,Description,IsLo
 24002,Passive,Resurrection,Unique,부활,사망시 체력 100%로 부활 / 공격력 10% 상승,FALSE,FALSE,0,0.1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
 25000,Evolution,AttackBonus,UnCommon,공격력 증가,공격력 10퍼 증가,FALSE,FALSE,0,0.1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 25001,Evolution,MaxHpBonus,UnCommon,최대 체력 증가,최대체력 15퍼 증가,FALSE,FALSE,0.15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-25002,Evolution,GoldBonus,UnCommon,골드 획득량 증가,골드 획득량 20퍼 증가,FALSE,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.2,0
+25002,Evolution,GoldBonus,UnCommon,골드 획득량 증가,골드 획득량 20퍼 증가,FALSE,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.2,0
 25003,Evolution,CriticalBouns,UnCommon,치명타 확률 증가,치명타 확률 5퍼 증가,FALSE,FALSE,0,0,0.05,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 25004,Evolution,CoolTimeBouns,UnCommon,쿨타임 감소,스킬 쿨타임 10퍼 감소,FALSE,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.1,0,0,0,0,0,0,0,0,0
 25005,Evolution,DefBonus,UnCommon,방어력 증가,방어력 10퍼 증가,FALSE,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.1,0,0
-25006,Evolution,DiaBouns,UnCommon,다이아 획득량 증가,다이아 획득량 10퍼 증가,FALSE,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.1
+25006,Evolution,DiaBouns,UnCommon,다이아 획득량 증가,다이아 획득량 10퍼 증가,FALSE,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.1
 25007,Evolution,HealingBouns,UnCommon,회복량 증가,체력 회복 효과 20퍼 증가,FALSE,FALSE,0,0,0,0,0,0,0.2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 25008,Evolution,CriticalDamageBouns,UnCommon,치명타 데미지 증가,치명타 데미지 20퍼 증가,FALSE,FALSE,0,0,0,0,0,0,0,0,0.2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 25009,Evolution,MoveSpeedBonus,UnCommon,이동속도 증가,이동속도 10퍼 증가,FALSE,FALSE,0,0,0,0.1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

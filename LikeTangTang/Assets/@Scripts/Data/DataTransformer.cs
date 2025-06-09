@@ -45,7 +45,7 @@ public class DataTransformer : EditorWindow
         ParseSupportSkillData("SpecialSkillData");
         ParseDropItemData("DropItemData");
         ParseGachaData("GachaData"); // DictionaryŰ�� ���� �����Ͱ� ���� #Neo
-        //ParseStagePackageData("StagePackage");
+        ParseEvolutionData("EvolutionData");
         ParseMissionData("MissionData");
         ParseAchievementData("AchievementData");
         ParseCheckOutData("AttendanceCheckData");
@@ -207,6 +207,9 @@ public class DataTransformer : EditorWindow
             skillData.ProjectileCount = ConvertValue<float>(row[i++]);
             skillData.ScaleMultiplier = ConvertValue<float>(row[i++]);
             skillData.EffectScaleMultiplier = ConvertValue<float>(row[i++]);
+            skillData.DefBouns = ConvertValue<float>(row[i++]);
+            skillData.GoldBouns = ConvertValue<float>(row[i++]);
+            skillData.DiaBouns = ConvertValue<float>(row[i++]);
 
             loader.speicalskillDatas.Add(skillData);
         }
@@ -564,6 +567,38 @@ public class DataTransformer : EditorWindow
                 gachaData.GachaRateTable.AddRange(gachaRate);
 
             loader.list.Add(gachaData);
+        }
+        #endregion
+
+        string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
+        File.WriteAllText($"{Application.dataPath}/@Resources/Data/Json/{filename}.json", jsonStr);
+        AssetDatabase.Refresh();
+    }
+
+    static void ParseEvolutionData(string filename)
+    {
+        EvolutionDataLoader loader = new EvolutionDataLoader();
+
+        #region ExcelData
+        string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/CSV/{filename}.csv").Split("\n");
+
+        for (int y = 1; y < lines.Length; y++)
+        {
+            string[] row = lines[y].Replace("\r", "").Split(',');
+            if (row.Length == 0)
+                continue;
+            if (string.IsNullOrEmpty(row[0]))
+                continue;
+
+            int i = 0;
+
+            EvolutionData evolution = new EvolutionData();
+            evolution.Level = ConvertValue<int>(row[i++]);
+            evolution.EvolutionAbility = ConvertValue<Define.EvolutionAbility>(row[i++]);
+            evolution.EvolutionAbilityNum = ConvertValue<int>(row[i++]);
+            evolution.NeedGold = ConvertValue<int>(row[i++]);
+
+            loader.list.Add(evolution);
         }
         #endregion
 
