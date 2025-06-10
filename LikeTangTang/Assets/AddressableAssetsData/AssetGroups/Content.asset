@@ -38,7 +38,7 @@ MonoBehaviour:
     m_SerializedLabels:
     - PrevLoad
   - m_GUID: 5eaaff2a208dc874c87a0c06bef476c0
-    m_Address: CriticalBouns.sprite
+    m_Address: CriticalBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad

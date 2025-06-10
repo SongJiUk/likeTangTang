@@ -144,7 +144,6 @@ public class PlayerController : CreatureController, ITickable
                    Exp >= currentLevel.TotalExp)
             {
                 Level++;
-                Exp -= currentLevel.TotalExp;
                 TotalExp = nextLevel.TotalExp;
                 LevelUp(Level);
             }
@@ -157,21 +156,14 @@ public class PlayerController : CreatureController, ITickable
     {
         get
         {
-            //TODO : 현재 경험치 수정 이후
-
-            //if (!Manager.DataM.LevelDic.TryGetValue(Level, out var currentLevelData))
-            //    return 0f;
-
-            //float prevExp = 0f;
-            //if (Manager.DataM.LevelDic.TryGetValue(Level - 1, out var prevLevelData))
-            //    prevExp = prevLevelData.TotalExp;
-
-            //return (Exp - prevExp) / (currentLevelData.TotalExp - prevExp);
-
             if (!Manager.DataM.LevelDic.TryGetValue(Level, out var currentLevelData))
-                return 0f;  
+                return 0f;
 
-            return Exp / currentLevelData.TotalExp;
+            float prevExp = 0f;
+            if (Manager.DataM.LevelDic.TryGetValue(Level - 1, out var prevLevelData))
+                prevExp = prevLevelData.TotalExp;
+
+            return (Exp - prevExp) / (currentLevelData.TotalExp - prevExp);
         }
     }
 
@@ -199,12 +191,6 @@ public class PlayerController : CreatureController, ITickable
     {
         get => Manager.GameM.ContinueDatas.SkillRefreshCount;
         set => Manager.GameM.ContinueDatas.SkillRefreshCount = value;
-    }
-    
-    public int SpecialSkillHealCount
-    {
-        get => Manager.GameM.ContinueDatas.SpecialSkillHealCount;
-        set => Manager.GameM.ContinueDatas.SpecialSkillHealCount = value;
     }
 
     #endregion
@@ -397,16 +383,18 @@ public class PlayerController : CreatureController, ITickable
 
     public override void InitStat(bool _isHpFull = false)
     {
+
+        //TODO : 여기 두번 들어오는 문제 해결해야됌
         MaxHp = Manager.GameM.CurrentCharacter.MaxHp;
         MaxHpRate = Manager.GameM.CurrentCharacter.MaxHpRate;
         Attack = Manager.GameM.CurrentCharacter.Attack;
         AttackRate = Manager.GameM.CurrentCharacter.AttackRate;
         Def = Manager.GameM.CurrentCharacter.Def;
         DefRate = Manager.GameM.CurrentCharacter.DefRate;
-        Speed = Manager.GameM.CurrentCharacter.MoveSpeed;
+        Speed = creatureData.Speed;
         SpeedRate = Manager.GameM.CurrentCharacter.SpeedRate;
-        CriticalRate = Manager.GameM.CurrentCharacter.CriticalRate;
-        CriticalDamage = Manager.GameM.CurrentCharacter.CriticalDamage + Define.DEFAULT_CIRITICAL_DAMAGE;
+        CriticalRate += Manager.GameM.CurrentCharacter.CriticalRate;
+        CriticalDamage += Manager.GameM.CurrentCharacter.CriticalDamage;
 
         var (equip_Hp, equip_Attack) = Manager.GameM.GetCurrentCharacterStat();
         MaxHp += equip_Hp;
@@ -522,8 +510,6 @@ public class PlayerController : CreatureController, ITickable
         float res = (MaxHp * _amount) * HealBounsRate;
         if (res == 0) return;
         Hp += res;
-
-        if (res > MaxHp) res = MaxHp; 
 
         if (Hp > MaxHp) Hp = MaxHp;
 

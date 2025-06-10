@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI.Extensions;
 
 public class UI_EvolutionPopup : UI_Popup
 {
@@ -163,77 +164,106 @@ public class UI_EvolutionPopup : UI_Popup
     {
         Refresh();
     }
-    
+
     void Refresh()
     {
+
+        // int count = 0;
+        // bool isLastLearned = false;
+        // int lastLearnedLevel = 0;
+        // for (int i = 0; i < Manager.GameM.CurrentCharacter.Level; i++)
+        // {
+        //     GetObject(gameObjectsType, (int)GameObjects.Level_1_BGIN_Object + i).SetActive(false);
+        //     GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + i).SetActive(false);
+
+        //     if ((i + 1) % 3 == 0)
+        //     {
+        //         if (Manager.GameM.CurrentCharacter.isLearnEvloution[i + 1])
+        //         {
+        //             isLastLearned =
+        //                !Manager.GameM.CurrentCharacter.isLearnEvloution.ContainsKey(i + 4) ||
+        //                !Manager.GameM.CurrentCharacter.isLearnEvloution[i + 4];
+
+        //             if (isLastLearned)
+        //             {
+        //                 GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + i).SetActive(true);
+        //                 lastLearnedLevel = i + 1;
+        //             }
+
+
+        //             GetImage(ImagesType, (int)Images.Level_3_Button + count).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
+        //             GetImage(ImagesType, (int)Images.Level_3_Img + count).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
+        //         }
+        //         else
+        //         {
+        //             GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + lastLearnedLevel -1).SetActive(false);
+        //             GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + (i - 1)).SetActive(true);
+        //             return;
+        //         }
+        //         count++;
+        //     }
+
+        //     GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + i).SetActive(true);
+        //     GetObject(gameObjectsType, (int)GameObjects.Level_1_BGIN_Object + i).SetActive(true);
+        // }
+
+        var Character = Manager.GameM.CurrentCharacter;
+        int characterLevel = Character.Level;
+
         for (int i = 0; i < Define.CHARACTER_MAX_LEVEL; i++)
         {
+            GetObject(gameObjectsType, (int)GameObjects.Level_1_BGIN_Object + i).SetActive(false);
             GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + i).SetActive(false);
         }
 
-        // 2. 다음 진화 안 배운 지점 아래에 선 하나만 표시
-        int charLevel = Manager.GameM.CurrentCharacter.Level;
-        Dictionary<int, bool> learnDict = Manager.GameM.CurrentCharacter.isLearnEvloution;
 
-        int lineIndexToActivate = -1;
+        int showIndex = GetIndexToShow(characterLevel, Character.isLearnEvloution);
 
-        for (int level = 3; level <= charLevel; level += 3)
+        for (int i = 0; i <= showIndex && i < Define.CHARACTER_MAX_LEVEL; i++)
         {
-            if (!learnDict.ContainsKey(level) || !learnDict[level])
-            {
-                lineIndexToActivate = level - 1;
-                break;
-            }
+            GetObject(gameObjectsType, (int)GameObjects.Level_1_BGIN_Object + i).SetActive(true);
         }
 
-        if (lineIndexToActivate != -1)
+        if (showIndex >= 0 && showIndex < Define.CHARACTER_MAX_LEVEL)
         {
-            GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + lineIndexToActivate).SetActive(true);
-        }
-
-        int counts = 0;
-        for (int i = 0; i<Manager.GameM.CurrentCharacter.Level; i++)
-        {
-            
-            if ((i + 1) % 3 == 0)
-            {
-                GetButton(ButtonsType, (int)Buttons.Level_3_Button + counts).interactable = true;
-                counts++;
-            }
+            GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + showIndex).SetActive(true);
         }
 
         int count = 0;
-        for (int i = 0; i < Manager.GameM.CurrentCharacter.Level; i++)
+        for (int i = 3; i <= Define.CHARACTER_MAX_LEVEL; i += 3)
         {
-            GetObject(gameObjectsType, (int)GameObjects.Level_1_BGIN_Object + i).SetActive(false);
-            //GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + i).SetActive(false);
+            if (i > characterLevel) break;
+            GetButton(ButtonsType, (int)Buttons.Level_3_Button + count).interactable = true;
 
-            if ((i + 1) % 3 == 0)
-            {
-                if (Manager.GameM.CurrentCharacter.isLearnEvloution[i + 1])
-                {
-                    bool isLastLearned =
-                        !Manager.GameM.CurrentCharacter.isLearnEvloution.ContainsKey(i + 4) ||
-                        !Manager.GameM.CurrentCharacter.isLearnEvloution[i + 4];
+            bool learned = Character.isLearnEvloution.ContainsKey(i) && Character.isLearnEvloution[i];
+            var evolOn = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
+            var evolOff = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.Off];
 
-                    if(isLastLearned)
-                        GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + i).SetActive(true);
+            GetImage(ImagesType, (int)Images.Level_3_Button + count).color = GetImage(ImagesType, (int)Images.Level_3_Img + count).color = learned ? evolOn : evolOff;
 
-                    GetImage(ImagesType, (int)Images.Level_3_Button + count).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                    GetImage(ImagesType, (int)Images.Level_3_Img + count).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                    
-                }
-                else
-                {
-                    GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + (i -1)).SetActive(true);
-                    return;
-                }
-                count++;
-            }
 
-           
-            GetObject(gameObjectsType, (int)GameObjects.Level_1_BGIN_Object + i).SetActive(true);
+            count++;
         }
+    }
+
+    int GetIndexToShow(int _characterLevel, Dictionary<int, bool> _learnDic)
+    {
+        for (int i = 3; i <= Define.CHARACTER_MAX_LEVEL; i += 3)
+        {
+            if (i <= _characterLevel)
+            {
+                bool learned = _learnDic.ContainsKey(i) && _learnDic[i];
+                if (!learned)
+                {
+                    return i - 2;
+                }
+            }
+            else
+            {
+                return _characterLevel - 1;
+            }
+        }
+        return _characterLevel - 1;
     }
 
     void OnClickLevel3Button()

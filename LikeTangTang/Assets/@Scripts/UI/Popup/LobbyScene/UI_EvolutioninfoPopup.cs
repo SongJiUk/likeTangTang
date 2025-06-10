@@ -81,6 +81,7 @@ public class UI_EvolutioninfoPopup : UI_Popup
         if(Manager.GameM.Gold >= data.NeedGold)
         {
             //배우기
+            Manager.GameM.Gold -= data.NeedGold;
             Manager.GameM.CurrentCharacter.Evolution(level);
             OnLearnCallBack?.Invoke();
             Manager.UiM.ClosePopup(this);
