@@ -146,7 +146,7 @@ public class TimeManager : MonoBehaviour
         name.Enqueue(Manager.DataM.MaterialDic[Define.ID_GOLD].SpriteName);
         count.Enqueue(gold);
 
-        Manager.GameM.Gold += gold;
+        Manager.GameM.Gold += gold * (int)Manager.GameM.CurrentCharacter.Evol_GoldBonus;
         LastRewardTime = DateTime.Now;
         if (Manager.GameM.MissionDic.TryGetValue(Define.MissionTarget.OfflineRewardGet, out MissionInfo info)) info.Progress++;
         Manager.GameM.OfflineRewardGetCount++;

@@ -4,61 +4,71 @@
       "Level": 3,
       "EvolutionAbility": 1,
       "EvolutionAbilityNum": 25000,
-      "NeedGold": 10000
+      "NeedGold": 10000,
+      "SpriteName": "AttackBonus.sprite"
     },
     {
       "Level": 6,
       "EvolutionAbility": 2,
       "EvolutionAbilityNum": 25001,
-      "NeedGold": 20000
+      "NeedGold": 20000,
+      "SpriteName": "MaxHpBonus.sprite"
     },
     {
       "Level": 9,
       "EvolutionAbility": 3,
       "EvolutionAbilityNum": 25002,
-      "NeedGold": 30000
+      "NeedGold": 30000,
+      "SpriteName": "GoldBonus.sprite"
     },
     {
       "Level": 12,
       "EvolutionAbility": 4,
       "EvolutionAbilityNum": 25003,
-      "NeedGold": 40000
+      "NeedGold": 40000,
+      "SpriteName": "CriticalBonus.sprite"
     },
     {
       "Level": 15,
       "EvolutionAbility": 5,
       "EvolutionAbilityNum": 25004,
-      "NeedGold": 50000
+      "NeedGold": 50000,
+      "SpriteName": "CoolTimeBonus.sprite"
     },
     {
       "Level": 18,
       "EvolutionAbility": 6,
       "EvolutionAbilityNum": 25005,
-      "NeedGold": 60000
+      "NeedGold": 60000,
+      "SpriteName": "DefBonus.sprite"
     },
     {
       "Level": 21,
       "EvolutionAbility": 7,
       "EvolutionAbilityNum": 25006,
-      "NeedGold": 70000
+      "NeedGold": 70000,
+      "SpriteName": "DiaBonus.sprite"
     },
     {
       "Level": 24,
       "EvolutionAbility": 8,
       "EvolutionAbilityNum": 25007,
-      "NeedGold": 80000
+      "NeedGold": 80000,
+      "SpriteName": "HealingBonus.sprite"
     },
     {
       "Level": 27,
       "EvolutionAbility": 9,
       "EvolutionAbilityNum": 25008,
-      "NeedGold": 90000
+      "NeedGold": 90000,
+      "SpriteName": "CriticalDamageBonus.sprite"
     },
     {
       "Level": 30,
       "EvolutionAbility": 10,
       "EvolutionAbilityNum": 25009,
-      "NeedGold": 100000
+      "NeedGold": 100000,
+      "SpriteName": "MoveSpeedBonus.sprite"
     }
   ]
 }

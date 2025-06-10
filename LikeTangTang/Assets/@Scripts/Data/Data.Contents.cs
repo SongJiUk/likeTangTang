@@ -638,6 +638,7 @@ namespace Data
         public Define.EvolutionAbility EvolutionAbility;
         public int EvolutionAbilityNum;
         public int NeedGold;
+        public string SpriteName;
     }
 
     public class EvolutionDataLoader : ILoader<int, EvolutionData>

@@ -150,7 +150,7 @@ public class UI_MissionItem : UI_Base
 
         UI_RewardPopup rewardPopup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
         rewardPopup.gameObject.SetActive(true);
-        Manager.GameM.Dia += missionData.RewardValue;
+        Manager.GameM.Dia += missionData.RewardValue * (int)Manager.GameM.CurrentCharacter.Evol_DiaBouns;
 
         if(Manager.GameM.MissionDic.TryGetValue(missionData.MissionTarget, out MissionInfo info))
         {

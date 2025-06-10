@@ -50,7 +50,7 @@ public class Character
         DataId = _key;
         Data = Manager.DataM.CreatureDic[DataId];
         CharacterLevelData = Manager.DataM.CharacterLevelDataDic[Level];
-        for (int i = 1; i <= Level; i++)
+        for (int i = 1; i <= Define.CHARACTER_MAX_LEVEL; i++)
         {
             if (i % 3 == 0)
             {
@@ -131,6 +131,24 @@ public class Character
         Manager.GameM.UpdateCharacter(index, this);
     }
 
+    public void SetEvolution()
+    {
+        CharacterLevelData = Manager.DataM.CharacterLevelDataDic[Level];
+        MaxHp = Data.MaxHp + CharacterLevelData.HpUp;
+        MaxHpRate = Data.HpRate + Evol_MaxHpRate;
+        Attack = Data.Attack + CharacterLevelData.AttackUp;
+        AttackRate = Data.AttackRate + Evol_AttackRate;
+        Def = Data.Def + CharacterLevelData.DefUp;
+        DefRate = Data.AttackRate + Evol_DefRate;
+        MoveSpeed = Data.Speed + CharacterLevelData.SpeedUp;
+        SpeedRate = Data.MoveSpeedRate + Evol_SpeedRate;
+        CriticalRate = CharacterLevelData.CriticalUp + Evol_CriticalRate;
+        CriticalDamage = CharacterLevelData.CriticalDamageUp + Evol_CriticalDamage;
+
+        int index = Manager.GameM.Characters.IndexOf(this);
+        Manager.GameM.UpdateCharacter(index, this);
+    }
+
     public void Evolution(int _level)
     {
         if (evolutionData.TryGetValue(_level, out var data) || isLearnEvloution[_level])
@@ -172,19 +190,6 @@ public class Character
             }
         }
 
-       
+        SetEvolution();
     }
-
-    /*
-        AttackBonus
-        MaxHpBonus
-        GoldBonus
-        CriticalBouns
-        CoolTimeBouns
-        DefBonus
-        DiaBouns
-        HealingBouns
-        CriticalDamageBouns
-        MoveSpeedBonus
-     */
 }

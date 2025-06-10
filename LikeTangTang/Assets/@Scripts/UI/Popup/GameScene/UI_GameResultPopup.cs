@@ -70,7 +70,7 @@ public class UI_GameResultPopup : UI_Popup
         GetText(typeof(Texts), (int)Texts.ResultKillValueText).text = $"{Manager.GameM.player.KillCount}";
         
             
-        Manager.GameM.Gold += Manager.GameM.CurrentStageData.ClearGold;
+        Manager.GameM.Gold += Manager.GameM.CurrentStageData.ClearGold * (int)Manager.GameM.CurrentCharacter.Evol_GoldBonus;
         Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_RandomScroll], 10);
         Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_LevelUpCoupon], Manager.GameM.CurrentStageData.StageIndex);
 

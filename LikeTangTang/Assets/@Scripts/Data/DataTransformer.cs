@@ -597,6 +597,7 @@ public class DataTransformer : EditorWindow
             evolution.EvolutionAbility = ConvertValue<Define.EvolutionAbility>(row[i++]);
             evolution.EvolutionAbilityNum = ConvertValue<int>(row[i++]);
             evolution.NeedGold = ConvertValue<int>(row[i++]);
+            evolution.SpriteName = ConvertValue<string>(row[i++]);
 
             loader.list.Add(evolution);
         }

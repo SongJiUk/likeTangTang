@@ -449,11 +449,11 @@ public class GameManager
                 AddMaterialItem(_data.MaterialID, _count);
                 break;
             case MaterialType.Dia:
-                Dia += _count;
+                Dia += _count * (int)Manager.GameM.CurrentCharacter.Evol_DiaBouns;
                 break;
 
             case MaterialType.Gold:
-                Gold += _count;
+                Gold += _count * (int)Manager.GameM.CurrentCharacter.Evol_GoldBonus;
                 break;
             case MaterialType.LevelUpCoupon:
                 LevelUpCoupon += _count;

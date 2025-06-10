@@ -17,88 +17,58 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 94163b93d7bb24f928019105ae174de0
   m_SerializeEntries:
-  - m_GUID: 4f408a3b62c586f409d5f2a524de8034
-    m_Address: LevelUpCoupon.sprite
+  - m_GUID: 6c8084fcfec1d9a4db8afea7afd148e4
+    m_Address: UI_EvolutioninfoPopup
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: f78f0499bd4ada644a4a921207710fd5
-    m_Address: CharacterLevelData.json
+  - m_GUID: b01d89f8d0057b0458aaae3da9629215
+    m_Address: AttackBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: 9fe555eeea2b6436db9911ce9d5e0646
-    m_Address: Character_Epsilon
+  - m_GUID: b6f0284acc866194b976906a2840a922
+    m_Address: MaxHpBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: d0ba6d4005e88494089d6bc2bd3eecd9
-    m_Address: Character_Delta
+  - m_GUID: 129de4b3d23b23c46830d0c5617af29b
+    m_Address: CoolTimeBouns.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: b009699a4330b466ea19cf850c037e0c
-    m_Address: Character_Gamma
+  - m_GUID: 5eaaff2a208dc874c87a0c06bef476c0
+    m_Address: CriticalBouns.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: dcb15bed9e7ba44e488bfdf3b89e897a
-    m_Address: Character_Beta
+  - m_GUID: 58e57342cad2dc847832c322f39cec2e
+    m_Address: CriticalDamageBouns.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: 873cefde9bc4e402fbff3780425c768c
-    m_Address: Character_Alpha
+  - m_GUID: 55990b9b78b2b234f9c7a8c7322cf752
+    m_Address: DefBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: ff22531651dccc04ca6934a3bb778a90
-    m_Address: UI_CharacterItem
+  - m_GUID: c3fff725454e2a44493bacfe10b5f73f
+    m_Address: DiaBouns.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: 042d0bed28c1a2f468a9d402034a428d
-    m_Address: UI_CharacterSelectPopup
+  - m_GUID: a22ed7fdbbe4e384eb7787734d11d1f3
+    m_Address: GoldBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: 4d9943c85b27439ba29ebffeb2b7e315
-    m_Address: Beta.sprite
+  - m_GUID: 0dccbef00267d6843ae7297510d09844
+    m_Address: HealingBouns.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: f9cdc9420d784e58bfd021946386f9a1
-    m_Address: Gamma.sprite
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: 5dac8be755f14503826d02126965b5b8
-    m_Address: Delta.sprite
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: aa1899bc9c524e66bab37821775b857b
-    m_Address: Epsilon.sprite
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: b597d3103559c4ba0b9520f56025acac
-    m_Address: UI_CharacterLevelupPopup
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: c56eefb2240dd3645b08e656ac626fa3
-    m_Address: EliteMonster
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: d7a3863a3835a6345a47f8eedbc37507
-    m_Address: UI_EvolutionPopup
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: 4945d8d8a47165845b0a6cdb4b2ac16c
-    m_Address: EvolutionData.json
+  - m_GUID: c94b39e1e636db44eb6914e5bc92899a
+    m_Address: MoveSpeedBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad

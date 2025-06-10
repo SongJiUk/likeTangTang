@@ -66,7 +66,7 @@ public class SpectralSlash : RepeatSkill
     }
     IEnumerator CoStartSpectralSlash()
     {
-        var waitTime = new WaitForSeconds(SkillDatas.CoolTime);
+        var waitTime = new WaitForSeconds(SkillDatas.CoolTime * (1 - Manager.GameM.CurrentCharacter.Evol_CoolTimeBouns));
         while(true)
         {
             int swingCount = Mathf.Min(projectileCount, currentSwingParticle.Length);

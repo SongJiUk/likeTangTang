@@ -99,7 +99,7 @@ public class EnergyRing : RepeatSkill, ITickable
         if(coolTime <= 0f)
         {
             DoSkill();
-            coolTime = SkillDatas.CoolTime;
+            coolTime = SkillDatas.CoolTime * (1 - Manager.GameM.CurrentCharacter.Evol_CoolTimeBouns);
         }
     }
 

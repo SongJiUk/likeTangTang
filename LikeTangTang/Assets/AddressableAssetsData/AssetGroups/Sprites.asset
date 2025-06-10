@@ -712,6 +712,31 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
+  - m_GUID: 4d9943c85b27439ba29ebffeb2b7e315
+    m_Address: Beta.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: f9cdc9420d784e58bfd021946386f9a1
+    m_Address: Gamma.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 5dac8be755f14503826d02126965b5b8
+    m_Address: Delta.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: aa1899bc9c524e66bab37821775b857b
+    m_Address: Epsilon.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: 4f408a3b62c586f409d5f2a524de8034
+    m_Address: LevelUpCoupon.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

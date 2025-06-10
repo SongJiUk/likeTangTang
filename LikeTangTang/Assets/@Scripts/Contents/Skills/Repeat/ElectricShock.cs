@@ -25,7 +25,7 @@ public class ElectricShock : RepeatSkill, ITickable
     public override void OnChangedSkillData()
     {
         duration = SkillDatas.Duration;
-        coolTime = SkillDatas.CoolTime;
+        coolTime = SkillDatas.CoolTime * (1 - Manager.GameM.CurrentCharacter.Evol_CoolTimeBouns); ;
         projectileCount = SkillDatas.ProjectileCount;
         boundDist = SkillDatas.BoundDist;
     }
@@ -65,7 +65,7 @@ public class ElectricShock : RepeatSkill, ITickable
         if (coolTime <= 0)
         {
             DoSkill();
-            coolTime = SkillDatas.CoolTime;
+            coolTime = SkillDatas.CoolTime * (1 -Manager.GameM.CurrentCharacter.Evol_CoolTimeBouns);
         }
     }
 
