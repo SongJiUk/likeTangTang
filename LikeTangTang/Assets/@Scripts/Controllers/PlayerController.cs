@@ -193,6 +193,12 @@ public class PlayerController : CreatureController, ITickable
         set => Manager.GameM.ContinueDatas.SkillRefreshCount = value;
     }
 
+    public int SpecialSkillHealCount
+    {
+        get => Manager.GameM.ContinueDatas.SpecialSkillHealCount;
+        set => Manager.GameM.ContinueDatas.SpecialSkillHealCount = value;
+    }
+
     #endregion
 
     #region 레벨업
@@ -377,7 +383,6 @@ public class PlayerController : CreatureController, ITickable
         if (CreatureAnim != null)
             CreatureAnim.runtimeAnimatorController =
                 Manager.ResourceM.Load<RuntimeAnimatorController>(creatureData.CreatureAnimName);
-        UpdatePlayerStat();
         Manager.GameM.SaveGame();
     }
 
@@ -406,7 +411,7 @@ public class PlayerController : CreatureController, ITickable
         Speed *= SpeedRate;
 
 
-        if (_isHpFull) Hp = MaxHp;
+        Hp = MaxHp;
     }
 
     public override void UpdatePlayerStat()

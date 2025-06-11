@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UI.Extensions;
 
 public class UI_EvolutionPopup : UI_Popup
 {
+    //TODO : 주석된거 다 지우기 
     enum GameObjects
     {
         Level_1_BGIN_Object,
@@ -70,7 +72,6 @@ public class UI_EvolutionPopup : UI_Popup
 
 
     }
-
     enum Images
     {
         Level_3_Button,
@@ -94,8 +95,6 @@ public class UI_EvolutionPopup : UI_Popup
         Level_27_Img,
         Level_30_Img,
     }
-    
-
     enum Buttons
     {
         Level_3_Button,
@@ -110,10 +109,12 @@ public class UI_EvolutionPopup : UI_Popup
         Level_30_Button,
     }
 
+    private readonly int[] evolutionLevels = { 3, 6, 9, 12, 15, 18, 21, 24, 27, 30 };
+    private Dictionary<int, Button> levelButtons;
+    private Dictionary<int, Image> levelButtonImages;
+    private Dictionary<int, Image> levelIcons;
 
-    public bool isOpen = false;
-
-    
+    public bool isOpen;
     private void Awake()
     {
         Init();
@@ -130,34 +131,62 @@ public class UI_EvolutionPopup : UI_Popup
         BindImage(ImagesType);
         BindButton(ButtonsType);
 
-        GetButton(ButtonsType, (int)Buttons.Level_3_Button).gameObject.BindEvent(OnClickLevel3Button);
-        GetButton(ButtonsType, (int)Buttons.Level_6_Button).gameObject.BindEvent(OnClickLevel6Button);
-        GetButton(ButtonsType, (int)Buttons.Level_9_Button).gameObject.BindEvent(OnClickLevel9Button);
-        GetButton(ButtonsType, (int)Buttons.Level_12_Button).gameObject.BindEvent(OnClickLevel12Button);
-        GetButton(ButtonsType, (int)Buttons.Level_15_Button).gameObject.BindEvent(OnClickLevel15Button);
-        GetButton(ButtonsType, (int)Buttons.Level_18_Button).gameObject.BindEvent(OnClickLevel18Button);
-        GetButton(ButtonsType, (int)Buttons.Level_21_Button).gameObject.BindEvent(OnClickLevel21Button);
-        GetButton(ButtonsType, (int)Buttons.Level_24_Button).gameObject.BindEvent(OnClickLevel24Button);
-        GetButton(ButtonsType, (int)Buttons.Level_27_Button).gameObject.BindEvent(OnClickLevel27Button);
-        GetButton(ButtonsType, (int)Buttons.Level_30_Button).gameObject.BindEvent(OnClickLevel30Button);
 
-        int count = 0;
-        for (int i = 0; i < Define.CHARACTER_MAX_LEVEL; i++)
-        {
-            GetObject(gameObjectsType, (int)GameObjects.Level_1_BGIN_Object + i).SetActive(false);
-            GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + i).SetActive(false);
-            if ((i + 1) % 3 == 0)
-            {
-                GetImage(ImagesType, (int)Images.Level_3_Button + count).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.Off];
-                GetImage(ImagesType, (int)Images.Level_3_Img + count).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.Off];
-                GetButton(ButtonsType, (int)Buttons.Level_3_Button + count).interactable = false;
-                count++;
-            }
-        }
+        SetupEvolutionUI();
+        //GetButton(ButtonsType, (int)Buttons.Level_3_Button).gameObject.BindEvent(OnClickLevel3Button);
+        //GetButton(ButtonsType, (int)Buttons.Level_6_Button).gameObject.BindEvent(OnClickLevel6Button);
+        //GetButton(ButtonsType, (int)Buttons.Level_9_Button).gameObject.BindEvent(OnClickLevel9Button);
+        //GetButton(ButtonsType, (int)Buttons.Level_12_Button).gameObject.BindEvent(OnClickLevel12Button);
+        //GetButton(ButtonsType, (int)Buttons.Level_15_Button).gameObject.BindEvent(OnClickLevel15Button);
+        //GetButton(ButtonsType, (int)Buttons.Level_18_Button).gameObject.BindEvent(OnClickLevel18Button);
+        //GetButton(ButtonsType, (int)Buttons.Level_21_Button).gameObject.BindEvent(OnClickLevel21Button);
+        //GetButton(ButtonsType, (int)Buttons.Level_24_Button).gameObject.BindEvent(OnClickLevel24Button);
+        //GetButton(ButtonsType, (int)Buttons.Level_27_Button).gameObject.BindEvent(OnClickLevel27Button);
+        //GetButton(ButtonsType, (int)Buttons.Level_30_Button).gameObject.BindEvent(OnClickLevel30Button);
+
+        //int count = 0;
+        //for (int i = 0; i < Define.CHARACTER_MAX_LEVEL; i++)
+        //{
+        //    GetObject(gameObjectsType, (int)GameObjects.Level_1_BGIN_Object + i).SetActive(false);
+        //    GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + i).SetActive(false);
+        //    if ((i + 1) % 3 == 0)
+        //    {
+        //        GetImage(ImagesType, (int)Images.Level_3_Button + count).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.Off];
+        //        GetImage(ImagesType, (int)Images.Level_3_Img + count).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.Off];
+        //        GetButton(ButtonsType, (int)Buttons.Level_3_Button + count).interactable = false;
+        //        count++;
+        //    }
+        //}
 
         Refresh();
 
         return true;
+    }
+
+    void SetupEvolutionUI()
+    {
+        levelButtons = new Dictionary<int, Button>();
+        levelButtonImages = new Dictionary<int, Image>();
+        levelIcons = new Dictionary<int, Image>();
+
+        for(int i =0; i<evolutionLevels.Length; i++)
+        {
+            int level = evolutionLevels[i];
+            var btn = GetButton(ButtonsType, i);
+            var btnImg = GetImage(ImagesType, (int)Images.Level_3_Button + i);
+            var iconImg = GetImage(ImagesType, (int)Images.Level_3_Img + i);
+
+            levelButtons[level] = btn;
+            levelButtonImages[level] = btnImg;
+            levelIcons[level] = iconImg;
+
+            btn.interactable = false;
+            btnImg.color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.Off];
+            iconImg.color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.Off];
+
+            int eventLevel = level;
+            btn.gameObject.BindEvent(() => OnClickEvolutionButton(eventLevel));
+        }
     }
 
     public void SetInfo()
@@ -168,45 +197,6 @@ public class UI_EvolutionPopup : UI_Popup
     void Refresh()
     {
 
-        // int count = 0;
-        // bool isLastLearned = false;
-        // int lastLearnedLevel = 0;
-        // for (int i = 0; i < Manager.GameM.CurrentCharacter.Level; i++)
-        // {
-        //     GetObject(gameObjectsType, (int)GameObjects.Level_1_BGIN_Object + i).SetActive(false);
-        //     GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + i).SetActive(false);
-
-        //     if ((i + 1) % 3 == 0)
-        //     {
-        //         if (Manager.GameM.CurrentCharacter.isLearnEvloution[i + 1])
-        //         {
-        //             isLastLearned =
-        //                !Manager.GameM.CurrentCharacter.isLearnEvloution.ContainsKey(i + 4) ||
-        //                !Manager.GameM.CurrentCharacter.isLearnEvloution[i + 4];
-
-        //             if (isLastLearned)
-        //             {
-        //                 GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + i).SetActive(true);
-        //                 lastLearnedLevel = i + 1;
-        //             }
-
-
-        //             GetImage(ImagesType, (int)Images.Level_3_Button + count).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-        //             GetImage(ImagesType, (int)Images.Level_3_Img + count).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-        //         }
-        //         else
-        //         {
-        //             GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + lastLearnedLevel -1).SetActive(false);
-        //             GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + (i - 1)).SetActive(true);
-        //             return;
-        //         }
-        //         count++;
-        //     }
-
-        //     GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + i).SetActive(true);
-        //     GetObject(gameObjectsType, (int)GameObjects.Level_1_BGIN_Object + i).SetActive(true);
-        // }
-
         var Character = Manager.GameM.CurrentCharacter;
         int characterLevel = Character.Level;
 
@@ -215,7 +205,6 @@ public class UI_EvolutionPopup : UI_Popup
             GetObject(gameObjectsType, (int)GameObjects.Level_1_BGIN_Object + i).SetActive(false);
             GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + i).SetActive(false);
         }
-
 
         int showIndex = GetIndexToShow(characterLevel, Character.isLearnEvloution);
 
@@ -229,21 +218,38 @@ public class UI_EvolutionPopup : UI_Popup
             GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + showIndex).SetActive(true);
         }
 
-        int count = 0;
-        for (int i = 3; i <= Define.CHARACTER_MAX_LEVEL; i += 3)
+        foreach(var level in evolutionLevels)
         {
-            if (i > characterLevel) break;
-            GetButton(ButtonsType, (int)Buttons.Level_3_Button + count).interactable = true;
+            var btn = levelButtons[level];
+            var btnImg = levelButtonImages[level];
+            var iconImg = levelIcons[level];
 
-            bool learned = Character.isLearnEvloution.ContainsKey(i) && Character.isLearnEvloution[i];
-            var evolOn = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-            var evolOff = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.Off];
+            bool available = level <= characterLevel;
+            btn.interactable = available;
 
-            GetImage(ImagesType, (int)Images.Level_3_Button + count).color = GetImage(ImagesType, (int)Images.Level_3_Img + count).color = learned ? evolOn : evolOff;
+            bool learned = Character.isLearnEvloution.TryGetValue(level, out bool islearned) && islearned;
 
+            var style = Define.EquipmentUIColors.EvolutionStyles[learned ? Define.EvolutionOnOff.On : Define.EvolutionOnOff.Off];
+            btnImg.color = style;
+            iconImg.color = style;
 
-            count++;
         }
+
+        //int count = 0;
+        //for (int i = 3; i <= Define.CHARACTER_MAX_LEVEL; i += 3)
+        //{
+        //    if (i > characterLevel) break;
+        //    GetButton(ButtonsType, (int)Buttons.Level_3_Button + count).interactable = true;
+
+        //    bool learned = Character.isLearnEvloution.ContainsKey(i) && Character.isLearnEvloution[i];
+        //    var evolOn = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
+        //    var evolOff = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.Off];
+
+        //    GetImage(ImagesType, (int)Images.Level_3_Button + count).color = GetImage(ImagesType, (int)Images.Level_3_Img + count).color = learned ? evolOn : evolOff;
+
+
+        //    count++;
+        //}
     }
 
     int GetIndexToShow(int _characterLevel, Dictionary<int, bool> _learnDic)
@@ -266,18 +272,37 @@ public class UI_EvolutionPopup : UI_Popup
         return _characterLevel - 1;
     }
 
+    void OnClickEvolutionButton(int _level)
+    {
+        var Character = Manager.GameM.CurrentCharacter;
+
+        if (!levelButtons[_level].interactable || (Character.isLearnEvloution.TryGetValue(_level, out bool learned) && learned))
+            return;
+
+        UI_EvolutioninfoPopup popup = Manager.UiM.ShowPopup<UI_EvolutioninfoPopup>();
+        popup.SetInfo(Character.evolutionData[_level], _level);
+        popup.OnLearnCallBack = () =>
+        {
+            levelButtonImages[_level].color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
+            levelIcons[_level].color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
+            Refresh();
+        };
+
+        popup.gameObject.SetActive(true);
+    }
+
     void OnClickLevel3Button()
     {
         
         if (GetButton(ButtonsType, (int)Buttons.Level_3_Button).interactable && !Manager.GameM.CurrentCharacter.isLearnEvloution[3])
         {
-            //클릭 가능
+            
             UI_EvolutioninfoPopup popup = Manager.UiM.ShowPopup<UI_EvolutioninfoPopup>();
             popup.SetInfo(Manager.GameM.CurrentCharacter.evolutionData[3], 3);
 
             popup.OnLearnCallBack = () =>
             {
-                //TODO : 배우기가 눌려지면 이게 실행되게 
+                
                 GetImage(ImagesType, (int)Images.Level_3_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 GetImage(ImagesType, (int)Images.Level_3_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 Refresh();
@@ -296,7 +321,7 @@ public class UI_EvolutionPopup : UI_Popup
 
             popup.OnLearnCallBack = () =>
             {
-                //TODO : 배우기가 눌려지면 이게 실행되게 
+                
                 GetImage(ImagesType, (int)Images.Level_6_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 GetImage(ImagesType, (int)Images.Level_6_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 Refresh();
@@ -315,7 +340,7 @@ public class UI_EvolutionPopup : UI_Popup
 
             popup.OnLearnCallBack = () =>
             {
-                //TODO : 배우기가 눌려지면 이게 실행되게 
+                
                 GetImage(ImagesType, (int)Images.Level_9_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 GetImage(ImagesType, (int)Images.Level_9_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 Refresh();
@@ -334,7 +359,7 @@ public class UI_EvolutionPopup : UI_Popup
 
             popup.OnLearnCallBack = () =>
             {
-                //TODO : 배우기가 눌려지면 이게 실행되게 
+                
                 GetImage(ImagesType, (int)Images.Level_12_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 GetImage(ImagesType, (int)Images.Level_12_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 Refresh();
@@ -353,7 +378,7 @@ public class UI_EvolutionPopup : UI_Popup
 
             popup.OnLearnCallBack = () =>
             {
-                //TODO : 배우기가 눌려지면 이게 실행되게 
+                 
                 GetImage(ImagesType, (int)Images.Level_15_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 GetImage(ImagesType, (int)Images.Level_15_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 Refresh();
@@ -372,7 +397,7 @@ public class UI_EvolutionPopup : UI_Popup
 
             popup.OnLearnCallBack = () =>
             {
-                //TODO : 배우기가 눌려지면 이게 실행되게 
+                
                 GetImage(ImagesType, (int)Images.Level_18_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 GetImage(ImagesType, (int)Images.Level_18_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 Refresh();
@@ -391,7 +416,7 @@ public class UI_EvolutionPopup : UI_Popup
 
             popup.OnLearnCallBack = () =>
             {
-                //TODO : 배우기가 눌려지면 이게 실행되게 
+                
                 GetImage(ImagesType, (int)Images.Level_21_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 GetImage(ImagesType, (int)Images.Level_21_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 Refresh();
@@ -410,7 +435,7 @@ public class UI_EvolutionPopup : UI_Popup
 
             popup.OnLearnCallBack = () =>
             {
-                //TODO : 배우기가 눌려지면 이게 실행되게 
+                
                 GetImage(ImagesType, (int)Images.Level_24_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 GetImage(ImagesType, (int)Images.Level_24_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 Refresh();
@@ -429,7 +454,7 @@ public class UI_EvolutionPopup : UI_Popup
 
             popup.OnLearnCallBack = () =>
             {
-                //TODO : 배우기가 눌려지면 이게 실행되게 
+                
                 GetImage(ImagesType, (int)Images.Level_27_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 GetImage(ImagesType, (int)Images.Level_27_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 Refresh();
@@ -448,7 +473,6 @@ public class UI_EvolutionPopup : UI_Popup
 
             popup.OnLearnCallBack = () =>
             {
-                //TODO : 배우기가 눌려지면 이게 실행되게 
                 GetImage(ImagesType, (int)Images.Level_30_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 GetImage(ImagesType, (int)Images.Level_30_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
                 Refresh();

@@ -52,12 +52,18 @@ public class MonsterController : CreatureController, ITickable
         isDead = false;
         CreatureState = CreatureState.Moving;
         isKnockBack = false;
+        knockBackCooldownEndTime = Time.time + KNOCKBACK_COOLTIME;
+        Rigid.velocity = Vector2.zero;
 
         contactPlayer = null;
         isInContactWithPlayer = false;
 
         originalSpeed = Speed;
         transform.localScale = Vector3.one;
+
+        
+        
+        
     }
 
     private void OnDisable()

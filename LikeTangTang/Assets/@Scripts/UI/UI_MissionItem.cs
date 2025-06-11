@@ -146,11 +146,11 @@ public class UI_MissionItem : UI_Base
         Queue<int> count = new();
 
         name.Enqueue(Manager.DataM.MaterialDic[missionData.ClearRewardItmeID].SpriteName);
-        count.Enqueue(missionData.RewardValue);
+        count.Enqueue((int)(missionData.RewardValue * Manager.GameM.CurrentCharacter.Evol_DiaBouns));
 
         UI_RewardPopup rewardPopup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
         rewardPopup.gameObject.SetActive(true);
-        Manager.GameM.Dia += missionData.RewardValue * (int)Manager.GameM.CurrentCharacter.Evol_DiaBouns;
+        Manager.GameM.Dia += (int)(missionData.RewardValue * Manager.GameM.CurrentCharacter.Evol_DiaBouns);
 
         if(Manager.GameM.MissionDic.TryGetValue(missionData.MissionTarget, out MissionInfo info))
         {

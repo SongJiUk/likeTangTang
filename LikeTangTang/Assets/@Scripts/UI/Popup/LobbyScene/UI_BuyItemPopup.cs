@@ -26,7 +26,7 @@ public class UI_BuyItemPopup : UI_Popup
     }
 
     int UseItemCount = 0;
-    int GetItemCount = 0;
+    float GetItemCount = 0;
     Data.MaterialData item;
     public Action OnCompleteBuyItem;
     void OnEnable()
@@ -70,15 +70,15 @@ public class UI_BuyItemPopup : UI_Popup
         if( item.MaterialType == Define.MaterialType.Gold)
         {
             
-            Manager.GameM.Gold += GetItemCount * (int)Manager.GameM.CurrentCharacter.Evol_GoldBonus;
+            Manager.GameM.Gold += (int)(GetItemCount *= Manager.GameM.CurrentCharacter.Evol_GoldBonus);
         }
         else if(item.MaterialType == Define.MaterialType.Stamina)
         {
-            Manager.GameM.Stamina += GetItemCount;
+            Manager.GameM.Stamina += (int)GetItemCount;
         }
         else
         {
-            Manager.GameM.AddMaterialItem(item.MaterialID, GetItemCount);
+            Manager.GameM.AddMaterialItem(item.MaterialID, (int)GetItemCount);
         }
         
         UI_RewardPopup Popup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
@@ -87,7 +87,7 @@ public class UI_BuyItemPopup : UI_Popup
         Queue<int> count = new Queue<int>();
 
         spriteName.Enqueue(item.SpriteName);
-        count.Enqueue(GetItemCount);
+        count.Enqueue((int)GetItemCount);
         Popup.SetInfo(spriteName, count);
         Popup.gameObject.SetActive(true);
         OnCompleteBuyItem?.Invoke();

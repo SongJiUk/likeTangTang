@@ -71,11 +71,11 @@ public class UI_DiaChargePopup : UI_Popup
                 Queue<string> name = new();
                 name.Enqueue(Manager.DataM.MaterialDic[Define.ID_DIA].SpriteName);
                 Queue<int> count = new();
-                count.Enqueue(200);
+                count.Enqueue((int)(200 * Manager.GameM.CurrentCharacter.Evol_DiaBouns));
                 UI_RewardPopup popup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
                 popup.gameObject.SetActive(true);
                 Manager.GameM.DiaCountAds--;
-                Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_DIA], 200);
+                Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_DIA], (int)(200 * Manager.GameM.CurrentCharacter.Evol_DiaBouns));
                 Refresh();
                 popup.SetInfo(name, count);
             });

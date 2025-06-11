@@ -149,11 +149,11 @@ public class UI_AchievementItem : UI_Base
         Queue<int> count = new();
 
         name.Enqueue(Manager.DataM.MaterialDic[achievementData.ClearRewardItemID].SpriteName);
-        count.Enqueue(achievementData.RewardValue);
+        count.Enqueue((int)(achievementData.RewardValue * Manager.GameM.CurrentCharacter.Evol_DiaBouns));
 
         UI_RewardPopup popup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
         popup.gameObject.SetActive(true);
-        Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[achievementData.ClearRewardItemID], achievementData.RewardValue);
+        Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[achievementData.ClearRewardItemID], (int)(achievementData.RewardValue * Manager.GameM.CurrentCharacter.Evol_DiaBouns));
         Manager.AchievementM.RewardedAchievement(achievementData.AchievementID);
         achievementData = Manager.AchievementM.GetNextAchievement(achievementData.AchievementID);
         Refresh();
