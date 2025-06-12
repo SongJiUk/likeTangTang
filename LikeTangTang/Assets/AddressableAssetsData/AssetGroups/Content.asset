@@ -33,7 +33,7 @@ MonoBehaviour:
     m_SerializedLabels:
     - PrevLoad
   - m_GUID: 129de4b3d23b23c46830d0c5617af29b
-    m_Address: CoolTimeBouns.sprite
+    m_Address: CoolTimeBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
@@ -43,7 +43,7 @@ MonoBehaviour:
     m_SerializedLabels:
     - PrevLoad
   - m_GUID: 58e57342cad2dc847832c322f39cec2e
-    m_Address: CriticalDamageBouns.sprite
+    m_Address: CriticalDamageBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
@@ -53,7 +53,7 @@ MonoBehaviour:
     m_SerializedLabels:
     - PrevLoad
   - m_GUID: c3fff725454e2a44493bacfe10b5f73f
-    m_Address: DiaBouns.sprite
+    m_Address: DiaBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
@@ -63,7 +63,7 @@ MonoBehaviour:
     m_SerializedLabels:
     - PrevLoad
   - m_GUID: 0dccbef00267d6843ae7297510d09844
-    m_Address: HealingBouns.sprite
+    m_Address: HealingBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad

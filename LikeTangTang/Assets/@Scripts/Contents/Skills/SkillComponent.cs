@@ -22,6 +22,8 @@ public class SkillComponent : MonoBehaviour
     //TODO : 서포트 스킬(진화스킬)
     public Dictionary<Define.SkillType, int> SavedEvolutionSkill = new Dictionary<Define.SkillType, int>();
     public event Action UpdateSkillUI;
+
+    bool stopped = false;
     public T AddSkill<T>(Vector3 _pos, Transform _parent = null ) where T : SkillBase
     {
         //[ ] 나중에 templateID로 바꾸기.
@@ -298,4 +300,28 @@ public class SkillComponent : MonoBehaviour
     {
         UpdateSkillUI?.Invoke();
     }
+
+
+    #region Boss Skill
+    int sequenceIndex = 0;
+    public void StartNextSequenceSkill()
+    {
+        if (stopped)
+            return;
+        if (SequenceSkills.Count == 0)
+            return;
+
+        SequenceSkills[sequenceIndex].DoSkill(OnFinishedSequenceSkill);
+    }
+    void OnFinishedSequenceSkill()
+    {
+        sequenceIndex = (sequenceIndex + 1) % SequenceSkills.Count;
+        StartNextSequenceSkill();
+    }
+
+    public void StopSkills()
+    {
+        stopped = true;
+    }
+    #endregion
 }

@@ -53,7 +53,7 @@ public class MonsterController : CreatureController, ITickable
         CreatureState = CreatureState.Moving;
         isKnockBack = false;
         knockBackCooldownEndTime = Time.time + KNOCKBACK_COOLTIME;
-        Rigid.velocity = Vector2.zero;
+        //Rigid.velocity = Vector2.zero;
 
         contactPlayer = null;
         isInContactWithPlayer = false;
@@ -76,6 +76,11 @@ public class MonsterController : CreatureController, ITickable
         if (!base.Init()) return false;
 
         objType = ObjectType.Monster;
+        CreatureState = CreatureState.Moving;
+        Rigid.simulated = true;
+        
+
+        
         return true;
     }
 
@@ -111,6 +116,9 @@ public class MonsterController : CreatureController, ITickable
 
         // KnockBack 쿨타임 중이면 이동 안 함
         if (Time.time < knockBackCooldownEndTime) return;
+
+
+        if (CreatureState != CreatureState.Moving) return;
 
         // 이동 방향 계산
         moveDir = isInGravityZone
@@ -171,7 +179,7 @@ public class MonsterController : CreatureController, ITickable
         {
             base.OnDamaged(_attacker, _skill, _damage);
         }
-
+        InvokeMonsterData();
         if (objType == ObjectType.Monster)
         {
             if (_skill != null) KnockBack(_skill);

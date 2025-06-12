@@ -512,7 +512,7 @@ public class PlayerController : CreatureController, ITickable
     {
         if (_amount <= 0) return;
 
-        float res = (MaxHp * _amount) * HealBounsRate;
+        float res = (MaxHp * _amount) * (HealBounsRate + Manager.GameM.CurrentCharacter.Evol_HealingBouns);
         if (res == 0) return;
         Hp += res;
 

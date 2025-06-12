@@ -33,8 +33,8 @@ public class Character
     public float Evol_AttackRate  { get; set; } = 0;
     public float Evol_MaxHpRate { get; set; } = 0;
     public float Evol_CoolTimeBouns{ get; set; } = 0;
-    public float Evol_DiaBouns { get; set; } = 0;
-    public float Evol_GoldBonus { get; set; } = 0;
+    public float Evol_DiaBouns { get; set; } = 1;
+    public float Evol_GoldBonus { get; set; } = 1;
     public float Evol_DefRate { get; set; } = 0;
     public float Evol_HealingBouns{ get; set; } = 0;
     public float Evol_CriticalRate { get; set; } = 0;
@@ -164,7 +164,7 @@ public class Character
                     Evol_MaxHpRate += Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum].MaxHpBonus;
                     break;
                 case Define.EvolutionAbility.GoldBonus:
-                    Evol_GoldBonus += Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum].GoldBouns;
+                    Evol_GoldBonus = Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum].GoldBouns;
                     break;
                 case Define.EvolutionAbility.CriticalBonus:
                     Evol_CriticalRate += Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum].GoldBouns;
@@ -176,7 +176,7 @@ public class Character
                     Evol_DefRate += Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum].DefBouns;
                     break;
                 case Define.EvolutionAbility.DiaBonus:
-                    Evol_DiaBouns += Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum].DiaBouns;
+                    Evol_DiaBouns = Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum].DiaBouns;
                     break;
                 case Define.EvolutionAbility.HealingBonus:
                     Evol_HealingBouns += Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum].HealingBouns;

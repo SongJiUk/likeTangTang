@@ -89,7 +89,15 @@ public class UI_CheckOutItem : UI_Base
                 Queue<int> count = new ();
 
                 name.Enqueue(Manager.DataM.MaterialDic[matID].SpriteName);
-                count.Enqueue(Manager.DataM.AttendanceCheckDataDic[num].RewardItemValue);
+
+                int ValueCount = 0;
+                if(matID == 60001)
+                {
+                    ValueCount = (int)(Manager.DataM.AttendanceCheckDataDic[num].RewardItemValue * Manager.GameM.CurrentCharacter.Evol_DiaBouns);
+                    count.Enqueue(ValueCount);
+                }
+                else
+                    count.Enqueue(Manager.DataM.AttendanceCheckDataDic[num].RewardItemValue);
 
 
                 UI_RewardPopup popup =  (Manager.UiM.SceneUI as UI_LobbyScene).Ui_RewardPopup;
@@ -100,7 +108,9 @@ public class UI_CheckOutItem : UI_Base
                 {
                     matID = Manager.DataM.AttendanceCheckDataDic[dayCount].RewardItemId;
                     name.Enqueue(Manager.DataM.MaterialDic[matID].SpriteName);
-                    count.Enqueue(Manager.DataM.AttendanceCheckDataDic[dayCount].RewardItemValue);
+
+                    ValueCount = (int)(Manager.DataM.AttendanceCheckDataDic[dayCount].RewardItemValue * Manager.GameM.CurrentCharacter.Evol_DiaBouns);
+                    count.Enqueue(ValueCount);
                     Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[matID], Manager.DataM.AttendanceCheckDataDic[dayCount].RewardItemValue);
                 }
 

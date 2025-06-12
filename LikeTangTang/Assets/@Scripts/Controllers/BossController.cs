@@ -17,14 +17,40 @@ public class BossController : MonsterController
         base.OnEnable();
         transform.localScale = new Vector3(3f, 3f, 3f);
     }
+
+    private void Start()
+    {
+        Init();
+
+
+        Skills.StartNextSequenceSkill();
+        InvokeMonsterData();
+    }
     public override bool Init()
     {
         if (!base.Init()) return false;
         transform.localScale = new Vector3(3f, 3f, 3f);
         objType = Define.ObjectType.Boss;
-        CreatureState = Define.CreatureState.Moving;
+        CreatureState = Define.CreatureState.Attack;
 
         Skills = gameObject.GetOrAddComponent<SkillComponent>();
+        if (Skills)
+        {
+            foreach (SkillBase skill in Skills.skillList)
+            {
+                skill.SkillLevel = 0;
+                skill.UpdateSkillData();
+            }
+        }
+
+        if (creatureData != null)
+        {
+            if (creatureData.SkillTypeList.Count != 0)
+            {
+                InitSkill();
+                Skills.LevelUpSkill((Define.SkillType)creatureData.SkillTypeList[0]);
+            }
+        }
         InvokeMonsterData();
 
         return true;

@@ -275,6 +275,16 @@ public class UI_EvolutionPopup : UI_Popup
     void OnClickEvolutionButton(int _level)
     {
         var Character = Manager.GameM.CurrentCharacter;
+        const int interval = 3;
+        int prevLevel = _level - interval;
+        if(prevLevel >= 1)
+        {
+            if(!Character.isLearnEvloution.TryGetValue(prevLevel, out bool prevLearn) || !prevLearn)
+            {
+                Manager.UiM.ShowToast("이전 단계 진화 스킬을 먼저 배워야 합니다!");
+                return;
+            }
+        }
 
         if (!levelButtons[_level].interactable || (Character.isLearnEvloution.TryGetValue(_level, out bool learned) && learned))
             return;

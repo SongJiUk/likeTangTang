@@ -91,7 +91,8 @@ public static class Define
         TimeStopBomb = 20600, // 주변 몬스터 이동속도 50% 감소하는 필드 생성
         OrbitalBlades = 20700,// 캐릭터 주변을 회전한다.
         ElectronicField = 20800,
-        SpectralSlash = 20900
+        SpectralSlash = 20900,
+        //TODO : 보스 몬스터 스킬도 추가, 대쉬, 에너지볼트 발사 이런거만 하면 될듯
     }
 
     public enum SpecialSkillType

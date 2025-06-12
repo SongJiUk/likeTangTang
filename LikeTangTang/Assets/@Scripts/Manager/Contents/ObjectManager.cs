@@ -53,15 +53,14 @@ public class ObjectManager
             GameObject go = Manager.ResourceM.Instantiate(cd.prefabName, _pooling: true);
             T mc = go.GetOrAddComponent<T>();
             go.transform.position = _pos;
-            mc.Init();
+            //TODO : init지웠음 일단 setinfo에서 되기때문.
+            //mc.Init();
             if(mc is MonsterController monster)
             {
                 monster.SetInfo(_templateID);
                 mc.name = cd.prefabName;
                 mcSet.Add(monster);
             }
-               
-
             return mc as T;
         }
 

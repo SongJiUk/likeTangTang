@@ -78,27 +78,51 @@ public class UI_CheckOutPopup : UI_Popup
 
     void Refresh()
     {
-        if (userCheckOutDay == 0) return; 
+        if (userCheckOutDay == 0) return;
 
-        monthlyCount = userCheckOutDay % DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
-        
-        //초기화 데이
-        if(Manager.TimeM.LastAttendanceResetDate != DateTime.Today &&  DateTime.Now.Day == 1)
+        int daysInMonth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+        int maxDataDays = Manager.GameM.AttendanceReceived.Length;
+
+        int usableDays = Mathf.Min(daysInMonth, maxDataDays);
+
+        if(Manager.TimeM.LastAttendanceResetDate != DateTime.Today && DateTime.Now.Day == 1)
         {
             Manager.TimeM.LastAttendanceResetDate = DateTime.Today;
-            for (int i = 0; i < Manager.GameM.AttendanceReceived.Length; i++)
+            for (int i = 0; i < maxDataDays; i++)
             {
                 Manager.GameM.AttendanceReceived[i] = false;
             }
-            monthlyCount = 1;
             userCheckOutDay = 1;
-            Manager.TimeM.AttendanceDay = userCheckOutDay;
+            Manager.TimeM.AttendanceDay = 1;
         }
 
+        if(userCheckOutDay > usableDays)
+            userCheckOutDay = ((userCheckOutDay - 1) % usableDays) + 1;
+
+        monthlyCount = userCheckOutDay;
         dailyCount = (userCheckOutDay - 1) % 10 + 1;
 
-        if (dailyCount == 0)
-            dailyCount = 10;
+       
+
+        //monthlyCount = userCheckOutDay % DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+        
+        ////초기화 데이
+        //if(Manager.TimeM.LastAttendanceResetDate != DateTime.Today &&  DateTime.Now.Day == 1)
+        //{
+        //    Manager.TimeM.LastAttendanceResetDate = DateTime.Today;
+        //    for (int i = 0; i < Manager.GameM.AttendanceReceived.Length; i++)
+        //    {
+        //        Manager.GameM.AttendanceReceived[i] = false;
+        //    }
+        //    monthlyCount = 1;
+        //    userCheckOutDay = 1;
+        //    Manager.TimeM.AttendanceDay = userCheckOutDay;
+        //}
+
+        //dailyCount = (userCheckOutDay - 1) % 10 + 1;
+
+        //if (dailyCount == 0)
+        //    dailyCount = 10;
 
 
 
@@ -115,15 +139,17 @@ public class UI_CheckOutPopup : UI_Popup
             item.SetInfo(userCheckOutDay, count, dailyCount >= count);
         }
 
-        if (monthlyCount >= 15)
+        if (usableDays >= 15 && monthlyCount >= 15)
             GetObject(gameObjectsType, (int)GameObjects.FirstClearRewardCompleteObject).gameObject.SetActive(true);
-        if (monthlyCount >= 20)
+        if (usableDays >= 20 && monthlyCount >= 20)
             GetObject(gameObjectsType, (int)GameObjects.SecondClearRewardCompleteObject).gameObject.SetActive(true);
-        if (monthlyCount >= 30)
+        if (usableDays >= 30 && monthlyCount >= 30)
             GetObject(gameObjectsType, (int)GameObjects.ThirdClearRewardCompleteObject).gameObject.SetActive(true);
 
         GetText(TextsType, (int)Texts.DaysCountText).text = $"{monthlyCount}일";
-        GetSlider(SlidersType, (int)Sliders.CheckOutProgressSliderObject).value = monthlyCount;
+        var slider = GetSlider(SlidersType, (int)Sliders.CheckOutProgressSliderObject);
+        slider.maxValue = usableDays;
+        slider.value = monthlyCount;
     }
 
     void OnClickBgButton()
@@ -133,10 +159,19 @@ public class UI_CheckOutPopup : UI_Popup
         Manager.UiM.ClosePopup(this);
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.F1))
+        {
+            userCheckOutDay += 1;
+            Refresh();
+
+        }
+        
+    }
     public void OnClickButtonTest()
     {
         Debug.Log("On click start button");
-        userCheckOutDay += 1;
-        Refresh();
+        
     }
 }

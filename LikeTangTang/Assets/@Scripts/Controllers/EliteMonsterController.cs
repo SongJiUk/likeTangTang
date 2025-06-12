@@ -11,6 +11,8 @@ public class EliteMonsterController : MonsterController
     protected override void OnEnable()
     {
         base.OnEnable();
+        Init();
+        InvokeMonsterData();
         transform.localScale = new Vector3(2f, 2f, 2f);
     }
     public override bool Init()
@@ -24,9 +26,14 @@ public class EliteMonsterController : MonsterController
         Skills = gameObject.GetOrAddComponent<SkillComponent>();
         objType = Define.ObjectType.EliteMonster;
 
-        InvokeMonsterData();
         dropList = Manager.GameM.CurrentWaveData.EliteDropItemId;
         return true;
+    }
+
+    private void Start()
+    {
+        Init();
+        InvokeMonsterData();
     }
     public override void OnDead()
     {
