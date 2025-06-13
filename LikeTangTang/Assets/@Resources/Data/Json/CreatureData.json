@@ -1204,7 +1204,9 @@
       "CharacterAnimName": null,
       "UnLockStage": 0,
       "SkillTypeList": [
-        0
+        90000,
+        90001,
+        90002
       ],
       "EvolutionTypeList": [
         0
@@ -1232,7 +1234,9 @@
       "CharacterAnimName": null,
       "UnLockStage": 0,
       "SkillTypeList": [
-        0
+        90000,
+        90001,
+        90002
       ],
       "EvolutionTypeList": [
         0
@@ -1260,7 +1264,9 @@
       "CharacterAnimName": null,
       "UnLockStage": 0,
       "SkillTypeList": [
-        0
+        90000,
+        90001,
+        90002
       ],
       "EvolutionTypeList": [
         0
@@ -1288,7 +1294,9 @@
       "CharacterAnimName": null,
       "UnLockStage": 0,
       "SkillTypeList": [
-        0
+        90000,
+        90001,
+        90002
       ],
       "EvolutionTypeList": [
         0
@@ -1316,7 +1324,9 @@
       "CharacterAnimName": null,
       "UnLockStage": 0,
       "SkillTypeList": [
-        0
+        90000,
+        90001,
+        90002
       ],
       "EvolutionTypeList": [
         0

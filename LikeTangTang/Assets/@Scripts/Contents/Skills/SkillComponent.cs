@@ -61,14 +61,22 @@ public class SkillComponent : MonoBehaviour
         return null;
     }
 
-    public void AddSkill(Define.SkillType _type,  int _skillID = 0)
+    public void AddSkill(Define.SkillType _type, int _skillID = 0)
     {
         string name = _type.ToString();
         SkillBase skill = null;
-        if(_type == Define.SkillType.EnergyRing || _type == Define.SkillType.ElectronicField || _type == Define.SkillType.SpectralSlash)
+
+        //보스 전용
+        if (_type == Define.SkillType.BossMove || _type == Define.SkillType.BossDash || _type == Define.SkillType.BossSkill)
+        {
+            Type skillType = Type.GetType(name);
+            skill = gameObject.AddComponent(skillType) as SkillBase;
+            SequenceSkills.Add(skill as SequenceSkill);
+        }
+        else if (_type == Define.SkillType.EnergyRing || _type == Define.SkillType.ElectronicField || _type == Define.SkillType.SpectralSlash)
         {
             GameObject go = Manager.ResourceM.Instantiate(name, Utils.FindChild(gameObject, Define.STANDARDNAME).transform);
-            if(go != null)
+            if (go != null)
             {
                 skill = go.GetOrAddComponent<SkillBase>();
             }
@@ -79,9 +87,9 @@ public class SkillComponent : MonoBehaviour
             skill = gameObject.AddComponent(skillType) as SkillBase;
         }
 
-         skill.UpdateSkillData();
+        skill.UpdateSkillData();
 
-        if(skill != null) skillList.Add(skill);
+        if (skill != null) skillList.Add(skill);
         if (SavedBattleSkill.ContainsKey(_type))
             SavedBattleSkill[_type] = skill.SkillLevel;
         else

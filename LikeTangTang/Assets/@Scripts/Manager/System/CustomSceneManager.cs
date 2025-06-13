@@ -23,31 +23,74 @@ public class CustomSceneManager
 
     public void LoadScene(Define.SceneType _type, Transform _tr = null) //씬 이동 애니메이션()
     {
-        switch (CurrentScene.SceneType)
+
+        if(CurrentScene.SceneType == Define.SceneType.TitleScene)
         {
-            case Define.SceneType.TitleScene:
-                Manager.Clear();
-                SceneManager.LoadScene(GetScene(_type));
-                break;
-
-            case Define.SceneType.LobbyScene:
-                Time.timeScale = 1;
-                Manager.ResourceM.Destory(Manager.UiM.SceneUI.gameObject);
-                Manager.Clear();
-                Manager.AdM.ShowBanner();
-                SceneManager.LoadScene(GetScene(_type));
-                break;
-
-            case Define.SceneType.GameScene:
-                Time.timeScale = 1;
-                Manager.ResourceM.Destory(Manager.UiM.SceneUI.gameObject);
-                Manager.Clear();
-                Manager.AdM.HideBanner();
-                SceneManager.LoadScene(GetScene(_type));
-                break;
+            Manager.Clear();
+            SceneManager.LoadScene(GetScene(_type));
+            return;
         }
+
+        PlaySceneChangeAnimation(_type, _tr);
+
+        //switch (CurrentScene.SceneType)
+        //{
+        //    case Define.SceneType.TitleScene:
+        //        Manager.Clear();
+        //        SceneManager.LoadScene(GetScene(_type));
+        //        break;
+
+        //    case Define.SceneType.LobbyScene:
+        //        Time.timeScale = 1;
+        //        Manager.ResourceM.Destory(Manager.UiM.SceneUI.gameObject);
+        //        Manager.Clear();
+        //        Manager.AdM.ShowBanner();
+        //        SceneManager.LoadScene(GetScene(_type));
+        //        break;
+
+        //    case Define.SceneType.GameScene:
+        //        Time.timeScale = 1;
+        //        Manager.ResourceM.Destory(Manager.UiM.SceneUI.gameObject);
+        //        Manager.Clear();
+        //        Manager.AdM.HideBanner();
+        //        SceneManager.LoadScene(GetScene(_type));
+        //        break;
+        //}
     }
 
+    private void PlaySceneChangeAnimation(Define.SceneType _type, Transform _parent)
+    {
+        var animGo = Manager.ResourceM.Instantiate("SceneChangeAnimation_In");
+        var anim = animGo.GetOrAddComponent<SceneChangeAnimation_In>();
+        animGo.transform.SetParent(_parent, worldPositionStays: false);
+
+        Time.timeScale = 1f;
+       
+
+
+        anim.SetInfo(_type, () =>
+        {
+            Manager.ResourceM.Destory(Manager.UiM.SceneUI.gameObject);
+            Manager.Clear();
+            switch (_type)
+            {
+                case Define.SceneType.LobbyScene:
+                    Manager.AdM.ShowBanner();
+                    break;
+
+                case Define.SceneType.GameScene:
+                    Manager.AdM.HideBanner();
+                    break;
+            }
+            SceneManager.LoadSceneAsync(GetScene(_type));
+
+            //var op = SceneManager.LoadSceneAsync(GetScene(_type));
+            //op.allowSceneActivation = true;
+
+            
+
+        });
+    }
 
     public string GetScene(Define.SceneType _type)
     {

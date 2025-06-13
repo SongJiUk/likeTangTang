@@ -92,7 +92,9 @@ public static class Define
         OrbitalBlades = 20700,// 캐릭터 주변을 회전한다.
         ElectronicField = 20800,
         SpectralSlash = 20900,
-        //TODO : 보스 몬스터 스킬도 추가, 대쉬, 에너지볼트 발사 이런거만 하면 될듯
+        BossMove = 90000,
+        BossDash = 90001,
+        BossSkill = 90002
     }
 
     public enum SpecialSkillType

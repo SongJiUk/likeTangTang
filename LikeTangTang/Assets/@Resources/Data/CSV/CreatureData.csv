@@ -38,8 +38,8 @@ DataID,Name,NameKR,Description,prefabName,Type,MaxHp,MaxHpUpForIncreasStage,Atta
 11005,Demon Slime,데몬 슬라임,지옥의 기운을 지닌 강력한 존재,EliteMonster,EliteMonster,350,10,32,5,6,2.8,2,2,2,2,MonsterIcon_32.sprite,,,0,0,0
 11006,Electron Slime,일렉트론 슬라임,전자기파를 내뿜는 슬라임,EliteMonster,EliteMonster,300,10,26,5,5,2.5,2,2,2,2,MonsterIcon_33.sprite,,,0,0,0
 11007,King Slime,킹 슬라임,거대한 슬라임,EliteMonster,EliteMonster,350,10,29,5,6,2.8,2,2,2,2,MonsterIcon_34.sprite,,,0,0,0
-12000,Sky Slime,스카이 슬라임,날개가 달린 슬라임,Boss,Boss,800,14,45,7,6,2.5,2,2,2,2,MonsterIcon_35.sprite,,,0,0,0
-12001,Assassin Slime,어쌔신 슬라임,그림자처럼 다가와 공격하는 슬라임,Boss,Boss,900,14,49,7,7,2.7,2,2,2,2,MonsterIcon_36.sprite,,,0,0,0
-12002,Black Hole Slime,블랙홀 슬라임,블랙홀에서 빠져나온 슬라임,Boss,Boss,1000,14,53,7,6,2.9,2,2,2,2,MonsterIcon_37.sprite,,,0,0,0
-12003,Ice King Slime,아이스 킹 슬라임,엄청난 한기를 내뿜는 슬라임,Boss,Boss,1100,14,57,7,7,3,2,2,2,2,MonsterIcon_38.sprite,,,0,0,0
-12004,Mud King Slime,머드 킹 슬라임,악취가 나는 슬라임,Boss,Boss,1200,14,61,7,6,3.1,2,2,2,2,MonsterIcon_39.sprite,,,0,0,0
+12000,Sky Slime,스카이 슬라임,날개가 달린 슬라임,Boss,Boss,800,14,45,7,6,2.5,2,2,2,2,MonsterIcon_35.sprite,,,0,90000/90001/90002,0
+12001,Assassin Slime,어쌔신 슬라임,그림자처럼 다가와 공격하는 슬라임,Boss,Boss,900,14,49,7,7,2.7,2,2,2,2,MonsterIcon_36.sprite,,,0,90000/90001/90002,0
+12002,Black Hole Slime,블랙홀 슬라임,블랙홀에서 빠져나온 슬라임,Boss,Boss,1000,14,53,7,6,2.9,2,2,2,2,MonsterIcon_37.sprite,,,0,90000/90001/90002,0
+12003,Ice King Slime,아이스 킹 슬라임,엄청난 한기를 내뿜는 슬라임,Boss,Boss,1100,14,57,7,7,3,2,2,2,2,MonsterIcon_38.sprite,,,0,90000/90001/90002,0
+12004,Mud King Slime,머드 킹 슬라임,악취가 나는 슬라임,Boss,Boss,1200,14,61,7,6,3.1,2,2,2,2,MonsterIcon_39.sprite,,,0,90000/90001/90002,0

@@ -15,8 +15,8 @@ public class ProjectileController : SkillBase
     Vector3 targetPos;
     Vector3 dir;
     Rigidbody2D rigid;
-    Define.SkillType skillType;
-    SkillBase skill;
+    public Define.SkillType skillType;
+    public SkillBase skill;
     [SerializeField]
     public float rotationOffset;
     
@@ -39,7 +39,7 @@ public class ProjectileController : SkillBase
     }
     
     MonsterController target;
-    public void SetInfo(CreatureController _owner, Vector3 _pos, Vector3 _dir, Vector3 _targetPos, SkillBase _skill, HashSet<MonsterController> _sharedTarget = null)
+    public virtual void SetInfo(CreatureController _owner, Vector3 _pos, Vector3 _dir, Vector3 _targetPos, SkillBase _skill, HashSet<MonsterController> _sharedTarget = null)
     {
 
         owner = _owner;
@@ -64,9 +64,9 @@ public class ProjectileController : SkillBase
 
         transform.localScale = Vector3.one * skill.SkillDatas.ScaleMultiplier;
         float angle;
-        switch(skillType)
+        switch (skillType)
         {
-            case Define.SkillType.PlasmaSpinner :
+            case Define.SkillType.PlasmaSpinner:
                 rigid.velocity = dir * speed;
                 particleT = GetComponentInChildren<ParticleSystem>()?.transform;
 
@@ -74,36 +74,40 @@ public class ProjectileController : SkillBase
                 particleT.rotation = Quaternion.Euler(0, 0, angle);
                 break;
 
-            case Define.SkillType.PlasmaShot :
+            case Define.SkillType.PlasmaShot:
                 rigid.velocity = dir * speed;
                 angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f;
                 transform.rotation = Quaternion.Euler(0, 0, angle);
                 break;
 
-            case Define.SkillType.ElectricShock :
+            case Define.SkillType.ElectricShock:
                 target = Utils.FindClosestMonster(targetPos);
-                if(target != null)
+                if (target != null)
                     StartCoroutine(CoElectricShock(spawnPos, targetPos, target));
                 break;
-            case Define.SkillType.SuicideDrone :
+            case Define.SkillType.SuicideDrone:
                 StartCoroutine(CoStartSuicideDrone());
                 break;
 
-                case Define.SkillType.TimeStopBomb :
+            case Define.SkillType.TimeStopBomb:
                 rigid.velocity = dir * speed;
                 StartCoroutine(CoExplosionTimeStopBomb());
 
                 break;
 
-                case Define.SkillType.GravityBomb:
+            case Define.SkillType.GravityBomb:
                 rigid.velocity = dir * speed;
                 StartCoroutine(CoExplosionGravityBomb());
                 break;
 
-                case Define.SkillType.OrbitalBlades:
+            case Define.SkillType.OrbitalBlades:
                 rigid.velocity = dir * speed;
                 break;
-                
+
+            case Define.SkillType.BossSkill:
+                rigid.velocity = dir * speed;
+                break;
+
         }
 
 
@@ -325,14 +329,17 @@ public class ProjectileController : SkillBase
     
     #endregion
 
+
+    public void HandleBossSkill()
+    {
+        rigid.velocity = Vector2.zero;
+        StartDestory();
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         CreatureController cc = collision.gameObject.GetComponent<CreatureController>();
-       
-        if (cc == null || !cc.IsValid() || !this.IsValid() || !cc.IsMonster()) return;
 
-        //NOTE : 이렇게되면, 보스가 쏘는 투사체는 여기 통과를 못함(만들떄 생각해보고 수정하기)
-        //if(!cc.IsMonster())return;
+        if (cc == null || !cc.IsValid() || !this.IsValid() || !cc.IsMonster()) return;
 
         switch(skillType)
         {
@@ -354,9 +361,6 @@ public class ProjectileController : SkillBase
                 cc.OnDamaged(owner, skill);
                 break;
         }
-
-        
-        
     }
 
 }

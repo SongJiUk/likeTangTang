@@ -50,6 +50,10 @@ public class GameScene : BaseScene, ITickable
     {
         base.Init();
         SceneType = SceneType.GameScene;
+
+        SceneChangeAnimation_Out anim = Manager.ResourceM.Instantiate("SceneChangeAnimation_Out").GetOrAddComponent<SceneChangeAnimation_Out>();
+        
+        anim.SetInfo(SceneType, () => { });
         gm = Manager.GameM;
         tm = Manager.TimeM;
         Manager.UpdateM.Register(this);
@@ -157,8 +161,8 @@ public class GameScene : BaseScene, ITickable
             for(int i =0; i<gm.CurrentWaveData.BossMonsterID.Count; i++)
             {
                 bossMonster = Manager.ObjectM.Spawn<BossController>(spawnPos, gm.CurrentWaveData.BossMonsterID[i]);
-                bossMonster.BossMonsterInfoUpdate -= ui.MonsterInfoUpdate;
-                bossMonster.BossMonsterInfoUpdate += ui.MonsterInfoUpdate;
+                bossMonster.MonsterInfoUpdate -= ui.MonsterInfoUpdate;
+                bossMonster.MonsterInfoUpdate += ui.MonsterInfoUpdate;
                 bossMonster.OnBossDead -= OnBossDead;
                 bossMonster.OnBossDead += OnBossDead;
             }

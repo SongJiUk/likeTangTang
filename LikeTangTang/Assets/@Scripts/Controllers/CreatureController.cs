@@ -228,6 +228,11 @@ public class CreatureController : BaseController, ITickable
                objType == ObjectType.Boss;
     }
 
+    public bool IsPlayer()
+    {
+        return objType == ObjectType.Player;
+    }
+
     #endregion
 
 

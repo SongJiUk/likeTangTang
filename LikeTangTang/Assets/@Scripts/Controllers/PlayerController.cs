@@ -144,6 +144,7 @@ public class PlayerController : CreatureController, ITickable
                    Exp >= currentLevel.TotalExp)
             {
                 Level++;
+                Exp -= currentLevel.TotalExp;
                 TotalExp = nextLevel.TotalExp;
                 LevelUp(Level);
             }
@@ -159,11 +160,8 @@ public class PlayerController : CreatureController, ITickable
             if (!Manager.DataM.LevelDic.TryGetValue(Level, out var currentLevelData))
                 return 0f;
 
-            float prevExp = 0f;
-            if (Manager.DataM.LevelDic.TryGetValue(Level - 1, out var prevLevelData))
-                prevExp = prevLevelData.TotalExp;
 
-            return (Exp - prevExp) / (currentLevelData.TotalExp - prevExp);
+            return Exp / currentLevelData.TotalExp;
         }
     }
 
@@ -365,7 +363,7 @@ public class PlayerController : CreatureController, ITickable
         scale = transform.localScale;
         hpbar_Scale = hp_bar.transform.localScale;
         Skills = gameObject.GetOrAddComponent<SkillComponent>();
-
+        objType = Define.ObjectType.Player;
         FindEquipment();
 
         return true;
@@ -386,20 +384,25 @@ public class PlayerController : CreatureController, ITickable
         Manager.GameM.SaveGame();
     }
 
+    bool isFirst = true;
     public override void InitStat(bool _isHpFull = false)
     {
-
+        
         //TODO : 여기 두번 들어오는 문제 해결해야됌
-        MaxHp = Manager.GameM.CurrentCharacter.MaxHp;
-        MaxHpRate = Manager.GameM.CurrentCharacter.MaxHpRate;
-        Attack = Manager.GameM.CurrentCharacter.Attack;
-        AttackRate = Manager.GameM.CurrentCharacter.AttackRate;
+        MaxHp = Manager.GameM.CurrentCharacter.MaxHp;       
+        Attack = Manager.GameM.CurrentCharacter.Attack;  
         Def = Manager.GameM.CurrentCharacter.Def;
-        DefRate = Manager.GameM.CurrentCharacter.DefRate;
-        Speed = creatureData.Speed;
-        SpeedRate = Manager.GameM.CurrentCharacter.SpeedRate;
-        CriticalRate += Manager.GameM.CurrentCharacter.CriticalRate;
-        CriticalDamage += Manager.GameM.CurrentCharacter.CriticalDamage;
+        Speed = Manager.GameM.CurrentCharacter.MoveSpeed;
+       
+        if(isFirst)
+        {
+            MaxHpRate = Manager.GameM.CurrentCharacter.MaxHpRate;
+            AttackRate = Manager.GameM.CurrentCharacter.AttackRate;
+            DefRate = Manager.GameM.CurrentCharacter.DefRate;
+            SpeedRate = Manager.GameM.CurrentCharacter.SpeedRate;
+            CriticalRate = Manager.GameM.CurrentCharacter.CriticalRate;
+            CriticalDamage = Manager.GameM.CurrentCharacter.CriticalDamage;
+        }
 
         var (equip_Hp, equip_Attack) = Manager.GameM.GetCurrentCharacterStat();
         MaxHp += equip_Hp;
@@ -412,6 +415,7 @@ public class PlayerController : CreatureController, ITickable
 
 
         Hp = MaxHp;
+        isFirst = false;
     }
 
     public override void UpdatePlayerStat()

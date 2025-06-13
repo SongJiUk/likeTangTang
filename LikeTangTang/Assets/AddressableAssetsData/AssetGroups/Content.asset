@@ -17,58 +17,28 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 94163b93d7bb24f928019105ae174de0
   m_SerializeEntries:
-  - m_GUID: 6c8084fcfec1d9a4db8afea7afd148e4
-    m_Address: UI_EvolutioninfoPopup
+  - m_GUID: db777e5a207ad754aa4ed7029488e149
+    m_Address: BossSkill
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: b01d89f8d0057b0458aaae3da9629215
-    m_Address: AttackBonus.sprite
+  - m_GUID: 42f0b2260d863c5469007dede0db7603
+    m_Address: BossSkillHitEffect
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: b6f0284acc866194b976906a2840a922
-    m_Address: MaxHpBonus.sprite
+  - m_GUID: f1c3a9225cac7504ca5ca746b0fc2e40
+    m_Address: SlimeFall
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: 129de4b3d23b23c46830d0c5617af29b
-    m_Address: CoolTimeBonus.sprite
+  - m_GUID: b1fb732af79c9d84a98a089a5b1e686f
+    m_Address: SceneChangeAnimation_Out
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: 5eaaff2a208dc874c87a0c06bef476c0
-    m_Address: CriticalBonus.sprite
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: 58e57342cad2dc847832c322f39cec2e
-    m_Address: CriticalDamageBonus.sprite
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: 55990b9b78b2b234f9c7a8c7322cf752
-    m_Address: DefBonus.sprite
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: c3fff725454e2a44493bacfe10b5f73f
-    m_Address: DiaBonus.sprite
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: a22ed7fdbbe4e384eb7787734d11d1f3
-    m_Address: GoldBonus.sprite
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: 0dccbef00267d6843ae7297510d09844
-    m_Address: HealingBonus.sprite
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
-  - m_GUID: c94b39e1e636db44eb6914e5bc92899a
-    m_Address: MoveSpeedBonus.sprite
+  - m_GUID: a636334d3d769a44da455f8d0424afb3
+    m_Address: SceneChangeAnimation_In
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad

@@ -161,7 +161,6 @@ public class ObjectManager
     {
         mcSet.Clear();
         pjSet.Clear();
-        gemSet.Clear();
         dropItemSet.Clear();
     }
 
@@ -292,9 +291,7 @@ public class ObjectManager
         foreach(MonsterController monster in mcSet.ToList())
         {
             //TDOO : 복구
-            //if(monster.objType == Define.ObjectType.Monster)
-            //    monster.OnDead();
-
+            if(monster.objType != Define.ObjectType.Boss)
             monster.OnDead();
         }
     }

@@ -7,7 +7,6 @@ using UnityEngine.UIElements;
 
 public class BossController : MonsterController
 {
-    public Action<BossController> BossMonsterInfoUpdate;
     public Action OnBossDead;
     // [ ] DATA LOAD
     float range = 2.0f;
@@ -34,14 +33,14 @@ public class BossController : MonsterController
         CreatureState = Define.CreatureState.Attack;
 
         Skills = gameObject.GetOrAddComponent<SkillComponent>();
-        if (Skills)
-        {
-            foreach (SkillBase skill in Skills.skillList)
-            {
-                skill.SkillLevel = 0;
-                skill.UpdateSkillData();
-            }
-        }
+        //if (Skills)
+        //{
+        //    foreach (SkillBase skill in Skills.skillList)
+        //    {
+        //        skill.SkillLevel = 0;
+        //        skill.UpdateSkillData();
+        //    }
+        //}
 
         if (creatureData != null)
         {

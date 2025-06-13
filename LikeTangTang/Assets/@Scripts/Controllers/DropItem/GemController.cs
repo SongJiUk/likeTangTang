@@ -39,6 +39,9 @@ public class GemInfo
                 ExpAmount = Define.YELLOW_GEM_EXP;
             break;
         }
+
+        //TODO : 지워야됌
+        ExpAmount = 0;
     }
 }
 

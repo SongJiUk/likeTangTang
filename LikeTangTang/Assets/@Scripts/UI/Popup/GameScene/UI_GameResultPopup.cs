@@ -116,7 +116,6 @@ public class UI_GameResultPopup : UI_Popup
     public void OnClickConfirmButton()
     {
         Manager.SoundM.PlayButtonClick();
-       
         Manager.SceneM.LoadScene(Define.SceneType.LobbyScene, transform);
     }
 }
