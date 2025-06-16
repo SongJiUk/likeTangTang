@@ -147,26 +147,23 @@ public class ObjectManager
         }
     }
 
-    //public void DeSpawnAllMonster()
-    //{
-    //    var monsters = mcSet.ToList();
-
-    //    foreach(var monster in monsters)
-    //    {
-    //        DeSpawn<MonsterController>(monster);
-    //    }
-    //}
 
     public void Clear()
     {
+        foreach (var mc in mcSet) mc.Clear();
         mcSet.Clear();
-        pjSet.Clear();
+
+        foreach (var dc in dropItemSet) dc.Clear();
         dropItemSet.Clear();
+
+        pjSet.Clear();
     }
 
     public void LoadMap(string _name)
     {
         var obj = Manager.ResourceM.Instantiate(_name);
+        obj.transform.position = Vector3.zero;
+        obj.name = "@Map";
         obj.GetComponent<Map>().init();
 
         //NOTE : 이거 해주는 이유는 타일맵은 중심잡기가 생각보다힘듬, 그래서 찾아서 값을 더해주는것
@@ -291,7 +288,7 @@ public class ObjectManager
         foreach(MonsterController monster in mcSet.ToList())
         {
             //TDOO : 복구
-            if(monster.objType != Define.ObjectType.Boss)
+            //if(monster.objType != Define.ObjectType.Boss)
             monster.OnDead();
         }
     }

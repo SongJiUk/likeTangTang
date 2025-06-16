@@ -27,6 +27,7 @@ public class SoundManager
                     go.transform.parent = soundRoot.transform;
                 }
                 audioSources[(int)Define.Sound.Bgm].loop = true;
+                audioSources[(int)Define.Sound.SubBgm].loop = true;
 
             }
         }
@@ -55,6 +56,18 @@ public class SoundManager
                     audio.Play();
             });
         }
+        else if(_sound == Define.Sound.SubBgm)
+        {
+            LoadAudioClip(_label, (audioClip) =>
+            {
+                if (audio.isPlaying)
+                    audio.Stop();
+
+                audio.clip = audioClip;
+                if (Manager.GameM.EffectSoundOn)
+                    audio.Play();
+            });
+        }
         else
         {
             LoadAudioClip(_label, (audioClip) =>
@@ -68,12 +81,12 @@ public class SoundManager
 
     public void PlayButtonClick()
     {//TODO : 다 하고 고치자
-        //Play(Define.Sound.Effect, "ButtonClick");
+        Play(Define.Sound.Effect, "Click_CommonButton");
     }
 
     public void PlayPopupClose()
     {
-        //Play(Define.Sound.Effect, "PopupClose");
+        Play(Define.Sound.Effect, "PopupClose_Common");
     }
 
     

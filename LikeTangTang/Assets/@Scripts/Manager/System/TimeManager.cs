@@ -190,7 +190,7 @@ public class TimeManager : MonoBehaviour
     {
         TimeStart();
         CheckAttendance();
-        Manager.AchievementM.Attendance();
+        //Manager.AchievementM.Attendance();
     }
 
     void TimeStart()
@@ -285,7 +285,7 @@ public class TimeManager : MonoBehaviour
 
     public int GetCurrentSecond()
     {
-        return (int)second;
+        return (int)Manager.GameM.TimeRemaining;
     }
 
     public void TimeStop()

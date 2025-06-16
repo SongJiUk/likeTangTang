@@ -11,6 +11,9 @@ public class LobbyScene : BaseScene
         base.Init();
 
         SceneType = Define.SceneType.LobbyScene;
+        Manager.UiM.ShowSceneUI<UI_LobbyScene>();
+
+        Screen.sleepTimeout = SleepTimeout.SystemSetting;
 
         RenderTexture rt = new RenderTexture(512, 512, 16);
         var cam = GameObject.Find("PreviewCamera").GetComponent<Camera>();
@@ -23,8 +26,8 @@ public class LobbyScene : BaseScene
         anim.runtimeAnimatorController = Manager.ResourceM.Load<RuntimeAnimatorController>(anim_name);
         Manager.SceneM.Setup(cam, target, this);
 
-
-        Manager.UiM.ShowSceneUI<UI_LobbyScene>();
+        Manager.SoundM.Play(Define.Sound.Bgm, "Bgm_Lobby");
+        
     }
 
     public void ChangeCharacter()

@@ -210,6 +210,11 @@ public class MonsterController : CreatureController, ITickable
             });
     }
 
+    public void Clear()
+    {
+        DOTween.Kill(this);
+    }
+
     #endregion
 
     #region KnockBack

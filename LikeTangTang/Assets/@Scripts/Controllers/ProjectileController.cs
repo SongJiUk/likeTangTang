@@ -31,6 +31,11 @@ public class ProjectileController : SkillBase
     
     private ParticleSystem electricEffect;
     //초기화, 세팅
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
     public override bool Init()
     {
         base.Init();

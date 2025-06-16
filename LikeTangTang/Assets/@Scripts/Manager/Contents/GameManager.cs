@@ -22,7 +22,8 @@ public class GameManager
     public Character CurrentCharacter {get { return Characters.Find(c => c.isCurrentCharacter == true); } }
     public CameraController Camera { get; set; }
     public GameData gameData = new GameData();
-
+    public float TimeRemaining = 60;
+    public float ElapsedTime = 0;
     public List<Equipment> OwnedEquipment
     {
         get { return gameData.OwnedEquipments; }
@@ -425,6 +426,9 @@ public class GameManager
             {
                 StageIndex = stage.StageIndex,
                 MaxWaveIndex = 0,
+                isOpenFirstBox = false,
+                isOpenSecondBox = false,
+                isOpenThirdBox = false
             };
             gameData.StageClearInfoDic.Add(stage.StageIndex, info);
         }
@@ -514,9 +518,11 @@ public class GameManager
 
         string jsonStr = File.ReadAllText(path);
         GameData data = JsonConvert.DeserializeObject<GameData>(jsonStr);
-        data.Init();
-
-        if (data != null) gameData = data;
+        if (data != null)
+        {
+            data.Init();
+            gameData = data;
+        }
 
         CurrentCharacter.SetInfo(CurrentCharacter.DataId);
 
@@ -528,17 +534,12 @@ public class GameManager
                 EquipItem(OwnedEquipment[i].EquipmentData.EquipmentType, OwnedEquipment[i]);
             }
         }
-
-        
-
         isLoaded = true;
-
         return true;
     }
 
     public void SaveGame()
     {
-
         string jsonStr = JsonConvert.SerializeObject(gameData);
         File.WriteAllText(path, jsonStr);
     }

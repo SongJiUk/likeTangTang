@@ -65,7 +65,8 @@ public class UI_GameResultPopup : UI_Popup
     void Refresh()
     {
         GetText(typeof(Texts), (int)Texts.ResultStageValueText).text = $"{Manager.GameM.CurrentStageData.StageIndex} STAGE";
-        GetText(typeof(Texts), (int)Texts.ResultSurvivalTimeValueText).text = $"{Manager.GameM.minute:D2} : {Manager.GameM.second:D2}";
+        int second = (int)(Manager.GameM.ElapsedTime % 60);
+        GetText(typeof(Texts), (int)Texts.ResultSurvivalTimeValueText).text = $"{Manager.GameM.minute:D2} : { second:D2}";
         GetText(typeof(Texts), (int)Texts.ResultGoldValueText).text = $"{Manager.GameM.CurrentStageData.ClearGold}";
         GetText(typeof(Texts), (int)Texts.ResultKillValueText).text = $"{Manager.GameM.player.KillCount}";
         
@@ -77,8 +78,6 @@ public class UI_GameResultPopup : UI_Popup
         Transform cont = GetObject(gameObjectsType, (int)GameObjects.ResultRewardScrollContentObject).transform;
         cont.gameObject.DestroyChilds();
          
-
-        //TODO : 이거 확인 + 여기에 플레이어 경험치 쿠폰도 같이 주면 좋을거같음.
         UI_MaterialItem gold = Manager.UiM.MakeSubItem<UI_MaterialItem>(cont);
         gold.SetInfo(Manager.DataM.MaterialDic[Define.ID_GOLD].SpriteName, Manager.GameM.CurrentStageData.ClearGold);
 
@@ -116,6 +115,7 @@ public class UI_GameResultPopup : UI_Popup
     public void OnClickConfirmButton()
     {
         Manager.SoundM.PlayButtonClick();
+        Manager.GameM.ClearContinueData();
         Manager.SceneM.LoadScene(Define.SceneType.LobbyScene, transform);
     }
 }

@@ -127,7 +127,7 @@ public class UI_GameScene : UI_Scene
 
     public void OnChangeSecond(int _minute, int _second)
     {
-        if (_second == 45 && Manager.GameM.CurrentWaveIndex < 9)
+        if (_second == 3 && Manager.GameM.CurrentWaveIndex < 9)
         {
             //TOOD : 알람
             StartCoroutine(SwitchAlarm(AlramType.Wave));
@@ -135,7 +135,7 @@ public class UI_GameScene : UI_Scene
 
         if(Manager.GameM.CurrentWaveData.BossMonsterID.Count > 0)
         {
-            int bossGenTime = 55;
+            int bossGenTime = Define.BOSS_GEN_TIME;
             if(_second == bossGenTime)
                 StartCoroutine(SwitchAlarm(AlramType.Boss));
         }
@@ -143,10 +143,6 @@ public class UI_GameScene : UI_Scene
         GetText(typeof(Texts), (int)Texts.TimeLimitValueText).text = $"{_minute:D2} : {_second:D2}";
 
         Refresh();
-
-        //TODO : 실험 해보기 
-        //if (_second == 60)
-        //    GetText(typeof(Texts), (int)Texts.TimeLimitValueText).text = "";
 
     }
 
@@ -252,7 +248,7 @@ public class UI_GameScene : UI_Scene
         switch (_type)
         {
             case AlramType.Wave:
-                //Sound : Wave
+                //TODO :Sound : Wave
                 GetObject(gameObjectsType, (int)GameObjects.MonsterAlarmObject).SetActive(true);
                 yield return new WaitForSeconds(3f);
                 GetObject(gameObjectsType, (int)GameObjects.MonsterAlarmObject).SetActive(false);

@@ -15,10 +15,10 @@ public class SpawnManager : MonoBehaviour
     {
         if(coUpdateMonsterSpawn == null)
         {
-            coUpdateMonsterSpawn = StartCoroutine(UpdateSpawn());
+            coUpdateMonsterSpawn = StartCoroutine(CoUpdateSpawn());
         }
     }
-    IEnumerator UpdateSpawn()
+    IEnumerator CoUpdateSpawn()
     {
         while(true)
         {

@@ -27,11 +27,16 @@ public class UI_TitleScene : UI_Scene
 
     public override bool Init()
     {
-        SetUIInfo();
+        ButtonsType = typeof(Buttons);
+        SlidersType = typeof(Sliders);
+        TextsType = typeof(Texts);
+        BindButton(ButtonsType);
+        BindSlider(SlidersType);
+        BindText(TextsType);
+
 
         GetButton(typeof(Buttons), (int)Buttons.StartButton).gameObject.BindEvent(() => 
         {
-            if(isLoadEnd) Debug.Log("Click Button");
             Manager.SceneM.LoadScene(Define.SceneType.LobbyScene);
         });
         GetButton(typeof(Buttons), (int)Buttons.StartButton).gameObject.SetActive(false);
@@ -42,12 +47,6 @@ public class UI_TitleScene : UI_Scene
         return true;
     }
 
-    protected override void SetUIInfo()
-    {
-        Bind<Button>(typeof(Buttons));
-        Bind<Slider>(typeof(Sliders));
-        Bind<TextMeshProUGUI>(typeof(Texts));
-    }
 
     void SetInfo()
     {

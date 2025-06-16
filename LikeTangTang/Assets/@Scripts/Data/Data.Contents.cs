@@ -79,7 +79,7 @@ namespace Data
         public List<int> MonsterID;
         public List<int> EleteMonsterID;
         public List<int> BossMonsterID;
-        public int RemainTime;
+        public int RemainsTime;
         public int WaveType;
         public float FirstMonsterSpawnRate;
         public float HpIncreaseRate;

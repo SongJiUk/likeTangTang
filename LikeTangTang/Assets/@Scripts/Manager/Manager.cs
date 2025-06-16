@@ -60,19 +60,21 @@ public class Manager : MonoBehaviour
             {
                 init = true;
 
-                GameObject obj = GameObject.Find("@Manager");
+                GameObject obj = GameObject.Find("@Managers");
 
                 if(obj == null)
                 {
-                    obj = new GameObject() {name = "@Manager"};
+                    obj = new GameObject() {name = "@Managers"};
                     obj.AddComponent<Manager>();
                 }
                 DontDestroyOnLoad(obj);
                 instance = obj.GetComponent<Manager>();
                 instance.updateM = obj.AddComponent<UpdateManager>();
+                instance.soundM.Init();
                 instance.timeM = obj.AddComponent<TimeManager>();
 
             }
+
             return instance;
         }
     }
@@ -84,9 +86,11 @@ public class Manager : MonoBehaviour
 
     public static void Clear()
     {
-        SceneM.Clear();
-        UiM.Clear();
+        SoundM.Clear();
         PoolM.Clear();
         ObjectM.Clear();
+        SceneM.Clear();
+        UiM.Clear();
+        
     }
 }

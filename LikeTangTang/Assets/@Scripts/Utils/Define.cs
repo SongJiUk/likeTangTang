@@ -179,6 +179,7 @@ public static class Define
     public enum Sound
     {
         Bgm,
+        SubBgm,
         Effect,
         Max
     }
@@ -460,6 +461,7 @@ public static class Define
     public static string DROPITEMNAME = "DropItem";
     public static string STANDARDNAME = "Standard";
 
+    public static int BOSS_GEN_TIME = 5;
     public static int WAVE_REWARD_TIME = 30;
     public static int POTION_ID = 30000;
     public static int MAGNET_ID = 30003;

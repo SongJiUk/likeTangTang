@@ -35,6 +35,10 @@ public class DropItemController : BaseController
         }
     }
 
+    public void Clear()
+    {
+        DOTween.Kill(this);
+    }
     public virtual void GetItem()
     {
         Manager.GameM.CurrentMap.Grid.RemoveCell(this);

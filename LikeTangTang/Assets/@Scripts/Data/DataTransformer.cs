@@ -294,7 +294,7 @@ public class DataTransformer : EditorWindow
             waveData.MonsterID = ConvertList<int>(row[i++]);
             waveData.EleteMonsterID = ConvertList<int>(row[i++]);
             waveData.BossMonsterID = ConvertList<int>(row[i++]);
-            waveData.RemainTime = ConvertValue<int>(row[i++]);
+            waveData.RemainsTime = ConvertValue<int>(row[i++]);
             waveData.WaveType = ConvertValue<int>(row[i++]);
             waveData.FirstMonsterSpawnRate = ConvertValue<float>(row[i++]);
             waveData.HpIncreaseRate = ConvertValue<float>(row[i++]);

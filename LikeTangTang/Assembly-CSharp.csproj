@@ -96,6 +96,7 @@
     <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_StageSelectPopup.cs" />
     <Compile Include="Assets\@Scripts\UI\UI_CheckOutItem.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\GravityBombZone.cs" />
+    <Compile Include="Assets\@Scripts\Contents\Skills\Sequence\SkillRange.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_GachaRateItem.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\Repeat\Melee\EgoSword.cs" />
     <Compile Include="Assets\@Scripts\Controllers\BossController.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="Assets\@Scripts\UI\UI_HP_Bar.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_EquipmentResetPopup.cs" />
     <Compile Include="Assets\@Scripts\UI\UI_MonsterInfoItem.cs" />
+    <Compile Include="Assets\@Scripts\Contents\SceneChangeAnimation_Out.cs" />
     <Compile Include="Assets\@Scripts\Test\Test.cs" />
     <Compile Include="Assets\@Scripts\Controllers\DropItem\BombController.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\Sequence\BossDash.cs" />
@@ -186,16 +188,14 @@
     <Compile Include="Assets\@Scripts\Contents\Skills\Repeat\OrbitalBlades.cs" />
     <Compile Include="Assets\@Scripts\Manager\Manager.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_SkillSelectPopup.cs" />
+    <Compile Include="Assets\@Scripts\Contents\SceneChangeAnimation_In.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\GameScene\UI_ContinuePopup.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_DiaChargePopup.cs" />
+    <Compile Include="Assets\@Scripts\Contents\Skills\Sequence\BossSkillProjectile.cs" />
     <Compile Include="Assets\@Scripts\Test\UI_Test.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_MergeAllResultPopup.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_TotalDamagePopup.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\CustomSceneManager.cs" />
-    <Compile Include="Assets\@Scripts\Contents\Skills\Sequence\SkillRange.cs" />
-    <Compile Include="Assets\@Scripts\Contents\Skills\Sequence\BossSkillProjectile.cs" />
-    <Compile Include="Assets\@Scripts\Contents\SceneChangeAnimation_In.cs" />
-    <Compile Include="Assets\@Scripts\Contents\SceneChangeAnimation_Out.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

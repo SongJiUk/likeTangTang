@@ -36,4 +36,11 @@ public class UpdateManager : MonoBehaviour
 
         foreach(var tick in tickable) tick.Tick(deltaTime);
     }
+
+    public void Clear()
+    {
+        tickable.Clear();
+        toAdd.Clear();
+        toRemove.Clear();
+    }
 }

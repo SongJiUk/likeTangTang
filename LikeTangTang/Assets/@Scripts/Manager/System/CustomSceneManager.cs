@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class CustomSceneManager
 {
@@ -70,6 +71,9 @@ public class CustomSceneManager
 
         anim.SetInfo(_type, () =>
         {
+            DOTween.KillAll();
+            DOTween.Clear();
+            Manager.UpdateM.Clear();
             Manager.ResourceM.Destory(Manager.UiM.SceneUI.gameObject);
             Manager.Clear();
             switch (_type)
