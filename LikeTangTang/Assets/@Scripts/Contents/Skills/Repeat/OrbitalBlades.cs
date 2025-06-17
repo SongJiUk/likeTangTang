@@ -30,6 +30,7 @@ public class OrbitalBlades : RepeatSkill, ITickable
 
     public override void DoSkill()
     {
+        Manager.SoundM.Play(Define.Sound.Effect, SkillDatas.CastingSoundLabel);
         Vector3 pos = Manager.GameM.player.transform.position;
         Vector3 baseDir = Manager.GameM.player.ShootDir;
         Transform standard = Manager.GameM.player.Standard.transform;

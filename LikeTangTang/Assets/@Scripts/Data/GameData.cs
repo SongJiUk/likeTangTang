@@ -46,7 +46,6 @@ public class GameData
 
     public bool[] AttendanceReceived = new bool[30];
 
-    // TODO : 모든 정보가 다 들어간다고 생각하면 됌. 
     public ContinueData ContinueDatas = new ContinueData();
     public StageData CurrentStageData = new StageData();
     public List<Character> Characters = new List<Character>();

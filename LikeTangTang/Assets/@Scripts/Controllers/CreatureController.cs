@@ -134,8 +134,6 @@ public class CreatureController : BaseController, ITickable
     }
     public virtual void InitSkill()
     {
-        //TODO : 여기에 스킬 추가 
-
         foreach (int skillID in creatureData.SkillTypeList)
         {
             if (Manager.DataM.SkillDic.TryGetValue(skillID, out var data))

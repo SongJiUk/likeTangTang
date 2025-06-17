@@ -52,7 +52,7 @@ public class UI_RewardPopup : UI_Popup
 
         GetButton(ButtonsType, (int)Buttons.BackgroundButton).gameObject.BindEvent(OnClickBgButton);
 
-
+        Manager.SoundM.Play(Define.Sound.Effect, "PopupOpen_Reward");
         return true;
     }
 

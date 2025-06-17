@@ -187,10 +187,9 @@ public class UI_LobbyScene : UI_Scene
 
     void OnClickEquipmentToggle()
     {
-        if(!ui_EquipmentPopup.isOpen)
+        Manager.SoundM.PlayButtonClick();
+        if (!ui_EquipmentPopup.isOpen)
         {
-            Manager.SoundM.PlayButtonClick();
-
             GetImage(ImagesType, (int)Images.BackGroundImage).color = Utils.HexToColor("5C3A25");
 
             AllOff();
@@ -205,7 +204,7 @@ public class UI_LobbyScene : UI_Scene
             EquipmentImageRect.DOSizeDelta(ClickedImageSize, 0.1f).SetEase(Ease.InOutQuad);
 
             ui_EquipmentPopup.SetInfo();
-            
+
             ui_EquipmentPopup.isOpen = true;
 
         }

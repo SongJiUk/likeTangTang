@@ -119,6 +119,7 @@ public class UI_CharacterLevelupPopup : UI_Popup
 
     void OnClickBgButton()
     {
+        Manager.SoundM.PlayPopupClose();
         Manager.UiM.ClosePopup(this);
     }
 }

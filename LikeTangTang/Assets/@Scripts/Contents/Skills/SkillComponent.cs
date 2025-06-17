@@ -19,47 +19,45 @@ public class SkillComponent : MonoBehaviour
 
 
     public Dictionary<Define.SkillType, int> SavedBattleSkill = new Dictionary<Define.SkillType, int>();
-    //TODO : 서포트 스킬(진화스킬)
     public Dictionary<Define.SkillType, int> SavedEvolutionSkill = new Dictionary<Define.SkillType, int>();
     public event Action UpdateSkillUI;
 
     bool stopped = false;
-    public T AddSkill<T>(Vector3 _pos, Transform _parent = null ) where T : SkillBase
-    {
-        //[ ] 나중에 templateID로 바꾸기.
-        System.Type type = typeof(T);
-        //Debug.Log("AddSkill");
-        if(type == typeof(EgoSword))
-        {  
-            var egoSword = Manager.ObjectM.Spawn<EgoSword>(_pos, 1);
-            egoSword.transform.SetParent(_parent);
-            egoSword.ActivateSkill(); // [ ] 레벨이 0이라면 따로 함수 처리.
+    // public T AddSkill<T>(Vector3 _pos, Transform _parent = null ) where T : SkillBase
+    // {
+    //     System.Type type = typeof(T);
+    //     //Debug.Log("AddSkill");
+    //     if(type == typeof(EgoSword))
+    //     {  
+    //         var egoSword = Manager.ObjectM.Spawn<EgoSword>(_pos, 1);
+    //         egoSword.transform.SetParent(_parent);
+    //         egoSword.ActivateSkill();
 
-            skillList.Add(egoSword);
-            RepeatSkills.Add(egoSword);
+    //         skillList.Add(egoSword);
+    //         RepeatSkills.Add(egoSword);
 
-            return egoSword as T;
+    //         return egoSword as T;
 
-        }
-        else if(type == typeof(FireBall))
-        {
-            var fireBall = Manager.ObjectM.Spawn<FireBall>(_pos, 2);
-            fireBall.transform.SetParent(_parent);
-            //fireBall.coolTime = 2f;
-            fireBall.ActivateSkill();
+    //     }
+    //     else if(type == typeof(FireBall))
+    //     {
+    //         var fireBall = Manager.ObjectM.Spawn<FireBall>(_pos, 2);
+    //         fireBall.transform.SetParent(_parent);
+    //         //fireBall.coolTime = 2f;
+    //         fireBall.ActivateSkill();
 
-            skillList.Add(fireBall);
-            RepeatSkills.Add(fireBall);
+    //         skillList.Add(fireBall);
+    //         RepeatSkills.Add(fireBall);
 
-            return fireBall as T;
-        }
-        else
-        {
+    //         return fireBall as T;
+    //     }
+    //     else
+    //     {
 
-        }
+    //     }
 
-        return null;
-    }
+    //     return null;
+    // }
 
     public void AddSkill(Define.SkillType _type, int _skillID = 0)
     {
@@ -110,7 +108,6 @@ public class SkillComponent : MonoBehaviour
 
         SpecialSkills.Add(_skill);
 
-        //TODO : LoadSkill이면 return;
         if (_isLoadSkill)
         {
             foreach (SkillBase playerSkill in skillList)
@@ -178,9 +175,7 @@ public class SkillComponent : MonoBehaviour
     }
 
     public List<SkillBase> RecommendSkills()
-    {
-        //TODO : 배운 스킬 및 맥스 스킬 개수 비교 
-        
+    {    
         List<SkillBase> skillList = Manager.GameM.player.Skills.skillList.ToList();
         List<SkillBase> activeSkills = skillList.FindAll(skill => skill.isLearnSkill);
 

@@ -10,7 +10,6 @@ using UnityEngine.XR;
 
 public class UI_CharacterSelectPopup : UI_Popup
 {
-    //TODO : 캐릭터 정보 등등(캐릭터 레벨업은 직접 하는걸로 하자 그럼)
     enum GameObjects
     {
         LevelUpToggleCheckmark,
@@ -296,6 +295,7 @@ public class UI_CharacterSelectPopup : UI_Popup
 
     void OnClickBackButton()
     {
+        Manager.SoundM.PlayPopupClose();
         (Manager.UiM.SceneUI as UI_LobbyScene).Ui_EquipmentPopup.RefreshCharacterInfo();
         Manager.UiM.ClosePopup(this);
     }
@@ -303,7 +303,7 @@ public class UI_CharacterSelectPopup : UI_Popup
     void OnClickEquipButton()
     {
         //TODO : 캐릭터 변경하면서 isCurrent어쩌고 바꿔주기
-
+        Manager.SoundM.PlayButtonClick();
         if (selectedItem == null) return;
 
         Manager.GameM.CurrentCharacter.isCurrentCharacter = false;
@@ -318,11 +318,13 @@ public class UI_CharacterSelectPopup : UI_Popup
 
     void OnClickLevelUpButton()
     {
-        if(!Manager.GameM.ItemDic.TryGetValue(Define.ID_LevelUpCoupon, out var levelUpCouPon))
+        Manager.SoundM.PlayButtonClick();
+        if (!Manager.GameM.ItemDic.TryGetValue(Define.ID_LevelUpCoupon, out var levelUpCouPon))
             Manager.UiM.ShowToast("레벨업 쿠폰이 부족합니다.");
 
         if (levelUpCouPon >= characterLevelUpData.NeedCouponCount)
         {
+            Manager.SoundM.Play(Define.Sound.Effect, "Levelup_Character");
             UI_CharacterLevelupPopup popup = Manager.UiM.ShowPopup<UI_CharacterLevelupPopup>();
             popup.SetInfo(character);
 

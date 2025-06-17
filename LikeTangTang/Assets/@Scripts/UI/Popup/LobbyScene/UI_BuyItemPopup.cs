@@ -66,6 +66,7 @@ public class UI_BuyItemPopup : UI_Popup
     void OnClickBuyButton()
     {
         //TODO : 그 전에 재료가 없으면 걸러져서 들어오기때문에, itme, item의 소모개수, 획득개수를 받아와야하나?
+        Manager.SoundM.PlayButtonClick();
         Manager.GameM.Dia -= UseItemCount;
         if( item.MaterialType == Define.MaterialType.Gold)
         {
@@ -100,6 +101,7 @@ public class UI_BuyItemPopup : UI_Popup
 
     void OnClickQuitButton()
     {
+        Manager.SoundM.PlayPopupClose();
         Manager.ResourceM.Destory(gameObject);
     }
 }

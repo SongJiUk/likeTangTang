@@ -193,9 +193,6 @@ public class ProjectileController : SkillBase
 
     void ExplosionTimeStopBomb()
     {
-        
-        //TODO : effectRange, SlowRatio, EffectScaleMultiplie사용, 
-        // 폭탄이 터지면, 디버프를 생성(근데 새로운 이펙트 생성)
         string explosionName = skill.SkillDatas.ExplosionName;
         GameObject go = Manager.ResourceM.Instantiate(explosionName, _pooling : true);
         go.transform.position = transform.position;
@@ -252,7 +249,6 @@ public class ProjectileController : SkillBase
 
     void HandleSuicideDrone()
     {
-        //TODO : 폭발 하면서 주변 몬스터 함께 데미지
         if(!isBoom) return;
 
         ExplosionDrone();
@@ -262,7 +258,6 @@ public class ProjectileController : SkillBase
 
     void ExplosionDrone()
     {   
-        //TODO : 자폭할때는 굳이 필요할까 굳이 raycast를 안해줘도 될거같음.
         string explosionName = skill.SkillDatas.ExplosionName;
         GameObject go = Manager.ResourceM.Instantiate(explosionName, _pooling : true);
         go.transform.position = transform.position;

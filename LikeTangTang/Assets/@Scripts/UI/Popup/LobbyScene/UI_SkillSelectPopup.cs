@@ -115,7 +115,7 @@ public class UI_SkillSelectPopup : UI_Popup
         }
 
 
-        //TODO : Sound
+        Manager.SoundM.Play(Define.Sound.Effect, "PopupOpen_SkillSelect");
         return true;
 
 
@@ -183,15 +183,16 @@ public class UI_SkillSelectPopup : UI_Popup
 
 
     public void OnClickAdRefreshButton()
-    {   
-        //TODO : Sound
+    {
+        Manager.SoundM.PlayButtonClick();
         PopulateCardItem();
         RefreshUI();
     }
 
     public void OnClickCardRefreshButton()
     {
-        if(gm.player.SkillRefreshCount > 0)
+        Manager.SoundM.PlayButtonClick();
+        if (gm.player.SkillRefreshCount > 0)
         {
             PopulateCardItem();
             gm.player.SkillRefreshCount--;

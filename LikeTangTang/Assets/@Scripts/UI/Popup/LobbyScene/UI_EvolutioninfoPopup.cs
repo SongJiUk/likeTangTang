@@ -78,7 +78,8 @@ public class UI_EvolutioninfoPopup : UI_Popup
 
     void OnClickLearnButton()
     {
-        if(Manager.GameM.Gold >= data.NeedGold)
+        Manager.SoundM.PlayButtonClick();
+        if (Manager.GameM.Gold >= data.NeedGold)
         {
             //배우기
             Manager.GameM.Gold -= data.NeedGold;
@@ -94,6 +95,7 @@ public class UI_EvolutioninfoPopup : UI_Popup
 
     void OnClickQuitButton()
     {
+        Manager.SoundM.PlayPopupClose();
         Manager.UiM.ClosePopup(this);
     }
 }

@@ -81,12 +81,12 @@ public class SoundManager
 
     public void PlayButtonClick()
     {//TODO : 다 하고 고치자
-        Play(Define.Sound.Effect, "Click_CommonButton");
+        Play(Define.Sound.Effect, "ButtonClick");
     }
 
     public void PlayPopupClose()
     {
-        Play(Define.Sound.Effect, "PopupClose_Common");
+        Play(Define.Sound.Effect, "PopupClose");
     }
 
     

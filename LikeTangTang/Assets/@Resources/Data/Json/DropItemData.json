@@ -72,7 +72,7 @@
       "DropItemType": 4,
       "Grade": 1,
       "NameTextID": "레어 상자",
-      "ItemDescription": "Rare BOx",
+      "ItemDescription": "Rare Box",
       "SpriteName": "Rare_Box.sprite",
       "AnimName": "Rare_Box_Anim",
       "EffectName": "DropBox_Effect_Rare"

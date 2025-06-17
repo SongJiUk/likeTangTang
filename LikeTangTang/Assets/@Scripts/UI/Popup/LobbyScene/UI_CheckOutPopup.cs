@@ -169,9 +169,4 @@ public class UI_CheckOutPopup : UI_Popup
         }
         
     }
-    public void OnClickButtonTest()
-    {
-        Debug.Log("On click start button");
-        
-    }
 }

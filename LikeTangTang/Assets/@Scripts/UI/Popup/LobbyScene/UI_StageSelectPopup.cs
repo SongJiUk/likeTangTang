@@ -166,6 +166,7 @@ public class UI_StageSelectPopup : UI_Popup
 
     void OnClickStageSelectButton()
     {
+        Manager.SoundM.PlayButtonClick();
         Manager.GameM.CurrentStageData = stageData;
         OnChangedStageInfoEvent?.Invoke();
         Manager.UiM.ClosePopup(this);
@@ -181,8 +182,9 @@ public class UI_StageSelectPopup : UI_Popup
     void OnClickLArrowImage()
     {
         //TODO : 한칸씩 이동되게(값을 곱해줘야될거같긴함)
-        if(currentPage > 0)
+        if (currentPage > 0)
         {
+            Manager.SoundM.PlayButtonClick();
             currentPage--;
             scrollSnap.GoToScreen(currentPage);
         }
@@ -192,6 +194,7 @@ public class UI_StageSelectPopup : UI_Popup
     {
         if(currentPage < maxPage)
         {
+            Manager.SoundM.PlayButtonClick();
             currentPage++;
             scrollSnap.GoToScreen(currentPage);
         }

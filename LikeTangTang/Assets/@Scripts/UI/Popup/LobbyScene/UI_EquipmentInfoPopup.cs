@@ -241,8 +241,7 @@ public class UI_EquipmentInfoPopup : UI_Popup
 
     void OnClickEquipButton()
     {
-        //TODO : Sound
-
+        Manager.SoundM.Play(Define.Sound.Max, "Equip_Equipment");
         Manager.GameM.EquipItem(equipment.EquipmentData.EquipmentType, equipment);
         Refresh();
         gameObject.SetActive(false);
@@ -289,9 +288,8 @@ public class UI_EquipmentInfoPopup : UI_Popup
                 Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.Mission);
                 Manager.GameM.SaveGame();
             }
-                
 
-            //TODO : LevelUP sound;
+            Manager.SoundM.Play(Define.Sound.Effect, "Levelup_Equipment");
             Refresh();
         }
         else

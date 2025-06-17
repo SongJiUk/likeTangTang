@@ -223,6 +223,7 @@ public class UI_EquipmentResetPopup : UI_Popup
 
     void OnClickResetTapToggle()
     {
+        Manager.SoundM.PlayButtonClick();
         if (isSelectResetTap) return;
         EquipmentResetPopupReset();
         isSelectResetTap = true;
@@ -232,6 +233,7 @@ public class UI_EquipmentResetPopup : UI_Popup
 
     void OnClickDowngradeToggle()
     {
+        Manager.SoundM.PlayButtonClick();
         if (isSelectDownGradeTap) return;
         EquipmentResetPopupReset();
         isSelectDownGradeTap = true;
@@ -248,7 +250,8 @@ public class UI_EquipmentResetPopup : UI_Popup
 
     void OnClickResetButton()
     {
-        //초기화는 돈과 재료만 돌려줌
+        Manager.SoundM.PlayButtonClick();
+        
         int gold = CalculateResetGold();
         int material = CalculateResetMaterialCount();
         int materialCode = equipment.EquipmentData.LevelUpMaterial;

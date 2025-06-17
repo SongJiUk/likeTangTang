@@ -58,13 +58,13 @@ public class GameScene : BaseScene, ITickable
         base.Init();
         SceneType = SceneType.GameScene;
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        
+
         gm = Manager.GameM;
         tm = Manager.TimeM;
         Manager.UpdateM.Register(this);
         Manager.UiM.ShowSceneUI<UI_JoyStick>();
-        
-        if(Manager.GameM.ContinueDatas.isContinue)
+
+        if (Manager.GameM.ContinueDatas.isContinue)
         {
             player = Manager.ObjectM.Spawn<PlayerController>(Vector3.zero, Manager.GameM.ContinueDatas.PlayerDataID);
         }
@@ -73,22 +73,23 @@ public class GameScene : BaseScene, ITickable
             gm.ClearContinueData();
             player = Manager.ObjectM.Spawn<PlayerController>(Vector3.zero, Define.DEFAULT_PLAYER_ID);
         }
-        
+
 
         StageLoad();
 
         player.OnPlayerDead = OnPlayerDead;
         Manager.GameM.Camera = FindObjectOfType<CameraController>();
         Manager.GameM.Camera.Target = player.gameObject;
-        
+
 
         ui = Manager.UiM.ShowSceneUI<UI_GameScene>();
-        
+
         player.Skills.RefreshSkillUI();
 
         OnWaveStart = ui.OnWaveStart;
         OnWaveEnd = ui.OnWaveEnd;
         OnChangeSecond = ui.OnChangeSecond;
+        Manager.SoundM.Play(Define.Sound.Bgm, "Bgm_Game");
 
     }
     public override void Clear()

@@ -5,5 +5,5 @@ DataID,DropItemTypeStr,Grade,NameTextID,ItemDescription,SpriteName,AnimName,Effe
 30003,Magnet,Normal,자석,Magnet,Magnet.sprite,,
 30004,Bomb,Normal,폭탄,Bomb,Bomb.sprite,,
 30005,DropBox,Normal,노말 상자,Normal Box,Normal_Box.sprite,Normal_Box_Anim,DropBox_Effect_Normal
-30006,DropBox,Rare,레어 상자,Rare BOx,Rare_Box.sprite,Rare_Box_Anim,DropBox_Effect_Rare
+30006,DropBox,Rare,레어 상자,Rare Box,Rare_Box.sprite,Rare_Box_Anim,DropBox_Effect_Rare
 30007,DropBox,Unique,유니크 상자,Unique Box,Unique_Box.sprite,Unique_Box_Anim,DropBox_Effect_Unique

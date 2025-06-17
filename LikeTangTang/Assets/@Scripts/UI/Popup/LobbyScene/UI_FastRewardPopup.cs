@@ -126,6 +126,7 @@ public class UI_FastRewardPopup : UI_Popup
 
     void OnClickBgButton()
     {
+        Manager.SoundM.PlayPopupClose();
         Manager.UiM.ClosePopup(this);
     }
 }

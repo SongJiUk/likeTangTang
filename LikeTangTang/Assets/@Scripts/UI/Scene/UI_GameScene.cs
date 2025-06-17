@@ -202,7 +202,8 @@ public class UI_GameScene : UI_Scene
 
     void OnClickHealButton()
     {
-        if(Manager.GameM.player.SpecialSkillHealCount > 0)
+        Manager.SoundM.PlayButtonClick();
+        if (Manager.GameM.player.SpecialSkillHealCount > 0)
         {
             Manager.GameM.player.SpecialSkillHealCount--;
             Manager.GameM.player.Healing(1);
@@ -248,14 +249,14 @@ public class UI_GameScene : UI_Scene
         switch (_type)
         {
             case AlramType.Wave:
-                //TODO :Sound : Wave
+                Manager.SoundM.Play(Define.Sound.Effect, "Warning_Wave");
                 GetObject(gameObjectsType, (int)GameObjects.MonsterAlarmObject).SetActive(true);
                 yield return new WaitForSeconds(3f);
                 GetObject(gameObjectsType, (int)GameObjects.MonsterAlarmObject).SetActive(false);
                 break;
 
             case AlramType.Boss:
-                //Sound : Boss
+                Manager.SoundM.Play(Define.Sound.Effect, "Warning_Boss");
                 GetObject(gameObjectsType, (int)GameObjects.BossAlarmObject).SetActive(true);
                 yield return new WaitForSeconds(3f);
                 GetObject(gameObjectsType, (int)GameObjects.BossAlarmObject).SetActive(false);

@@ -32,6 +32,7 @@ public class PlasmaSpinner : RepeatSkill, ITickable
     
     public override void DoSkill()
     {
+        Manager.SoundM.Play(Define.Sound.Effect, SkillDatas.CastingSoundLabel);
         List<MonsterController> targets = Manager.ObjectM.GetNearMonsters(projectileCount);
         if(targets == null) return;
 
@@ -53,6 +54,7 @@ public class PlasmaSpinner : RepeatSkill, ITickable
         coolTime -= _deltaTime;
         if(coolTime <= 0)
         {
+            Manager.SoundM.Play(Define.Sound.Effect, SkillDatas.CastingSoundLabel);
             DoSkill();
             coolTime = SkillDatas.CoolTime;
         }

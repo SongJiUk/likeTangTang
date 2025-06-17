@@ -60,6 +60,8 @@ public class UI_GachaResultsPopup : UI_Popup
         var main = particle.GetComponent<ParticleSystem>().main;
         main.stopAction = ParticleSystemStopAction.Callback;
 
+        Manager.SoundM.Play(Define.Sound.Effect, "PopupOpen_GameResult");
+
         return true;
     }
 

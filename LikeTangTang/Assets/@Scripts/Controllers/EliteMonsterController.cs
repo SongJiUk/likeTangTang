@@ -38,9 +38,6 @@ public class EliteMonsterController : MonsterController
     public override void OnDead()
     {
         base.OnDead();
-
-        //TODO : 엘리트보스 잡고 난 후의 보상
-        //Manager.GameM.player.Skills
         if (Manager.GameM.MissionDic.TryGetValue(Define.MissionTarget.EliteMonsterKill, out MissionInfo mission))
             mission.Progress++;
         

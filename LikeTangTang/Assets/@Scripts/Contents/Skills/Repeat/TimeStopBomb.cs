@@ -11,6 +11,7 @@ public class TimeStopBomb : RepeatSkill, ITickable
     }
     public override void DoSkill()
     {
+        Manager.SoundM.Play(Define.Sound.Effect, SkillDatas.CastingSoundLabel);
         SpawnTimeStopBomb();
     }
 

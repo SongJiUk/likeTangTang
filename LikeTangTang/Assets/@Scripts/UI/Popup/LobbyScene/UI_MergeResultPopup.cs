@@ -56,6 +56,7 @@ public class UI_MergeResultPopup : UI_Popup
     private void OnEnable()
     {
         PopupOpenAnim(GetObject(gameObjectsType, (int)GameObjects.ContentObject));
+        Manager.SoundM.Play(Define.Sound.Effect, "Result_CommonMerge");
     }
 
     public override bool Init()

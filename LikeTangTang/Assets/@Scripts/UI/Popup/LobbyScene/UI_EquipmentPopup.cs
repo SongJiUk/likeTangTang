@@ -204,7 +204,7 @@ public class UI_EquipmentPopup : UI_Popup
 
     void OnClickSortButton()
     {
-        //TODO : 정렬
+        Manager.SoundM.PlayButtonClick();
         if (equipmentSortType == Define.EquipmentSortType.Level)
         {
             equipmentSortType = Define.EquipmentSortType.Grade;
@@ -221,7 +221,7 @@ public class UI_EquipmentPopup : UI_Popup
 
     void OnClickMergeButton()
     {
-        //TODO : 합성
+        Manager.SoundM.PlayButtonClick();
         UI_MergePopup mergePopup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_MergePopup;
 
         if (mergePopup != null)
@@ -234,7 +234,7 @@ public class UI_EquipmentPopup : UI_Popup
 
     void OnClickCharacterButton()
     {
-        //TODO : 캐릭터 변경
+        Manager.SoundM.PlayButtonClick();
         UI_CharacterSelectPopup characterSelectPopup = Manager.UiM.ShowPopup<UI_CharacterSelectPopup>();
         characterSelectPopup.SetInfo();
     }

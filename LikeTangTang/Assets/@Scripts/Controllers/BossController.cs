@@ -56,6 +56,33 @@ public class BossController : MonsterController
     }
 
     
+    public override void OnDamaged(BaseController _attacker, SkillBase _skill = null, float _damage = 0)
+    {
+        base.OnDamaged(_attacker, _skill, _damage);
+    }
+
+    public override void OnDead()
+    {
+        base.OnDead();
+
+        if (Manager.GameM.MissionDic.TryGetValue(Define.MissionTarget.BossKill, out MissionInfo mission))
+            mission.Progress++;
+        Manager.GameM.TotalBossKillCount++;
+
+        OnBossDead?.Invoke();
+    }
+    public override void InitStat(bool _isHpFull = false)
+    {
+        var stageLevel = Manager.GameM.CurrentStageData.StageLevel;
+
+        MaxHp = (creatureData.MaxHp + (creatureData.MaxHpUpForIncreasStage * stageLevel)) * creatureData.HpRate;
+        Attack = (creatureData.Attack + (creatureData.AttackUpForIncreasStage * stageLevel)) * creatureData.AttackRate;
+
+        Hp = MaxHp;
+        Speed = creatureData.Speed * creatureData.MoveSpeedRate;
+    }
+
+    #region 사용 x
     public override void UpdateAnim()
     {
         if(CreatureAnim == null) return;
@@ -84,7 +111,7 @@ public class BossController : MonsterController
         if(dir.sqrMagnitude <= range * range)
         {
             CreatureState = Define.CreatureState.Attack;
-            // WaitTime(0.5f); //TODO : 이걸 꼭 0.5초를 기다려야하나?(근데 스킬같은건 기다리면 좋긴함.)
+            // WaitTime(0.5f);
         }
     }
     protected override void UpdateAttack()
@@ -94,38 +121,12 @@ public class BossController : MonsterController
     }
     protected override void UpdateDead()
     {
-        // TODO : 떨구는 아이템, simulated 끄기,
 
     }
-
-    public override void OnDamaged(BaseController _attacker, SkillBase _skill = null, float _damage = 0)
-    {
-        base.OnDamaged(_attacker, _skill, _damage);
-    }
-
-    public override void OnDead()
-    {
-        base.OnDead();
-
-        if (Manager.GameM.MissionDic.TryGetValue(Define.MissionTarget.BossKill, out MissionInfo mission))
-            mission.Progress++;
-        Manager.GameM.TotalBossKillCount++;
-
-        OnBossDead?.Invoke();
-    }
-    public override void InitStat(bool _isHpFull = false)
-    {
-        var stageLevel = Manager.GameM.CurrentStageData.StageLevel;
-
-        MaxHp = (creatureData.MaxHp + (creatureData.MaxHpUpForIncreasStage * stageLevel)) * creatureData.HpRate;
-        Attack = (creatureData.Attack + (creatureData.AttackUpForIncreasStage * stageLevel)) * creatureData.AttackRate;
-
-        Hp = MaxHp;
-        Speed = creatureData.Speed * creatureData.MoveSpeedRate;
-    }
+    #endregion
 
 
-    #region CoolTime 계산
+    #region CoolTime 계산(사용 x)
     Coroutine coWait;
 
     void WaitTime(float _time)

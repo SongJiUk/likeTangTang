@@ -13,6 +13,7 @@ public class SuicideDrone : RepeatSkill, ITickable
     }
     public override void DoSkill()
     {
+        Manager.SoundM.Play(Define.Sound.Effect, SkillDatas.CastingSoundLabel);
         SpawnDrones();
     }
 

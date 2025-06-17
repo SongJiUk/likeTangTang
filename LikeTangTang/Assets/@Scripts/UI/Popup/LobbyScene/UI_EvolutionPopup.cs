@@ -274,6 +274,7 @@ public class UI_EvolutionPopup : UI_Popup
 
     void OnClickEvolutionButton(int _level)
     {
+        Manager.SoundM.PlayButtonClick();
         var Character = Manager.GameM.CurrentCharacter;
         const int interval = 3;
         int prevLevel = _level - interval;

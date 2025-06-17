@@ -29,7 +29,6 @@ public class Character
     public float GoldBonus { get; set; } = 0;
     public float HealingBouns { get; set; } = 0;
 
-    //TODO : cooltime, dia, gold, healing 이거 사용할곳 찾아서 사용하기
     public float Evol_AttackRate  { get; set; } = 0;
     public float Evol_MaxHpRate { get; set; } = 0;
     public float Evol_CoolTimeBouns{ get; set; } = 0;

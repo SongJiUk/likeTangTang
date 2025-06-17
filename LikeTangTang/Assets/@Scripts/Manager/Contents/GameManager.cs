@@ -398,13 +398,6 @@ public class GameManager
     public int second;
     public void Init()
     {
-        /*TODO : 
-        1. 기존에 하던거 있으면 로드, 
-        2. 캐릭터 선택해서 불러오기(캐릭터 여러개 만들거면)
-        3. 스테이지 로드
-        4. 장비 확인
-        5. 초반 기본 아이템 설정
-        */
         path = Application.persistentDataPath + "/SaveData.json";
         if (LoadGame()) return;
 
@@ -612,10 +605,6 @@ public class GameManager
 
     public GemInfo GetGemInfo(GemInfo.GemType _type)
     {
-        //TODO : 처음 시작할떄 Red크기 수정하기
-        //if (_type == GemInfo.GemType.Red)
-        //    return new GemInfo(GemInfo.GemType.Red, new Vector3(0.5f, 0.5f, 0.5f));
-
         return new GemInfo(_type, Vector3.one);
     }
 

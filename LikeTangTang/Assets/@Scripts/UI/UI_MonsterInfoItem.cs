@@ -67,7 +67,7 @@ public class UI_MonsterInfoItem : UI_Base
 
     void OnClickMonsterInfo()
     {
-
+        Manager.SoundM.PlayButtonClick();
         UI_ToolTipItem item = Manager.UiM.MakeSubItem<UI_ToolTipItem>(parent);
         item.transform.localScale = Vector3.one;
         RectTransform targetPos = this.gameObject.GetComponent<RectTransform>();

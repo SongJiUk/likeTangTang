@@ -139,6 +139,7 @@ public class UI_StaminaChargePopup : UI_Popup
 
     void OnClickBgButton()
     {
+        Manager.SoundM.PlayPopupClose();
         Manager.UiM.ClosePopup(this);
     }
 }

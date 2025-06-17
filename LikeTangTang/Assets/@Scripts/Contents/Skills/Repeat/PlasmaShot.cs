@@ -28,6 +28,7 @@ public class PlasmaShot : RepeatSkill, ITickable
 
     public override void DoSkill()
     {
+        Manager.SoundM.Play(Define.Sound.Effect, SkillDatas.CastingSoundLabel);
         Vector3 pos = Manager.GameM.player.transform.position;
         
         for(int i =0; i< projectileCount; i++)

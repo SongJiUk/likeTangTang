@@ -147,11 +147,12 @@ public class UI_SkillCardItem : UI_Base
 
     public void OnClickItem()
     {
-        if(skill != null)
+        Manager.SoundM.PlayButtonClick();
+        if (skill != null)
         {
-           Manager.GameM.player.Skills.LevelUpSkill(skill.Skilltype);
+            Manager.GameM.player.Skills.LevelUpSkill(skill.Skilltype);
         }
-        else if(evolutionItemID != 0)
+        else if (evolutionItemID != 0)
         {
             Manager.GameM.player.Skills.TryEvolveSkill(evolutionItemID);
         }

@@ -70,12 +70,11 @@ public class UI_MissionPopup : UI_Popup
         }
 
         Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.Mission);
-
-
     }
 
     void OnClickBgButton()
     {
+        Manager.SoundM.PlayPopupClose();
         Manager.UiM.ClosePopup(this);
     }
 }

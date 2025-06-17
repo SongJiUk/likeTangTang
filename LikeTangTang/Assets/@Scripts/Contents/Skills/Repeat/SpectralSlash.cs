@@ -71,13 +71,14 @@ public class SpectralSlash : RepeatSkill
         {
             int swingCount = Mathf.Min(projectileCount, currentSwingParticle.Length);
             for(int i = 0; i< swingCount; i++)
-            {   
+            {
+                
                 var particle = currentSwingParticle[i];
                 if(particle == null) continue;
 
                 SetParticleRotationAndPosition(particle);
                 particle.gameObject.SetActive(true);
-
+                Manager.SoundM.Play(Define.Sound.Effect, SkillDatas.CastingSoundLabel);
                 yield return new WaitForSeconds(particle.main.duration);
             }
 

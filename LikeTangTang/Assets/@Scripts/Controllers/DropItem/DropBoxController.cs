@@ -11,6 +11,7 @@ public class DropBoxController : DropItemController
     {
         base.Init();
         itemType = Define.ItemType.DropBox;
+        Manager.SoundM.Play(Define.Sound.Effect, "Drop_Box");
 
         return true;
     }
@@ -27,8 +28,6 @@ public class DropBoxController : DropItemController
         if (anim != null) anim.runtimeAnimatorController = null;
         transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
         SpawnEffect();
-
-       //TODO : 여기서 아이템 세팅
     }
 
     public void SpawnEffect()
@@ -48,7 +47,7 @@ public class DropBoxController : DropItemController
 
     public override void CompleteGetItem()
     {
-        //TODO : 테스트 해보기
+        //TODO : 테스트 해보기(Rare 안나오는거 )
         PlayerController player = Manager.GameM.player;
         float needExp = 0;
         switch (dropItem.Grade)

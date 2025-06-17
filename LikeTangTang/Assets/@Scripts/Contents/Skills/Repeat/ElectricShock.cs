@@ -32,6 +32,7 @@ public class ElectricShock : RepeatSkill, ITickable
 
     public override void DoSkill()
     {
+        Manager.SoundM.Play(Define.Sound.Effect, SkillDatas.CastingSoundLabel);
         var player = Manager.GameM.player;
         if (player == null) return;
 

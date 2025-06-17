@@ -51,6 +51,8 @@ public class UI_GameoverPopup : UI_Popup
         GetButton(ButtonsType, (int)Buttons.ConfirmButton).gameObject.BindEvent(OnClickConfirmButton);
 
         Refresh();
+
+        Manager.SoundM.Play(Define.Sound.Effect, "PopupOpen_Gameover");
         return true;
     }
     public void SetInfo()

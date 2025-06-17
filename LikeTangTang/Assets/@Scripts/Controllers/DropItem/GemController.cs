@@ -39,9 +39,6 @@ public class GemInfo
                 ExpAmount = Define.YELLOW_GEM_EXP;
             break;
         }
-
-        //TODO : 지워야됌
-        ExpAmount = 0;
     }
 }
 
@@ -107,7 +104,8 @@ public class GemController : DropItemController
 
             if(dist < 0.4f)
             {
-                //TODO : 사운드
+                string soundName = UnityEngine.Random.value > 0.5f ? "ExpGet_01" : "ExpGet_02";
+                Manager.SoundM.Play(Define.Sound.Effect, soundName);
                 Manager.GameM.player.Exp += gemInfo.ExpAmount * Manager.GameM.player.ExpBounsRate;
                 Manager.ObjectM.DeSpawn(this);
                 yield break;

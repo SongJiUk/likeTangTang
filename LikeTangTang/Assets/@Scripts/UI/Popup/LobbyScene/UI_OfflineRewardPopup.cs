@@ -126,6 +126,7 @@ public class UI_OfflineRewardPopup : UI_Popup
 
     void OnClickBackgroundButton()
     {
+        Manager.SoundM.PlayPopupClose();
         Manager.UiM.ClosePopup(this);
     }
 

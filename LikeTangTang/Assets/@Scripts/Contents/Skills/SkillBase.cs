@@ -98,8 +98,6 @@ public class SkillBase : BaseController
     public void Evolution()
     {
         OnSkillLevelup();
-
-        //TODO : 스킬 외형 변환.
     }
 
     public Data.SkillData UpdateSkillData(int _skillID = 0)

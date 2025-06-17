@@ -171,7 +171,7 @@ public class MonsterController : CreatureController, ITickable
     {
         if (_skill != null)
         {
-            //TODO : 다 만들고 마지막 사운드Manager.SoundM.Play(Sound.Effect, _skill.SkillDatas.HitEffectID);
+            Manager.SoundM.Play(Sound.Effect, _skill.SkillDatas.HitSoundLabel);
             float totalDamage = Manager.GameM.player.Attack * _skill.SkillDatas.DamageMultiplier;
             base.OnDamaged(_attacker, _skill, totalDamage);
         }

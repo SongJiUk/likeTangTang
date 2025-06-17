@@ -134,7 +134,8 @@ public class EnergyRing : RepeatSkill, ITickable
 
     public override void DoSkill()
     {
-        if(isPlaying) return;
+        Manager.SoundM.Play(Define.Sound.Effect, SkillDatas.CastingSoundLabel);
+        if (isPlaying) return;
         isPlaying = true;
 
         durationTimer = SkillDatas.Duration;
