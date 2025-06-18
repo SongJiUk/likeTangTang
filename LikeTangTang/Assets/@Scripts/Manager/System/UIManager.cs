@@ -169,10 +169,8 @@ public class UIManager
 
             case Define.RedDotObjectType.AchievementPopup:
 
-                Manager.GameM.IsAchievementAcceptItem = Manager.AchievementM.GetAchievements().Any(a =>
-                    {
-                        return a.IsCompleted && !a.IsRewarded;
-                    });
+                Manager.GameM.IsAchievementAcceptItem = Manager.AchievementM.CheckAchievements().Count > 0;
+
                 break;
 
         }

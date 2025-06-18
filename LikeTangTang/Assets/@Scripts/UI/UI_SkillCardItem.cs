@@ -93,6 +93,7 @@ public class UI_SkillCardItem : UI_Base
     int evolutionItemID;
     public void SetInfo(SkillBase _skill = null, int _evolutionItemID = 0)
     {
+        skill = null;
         if (_skill != null)
         {
             skill = _skill;

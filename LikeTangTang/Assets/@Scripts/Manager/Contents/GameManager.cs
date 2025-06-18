@@ -519,6 +519,7 @@ public class GameManager
 
         CurrentCharacter.SetInfo(CurrentCharacter.DataId);
 
+        Manager.AchievementM.Init();
         EquipedEquipments = new Dictionary<EquipmentType, Equipment>();
         for(int i =0; i< OwnedEquipment.Count; i++)
         {

@@ -6,29 +6,53 @@ using System.Linq;
 using Data;
 public class AchievementManager 
 {
-   public List<Data.AchievementData> achievements
-    {
-        get { return Manager.GameM.Achievements; }
-        set { Manager.GameM.Achievements = value; }
-    }
+    public List<Data.AchievementData> achievements;
+    private Dictionary<Define.MissionTarget, List<AchievementData>> byTarget = new Dictionary<Define.MissionTarget, List<AchievementData>>();
 
-    //public event Action<Data.AchievementData> OnAchievementCompleted;
-
+    
+    
     public void Init()
     {
-        achievements = Manager.DataM.AchievementDataDic.Values.ToList();
+        achievements = new List<AchievementData>(Manager.DataM.AchievementDataDic.Values);
+
+        foreach(var achievement in achievements)
+        {
+            if (!byTarget.TryGetValue(achievement.MissionTarget, out var list))
+            {
+                list = new List<AchievementData>();
+                byTarget[achievement.MissionTarget] = list;
+            }
+            list.Add(achievement);
+        }
+
+        Manager.GameM.Achievements = achievements;
+    }
+
+
+    private void Complete(AchievementData _data)
+    {
+        if(!_data.IsRewarded)
+        {
+            _data.IsCompleted = true;
+            Manager.GameM.SaveGame();
+        }
+    }
+
+    private void Reward(AchievementData _data)
+    {
+        if(!_data.IsRewarded)
+        {
+            _data.IsRewarded = true;
+            _data.IsCompleted = true;
+            Manager.GameM.SaveGame();
+        }
     }
 
     //업적 완료 처리
     public void CompleteAchievement(int _dataID)
     {
-         AchievementData achievement = achievements.Find(a => a.AchievementID == _dataID);
-
-        if(achievement != null && !achievement.IsRewarded)
-        {
-            achievement.IsCompleted = true;
-            Manager.GameM.SaveGame();
-        }
+        AchievementData achievement = achievements.Find(a => a.AchievementID == _dataID);
+        if (achievement != null) Complete(achievement);
     }
 
 
@@ -36,242 +60,103 @@ public class AchievementManager
     public void RewardedAchievement(int _dataID)
     {
         AchievementData achievement = achievements.Find(a => a.AchievementID == _dataID);
-        if(achievement != null && !achievement.IsRewarded)
-        {
-            achievement.IsRewarded = true;
-            achievement.IsCompleted = true;
-            Manager.GameM.SaveGame();
-        }
+        if (achievement != null) Reward(achievement);
     }
 
+
+    //미션 타겟별 진행 체크 헬퍼
+    private void ProcessTarget(Define.MissionTarget _target, Func<int> _getValue, bool _requireExact = true)
+    {
+        if (!byTarget.TryGetValue(_target, out var list)) return;
+
+        int progress = _getValue();
+        foreach(var data in list)
+        {
+            if (data.IsCompleted && data.IsRewarded) continue;
+
+            if(_requireExact ? data.MissionTargetValue == progress
+                             : data.MissionTargetValue <= progress)
+            {
+                Complete(data);
+            }
+        }
+        Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.AchievementPopup);
+    }
 
     public List<AchievementData> GetAchievements()
     {
-        List<AchievementData> achievement = new List<AchievementData>();
+        List<AchievementData> result = new List<AchievementData>();
 
-        foreach(Define.MissionTarget missionTarget in Enum.GetValues(typeof(Define.MissionTarget)))
+        foreach (Define.MissionTarget missionTarget in Enum.GetValues(typeof(Define.MissionTarget)))
         {
-            List<AchievementData> list = achievements.Where(a => a.MissionTarget == missionTarget).ToList();
+            if (!byTarget.TryGetValue(missionTarget, out var list) || list.Count == 0) continue;
 
-            for (int i = 0; i < list.Count; i++)
+            AchievementData pick = null;
+
+            foreach (var data in list)
             {
-                if(!list[i].IsCompleted)
+                if (!data.IsCompleted || !data.IsRewarded)
                 {
-                    achievement.Add(list[i]);
+                    pick = data;
                     break;
                 }
-                else
-                {
-                    if(!list[i].IsRewarded)
-                    {
-                        achievement.Add(list[i]);
-                        break;
-                    }
-
-                    if (i == list.Count - 1)
-                        achievement.Add(list[i]);
-                }
             }
-        }
 
-        return achievement;
+            result.Add(pick ?? list[^1]);
+        }
+        return result;
     }
 
+    public List<AchievementData> CheckAchievements()
+    {
+        List<AchievementData> result = new List<AchievementData>();
+
+        foreach (var achievement in achievements)
+        {
+            if (achievement.IsCompleted && !achievement.IsRewarded)
+                result.Add(achievement);
+        }
+
+        return result;
+    }
     public int GetProgressValue(Define.MissionTarget _missionTarget)
     {
-        switch (_missionTarget)
-        {
-            case Define.MissionTarget.StageEnter:
-                return Manager.GameM.MissionDic[_missionTarget].Progress;
 
-            case Define.MissionTarget.EquipmentLevelUp:
-                return Manager.GameM.MissionDic[_missionTarget].Progress;
+        return _missionTarget switch
+        { 
+            Define.MissionTarget.StageEnter => Manager.GameM.MissionDic[_missionTarget].Progress,
+            Define.MissionTarget.EquipmentLevelUp => Manager.GameM.MissionDic[_missionTarget].Progress,
+            Define.MissionTarget.EquipmentMerge => Manager.GameM.MissionDic[_missionTarget].Progress,
+            Define.MissionTarget.ADWatchIng => Manager.GameM.MissionDic[_missionTarget].Progress,
+            
+            Define.MissionTarget.OfflineRewardGet => Manager.GameM.OfflineRewardGetCount,
+            Define.MissionTarget.FastOfflineRewardGet => Manager.GameM.FastOfflineRewardGetCount,
 
+            Define.MissionTarget.MonsterKill => Manager.GameM.TotalMonsterKillCount,
+            Define.MissionTarget.EliteMonsterKill => Manager.GameM.TotalEliteMonsterKillCount,
+            Define.MissionTarget.BossKill => Manager.GameM.TotalBossKillCount,
 
-            case Define.MissionTarget.EquipmentMerge:
-                return Manager.GameM.MissionDic[_missionTarget].Progress;
+            Define.MissionTarget.StageClear => Manager.GameM.GetMaxStageClearIndex(),
+            Define.MissionTarget.Login => Manager.TimeM.AttendanceDay,
+            Define.MissionTarget.CommonGachaOpen => Manager.GameM.CommonGachaOpenCount,
+            Define.MissionTarget.AdvancedGachaOpen => Manager.GameM.AdvancedGachaOpenCount,
 
-            case Define.MissionTarget.OfflineRewardGet:
-                return Manager.GameM.OfflineRewardGetCount;
-
-            case Define.MissionTarget.FastOfflineRewardGet:
-                return Manager.GameM.FastOfflineRewardGetCount;
-
-            case Define.MissionTarget.MonsterKill:
-                return Manager.GameM.TotalMonsterKillCount;
-
-            case Define.MissionTarget.EliteMonsterKill:
-                return Manager.GameM.TotalEliteMonsterKillCount;
-
-            case Define.MissionTarget.BossKill:
-                return Manager.GameM.TotalBossKillCount;
-
-            case Define.MissionTarget.StageClear:
-                return Manager.GameM.GetMaxStageClearIndex();
-
-            case Define.MissionTarget.ADWatchIng:
-                return Manager.GameM.MissionDic[_missionTarget].Progress;
-
-            case Define.MissionTarget.Login:
-                return Manager.TimeM.AttendanceDay;
-
-            case Define.MissionTarget.CommonGachaOpen:
-                return Manager.GameM.CommonGachaOpenCount;
-
-            case Define.MissionTarget.AdvancedGachaOpen:
-                return Manager.GameM.AdvancedGachaOpenCount;
-
-        }
-        return 0;
+            _ => 0
+        };
     }
 
     public AchievementData GetNextAchievement(int _dataID)
     {
-        AchievementData achievement = achievements.Find(a => a.AchievementID == _dataID + 1);
-        if(achievement != null && !achievement.IsRewarded)
-        {
-            return achievement;
-        }
-        return null;
+        return achievements.Find(a => a.AchievementID == _dataID + 1 && !a.IsRewarded);
     }
 
-    //출석
-    public void Attendance()
-    {
-         List<AchievementData> list = achievements.Where(data => data.MissionTarget == Define.MissionTarget.Login).ToList();
-
-        foreach(AchievementData achievement in list)
-        {
-            if (!achievement.IsCompleted && achievement.MissionTargetValue == Manager.TimeM.AttendanceDay)
-            {
-                CompleteAchievement(achievement.AchievementID);
-            }
-        }
-
-        Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.AchievementPopup);
-    }
-
-    //스테이지 클리어
-    public void StageClear()
-    {
-        int MaxStageClearIndex = Manager.GameM.GetMaxStageClearIndex();
-
-        List<AchievementData> list = achievements.Where(data => data.MissionTarget == Define.MissionTarget.StageClear).ToList();
-        foreach(AchievementData achievement in list)
-        {
-            if(!achievement.IsCompleted && achievement.MissionTargetValue == MaxStageClearIndex)
-            {
-                CompleteAchievement(achievement.AchievementID);
-            }
-        }
-    }
-
-    //일반 장비상자
-    public void CommonBoxOpen()
-    {
-        List<AchievementData> list = achievements.Where(data => data.MissionTarget == Define.MissionTarget.CommonGachaOpen).ToList();
-
-        foreach(AchievementData achievement in list)
-        {
-            if(!achievement.IsCompleted && achievement.MissionTargetValue <= Manager.GameM.CommonGachaOpenCount)
-            {
-                CompleteAchievement(achievement.AchievementID);
-            }
-        }
-
-        Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.AchievementPopup);
-    }
-
-
-    //고급 장비상자
-    public void AdvancedBoxOpen()
-    {
-        List<AchievementData> list = achievements.Where(data => data.MissionTarget == Define.MissionTarget.AdvancedGachaOpen).ToList();
-
-        foreach (AchievementData achievement in list)
-        {
-            if (!achievement.IsCompleted && achievement.MissionTargetValue <= Manager.GameM.AdvancedGachaOpenCount)
-            {
-                CompleteAchievement(achievement.AchievementID);
-            }
-        }
-
-        Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.AchievementPopup);
-    }
-    
-    //정찰
-    public void OfflineReward()
-    {
-        List<AchievementData> list = achievements.Where(data => data.MissionTarget == Define.MissionTarget.OfflineRewardGet).ToList();
-
-        foreach (AchievementData achievement in list)
-        {
-            if (!achievement.IsCompleted && achievement.MissionTargetValue == Manager.GameM.OfflineRewardGetCount)
-            {
-                CompleteAchievement(achievement.AchievementID);
-            }
-        }
-
-        Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.AchievementPopup);
-    }
-
-    //빠른정찰
-    public void FastReward()
-    {
-        List<AchievementData> list = achievements.Where(data => data.MissionTarget == Define.MissionTarget.FastOfflineRewardGet).ToList();
-
-        foreach (AchievementData achievement in list)
-        {
-            if (!achievement.IsCompleted && achievement.MissionTargetValue == Manager.GameM.FastOfflineRewardGetCount)
-            {
-                CompleteAchievement(achievement.AchievementID);
-            }
-        }
-        Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.AchievementPopup);
-    }
-
-    //몬스터 처치
-
-    public void MonsterKill()
-    {
-        List<AchievementData> list = achievements.Where(data => data.MissionTarget == Define.MissionTarget.MonsterKill).ToList();
-
-        foreach (AchievementData achievement in list)
-        {
-            if (!achievement.IsCompleted && achievement.MissionTargetValue == Manager.GameM.TotalMonsterKillCount)
-            {
-                CompleteAchievement(achievement.AchievementID);
-            }
-        }
-    }
-
-    // 엘리트 처치
-    public void EliteMonsterKill()
-    {
-        List<AchievementData> list = achievements.Where(data => data.MissionTarget == Define.MissionTarget.EliteMonsterKill).ToList();
-
-        foreach (AchievementData achievement in list)
-        {
-            if (!achievement.IsCompleted && achievement.MissionTargetValue == Manager.GameM.TotalEliteMonsterKillCount)
-            {
-                CompleteAchievement(achievement.AchievementID);
-            }
-        }
-    }
-
-    //보스 처치
-
-    public void BossKill()
-    {
-        List<AchievementData> list = achievements.Where(data => data.MissionTarget == Define.MissionTarget.BossKill).ToList();
-
-        foreach (AchievementData achievement in list)
-        {
-            if (!achievement.IsCompleted && achievement.MissionTargetValue == Manager.GameM.TotalBossKillCount)
-            {
-                CompleteAchievement(achievement.AchievementID);
-            }
-        }
-    }
-
+    public void Attendance() => ProcessTarget(Define.MissionTarget.Login, () => Manager.TimeM.AttendanceDay);
+    public void StageClear() => ProcessTarget(Define.MissionTarget.StageClear, () => Manager.GameM.GetMaxStageClearIndex());
+    public void CommonBoxOpen() => ProcessTarget(Define.MissionTarget.CommonGachaOpen, () => Manager.GameM.CommonGachaOpenCount, _requireExact: false);
+    public void AdvancedBoxOpen() => ProcessTarget(Define.MissionTarget.AdvancedGachaOpen, () => Manager.GameM.AdvancedGachaOpenCount, _requireExact : false);
+    public void OfflineReward() => ProcessTarget(Define.MissionTarget.OfflineRewardGet, () => Manager.GameM.OfflineRewardGetCount);
+    public void FastReward() => ProcessTarget(Define.MissionTarget.FastOfflineRewardGet, () => Manager.GameM.FastOfflineRewardGetCount);
+    public void MonsterKill() => ProcessTarget(Define.MissionTarget.MonsterKill, () => Manager.GameM.TotalMonsterKillCount);
+    public void EliteMonsterKill() => ProcessTarget(Define.MissionTarget.EliteMonsterKill, () => Manager.GameM.TotalEliteMonsterKillCount);
+    public void BossKill() => ProcessTarget(Define.MissionTarget.BossKill, () => Manager.GameM.TotalBossKillCount);
 }

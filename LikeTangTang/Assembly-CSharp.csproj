@@ -125,7 +125,6 @@
     <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_EquipmentResetPopup.cs" />
     <Compile Include="Assets\@Scripts\UI\UI_MonsterInfoItem.cs" />
     <Compile Include="Assets\@Scripts\Contents\SceneChangeAnimation_Out.cs" />
-    <Compile Include="Assets\@Scripts\Test\Test.cs" />
     <Compile Include="Assets\@Scripts\Controllers\DropItem\BombController.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\Sequence\BossDash.cs" />
     <Compile Include="Assets\@Scripts\UI\Scene\UI_GameScene.cs" />
@@ -190,7 +189,6 @@
     <Compile Include="Assets\@Scripts\UI\Popup\GameScene\UI_ContinuePopup.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_DiaChargePopup.cs" />
     <Compile Include="Assets\@Scripts\Contents\Skills\Sequence\BossSkillProjectile.cs" />
-    <Compile Include="Assets\@Scripts\Test\UI_Test.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_MergeAllResultPopup.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_TotalDamagePopup.cs" />
     <Compile Include="Assets\@Scripts\Manager\System\CustomSceneManager.cs" />

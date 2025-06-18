@@ -9,6 +9,9 @@ using UnityEngine;
 //NOTE : 스킬 관련된 모든 코드들 여기서 사용할것임(플레이어에 최소한의 코드만 들어가게.), 스킬매니저임 쉽게 말해서
 public class SkillComponent : MonoBehaviour
 {
+
+    private GameManager gameM;
+    private ResourceManager resourceM;
     public List<SkillBase> skillList { get; }= new List<SkillBase>();
     public List<int> evolutionItemList { get; } = new List<int>();
     public List<SkillBase> RepeatSkills { get;} = new List<SkillBase>{ };
@@ -59,84 +62,82 @@ public class SkillComponent : MonoBehaviour
     //     return null;
     // }
 
+    private void Awake()
+    {
+        gameM = Manager.GameM;
+        resourceM = Manager.ResourceM;
+    }
+
     public void AddSkill(Define.SkillType _type, int _skillID = 0)
     {
-        string name = _type.ToString();
         SkillBase skill = null;
+        Transform parent = transform;
 
-        //보스 전용
-        if (_type == Define.SkillType.BossMove || _type == Define.SkillType.BossDash || _type == Define.SkillType.BossSkill)
+        switch(_type)
         {
-            Type skillType = Type.GetType(name);
-            skill = gameObject.AddComponent(skillType) as SkillBase;
-            SequenceSkills.Add(skill as SequenceSkill);
-        }
-        else if (_type == Define.SkillType.EnergyRing || _type == Define.SkillType.ElectronicField || _type == Define.SkillType.SpectralSlash)
-        {
-            GameObject go = Manager.ResourceM.Instantiate(name, Utils.FindChild(gameObject, Define.STANDARDNAME).transform);
-            if (go != null)
-            {
-                skill = go.GetOrAddComponent<SkillBase>();
-            }
-        }
-        else
-        {
-            Type skillType = Type.GetType(name);
-            skill = gameObject.AddComponent(skillType) as SkillBase;
+            case Define.SkillType.BossMove:
+            case Define.SkillType.BossDash:
+            case Define.SkillType.BossSkill:
+                skill = gameObject.AddComponent(Type.GetType(_type.ToString())) as SkillBase;
+                if (skill is SequenceSkill seq) SequenceSkills.Add(seq);
+                break;
+
+            case Define.SkillType.EnergyRing:
+            case Define.SkillType.ElectronicField:
+            case Define.SkillType.SpectralSlash:
+                var go = resourceM.Instantiate(_type.ToString(), parent);
+                if (go != null) skill = go.GetOrAddComponent<SkillBase>();
+                break;
+
+            default:
+                skill = gameObject.AddComponent(Type.GetType(_type.ToString())) as SkillBase;
+                break;
         }
 
+        if (skill == null) return;
         skill.UpdateSkillData();
+        skillList.Add(skill);
 
-        if (skill != null) skillList.Add(skill);
-        if (SavedBattleSkill.ContainsKey(_type))
-            SavedBattleSkill[_type] = skill.SkillLevel;
-        else
-            SavedBattleSkill.Add(_type, skill.SkillLevel);
-
-        Manager.GameM.ContinueDatas.SavedBattleSkill = SavedBattleSkill;
+        SavedBattleSkill[_type] = skill.SkillLevel;
+        gameM.ContinueDatas.SavedBattleSkill = SavedBattleSkill;
     }
 
     public void AddSpecialSkill(Data.SpecialSkillData _skill, bool _isLoadSkill = false)
     {
         _skill.IsLearned = true;
+        SpecialSkills.Add(_skill);
 
         if (_skill.SpecialSkillName == Define.SpecialSkillName.Healing)
         {
             Manager.GameM.player.SpecialSkillHealCount++;
-            UpdateSkillUI?.Invoke();
         }
 
-        SpecialSkills.Add(_skill);
+       
 
         if (_isLoadSkill)
         {
             foreach (SkillBase playerSkill in skillList)
             {
                 if (_skill.SpecialSkillName.ToString() == playerSkill.Skilltype.ToString())
-                {
                     playerSkill.UpdateSkillData();
-                }
+                
             }
-            return;
         }
-        
-
-        if (_skill.SkillType == Define.SpecialSkillType.General)
+        else if (_skill.SkillType == Define.SpecialSkillType.General)
         {
             GeneralSpecialSkill(_skill);
         }
-        else if (_skill.SkillType == Define.SpecialSkillType.Special)
+        else
         {
             foreach (SkillBase playerSkill in skillList)
             {
                 if (_skill.SpecialSkillName.ToString() == playerSkill.Skilltype.ToString())
-                {
-                    
                     playerSkill.UpdateSkillData();
-                }
             }
         }
         Manager.GameM.ContinueDatas.SavedSpecialSkill.Add(_skill);
+        UpdateSkillUI?.Invoke();
+        gameM.SaveGame();
     }
 
     public void LoadSkill(Define.SkillType _skillType, int _level)
@@ -148,64 +149,73 @@ public class SkillComponent : MonoBehaviour
         }
     }
 
-    public void RemoveSkill()
-    {
-
-    }
-
-
     public void LevelUpSkill(Define.SkillType _type)
     {   
         for(int i =0; i< skillList.Count; i++)
-        {   
-            if(skillList[i].Skilltype == _type)
-            {
-                if(skillList[i].SkillLevel > 6) continue;
-                skillList[i].OnSkillLevelup();
-                UpdateSkillUI?.Invoke();
+        {
+            var sb = skillList[i];
 
-                if (SavedBattleSkill.ContainsKey(_type))
-                {
-                    SavedBattleSkill[_type] = skillList[i].SkillLevel;
-                    Manager.GameM.ContinueDatas.SavedBattleSkill = SavedBattleSkill;
-                    Manager.GameM.SaveGame();
-                }
-            }
+            if (sb.Skilltype != _type) continue;
+            if (sb.SkillLevel > 6) continue;
+            sb.OnSkillLevelup();
+
+            SavedBattleSkill[_type] = sb.SkillLevel;
+            gameM.ContinueDatas.SavedBattleSkill = SavedBattleSkill;
+
+            UpdateSkillUI?.Invoke();
+            gameM.SaveGame();
+
+            break;
         }
     }
 
     public List<SkillBase> RecommendSkills()
-    {    
-        List<SkillBase> skillList = Manager.GameM.player.Skills.skillList.ToList();
-        List<SkillBase> activeSkills = skillList.FindAll(skill => skill.isLearnSkill);
+    {
+        var all = skillList;
+        var active = new List<SkillBase>(Define.MAX_SKILL_COUNT);
+        for (int i = 0; i < all.Count; i++)
+            if (all[i].isLearnSkill) active.Add(all[i]);
 
-        List<SkillBase> recommendSkills;
-        if(activeSkills.Count == Define.MAX_SKILL_COUNT)
+        var candidates = (active.Count == Define.MAX_SKILL_COUNT) 
+            ? active.FindAll(s => s.SkillLevel < Define.MAX_SKILL_LEVEL) 
+            : all.FindAll(s => s.SkillLevel < Define.MAX_SKILL_LEVEL);
+
+        for(int i =0; i<candidates.Count; i++)
         {
-            recommendSkills = activeSkills.FindAll(s => s.SkillLevel < Define.MAX_SKILL_LEVEL);
+            int j = UnityEngine.Random.Range(i, candidates.Count);
+            (candidates[i], candidates[j]) = (candidates[j], candidates[i]);
         }
-        else
-        {
-            recommendSkills = skillList.FindAll(s => s.SkillLevel < Define.MAX_SKILL_LEVEL);
-            
-        }
-        recommendSkills.Shuffle();
-        return recommendSkills.Take(3).ToList();
+
+        return candidates.Count <= 3 ? candidates : candidates.GetRange(0, 3);
+
+        //List<SkillBase> skillList = Manager.GameM.player.Skills.skillList.ToList();
+        //List<SkillBase> activeSkills = skillList.FindAll(skill => skill.isLearnSkill);
+
+        //List<SkillBase> recommendSkills;
+        //if(activeSkills.Count == Define.MAX_SKILL_COUNT)
+        //{
+        //    recommendSkills = activeSkills.FindAll(s => s.SkillLevel < Define.MAX_SKILL_LEVEL);
+        //}
+        //else
+        //{
+        //    recommendSkills = skillList.FindAll(s => s.SkillLevel < Define.MAX_SKILL_LEVEL);
+
+        //}
+        //recommendSkills.Shuffle();
+        //return recommendSkills.Take(3).ToList();
     }
 
     public List<int> GetAvailableEvolutionItems()
     {
         List<int> evoItems = new List<int>();
 
-        foreach (var skill in skillList)
+        for(int i =0; i< skillList.Count; i++)
         {
-            if (!skill.isLearnSkill) continue;
-            if (skill.SkillLevel != 5) continue;
-            if (!skill.isCanEvolve()) continue;
-            if (skill.SkillDatas.EvolutionItemID == 0) continue;
+            var sb = skillList[i];
+            if (!sb.isLearnSkill || sb.SkillLevel != 5) continue;
 
-            if (skill.SkillDatas.EvolutionItemID != 0)
-                evoItems.Add(skill.SkillDatas.EvolutionItemID);
+            int id = sb.SkillDatas.EvolutionItemID;
+            if (id > 0) evoItems.Add(id);
         }
 
         return evoItems;
@@ -216,45 +226,44 @@ public class SkillComponent : MonoBehaviour
     {
         List<SkillBase> baseSkillCandidates = RecommendSkills();
         List<int> evoItemCandidates = GetAvailableEvolutionItems();
+        List<object> finalCandidates = new List<object>(baseSkillCandidates.Count + evoItemCandidates.Count);
 
-        List<object> finalCandidates = new List<object>();
-
-        if(baseSkillCandidates != null) finalCandidates.AddRange(baseSkillCandidates);
-        if(evoItemCandidates.Count > 0) finalCandidates.AddRange(evoItemCandidates);
+        finalCandidates.AddRange(baseSkillCandidates);
+        finalCandidates.AddRange(evoItemCandidates);
         
-        finalCandidates.Shuffle();
+        for(int i =0; i<finalCandidates.Count; i++)
+        {
+            int j = UnityEngine.Random.Range(i, finalCandidates.Count);
+            (finalCandidates[i], finalCandidates[j]) = (finalCandidates[j], finalCandidates[i]);
+        }
 
-        return finalCandidates.Take(3).ToList();
+        return finalCandidates.Count <= 3 ? finalCandidates : finalCandidates.GetRange(0, 3);
     }
 
    
     public void TryEvolveSkill(int _evolutionItemID)
     {
-        foreach(var skill in skillList)
+        for(int i =0; i<skillList.Count; i++)
         {
-            if (!skill.isLearnSkill) continue;
-            if (!skill.isCanEvolve()) continue;
+            var sb = skillList[i];
+            if (!sb.isLearnSkill || !sb.isCanEvolve()) continue;
+            if (sb.SkillDatas.EvolutionItemID != _evolutionItemID) continue;
 
-            if (skill.SkillDatas.EvolutionItemID == _evolutionItemID)
-            {
-                evolutionItemList.Add(_evolutionItemID);
-                skill.Evolution();
+            evolutionItemList.Add(_evolutionItemID);
+            sb.Evolution();
 
-                SavedEvolutionSkill[skill.Skilltype] = _evolutionItemID;
-                Manager.GameM.ContinueDatas.SavedEvolutionSkill = SavedEvolutionSkill;
-                UpdateSkillUI?.Invoke();
-                Manager.GameM.SaveGame();
+            SavedEvolutionSkill[sb.Skilltype] = _evolutionItemID;
+            gameM.ContinueDatas.SavedEvolutionSkill = SavedEvolutionSkill;
 
-                break;
-            }
+            UpdateSkillUI?.Invoke();
+            gameM.SaveGame();
+            break;
         }
     }
 
 
     public void GeneralSpecialSkill(Data.SpecialSkillData _skill)
     {
-        List<Data.SpecialSkillData> skillList = SpecialSkills.Where(_skill => _skill.SkillType == Define.SpecialSkillType.General).ToList();
-
         PlayerController player = Manager.GameM.player;
         player.CriticalRate += _skill.CriticalBouns;
         player.MaxHpRate += _skill.MaxHpBonus;
@@ -266,7 +275,6 @@ public class SkillComponent : MonoBehaviour
         player.HpRegen += _skill.HpRegenBonus;
         player.CriticalDamage += _skill.CriticalDamageBouns;
         player.CollectDistBonus += _skill.CollectRangeBouns;
-
         player.UpdatePlayerStat();
     }
 
@@ -322,9 +330,6 @@ public class SkillComponent : MonoBehaviour
         StartNextSequenceSkill();
     }
 
-    public void StopSkills()
-    {
-        stopped = true;
-    }
+    public void StopSkills() => stopped = true;
     #endregion
 }

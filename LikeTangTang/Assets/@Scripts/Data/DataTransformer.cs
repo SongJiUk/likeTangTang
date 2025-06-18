@@ -44,18 +44,13 @@ public class DataTransformer : EditorWindow
         ParseMaterialData("MaterialData");
         ParseSupportSkillData("SpecialSkillData");
         ParseDropItemData("DropItemData");
-        ParseGachaData("GachaData"); // DictionaryŰ�� ���� �����Ͱ� ���� #Neo
+        ParseGachaData("GachaData");
         ParseEvolutionData("EvolutionData");
         ParseMissionData("MissionData");
         ParseAchievementData("AchievementData");
         ParseCheckOutData("AttendanceCheckData");
         ParseOfflineRewardData("OfflineRewardData");
         ParseCharacterLevelData("CharacterLevelData");
-        // ParseBattlePassData("BattlePass");
-        // ParseDailyShopData("DailyShop");
-        // ParseAccountPassDataData("AccountPass");
-        //ParseBossData("Boss");
-        //ParseChapterResourceData("ChapterResource");
         Debug.Log("Complete DataTransformer");
     }
 
@@ -643,41 +638,6 @@ public class DataTransformer : EditorWindow
         return gachaTable;
     }
 
-    //     static void ParseStagePackageData(string filename)
-    //     {
-    //         StagePackageDataLoader loader = new StagePackageDataLoader();
-
-    //         #region ExcelData
-    //         string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/Excel/{filename}Data.csv").Split("\n");
-
-    //         for (int y = 1; y < lines.Length; y++)
-    //         {
-    //             string[] row = lines[y].Replace("\r", "").Split(',');
-
-    //             if (row.Length == 0)
-    //                 continue;
-    //             if (string.IsNullOrEmpty(row[0]))
-    //                 continue;
-
-    //             int i = 0;
-    //             StagePackageData stp = new StagePackageData();
-    //             stp.StageIndex = ConvertValue<int>(row[i++]);
-    //             stp.DiaValue = ConvertValue<int>(row[i++]);
-    //             stp.GoldValue = ConvertValue<int>(row[i++]);
-    //             stp.RandomScrollValue = ConvertValue<int>(row[i++]);
-    //             stp.GoldKeyValue = ConvertValue<int>(row[i++]);
-    //             stp.ProductCostValue = ConvertValue<int>(row[i++]);
-
-    //             loader.stagePackages.Add(stp);
-    //         }
-
-    //         #endregion
-
-    //         string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
-    //         File.WriteAllText($"{Application.dataPath}/@Resources/Data/JsonData/{filename}Data.json", jsonStr);
-    //         AssetDatabase.Refresh();
-    //     }
-
     static void ParseMissionData(string filename)
     {
         MissionDataLoader loader = new MissionDataLoader();
@@ -855,114 +815,7 @@ public class DataTransformer : EditorWindow
         AssetDatabase.Refresh();
     }
 
-    //     static void ParseBattlePassData(string filename)
-    //     {
-    //         BattlePassDataLoader loader = new BattlePassDataLoader();
-
-    //         #region ExcelData
-    //         string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/Excel/{filename}Data.csv").Split("\n");
-
-    //         for (int y = 1; y < lines.Length; y++)
-    //         {
-    //             string[] row = lines[y].Replace("\r", "").Split(',');
-
-    //             if (row.Length == 0)
-    //                 continue;
-    //             if (string.IsNullOrEmpty(row[0]))
-    //                 continue;
-
-    //             int i = 0;
-    //             BattlePassData bts = new BattlePassData();
-    //             bts.PassLevel = ConvertValue<int>(row[i++]);
-    //             bts.FreeRewardItemId = ConvertValue<int>(row[i++]);
-    //             bts.FreeRewardItemValue = ConvertValue<int>(row[i++]);
-    //             bts.RareRewardItemId = ConvertValue<int>(row[i++]);
-    //             bts.RareRewardItemValue = ConvertValue<int>(row[i++]);
-    //             bts.EpicRewardItemId = ConvertValue<int>(row[i++]);
-    //             bts.EpicRewardItemValue = ConvertValue<int>(row[i++]);
-
-
-    //             loader.battles.Add(bts);
-    //         }
-
-    //         #endregion
-
-    //         string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
-    //         File.WriteAllText($"{Application.dataPath}/@Resources/Data/JsonData/{filename}Data.json", jsonStr);
-    //         AssetDatabase.Refresh();
-    //     }
-
-    //     static void ParseDailyShopData(string filename)
-    //     {
-    //         DailyShopDataLoader loader = new DailyShopDataLoader();
-
-    //         #region ExcelData
-    //         string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/Excel/{filename}Data.csv").Split("\n");
-
-    //         for (int y = 1; y < lines.Length; y++)
-    //         {
-    //             string[] row = lines[y].Replace("\r", "").Split(',');
-
-    //             if (row.Length == 0)
-    //                 continue;
-    //             if (string.IsNullOrEmpty(row[0]))
-    //                 continue;
-
-    //             int i = 0;
-    //             DailyShopData dai = new DailyShopData();
-    //             dai.Index = ConvertValue<int>(row[i++]);
-    //             dai.BuyItemId = ConvertValue<int>(row[i++]);
-    //             dai.CostItemId = ConvertValue<int>(row[i++]);
-    //             dai.CostValue = ConvertValue<int>(row[i++]);
-    //             dai.DiscountValue = ConvertValue<float>(row[i++]);
-
-    //             loader.dailys.Add(dai);
-    //         }
-
-    //         #endregion
-
-    //         string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
-    //         File.WriteAllText($"{Application.dataPath}/@Resources/Data/JsonData/{filename}Data.json", jsonStr);
-    //         AssetDatabase.Refresh();
-    //     }
-
-    //     static void ParseAccountPassDataData(string filename)
-    //     {
-    //         AccountPassDataLoader loader = new AccountPassDataLoader();
-
-    //         #region ExcelData
-    //         string[] lines = File.ReadAllText($"{Application.dataPath}/@Resources/Data/Excel/{filename}Data.csv").Split("\n");
-
-    //         for (int y = 1; y < lines.Length; y++)
-    //         {
-    //             string[] row = lines[y].Replace("\r", "").Split(',');
-
-    //             if (row.Length == 0)
-    //                 continue;
-    //             if (string.IsNullOrEmpty(row[0]))
-    //                 continue;
-
-    //             int i = 0;
-    //             AccountPassData aps = new AccountPassData();
-    //             aps.AccountLevel = ConvertValue<int>(row[i++]);
-    //             aps.FreeRewardItemId = ConvertValue<int>(row[i++]);
-    //             aps.FreeRewardItemValue = ConvertValue<int>(row[i++]);
-    //             aps.RareRewardItemId = ConvertValue<int>(row[i++]);
-    //             aps.RareRewardItemValue = ConvertValue<int>(row[i++]);
-    //             aps.EpicRewardItemId = ConvertValue<int>(row[i++]);
-    //             aps.EpicRewardItemValue = ConvertValue<int>(row[i++]);
-
-
-    //             loader.accounts.Add(aps);
-    //         }
-
-    //         #endregion
-
-    //         string jsonStr = JsonConvert.SerializeObject(loader, Formatting.Indented);
-    //         File.WriteAllText($"{Application.dataPath}/@Resources/Data/JsonData/{filename}Data.json", jsonStr);
-    //         AssetDatabase.Refresh();
-    //     }
-
+   
     public static T ConvertValue<T>(string value)
     {
         if (string.IsNullOrEmpty(value))

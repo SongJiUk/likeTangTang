@@ -9,6 +9,7 @@ public class Character
     public Data.CharacterLevelData CharacterLevelData;
     public Dictionary<int, Data.EvolutionData> evolutionData = new();
     public Dictionary<int, bool> isLearnEvloution = new();
+
     public int DataId { get; set; } = 1;
     public int Level { get; set; } = 1;
     public int UseCoupon { get; set; }
@@ -45,56 +46,28 @@ public class Character
 
     public void Init(int _key)
     {
-        
         DataId = _key;
-        Data = Manager.DataM.CreatureDic[DataId];
-        CharacterLevelData = Manager.DataM.CharacterLevelDataDic[Level];
-        for (int i = 1; i <= Define.CHARACTER_MAX_LEVEL; i++)
-        {
-            if (i % 3 == 0)
-            {
-                if (Manager.DataM.EvolutionDataDic.TryGetValue(i, out var data))
-                {
-                    evolutionData.Add(i, data);
-                    isLearnEvloution.Add(i, false);
-                }
+        Level = 1;
+       
 
+        for (int i =3; i<=Define.CHARACTER_MAX_LEVEL; i+= 3)
+        {
+            if(Manager.DataM.EvolutionDataDic.TryGetValue(i, out var data))
+            {
+                evolutionData[i] = data;
+                isLearnEvloution[i] = false;
             }
         }
-        MaxHp = Data.MaxHp + CharacterLevelData.HpUp;
-        MaxHpRate = Data.HpRate;
-        Attack = Data.Attack + CharacterLevelData.AttackUp;
-        AttackRate = Data.AttackRate;
-        Def = Data.Def + CharacterLevelData.DefUp;
-        DefRate = Data.AttackRate;
-        MoveSpeed = Data.Speed + CharacterLevelData.SpeedUp;
-        SpeedRate = Data.MoveSpeedRate;
-        CriticalRate = CharacterLevelData.CriticalUp;
-        CriticalDamage = CharacterLevelData.CriticalDamageUp;
+
+        UpdateStats();
     }
 
-    public void SetInfo(int _key)
-    {
-        DataId = _key;
-        Data = Manager.DataM.CreatureDic[DataId];
-        CharacterLevelData = Manager.DataM.CharacterLevelDataDic[Level];
-        MaxHp = Data.MaxHp + CharacterLevelData.HpUp;
-        MaxHpRate = Data.HpRate + Evol_MaxHpRate;
-        Attack = Data.Attack + CharacterLevelData.AttackUp;
-        AttackRate = Data.AttackRate + Evol_AttackRate; ;
-        Def = Data.Def + CharacterLevelData.DefUp;
-        DefRate = Data.AttackRate + Evol_DefRate;
-        MoveSpeed = Data.Speed + CharacterLevelData.SpeedUp;
-        SpeedRate = Data.MoveSpeedRate + Evol_SpeedRate;
-        CriticalRate = CharacterLevelData.CriticalUp + Evol_CriticalRate;
-        CriticalDamage = CharacterLevelData.CriticalDamageUp + Evol_CriticalDamage;
-    }
 
-    public void LevelUp()
+    private void UpdateStats()
     {
-        Level++;
         Data = Manager.DataM.CreatureDic[DataId];
         CharacterLevelData = Manager.DataM.CharacterLevelDataDic[Level];
+
         MaxHp = Data.MaxHp + CharacterLevelData.HpUp;
         MaxHpRate = Data.HpRate + Evol_MaxHpRate;
         Attack = Data.Attack + CharacterLevelData.AttackUp;
@@ -107,87 +80,78 @@ public class Character
         CriticalDamage = CharacterLevelData.CriticalDamageUp + Evol_CriticalDamage;
 
         int index = Manager.GameM.Characters.IndexOf(this);
-        Manager.GameM.UpdateCharacter(index, this);
+        if(index >= 0)
+            Manager.GameM.UpdateCharacter(index, this);
+    }
+    public void SetInfo(int _key)
+    {
+        DataId = _key;
+        UpdateStats();
+    }
+
+    public void LevelUp()
+    {
+        if (++Level > Define.CHARACTER_MAX_LEVEL)
+            Level = Define.CHARACTER_MAX_LEVEL;
+
+        UpdateStats();
     }
 
     public void ChangeCharacter(int _id)
     {
         DataId = _id;
-        Data = Manager.DataM.CreatureDic[DataId];
-        CharacterLevelData = Manager.DataM.CharacterLevelDataDic[Level];
-        MaxHp = Data.MaxHp + CharacterLevelData.HpUp;
-        MaxHpRate = Data.HpRate + Evol_MaxHpRate;
-        Attack = Data.Attack + CharacterLevelData.AttackUp;
-        AttackRate = Data.AttackRate + Evol_AttackRate;
-        Def = Data.Def + CharacterLevelData.DefUp;
-        DefRate = Data.AttackRate + Evol_DefRate;
-        MoveSpeed = Data.Speed + CharacterLevelData.SpeedUp;
-        SpeedRate = Data.MoveSpeedRate + Evol_SpeedRate;
-        CriticalRate = CharacterLevelData.CriticalUp + Evol_CriticalRate;
-        CriticalDamage = CharacterLevelData.CriticalDamageUp + Evol_CriticalDamage;
-
-        int index = Manager.GameM.Characters.IndexOf(this);
-        Manager.GameM.UpdateCharacter(index, this);
+        UpdateStats();
     }
 
     public void SetEvolution()
     {
-        CharacterLevelData = Manager.DataM.CharacterLevelDataDic[Level];
-        MaxHp = Data.MaxHp + CharacterLevelData.HpUp;
-        MaxHpRate = Data.HpRate + Evol_MaxHpRate;
-        Attack = Data.Attack + CharacterLevelData.AttackUp;
-        AttackRate = Data.AttackRate + Evol_AttackRate;
-        Def = Data.Def + CharacterLevelData.DefUp;
-        DefRate = Data.AttackRate + Evol_DefRate;
-        MoveSpeed = Data.Speed + CharacterLevelData.SpeedUp;
-        SpeedRate = Data.MoveSpeedRate + Evol_SpeedRate;
-        CriticalRate = CharacterLevelData.CriticalUp + Evol_CriticalRate;
-        CriticalDamage = CharacterLevelData.CriticalDamageUp + Evol_CriticalDamage;
-
-        int index = Manager.GameM.Characters.IndexOf(this);
-        Manager.GameM.UpdateCharacter(index, this);
+        UpdateStats();
     }
 
     public void Evolution(int _level)
     {
-        if (evolutionData.TryGetValue(_level, out var data) || isLearnEvloution[_level])
-        {
-            isLearnEvloution[_level] = true;
-            switch (data.EvolutionAbility)
-            {
-                case Define.EvolutionAbility.AttackBonus:
+        if (!evolutionData.TryGetValue(_level, out var data) || isLearnEvloution[_level]) return;
 
-                    Evol_AttackRate += Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum].AttackBonus;
-                    break;
-                case Define.EvolutionAbility.MaxHpBonus:
-                    Evol_MaxHpRate += Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum].MaxHpBonus;
-                    break;
-                case Define.EvolutionAbility.GoldBonus:
-                    Evol_GoldBonus = Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum].GoldBouns;
-                    break;
-                case Define.EvolutionAbility.CriticalBonus:
-                    Evol_CriticalRate += Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum].GoldBouns;
-                    break;
-                case Define.EvolutionAbility.CoolTimeBonus:
-                    Evol_CoolTimeBouns += Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum].CoolTime;
-                    break;
-                case Define.EvolutionAbility.DefBonus:
-                    Evol_DefRate += Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum].DefBouns;
-                    break;
-                case Define.EvolutionAbility.DiaBonus:
-                    Evol_DiaBouns = Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum].DiaBouns;
-                    break;
-                case Define.EvolutionAbility.HealingBonus:
-                    Evol_HealingBouns += Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum].HealingBouns;
-                    break;
-                case Define.EvolutionAbility.CriticalDamageBonus:
-                    Evol_CriticalDamage += Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum].CriticalDamageBouns;
-                    break;
-                case Define.EvolutionAbility.MoveSpeedBonus:
-                    Evol_SpeedRate += Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum].MoveSpeedBonus;
-                    break;
-            }
+        isLearnEvloution[_level] = true;
+
+        var spec = Manager.DataM.SpecialSkillDic[data.EvolutionAbilityNum];
+
+
+        switch (data.EvolutionAbility)
+        {
+            case Define.EvolutionAbility.AttackBonus:
+
+                Evol_AttackRate += spec.AttackBonus;
+                break;
+            case Define.EvolutionAbility.MaxHpBonus:
+                Evol_MaxHpRate += spec.MaxHpBonus;
+                break;
+            case Define.EvolutionAbility.GoldBonus:
+                Evol_GoldBonus = spec.GoldBouns;
+                break;
+            case Define.EvolutionAbility.CriticalBonus:
+                Evol_CriticalRate += spec.GoldBouns;
+                break;
+            case Define.EvolutionAbility.CoolTimeBonus:
+                Evol_CoolTimeBouns += spec.CoolTime;
+                break;
+            case Define.EvolutionAbility.DefBonus:
+                Evol_DefRate += spec.DefBouns;
+                break;
+            case Define.EvolutionAbility.DiaBonus:
+                Evol_DiaBouns = spec.DiaBouns;
+                break;
+            case Define.EvolutionAbility.HealingBonus:
+                Evol_HealingBouns += spec.HealingBouns;
+                break;
+            case Define.EvolutionAbility.CriticalDamageBonus:
+                Evol_CriticalDamage += spec.CriticalDamageBouns;
+                break;
+            case Define.EvolutionAbility.MoveSpeedBonus:
+                Evol_SpeedRate += spec.MoveSpeedBonus;
+                break;
         }
+
 
         SetEvolution();
     }
