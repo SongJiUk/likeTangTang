@@ -730,8 +730,6 @@ public class GameManager
         equip.IsConfirmed = false;
         OwnedEquipment.Add(equip);
 
-        //TODO : EquipmnetInfo Change
-
         return equip;
     }
 

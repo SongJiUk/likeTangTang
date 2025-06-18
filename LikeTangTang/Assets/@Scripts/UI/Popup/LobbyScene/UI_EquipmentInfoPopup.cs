@@ -160,8 +160,6 @@ public class UI_EquipmentInfoPopup : UI_Popup
         else
             GetImage(ImagesType, (int)Images.EquipmentOptionImage).sprite = Manager.ResourceM.Load<Sprite>("Ui_Hp_Icon.sprite");
 
-
-        //TODO : 장비 옵션초기화
         for (int i = 0; i < GradeNum; i++)
         {
             GetText(TextsType, (int)Texts.UncommonSkillOptionDescriptionValueText + i).text = Manager.DataM.SpecialSkillDic[gradeAbilities[i]].Description;
@@ -215,7 +213,6 @@ public class UI_EquipmentInfoPopup : UI_Popup
         else
             GetText(TextsType, (int)Texts.EquipmentOptionValueText).text = $"{equipment.EquipmentData.Grade_Hp + ((equipment.Level - 1) * equipment.EquipmentData.GradeUp_Hp)}";
 
-        //TODO : 강화에 필요한 골드, 스크롤 양
         if (Manager.DataM.EquipmentLevelDic.TryGetValue(equipment.Level, out var data))
         {
             GetText(TextsType, (int)Texts.CostGoldValueText).text = data.Cost_Gold.ToString();
@@ -231,7 +228,6 @@ public class UI_EquipmentInfoPopup : UI_Popup
 
     public void OnClickResetButton()
     {
-        //TODO : 장비 초기화 팝업
         Manager.SoundM.PlayButtonClick();
         UI_EquipmentResetPopup equipmentResetPopup = (Manager.UiM.SceneUI as UI_LobbyScene).Ui_EquipmentResetPopup;
         equipmentResetPopup.SetInfo(equipment);

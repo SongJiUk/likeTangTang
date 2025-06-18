@@ -7,6 +7,7 @@ public class SoundManager
 {
     private AudioSource[] audioSources = new AudioSource[(int)Define.Sound.Max];
     Dictionary<string, AudioClip> audioClips = new Dictionary<string, AudioClip>();
+    public bool IsSoundOn { get; private set; } = true;
 
     GameObject soundRoot = null;
     public void Init()
@@ -42,6 +43,7 @@ public class SoundManager
 
     public void Play(Define.Sound _sound, string _label, float _pitch = 1f)
     {
+        if (!IsSoundOn) return;
         AudioSource audio = audioSources[(int)_sound];
 
         if(_sound == Define.Sound.Bgm)
@@ -80,12 +82,14 @@ public class SoundManager
     }
 
     public void PlayButtonClick()
-    {//TODO : 다 하고 고치자
+    {
+        if (!IsSoundOn) return;
         Play(Define.Sound.Effect, "ButtonClick");
     }
 
     public void PlayPopupClose()
     {
+        if (!IsSoundOn) return;
         Play(Define.Sound.Effect, "PopupClose");
     }
 
@@ -111,5 +115,11 @@ public class SoundManager
             audioClips.Add(_key, audioClip);
 
         _callback?.Invoke(audioClip);
+    }
+
+    public void ToggleSound()
+    {
+        IsSoundOn = !IsSoundOn;
+        AudioListener.volume = IsSoundOn ? 1f : 0f;
     }
 }

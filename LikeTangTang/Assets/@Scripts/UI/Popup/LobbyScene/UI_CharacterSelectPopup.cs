@@ -196,7 +196,6 @@ public class UI_CharacterSelectPopup : UI_Popup
             GetText(TextsType, (int)Texts.EnhanceCostMaterialValueText).gameObject.SetActive(true);
         }
 
-        //TODO : 레벨업 정보 초기화
         
         GetText(TextsType, (int)Texts.AttackUpNowValueText).text = $"{characterNowLevelData.AttackUp}";
         GetText(TextsType, (int)Texts.AttackUpAfterValueText).text = $"{characterLevelUpData.AttackUp}";
@@ -239,8 +238,6 @@ public class UI_CharacterSelectPopup : UI_Popup
 
     void SetupCharacterSelect()
     {
-
-        //TODO : 캐릭터 선택 초기화
         Transform cont = GetObject(gameObjectsType, (int)GameObjects.CharacterSelectContent).transform;
         int needCount = Manager.GameM.Characters.Count;
 
@@ -302,7 +299,6 @@ public class UI_CharacterSelectPopup : UI_Popup
 
     void OnClickEquipButton()
     {
-        //TODO : 캐릭터 변경하면서 isCurrent어쩌고 바꿔주기
         Manager.SoundM.PlayButtonClick();
         if (selectedItem == null) return;
 

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlasmaShot : RepeatSkill, ITickable
 {
-
+    private float baseCoolTime;
+    private float timeAccumulator;
     void Awake()
     {
         Skilltype = Define.SkillType.PlasmaShot;
-        coolTime = 0f;
     }
     private void OnDestroy()
     {
@@ -42,11 +42,12 @@ public class PlasmaShot : RepeatSkill, ITickable
 
     public void Tick(float _deltaTime)
     {
-        coolTime -= _deltaTime;
-        if(coolTime <= 0)
+        timeAccumulator += _deltaTime;
+        baseCoolTime = SkillDatas.CoolTime * (1 - Manager.GameM.CurrentCharacter.Evol_CoolTimeBouns);
+        if (timeAccumulator >= baseCoolTime)
         {
             DoSkill();
-            coolTime = SkillDatas.CoolTime * (1 - Manager.GameM.CurrentCharacter.Evol_CoolTimeBouns); ;
+            timeAccumulator -= baseCoolTime;
         }
     }
 

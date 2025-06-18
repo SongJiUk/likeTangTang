@@ -26,7 +26,6 @@ public class ObjectManager
     Type dropItemType = typeof(DropItemController);
     Type gridType = typeof(GridController);
     Type projectileType = typeof(ProjectileController);
-    Type egoSwordType = typeof(EgoSword);
     Type skillType = typeof(SkillBase);
 #endregion
     
@@ -53,8 +52,6 @@ public class ObjectManager
             GameObject go = Manager.ResourceM.Instantiate(cd.prefabName, _pooling: true);
             T mc = go.GetOrAddComponent<T>();
             go.transform.position = _pos;
-            //TODO : init지웠음 일단 setinfo에서 되기때문.
-            //mc.Init();
             if(mc is MonsterController monster)
             {
                 monster.SetInfo(_templateID);
@@ -118,10 +115,7 @@ public class ObjectManager
 
         if(type == playerType)
         {
-            /*TODO : 플레이어 죽으면 해야될것
-             *  플레이어가 죽는다면 게임을 정지하고 UI화면 띄워야함
-             *  
-             */
+           //어차피 게임끝나서 안해줘도 될듯
 
         }
         else if(monsterType.IsAssignableFrom(type))
@@ -279,17 +273,14 @@ public class ObjectManager
 
     public void KillAllMonsters()
     {
-
-        //TODO : 화면 밝게 빛나게
         UI_GameScene scene = Manager.UiM.SceneUI as UI_GameScene;
 
         if(scene != null) scene.WhiteFlash();
 
         foreach(MonsterController monster in mcSet.ToList())
         {
-            //TDOO : 복구
-            //if(monster.objType != Define.ObjectType.Boss)
-            monster.OnDead();
+            //if(monster.objType == Define.ObjectType.Monster)
+                monster.OnDead();
         }
     }
 

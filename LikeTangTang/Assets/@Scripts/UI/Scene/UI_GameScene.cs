@@ -157,7 +157,6 @@ public class UI_GameScene : UI_Scene
     {
         if(Manager.GameM.isGameEnd) return;
 
-        //TODO : 스킬 개수 가져와서 팝업 띄우기
         //List<SkillBase> list = Manager.GameM.player.Skills.RecommendSkills();
         List<object> list = Manager.GameM.player.Skills.GetSkills();
         if(list.Count > 0) Manager.UiM.ShowPopup<UI_SkillSelectPopup>();

@@ -132,8 +132,6 @@ public class UI_LobbyScene : UI_Scene
 
     void Refresh()
     {
-        //TODO : 이거 다이아, 골드, 스테미너 변경할때 사용해주면 됌
-
         Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.Mission);
         Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.AchievementPopup);
     }

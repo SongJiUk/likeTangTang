@@ -129,7 +129,6 @@ public class UI_EquipmentPopup : UI_Popup
 
 
         var (hp, attack) = Manager.GameM.GetCurrentCharacterStat();
-        //TODO : Player를 먼저 Setting해줘야 될것 같음
         GetText(TextsType, (int)Texts.AttackValueText).text = (Manager.GameM.CurrentCharacter.Attack * Manager.GameM.CurrentCharacter.AttackRate + attack).ToString();
         GetText(TextsType, (int)Texts.HealthValueText).text = (Manager.GameM.CurrentCharacter.MaxHp* Manager.GameM.CurrentCharacter.MaxHpRate + hp).ToString();
 

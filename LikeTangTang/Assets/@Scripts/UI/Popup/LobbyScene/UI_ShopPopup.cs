@@ -120,7 +120,6 @@ public class UI_ShopPopup : UI_Popup
         GetObject(gameObjectsType, (int)GameObjects.FreeGoldSoldOutObject).SetActive(Manager.GameM.GoldCountAds == 0);
 
         goldAmount = Define.STAGE_GOLD_UP;
-        //TODO : 리워드 데이터..스테이지마다 + 1000
         goldAmount *= Manager.GameM.GetMaxStageIndex();
 
         GetText(TextsType, (int)Texts.FreeGoldTitleText).text = $"{goldAmount}";

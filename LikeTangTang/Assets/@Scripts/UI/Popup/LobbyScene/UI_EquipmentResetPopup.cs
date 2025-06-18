@@ -135,9 +135,6 @@ public class UI_EquipmentResetPopup : UI_Popup
 
     void EquipmentResetRefresh()
     {
-        //TODO : 초기화 리플래시
-        //레벨 초기화
-        //현재 장비, 초기화될 장비
         Define.EquipmentGrade equipmentGrade =  equipment.EquipmentData.EquipmentGarde;
         GetImage(ImagesType, (int)Images.TargetEquipmentGradeBackgroundImage).color = Define.EquipmentUIColors.EquipGradeStyles[equipmentGrade].BgColor;
         GetImage(ImagesType, (int)Images.TargetEquipmentImage).sprite = Manager.ResourceM.Load<Sprite>(equipment.EquipmentData.SpriteName);
@@ -177,9 +174,6 @@ public class UI_EquipmentResetPopup : UI_Popup
 
     void EquipmentDowngradeRefresh()
     {
-        //TODO : 다운그레이드 리플래시
-        // Epic1 -> epic으로 다운
-        // ex epic->2 재료, 돈, Material
         Define.EquipmentGrade equipmentGrade = equipment.EquipmentData.EquipmentGarde;
         int grade = Utils.GetUpgradeNumber(equipmentGrade);
         

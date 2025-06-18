@@ -65,14 +65,12 @@ public class UI_CheckOutItem : UI_Base
         int rewardItemCount = Manager.DataM.AttendanceCheckDataDic[tenDayCount].RewardItemValue;
         Define.MaterialGrade gradeType = Manager.DataM.MaterialDic[rewardItemID].MaterialGrade;
 
-        // TODO : 아이템 초기화
         GetText(TextsType, (int)Texts.DayValueText).text = $"{tenDayCount} Day";
         GetText(TextsType, (int)Texts.RewardItemCountValueText).text = $"{rewardItemCount}";
         GetImage(ImagesType, (int)Images.RewardItemImage).sprite = Manager.ResourceM.Load<Sprite>(Manager.DataM.MaterialDic[rewardItemID].SpriteName);
         GetImage(ImagesType, (int)Images.RewardItemBackgroundImage).color = Define.EquipmentUIColors.MaterialGradeStyles[gradeType].BgColor;
 
 
-        //TODO : 체크아웃해 서 체크표시 초기화
         if(isCheckOut)
         {
             GetObject(gameObjectsType, (int)GameObjects.ClearRewardCompleteObject).SetActive(true);

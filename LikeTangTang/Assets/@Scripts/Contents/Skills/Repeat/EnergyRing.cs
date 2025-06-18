@@ -13,11 +13,12 @@ public class EnergyRing : RepeatSkill, ITickable
     bool isPlaying = false;
     float rotationAngle = 0f;
     float durationTimer = 0f;
+    private float baseCoolTime;
+    private float timeAccumulator;
     void Awake()
     {
         Skilltype = Define.SkillType.EnergyRing;
         gameObject.SetActive(false);
-        coolTime = 0f;
     }
 
     private void OnDestroy()
@@ -95,11 +96,12 @@ public class EnergyRing : RepeatSkill, ITickable
             return;
         }
 
-        coolTime -= _deltaTime;
-        if(coolTime <= 0f)
+        timeAccumulator += _deltaTime;
+        baseCoolTime = SkillDatas.CoolTime * (1 - Manager.GameM.CurrentCharacter.Evol_CoolTimeBouns);
+        if(timeAccumulator >= baseCoolTime)
         {
             DoSkill();
-            coolTime = SkillDatas.CoolTime * (1 - Manager.GameM.CurrentCharacter.Evol_CoolTimeBouns);
+            timeAccumulator -= baseCoolTime;
         }
     }
 

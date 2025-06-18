@@ -64,7 +64,7 @@ public class UI_PausePopup : UI_Popup
     void SoundButton()
     {
         Manager.SoundM.PlayButtonClick();
-        //TODO : 사운드 on / off
+        Manager.SoundM.ToggleSound();
     }
 
     void SettingButton()

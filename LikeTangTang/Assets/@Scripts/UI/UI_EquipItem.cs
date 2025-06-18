@@ -84,7 +84,7 @@ public class UI_EquipItem : UI_Base
         transform.localScale = Vector3.one;
 
         var style = Define.EquipmentUIColors.EquipGradeStyles[Equipment.EquipmentData.EquipmentGarde];
-        //TODO : 이미지.style
+        
         GetImage(ImagesType, (int)Images.EquipmentGradeBackgroundImage).color = style.BorderColor;
         GetImage(ImagesType, (int)Images.EquipmentTypeBackgroundImage).color = style.BorderColor;
         GetImage(ImagesType, (int)Images.EquipmentEnforceBackgroundImage).color = style.BgColor;

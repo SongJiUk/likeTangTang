@@ -6,7 +6,6 @@ using UnityEngine.UI.Extensions;
 
 public class UI_EvolutionPopup : UI_Popup
 {
-    //TODO : 주석된거 다 지우기 
     enum GameObjects
     {
         Level_1_BGIN_Object,
@@ -133,30 +132,7 @@ public class UI_EvolutionPopup : UI_Popup
 
 
         SetupEvolutionUI();
-        //GetButton(ButtonsType, (int)Buttons.Level_3_Button).gameObject.BindEvent(OnClickLevel3Button);
-        //GetButton(ButtonsType, (int)Buttons.Level_6_Button).gameObject.BindEvent(OnClickLevel6Button);
-        //GetButton(ButtonsType, (int)Buttons.Level_9_Button).gameObject.BindEvent(OnClickLevel9Button);
-        //GetButton(ButtonsType, (int)Buttons.Level_12_Button).gameObject.BindEvent(OnClickLevel12Button);
-        //GetButton(ButtonsType, (int)Buttons.Level_15_Button).gameObject.BindEvent(OnClickLevel15Button);
-        //GetButton(ButtonsType, (int)Buttons.Level_18_Button).gameObject.BindEvent(OnClickLevel18Button);
-        //GetButton(ButtonsType, (int)Buttons.Level_21_Button).gameObject.BindEvent(OnClickLevel21Button);
-        //GetButton(ButtonsType, (int)Buttons.Level_24_Button).gameObject.BindEvent(OnClickLevel24Button);
-        //GetButton(ButtonsType, (int)Buttons.Level_27_Button).gameObject.BindEvent(OnClickLevel27Button);
-        //GetButton(ButtonsType, (int)Buttons.Level_30_Button).gameObject.BindEvent(OnClickLevel30Button);
-
-        //int count = 0;
-        //for (int i = 0; i < Define.CHARACTER_MAX_LEVEL; i++)
-        //{
-        //    GetObject(gameObjectsType, (int)GameObjects.Level_1_BGIN_Object + i).SetActive(false);
-        //    GetObject(gameObjectsType, (int)GameObjects.Level_1_LevelCheck + i).SetActive(false);
-        //    if ((i + 1) % 3 == 0)
-        //    {
-        //        GetImage(ImagesType, (int)Images.Level_3_Button + count).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.Off];
-        //        GetImage(ImagesType, (int)Images.Level_3_Img + count).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.Off];
-        //        GetButton(ButtonsType, (int)Buttons.Level_3_Button + count).interactable = false;
-        //        count++;
-        //    }
-        //}
+     
 
         Refresh();
 
@@ -235,21 +211,6 @@ public class UI_EvolutionPopup : UI_Popup
 
         }
 
-        //int count = 0;
-        //for (int i = 3; i <= Define.CHARACTER_MAX_LEVEL; i += 3)
-        //{
-        //    if (i > characterLevel) break;
-        //    GetButton(ButtonsType, (int)Buttons.Level_3_Button + count).interactable = true;
-
-        //    bool learned = Character.isLearnEvloution.ContainsKey(i) && Character.isLearnEvloution[i];
-        //    var evolOn = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-        //    var evolOff = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.Off];
-
-        //    GetImage(ImagesType, (int)Images.Level_3_Button + count).color = GetImage(ImagesType, (int)Images.Level_3_Img + count).color = learned ? evolOn : evolOff;
-
-
-        //    count++;
-        //}
     }
 
     int GetIndexToShow(int _characterLevel, Dictionary<int, bool> _learnDic)
@@ -300,197 +261,5 @@ public class UI_EvolutionPopup : UI_Popup
         };
 
         popup.gameObject.SetActive(true);
-    }
-
-    void OnClickLevel3Button()
-    {
-        
-        if (GetButton(ButtonsType, (int)Buttons.Level_3_Button).interactable && !Manager.GameM.CurrentCharacter.isLearnEvloution[3])
-        {
-            
-            UI_EvolutioninfoPopup popup = Manager.UiM.ShowPopup<UI_EvolutioninfoPopup>();
-            popup.SetInfo(Manager.GameM.CurrentCharacter.evolutionData[3], 3);
-
-            popup.OnLearnCallBack = () =>
-            {
-                
-                GetImage(ImagesType, (int)Images.Level_3_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                GetImage(ImagesType, (int)Images.Level_3_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                Refresh();
-            };
-
-            popup.gameObject.SetActive(true);
-        }
-    }
-
-    void OnClickLevel6Button()
-    {
-        if (GetButton(ButtonsType, (int)Buttons.Level_6_Button).interactable && !Manager.GameM.CurrentCharacter.isLearnEvloution[6])
-        {
-            UI_EvolutioninfoPopup popup = Manager.UiM.ShowPopup<UI_EvolutioninfoPopup>();
-            popup.SetInfo(Manager.GameM.CurrentCharacter.evolutionData[6], 6);
-
-            popup.OnLearnCallBack = () =>
-            {
-                
-                GetImage(ImagesType, (int)Images.Level_6_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                GetImage(ImagesType, (int)Images.Level_6_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                Refresh();
-            };
-
-            popup.gameObject.SetActive(true);
-        }
-            
-    }
-    void OnClickLevel9Button()
-    {
-        if (GetButton(ButtonsType, (int)Buttons.Level_9_Button).interactable && !Manager.GameM.CurrentCharacter.isLearnEvloution[9])
-        {
-            UI_EvolutioninfoPopup popup = Manager.UiM.ShowPopup<UI_EvolutioninfoPopup>();
-            popup.SetInfo(Manager.GameM.CurrentCharacter.evolutionData[9], 9);
-
-            popup.OnLearnCallBack = () =>
-            {
-                
-                GetImage(ImagesType, (int)Images.Level_9_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                GetImage(ImagesType, (int)Images.Level_9_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                Refresh();
-            };
-
-            popup.gameObject.SetActive(true);
-        }
-        
-    }
-    void OnClickLevel12Button()
-    {
-        if (GetButton(ButtonsType, (int)Buttons.Level_12_Button).interactable && !Manager.GameM.CurrentCharacter.isLearnEvloution[12])
-        {
-            UI_EvolutioninfoPopup popup = Manager.UiM.ShowPopup<UI_EvolutioninfoPopup>();
-            popup.SetInfo(Manager.GameM.CurrentCharacter.evolutionData[12], 12);
-
-            popup.OnLearnCallBack = () =>
-            {
-                
-                GetImage(ImagesType, (int)Images.Level_12_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                GetImage(ImagesType, (int)Images.Level_12_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                Refresh();
-            };
-
-            popup.gameObject.SetActive(true);
-        }
-        
-    }
-    void OnClickLevel15Button()
-    {
-        if (GetButton(ButtonsType, (int)Buttons.Level_15_Button).interactable && !Manager.GameM.CurrentCharacter.isLearnEvloution[15])
-        {
-            UI_EvolutioninfoPopup popup = Manager.UiM.ShowPopup<UI_EvolutioninfoPopup>();
-            popup.SetInfo(Manager.GameM.CurrentCharacter.evolutionData[15], 15);
-
-            popup.OnLearnCallBack = () =>
-            {
-                 
-                GetImage(ImagesType, (int)Images.Level_15_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                GetImage(ImagesType, (int)Images.Level_15_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                Refresh();
-            };
-
-            popup.gameObject.SetActive(true);
-        }
-        
-    }
-    void OnClickLevel18Button()
-    {
-        if (GetButton(ButtonsType, (int)Buttons.Level_18_Button).interactable && !Manager.GameM.CurrentCharacter.isLearnEvloution[18])
-        {
-            UI_EvolutioninfoPopup popup = Manager.UiM.ShowPopup<UI_EvolutioninfoPopup>();
-            popup.SetInfo(Manager.GameM.CurrentCharacter.evolutionData[18], 18);
-
-            popup.OnLearnCallBack = () =>
-            {
-                
-                GetImage(ImagesType, (int)Images.Level_18_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                GetImage(ImagesType, (int)Images.Level_18_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                Refresh();
-            };
-
-            popup.gameObject.SetActive(true);
-        }
-        
-    }
-    void OnClickLevel21Button()
-    {
-        if (GetButton(ButtonsType, (int)Buttons.Level_21_Button).interactable && !Manager.GameM.CurrentCharacter.isLearnEvloution[21])
-        {
-            UI_EvolutioninfoPopup popup = Manager.UiM.ShowPopup<UI_EvolutioninfoPopup>();
-            popup.SetInfo(Manager.GameM.CurrentCharacter.evolutionData[21], 21);
-
-            popup.OnLearnCallBack = () =>
-            {
-                
-                GetImage(ImagesType, (int)Images.Level_21_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                GetImage(ImagesType, (int)Images.Level_21_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                Refresh();
-            };
-
-            popup.gameObject.SetActive(true);
-        }
-        
-    }
-    void OnClickLevel24Button()
-    {
-        if (GetButton(ButtonsType, (int)Buttons.Level_24_Button).interactable && !Manager.GameM.CurrentCharacter.isLearnEvloution[24])
-        {
-            UI_EvolutioninfoPopup popup = Manager.UiM.ShowPopup<UI_EvolutioninfoPopup>();
-            popup.SetInfo(Manager.GameM.CurrentCharacter.evolutionData[24], 24);
-
-            popup.OnLearnCallBack = () =>
-            {
-                
-                GetImage(ImagesType, (int)Images.Level_24_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                GetImage(ImagesType, (int)Images.Level_24_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                Refresh();
-            };
-
-            popup.gameObject.SetActive(true);
-        }
-        
-    }
-    void OnClickLevel27Button()
-    {
-        if (GetButton(ButtonsType, (int)Buttons.Level_27_Button).interactable && !Manager.GameM.CurrentCharacter.isLearnEvloution[27])
-        {
-            UI_EvolutioninfoPopup popup = Manager.UiM.ShowPopup<UI_EvolutioninfoPopup>();
-            popup.SetInfo(Manager.GameM.CurrentCharacter.evolutionData[27], 27);
-
-            popup.OnLearnCallBack = () =>
-            {
-                
-                GetImage(ImagesType, (int)Images.Level_27_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                GetImage(ImagesType, (int)Images.Level_27_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                Refresh();
-            };
-
-            popup.gameObject.SetActive(true);
-        }
-        
-    }
-    void OnClickLevel30Button()
-    {
-        if (GetButton(ButtonsType, (int)Buttons.Level_30_Button).interactable && !Manager.GameM.CurrentCharacter.isLearnEvloution[30])
-        {
-            UI_EvolutioninfoPopup popup = Manager.UiM.ShowPopup<UI_EvolutioninfoPopup>();
-            popup.SetInfo(Manager.GameM.CurrentCharacter.evolutionData[30], 30);
-
-            popup.OnLearnCallBack = () =>
-            {
-                GetImage(ImagesType, (int)Images.Level_30_Button).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                GetImage(ImagesType, (int)Images.Level_30_Img).color = Define.EquipmentUIColors.EvolutionStyles[Define.EvolutionOnOff.On];
-                Refresh();
-            };
-
-            popup.gameObject.SetActive(true);
-        }
-        
     }
 }

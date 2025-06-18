@@ -73,7 +73,6 @@ public class UI_GachaResultsPopup : UI_Popup
 
     void Refresh()
     {
-        //TODO : 여기서 초기화 해줘야됌.( 아이템을!!!!)
         OnClickSkipButton();
     }
 

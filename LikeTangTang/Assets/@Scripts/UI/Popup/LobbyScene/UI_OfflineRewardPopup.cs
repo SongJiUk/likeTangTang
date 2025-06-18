@@ -73,7 +73,6 @@ public class UI_OfflineRewardPopup : UI_Popup
     {
         StopAllCoroutines();
 
-        //TODO : EXP도 추가해야됌
         if(Manager.DataM.OfflineRewardDataDic.TryGetValue(Manager.GameM.GetMaxStageIndex(), out Data.OfflineRewardData offlineRewardData))
         {
             GetText(TextsType, (int)Texts.ResultGoldValueText).text = $"{offlineRewardData.Reward_Gold} / 1시간";
@@ -82,7 +81,6 @@ public class UI_OfflineRewardPopup : UI_Popup
         GameObject cont = GetObject(gameObjectsType, (int)GameObjects.RewardItemScrollContentObject);
 
 
-        //TODO : 리워드에 레벨업 넣을지 말지 생각해보기.
         if (Manager.TimeM.TimeSinceLastReward.TotalMinutes > 10)
         {
             UI_MaterialItem item = Manager.UiM.MakeSubItem<UI_MaterialItem>(cont.transform);

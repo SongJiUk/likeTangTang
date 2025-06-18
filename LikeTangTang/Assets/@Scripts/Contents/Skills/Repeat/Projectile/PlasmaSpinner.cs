@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class PlasmaSpinner : RepeatSkill, ITickable
 {
-    Coroutine coStartPlasmaSpinner;
-
+    private UpdateManager updateM;
+    private ObjectManager objectM;
+    private GameManager gameM;
+    private SoundManager soundM;
+    private Transform playerTransform;
+    private float timeAccumulator;
+    private float baseCoolTime;
     void Awake()
     {
         Skilltype = Define.SkillType.PlasmaSpinner;
-        coolTime = 0f;
+        updateM = Manager.UpdateM;
+        objectM = Manager.ObjectM;
+        gameM = Manager.GameM;
+        soundM = Manager.SoundM;
+        playerTransform = gameM.player.transform;
+
+        baseCoolTime = 0f;
     }
      private void OnDestroy()
     {
@@ -19,45 +30,43 @@ public class PlasmaSpinner : RepeatSkill, ITickable
     public override void ActivateSkill()
     {
         base.ActivateSkill();
-        Manager.UpdateM.Register(this);
+        updateM.Register(this);
         OnChangedSkillData();
     }
 
     public override void OnChangedSkillData()
     {
         duration = SkillDatas.Duration;
-        coolTime = SkillDatas.CoolTime;
+        baseCoolTime = SkillDatas.CoolTime * (1 - Manager.GameM.CurrentCharacter.Evol_CoolTimeBouns);
         projectileCount = SkillDatas.ProjectileCount;
     }
     
     public override void DoSkill()
     {
-        Manager.SoundM.Play(Define.Sound.Effect, SkillDatas.CastingSoundLabel);
-        List<MonsterController> targets = Manager.ObjectM.GetNearMonsters(projectileCount);
-        if(targets == null) return;
+        soundM.Play(Define.Sound.Effect, SkillDatas.CastingSoundLabel);
+        List<MonsterController> targets = objectM.GetNearMonsters(projectileCount);
+        if(targets == null || targets.Count == 0) return;
 
-        for (int i = 0; i < targets.Count; i++)
+
+        var prefabName = SkillDatas.PrefabName;
+        var player = gameM.player;
+
+        foreach(var monster in targets)
         {
-            if (targets != null)
-            {
-                if (targets[i].IsValid() == false) continue;
+            if (monster == null || !monster.IsValid()) return;
+            Vector3 dir = (monster.transform.position - playerTransform.position).normalized;
+            GenerateProjectile(player, prefabName, playerTransform.position, dir, monster.transform.position, this);
 
-                Vector3 dir = (targets[i].transform.position - Manager.GameM.player.transform.position).normalized;
-                Vector3 startPos = Manager.GameM.player.transform.position;
-                GenerateProjectile(Manager.GameM.player, SkillDatas.PrefabName, startPos, dir, targets[i].transform.position, this);
-            }
         }
     }
 
     public void Tick(float _deltaTime)
     {
-        coolTime -= _deltaTime;
-        if(coolTime <= 0)
-        {
-            Manager.SoundM.Play(Define.Sound.Effect, SkillDatas.CastingSoundLabel);
-            DoSkill();
-            coolTime = SkillDatas.CoolTime;
-        }
+        timeAccumulator += _deltaTime;
+        if (timeAccumulator < baseCoolTime) return;
+
+        DoSkill();
+        timeAccumulator -= baseCoolTime;
     }
 
 }

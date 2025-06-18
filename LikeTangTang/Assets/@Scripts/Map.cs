@@ -10,7 +10,7 @@ public class Map : MonoBehaviour
 
     public GridController Grid;
     [SerializeField]
-    public GameObject MagneticField; //TODO : 원래 5, 5 였음.
+    public GameObject MagneticField;
 
 
     public Vector2 MapSize

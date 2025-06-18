@@ -284,7 +284,8 @@ public class UI_MergePopup : UI_Popup
             GetImage(ImagesType, (int)Images.SelectedEquipGradeBackgroundImage).color = Define.EquipmentUIColors.EquipGradeStyles[equipmentGrade].BorderColor;
             GetImage(ImagesType, (int)Images.SelectedEquipImage).sprite = Manager.ResourceM.Load<Sprite>(equipment.EquipmentData.SpriteName);
             GetObject(gameObjectsType, (int)GameObjects.SelectedEquipObject).SetActive(true);
-            //TODO : 강화가 가능할때만 빛남
+            
+            //강화가 가능할때만 빛나게 
             //GetImage(ImagesType, (int)Images.MergePossibleOutlineImage).gameObject.SetActive(true);
             //GetImage(ImagesType, (int)Images.MergePossibleOutlineImage).color = Define.EquipmentUIColors.EquipGradeStyles[equipmentGrade].BgColor;
             GetImage(ImagesType, (int)Images.SelectedEquipTypeImage).sprite = Manager.ResourceM.Load<Sprite>($"{equipment.EquipmentData.EquipmentType}_Icon.sprite");
@@ -311,10 +312,9 @@ public class UI_MergePopup : UI_Popup
             GetObject(gameObjectsType, (int)GameObjects.SelectMergeCommentText).SetActive(true);
 
 
-            //TODO : 장비 강화에 필요한 법칙들
-            /*
-             MergeEquipmentType_1이 Grade면 Equipment2는 필요없음
-             */
+           
+            //MergeEquipmentType_1이 Grade면 Equipment2는 필요없음
+            
 
             if(equipment.EquipmentData.MergeEquipmentType_1 == Define.MergeEquipmentType.None)
             {
@@ -507,7 +507,6 @@ public class UI_MergePopup : UI_Popup
 
         foreach (Equipment equipmentitem in Manager.GameM.OwnedEquipment)
         {
-            //TODO : 이거, 선택한 아이템 위로 올라가기하기 vs 체크표시하기. 뭐할지 고민해보기.
             isSelected = IsSelectedItem(equipmentitem);
 
 

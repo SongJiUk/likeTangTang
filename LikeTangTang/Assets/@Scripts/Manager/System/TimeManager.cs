@@ -259,7 +259,6 @@ public class TimeManager : MonoBehaviour
             Manager.GameM.StaminaCountAds = 2;
             Manager.GameM.RemainBuyStaminaForDia = 3;
 
-            //TODO : 미션정보, 빠른모험 등등
             Manager.GameM.MissionDic.Clear();
             Manager.GameM.MissionDic = new Dictionary<Define.MissionTarget, MissionInfo>()
             {

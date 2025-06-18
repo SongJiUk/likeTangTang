@@ -85,8 +85,6 @@ public class UI_CharacterItem : UI_Base
             GetObject(gameObjectsType, (int)GameObjects.EquipedObject).SetActive(true);
 
 
-
-        //TODO : 테스트 이후에 주석 해제
         if (creatureData.UnLockStage > Manager.GameM.CurrentStageData.StageIndex)
             GetObject(gameObjectsType, (int)GameObjects.LockObject).SetActive(true);
 

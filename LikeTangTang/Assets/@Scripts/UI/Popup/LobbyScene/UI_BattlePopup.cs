@@ -87,7 +87,6 @@ public class UI_BattlePopup : UI_Popup
         Init();
     }
 
-    //TODO : 여기서 체크
     private void OnEnable()
     {
         StartCoroutine(CoCheckPopup());

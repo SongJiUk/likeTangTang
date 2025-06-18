@@ -15,7 +15,7 @@ public class SpectralSlash : RepeatSkill
     ParticleSystem[] currentSwingParticle;
 
     Coroutine coSwing;
-
+    private float baseCoolTime;
     enum SwingType
     {
         First,
@@ -42,6 +42,7 @@ public class SpectralSlash : RepeatSkill
     public override void OnChangedSkillData()
     {
         projectileCount = SkillDatas.ProjectileCount;
+        baseCoolTime = SkillDatas.CoolTime * (1 - Manager.GameM.CurrentCharacter.Evol_CoolTimeBouns);
         UpdateCurrentSwingParticle();
 
     }
@@ -66,7 +67,7 @@ public class SpectralSlash : RepeatSkill
     }
     IEnumerator CoStartSpectralSlash()
     {
-        var waitTime = new WaitForSeconds(SkillDatas.CoolTime * (1 - Manager.GameM.CurrentCharacter.Evol_CoolTimeBouns));
+        var waitTime = new WaitForSeconds(baseCoolTime);
         while(true)
         {
             int swingCount = Mathf.Min(projectileCount, currentSwingParticle.Length);

@@ -49,7 +49,6 @@ public class UI_SkillCardItem : UI_Base
     GameManager gm;
     public override bool Init()
     {
-        //TODO : 새로고침하면,  new, star 초기화가 안되어있음.
         if(!base.Init()) return false;
         gm = Manager.GameM;
         gameObjectsType = typeof(GameObjects);

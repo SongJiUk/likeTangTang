@@ -149,7 +149,7 @@ public class ProjectileController : SkillBase
     
     void HandleOrbitalBlades(CreatureController _cc)
     {
-        //TODO : 몬스터 부딪히면 어떻게할지?
+
     }
   #region  GravityBomb
     IEnumerator CoExplosionGravityBomb()

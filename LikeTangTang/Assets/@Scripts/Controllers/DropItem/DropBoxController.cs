@@ -47,7 +47,6 @@ public class DropBoxController : DropItemController
 
     public override void CompleteGetItem()
     {
-        //TODO : 테스트 해보기(Rare 안나오는거 )
         PlayerController player = Manager.GameM.player;
         float needExp = 0;
         switch (dropItem.Grade)

@@ -12,7 +12,7 @@ public class AchievementManager
         set { Manager.GameM.Achievements = value; }
     }
 
-    public event Action<Data.AchievementData> OnAchievementCompleted;
+    //public event Action<Data.AchievementData> OnAchievementCompleted;
 
     public void Init()
     {

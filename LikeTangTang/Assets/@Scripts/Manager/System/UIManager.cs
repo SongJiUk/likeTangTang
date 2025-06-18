@@ -6,14 +6,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
 
-//TODO : 마무리 후 스프라이트 이쁜걸로 찾아서 수정하기.
-
-
-//NOTE : 씬에 놓고 껏다 키는것이 아닌 코드로 관리(어떻게 해도 상관없긴한데, 껏다 키면 UI가 많아질수록 관리하기 힘들다)
-/*[ ] 코드에서 자동화해서 사용할 수 있음(방법 알아보기)) - 이름 없이 완전 자동화를 하는 법은 인터페이스를 사용하거나 , ScriptableObject로 사용
-
-UI는 Set, Refresh두 함수를 이용하는게 관리하기 용이함.
-*/
 public class UIManager
 {
     UI_Base ui_Base;

@@ -6,10 +6,26 @@ using UnityEngine.Assertions.Must;
 public class ElectricShock : RepeatSkill, ITickable
 {
     private readonly HashSet<MonsterController> sharedTarget = new();
+
+    private UpdateManager updateM;
+    private ObjectManager objectM;
+    private GameManager gameM;
+    private SoundManager soundM;
+    private Transform playerTransform;
+
+    private float baseCoolTime;
+    private float timeAccumulator;
     void Awake()
     {
         Skilltype = Define.SkillType.ElectricShock;
-        coolTime = 0f;
+
+        updateM = Manager.UpdateM;
+        objectM = Manager.ObjectM;
+        gameM = Manager.GameM;
+        soundM = Manager.SoundM;
+        playerTransform = gameM.player.transform;
+
+        baseCoolTime = 0f;
     }
     private void OnDestroy()
     {
@@ -18,26 +34,29 @@ public class ElectricShock : RepeatSkill, ITickable
     public override void ActivateSkill()
     {
         base.ActivateSkill();
-        Manager.UpdateM.Register(this);
         OnChangedSkillData();
+        Manager.UpdateM.Register(this);
+        
     }
 
     public override void OnChangedSkillData()
     {
         duration = SkillDatas.Duration;
-        coolTime = SkillDatas.CoolTime * (1 - Manager.GameM.CurrentCharacter.Evol_CoolTimeBouns); ;
+        baseCoolTime = SkillDatas.CoolTime * (1 - Manager.GameM.CurrentCharacter.Evol_CoolTimeBouns);
         projectileCount = SkillDatas.ProjectileCount;
         boundDist = SkillDatas.BoundDist;
     }
 
     public override void DoSkill()
     {
-        Manager.SoundM.Play(Define.Sound.Effect, SkillDatas.CastingSoundLabel);
-        var player = Manager.GameM.player;
+        soundM.Play(Define.Sound.Effect, SkillDatas.CastingSoundLabel);
+        var player = gameM.player;
+        var prefab = SkillDatas.PrefabName;
+        var startBase = playerTransform.position;
+
         if (player == null) return;
 
         sharedTarget.Clear();
-        string prefabName = SkillDatas.PrefabName;
 
 
         for (int i = 0; i < projectileCount; i++)
@@ -45,15 +64,15 @@ public class ElectricShock : RepeatSkill, ITickable
             List<MonsterController> targets = GetElectricShockTargets(numBounce, boundDist - 1, boundDist + 1, i);
             if (targets == null || targets.Count == 0) continue;
 
-            Vector3 startPos = player.transform.position;
+            var origin = startBase;
 
             foreach (var target in targets)
             {
                 if (target == null || !target.IsValid()) continue;
 
-                Vector3 dir = (target.transform.position - startPos).normalized;
-                GenerateProjectile(player, prefabName, startPos, dir, target.transform.position, this, sharedTarget);
-                startPos = target.transform.position;
+                Vector3 dir = (target.transform.position - origin).normalized;
+                GenerateProjectile(player, prefab, origin, dir, target.transform.position, this, sharedTarget);
+                origin = target.transform.position;
 
             }
         }
@@ -62,18 +81,18 @@ public class ElectricShock : RepeatSkill, ITickable
 
     public void Tick(float _deltaTime)
     {
-        coolTime -= _deltaTime;
-        if (coolTime <= 0)
-        {
-            DoSkill();
-            coolTime = SkillDatas.CoolTime * (1 -Manager.GameM.CurrentCharacter.Evol_CoolTimeBouns);
-        }
+        timeAccumulator += _deltaTime;
+
+        if (timeAccumulator < baseCoolTime) return;
+
+        DoSkill();
+        timeAccumulator -= baseCoolTime;
     }
 
     public List<MonsterController> GetElectricShockTargets(int _numTarget, float _minDist, float _maxDist, int _index = 0)
     {
         var Monsters = new List<MonsterController>();
-        var nearMonster = Manager.ObjectM.GetNearMonsters(SkillDatas.ProjectileCount);
+        var nearMonster = objectM.GetNearMonsters(SkillDatas.ProjectileCount);
 
         if(nearMonster == null || nearMonster.Count == 0) return Monsters;
         
@@ -93,29 +112,28 @@ public class ElectricShock : RepeatSkill, ITickable
 
     }
 
-public MonsterController GetElectricShockTarget(Vector3 _origin, float _minDist, float _maxDist, List<MonsterController> _ignoreMonsters)
-{
-    MonsterController target = null;
-    float nearTargetDist = Mathf.Infinity;
-
-    foreach (var mc in Manager.ObjectM.mcSet)
+    public MonsterController GetElectricShockTarget(Vector3 _origin, float _minDist, float _maxDist, List<MonsterController> _ignoreMonsters)
     {
-        if (mc == null || !mc.IsValid()) continue;
-        if (_ignoreMonsters != null && _ignoreMonsters.Contains(mc)) continue;
-
-        float distSqr = (_origin - mc.transform.position).sqrMagnitude;
+        MonsterController target = null;
+        float nearTargetDist = float.MaxValue;
         float minDistSqr = _minDist * _minDist;
-        float maxDistSqr = Mathf.Min(_maxDist, 5f) * Mathf.Min(_maxDist, 5f);
-
-        if (distSqr < minDistSqr || distSqr > maxDistSqr) continue;
-
-        if (distSqr < nearTargetDist)
+        float maxDistSqr = Mathf.Min(_maxDist, 5f);
+        maxDistSqr *= maxDistSqr;
+        foreach (var mc in Manager.ObjectM.mcSet)
         {
-            nearTargetDist = distSqr;
-            target = mc;
-        }
-    }
+            if (mc == null || !mc.IsValid()) continue;
+            if (_ignoreMonsters != null && _ignoreMonsters.Contains(mc)) continue;
 
-    return target;
-}
+            float distSqr = (_origin - mc.transform.position).sqrMagnitude;
+            if (distSqr < minDistSqr || distSqr > maxDistSqr) continue;
+
+            if (distSqr < nearTargetDist)
+            {
+                nearTargetDist = distSqr;
+                target = mc;
+            }
+        }
+
+        return target;
+    }
 }

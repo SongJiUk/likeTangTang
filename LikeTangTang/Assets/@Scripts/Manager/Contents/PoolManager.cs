@@ -71,9 +71,6 @@ class Pool
 
 public class PoolManager
 {
-    /* ToDo : 프리팹.name으로 계속 사용할것인지 체크. 키값을 넘겨서 하는 방법 생각해보기
-     */
-
     Dictionary<string, Pool> pools = new Dictionary<string, Pool>();
     public GameObject Pop(GameObject _prefab)
     {

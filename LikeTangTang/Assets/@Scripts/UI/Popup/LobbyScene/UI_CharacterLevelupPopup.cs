@@ -80,7 +80,6 @@ public class UI_CharacterLevelupPopup : UI_Popup
 
     void Refresh()
     {
-        //TODO : 30에서 31 넘어갈때 막아야됌.
 
         if (!Manager.DataM.CreatureDic.TryGetValue(character.DataId, out var creatureData)) return;
 
