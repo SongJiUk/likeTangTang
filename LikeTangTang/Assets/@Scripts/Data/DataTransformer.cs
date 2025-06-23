@@ -1,3 +1,5 @@
+
+#if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -14,6 +16,7 @@ using Data;
 using System.ComponentModel;
 using static Define;
 using UnityEngine.Analytics;
+
 
 
 public class DataTransformer : EditorWindow
@@ -842,6 +845,5 @@ public class DataTransformer : EditorWindow
 
         return value.Split('/').Select(x => ConvertValue<T>(x)).ToList();
     }
-// #endif
-
 }
+#endif
