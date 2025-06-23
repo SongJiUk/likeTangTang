@@ -56,6 +56,7 @@ public class GameScene : BaseScene, ITickable
     public override void Init()
     {
         base.Init();
+        Debug.Log("아아아 실행됌");
         SceneType = SceneType.GameScene;
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
 

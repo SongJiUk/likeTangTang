@@ -165,6 +165,7 @@
     <Compile Include="Assets\@Scripts\Contents\Equipment.cs" />
     <Compile Include="Assets\@Scripts\UI\UI_ToolTipItem.cs" />
     <Compile Include="Assets\@Scripts\UI\Popup\LobbyScene\UI_MergeResultPopup.cs" />
+    <Compile Include="Assets\@Scripts\SamsungSafeInit.cs" />
     <Compile Include="Assets\@Scripts\UI\UI_EquipItem.cs" />
     <Compile Include="Assets\@Scripts\Manager\Contents\GameManager.cs" />
     <Compile Include="Assets\@Scripts\UI\UI_Toast.cs" />
@@ -200,9 +201,9 @@
     <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Ump.iOS.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\GoogleMobileAds\GoogleMobileAds.dll" />
+    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\GoogleMobileAds\GoogleMobileAds.iOS.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
-    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Core.dll" />
@@ -1255,6 +1256,18 @@
     </Reference>
     <Reference Include="Unity.AdaptivePerformance.Samsung.Android">
       <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Samsung.Android.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.AdaptivePerformance.Google.Android.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Google.Android.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.AdaptivePerformance.Google.Android">
+      <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Google.Android.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.AdaptivePerformance.Simulator.Google.Extension">
+      <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Simulator.Google.Extension.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

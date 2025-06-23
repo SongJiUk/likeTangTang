@@ -26,7 +26,7 @@ public class ResourceManager
         GameObject prefab = Load<GameObject>(_key);
         if (prefab == null)
         {
-            Debug.LogError("키에 맞는 프리팹이 없음!!, ResourceManager 38Line");
+            Debug.LogError("키에 맞는 프리팹이 없음!!, ResourceManager 29Line");
             return null;
         }
 

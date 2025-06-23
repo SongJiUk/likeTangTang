@@ -1098,6 +1098,18 @@
       <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Samsung.Android.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.AdaptivePerformance.Google.Android.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Google.Android.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.AdaptivePerformance.Google.Android">
+      <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Google.Android.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.AdaptivePerformance.Simulator.Google.Extension">
+      <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Simulator.Google.Extension.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="GoogleMobileAds.Editor.csproj">
