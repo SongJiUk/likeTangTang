@@ -12,8 +12,8 @@ public class UI_SettingPopup : UI_Popup
         SoundEffectOnButton,
         BackgroundSoundOffButton,
         BackgroundSoundOnButton,
-        JoystickFixedOffButton,
-        JoystickFixedOnButton
+        //JoystickFixedOffButton,
+        //JoystickFixedOnButton
     }
 
     enum GameObjects
@@ -51,8 +51,8 @@ public class UI_SettingPopup : UI_Popup
         GetButton(ButtonsType, (int)Buttons.BackgroundButton).gameObject.BindEvent(OnClickBgButton);
         GetButton(ButtonsType, (int)Buttons.BackgroundSoundOffButton).gameObject.BindEvent(OnClickBackgrounSoundOnButton);
         GetButton(ButtonsType, (int)Buttons.BackgroundSoundOnButton).gameObject.BindEvent(OnClickBackgrounSoundOffButton);
-        GetButton(ButtonsType, (int)Buttons.JoystickFixedOffButton).gameObject.BindEvent(OnClickJoystickFixedOnButton);
-        GetButton(ButtonsType, (int)Buttons.JoystickFixedOnButton).gameObject.BindEvent(OnClickJoystickFixedOffButton);
+        //GetButton(ButtonsType, (int)Buttons.JoystickFixedOffButton).gameObject.BindEvent(OnClickJoystickFixedOnButton);
+        //GetButton(ButtonsType, (int)Buttons.JoystickFixedOnButton).gameObject.BindEvent(OnClickJoystickFixedOffButton);
         GetButton(ButtonsType, (int)Buttons.SoundEffectOffButton).gameObject.BindEvent(OnClickSoundEffectOnButton);
         GetButton(ButtonsType, (int)Buttons.SoundEffectOnButton).gameObject.BindEvent(OnClickSoundEffectOffButton);
 
@@ -68,10 +68,10 @@ public class UI_SettingPopup : UI_Popup
         else
             OnClickSoundEffectOffButton();
 
-        if (Manager.GameM.JoyStickType == Define.JoyStickType.Fixed)
-            OnClickJoystickFixedOnButton();
-        else
-            OnClickJoystickFixedOffButton();
+        //if (Manager.GameM.JoyStickType == Define.JoyStickType.Fixed)
+        //    OnClickJoystickFixedOnButton();
+        //else
+        //    OnClickJoystickFixedOffButton();
 
         return true;
     }
@@ -102,15 +102,15 @@ public class UI_SettingPopup : UI_Popup
     {
         Manager.SoundM.PlayButtonClick();
         Manager.GameM.JoyStickType = Define.JoyStickType.Fixed;
-        GetButton(ButtonsType, (int)Buttons.JoystickFixedOnButton).gameObject.SetActive(true);
-        GetButton(ButtonsType, (int)Buttons.JoystickFixedOffButton).gameObject.SetActive(false);
+        //GetButton(ButtonsType, (int)Buttons.JoystickFixedOnButton).gameObject.SetActive(true);
+        //GetButton(ButtonsType, (int)Buttons.JoystickFixedOffButton).gameObject.SetActive(false);
     }
     void OnClickJoystickFixedOffButton()
     {
         Manager.SoundM.PlayButtonClick();
         Manager.GameM.JoyStickType = Define.JoyStickType.Flexible;
-        GetButton(ButtonsType, (int)Buttons.JoystickFixedOnButton).gameObject.SetActive(false);
-        GetButton(ButtonsType, (int)Buttons.JoystickFixedOffButton).gameObject.SetActive(true);
+        //GetButton(ButtonsType, (int)Buttons.JoystickFixedOnButton).gameObject.SetActive(false);
+        //GetButton(ButtonsType, (int)Buttons.JoystickFixedOffButton).gameObject.SetActive(true);
     }
 
    

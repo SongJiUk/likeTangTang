@@ -33,30 +33,6 @@ public class CustomSceneManager
         }
 
         PlaySceneChangeAnimation(_type, _tr);
-
-        //switch (CurrentScene.SceneType)
-        //{
-        //    case Define.SceneType.TitleScene:
-        //        Manager.Clear();
-        //        SceneManager.LoadScene(GetScene(_type));
-        //        break;
-
-        //    case Define.SceneType.LobbyScene:
-        //        Time.timeScale = 1;
-        //        Manager.ResourceM.Destory(Manager.UiM.SceneUI.gameObject);
-        //        Manager.Clear();
-        //        Manager.AdM.ShowBanner();
-        //        SceneManager.LoadScene(GetScene(_type));
-        //        break;
-
-        //    case Define.SceneType.GameScene:
-        //        Time.timeScale = 1;
-        //        Manager.ResourceM.Destory(Manager.UiM.SceneUI.gameObject);
-        //        Manager.Clear();
-        //        Manager.AdM.HideBanner();
-        //        SceneManager.LoadScene(GetScene(_type));
-        //        break;
-        //}
     }
 
     private void PlaySceneChangeAnimation(Define.SceneType _type, Transform _parent)

@@ -16,7 +16,17 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 94163b93d7bb24f928019105ae174de0
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 893e38597c5a04647ba4de89dc36d491
+    m_Address: Ui_Volume_Mute_Icon.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
+  - m_GUID: fd8fe701478f6fa429e668de1805bb42
+    m_Address: Ui_Volume_Icon.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

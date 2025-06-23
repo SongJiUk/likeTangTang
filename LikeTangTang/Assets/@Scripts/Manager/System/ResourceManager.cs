@@ -49,16 +49,14 @@ public class ResourceManager
     }
 
     #region 비동기 코드 로딩(Addressable)
-    public void LoadAsync<T>(string _key, Action<T> cb = null) where T : Object
+    public void LoadAsync<T>(string _key, Action<T> _cb = null) where T : Object
     {
 
         if (resourceDic.TryGetValue(_key, out Object resource))
         {
-            cb?.Invoke(resource as T);
+            _cb?.Invoke(resource as T);
             return;
         }
-
-        // NOTE : 이걸 해주는 이유는 AddressAble에서 이미지를 불러올때 위에는 texture2D이고 밑에있는게 Sprite임
 
         string loadKey = _key;
         if(_key.Contains(".sprite"))
@@ -70,11 +68,11 @@ public class ResourceManager
         asyncOperationHandle.Completed += (oper) =>
         {
             resourceDic.Add(_key, oper.Result);
-            cb?.Invoke(oper.Result);
+            _cb?.Invoke(oper.Result);
         };
     }
 
-    public void LoadAllAsync<T>(string _label, Action<string, int, int> cb = null) where T : Object
+    public void LoadAllAsync<T>(string _label, Action<string, int, int> _cb = null) where T : Object
     {
         var asyncOperationHandle = Addressables.LoadResourceLocationsAsync(_label, typeof(T));
         asyncOperationHandle.Completed += (oper) =>
@@ -87,7 +85,7 @@ public class ResourceManager
                 LoadAsync<T>(result.PrimaryKey, (oper) =>
                 {
                     loadcount++;
-                    cb?.Invoke(result.PrimaryKey, loadcount, maxCount);
+                    _cb?.Invoke(result.PrimaryKey, loadcount, maxCount);
                 });
             }
         };

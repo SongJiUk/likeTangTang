@@ -13,8 +13,15 @@ public class AchievementManager
     
     public void Init()
     {
-        achievements = new List<AchievementData>(Manager.DataM.AchievementDataDic.Values);
+        if (Manager.GameM.Achievements != null && Manager.GameM.Achievements.Count > 0)
+            achievements = Manager.GameM.Achievements;
+        else
+        {
+            achievements = new List<AchievementData>(Manager.DataM.AchievementDataDic.Values);
+            Manager.GameM.Achievements = achievements;
+        }
 
+        byTarget.Clear();
         foreach(var achievement in achievements)
         {
             if (!byTarget.TryGetValue(achievement.MissionTarget, out var list))

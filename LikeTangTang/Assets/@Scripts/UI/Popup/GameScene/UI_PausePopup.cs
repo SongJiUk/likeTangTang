@@ -19,6 +19,11 @@ public class UI_PausePopup : UI_Popup
         ContentObject
     }
 
+    enum Images
+    {
+        SoundIconImage
+    }
+
     private void Awake()
     {
         Init();
@@ -29,16 +34,18 @@ public class UI_PausePopup : UI_Popup
         if (!base.Init()) return false;
         gameObjectsType = typeof(GameObjects);
         ButtonsType = typeof(Buttons);
+        ImagesType = typeof(Images);
 
         BindObject(gameObjectsType);
         BindButton(ButtonsType);
+        BindImage(ImagesType);
 
         GetButton(ButtonsType, (int)Buttons.ResumeButton).gameObject.BindEvent(OnClickResumeButton);
         GetButton(ButtonsType, (int)Buttons.StatisticsButton).gameObject.BindEvent(OnClickStatisticsButton);
         GetButton(ButtonsType, (int)Buttons.HomeButton).gameObject.BindEvent(OnClickHomeButton);
         GetButton(ButtonsType, (int)Buttons.SoundButton).gameObject.BindEvent(SoundButton);
         GetButton(ButtonsType, (int)Buttons.SettingButton).gameObject.BindEvent(SettingButton);
-
+        SetButtonImage();
         return true;
     }
 
@@ -65,6 +72,15 @@ public class UI_PausePopup : UI_Popup
     {
         Manager.SoundM.PlayButtonClick();
         Manager.SoundM.ToggleSound();
+        SetButtonImage();
+    }
+
+    void SetButtonImage()
+    {
+        if (Manager.SoundM.IsSoundOn)
+            GetImage(ImagesType, (int)Images.SoundIconImage).sprite = Manager.ResourceM.Load<Sprite>("Ui_Volume_Icon.sprite");
+        else
+            GetImage(ImagesType, (int)Images.SoundIconImage).sprite = Manager.ResourceM.Load<Sprite>("Ui_Volume_Mute_Icon.sprite");
     }
 
     void SettingButton()

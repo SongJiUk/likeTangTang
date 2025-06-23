@@ -12,26 +12,24 @@ public class SoundManager
     GameObject soundRoot = null;
     public void Init()
     {
+        if (soundRoot != null) return;
+        soundRoot = GameObject.Find("@SoundRoot");
         if(soundRoot == null)
         {
-            soundRoot = GameObject.Find("@SoundRoot");
-            if(soundRoot == null)
-            {
-                soundRoot = new GameObject { name = "@SoundRoot" };
-                UnityEngine.Object.DontDestroyOnLoad(soundRoot);
-
-                string[] soundTypeNames = Enum.GetNames(typeof(Define.Sound));
-                for(int count = 0; count < soundTypeNames.Length-1; count++)
-                {
-                    GameObject go = new GameObject { name = soundTypeNames[count] };
-                    audioSources[count] = go.AddComponent<AudioSource>();
-                    go.transform.parent = soundRoot.transform;
-                }
-                audioSources[(int)Define.Sound.Bgm].loop = true;
-                audioSources[(int)Define.Sound.SubBgm].loop = true;
-
-            }
+            soundRoot = new GameObject { name = "@SoundRoot" };
+            UnityEngine.Object.DontDestroyOnLoad(soundRoot);
         }
+
+        string[] soundTypeNames = Enum.GetNames(typeof(Define.Sound));
+        for (int count = 0; count < soundTypeNames.Length - 1; count++)
+        {
+            GameObject go = new GameObject { name = soundTypeNames[count] };
+            audioSources[count] = go.AddComponent<AudioSource>();
+            go.transform.parent = soundRoot.transform;
+        }
+        audioSources[(int)Define.Sound.Bgm].loop = true;
+        audioSources[(int)Define.Sound.SubBgm].loop = true;
+       
     }
     public void Clear()
     {
@@ -45,77 +43,63 @@ public class SoundManager
     {
         if (!IsSoundOn) return;
         AudioSource audio = audioSources[(int)_sound];
-
-        if(_sound == Define.Sound.Bgm)
-        {
-            LoadAudioClip(_label, (audioClip) =>
-            {
-                if (audio.isPlaying)
-                    audio.Stop();
-
-                audio.clip = audioClip;
-                if (Manager.GameM.BGMOn)
-                    audio.Play();
-            });
-        }
-        else if(_sound == Define.Sound.SubBgm)
-        {
-            LoadAudioClip(_label, (audioClip) =>
-            {
-                if (audio.isPlaying)
-                    audio.Stop();
-
-                audio.clip = audioClip;
-                if (Manager.GameM.EffectSoundOn)
-                    audio.Play();
-            });
-        }
-        else
-        {
-            LoadAudioClip(_label, (audioClip) =>
-            {
-                audio.pitch = _pitch;
-                if (Manager.GameM.EffectSoundOn)
-                    audio.PlayOneShot(audioClip);
-            });
-        }
+        PlayInternal(_sound, _label, _pitch, audio);
     }
 
-    public void PlayButtonClick()
+    private void PlayInternal(Define.Sound _sound, string _key, float _pitch, AudioSource _source)
     {
-        if (!IsSoundOn) return;
-        Play(Define.Sound.Effect, "ButtonClick");
+        if(audioClips.TryGetValue(_key, out var clip) && clip != null)
+        {
+            DoPlay(_sound, _source, clip, _pitch);
+            return;
+        }
+
+        Manager.ResourceM.LoadAsync<AudioClip>(_key, loadedClip =>
+        {
+            if(loadedClip == null)
+            {
+                Debug.LogError($"SoundManger : 사운드 로드 실패 {_key}");
+                return;
+            }
+            audioClips[_key] = loadedClip;
+            DoPlay(_sound, _source, loadedClip, _pitch);
+        });
     }
 
-    public void PlayPopupClose()
+    private void DoPlay(Define.Sound _sound, AudioSource _source, AudioClip _clip, float _pitch)
     {
-        if (!IsSoundOn) return;
-        Play(Define.Sound.Effect, "PopupClose");
+        _source.pitch = _pitch;
+        switch(_sound)
+        {
+            case Define.Sound.Bgm:
+                if (_source.isPlaying) _source.Stop();
+                _source.clip = _clip;
+                if (Manager.GameM.BGMOn) _source.Play();
+                break;
+
+            case Define.Sound.SubBgm:
+                if (_source.isPlaying) _source.Stop();
+                _source.clip = _clip;
+                if (Manager.GameM.EffectSoundOn) _source.Play();
+                break;
+
+            default:
+                if (Manager.GameM.EffectSoundOn)
+                    _source.PlayOneShot(_clip);
+                break;
+        }
     }
+    public void PlayButtonClick() => Play(Define.Sound.Effect, "ButtonClick");
+    public void PlayPopupClose() => Play(Define.Sound.Effect, "PopupClose");
+    
 
     
     public void Stop(Define.Sound _sound)
     {
         AudioSource audio = audioSources[(int)_sound];
-        audio.Stop();
+        if(audio.isPlaying) audio.Stop();
     }
 
-
-    public void LoadAudioClip(string _key, Action<AudioClip> _callback)
-    {
-        AudioClip audioClip = null;
-        if(audioClips.TryGetValue(_key, out audioClip))
-        {
-            _callback?.Invoke(audioClip);
-            return;
-        }
-
-        audioClip = Manager.ResourceM.Load<AudioClip>(_key);
-        if (!audioClips.ContainsKey(_key))
-            audioClips.Add(_key, audioClip);
-
-        _callback?.Invoke(audioClip);
-    }
 
     public void ToggleSound()
     {

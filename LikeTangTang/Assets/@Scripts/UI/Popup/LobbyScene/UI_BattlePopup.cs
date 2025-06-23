@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UI_BattlePopup : UI_Popup
 {
@@ -91,6 +92,7 @@ public class UI_BattlePopup : UI_Popup
     {
         StartCoroutine(CoCheckPopup());
         PopupOpenAnim(GetObject(gameObjectsType, (int)GameObjects.ContentObject));
+
     }
 
     public override bool Init()
@@ -304,6 +306,8 @@ public class UI_BattlePopup : UI_Popup
     
     public void RefreshUpsideGroup()
     {
+        if (SceneManager.GetActiveScene().name != Define.SceneType.LobbyScene.ToString()) return;
+
         if (Manager.GameM.IsMissionPossibleAcceptItem)
             GetObject(gameObjectsType, (int)GameObjects.MissionButtonRedDotObject).SetActive(true);
         else

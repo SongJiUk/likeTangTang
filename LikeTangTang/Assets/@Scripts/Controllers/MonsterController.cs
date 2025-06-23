@@ -133,7 +133,7 @@ public class MonsterController : CreatureController, ITickable
         if (isInContactWithPlayer && contactPlayer != null && Time.time >= nextDotDamageTime)
         {
             contactPlayer.OnDamaged(this, null, Attack);
-            nextDotDamageTime = Time.time + 0.1f;
+            nextDotDamageTime = Time.time + 0.5f;
         }
     }
 
