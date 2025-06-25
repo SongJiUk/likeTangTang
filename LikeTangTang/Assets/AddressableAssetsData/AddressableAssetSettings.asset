@@ -69,9 +69,9 @@ MonoBehaviour:
       - m_Id: ea125e3244a35467fb20a5f56bc20884
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
       - m_Id: 35d06773f02a84266a2c1a91bf1ea980
-        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+        m_Value: ServerData/[BuildTarget]
       - m_Id: 2b67b6087541647fa833d8b2ccd33cde
-        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+        m_Value: http://[PrivateIpAddress]:[HostingServicePort]
     m_ProfileEntryNames:
     - m_Id: 75be2627032c2465e83c36f09d16e0eb
       m_Name: BuildTarget
@@ -91,9 +91,9 @@ MonoBehaviour:
     m_ProfileVersion: 1
   m_LabelTable:
     m_LabelNames:
+    - PrevLoad
     - default
     - Prefabs
-    - PrevLoad
     - Data
     - Sprite
   m_SchemaTemplates: []

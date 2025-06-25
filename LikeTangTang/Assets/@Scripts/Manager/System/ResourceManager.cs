@@ -13,10 +13,10 @@ public class ResourceManager
     Dictionary<string, Object> resourceDic = new Dictionary<string, Object>();
     public Dictionary<string, Object> ResourceDic { get; }
 
-   
+
     public T Load<T>(string _key) where T : Object
-    { 
-        if(resourceDic.TryGetValue(_key, out Object resource))
+    {
+        if (resourceDic.TryGetValue(_key, out Object resource))
         {
             return resource as T;
         }
@@ -53,36 +53,24 @@ public class ResourceManager
     #region 비동기 코드 로딩(Addressable)
     public void LoadAsync<T>(string _key, Action<T> _cb = null) where T : Object
     {
-        if (resourceDic.TryGetValue(_key, out var resource))
-        {
-            _cb?.Invoke(resource as T);
-            return;
-        }
+        string loadKey = _key;
+
+        if (_key.Contains(".sprite"))
+            loadKey = $"{_key}[{_key.Replace(".sprite", "")}]";
 
         var asyncOperationHandle = Addressables.LoadAssetAsync<T>(_key);
         asyncOperationHandle.Completed += (oper) =>
         {
             if (oper.Status == AsyncOperationStatus.Succeeded)
             {
-                if (oper.Result != null)
+                if (resourceDic.TryGetValue(_key, out Object resource))
                 {
-                    if (!resourceDic.ContainsKey(_key))
-                    {
-                        resourceDic.Add(_key, oper.Result);
-                    }
                     _cb?.Invoke(oper.Result);
-                }
-                else
-                {
-                    Debug.LogError($"ResourceManager: Loaded asset is null for key '{_key}'.");
-                    _cb?.Invoke(null);
+                    return;
                 }
             }
-            else
-            {
-                Debug.LogError($"ResourceManager: Failed to load asset for key '{_key}'.\nException: {oper.OperationException}");
-                _cb?.Invoke(null);
-            }
+            resourceDic.Add(_key, oper.Result);
+            _cb?.Invoke(oper.Result);
         };
 
         //string loadKey = _key;
@@ -135,6 +123,7 @@ public class ResourceManager
         //    }
         //};
     }
+
     public void LoadAllAsync<T>(string _label, Action<string, int, int> _cb = null) where T : Object
     {
         var asyncOperationHandle = Addressables.LoadResourceLocationsAsync(_label, typeof(T));
@@ -145,11 +134,23 @@ public class ResourceManager
 
             foreach (var result in oper.Result)
             {
-                LoadAsync<T>(result.PrimaryKey, (oper) =>
+                if (result.PrimaryKey.Contains(".sprite"))
                 {
-                    loadcount++;
-                    _cb?.Invoke(result.PrimaryKey, loadcount, maxCount);
-                });
+                    LoadAsync<Sprite>(result.PrimaryKey, (obj) =>
+                    {
+                        loadcount++;
+                        _cb?.Invoke(result.PrimaryKey, loadcount, maxCount);
+                    });
+                }
+                else
+                {
+                    LoadAsync<T>(result.PrimaryKey, (oper) =>
+                    {
+                        loadcount++;
+                        _cb?.Invoke(result.PrimaryKey, loadcount, maxCount);
+                    });
+                }
+
             }
         };
     }
@@ -162,7 +163,7 @@ public class ResourceManager
     //    //        int loadcount = 0;
     //    //        int maxCount = locsOp.Result.Count;
     //    //        var locs = locsOp.Result;
-                
+
     //    //        foreach (var loc in locs)
     //    //        {
     //    //            Addressables.LoadAssetAsync<T>(loc)
@@ -181,3 +182,4 @@ public class ResourceManager
     //}
     #endregion
 }
+

@@ -55,42 +55,64 @@ public class UI_TitleScene : UI_Scene
 
     void SetInfo()
     {
-        Manager.ResourceM.LoadAllAsync<Sprite>("Sprite", (key, loadCount, maxCount) =>
-        {
-            if (loadCount == 1)
-            {
-                totalExpectedAssetCount += maxCount;
-            }
-            currentLoadedAssetCount++;
-            UpdateLoadingUI(currentLoadedAssetCount, totalExpectedAssetCount);
 
-            if (loadCount == maxCount)
-            {
-                completedLoadOperations++;
-                CheckAllLoadsCompleted();
-            }
-        });
-
-        // 2. 일반 Object 에셋 로드 시작
-        // "PrevLoad" 라벨에 할당된 모든 Object 에셋을 로드합니다.
         Manager.ResourceM.LoadAllAsync<Object>("PrevLoad", (key, loadCount, maxCount) =>
         {
-            // 첫 번째 콜백에서 해당 라벨의 총 에셋 수를 totalExpectedAssetCount에 더해줍니다.
-            if (loadCount == 1)
-            {
-                totalExpectedAssetCount += maxCount;
-            }
-            // 현재 로드된 에셋 수를 증가시키고 UI를 업데이트합니다.
-            currentLoadedAssetCount++;
-            UpdateLoadingUI(currentLoadedAssetCount, totalExpectedAssetCount);
+            GetSlider(typeof(Sliders), (int)Sliders.Slider).value = (float)loadCount / maxCount;
+            GetText(typeof(Texts), (int)Texts.CountText).text = $"{loadCount} / {maxCount}";
 
-            // 해당 라벨의 모든 에셋 로드가 완료되면 완료된 작업 수를 증가시키고 전체 완료 여부를 확인합니다.
-            if (loadCount == maxCount)
+            if(loadCount == maxCount)
             {
-                completedLoadOperations++;
-                CheckAllLoadsCompleted();
+                isLoadEnd = true;
+                GetButton(typeof(Buttons), (int)Buttons.StartButton).gameObject.SetActive(true);
+                GetText(typeof(Texts), (int)Texts.StartText).gameObject.SetActive(true);
+
+                // 모든 초기화 작업 실행
+                Manager.DataM.Init();
+                Manager.GameM.Init();
+                Manager.TimeM.Init();
+                Manager.AdM.Init();
+
+                StartAnim();
             }
+
         });
+        //Manager.ResourceM.LoadAllAsync<Sprite>("Sprite", (key, loadCount, maxCount) =>
+        //{
+        //    if (loadCount == 1)
+        //    {
+        //        totalExpectedAssetCount += maxCount;
+        //    }
+        //    currentLoadedAssetCount++;
+        //    UpdateLoadingUI(currentLoadedAssetCount, totalExpectedAssetCount);
+
+        //    if (loadCount == maxCount)
+        //    {
+        //        completedLoadOperations++;
+        //        CheckAllLoadsCompleted();
+        //    }
+        //});
+
+        //// 2. 일반 Object 에셋 로드 시작
+        //// "PrevLoad" 라벨에 할당된 모든 Object 에셋을 로드합니다.
+        //Manager.ResourceM.LoadAllAsync<Object>("PrevLoad", (key, loadCount, maxCount) =>
+        //{
+        //    // 첫 번째 콜백에서 해당 라벨의 총 에셋 수를 totalExpectedAssetCount에 더해줍니다.
+        //    if (loadCount == 1)
+        //    {
+        //        totalExpectedAssetCount += maxCount;
+        //    }
+        //    // 현재 로드된 에셋 수를 증가시키고 UI를 업데이트합니다.
+        //    currentLoadedAssetCount++;
+        //    UpdateLoadingUI(currentLoadedAssetCount, totalExpectedAssetCount);
+
+        //    // 해당 라벨의 모든 에셋 로드가 완료되면 완료된 작업 수를 증가시키고 전체 완료 여부를 확인합니다.
+        //    if (loadCount == maxCount)
+        //    {
+        //        completedLoadOperations++;
+        //        CheckAllLoadsCompleted();
+        //    }
+        //});
     }
 
     void UpdateLoadingUI(int current, int total)

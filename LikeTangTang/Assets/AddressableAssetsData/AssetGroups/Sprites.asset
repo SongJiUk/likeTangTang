@@ -21,807 +21,807 @@ MonoBehaviour:
     m_Address: RedGem.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 861a22b271a47e745aeb059a81c6ee5a
     m_Address: GreenGem.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 1b0b3cf758b17614c977d9c05bf17deb
     m_Address: BlueGem.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: ce7b3baa5bac4c5f908f345eea062c67
     m_Address: Alpha.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 5a848155335e1204fbe4d04b433b0a86
     m_Address: GoldGem.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: aea530adaf5d36449963b1699a695045
     m_Address: MonsterIcon_05.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: afd793b1787964e44aa4ce39e16e5bcf
     m_Address: MonsterIcon_01.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 008c7049d2cb4c646a7d43c12494e372
     m_Address: MonsterIcon_25.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 1003842c4fde28746827be698d197ca2
     m_Address: MonsterIcon_12.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 20806bcda2342d0458201b5f5a78e183
     m_Address: MonsterIcon_06.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: b0d1c95a7430d6e4fac32178f0a5baeb
     m_Address: MonsterIcon_37.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 014de57d3ba2dde47a22122df3dc64eb
     m_Address: MonsterIcon_31.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 113acccba3571d740b68a997c5c85387
     m_Address: MonsterIcon_07.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 219a6446f0382274c992f82b527bd817
     m_Address: MonsterIcon_15.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 81af6409d9daa6644ad4aa5ce6439f88
     m_Address: MonsterIcon_24.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: e1db9ad041d59394088c3929c216809a
     m_Address: MonsterIcon_10.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 923c215c9d0b9c740aeea9a9368852f2
     m_Address: MonsterIcon_28.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 03f87ce11af60a345b3c65eeb9507da2
     m_Address: MonsterIcon_34.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: b3711a59445527c44a76c2a709a21534
     m_Address: MonsterIcon_21.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 351e7d7f08d54b447b1df750b87c4cde
     m_Address: MonsterIcon_19.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: a527ad10d22088a45801657567c7031d
     m_Address: MonsterIcon_23.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: e551a3826321a524985292199cf410b3
     m_Address: MonsterIcon_13.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 56c6aa6bae3260e44986dc7cb56597d8
     m_Address: MonsterIcon_08.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 8630fb6c32723c64692197cd4b5140d4
     m_Address: MonsterIcon_29.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 9708b311a04d148449fab616988e716d
     m_Address: MonsterIcon_36.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 9891b7cecef70924890814f079a4b8fc
     m_Address: MonsterIcon_03.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 49458707f34ee69468a2e6c6f976c902
     m_Address: MonsterIcon_27.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 890d78a829af55a47875e274def960d4
     m_Address: MonsterIcon_16.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 99771e5652adc2c46a718ca3ce3204f2
     m_Address: MonsterIcon_39.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 4ab191383f18a71418a2ba906a585e51
     m_Address: MonsterIcon_17.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: aa2fdb0c334a1dc41ac11dd0d137ab2d
     m_Address: MonsterIcon_04.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 1b863f5e680066348b933661c288e811
     m_Address: MonsterIcon_38.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 4b7c33038949f5b46b4ae43d30c793ad
     m_Address: MonsterIcon_11.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 5b091dfa2bab8bb4cb8b7b867d7b95b5
     m_Address: MonsterIcon_18.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: fbb312522124d8043a34b46a8ddf1148
     m_Address: MonsterIcon_14.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 1c856a67ba3477842ba5c768a51a1cb4
     m_Address: MonsterIcon_02.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 9cf01d9f38f4ee942b8d209ba4a428ed
     m_Address: MonsterIcon_33.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: bcceb871c32043c4da9858f8dc8c05c2
     m_Address: MonsterIcon_35.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: ed76499c23d166d45b82e0c7fe6f644d
     m_Address: MonsterIcon_26.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 0e00cd01aeebb3a46980ecba6074d2bb
     m_Address: MonsterIcon_09.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 7e84ad18ee0ba6f408407c60460e5e4d
     m_Address: MonsterIcon_30.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 1f8cd5e783f635e43a7f06f09440808f
     m_Address: MonsterIcon_20.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 9feafaac3a586584387c1b5f59a8263a
     m_Address: MonsterIcon_22.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: af763f647fa6c4748a0dcc80869dd15c
     m_Address: MonsterIcon_32.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 306f69e51f578654cbc6f9ea7f99c207
     m_Address: Rare_Box.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: c92fcb33b3b8f4f469671e02476ca25a
     m_Address: Unique_Box.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: d95307edb5fe16742b91b52994b08134
     m_Address: Normal_Box.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: f1d872f097aff8040ac7d437e789c723
     m_Address: Magnet.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 30ee0808c5ed498193fa08a5c0e7302a
     m_Address: Bomb.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 4ded96409165f49a8a2a7ed307c2ba61
     m_Address: IMG_PlasmaSpinner.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: d0086119c85c44ca7af6bcf75e64ceaf
     m_Address: IMG_SpectralSlash.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 7681bfceb2a914442af9a472ccdda0ef
     m_Address: IMG_PlasmaShot.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: a3191a231e73d4e83925a9ed974d0ca2
     m_Address: IMG_SuicideDrone.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 95d0115f969e94fbb919c644a1730bdd
     m_Address: IMG_TimeStopBomb.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 3f6dd85c1bbf9405abff982178b980d8
     m_Address: IMG_GravityBomb.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 51dcf44af14a340999414f82999f77c5
     m_Address: IMG_ElectronicField.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 1e40e44fa1c31478886490e924d7548f
     m_Address: IMG_EnergyRing.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: ac75c01417bbb9e4daa2b630f3bac34d
     m_Address: IMG_ElectricShock.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: d19db9aba08a3934ca7753bf41028060
     m_Address: IMG_OrbitalBlades.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 60f7302158c303f4a9744e76fb927a1e
     m_Address: Chrono_Stone.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 4f1e277d69e031a40ba82a16e37b5ba0
     m_Address: Gravity_Control_Module.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: f31448d78c4a2224c952c973fb9f47a9
     m_Address: Energy_Amplifier.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: be40ab4f883891542962451cf4cee222
     m_Address: Reactive_Stabilizer.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: fc03c9ac7e5476f40ab92c39fb880552
     m_Address: Orbital_Tracking_Sensor.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: e5504fa297204164bb7b5234f987ef91
     m_Address: Spectral_Crystal.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: eec45e528662663419f714276080cc39
     m_Address: Electromagnetic_Converter.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 575600b3b50c5f84182a9c289c85bfe4
     m_Address: PlasmaCore.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 1c84e693bdedcc441bf2358850bc53d0
     m_Address: Superconducting_Coil.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 40b557b965e9f1a40abff24e2e7685a2
     m_Address: Drone_AI_Chipset.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 077757e715eb0f548b4078083086b0d7
     m_Address: Weapon_ElectricShock.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 3c66405d8bd3c854ca9e756ef06a9d7e
     m_Address: Weapon_ElectronicField.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: a10fc8257842c714fb7bb5a949c8e7da
     m_Address: Weapon_EnergyRing.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 5ed3992875b47234997a4c2f2e3ff3b1
     m_Address: Weapon_GravityBomb.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: d8c1d62529ca4556bda0098688e208a5
     m_Address: Weapon_OrbitalBlades.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 545ff757b9164563ba87fad97f59482a
     m_Address: Weapon_PlasmaShot.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 9b58b32968506c94b8b8e7d97f67458c
     m_Address: Weapon_PlasmaSpinner.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: be91cc6611cb4cf0ba8fec00dc9c964f
     m_Address: Weapon_SpectralSlash.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: c9c7be67c92449a49875cf1fd3dc1104
     m_Address: Weapon_SuicideDrone.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 9e44e25f56ec79241b0d287e9284f45c
     m_Address: Weapon_TimeStopBomb.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 61c8ddbbfaeac964d844ab24fb45954f
     m_Address: Boots_Icon.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: dc274b6b281f0444cb5d70115e472ac0
     m_Address: Ring_Icon.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 24e1274f519101142b6d19cc6f75f3ef
     m_Address: Helmet_Icon.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 679a532b29a4dba418dec40bdc6144b9
     m_Address: Armor_Icon.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 96fd330c4ac8480469a21f4be9e313a2
     m_Address: Weapon_Icon.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 2265cc6ca5cc64946aa7f53ee6cede1f
     m_Address: Glove_Icon.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: a4e47f7830003024bbd9268069ee0f16
     m_Address: Scroll_Glove.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: de215409d5886f4468fd16850763305c
     m_Address: Scroll_Belt.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 65401930e10844147974e1faa70e7f8a
     m_Address: Scroll_Ring.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: bad05f32d0e27a24486798f00560b95e
     m_Address: Scroll_Weapon.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: c20e474b31b78424eae49ddacd3c9ba1
     m_Address: Scroll_Random.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: c3a4cc76e13635143b5bd5f53cfd810c
     m_Address: Scroll_Boots.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: b2029118fbea1a642a5ed67e5d6822ad
     m_Address: Scroll_Armor.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 63fb60850e69e4d4597124076586c260
     m_Address: Key_Silver.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 0aaf453f46947e0478c00d1a707579b3
     m_Address: Key_Bronze.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 461b84244ce10a84cb03535644111498
     m_Address: Clover.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: a49a1a578b6b6e64bb26a70a8f38bac8
     m_Address: Key_Gold.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: adc58ede0ed89aa4f9e8a26a211feae8
     m_Address: Scroll_Helmet.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 310246dd7ded6b74d901fd3b9f28f939
     m_Address: EnchantStone_Armor.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 3efbb8a6d0b7c884d8e6c752ca07e3ce
     m_Address: EnchantStone_Ring.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 78c622a42c40af24a98e5749436576cc
     m_Address: EnchantStone_Glove.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: ef33f3455860f1c43b9b6ecbeff10209
     m_Address: EnchantStone_Belt.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 785f16652bc56bb4baa9189e9826e8de
     m_Address: EnchantStone_Weapon.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 2efdbd0b876049b4a9da8cc0115e69b6
     m_Address: EnchantStone_Boots.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 787caeb8fac403a4f9ca25d23468a3f7
     m_Address: EnchantStone_Helmet.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: f992bab5c9ee14090b5ece565247f885
     m_Address: Ring_02.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: ecd69b4d0b45d404d832061f5fe8ae1e
     m_Address: Ring_04.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 2d9a2effd3629402fbd6da98683241b5
     m_Address: Ring_05.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 5b78c3077e68a4578b39790ebd87c666
     m_Address: Ring_01.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 008edfc7c9022452ab024697fe8a6c2f
     m_Address: Ring_03.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 511ac5f4571cb4c4c85134fe90b12ec6
     m_Address: Helmet_03.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: fa6dc6be9e2734e5ab0e0cf25f783111
     m_Address: Helmet_05.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: fd6a5c53a4bb24166ba0a5fd50b8860d
     m_Address: Helmet_04.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: f0397a21413634be4941a341e8d0c7e6
     m_Address: Helmet_02.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 8eb046756a47545298b5b6e6505e4642
     m_Address: Helmet_01.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 3a4a95673b2ea4bd7ae02da7c9524c44
     m_Address: Boots_01.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: b697cabe23f234822b1389c82475e233
     m_Address: Boots_02.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 593e1b3dceec94518a16ce1fe1fcfb6b
     m_Address: Boots_05.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 1273f01182da841469461319fd35fd64
     m_Address: Boots_04.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 35aabab37367d4b9e85ccbe83992c75e
     m_Address: Boots_03.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: a4d78e9e1a6d4405aafc8c55b4d34965
     m_Address: Armor_04.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 0ca29f56bc9b24dfcb9fb5f1d43dc59e
     m_Address: Armor_03.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 2c9f1433d31d74866acbd9bfae0ed5fd
     m_Address: Armor_02.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: dea2c137f31da4106aa331ecca4e196b
     m_Address: Armor_01.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 6dfdbc0f5a5e048dfb601ab2896e87b0
     m_Address: Armor_05.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 9c9c36e45a0554eb3bf1066a9bcfca9c
     m_Address: Glove_01.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 7eddb478934a74b25ba2a61a29e4f0f0
     m_Address: Glove_03.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 5711bd179d3bc4c83b4ec4be4aafd172
     m_Address: Glove_04.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 1c424755af1634c2bb6d6887fc5a0890
     m_Address: Glove_05.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 4b62d5d77fdd648a8a3a33abce39e51f
     m_Address: Glove_02.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 3606c68fc4e3dba43a2f7e70416269b2
     m_Address: Ui_Hp_Icon.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: bebd2e84ccbffb2489b09dcc81f6cf53
     m_Address: Ui_Attack_Icon.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 6656ca71f8b9e43418dfc5b66f94cdb3
     m_Address: Gold.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: fb0374585778d354c930bb7cca067d67
     m_Address: Stamina.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 9e76a8782b96336418f93eb1b95b4885
     m_Address: Dia.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 1b53c83915526774c85db8893a33da7e
     m_Address: MapSprite_01.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 927df8e2970943a4f8f390a2cd2e44d5
     m_Address: MapSprite_03.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: f1663d6bfba323947a4d3367bde60456
     m_Address: MapSprite_04.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: aa139921111ff2540a0f5d2a907db810
     m_Address: MapSprite_02.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 76fc3da36981b954bbf0580f8f11a6a7
     m_Address: MapSprite_05.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 4d9943c85b27439ba29ebffeb2b7e315
     m_Address: Beta.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: f9cdc9420d784e58bfd021946386f9a1
     m_Address: Gamma.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 5dac8be755f14503826d02126965b5b8
     m_Address: Delta.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: aa1899bc9c524e66bab37821775b857b
     m_Address: Epsilon.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 4f408a3b62c586f409d5f2a524de8034
     m_Address: LevelUpCoupon.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: b6f0284acc866194b976906a2840a922
     m_Address: MaxHpBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 129de4b3d23b23c46830d0c5617af29b
     m_Address: CoolTimeBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 5eaaff2a208dc874c87a0c06bef476c0
     m_Address: CriticalBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 58e57342cad2dc847832c322f39cec2e
     m_Address: CriticalDamageBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 55990b9b78b2b234f9c7a8c7322cf752
     m_Address: DefBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: c3fff725454e2a44493bacfe10b5f73f
     m_Address: DiaBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: a22ed7fdbbe4e384eb7787734d11d1f3
     m_Address: GoldBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 0dccbef00267d6843ae7297510d09844
     m_Address: HealingBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: c94b39e1e636db44eb6914e5bc92899a
     m_Address: MoveSpeedBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: b01d89f8d0057b0458aaae3da9629215
     m_Address: AttackBonus.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 893e38597c5a04647ba4de89dc36d491
     m_Address: Ui_Volume_Mute_Icon.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: fd8fe701478f6fa429e668de1805bb42
     m_Address: Ui_Volume_Icon.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 83af4c0dcd9f45e0b1bae337e1573b01
     m_Address: Tilemap_01.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 25b8c8fd0cdc4667bc02d7f91c224bcf
     m_Address: Tilemap_02.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 022d1944b3ad44f5927c2811e258e6a0
     m_Address: Tilemap_05.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: 91099ed4949f4c63aa7ee4495fd41126
     m_Address: Tilemap_04.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   - m_GUID: c0edff8422654805b67a770acde24962
     m_Address: Tilemap_03.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Sprite
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

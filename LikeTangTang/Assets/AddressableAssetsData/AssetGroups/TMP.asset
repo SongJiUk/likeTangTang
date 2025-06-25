@@ -16,12 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 028a3e77215501b4a91aa4002370dbac
-  m_SerializeEntries:
-  - m_GUID: f042465329aeb0e4b91a9c9a3b9d666b
-    m_Address: Assets/@Resources/Font/Maplestory Bold SDF.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:
