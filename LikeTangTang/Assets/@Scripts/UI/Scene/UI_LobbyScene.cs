@@ -286,13 +286,16 @@ public class UI_LobbyScene : UI_Scene
 
     private void Update()
     {
+#if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.F1))
         {
+            Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_GOLD_KEY], 10);
             Manager.GameM.Stamina += 10;
             Manager.GameM.Gold += 10000;
             Manager.GameM.Dia += 10000;
             Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_LevelUpCoupon], 10000);
             Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_WeaponScroll], 100);
         }
+        #endif
     }
 }

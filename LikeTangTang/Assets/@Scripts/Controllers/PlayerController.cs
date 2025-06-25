@@ -196,6 +196,7 @@ public class PlayerController : CreatureController, ITickable
         get => Manager.GameM.ContinueDatas.SpecialSkillHealCount;
         set => Manager.GameM.ContinueDatas.SpecialSkillHealCount = value;
     }
+     float GetDropItemDist = 2f;
 
     #endregion
 
@@ -320,10 +321,10 @@ public class PlayerController : CreatureController, ITickable
 
     #region 드랍 아이템
 
-    float GetDropItemDist = 2f;
-
+   
     void CollectDropItem()
     {
+
         var FindDropItem = Manager.GameM.CurrentMap.Grid.GetObjects(transform.position, GetDropItemDist);
 
         float sqrtDist = GetDropItemDist * GetDropItemDist;
@@ -391,8 +392,8 @@ public class PlayerController : CreatureController, ITickable
         Attack = Manager.GameM.CurrentCharacter.Attack;  
         Def = Manager.GameM.CurrentCharacter.Def;
         Speed = Manager.GameM.CurrentCharacter.MoveSpeed;
-       
-        if(isFirst)
+
+        if (isFirst)
         {
             MaxHpRate = Manager.GameM.CurrentCharacter.MaxHpRate;
             AttackRate = Manager.GameM.CurrentCharacter.AttackRate;
@@ -475,7 +476,7 @@ public class PlayerController : CreatureController, ITickable
         CollectDropItem();
 
         regenTimer += _deltaTime;
-        if(regenTimer >= 2f)
+        if(regenTimer >= 10f)
         {
             regenTimer = 0f;
             HpSelfRecovery();
@@ -506,7 +507,14 @@ public class PlayerController : CreatureController, ITickable
     #region 힐
     void HpSelfRecovery()
     {
-        Healing(HpRegen, false);
+        float res = MaxHp * HpRegen;
+        if (res == 0) return;
+        Hp += res;
+
+        if (Hp > MaxHp) Hp = MaxHp;
+
+        Manager.ObjectM.ShowFont(transform.position, 0, res, transform);
+        Manager.ResourceM.Instantiate("HealEffect", transform);
     }
 
     public override void Healing(float _amount, bool _isEffect = true)

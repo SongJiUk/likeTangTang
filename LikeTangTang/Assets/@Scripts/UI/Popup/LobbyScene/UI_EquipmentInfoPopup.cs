@@ -237,7 +237,7 @@ public class UI_EquipmentInfoPopup : UI_Popup
 
     void OnClickEquipButton()
     {
-        Manager.SoundM.Play(Define.Sound.Max, "Equip_Equipment");
+        Manager.SoundM.Play(Define.Sound.Effect, "Equip_Equipment");
         Manager.GameM.EquipItem(equipment.EquipmentData.EquipmentType, equipment);
         Refresh();
         gameObject.SetActive(false);

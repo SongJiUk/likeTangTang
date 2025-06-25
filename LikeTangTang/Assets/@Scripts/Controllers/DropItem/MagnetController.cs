@@ -29,7 +29,7 @@ public class MagnetController : DropItemController
          if(ItemSprite != null) 
             ItemSprite.sprite = Manager.ResourceM.Load<Sprite>(dropItem.SpriteName);
 
-        transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        transform.localScale = new Vector3(1f, 1f, 1f);
     }
 
     public override void CompleteGetItem()

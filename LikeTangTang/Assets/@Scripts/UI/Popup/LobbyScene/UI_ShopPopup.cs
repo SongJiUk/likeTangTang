@@ -266,7 +266,7 @@ public class UI_ShopPopup : UI_Popup
         {
             if (count >= 10)
             {
-                DoGaCha(Define.GachaType.CommonGacha, 10);
+                DoGaCha(Define.GachaType.AdvancedGacha, 10);
                 Manager.GameM.ItemDic[Define.ID_GOLD_KEY] -= 10;
                 Refresh();
             }

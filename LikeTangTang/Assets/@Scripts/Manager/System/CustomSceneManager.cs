@@ -55,11 +55,9 @@ public class CustomSceneManager
             switch (_type)
             {
                 case Define.SceneType.LobbyScene:
-                    Manager.AdM.ShowBanner();
                     break;
 
                 case Define.SceneType.GameScene:
-                    Manager.AdM.HideBanner();
                     break;
             }
             SceneManager.LoadSceneAsync(GetScene(_type));

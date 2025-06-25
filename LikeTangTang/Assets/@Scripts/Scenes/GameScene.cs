@@ -316,6 +316,7 @@ public class GameScene : BaseScene, ITickable
     //TODO : 지우기
     private void Update()
     {
+#if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.F1))
         {
             Manager.GameM.player.Exp += 10;
@@ -328,6 +329,7 @@ public class GameScene : BaseScene, ITickable
         {
             WaveEnd();
         }
+        #endif
     }
 
 }
