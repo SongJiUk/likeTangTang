@@ -197,6 +197,7 @@ public class UI_BattlePopup : UI_Popup
 
         GetImage(ImagesType, (int)Images.StageImage).sprite = Manager.ResourceM.Load<Sprite>(Manager.GameM.CurrentStageData.StageImage);
 
+       
 
         if (info != null)
         {
