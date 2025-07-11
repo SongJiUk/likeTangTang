@@ -137,6 +137,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
+  - m_GUID: 545a695a4f9ed40098896d4772f46c4b
+    m_Address: UI_BattlePopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrevLoad
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58fc61992768249fdab8acc891732a43, type: 2}
   m_SchemaSet:

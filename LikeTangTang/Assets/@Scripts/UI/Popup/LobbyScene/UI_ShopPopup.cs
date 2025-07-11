@@ -48,6 +48,7 @@ public class UI_ShopPopup : UI_Popup
     private void OnEnable()
     {
         PopupOpenAnim(GetObject(gameObjectsType, (int)GameObjects.ContentObject));
+        Refresh();
     }
     private void Awake()
     {
@@ -65,8 +66,8 @@ public class UI_ShopPopup : UI_Popup
         BindButton(ButtonsType);
         BindText(TextsType);
 
-        
-        
+
+
 
         //열쇠 상점
         GetObject(gameObjectsType, (int)GameObjects.AdKeySoldOutObject).SetActive(false);
@@ -126,12 +127,12 @@ public class UI_ShopPopup : UI_Popup
         GetText(TextsType, (int)Texts.FirstGoldProductTitleText).text = $"{goldAmount * 3}";
         GetText(TextsType, (int)Texts.SecondGoldProductTitleText).text = $"{goldAmount * 5}";
 
-        if(Manager.GameM.SilverKeyCountAds == 0)
+        if (Manager.GameM.SilverKeyCountAds == 0)
         {
             GetObject(gameObjectsType, (int)GameObjects.AdKeyRedDotObject).SetActive(false);
         }
 
-        if(Manager.GameM.GoldCountAds == 0)
+        if (Manager.GameM.GoldCountAds == 0)
         {
             GetObject(gameObjectsType, (int)GameObjects.FreeGoldRedDotObject).SetActive(false);
         }
@@ -146,8 +147,8 @@ public class UI_ShopPopup : UI_Popup
             missionInfo.Progress++;
             Manager.UiM.CheckRedDotObject(Define.RedDotObjectType.Mission);
         }
-            
-        UI_GachaResultsPopup popup =  Manager.UiM.MakeSubItem<UI_GachaResultsPopup>(Manager.UiM.Root.transform);
+
+        UI_GachaResultsPopup popup = Manager.UiM.MakeSubItem<UI_GachaResultsPopup>(Manager.UiM.Root.transform);
         popup.SetInfo(list);
     }
 
@@ -156,7 +157,7 @@ public class UI_ShopPopup : UI_Popup
     void OnClickAdKeyButton()
     {
         Manager.SoundM.PlayButtonClick();
-        if(Manager.GameM.SilverKeyCountAds > 0)
+        if (Manager.GameM.SilverKeyCountAds > 0)
         {
             Manager.AdM.ShowRewardedAd(() =>
             {
@@ -173,7 +174,7 @@ public class UI_ShopPopup : UI_Popup
 
                 Refresh();
             });
-            
+
         }
         else
         {
@@ -184,7 +185,7 @@ public class UI_ShopPopup : UI_Popup
     void OnClickSilverKeyButton()
     {
         Manager.SoundM.PlayButtonClick();
-        if(Manager.GameM.Dia >= 150)
+        if (Manager.GameM.Dia >= 150)
         {
             UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(Manager.UiM.Root.transform);
             Manager.DataM.MaterialDic.TryGetValue(Define.ID_SILVER_KEY, out var item);
@@ -200,7 +201,7 @@ public class UI_ShopPopup : UI_Popup
     void OnClickGoldKeyButton()
     {
         Manager.SoundM.PlayButtonClick();
-        if(Manager.GameM.Dia >= 300)
+        if (Manager.GameM.Dia >= 300)
         {
             UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(Manager.UiM.Root.transform);
             Manager.DataM.MaterialDic.TryGetValue(Define.ID_GOLD_KEY, out var item);
@@ -220,10 +221,10 @@ public class UI_ShopPopup : UI_Popup
         UI_GachaListPopup popup = Manager.UiM.MakeSubItem<UI_GachaListPopup>(Manager.UiM.Root.transform);
         popup.SetInfo(Define.GachaType.AdvancedGacha);
     }
-    
+
     void OnClickAdvancedBoxADButton()
     {
-       Manager.SoundM.PlayButtonClick();
+        Manager.SoundM.PlayButtonClick();
         if (Manager.GameM.GachaCountAdsAdvanced > 0)
         {
             Manager.AdM.ShowRewardedAd(() =>
@@ -254,9 +255,9 @@ public class UI_ShopPopup : UI_Popup
             {
                 Manager.UiM.ShowToast("열쇠가 부족합니다.");
             }
-        }   
+        }
         else Debug.LogError("ItemDic에 GoldKey 등록이 안됨.");
-        
+
     }
 
     void OnClickAdvancedBoxTenOpenButton()
@@ -291,19 +292,19 @@ public class UI_ShopPopup : UI_Popup
     void OnClickADCommonGachaOpenButton()
     {
         Manager.SoundM.PlayButtonClick();
-       if(Manager.GameM.GachaCountAdsCommon > 0)
-       {
+        if (Manager.GameM.GachaCountAdsCommon > 0)
+        {
             Manager.AdM.ShowRewardedAd(() =>
             {
                 Manager.GameM.GachaCountAdsCommon--;
                 DoGaCha(Define.GachaType.CommonGacha, 1);
                 Refresh();
             });
-       }
-       else
-       {
+        }
+        else
+        {
             Manager.UiM.ShowToast("오늘은 무료광고를 모두 시청했습니다.");
-       }
+        }
     }
 
     void OnClickCommonGachaOpenButton()
@@ -323,7 +324,7 @@ public class UI_ShopPopup : UI_Popup
             }
         }
         else Debug.LogError("ItemDic에 SilverKey 등록이 안됨.");
-        
+
     }
 
     //골드
@@ -367,7 +368,7 @@ public class UI_ShopPopup : UI_Popup
     void OnClickFirstGoldProductButton()
     {
         Manager.SoundM.PlayButtonClick();
-        if(Manager.GameM.Dia >= 300)
+        if (Manager.GameM.Dia >= 300)
         {
             UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(Manager.UiM.Root.transform);
             Manager.DataM.MaterialDic.TryGetValue(Define.ID_GOLD, out var item);
@@ -382,8 +383,8 @@ public class UI_ShopPopup : UI_Popup
 
     void OnClickSecondGoldProductButton()
     {
-         Manager.SoundM.PlayButtonClick();
-        if(Manager.GameM.Dia >= 500)
+        Manager.SoundM.PlayButtonClick();
+        if (Manager.GameM.Dia >= 500)
         {
             UI_BuyItemPopup popup = Manager.UiM.MakeSubItem<UI_BuyItemPopup>(Manager.UiM.Root.transform);
             Manager.DataM.MaterialDic.TryGetValue(Define.ID_GOLD, out var item);
@@ -395,4 +396,5 @@ public class UI_ShopPopup : UI_Popup
             Manager.UiM.ShowToast("다이아가 부족합니다");
         }
     }
+    
 }

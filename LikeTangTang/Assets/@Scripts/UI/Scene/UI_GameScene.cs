@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using Unity.VisualScripting;
 using DG.Tweening;
 using System.Linq;
+using System;
 
 
 public class UI_GameScene : UI_Scene
@@ -56,7 +57,12 @@ public class UI_GameScene : UI_Scene
     public enum Buttons
     {
         PauseButton,
-        HealButton
+        HealButton,
+        #region  Test
+        MonsterAllKillButton,
+        NextWaveButton,
+        LevelUpButton
+        #endregion
     }
 
     enum AlramType
@@ -94,6 +100,9 @@ public class UI_GameScene : UI_Scene
 
         GetButton(ButtonsType, (int)Buttons.PauseButton).gameObject.BindEvent(OnClickPauseButton);
         GetButton(ButtonsType, (int)Buttons.HealButton).gameObject.BindEvent(OnClickHealButton);
+        GetButton(ButtonsType, (int)Buttons.MonsterAllKillButton).gameObject.BindEvent(OnClickMonsterAllKillButton);
+        GetButton(ButtonsType, (int)Buttons.NextWaveButton).gameObject.BindEvent(OnClickNextWaveButton);
+        GetButton(ButtonsType, (int)Buttons.LevelUpButton).gameObject.BindEvent(OnClickLevelUpButton);
 
         GetObject(gameObjectsType, (int)GameObjects.BossInfoObject).SetActive(false);
         GetObject(gameObjectsType, (int)GameObjects.EliteInfoObject).SetActive(false);
@@ -119,7 +128,7 @@ public class UI_GameScene : UI_Scene
     {
         GetText(typeof(Texts), (int)(Texts.WaveValueText)).text = _currentStageIndex.ToString();
     }
-    
+
     public void OnWaveEnd()
     {
         GetObject(gameObjectsType, (int)GameObjects.MonsterAlarmObject).SetActive(false);
@@ -133,10 +142,10 @@ public class UI_GameScene : UI_Scene
             StartCoroutine(SwitchAlarm(AlramType.Wave));
         }
 
-        if(Manager.GameM.CurrentWaveData.BossMonsterID.Count > 0)
+        if (Manager.GameM.CurrentWaveData.BossMonsterID.Count > 0)
         {
             int bossGenTime = Define.BOSS_GEN_TIME;
-            if(_second == bossGenTime)
+            if (_second == bossGenTime)
                 StartCoroutine(SwitchAlarm(AlramType.Boss));
         }
 
@@ -152,14 +161,14 @@ public class UI_GameScene : UI_Scene
         GetText(typeof(Texts), (int)Texts.KillValueText).text = $"{Manager.GameM.player.KillCount}";
         GetText(typeof(Texts), (int)Texts.CharacterLevelValueText).text = $"{Manager.GameM.player.Level}";
     }
-   
+
     public void OnPlayerLevelUp()
     {
-        if(Manager.GameM.isGameEnd) return;
+        if (Manager.GameM.isGameEnd) return;
 
         //List<SkillBase> list = Manager.GameM.player.Skills.RecommendSkills();
         List<object> list = Manager.GameM.player.Skills.GetSkills();
-        if(list.Count > 0) Manager.UiM.ShowPopup<UI_SkillSelectPopup>();
+        if (list.Count > 0) Manager.UiM.ShowPopup<UI_SkillSelectPopup>();
 
         GetSlider(typeof(Sliders), (int)Sliders.ExpSliderObject).value = Manager.GameM.player.ExpRatio;
         GetText(typeof(Texts), (int)Texts.CharacterLevelValueText).text = $"{Manager.GameM.ContinueDatas.Level}";
@@ -167,9 +176,9 @@ public class UI_GameScene : UI_Scene
 
     public void MonsterInfoUpdate(MonsterController _mc)
     {
-        if(_mc.objType == Define.ObjectType.EliteMonster)
+        if (_mc.objType == Define.ObjectType.EliteMonster)
         {
-            if(_mc.CreatureState != Define.CreatureState.Dead)
+            if (_mc.CreatureState != Define.CreatureState.Dead)
             {
                 GetObject(gameObjectsType, (int)GameObjects.EliteInfoObject).SetActive(true);
                 GetSlider(SlidersType, (int)Sliders.EliteHpSliderObject).value = _mc.Hp / _mc.MaxHp;
@@ -177,11 +186,11 @@ public class UI_GameScene : UI_Scene
             }
             else
                 GetObject(gameObjectsType, (int)GameObjects.EliteInfoObject).SetActive(false);
-            
+
         }
-        else if(_mc.objType == Define.ObjectType.Boss)
+        else if (_mc.objType == Define.ObjectType.Boss)
         {
-            if(_mc.CreatureState != Define.CreatureState.Dead)
+            if (_mc.CreatureState != Define.CreatureState.Dead)
             {
                 GetObject(gameObjectsType, (int)GameObjects.BossInfoObject).SetActive(true);
                 GetSlider(SlidersType, (int)Sliders.BossHpSliderObject).value = _mc.Hp / _mc.MaxHp;
@@ -296,6 +305,30 @@ public class UI_GameScene : UI_Scene
             Append(GetImage(ImagesType, (int)Images.WhiteFlash).DOFade(1, 0.15f))
             .Append(GetImage(ImagesType, (int)Images.WhiteFlash).DOFade(0, 0.3f)).OnComplete(() => { });
     }
-    
+
+
+    #region Test
+    void OnClickMonsterAllKillButton()
+    {
+        Manager.ObjectM.KillAllMonsters();
+    }
+
+    void OnClickNextWaveButton()
+    {
+        if (Manager.SceneM.CurrentScene.SceneType == Define.SceneType.GameScene)
+        {
+            GameScene gs = Manager.SceneM.CurrentScene as GameScene;
+            gs.WaveEnd();
+        }
+    }
+    void OnClickLevelUpButton()
+    {
+        Manager.DataM.LevelDic.TryGetValue(Manager.GameM.player.Level, out var CurrentLevelData);
+
+        float needExp = CurrentLevelData.TotalExp - Manager.GameM.player.Exp;
+
+        Manager.GameM.player.Exp += needExp;
+    }
+    #endregion
 
 }

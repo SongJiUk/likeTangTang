@@ -42,11 +42,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PrevLoad
-  - m_GUID: 545a695a4f9ed40098896d4772f46c4b
-    m_Address: UI_BattlePopup
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PrevLoad
   - m_GUID: 1b6783c779a4348fd9250d8007fd3927
     m_Address: UI_LobbyScene
     m_ReadOnly: 0

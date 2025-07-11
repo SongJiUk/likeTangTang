@@ -38,7 +38,10 @@ public class UI_BattlePopup : UI_Popup
         SecondClearRewardButton,
         ThirdClearRewardButton,
         GameStartButton,
-        OfflineRewardButton
+        OfflineRewardButton,
+        TestDiaButton,
+        TestLevelUpCouponButton,
+        TestGoldKeyButton
     }
 
     public enum Texts
@@ -69,7 +72,7 @@ public class UI_BattlePopup : UI_Popup
         RedDot
     }
     public bool isOpen = false;
-    
+
     Data.StageData currentStageData;
     Action OnChangedStageInfo;
     class RewardBox
@@ -129,6 +132,12 @@ public class UI_BattlePopup : UI_Popup
         GetButton(ButtonsType, (int)Buttons.GameStartButton).gameObject.BindEvent(OnClickGameStartButton);
         GetButton(ButtonsType, (int)Buttons.OfflineRewardButton).gameObject.BindEvent(OnClickOfflineRewardButton);
 
+        #region  TEST
+        GetButton(ButtonsType, (int)Buttons.TestDiaButton).gameObject.BindEvent(OnClickTestDiaButton);
+        GetButton(ButtonsType, (int)Buttons.TestLevelUpCouponButton).gameObject.BindEvent(OnClickTestLevelUpCouponButton);
+        GetButton(ButtonsType, (int)Buttons.TestGoldKeyButton).gameObject.BindEvent(OnClickTestGoldKeyButton);
+        #endregion
+
         Manager.GameM.RefreshUI = RefreshUpsideGroup;
         OnChangedStageInfo = Refresh;
         InitBoxes();
@@ -181,7 +190,7 @@ public class UI_BattlePopup : UI_Popup
             Manager.GameM.CurrentStageData = Manager.DataM.StageDic[1];
 
         GetText(TextsType, (int)Texts.StageNameText).text = Manager.GameM.CurrentStageData.StageName;
-        
+
         RefreshUpsideGroup();
 
 
@@ -197,7 +206,7 @@ public class UI_BattlePopup : UI_Popup
 
         GetImage(ImagesType, (int)Images.StageImage).sprite = Manager.ResourceM.Load<Sprite>(Manager.GameM.CurrentStageData.StageImage);
 
-       
+
 
         if (info != null)
         {
@@ -217,7 +226,7 @@ public class UI_BattlePopup : UI_Popup
             }
             else
             {
-                if(info.MaxWaveIndex == 0)
+                if (info.MaxWaveIndex == 0)
                 {
                     GetText(TextsType, (int)Texts.SurvivalWaveText).gameObject.SetActive(false);
                     GetText(TextsType, (int)Texts.SurvivalWaveValueText).gameObject.SetActive(true);
@@ -304,7 +313,7 @@ public class UI_BattlePopup : UI_Popup
                 break;
         }
     }
-    
+
     public void RefreshUpsideGroup()
     {
         if (SceneManager.GetActiveScene().name != Define.SceneType.LobbyScene.ToString()) return;
@@ -412,7 +421,7 @@ public class UI_BattlePopup : UI_Popup
         Manager.SoundM.PlayButtonClick();
         if (boxes[1].state != RewardBoxState.RedDot) return;
 
-        if(Manager.GameM.StageClearInfoDic.ContainsKey(currentStageData.StageIndex))
+        if (Manager.GameM.StageClearInfoDic.ContainsKey(currentStageData.StageIndex))
         {
             Manager.GameM.StageClearInfoDic[currentStageData.StageIndex].isOpenSecondBox = true;
             SetBoxState(1, RewardBoxState.Complete);
@@ -421,7 +430,7 @@ public class UI_BattlePopup : UI_Popup
             Queue<int> count = new();
 
             int itemID = currentStageData.SecondWaveClearRewardItemID;
-            if(Manager.DataM.MaterialDic.TryGetValue(itemID, out Data.MaterialData data))
+            if (Manager.DataM.MaterialDic.TryGetValue(itemID, out Data.MaterialData data))
             {
                 name.Enqueue(data.SpriteName);
                 count.Enqueue(currentStageData.SecondWaveClearRewardItemValue);
@@ -484,7 +493,7 @@ public class UI_BattlePopup : UI_Popup
             mission.Progress++;
             Manager.GameM.SaveGame();
         }
-            
+
 
         Manager.SceneM.LoadScene(Define.SceneType.GameScene, transform);
 
@@ -508,4 +517,24 @@ public class UI_BattlePopup : UI_Popup
 
     }
 
+    #region TEST
+
+    void OnClickTestDiaButton()
+    {
+        Manager.GameM.Dia += 10000;
+        Manager.UiM.ShowToast($"다이아 10000개 획득(TEST)");
+    }
+
+    void OnClickTestLevelUpCouponButton()
+    {
+        Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_LevelUpCoupon], 10000);
+        Manager.UiM.ShowToast($"레벨업 쿠폰 10000개 획득(TEST)");
+    }
+
+    void OnClickTestGoldKeyButton()
+    {
+        Manager.GameM.ExchangeMaterial(Manager.DataM.MaterialDic[Define.ID_GOLD_KEY], 10);
+        Manager.UiM.ShowToast($"상급 장비상자 열쇠 10개 획득(TEST)");
+    }
+    #endregion
 }
