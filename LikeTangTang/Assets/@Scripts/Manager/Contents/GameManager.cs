@@ -177,6 +177,7 @@ public class GameManager
         OnResourcesChanged?.Invoke();
         SaveGame();
     }
+
     public int GachaCountAdsAdvanced
     {
         get { return gameData.GacahCountAdsAdvanced; }

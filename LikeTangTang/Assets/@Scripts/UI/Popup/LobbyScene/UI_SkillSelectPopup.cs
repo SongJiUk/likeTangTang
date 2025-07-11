@@ -25,7 +25,9 @@ public class UI_SkillSelectPopup : UI_Popup
         CharacterLevelValueText,
         BeforeLevelValueText,
         AfterLevelValueText,
+        ADRefreshText,
         CardRefreshText,
+        ADRefreshCountValueText,
         CardRefreshCountValueText,
 
     }
@@ -35,7 +37,7 @@ public class UI_SkillSelectPopup : UI_Popup
         ExpSliderObject,
 
     }
-    
+
     enum Buttons
     {
         ADRefreshButton,
@@ -75,7 +77,7 @@ public class UI_SkillSelectPopup : UI_Popup
 
     public override bool Init()
     {
-        if(!base.Init()) return false;
+        if (!base.Init()) return false;
 
         gm = Manager.GameM;
         gameObjectsType = typeof(GameObjects);
@@ -89,7 +91,7 @@ public class UI_SkillSelectPopup : UI_Popup
         BindText(TextsType);
         BindSlider(SlidersType);
         BindImage(ImagesType);
-        
+
 
         GetButton(ButtonsType, (int)Buttons.ADRefreshButton).gameObject.BindEvent(OnClickAdRefreshButton);
         GetButton(ButtonsType, (int)Buttons.CardRefreshButton).gameObject.BindEvent(OnClickCardRefreshButton);
@@ -109,7 +111,7 @@ public class UI_SkillSelectPopup : UI_Popup
         }
 
         List<int> GetEvoloutionItems = gm.player.Skills.evolutionItemList.ToList();
-        for(int i =0; i<GetEvoloutionItems.Count; i++)
+        for (int i = 0; i < GetEvoloutionItems.Count; i++)
         {
             SetEvolutionItem(i, GetEvoloutionItems[i]);
         }
@@ -128,19 +130,30 @@ public class UI_SkillSelectPopup : UI_Popup
         GetText(TextsType, (int)Texts.BeforeLevelValueText).text = $"LV. {gm.player.Level - 1}";
         GetText(TextsType, (int)Texts.AfterLevelValueText).text = $"LV. {gm.player.Level}";
 
-        if(gm.player.SkillRefreshCount > 0 )
+        if (gm.player.SkillRefreshCountAD > 0)
+        {
+            GetText(TextsType, (int)Texts.ADRefreshText).text = $"<color=white>새로고침</color>";
+            GetText(TextsType, (int)Texts.ADRefreshCountValueText).text = $"<color=white>{gm.player.SkillRefreshCountAD} / 3</color>";
+        }
+        else
+        {
+             GetText(TextsType, (int)Texts.ADRefreshText).text = $"<color=red>새로고침</color>";
+            GetText(TextsType, (int)Texts.ADRefreshCountValueText).text = $"<color=red>{gm.player.SkillRefreshCountAD}</color>";
+            GetObject(gameObjectsType, (int)GameObjects.ADRefreshDisabledObject).gameObject.SetActive(true);
+        }
+
+        if (gm.player.SkillRefreshCount > 0)
         {
             GetText(TextsType, (int)Texts.CardRefreshText).text = $"<color=white>새로고침</color>";
             GetText(TextsType, (int)Texts.CardRefreshCountValueText).text = $"<color=white>{gm.player.SkillRefreshCount} / 3</color>";
         }
-       
         else
         {
             GetText(TextsType, (int)Texts.CardRefreshText).text = $"<color=red>새로고침</color>";
             GetText(TextsType, (int)Texts.CardRefreshCountValueText).text = $"<color=red>{gm.player.SkillRefreshCount}</color>";
-            GetObject(gameObjectsType, (int)GameObjects.ADRefreshDisabledObject).gameObject.SetActive(true);
+            GetObject(gameObjectsType, (int)GameObjects.CardRefreshDisabledObject).gameObject.SetActive(true);
         }
-            
+
     }
     void PopulateCardItem()
     {
@@ -181,12 +194,24 @@ public class UI_SkillSelectPopup : UI_Popup
         GetImage(ImagesType, (int)Images.EvolutionItem_Icon_0 + _index).enabled = true;
     }
 
-
     public void OnClickAdRefreshButton()
     {
         Manager.SoundM.PlayButtonClick();
-        PopulateCardItem();
-        RefreshUI();
+
+        if (gm.player.SkillRefreshCountAD > 0)
+        {
+            Manager.AdM.ShowRewardedAd(() =>
+            {
+                PopulateCardItem();
+                gm.player.SkillRefreshCountAD--;
+                RefreshUI();
+            });
+        }
+        else
+        {
+            Manager.UiM.ShowToast("3번의 광고를 모두 시청하셨습니다.");
+        }
+        
     }
 
     public void OnClickCardRefreshButton()
@@ -199,5 +224,11 @@ public class UI_SkillSelectPopup : UI_Popup
         }
 
         RefreshUI();
+    }
+
+
+    void Update()
+    {
+        Manager.TimeM.TimeStop();
     }
 }

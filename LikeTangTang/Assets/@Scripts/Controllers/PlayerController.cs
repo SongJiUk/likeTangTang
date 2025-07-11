@@ -185,6 +185,11 @@ public class PlayerController : CreatureController, ITickable
         set => Manager.GameM.ContinueDatas.ExpBonusRate = value;
     }
 
+    public int SkillRefreshCountAD
+    {
+        get => Manager.GameM.ContinueDatas.SkillRefreshCountAD;
+        set => Manager.GameM.ContinueDatas.SkillRefreshCountAD = value;
+    }
     public int SkillRefreshCount
     {
         get => Manager.GameM.ContinueDatas.SkillRefreshCount;

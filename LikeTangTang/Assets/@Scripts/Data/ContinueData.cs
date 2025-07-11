@@ -32,6 +32,7 @@ public class ContinueData
     public float ExpBonusRate = 1;
     public float CollectDistBonus = 1;
     public int KillCount;
+    public int SkillRefreshCountAD = 3;
     public int SkillRefreshCount = 3;
     public int SpecialSkillHealCount = 0;
     public Dictionary<Define.SkillType, int> SavedBattleSkill = new Dictionary<Define.SkillType, int>();
@@ -64,6 +65,7 @@ public class ContinueData
         ExpBonusRate = 1f;
         CollectDistBonus = 1f;
         KillCount = 0;
+        SkillRefreshCountAD = 3;
         SkillRefreshCount = 3;
         SpecialSkillHealCount = 0;
         SavedBattleSkill.Clear();

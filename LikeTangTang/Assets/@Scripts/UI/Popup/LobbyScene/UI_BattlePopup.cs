@@ -39,9 +39,11 @@ public class UI_BattlePopup : UI_Popup
         ThirdClearRewardButton,
         GameStartButton,
         OfflineRewardButton,
+        #region TEST
         TestDiaButton,
         TestLevelUpCouponButton,
         TestGoldKeyButton
+        #endregion
     }
 
     public enum Texts
