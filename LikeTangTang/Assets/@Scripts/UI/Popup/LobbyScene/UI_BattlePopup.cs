@@ -134,11 +134,11 @@ public class UI_BattlePopup : UI_Popup
         GetButton(ButtonsType, (int)Buttons.GameStartButton).gameObject.BindEvent(OnClickGameStartButton);
         GetButton(ButtonsType, (int)Buttons.OfflineRewardButton).gameObject.BindEvent(OnClickOfflineRewardButton);
 
-        #region  TEST
-        GetButton(ButtonsType, (int)Buttons.TestDiaButton).gameObject.BindEvent(OnClickTestDiaButton);
-        GetButton(ButtonsType, (int)Buttons.TestLevelUpCouponButton).gameObject.BindEvent(OnClickTestLevelUpCouponButton);
-        GetButton(ButtonsType, (int)Buttons.TestGoldKeyButton).gameObject.BindEvent(OnClickTestGoldKeyButton);
-        #endregion
+        // #region TEST
+        // GetButton(ButtonsType, (int)Buttons.TestDiaButton).gameObject.BindEvent(OnClickTestDiaButton);
+        // GetButton(ButtonsType, (int)Buttons.TestLevelUpCouponButton).gameObject.BindEvent(OnClickTestLevelUpCouponButton);
+        // GetButton(ButtonsType, (int)Buttons.TestGoldKeyButton).gameObject.BindEvent(OnClickTestGoldKeyButton);
+        // #endregion
 
         Manager.GameM.RefreshUI = RefreshUpsideGroup;
         OnChangedStageInfo = Refresh;

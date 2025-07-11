@@ -261,7 +261,6 @@
     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
     <None Include="Assets/GoogleMobileAds/GoogleMobileAds.Unity.dll" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets/AddressableAssetsData/link.xml" />
     <None Include="Assets/_ExternalModule/Favorites/FavoritesTab/_readme.txt" />
     <None Include="Assets/GoogleMobileAds/GoogleMobileAds.Android.dll" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
