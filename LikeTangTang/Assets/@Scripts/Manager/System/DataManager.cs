@@ -62,3 +62,28 @@ public class DataManager
         return JsonConvert.DeserializeObject<Loader>(textAsset.text);
     }
 }
+
+
+/* NOTE
+ LoadJson에서 텍스트 파일 형태로 불러온다. 모든 텍스트 내용을 문자열로 불러옴,
+ 컨버트 라이브러리를 사용해서 문자열을 C#객체로 변환시킨다. 이때, Loader타입으로 변환, 예를 들면 SkillDic은 Data.SkillDataLoader로 변환된다.
+
+ Json파일은 보통 리스트 형태로 되어있다. 하지만 딕셔너리가 훨씬 좋음.
+그래서 딕셔너리로 변경하는 기능(MakeDict)을 반드시 가지고있어야한다는 규칙을 정의한다.
+그래서 Loader들은 인터페이스를 상속해야 한다.
+
+메서드 체이닝
+1. 게임 시작 시 어딘가에서 DataManager.Init()을 호출합니다.
+   2. Init() 메소드 안에서 다음 코드가 실행됩니다.
+      SkillDic = LoadJson<Data.SkillDataLoader, int, Data.SkillData>("SkillData.json").MakeDict();
+   3. `LoadJson` 호출:
+       - Unity의 Resources 폴더에서 SkillData.json 파일을 찾아 텍스트를 읽습니다.
+       - Newtonsoft.Json이 이 텍스트를 Data.SkillDataLoader 객체로 변환합니다. 이 객체 안에는 SkillData의 리스트가 채워져 있습니다.
+       - LoadJson은 이 Data.SkillDataLoader 객체를 반환합니다.
+   4. `MakeDict()` 호출:
+       - LoadJson이 반환한 Data.SkillDataLoader 객체에 이어서 .MakeDict()가 호출됩니다.
+       - SkillDataLoader 객체는 자기가 가지고 있는 SkillData 리스트를 순회하면서, 각 스킬의 ID를 key로, SkillData 객체를 value로 하는 Dictionary<int, Data.SkillData>를 생성하여 반환합니다.
+   5. 할당:
+       - MakeDict()가 반환한 완성된 딕셔너리가 DataManager의 SkillDic 프로퍼티에 최종적으로 할당됩니다.
+   6. 이 과정이 Init()에 있는 모든 데이터 종류에 대해 반복됩니다.
+*/

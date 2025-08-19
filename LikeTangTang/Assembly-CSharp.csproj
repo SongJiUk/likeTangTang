@@ -265,6 +265,7 @@
     <None Include="Assets/GoogleMobileAds/GoogleMobileAds.Android.dll" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets/AddressableAssetsData/link.xml" />
     <None Include="Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" />
     <None Include="Assets/GoogleMobileAds/GoogleMobileAds_version-10.1.0_manifest.txt" />
     <None Include="Assets/@Resources/Shaders/WhiteFlash.shader" />
