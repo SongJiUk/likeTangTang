@@ -2,10 +2,6 @@
 
 <br/>
 
-![Gameplay GIF Placeholder](https://via.placeholder.com/800x450.gif?text=Insert+Gameplay+GIF+or+Video+Here)
-
-> **프로젝트 시연 영상을 넣어주세요.** (800x450 픽셀 사이즈의 GIF를 사용하거나, YouTube 링크를 첨부하면 좋습니다.)
-
 ## 📖 프로젝트 소개
 
 Unity와 C#을 활용하여 **`탕탕특공대(Vampire Survivors)`** 스타일의 탑다운 슈팅 게임을 개발한 개인 프로젝트입니다. 게임의 핵심 재미 요소인 **성장 시스템**과 **랜덤 스킬 선택 시스템**을 구현하는 데 중점을 두었습니다.
